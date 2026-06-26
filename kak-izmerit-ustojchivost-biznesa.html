@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как измерить и протестировать устойчивость бизнеса: BIA, RTO и RPO | risk-place.ru</title>
+<meta name="description" content="Что такое BIA, RTO и RPO простыми словами, как оцифровать устойчивость бизнеса и проверить её в учениях. Практический инструмент для самопроверки за 10 минут.">
+<meta name="keywords" content="устойчивость бизнеса, BIA, RTO, RPO, анализ воздействия на бизнес, учения непрерывность, непрерывность бизнеса">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.html">
+<meta property="og:title" content="Как измерить и протестировать устойчивость бизнеса">
+<meta property="og:description" content="Что такое BIA, RTO и RPO простыми словами, как оцифровать устойчивость бизнеса и проверить её в учениях. Практический инструмент для самопроверки за 10 минут.">
+<meta property="og:image" content="https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Как измерить и протестировать устойчивость бизнеса">
+<meta name="twitter:description" content="Что такое BIA, RTO и RPO простыми словами, как оцифровать устойчивость бизнеса и проверить её в учениях. Практический инструмент для самопроверки за 10 минут.">
+<meta name="twitter:image" content="https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.html#article",
+      "headline": "Как измерить и протестировать устойчивость бизнеса",
+      "description": "Что такое BIA, RTO и RPO простыми словами, как оцифровать устойчивость бизнеса и проверить её в учениях. Практический инструмент для самопроверки за 10 минут.",
+      "image": "https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.png",
+      "datePublished": "2026-06-26",
+      "dateModified": "2026-06-26",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Person",
+        "name": "Евгений Теленков",
+        "url": "https://tonus911-ctrl.github.io/bcm/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tonus911-ctrl.github.io/bcm/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://tonus911-ctrl.github.io/bcm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Материалы",
+          "item": "https://tonus911-ctrl.github.io/bcm/materialy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Как измерить устойчивость",
+          "item": "https://tonus911-ctrl.github.io/bcm/kak-izmerit-ustojchivost-biznesa.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем отличаются RTO и RPO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RTO — за сколько времени нужно восстановить процесс (про время простоя). RPO — какой объём данных допустимо потерять (про точку отката данных). Первый отвечает на «как быстро вернёмся», второй — «сколько данных не жалко потерять»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Зачем нужен BIA, если и так понятно, что важно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BIA переводит интуицию в цифры: ранжирует процессы по критичности и стоимости простоя. Это позволяет вкладываться в защиту там, где это реально окупается, а не «везде понемногу»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли провести учения без больших затрат?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Базовый формат — кабинетные (настольные) учения: команда разбирает сценарий сбоя по ролям за столом. Это недорого и уже вскрывает большинство пробелов в плане."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Меню">☰</button>
+    <nav class="nav" id="nav">
+      <a href="materialy.html">Материалы по BCM</a>
+      <a href="quiz.html">Диагностика</a>
+      <a href="index.html#contacts">Контакты</a>
+      <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Как измерить устойчивость</div>
+  <div class="article-head">
+    <div class="eyebrow">Внедрение BCM</div>
+    <h1>Как измерить и протестировать устойчивость бизнеса</h1>
+    <p class="lead">Многие думают, что непрерывность бизнеса — это про резервные серверы. На деле устойчивость начинается не с ИТ, а с измерения: что остановится первым, сколько это стоит и за сколько мы восстановимся. Разбираем, как это оцифровать и проверить.</p>
+    <div class="meta-row">Обновлено: 26 июня 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
+  </div>
+  <img src="kak-izmerit-ustojchivost-biznesa.png" alt="Как измерить и протестировать устойчивость бизнеса" class="article-cover">
+  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#sistema">Бизнес — это единая система, а не набор серверов</a></li><li><a href="#rezervy">Скрытые резервы, о которых вы могли не знать</a></li><li><a href="#ocifrovka">Оцифровка: BIA, RTO и RPO простыми словами</a></li><li><a href="#instrument">Инструмент для самопроверки за 10 минут</a></li><li><a href="#ucheniya">Проверка в учениях</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
+  <article class="article">
+<h2 id="sistema">Бизнес — это единая система, а не набор серверов</h2>
+<p>Устойчивость начинается не с резервных дата-центров. Бизнес стоит рассматривать как единую живую систему, где логистика, точки выдачи, денежные потоки, партнёры и ИТ связаны в одно целое. Именно эту систему мы учимся защищать и восстанавливать.</p>
+<p>Риски не делятся на «внешние» и «внутренние» по учебнику — их примеряют к конкретной бизнес-модели. Сбой в кассах, потеря связи с перевозчиком, утечка данных клиентов, внезапный уход поставщика — каждый риск проверяется на один вопрос: где удар окажется самым болезненным для денежного потока.</p>
+
+<h2 id="rezervy">Скрытые резервы, о которых вы могли не знать</h2>
+<p>В процессе анализа почти всегда находятся резервы, которые не были задокументированы: альтернативные логистические маршруты, резервные каналы связи с клиентами и партнёрами, дублирующие мощности в сети, ключевые эксперты, способные управлять кризисом. На их основе строятся пошаговые алгоритмы восстановления, которые работают в реальной жизни, а не на бумаге.</p>
+
+<h2 id="ocifrovka">Оцифровка: BIA, RTO и RPO простыми словами</h2>
+<p>Главное преимущество системного подхода — результат можно измерить. Три базовых показателя:</p>
+<ul>
+  <li><strong>BIA (анализ воздействия на бизнес)</strong> — оценка каждого критичного процесса: насколько он важен и сколько компания может прожить без него.</li>
+  <li><strong>RTO</strong> — максимально допустимое время простоя функции: за сколько её нужно восстановить, чтобы потери остались приемлемыми.</li>
+  <li><strong>RPO</strong> — допустимый объём потери данных: какой период данных можно потерять без критичных последствий.</li>
+</ul>
+<p>Когда эти величины зафиксированы и проверены, у компании появляется не ощущение, а измеримая, проверяемая картина готовности.</p>
+
+<h2 id="instrument">Инструмент для самопроверки за 10 минут</h2>
+<p>Попробуйте прямо сейчас. Возьмите лист бумаги и выпишите три процесса, без которых бизнес не проживёт и дня. Напротив каждого напишите, что может остановить его в течение часа. Если вы не знаете, как быстро восстановить хотя бы один из них, — это зона риска, с которой нужно работать.</p>
+<blockquote>А вы пробовали оценить, сколько денег потеряет бизнес за один день простоя ключевых процессов?</blockquote>
+
+<h2 id="ucheniya">Проверка в учениях</h2>
+<p>Любые показатели и планы нужно тестировать. Кабинетные учения и стресс-тесты — имитация отказа сервера, блокировки офиса, потери поставщика — показывают, что реально работает, а что осталось на бумаге. Только так устойчивость превращается из декларации в проверенную способность.</p>
+
+<div class="cta-band">
+  <h3>Узнайте, насколько устойчив ваш бизнес</h3>
+  <p>13 вопросов, 5 минут, бесплатно — результат сразу на экране и на почту.</p>
+  <div class="btn-row">
+    <a href="quiz.html" class="btn btn-yellow">Пройти диагностику бесплатно →</a>
+    <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#555">Записаться на разбор · 4 900 ₽</a>
+  </div>
+</div>
+
+<h2 id="faq">Частые вопросы</h2>
+<h3>Чем отличаются RTO и RPO?</h3><p>RTO — за сколько времени нужно восстановить процесс (про время простоя). RPO — какой объём данных допустимо потерять (про точку отката данных). Первый отвечает на «как быстро вернёмся», второй — «сколько данных не жалко потерять».</p>
+<h3>Зачем нужен BIA, если и так понятно, что важно?</h3><p>BIA переводит интуицию в цифры: ранжирует процессы по критичности и стоимости простоя. Это позволяет вкладываться в защиту там, где это реально окупается, а не «везде понемногу».</p>
+<h3>Можно ли провести учения без больших затрат?</h3><p>Да. Базовый формат — кабинетные (настольные) учения: команда разбирает сценарий сбоя по ролям за столом. Это недорого и уже вскрывает большинство пробелов в плане.</p>
+
+<div class="expert">
+  <img src="IMG_4329_sm.jpg" alt="Евгений Теленков">
+  <div>
+    <div class="name">Евгений Теленков</div>
+    <div class="role">Директор по рискам · к.э.н. · «Лучший риск-менеджер России 2020»</div>
+    <div class="bio">20 лет в управлении рисками. Возглавлял риск-менеджмент в Билайн, Норникеле, Роснефти и EY. Разрабатывал планы непрерывности бизнеса для Норникеля, Ростеха, НРД и АСВ. Обучил 300+ специалистов по рискам и BCM.</div>
+  </div>
+</div>
+  </article>
+  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 дней простоя: урок кибератаки →</div><div class="rc-d">Реальный кейс атаки шифровальщика на крупного страховщика: 7 дней простоя, неработающие сайт и приложение. Как</div></a><a href="geopoliticheskie-riski-i-nepreryvnost.html" class="related-card"><div class="rc-t">Геополитические риски (Ормуз) →</div><div class="rc-d">Как методология непрерывности бизнеса (BCM) работает на уровне целых отраслей и стран — на примере кризиса вок</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Главная</a>
+      <a href="materialy.html">Материалы по BCM</a>
+      <a href="quiz.html">Диагностика</a>
+      <a href="privacy-policy.html">Политика конфиденциальности</a>
+    </div>
+    <div class="copy">© 2026 Евгений Теленков · BCM-консалтинг</div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+</body>
+</html>

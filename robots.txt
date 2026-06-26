@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tonus911-ctrl.github.io/bcm/sitemap.xml

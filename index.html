@@ -880,8 +880,8 @@ footer {
   background: var(--cream);
   border-radius: 2px;
 }
-.paths-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0 28px; align-items: stretch; max-width: 860px; margin: 0 auto; }
-@media(max-width:660px){ .paths-grid{grid-template-columns:1fr;gap:20px} .path-or{display:none} }
+.paths-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: stretch; max-width: 1040px; margin: 0 auto; }
+@media(max-width:880px){ .paths-grid{grid-template-columns:1fr;gap:20px} .path-or{display:none} }
 .path-card { border-radius: 16px; padding: 32px 28px 28px; border: 2px solid #e0e0e0; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
 .path-card .btn { margin-top: auto; }
 .path-free:hover  { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(27,58,92,.12); border-color: var(--navy); }
@@ -1024,7 +1024,7 @@ footer{background:#14142a;}
   <div class="header-contacts" id="hContacts">
     <a href="tel:+79104519714">+7 910 451 97 14</a>
     <a href="mailto:evgeny.telenkov@yandex.ru">evgeny.telenkov@yandex.ru</a>
-    <a href="materialy.html" id="hKb">Материалы</a>
+    <a href="materialy.html" id="hKb">Материалы по BCM</a>
     <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" id="hBookBtn" style="color:#ccc;text-decoration:none;font-size:14px;transition:color 0.15s;">Записаться на разбор</a>
     <a href="#contacts" class="header-cta" id="hCta">Связаться</a>
   </div>
@@ -1048,6 +1048,7 @@ footer{background:#14142a;}
       <a href="https://tonus911-ctrl.github.io/bcm/quiz.html" class="btn btn-cream btn-quiz" id="hero-btn1">Пройти диагностику бесплатно →</a>
       <a href="#contacts" class="btn btn-outline btn-contact" id="hero-btn2">Обсудить задачу</a>
     </div>
+    <p style="margin-top:18px;font-size:14px;color:#8F8F8F;"><span id="hero-train-pre">Нужно глубже? </span><a href="https://risk-place.ru/page11" target="_blank" rel="noopener" id="hero-train-link" style="color:#1B3A5C;font-weight:700;text-decoration:none;">Курс по непрерывности бизнеса →</a></p>
   </div>
 </section>
 <!-- ══ STATS ══ -->
@@ -1081,7 +1082,7 @@ footer{background:#14142a;}
 <!-- ══ TWO PATHS ══ -->
 <section class="paths-section">
   <div class="wrap">
-    <p class="paths-label" id="paths-label">Два способа начать прямо сейчас</p>
+    <p class="paths-label" id="paths-label">С чего начать</p>
     <div class="paths-grid">
       <div class="path-card path-free">
         <div class="path-badge badge-free" id="paths-free-badge">БЕСПЛАТНО</div>
@@ -1094,7 +1095,6 @@ footer{background:#14142a;}
         </ul>
         <a href="https://tonus911-ctrl.github.io/bcm/quiz.html" class="btn btn-black btn-full" id="paths-free-btn">Провести диагностику бесплатно →</a>
       </div>
-      <div class="path-or" id="paths-or">или</div>
       <div class="path-card path-paid">
         <div class="path-badge badge-paid" id="paths-paid-badge">4 900 ₽</div>
         <h3 class="path-title" id="paths-paid-title">Личный разбор · 30 минут</h3>
@@ -1106,11 +1106,22 @@ footer{background:#14142a;}
         </ul>
         <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" class="btn btn-cream btn-full" id="paths-paid-btn">Записаться →</a>
       </div>
+      <div class="path-card path-free">
+        <div class="path-badge" id="paths-train-badge" style="background:rgba(202,164,0,.12);color:#a87f00;">Обучение · от 20 000 ₽</div>
+        <h3 class="path-title" id="paths-train-title">Курс по непрерывности (BCP)</h3>
+        <p class="path-desc-txt" id="paths-train-desc">6 модулей, 16 часов. Для руководителей и собственников — внедрить непрерывность системно.</p>
+        <ul class="path-features">
+          <li id="ptr1">BIA, BCP, кризисное управление</li>
+          <li id="ptr2">Реальные кейсы и практика</li>
+          <li id="ptr3">Сертификат по итогам</li>
+        </ul>
+        <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn btn-black btn-full" id="paths-train-btn">Узнать о курсе →</a>
+      </div>
     </div>
   </div>
 </section>
 <!-- ══ МАТЕРИАЛЫ (3 последних) ══ -->
-<section class="kb-section" style="padding:72px 24px;background:#fff;">
+<section class="kb-section" style="padding:72px 24px;background:#f5f7fa;border-top:1px solid #e7e8ea;border-bottom:1px solid #e7e8ea;">
   <div class="wrap">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
       <div>
@@ -1311,21 +1322,6 @@ footer{background:#14142a;}
     </div>
   </div>
 </section>
-<!-- ══ FREE QUIZ ══ -->
-<section id="free-quiz">
-  <div class="wrap-narrow">
-    <div class="quiz-eyebrow" id="quiz-eyebrow">Не готовы платить сразу? Начните бесплатно</div>
-    <h2 class="quiz-title" id="quiz-title">Пройдите диагностику за 5 минут</h2>
-    <p class="quiz-desc" id="quiz-desc">13 вопросов — и вы узнаете уровень устойчивости вашего бизнеса, три главных риска и первые шаги. Бесплатно, результат сразу на экране.</p>
-    <div class="quiz-counters">
-      <div class="quiz-counter"><span class="quiz-counter-num" id="qc-q">13</span><span class="quiz-counter-lbl" id="qc-ql">вопросов</span></div>
-      <div class="quiz-counter"><span class="quiz-counter-num" id="qc-t">5</span><span class="quiz-counter-lbl" id="qc-tl">минут</span></div>
-      <div class="quiz-counter"><span class="quiz-counter-num" id="qc-p">0 ₽</span><span class="quiz-counter-lbl" id="qc-pl">стоимость</span></div>
-    </div>
-    <a href="https://tonus911-ctrl.github.io/bcm/quiz.html" class="btn btn-black" id="quiz-btn">Пройти диагностику бесплатно →</a>
-    <p class="quiz-hint" id="quiz-hint">После диагностики вы можете вернуться и записаться на разбор — с пониманием конкретных пробелов</p>
-  </div>
-</section>
 <!-- ══ CONTACTS ══ -->
 <section class="contacts-section" id="contacts">
   <div class="wrap">
@@ -1478,7 +1474,7 @@ const LANG = {
     "ben-6-t": "Соответствие стандартам",
     "ben-6-d": "Система строится в логике ISO 22301 и ISO 27031 — основ международного BCM. Фундамент для сертификации при необходимости.",
     "about-name": "Евгений Теленков",
-    "hKb": "Материалы",
+    "hKb": "Материалы по BCM",
     "kb-eyebrow": "Полезные материалы",
     "kb-title": "Свежие материалы по непрерывности бизнеса",
     "kb-desc": "Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.",
@@ -1609,7 +1605,7 @@ const LANG = {
     "ben-6-t": "Standards Compliance",
     "ben-6-d": "The system is built around ISO 22301 and ISO 27031 — the foundations of international BCM. A basis for certification when needed.",
     "about-name": "Evgeny Telenkov",
-    "hKb": "Resources",
+    "hKb": "BCM resources",
     "kb-eyebrow": "Useful resources",
     "kb-title": "Latest business continuity resources",
     "kb-desc": "Articles and templates on BCM: what it is, how to build a BCP, ISO 22301, business impact analysis (BIA) and disaster recovery.",
@@ -1814,7 +1810,7 @@ if (heroEl) ioStrip.observe(heroEl);
 var PATCH_LANG = {
   ru: {
     'risk-lbl': 'УРОВЕНЬ УГРОЗЫ · НИЗКИЙ',
-    'paths-label': 'Два способа начать прямо сейчас',
+    'paths-label': 'С чего начать',
     'paths-free-badge': 'БЕСПЛАТНО', 'paths-free-title': 'Диагностика за 5 минут',
     'paths-free-desc': '13 вопросов — и вы узнаете уровень устойчивости, три главных риска и первые шаги.',
     'pf1': 'Результат сразу на экране', 'pf2': 'Три главных зоны риска', 'pf3': 'Первые шаги — конкретно',
@@ -1823,13 +1819,18 @@ var PATCH_LANG = {
     'paths-paid-desc': 'Мы разберем вашу конкретную ситуацию и способы снижения риска.',
     'pp1': 'Стоимость дня простоя в рублях', 'pp2': 'Три главных уязвимости', 'pp3': 'Резюме за 24 часа на почту',
     'paths-paid-btn': 'Записаться →', 'paths-or': 'или',
+    'paths-train-badge': 'Обучение · от 20 000 ₽', 'paths-train-title': 'Курс по непрерывности (BCP)',
+    'paths-train-desc': '6 модулей, 16 часов. Для руководителей и собственников — внедрить непрерывность системно.',
+    'ptr1': 'BIA, BCP, кризисное управление', 'ptr2': 'Реальные кейсы и практика', 'ptr3': 'Сертификат по итогам',
+    'paths-train-btn': 'Узнать о курсе →',
+    'hero-train-pre': 'Нужно глубже? ', 'hero-train-link': 'Курс по непрерывности бизнеса →',
     'paid-featured': '★ Рекомендуем',
     'float-free-btn': '⚡ Диагностика бесплатно', 'float-paid-btn': 'Консультация · 4 900 ₽ →',
     'qc-ql': 'вопросов', 'qc-tl': 'минут', 'qc-pl': 'стоимость',
   },
   en: {
     'risk-lbl': 'THREAT LEVEL · LOW',
-    'paths-label': 'Two ways to start right now',
+    'paths-label': 'Where to start',
     'paths-free-badge': 'FREE', 'paths-free-title': '5-Minute Assessment',
     'paths-free-desc': '13 questions — discover your resilience level, three main risks and first steps.',
     'pf1': 'Results on screen instantly', 'pf2': 'Three main risk zones', 'pf3': 'Concrete first steps',
@@ -1838,6 +1839,11 @@ var PATCH_LANG = {
     'paths-paid-desc': 'We will review your specific situation and risk mitigation options.',
     'pp1': 'Daily downtime cost in monetary terms', 'pp2': 'Three main vulnerabilities', 'pp3': 'Written summary within 24 hrs',
     'paths-paid-btn': 'Book now →', 'paths-or': 'or',
+    'paths-train-badge': 'Training · from ₽20,000', 'paths-train-title': 'Business Continuity Course (BCP)',
+    'paths-train-desc': '6 modules, 16 hours. For executives and owners — implement continuity systematically.',
+    'ptr1': 'BIA, BCP, crisis management', 'ptr2': 'Real cases and practice', 'ptr3': 'Certificate on completion',
+    'paths-train-btn': 'About the course →',
+    'hero-train-pre': 'Want to go deeper? ', 'hero-train-link': 'Business continuity course →',
     'paid-featured': '★ Recommended',
     'float-free-btn': '⚡ Free Assessment', 'float-paid-btn': 'Session · ₽4,900 →',
     'qc-ql': 'questions', 'qc-tl': 'minutes', 'qc-pl': 'cost',

@@ -12,10 +12,22 @@
     </image:image>
   </url>
   <url>
-    <loc>https://tonus911-ctrl.github.io/bcm/quiz.html</loc>
+    <loc>https://tonus911-ctrl.github.io/bcm/materialy/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tonus911-ctrl.github.io/bcm/nepreryvnost-biznesa/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tonus911-ctrl.github.io/bcm/quiz.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tonus911-ctrl.github.io/bcm/privacy-policy.html</loc>

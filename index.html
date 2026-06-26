@@ -1016,6 +1016,7 @@ footer{background:#14142a;}
   <div class="header-contacts" id="hContacts">
     <a href="tel:+79104519714">+7 910 451 97 14</a>
     <a href="mailto:evgeny.telenkov@yandex.ru">evgeny.telenkov@yandex.ru</a>
+    <a href="materialy/" id="hKb">Материалы</a>
     <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" id="hBookBtn" style="color:#ccc;text-decoration:none;font-size:14px;transition:color 0.15s;">Записаться на разбор</a>
     <a href="#contacts" class="header-cta" id="hCta">Связаться</a>
   </div>
@@ -1297,6 +1298,15 @@ footer{background:#14142a;}
     <p class="quiz-hint" id="quiz-hint">После диагностики вы можете вернуться и записаться на разбор — с пониманием конкретных пробелов</p>
   </div>
 </section>
+<!-- ══ KNOWLEDGE BASE TEASER ══ -->
+<section style="padding:64px 24px;background:#fafbff;border-top:1px solid #e7e8ea;">
+  <div class="wrap">
+    <div class="section-eyebrow" id="kb-eyebrow">База знаний</div>
+    <h2 class="section-title" id="kb-title">Материалы по непрерывности бизнеса</h2>
+    <p class="section-desc" id="kb-desc">Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.</p>
+    <a href="materialy/" class="btn btn-cream" id="kb-btn" style="font-size:16px;padding:14px 30px;">Смотреть материалы →</a>
+  </div>
+</section>
 <!-- ══ CONTACTS ══ -->
 <section class="contacts-section" id="contacts">
   <div class="wrap">
@@ -1449,6 +1459,11 @@ const LANG = {
     "ben-6-t": "Соответствие стандартам",
     "ben-6-d": "Система строится в логике ISO 22301 и ISO 27031 — основ международного BCM. Фундамент для сертификации при необходимости.",
     "about-name": "Евгений Теленков",
+    "hKb": "Материалы",
+    "kb-eyebrow": "База знаний",
+    "kb-title": "Материалы по непрерывности бизнеса",
+    "kb-desc": "Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.",
+    "kb-btn": "Смотреть материалы →",
     "about-role": "Директор по рискам · Кандидат экономических наук",
     "tag1": "Билайн", "tag2": "Норникель", "tag3": "Роснефть", "tag4": "EY",
     "tag5": "Ростех", "tag6": "РусРиск 2020", "tag7": "BCM / BCP", "tag8": "ISO 22301",
@@ -1575,6 +1590,11 @@ const LANG = {
     "ben-6-t": "Standards Compliance",
     "ben-6-d": "The system is built around ISO 22301 and ISO 27031 — the foundations of international BCM. A basis for certification when needed.",
     "about-name": "Evgeny Telenkov",
+    "hKb": "Resources",
+    "kb-eyebrow": "Knowledge base",
+    "kb-title": "Business continuity resources",
+    "kb-desc": "Articles and templates on BCM: what it is, how to build a BCP, ISO 22301, business impact analysis (BIA) and disaster recovery.",
+    "kb-btn": "Browse resources →",
     "about-role": "Risk Director · PhD in Economics",
     "tag1": "Beeline", "tag2": "Norilsk Nickel", "tag3": "Rosneft", "tag4": "EY",
     "tag5": "Rostec", "tag6": "RusRisk 2020", "tag7": "BCM / BCP", "tag8": "ISO 22301",
@@ -1683,7 +1703,8 @@ function setLang(lang) {
     // Quiz
     "quiz-eyebrow","quiz-title","quiz-desc","quiz-hint",
     "contacts-calendly-btn","quote-author","ct-phone","ct-tg","ct-email","ct-li","ct-tc",
-    "about-name","tag1","tag2","tag3","tag4","tag5","tag6","tag7","tag8"
+    "about-name","tag1","tag2","tag3","tag4","tag5","tag6","tag7","tag8","hKb",
+    "kb-eyebrow","kb-title","kb-desc","kb-btn"
   ];
   extIds.forEach(function(id) {
     var el = document.getElementById(id);

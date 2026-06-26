@@ -1006,6 +1006,14 @@ body, button, input, textarea,
 .paid-tg a{color:#a87f00;}
 
 footer{background:#14142a;}
+/* ── Блок материалов на главной ── */
+.kb-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:8px}
+.kb-card{display:flex;flex-direction:column;gap:8px;border:1.5px solid #e7e8ea;border-radius:16px;padding:22px;text-decoration:none;color:#14142a;background:#fff;transition:transform .2s,box-shadow .2s,border-color .2s}
+.kb-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(27,58,92,.10);border-color:#1B3A5C}
+.kb-card-cat{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#caa400}
+.kb-card-t{font-size:18px;font-weight:700;line-height:1.3}
+.kb-card-d{font-size:14px;color:#515478;line-height:1.55;flex:1}
+.kb-card-more{font-size:14px;font-weight:700;color:#1B3A5C}
 </style>
 </head>
 <body>
@@ -1098,6 +1106,24 @@ footer{background:#14142a;}
         </ul>
         <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" class="btn btn-cream btn-full" id="paths-paid-btn">Записаться →</a>
       </div>
+    </div>
+  </div>
+</section>
+<!-- ══ МАТЕРИАЛЫ (3 последних) ══ -->
+<section class="kb-section" style="padding:72px 24px;background:#fff;">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+      <div>
+        <div class="section-eyebrow" id="kb-eyebrow">Полезные материалы</div>
+        <h2 class="section-title" id="kb-title" style="margin-bottom:6px;">Свежие материалы по непрерывности бизнеса</h2>
+        <p class="section-desc" id="kb-desc" style="margin-bottom:0;max-width:680px;">Разбираем BCM по шагам: что это, план непрерывности (BCP), ISO 22301, анализ воздействия (BIA), аварийное восстановление.</p>
+      </div>
+      <a href="materialy/" class="btn btn-cream" id="kb-btn" style="white-space:nowrap;">Все материалы →</a>
+    </div>
+    <div class="kb-cards" id="kbCards">
+<!--LATEST_START-->
+<a href="nepreryvnost-biznesa/" class="kb-card"><div class="kb-card-cat">Основы BCM</div><div class="kb-card-t">Непрерывность бизнеса (BCM)</div><div class="kb-card-d">Что такое непрерывность бизнеса (BCM) простыми словами: зачем нужна собственнику, чем отличается от ИТ и кибербезопас…</div><div class="kb-card-more">Читать →</div></a>
+<!--LATEST_END-->
     </div>
   </div>
 </section>
@@ -1298,15 +1324,6 @@ footer{background:#14142a;}
     <p class="quiz-hint" id="quiz-hint">После диагностики вы можете вернуться и записаться на разбор — с пониманием конкретных пробелов</p>
   </div>
 </section>
-<!-- ══ KNOWLEDGE BASE TEASER ══ -->
-<section style="padding:64px 24px;background:#fafbff;border-top:1px solid #e7e8ea;">
-  <div class="wrap">
-    <div class="section-eyebrow" id="kb-eyebrow">База знаний</div>
-    <h2 class="section-title" id="kb-title">Материалы по непрерывности бизнеса</h2>
-    <p class="section-desc" id="kb-desc">Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.</p>
-    <a href="materialy/" class="btn btn-cream" id="kb-btn" style="font-size:16px;padding:14px 30px;">Смотреть материалы →</a>
-  </div>
-</section>
 <!-- ══ CONTACTS ══ -->
 <section class="contacts-section" id="contacts">
   <div class="wrap">
@@ -1460,10 +1477,10 @@ const LANG = {
     "ben-6-d": "Система строится в логике ISO 22301 и ISO 27031 — основ международного BCM. Фундамент для сертификации при необходимости.",
     "about-name": "Евгений Теленков",
     "hKb": "Материалы",
-    "kb-eyebrow": "База знаний",
-    "kb-title": "Материалы по непрерывности бизнеса",
+    "kb-eyebrow": "Полезные материалы",
+    "kb-title": "Свежие материалы по непрерывности бизнеса",
     "kb-desc": "Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.",
-    "kb-btn": "Смотреть материалы →",
+    "kb-btn": "Все материалы →",
     "about-role": "Директор по рискам · Кандидат экономических наук",
     "tag1": "Билайн", "tag2": "Норникель", "tag3": "Роснефть", "tag4": "EY",
     "tag5": "Ростех", "tag6": "РусРиск 2020", "tag7": "BCM / BCP", "tag8": "ISO 22301",
@@ -1591,10 +1608,10 @@ const LANG = {
     "ben-6-d": "The system is built around ISO 22301 and ISO 27031 — the foundations of international BCM. A basis for certification when needed.",
     "about-name": "Evgeny Telenkov",
     "hKb": "Resources",
-    "kb-eyebrow": "Knowledge base",
-    "kb-title": "Business continuity resources",
+    "kb-eyebrow": "Useful resources",
+    "kb-title": "Latest business continuity resources",
     "kb-desc": "Articles and templates on BCM: what it is, how to build a BCP, ISO 22301, business impact analysis (BIA) and disaster recovery.",
-    "kb-btn": "Browse resources →",
+    "kb-btn": "All resources →",
     "about-role": "Risk Director · PhD in Economics",
     "tag1": "Beeline", "tag2": "Norilsk Nickel", "tag3": "Rosneft", "tag4": "EY",
     "tag5": "Rostec", "tag6": "RusRisk 2020", "tag7": "BCM / BCP", "tag8": "ISO 22301",

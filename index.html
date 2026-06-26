@@ -1800,4 +1800,23 @@ var PATCH_LANG = {
     'paths-paid-btn': 'Book now →', 'paths-or': 'or',
     'paid-featured': '★ Recommended',
     'float-free-btn': '⚡ Free Assessment', 'float-paid-btn': 'Session · ₽4,900 →',
-    'qc-ql':
+    'qc-ql': 'questions', 'qc-tl': 'minutes', 'qc-pl': 'cost',
+  }
+};
+var origSetLang = window.setLang;
+window.setLang = function(lang) {
+  if (origSetLang) origSetLang(lang);
+  var t = PATCH_LANG[lang] || PATCH_LANG.ru;
+  Object.keys(t).forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = t[id];
+  });
+};
+/* Apply base + patch for the language detected on load (fixes EN-on-load) */
+(function() {
+  var l = (document.documentElement.lang === 'en') ? 'en' : 'ru';
+  if (window.setLang) window.setLang(l);
+})();
+</script>
+</body>
+</html>

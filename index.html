@@ -1025,6 +1025,7 @@ footer{background:#14142a;}
     <a href="tel:+79104519714">+7 910 451 97 14</a>
     <a href="mailto:evgeny.telenkov@yandex.ru">evgeny.telenkov@yandex.ru</a>
     <a href="materialy.html" id="hKb">Материалы по BCM</a>
+    <a href="https://risk-place.ru/page24" target="_blank" rel="noopener" id="hEdu">Обучение и консалтинг</a>
     <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" id="hBookBtn" style="color:#ccc;text-decoration:none;font-size:14px;transition:color 0.15s;">Записаться на разбор</a>
     <a href="#contacts" class="header-cta" id="hCta">Связаться</a>
   </div>
@@ -1263,6 +1264,7 @@ footer{background:#14142a;}
           <span class="tag" id="tag7">BCM / BCP</span>
           <span class="tag" id="tag8">ISO 22301</span>
         </div>
+        <p class="about-text" style="margin-top:18px;margin-bottom:0;"><a href="https://risk-place.ru/page24" target="_blank" rel="noopener" id="about-more" style="color:var(--navy);font-weight:700;text-decoration:none;">Все курсы и услуги — на risk-place.ru →</a></p>
       </div>
     </div>
   </div>
@@ -1366,6 +1368,7 @@ footer{background:#14142a;}
 <!-- ══ FOOTER ══ -->
 <footer>
   <a href="https://risk-place.ru" class="footer-logo">risk<span>-</span>place.ru</a>
+  <a href="https://risk-place.ru/page24" target="_blank" rel="noopener" class="footer-copy" id="footer-part" style="text-decoration:none;">Часть проекта risk-place.ru — обучение и консалтинг по управлению рисками</a>
   <div class="footer-copy" id="footer-copy">© 2026 Евгений Теленков · BCM-консалтинг</div>
 </footer>
 <!-- Yandex.Metrika -->
@@ -1475,6 +1478,9 @@ const LANG = {
     "ben-6-d": "Система строится в логике ISO 22301 и ISO 27031 — основ международного BCM. Фундамент для сертификации при необходимости.",
     "about-name": "Евгений Теленков",
     "hKb": "Материалы по BCM",
+    "hEdu": "Обучение и консалтинг",
+    "about-more": "Все курсы и услуги — на risk-place.ru →",
+    "footer-part": "Часть проекта risk-place.ru — обучение и консалтинг по управлению рисками",
     "kb-eyebrow": "Полезные материалы",
     "kb-title": "Свежие материалы по непрерывности бизнеса",
     "kb-desc": "Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.",
@@ -1606,6 +1612,9 @@ const LANG = {
     "ben-6-d": "The system is built around ISO 22301 and ISO 27031 — the foundations of international BCM. A basis for certification when needed.",
     "about-name": "Evgeny Telenkov",
     "hKb": "BCM resources",
+    "hEdu": "Training & consulting",
+    "about-more": "All courses & services — at risk-place.ru →",
+    "footer-part": "Part of risk-place.ru — training & consulting in risk management",
     "kb-eyebrow": "Useful resources",
     "kb-title": "Latest business continuity resources",
     "kb-desc": "Articles and templates on BCM: what it is, how to build a BCP, ISO 22301, business impact analysis (BIA) and disaster recovery.",
@@ -1719,7 +1728,7 @@ function setLang(lang) {
     "quiz-eyebrow","quiz-title","quiz-desc","quiz-hint",
     "contacts-calendly-btn","quote-author","ct-phone","ct-tg","ct-email","ct-li","ct-tc",
     "about-name","tag1","tag2","tag3","tag4","tag5","tag6","tag7","tag8","hKb",
-    "kb-eyebrow","kb-title","kb-desc","kb-btn"
+    "kb-eyebrow","kb-title","kb-desc","kb-btn","hEdu","about-more","footer-part"
   ];
   extIds.forEach(function(id) {
     var el = document.getElementById(id);

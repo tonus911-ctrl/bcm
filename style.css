@@ -132,7 +132,7 @@ tr:hover td{background:#fcfcff}
 .btn:active{transform:scale(.98)}
 .btn-yellow{background:var(--yellow);color:var(--ink)}
 .btn-yellow:hover{opacity:.88}
-.btn-dark{background:var(--ink);color:#fff}
+.btn-dark{background:var(--navy);color:#fff}
 .btn-dark:hover{opacity:.85;color:#fff}
 .btn-outline{background:transparent;color:var(--ink);border:1.5px solid #d3d6df}
 .btn-outline:hover{border-color:var(--ink)}

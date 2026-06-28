@@ -1007,8 +1007,14 @@ body, button, input, textarea,
 
 footer{background:#14142a;}
 /* ── Блок материалов на главной ── */
-.kb-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:8px}
-.kb-card{display:flex;flex-direction:column;gap:8px;border:1.5px solid #e7e8ea;border-radius:16px;padding:22px;text-decoration:none;color:#14142a;background:#fff;transition:transform .2s,box-shadow .2s,border-color .2s}
+.kb-cards{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.kb-card{display:flex;flex-direction:row;align-items:center;gap:18px;border:1.5px solid #e7e8ea;border-radius:14px;padding:16px 22px;text-decoration:none;color:#14142a;background:#fff;transition:box-shadow .2s,border-color .2s}
+.kb-card:hover{box-shadow:0 8px 24px rgba(27,58,92,.10);border-color:#1B3A5C}
+.kb-card-cat{flex:0 0 150px}
+.kb-card-t{flex:0 0 230px}
+.kb-card-d{flex:1}
+.kb-card-more{flex:0 0 auto;white-space:nowrap}
+@media(max-width:760px){.kb-card{flex-direction:column;align-items:flex-start;gap:6px}.kb-card-cat,.kb-card-t,.kb-card-d{flex:none}}
 .kb-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(27,58,92,.10);border-color:#1B3A5C}
 .kb-card-cat{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#caa400}
 .kb-card-t{font-size:18px;font-weight:700;line-height:1.3}
@@ -1020,7 +1026,7 @@ footer{background:#14142a;}
 .pains-band .section-eyebrow{color:#ffec89}
 .pains-band .section-eyebrow::before{background:#ffec89}
 .pains-band .section-title{color:#fff}
-.pains-band .misconception-card{background:#1e1e3c;border-color:#34345c}
+.pains-band .misconception-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
 .pains-band .myth-label{color:#ff9b9b}
 .pains-band .myth-text{color:#fff}
 .pains-band .truth-label{color:#ffec89}
@@ -1030,6 +1036,24 @@ footer{background:#14142a;}
 .prod-card.featured{box-shadow:0 14px 36px rgba(27,58,92,.16)}
 .prod-ribbon{position:absolute;top:-12px;right:18px;background:#ffec89;color:#5c4a00;font-size:12px;font-weight:800;letter-spacing:.02em;padding:4px 12px;border-radius:999px}
 </style>
+<style>
+/* ── UX-палитра кнопок и акценты ── */
+.btn-black{background:var(--navy)}
+.btn-black:hover{opacity:.9}
+.header-cta{background:var(--yellow)!important;color:#14142a!important}
+/* Контакты — акцентная navy-полоса (сильное завершение) */
+.contacts-section{background:#1B3A5C}
+.contacts-section .section-eyebrow{color:#ffec89}
+.contacts-section .section-eyebrow::before{background:#ffec89}
+.contacts-section .section-title{color:#fff}
+.contacts-section #i18n-cont-hint{color:#c9cce0!important}
+.contacts-section #i18n-cont-also{color:#aab1c6!important}
+.contacts-section .contact-card-sm{border-color:rgba(255,255,255,.18)!important;background:rgba(255,255,255,.04)}
+.contacts-section .contact-card-sm:hover{border-color:#ffec89!important}
+.contacts-section .contact-type{color:#ffec89!important}
+.contacts-section .contact-value{color:#fff!important}
+.contacts-section [style*="border-top"]{border-top-color:rgba(255,255,255,.18)!important}
+</style>
 </head>
 <body>
 <!-- ══ HEADER ══ -->
@@ -1037,18 +1061,16 @@ footer{background:#14142a;}
   <a href="https://bcm.risk-place.ru/" class="logo" id="hLogo">risk<span>-</span>place.ru</a>
   <div style="display:flex;align-items:center;gap:8px;">
   <div class="header-contacts" id="hContacts">
-    <a href="tel:+79104519714">+7 910 451 97 14</a>
-    <a href="mailto:evgeny.telenkov@yandex.ru">evgeny.telenkov@yandex.ru</a>
-    <a href="materialy.html" id="hKb">Материалы по BCM</a>
-    <a href="o-podhode.html" id="hAbout">О подходе</a>
-    <a href="https://risk-place.ru/page24" target="_blank" rel="noopener" id="hEdu">Обучение и консалтинг</a>
-    <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" id="hBookBtn" style="color:#ccc;text-decoration:none;font-size:14px;transition:color 0.15s;">Записаться на разбор</a>
-    <a href="#contacts" class="header-cta" id="hCta">Связаться</a>
+    <a href="#products" id="hProd">Продукты</a>
+    <a href="materialy.html" id="hKb">Материалы</a>
+    <a href="o-podhode.html" id="hAbout">О нас</a>
+    <a href="#contacts" id="hContLink">Контакты</a>
   </div>
   <div class="lang-toggle">
     <button class="lang-btn active" id="btnRU" onclick="setLang('ru')">RU</button>
     <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
   </div>
+  <a href="https://bcm.risk-place.ru/quiz.html" class="header-cta" id="hCta">Диагностика</a>
   </div>
 </header>
 <!-- ══ HERO ══ -->
@@ -1097,7 +1119,7 @@ footer{background:#14142a;}
 </section>
 <hr class="divider">
 <!-- ══ PROBLEM ══ -->
-<section class="pains-band" style="padding: 72px 24px; background: #14142a;">
+<section class="pains-band" style="padding: 72px 24px; background: #1B3A5C;">
   <div class="wrap">
     <div class="section-eyebrow" id="i18n-prob-eyebrow">С чем мы помогаем</div>
     <h2 class="section-title" id="i18n-prob-title">Ситуации, в которых нужна непрерывность бизнеса</h2>
@@ -1137,7 +1159,7 @@ footer{background:#14142a;}
           <li id="pf2">Три главных зоны риска</li>
           <li id="pf3">Первые шаги — конкретно</li>
         </ul>
-        <a href="https://bcm.risk-place.ru/quiz.html" class="btn btn-black btn-full" id="paths-free-btn">Провести диагностику бесплатно →</a>
+        <a href="https://bcm.risk-place.ru/quiz.html" class="btn btn-cream btn-full" id="paths-free-btn">Провести диагностику бесплатно →</a>
       </div>
       <div class="path-card path-paid">
         <div class="path-badge badge-paid" id="paths-paid-badge">4 900 ₽</div>
@@ -1188,7 +1210,7 @@ footer{background:#14142a;}
         <p id="pr2-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Самостоятельный курс с доступом сразу после оплаты: BIA, BCP, DRP, учения. Сертификат по итогам.</p>
         <div id="pr2-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">19 900 ₽</div>
         <a href="onlajn-kurs.html" id="pr2-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
-        <button class="np-form btn btn-black btn-full" data-prod="Онлайн-курс по ISO 22301" data-mode="apply" id="pr2-btn">Отправить заявку</button>
+        <button class="np-form btn btn-cream btn-full" data-prod="Онлайн-курс по ISO 22301" data-mode="apply" id="pr2-btn">Отправить заявку</button>
       </div>
       <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr3-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e8f0ff;color:#1B3A5C;margin-bottom:14px;">С ведущим</span>
@@ -1261,31 +1283,11 @@ footer{background:#14142a;}
     </div>
   </div>
 </section>
-<!-- ══ ABOUT ══ -->
-<section class="about-section">
-  <div class="wrap">
-    <div class="about-grid">
-      <div>
-        <div class="about-photo" id="aboutPhotoWrap">
-          <img src="IMG_4329_sm.jpg" alt="Евгений Теленков" id="aboutPhotoImg">
-        </div>
-      </div>
-      <div>
-        <div class="section-eyebrow" id="i18n-about-eyebrow">Об эксперте</div>
-        <div class="about-name" id="about-name">Евгений Теленков</div>
-        <div class="about-role" id="about-role">Директор по рискам · Кандидат экономических наук</div>
-        <p class="about-text" id="about-short">20 лет в управлении рисками: Билайн, Норникель, Роснефть, EY. «Лучший риск-менеджер России — 2020» по версии РусРиск, зампред ТК-010 «Менеджмент риска» Росстандарта. Лично разрабатывал планы непрерывности для Норникеля, Ростеха, НРД и АСВ, обучил 300+ специалистов.</p>
-        <div class="about-tags">
-          <span class="tag" id="tag1">Билайн</span>
-          <span class="tag" id="tag2">Норникель</span>
-          <span class="tag" id="tag3">Роснефть</span>
-          <span class="tag" id="tag4">EY</span>
-          <span class="tag" id="tag6">РусРиск 2020</span>
-          <span class="tag" id="tag8">ISO 22301</span>
-        </div>
-        <p class="about-text" style="margin-top:18px;margin-bottom:0;"><a href="o-podhode.html" id="about-more" style="color:var(--navy);font-weight:700;text-decoration:none;">Подробнее о подходе и эксперте →</a></p>
-      </div>
-    </div>
+<!-- ══ ПОЛОСА ДОВЕРИЯ ══ -->
+<section style="padding:26px 24px;background:#fff;border-top:1px solid #eef0f3;">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center;">
+    <span id="trust-txt" style="font-size:14.5px;color:#515478;">Евгений Теленков — Билайн · Норникель · Роснефть · EY · «Лучший риск-менеджер России 2020»</span>
+    <a href="o-podhode.html" id="trust-more" style="color:var(--navy);font-weight:700;text-decoration:none;font-size:14.5px;white-space:nowrap;">О нас →</a>
   </div>
 </section>
 <!-- ══ CONTACTS ══ -->
@@ -1369,7 +1371,7 @@ const LANG = {
     htmlLang: "ru",
     hLogo: 'risk<span style="color:var(--cream)">-</span>place.ru',
     hCta: "Связаться",
-    hCtaHref: "#contacts",
+    hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     hBookBtn: "Записаться на разбор",
     siteUrl: "https://bcm.risk-place.ru/",
     "i18n-hero-eyebrow": "Управление непрерывностью бизнеса · BCM / BCP",
@@ -1503,7 +1505,7 @@ const LANG = {
     htmlLang: "en",
     hLogo: 'risk<span style="color:var(--cream)">-</span>place.ru',
     hCta: "Get in Touch",
-    hCtaHref: "#contacts",
+    hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     hBookBtn: "Book a Session",
     siteUrl: "https://bcm.risk-place.ru/",
     "i18n-hero-eyebrow": "Business Continuity Management · BCM / BCP",
@@ -1931,7 +1933,7 @@ document.getElementById('wlSubmit').addEventListener('click',async function(){
 /* ── PATCH i18n: пути + продукты + nav + about-short ── */
 var PATCH_LANG = {
  ru:{
-  'risk-lbl':'УРОВЕНЬ УГРОЗЫ · НИЗКИЙ','hAbout':'О подходе',
+  'risk-lbl':'УРОВЕНЬ УГРОЗЫ · НИЗКИЙ','hAbout':'О нас','hProd':'Продукты','hContLink':'Контакты','hKb':'Материалы','hCta':'Диагностика','trust-txt':'Евгений Теленков — Билайн · Норникель · Роснефть · EY · «Лучший риск-менеджер России 2020»','trust-more':'О нас →','kb-btn':'Все материалы по категориям →',
   'paths-label':'С чего начать',
   'paths-free-badge':'БЕСПЛАТНО','paths-free-title':'Диагностика за 5 минут','paths-free-desc':'13 вопросов — и вы узнаете уровень устойчивости, три главных риска и первые шаги.','pf1':'Результат сразу на экране','pf2':'Три главных зоны риска','pf3':'Первые шаги — конкретно','paths-free-btn':'Провести диагностику бесплатно →',
   'paths-paid-badge':'4 900 ₽','paths-paid-title':'Личный разбор · 30 минут','paths-paid-desc':'Мы разберем вашу конкретную ситуацию и способы снижения риска.','pp1':'Стоимость дня простоя в рублях','pp2':'Три главных уязвимости','pp3':'Резюме за 24 часа на почту','paths-paid-btn':'Записаться →',
@@ -1945,7 +1947,7 @@ var PATCH_LANG = {
   'about-short':'20 лет в управлении рисками: Билайн, Норникель, Роснефть, EY. «Лучший риск-менеджер России — 2020» по версии РусРиск, зампред ТК-010 «Менеджмент риска» Росстандарта. Лично разрабатывал планы непрерывности для Норникеля, Ростеха, НРД и АСВ, обучил 300+ специалистов.','about-more':'Подробнее о подходе и эксперте →'
  },
  en:{
-  'risk-lbl':'THREAT LEVEL · LOW','hAbout':'Approach',
+  'risk-lbl':'THREAT LEVEL · LOW','hAbout':'About us','hProd':'Products','hContLink':'Contacts','hKb':'Materials','hCta':'Assessment','trust-txt':'Evgeny Telenkov — Beeline · Nornickel · Rosneft · EY · Best Risk Manager of Russia 2020','trust-more':'About us →','kb-btn':'All materials by category →',
   'paths-label':'Where to start',
   'paths-free-badge':'FREE','paths-free-title':'5-Minute Assessment','paths-free-desc':'13 questions — discover your resilience level, three main risks and first steps.','pf1':'Results on screen instantly','pf2':'Three main risk zones','pf3':'Concrete first steps','paths-free-btn':'Run Free Assessment →',
   'paths-paid-badge':'₽4,900','paths-paid-title':'Personal Review · 30 min','paths-paid-desc':'We will review your specific situation and risk mitigation options.','pp1':'Daily downtime cost in monetary terms','pp2':'Three main vulnerabilities','pp3':'Written summary within 24 hrs','paths-paid-btn':'Book now →',

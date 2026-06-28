@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 days of downtime: what a cyberattack on an insurer teaches | risk-place.ru</title>
+<meta name="description" content="A real ransomware case at a major insurer: 7 days of downtime, website and app offline. Which BCM mechanisms would have cut the downtime to a few days.">
+<meta name="keywords" content="cyberattack, ransomware, business downtime, business continuity, BCM, BCP, RTO RPO, ISO 22301">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.html">
+<meta property="og:title" content="7 days of downtime: what a cyberattack on a major insurer teaches">
+<meta property="og:description" content="A real ransomware case at a major insurer: 7 days of downtime, website and app offline. Which BCM mechanisms would have cut the downtime to a few days.">
+<meta property="og:image" content="https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="7 days of downtime: what a cyberattack on a major insurer teaches">
+<meta name="twitter:description" content="A real ransomware case at a major insurer: 7 days of downtime, website and app offline. Which BCM mechanisms would have cut the downtime to a few days.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/7-dney-prostoya-kiberataka.html">
+<link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.html">
+<link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/7-dney-prostoya-kiberataka.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.html#article",
+      "headline": "7 days of downtime: what a cyberattack on a major insurer teaches",
+      "description": "A real ransomware case at a major insurer: 7 days of downtime, website and app offline. Which BCM mechanisms would have cut the downtime to a few days.",
+      "image": "https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.png",
+      "datePublished": "2026-04-07",
+      "dateModified": "2026-06-28",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Evgeny Telenkov",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Materials",
+          "item": "https://bcm.risk-place.ru/materialy-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "7 days of downtime: a cyberattack lesson",
+          "item": "https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are RTO and RPO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RTO is the maximum acceptable time to restore a process. RPO is the acceptable amount of data loss. These set how fast a function must be back and how much data can be lost without critical consequences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does ISO 22301 help an ordinary company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard sets the logic: identify critical processes, set recovery targets, prepare and test plans. Certification is optional — the methodology itself is valuable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to prepare for a ransomware attack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At minimum — isolated backups, pre-assigned roles for the first hours of the incident, a customer communication plan and regular drills on this scenario."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="materialy-en.html">BCM materials</a><a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a><a href="quiz.html">Assessment</a><a href="index.html#contacts">Contacts</a><span class="lang-sw"><a href="7-dney-prostoya-kiberataka.html">RU</a><a href="en-7-dney-prostoya-kiberataka.html" style="background:#14142a;color:#fff;border-color:#14142a">EN</a></span><a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="nav-cta">Book a review</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Materials</a><span>/</span>7 days of downtime: a cyberattack lesson</div>
+  <div class="article-head">
+    <div class="eyebrow">Cybersecurity and continuity</div>
+    <h1>7 days of downtime: what a cyberattack on a major insurer teaches</h1>
+    <p class="lead">In November 2025 one of Russia's largest insurers faced a ransomware attack. On day seven of downtime the website and app were still down, the domain pointed to a fraudulent channel, and customers could not buy policies or receive payouts. We break down what could have cut the downtime several times over.</p>
+    <div class="meta-row">Updated: June 28, 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
+  </div>
+  <img src="en-7-dney-prostoya-kiberataka.png" alt="7 days of downtime: what a cyberattack on a major insurer teaches" class="article-cover">
+  <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#chto-sluchilos">What happened</a></li><li><a href="#mehanizmy">Which BCM mechanisms reduce losses</a></li><li><a href="#vyvod">The main takeaway</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+  <article class="article">
+<h2 id="chto-sluchilos">What happened</h2>
+<p>VSK is one of the country's largest insurers, with revenue of about 1.6 billion dollars. In November 2025 the company faced a ransomware attack. On day seven of downtime the website and mobile app were still offline, the domain pointed to a fraudulent channel, and customers could not buy policies or receive payouts. Full recovery took at least a week.</p>
+<p>For a business of this scale, a week of downtime of key services is not only direct revenue loss but also a blow to customer trust and reputation. And the main lesson here is not about a specific company, but that a prepared continuity system could have cut the downtime to a few days.</p>
+
+<h2 id="mehanizmy">Which BCM mechanisms reduce losses</h2>
+<p>A cyberattack is not just an IT task. It is a scenario you prepare for in advance. Here is what actually cuts downtime:</p>
+<ul>
+  <li><strong>Process criticality analysis (BIA) and recovery targets (RTO/RPO).</strong> When priorities are set in advance, the team does not lose hours on approvals during the attack — it is known what to restore first and within what time.</li>
+  <li><strong>Tested continuity plans (BCP) with clear ownership.</strong> Everyone — from IT to the front office — knows their actions in the first hours of the incident.</li>
+  <li><strong>Regular drills and team training.</strong> A ransomware-scenario drill surfaces gaps before a real attack and sharpens coordination between units.</li>
+</ul>
+<div class="callout"><b>Standards:</b> these approaches are codified in the international standards <b>ISO 22301</b> (business continuity) and <b>ISO 27031</b> (ICT readiness for continuity). They turn the risk of a cyberattack from chaos into a managed process.</div>
+
+<h2 id="vyvod">The main takeaway</h2>
+<p>The difference between "down for a week" and "coped in two days" is not luck or the size of the IT budget. It is having pre-calculated priorities (BIA), recovery targets (RTO/RPO) and a tested plan the whole team knows. More on how to measure this — in "<a href="en-kak-izmerit-ustojchivost-biznesa.html">How to measure and test business resilience</a>".</p>
+
+<div class="cta-band">
+  <h3>See how resilient your business really is</h3>
+  <p>13 questions, 5 minutes, free — results on screen and by email.</p>
+  <div class="btn-row">
+    <a href="quiz.html" class="btn btn-yellow">Take the free assessment →</a>
+    <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#555">Book a review · 4,900 ₽</a>
+    <a href="bcm-pod-klyuch.html" class="btn btn-outline" style="color:#fff;border-color:#555">BCM turnkey →</a>
+  </div>
+</div>
+
+<h2 id="faq">FAQ</h2>
+<h3>What are RTO and RPO?</h3><p>RTO is the maximum acceptable time to restore a process. RPO is the acceptable amount of data loss. These set how fast a function must be back and how much data can be lost without critical consequences.</p>
+<h3>How does ISO 22301 help an ordinary company?</h3><p>The standard sets the logic: identify critical processes, set recovery targets, prepare and test plans. Certification is optional — the methodology itself is valuable.</p>
+<h3>How to prepare for a ransomware attack?</h3><p>At minimum — isolated backups, pre-assigned roles for the first hours of the incident, a customer communication plan and regular drills on this scenario.</p>
+
+<div class="expert">
+  <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
+  <div>
+    <div class="name">Evgeny Telenkov</div>
+    <div class="role">Chief Risk Officer · PhD in Economics · "Best Risk Manager of Russia 2020"</div>
+    <div class="bio">20 years in risk management. Led risk management at Beeline, Nornickel, Rosneft and EY. Built business continuity plans for Nornickel, Rostec, NSD and DIA. Trained 300+ risk and BCM specialists.</div>
+    <div style="margin-top:8px;"><a href="o-podhode.html" style="color:#1B3A5C;font-weight:700;font-size:14px;text-decoration:none;">More about the approach and expert →</a></div>
+  </div>
+</div>
+  </article>
+  <section class="related"><div class="related-title">Read also</div><div class="related-grid"><a href="en-bcm-bcp-drp-otlichie.html" class="related-card"><div class="rc-t">BCM, BCP, DRP — the difference →</div><div class="rc-d">How BCM, BCP, DRP and risk management differ in plain language. A clear levels diagram, comparison table and e</div></a><a href="en-bcm-dlya-soveta-direktorov.html" class="related-card"><div class="rc-t">BCM for the board →</div><div class="rc-d">How to justify investment in business continuity to the board and owners: the language of money, risk appetite</div></a><a href="quiz.html" class="related-card"><div class="rc-t">5-minute assessment →</div><div class="rc-d">Your resilience level, three main risks and first steps. Free.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Home</a>
+      <a href="materialy-en.html">BCM materials</a>
+      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a>
+      <a href="quiz.html">Assessment</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+    </div>
+    <div class="copy">© 2026 Evgeny Telenkov · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">part of risk-place.ru</a></div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(96530203,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/96530203" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>

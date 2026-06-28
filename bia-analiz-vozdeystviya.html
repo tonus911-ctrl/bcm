@@ -28,6 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/bia-analiz-vozdeystviya.html"><link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-bia-analiz-vozdeystviya.html"><link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/bia-analiz-vozdeystviya.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@
           "name": "Что такое RTO и RPO простыми словами?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "RTO — за сколько восстановить процесс. RPO — какой объём данных допустимо потерять. Первое про время, второе про точку отката данных."
+            "text": "RTO — за сколько восстановить процесс. RPO — какой объем данных допустимо потерять. Первое про время, второе про точку отката данных."
           }
         },
         {
@@ -116,14 +117,8 @@
 <header class="site-header">
   <div class="bar">
     <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Меню">☰</button>
-    <nav class="nav" id="nav">
-      <a href="materialy.html">Материалы по BCM</a>
-      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a>
-      <a href="quiz.html">Диагностика</a>
-      <a href="index.html#contacts">Контакты</a>
-      <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a>
-    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="materialy.html">Материалы по BCM</a><a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a><a href="quiz.html">Диагностика</a><a href="index.html#contacts">Контакты</a><span class="lang-sw"><a href="bia-analiz-vozdeystviya.html" style="background:#14142a;color:#fff;border-color:#14142a">RU</a><a href="en-bia-analiz-vozdeystviya.html">EN</a></span><a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a></nav>
   </div>
 </header>
 <div class="container">
@@ -131,19 +126,19 @@
   <div class="article-head">
     <div class="eyebrow">Оценка рисков и BIA</div>
     <h1>Анализ воздействия на бизнес (BIA): как провести</h1>
-    <p class="lead">BIA — фундамент всей непрерывности: он показывает, какие процессы критичны, сколько стоит их простой и за какое время их нужно восстановить. Разбираем метод и даём практический порядок действий.</p>
+    <p class="lead">BIA — фундамент всей непрерывности: он показывает, какие процессы критичны, сколько стоит их простой и за какое время их нужно восстановить. Разбираем метод и даем практический порядок действий.</p>
     <div class="meta-row">Обновлено: 28 июня 2026 г. · Автор: Евгений Теленков · ≈ 8 мин чтения</div>
   </div>
   <img src="bia-analiz-vozdeystviya.png" alt="Анализ воздействия на бизнес (BIA): как провести" class="article-cover">
   <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#chto">Что такое BIA и зачем он нужен</a></li><li><a href="#pokazateli">Ключевые показатели: RTO и RPO</a></li><li><a href="#kak">Как провести BIA: порядок действий</a></li><li><a href="#dalshe">Что дальше</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
   <article class="article">
 <h2 id="chto">Что такое BIA и зачем он нужен</h2>
-<p><strong>Анализ воздействия на бизнес (Business Impact Analysis, BIA)</strong> — это оценка того, как остановка каждого процесса бьёт по компании во времени и в деньгах. BIA отвечает на три вопроса: какие процессы критичны, сколько стоит их простой и как быстро их нужно восстановить. Без BIA план непрерывности строится «на ощупь».</p>
+<p><strong>Анализ воздействия на бизнес (Business Impact Analysis, BIA)</strong> — это оценка того, как остановка каждого процесса бьет по компании во времени и в деньгах. BIA отвечает на три вопроса: какие процессы критичны, сколько стоит их простой и как быстро их нужно восстановить. Без BIA план непрерывности строится «на ощупь».</p>
 
 <h2 id="pokazateli">Ключевые показатели: RTO и RPO</h2>
 <ul>
   <li><strong>RTO (Recovery Time Objective)</strong> — максимально допустимое время восстановления процесса. «За сколько нужно вернуть функцию, чтобы потери остались приемлемыми».</li>
-  <li><strong>RPO (Recovery Point Objective)</strong> — допустимый объём потери данных. «Данные за какой период можно потерять без критичных последствий».</li>
+  <li><strong>RPO (Recovery Point Objective)</strong> — допустимый объем потери данных. «Данные за какой период можно потерять без критичных последствий».</li>
   <li><strong>MTPD</strong> — максимально допустимый период прерывания, после которого ущерб становится необратимым.</li>
 </ul>
 
@@ -172,7 +167,7 @@
 
 <h2 id="faq">Частые вопросы</h2>
 <h3>Чем BIA отличается от оценки рисков?</h3><p>Оценка рисков отвечает «что может случиться и с какой вероятностью». BIA отвечает «насколько больно будет, если процесс остановится, и как быстро его надо вернуть». В BCM их используют вместе.</p>
-<h3>Что такое RTO и RPO простыми словами?</h3><p>RTO — за сколько восстановить процесс. RPO — какой объём данных допустимо потерять. Первое про время, второе про точку отката данных.</p>
+<h3>Что такое RTO и RPO простыми словами?</h3><p>RTO — за сколько восстановить процесс. RPO — какой объем данных допустимо потерять. Первое про время, второе про точку отката данных.</p>
 <h3>Можно ли провести BIA в небольшой компании?</h3><p>Да. Достаточно взять 3–5 ключевых процессов, оценить последствия их простоя по времени и задать целевые сроки восстановления. Это можно сделать за один рабочий день.</p>
 
 <div class="expert">

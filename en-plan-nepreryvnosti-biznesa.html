@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business continuity plan (BCP): how to build it, structure, template | risk-place.ru</title>
+<meta name="description" content="What a business continuity plan (BCP) is, what it contains and how to build a working plan in 7 steps. Structure, template and common mistakes in plain language.">
+<meta name="keywords" content="business continuity plan, BCP, how to build a continuity plan, BCP template, business continuity">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html">
+<meta property="og:title" content="Business continuity plan (BCP): how to build it in 7 steps">
+<meta property="og:description" content="What a business continuity plan (BCP) is, what it contains and how to build a working plan in 7 steps. Structure, template and common mistakes in plain language.">
+<meta property="og:image" content="https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Business continuity plan (BCP): how to build it in 7 steps">
+<meta name="twitter:description" content="What a business continuity plan (BCP) is, what it contains and how to build a working plan in 7 steps. Structure, template and common mistakes in plain language.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/plan-nepreryvnosti-biznesa.html">
+<link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html">
+<link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/plan-nepreryvnosti-biznesa.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html#article",
+      "headline": "Business continuity plan (BCP): how to build it in 7 steps",
+      "description": "What a business continuity plan (BCP) is, what it contains and how to build a working plan in 7 steps. Structure, template and common mistakes in plain language.",
+      "image": "https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.png",
+      "datePublished": "2026-06-28",
+      "dateModified": "2026-06-28",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Evgeny Telenkov",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Materials",
+          "item": "https://bcm.risk-place.ru/materialy-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Business continuity plan (BCP)",
+          "item": "https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is a BCP different from a disaster recovery plan (DRP)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A BCP is about the whole business (processes, people, suppliers, communications). A DRP is about restoring IT systems and data. The DRP is usually part of the BCP as its IT component."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many pages should a BCP be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A working plan is short scenarios of 2–3 pages per threat, plus contacts and priorities. What matters is not length but that the team can act on it without hesitation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I start building the plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With a business impact analysis (BIA): identify critical processes and their downtime cost. You can start with the free resilience assessment on this site."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="materialy-en.html">BCM materials</a><a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a><a href="quiz.html">Assessment</a><a href="index.html#contacts">Contacts</a><span class="lang-sw"><a href="plan-nepreryvnosti-biznesa.html">RU</a><a href="en-plan-nepreryvnosti-biznesa.html" style="background:#14142a;color:#fff;border-color:#14142a">EN</a></span><a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="nav-cta">Book a review</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Materials</a><span>/</span>Business continuity plan (BCP)</div>
+  <div class="article-head">
+    <div class="eyebrow">Implementing BCM</div>
+    <h1>Business continuity plan (BCP): how to build it in 7 steps</h1>
+    <p class="lead">A BCP is not a thick document on a shelf but a short set of instructions a team acts on in a crisis. We break down what a working business continuity plan contains and how to build it in 7 steps.</p>
+    <div class="meta-row">Updated: June 28, 2026 · Author: Evgeny Telenkov · ≈ 9 min read</div>
+  </div>
+  <img src="en-plan-nepreryvnosti-biznesa.png" alt="Business continuity plan (BCP): how to build it in 7 steps" class="article-cover">
+  <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#chto">What a BCP is, in plain language</a></li><li><a href="#struktura">What a working BCP contains</a></li><li><a href="#shagi">How to build a BCP in 7 steps</a></li><li><a href="#oshibki">Common mistakes</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+  <article class="article">
+<h2 id="chto">What a BCP is, in plain language</h2>
+<p>A <strong>Business Continuity Plan (BCP)</strong> is a document that answers "what we do if a key process stops": who is responsible for what, in what order they act, and within what time they restore operations. A good BCP is not hundreds of pages but a set of short step-by-step scenarios, 2–3 pages each.</p>
+<p>The BCP is part of the wider continuity management system (<a href="en-nepreryvnost-biznesa.html">BCM</a>). It builds on the <a href="en-bia-analiz-vozdeystviya.html">business impact analysis (BIA)</a> and follows the logic of the <a href="en-iso-22301.html">ISO 22301</a> standard.</p>
+
+<h2 id="struktura">What a working BCP contains</h2>
+<ul>
+  <li><strong>Critical processes and recovery priorities</strong> — what we bring back first (from the BIA).</li>
+  <li><strong>Targets:</strong> RTO (maximum acceptable downtime) and RPO (acceptable data loss) for each process.</li>
+  <li><strong>Scenarios</strong> — a separate instruction for each type of failure (cyberattack, IT outage, loss of office, loss of supplier, loss of a key person).</li>
+  <li><strong>Roles and contacts</strong> — who decides, who is notified, phone numbers and backup communication channels.</li>
+  <li><strong>Backup resources</strong> — alternative sites, suppliers, equipment, data.</li>
+  <li><strong>Communications plan</strong> — what and how we tell customers, partners and staff.</li>
+</ul>
+
+<h2 id="shagi">How to build a BCP in 7 steps</h2>
+<ol>
+  <li><strong>Identify critical processes.</strong> What the business cannot run a single day without.</li>
+  <li><strong>Run a BIA.</strong> Estimate each process's downtime cost and set RTO/RPO.</li>
+  <li><strong>Find risk concentration points.</strong> A single server, supplier, person or channel.</li>
+  <li><strong>Describe recovery scenarios.</strong> Step by step, in plain language, one per threat.</li>
+  <li><strong>Assign roles and backups.</strong> Who does what; how to replace the missing link.</li>
+  <li><strong>Run <a href="en-ucheniya-po-nepreryvnosti.html">drills</a>.</strong> Only practice shows the plan works.</li>
+  <li><strong>Maintain the plan.</strong> Review it as the company and market change.</li>
+</ol>
+<div class="callout"><b>Why it matters in money:</b> per ITIC (2024), for 90%+ of mid-sized and large companies an hour of downtime costs over 300,000 USD. A prepared BCP cuts downtime from weeks to days — that difference is the economic point of the plan.</div>
+
+<h2 id="oshibki">Common mistakes</h2>
+<ul>
+  <li>The plan is written "for show" and never tested — it fails in a crisis.</li>
+  <li>Too bulky a document that nobody opens.</li>
+  <li>No owners or contacts — unclear who decides.</li>
+  <li>The plan is not updated — a year on, the business and the risks have changed.</li>
+</ul>
+
+<div class="cta-band">
+  <h3>See how resilient your business really is</h3>
+  <p>13 questions, 5 minutes, free — results on screen and by email.</p>
+  <div class="btn-row">
+    <a href="quiz.html" class="btn btn-yellow">Take the free assessment →</a>
+    <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#555">Book a review · 4,900 ₽</a>
+    <a href="bcm-pod-klyuch.html" class="btn btn-outline" style="color:#fff;border-color:#555">BCM turnkey →</a>
+  </div>
+</div>
+
+<h2 id="faq">FAQ</h2>
+<h3>How is a BCP different from a disaster recovery plan (DRP)?</h3><p>A BCP is about the whole business (processes, people, suppliers, communications). A DRP is about restoring IT systems and data. The DRP is usually part of the BCP as its IT component.</p>
+<h3>How many pages should a BCP be?</h3><p>A working plan is short scenarios of 2–3 pages per threat, plus contacts and priorities. What matters is not length but that the team can act on it without hesitation.</p>
+<h3>Where do I start building the plan?</h3><p>With a business impact analysis (BIA): identify critical processes and their downtime cost. You can start with the free resilience assessment on this site.</p>
+
+<div class="expert">
+  <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
+  <div>
+    <div class="name">Evgeny Telenkov</div>
+    <div class="role">Chief Risk Officer · PhD in Economics · "Best Risk Manager of Russia 2020"</div>
+    <div class="bio">20 years in risk management. Led risk management at Beeline, Nornickel, Rosneft and EY. Built business continuity plans for Nornickel, Rostec, NSD and DIA. Trained 300+ risk and BCM specialists.</div>
+    <div style="margin-top:8px;"><a href="o-podhode.html" style="color:#1B3A5C;font-weight:700;font-size:14px;text-decoration:none;">More about the approach and expert →</a></div>
+  </div>
+</div>
+  </article>
+  <section class="related"><div class="related-title">Read also</div><div class="related-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 days of downtime: a cyberattack lesson →</div><div class="rc-d">A real ransomware case at a major insurer: 7 days of downtime, website and app offline. Which BCM mechanisms w</div></a><a href="en-bcm-bcp-drp-otlichie.html" class="related-card"><div class="rc-t">BCM, BCP, DRP — the difference →</div><div class="rc-d">How BCM, BCP, DRP and risk management differ in plain language. A clear levels diagram, comparison table and e</div></a><a href="quiz.html" class="related-card"><div class="rc-t">5-minute assessment →</div><div class="rc-d">Your resilience level, three main risks and first steps. Free.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Home</a>
+      <a href="materialy-en.html">BCM materials</a>
+      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a>
+      <a href="quiz.html">Assessment</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+    </div>
+    <div class="copy">© 2026 Evgeny Telenkov · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">part of risk-place.ru</a></div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(96530203,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/96530203" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>

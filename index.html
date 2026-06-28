@@ -1134,9 +1134,9 @@ footer{background:#14142a;}
     </div>
     <div class="kb-cards" id="kbCards">
 <!--LATEST_START-->
-<a href="it-otdel-ne-zaschita-biznesa.html" class="kb-card"><div class="kb-card-cat">Кибербезопасность и непрерывность</div><div class="kb-card-t">ИТ-отдел не защищает бизнес</div><div class="kb-card-d">Почему наличие ИТ-специалистов и антивируса не спасает бизнес от остановки при кибератаке и что собственнику сделать,…</div><div class="kb-card-more">Читать →</div></a>
-<a href="kak-izmerit-ustojchivost-biznesa.html" class="kb-card"><div class="kb-card-cat">Внедрение BCM</div><div class="kb-card-t">Как измерить устойчивость</div><div class="kb-card-d">Что такое BIA, RTO и RPO простыми словами, как оцифровать устойчивость бизнеса и проверить её в учениях. Практический…</div><div class="kb-card-more">Читать →</div></a>
-<a href="nepreryvnost-biznesa.html" class="kb-card"><div class="kb-card-cat">Основы BCM</div><div class="kb-card-t">Непрерывность бизнеса (BCM)</div><div class="kb-card-d">Что такое непрерывность бизнеса (BCM) простыми словами: зачем нужна собственнику, чем отличается от ИТ и кибербезопас…</div><div class="kb-card-more">Читать →</div></a>
+<a href="bcm-bcp-drp-otlichie.html" class="kb-card"><div class="kb-card-cat">Основы BCM</div><div class="kb-card-t">BCM, BCP, DRP — отличия</div><div class="kb-card-d">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и примеры…</div><div class="kb-card-more">Читать →</div></a>
+<a href="bia-analiz-vozdeystviya.html" class="kb-card"><div class="kb-card-cat">Оценка рисков и BIA</div><div class="kb-card-t">Анализ воздействия (BIA)</div><div class="kb-card-d">Что такое BIA (анализ воздействия на бизнес), зачем он нужен и как его провести: критичные процессы, RTO и RPO, стоим…</div><div class="kb-card-more">Читать →</div></a>
+<a href="chek-list-gotovnosti-k-krizisu.html" class="kb-card"><div class="kb-card-cat">Внедрение BCM</div><div class="kb-card-t">Чек-лист готовности к кризису</div><div class="kb-card-d">Практический чек-лист из 12 пунктов: насколько ваш бизнес готов к кибератаке, сбою ИТ, потере поставщика или ключевог…</div><div class="kb-card-more">Читать →</div></a>
 <!--LATEST_END-->
     </div>
   </div>
@@ -1672,9 +1672,10 @@ const LANG = {
 };
 let currentLang = "ru";
 (function(){
-  var l = (navigator.language || navigator.userLanguage || "").toLowerCase();
   var ru = ["ru","be","kk","ky","uz","uk","tg"];
-  if (!ru.some(function(x){ return l.indexOf(x) === 0; })) { currentLang = "en"; }
+  var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || navigator.userLanguage || ""];
+  var hasRu = list.some(function(L){ L=(L||"").toLowerCase(); return ru.some(function(x){ return L.indexOf(x)===0; }); });
+  currentLang = hasRu ? "ru" : "en";
 })();
 setLang(currentLang);
 function setLang(lang) {

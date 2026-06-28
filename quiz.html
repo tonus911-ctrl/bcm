@@ -480,8 +480,9 @@ let finalSteps = "";
 let formSubmitted = false;
 
 (function(){
-  const l = (navigator.language||navigator.userLanguage||"").toLowerCase();
-  lang = ["ru","be","kk","ky","uz","uk","tg"].some(x=>l.startsWith(x)) ? "ru" : "en";
+  var ru = ["ru","be","kk","ky","uz","uk","tg"];
+  var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language||navigator.userLanguage||""];
+  lang = list.some(function(L){ L=(L||"").toLowerCase(); return ru.some(function(x){ return L.indexOf(x)===0; }); }) ? "ru" : "en";
 })();
 
 // ═══════════════════════════════════
@@ -640,8 +641,9 @@ async function sendSkippedNotification() {
   try {
     await fetch("https://risk-place-quiz.tonus911.workers.dev",{
       method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(body)
+      headers:{"Content-Type":"text/plain"},
+      body:JSON.stringify(body),
+      keepalive:true
     });
   } catch(e) {
     // Тихо игнорируем — пользователь не должен видеть ошибку при пропуске формы

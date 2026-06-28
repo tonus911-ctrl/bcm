@@ -159,8 +159,10 @@ function setLang(l){
 }
 (function(){
   var p=(location.search.match(/[?&]lang=(ru|en)/)||[])[1];
-  var nav=(navigator.language||'').toLowerCase();
-  var l=p||((nav.indexOf('ru')===0||nav.indexOf('be')===0||nav.indexOf('kk')===0||nav.indexOf('uk')===0)?'ru':'en');
+  var ru=["ru","be","kk","ky","uz","uk","tg"];
+  var list=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];
+  var hasRu=list.some(function(L){L=(L||'').toLowerCase();return ru.some(function(x){return L.indexOf(x)===0;});});
+  var l=p||(hasRu?'ru':'en');
   setLang(l);
 })();
 </script>

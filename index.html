@@ -1015,6 +1015,21 @@ footer{background:#14142a;}
 .kb-card-d{font-size:14px;color:#515478;line-height:1.55;flex:1}
 .kb-card-more{font-size:14px;font-weight:700;color:#1B3A5C}
 </style>
+<style>
+/* ── Редизайн главной: контрастные полосы ── */
+.pains-band .section-eyebrow{color:#ffec89}
+.pains-band .section-eyebrow::before{background:#ffec89}
+.pains-band .section-title{color:#fff}
+.pains-band .misconception-card{background:#1e1e3c;border-color:#34345c}
+.pains-band .myth-label{color:#ff9b9b}
+.pains-band .myth-text{color:#fff}
+.pains-band .truth-label{color:#ffec89}
+.pains-band .truth-text{color:#c9cce0}
+.prod-card{transition:box-shadow .15s, transform .1s}
+.prod-card:hover{box-shadow:0 10px 30px rgba(20,30,45,.10);transform:translateY(-2px)}
+.prod-card.featured{box-shadow:0 14px 36px rgba(27,58,92,.16)}
+.prod-ribbon{position:absolute;top:-12px;right:18px;background:#ffec89;color:#5c4a00;font-size:12px;font-weight:800;letter-spacing:.02em;padding:4px 12px;border-radius:999px}
+</style>
 </head>
 <body>
 <!-- ══ HEADER ══ -->
@@ -1082,7 +1097,7 @@ footer{background:#14142a;}
 </section>
 <hr class="divider">
 <!-- ══ PROBLEM ══ -->
-<section style="padding: 64px 24px; background: #fff;">
+<section class="pains-band" style="padding: 72px 24px; background: #14142a;">
   <div class="wrap">
     <div class="section-eyebrow" id="i18n-prob-eyebrow">С чем мы помогаем</div>
     <h2 class="section-title" id="i18n-prob-title">Ситуации, в которых нужна непрерывность бизнеса</h2>
@@ -1150,7 +1165,7 @@ footer{background:#14142a;}
   </div>
 </section>
 <!-- ══ ПРОДУКТЫ ══ -->
-<section class="products-section" id="products" style="padding:72px 24px;background:#fff;border-top:1px solid #eee;">
+<section class="products-section" id="products" style="padding:72px 24px;background:#f5f7fa;border-top:1px solid #e7e8ea;">
   <div class="wrap">
     <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
       <div class="section-eyebrow" id="pr-eyebrow">Продукты по непрерывности</div>
@@ -1158,7 +1173,7 @@ footer{background:#14142a;}
       <p class="section-desc" id="pr-desc" style="margin:0 auto;">От готовых шаблонов до корпоративного внедрения и сертификации. Каждый продукт можно взять отдельно.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;">
-      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fcfcfd;">
+      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr1-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#ffec89;color:#5c4a00;margin-bottom:14px;">С этого начать</span>
         <h3 id="pr1-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="shablony.html" style="color:#1B3A5C;text-decoration:none;">Пакет шаблонов «BCM-старт»</a></h3>
         <p id="pr1-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Готовые шаблоны BCP, BIA, DRP, реестр процессов и чек-лист + мини-курс «как пользоваться».</p>
@@ -1166,7 +1181,8 @@ footer{background:#14142a;}
         <a href="shablony.html" id="pr1-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
         <button class="np-form btn btn-black btn-full" data-prod="Пакет шаблонов BCM-старт" data-mode="apply" id="pr1-btn">Отправить заявку</button>
       </div>
-      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fcfcfd;">
+      <div class="prod-card featured" style="border:2px solid #1B3A5C;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;position:relative;">
+        <span class="prod-ribbon" id="pr-rec">Рекомендуем</span>
         <span id="pr2-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e8f0ff;color:#1B3A5C;margin-bottom:14px;">Онлайн</span>
         <h3 id="pr2-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="onlajn-kurs.html" style="color:#1B3A5C;text-decoration:none;">Онлайн-курс «Непрерывность и ISO 22301»</a></h3>
         <p id="pr2-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Самостоятельный курс с доступом сразу после оплаты: BIA, BCP, DRP, учения. Сертификат по итогам.</p>
@@ -1174,7 +1190,7 @@ footer{background:#14142a;}
         <a href="onlajn-kurs.html" id="pr2-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
         <button class="np-form btn btn-black btn-full" data-prod="Онлайн-курс по ISO 22301" data-mode="apply" id="pr2-btn">Отправить заявку</button>
       </div>
-      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fcfcfd;">
+      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr3-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e8f0ff;color:#1B3A5C;margin-bottom:14px;">С ведущим</span>
         <h3 id="pr3-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="krizisnaya-igra.html" style="color:#1B3A5C;text-decoration:none;">Кризисная бизнес-игра «День Икс»</a></h3>
         <p id="pr3-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Анкета -> кастомная кризисная ситуация -> роли -> живой отыгрыш с ведущим. Практика, а не теория.</p>
@@ -1182,7 +1198,7 @@ footer{background:#14142a;}
         <a href="krizisnaya-igra.html" id="pr3-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
         <button class="np-form btn btn-black btn-full" data-prod="Кризисная игра День Икс" data-mode="apply" id="pr3-btn">Отправить заявку</button>
       </div>
-      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fcfcfd;">
+      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr4-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e8f0ff;color:#1B3A5C;margin-bottom:14px;">Корпоративно</span>
         <h3 id="pr4-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="bcm-pod-klyuch.html" style="color:#1B3A5C;text-decoration:none;">«BCM под ключ»</a></h3>
         <p id="pr4-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Аудит непрерывности, разработка плана, кризисные учения и сопровождение. Внедрение под ключ.</p>
@@ -1190,7 +1206,7 @@ footer{background:#14142a;}
         <a href="bcm-pod-klyuch.html" id="pr4-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
         <button class="np-form btn btn-black btn-full" data-prod="BCM под ключ (корпоративный пакет)" data-mode="apply" id="pr4-btn">Отправить заявку</button>
       </div>
-      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fcfcfd;">
+      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr5-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#fff0d6;color:#8a5a00;margin-bottom:14px;">Скоро · осень 2026</span>
         <h3 id="pr5-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;">Сертификация «Специалист по непрерывности»</h3>
         <p id="pr5-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Авторская программа подготовки и сертификат — нишевая сертификация по BCM. В разработке.</p>
@@ -1202,7 +1218,7 @@ footer{background:#14142a;}
   </div>
 </section>
 <!-- ══ МАТЕРИАЛЫ (3 последних) ══ -->
-<section class="kb-section" style="padding:72px 24px;background:#f5f7fa;border-top:1px solid #e7e8ea;border-bottom:1px solid #e7e8ea;">
+<section class="kb-section" style="padding:72px 24px;background:#fff;border-top:1px solid #e7e8ea;border-bottom:1px solid #e7e8ea;">
   <div class="wrap">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
       <div>
@@ -1222,7 +1238,7 @@ footer{background:#14142a;}
   </div>
 </section>
 <!-- ══ BENEFITS ══ -->
-<section style="padding: 80px 24px; background: #fff;">
+<section style="padding: 72px 24px; background: #fffdf5;">
   <div class="wrap">
     <div class="section-eyebrow" id="i18n-ben-eyebrow">Что вы получаете</div>
     <h2 class="section-title" id="i18n-ben-title">Результат, который можно измерить</h2>
@@ -1920,7 +1936,7 @@ var PATCH_LANG = {
   'paths-free-badge':'БЕСПЛАТНО','paths-free-title':'Диагностика за 5 минут','paths-free-desc':'13 вопросов — и вы узнаете уровень устойчивости, три главных риска и первые шаги.','pf1':'Результат сразу на экране','pf2':'Три главных зоны риска','pf3':'Первые шаги — конкретно','paths-free-btn':'Провести диагностику бесплатно →',
   'paths-paid-badge':'4 900 ₽','paths-paid-title':'Личный разбор · 30 минут','paths-paid-desc':'Мы разберем вашу конкретную ситуацию и способы снижения риска.','pp1':'Стоимость дня простоя в рублях','pp2':'Три главных уязвимости','pp3':'Резюме за 24 часа на почту','paths-paid-btn':'Записаться →',
   'paths-train-badge':'Обучение · от 20 000 ₽','paths-train-title':'Курс по непрерывности (BCP)','paths-train-desc':'6 модулей, 16 часов. Для руководителей и собственников — внедрить непрерывность системно.','ptr1':'BIA, BCP, кризисное управление','ptr2':'Реальные кейсы и практика','ptr3':'Сертификат по итогам','paths-train-btn':'Узнать о курсе →',
-  'pr-eyebrow':'Продукты по непрерывности','pr-title':'Выберите формат под вашу задачу','pr-desc':'От готовых шаблонов до корпоративного внедрения и сертификации. Каждый продукт можно взять отдельно.','pr-foot':'Курс с преподавателем (BCP, 6 модулей) — на risk-place.ru.',
+  'pr-eyebrow':'Продукты по непрерывности','pr-title':'Выберите формат под вашу задачу','pr-desc':'От готовых шаблонов до корпоративного внедрения и сертификации. Каждый продукт можно взять отдельно.','pr-foot':'Курс с преподавателем (BCP, 6 модулей) — на risk-place.ru.','pr-rec':'Рекомендуем',
   'pr1-b':'С этого начать','pr1-t':'Пакет шаблонов «BCM-старт»','pr1-d':'Готовые шаблоны BCP, BIA, DRP, реестр процессов и чек-лист + мини-курс «как пользоваться».','pr1-p':'4 900 ₽','pr1-more':'Подробнее →','pr1-btn':'Отправить заявку',
   'pr2-b':'Онлайн','pr2-t':'Онлайн-курс «Непрерывность и ISO 22301»','pr2-d':'Самостоятельный курс с доступом сразу после оплаты: BIA, BCP, DRP, учения. Сертификат по итогам.','pr2-p':'19 900 ₽','pr2-more':'Подробнее →','pr2-btn':'Отправить заявку',
   'pr3-b':'С ведущим','pr3-t':'Кризисная бизнес-игра «День Икс»','pr3-d':'Анкета → кастомная кризисная ситуация → роли → живой отыгрыш с ведущим. Практика, а не теория.','pr3-p':'150 000 ₽ / сессия','pr3-more':'Подробнее →','pr3-btn':'Отправить заявку',
@@ -1934,7 +1950,7 @@ var PATCH_LANG = {
   'paths-free-badge':'FREE','paths-free-title':'5-Minute Assessment','paths-free-desc':'13 questions — discover your resilience level, three main risks and first steps.','pf1':'Results on screen instantly','pf2':'Three main risk zones','pf3':'Concrete first steps','paths-free-btn':'Run Free Assessment →',
   'paths-paid-badge':'₽4,900','paths-paid-title':'Personal Review · 30 min','paths-paid-desc':'We will review your specific situation and risk mitigation options.','pp1':'Daily downtime cost in monetary terms','pp2':'Three main vulnerabilities','pp3':'Written summary within 24 hrs','paths-paid-btn':'Book now →',
   'paths-train-badge':'Training · from ₽20,000','paths-train-title':'Business Continuity Course (BCP)','paths-train-desc':'6 modules, 16 hours. For executives and owners — implement continuity systematically.','ptr1':'BIA, BCP, crisis management','ptr2':'Real cases and practice','ptr3':'Certificate on completion','paths-train-btn':'About the course →',
-  'pr-eyebrow':'Business continuity products','pr-title':'Choose the format for your task','pr-desc':'From ready templates to corporate implementation and certification. Each product can be taken separately.','pr-foot':'Instructor-led course (BCP, 6 modules) — on risk-place.ru.',
+  'pr-eyebrow':'Business continuity products','pr-title':'Choose the format for your task','pr-desc':'From ready templates to corporate implementation and certification. Each product can be taken separately.','pr-foot':'Instructor-led course (BCP, 6 modules) — on risk-place.ru.','pr-rec':'Recommended',
   'pr1-b':'Start here','pr1-t':'Template pack "BCM Start"','pr1-d':'Ready BCP, BIA, DRP templates, process register and checklist + a mini-course on how to use them.','pr1-p':'₽4,900','pr1-more':'Details →','pr1-btn':'Send request',
   'pr2-b':'Online','pr2-t':'Online course "Continuity & ISO 22301"','pr2-d':'Self-paced course with instant access after payment: BIA, BCP, DRP, drills. Certificate on completion.','pr2-p':'₽19,900','pr2-more':'Details →','pr2-btn':'Send request',
   'pr3-b':'Facilitated','pr3-t':'Crisis business game "Day X"','pr3-d':'Questionnaire → custom crisis scenario → roles → live play with a facilitator. Practice, not theory.','pr3-p':'₽150,000 / session','pr3-more':'Details →','pr3-btn':'Send request',

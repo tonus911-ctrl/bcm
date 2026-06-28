@@ -167,3 +167,9 @@ tr:hover td{background:#fcfcff}
 .center{text-align:center}
 .mt-0{margin-top:0}
 .section{padding:8px 0}
+
+/* ── Переключатель языка (RU/EN) в шапке ── */
+.lang-sw{display:inline-flex;gap:4px;margin-left:6px}
+.lang-sw a{border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#8F8F8F;text-decoration:none;line-height:1}
+.lang-sw a:hover{border-color:var(--ink);color:var(--ink)}
+@media(max-width:760px){.lang-sw{padding:8px 20px}}

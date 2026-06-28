@@ -28,6 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/reestr-kriticheskih-processov.html"><link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-reestr-kriticheskih-processov.html"><link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/reestr-kriticheskih-processov.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +96,7 @@
           "name": "Чем реестр отличается от BIA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Реестр — это перечень процессов и их критичность. BIA идёт дальше: оценивает стоимость простоя и задаёт целевые сроки восстановления (RTO/RPO)."
+            "text": "Реестр — это перечень процессов и их критичность. BIA идет дальше: оценивает стоимость простоя и задает целевые сроки восстановления (RTO/RPO)."
           }
         }
       ]
@@ -108,14 +109,8 @@
 <header class="site-header">
   <div class="bar">
     <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Меню">☰</button>
-    <nav class="nav" id="nav">
-      <a href="materialy.html">Материалы по BCM</a>
-      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a>
-      <a href="quiz.html">Диагностика</a>
-      <a href="index.html#contacts">Контакты</a>
-      <a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a>
-    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="materialy.html">Материалы по BCM</a><a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a><a href="quiz.html">Диагностика</a><a href="index.html#contacts">Контакты</a><span class="lang-sw"><a href="reestr-kriticheskih-processov.html" style="background:#14142a;color:#fff;border-color:#14142a">RU</a><a href="en-reestr-kriticheskih-processov.html">EN</a></span><a href="https://calendly.com/evgeny-telenkov/30min" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a></nav>
   </div>
 </header>
 <div class="container">
@@ -123,18 +118,18 @@
   <div class="article-head">
     <div class="eyebrow">Оценка рисков и BIA</div>
     <h1>Реестр критических бизнес-процессов: как составить</h1>
-    <p class="lead">Прежде чем защищать бизнес, нужно понять, что в нём критично. Реестр критических процессов — простая таблица, с которой начинается вся непрерывность. Составляется за один день.</p>
+    <p class="lead">Прежде чем защищать бизнес, нужно понять, что в нем критично. Реестр критических процессов — простая таблица, с которой начинается вся непрерывность. Составляется за один день.</p>
     <div class="meta-row">Обновлено: 28 июня 2026 г. · Автор: Евгений Теленков · ≈ 5 мин чтения</div>
   </div>
   <img src="reestr-kriticheskih-processov.png" alt="Реестр критических бизнес-процессов: как составить" class="article-cover">
   <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#chto">Что это и зачем</a></li><li><a href="#kriterii">Критерии критичности</a></li><li><a href="#shablon">Простой шаблон</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
   <article class="article">
 <h2 id="chto">Что это и зачем</h2>
-<p>Реестр критических процессов — перечень процессов компании с оценкой их важности. Это вход для <a href="bia-analiz-vozdeystviya.html">анализа воздействия (BIA)</a> и <a href="plan-nepreryvnosti-biznesa.html">плана непрерывности (BCP)</a>: нельзя защитить всё одинаково, поэтому сначала определяем, без чего бизнес не работает.</p>
+<p>Реестр критических процессов — перечень процессов компании с оценкой их важности. Это вход для <a href="bia-analiz-vozdeystviya.html">анализа воздействия (BIA)</a> и <a href="plan-nepreryvnosti-biznesa.html">плана непрерывности (BCP)</a>: нельзя защитить все одинаково, поэтому сначала определяем, без чего бизнес не работает.</p>
 
 <h2 id="kriterii">Критерии критичности</h2>
 <ul>
-  <li>Как быстро остановка процесса бьёт по выручке и клиентам.</li>
+  <li>Как быстро остановка процесса бьет по выручке и клиентам.</li>
   <li>Есть ли штрафы и обязательства при сбое.</li>
   <li>Сколько процесс может «простоять» без необратимого ущерба.</li>
   <li>Есть ли обходной (ручной) вариант выполнения.</li>
@@ -145,9 +140,9 @@
 <table>
   <thead><tr><th>Процесс</th><th>Что останавливает</th><th>Последствие за 1 день</th><th>Критичность</th></tr></thead>
   <tbody>
-    <tr><td>Приём заказов</td><td>Отказ CRM/1С</td><td>Потеря продаж, отток клиентов</td><td>Высокая</td></tr>
+    <tr><td>Прием заказов</td><td>Отказ CRM/1С</td><td>Потеря продаж, отток клиентов</td><td>Высокая</td></tr>
     <tr><td>Отгрузка/логистика</td><td>Потеря данных маршрутов</td><td>Срыв доставок, штрафы</td><td>Высокая</td></tr>
-    <tr><td>Бухгалтерия/счета</td><td>Недоступность учётной системы</td><td>Задержка расчётов</td><td>Средняя</td></tr>
+    <tr><td>Бухгалтерия/счета</td><td>Недоступность учетной системы</td><td>Задержка расчетов</td><td>Средняя</td></tr>
   </tbody>
 </table>
 </div>
@@ -165,7 +160,7 @@
 
 <h2 id="faq">Частые вопросы</h2>
 <h3>Сколько процессов включать в реестр?</h3><p>Обычно 10–15 ключевых процессов достаточно. Из них выделяют 3–5 критичных, без которых бизнес не работает ни дня, — на них фокусируют защиту.</p>
-<h3>Чем реестр отличается от BIA?</h3><p>Реестр — это перечень процессов и их критичность. BIA идёт дальше: оценивает стоимость простоя и задаёт целевые сроки восстановления (RTO/RPO).</p>
+<h3>Чем реестр отличается от BIA?</h3><p>Реестр — это перечень процессов и их критичность. BIA идет дальше: оценивает стоимость простоя и задает целевые сроки восстановления (RTO/RPO).</p>
 
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Евгений Теленков">

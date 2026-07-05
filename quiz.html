@@ -177,6 +177,18 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   </div>
 </div>
 
+<!-- PROFILE (company size) -->
+<div class="screen" id="s-profile">
+  <div class="eyebrow" id="t-prof-label"></div>
+  <h2 class="big-title" id="t-prof-title"></h2>
+  <p class="sub-text" id="t-prof-desc"></p>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:6px;">
+    <button class="option" id="t-size-sm" onclick="selectSize('sm')"></button>
+    <button class="option" id="t-size-md" onclick="selectSize('md')"></button>
+    <button class="option" id="t-size-lg" onclick="selectSize('lg')"></button>
+  </div>
+</div>
+
 <!-- CONTACT FORM (optional, before results) -->
 <div class="screen" id="s-contacts">
   <div class="eyebrow" id="t-cont-label"></div>
@@ -194,8 +206,8 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   </div>
 
   <div class="btn-row">
-    <button class="btn btn-cream" id="btnSkip" onclick="skipForm()"></button>
-    <button class="btn btn-ghost" id="btnSubmit" onclick="submitForm()"></button>
+    <button class="btn btn-ghost" id="btnSkip" onclick="skipForm()"></button>
+    <button class="btn btn-cream" id="btnSubmit" onclick="submitForm()"></button>
   </div>
   <p class="sending-note" id="sendingNote"></p>
   <p class="error-note" id="errorNote"></p>
@@ -215,14 +227,16 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   <div class="result-card"><div class="card-label" id="t-risks-label"></div><div class="card-text" id="resRisks"></div></div>
   <div class="result-card"><div class="card-label" id="t-steps-label"></div><div class="card-text" id="resSteps"></div></div>
 
-  <!-- CTA block: paid offer, links to pricing page -->
+  <!-- Персональная рекомендация по итогам диагностики -->
   <div class="result-cta">
-    <h3 id="t-cta-title"></h3>
-    <p id="t-cta-desc"></p>
+    <div id="recEyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-bottom:4px;"></div>
+    <h3 id="recName" style="font-size:21px;margin:2px 0 8px;"></h3>
+    <p id="recWhy" style="margin-bottom:18px;"></p>
     <div class="cta-buttons">
-      <a href="https://bcm.risk-place.ru/" class="btn btn-cream" id="t-cta-btn" style="font-size:15px;padding:13px 30px;"></a>
-      <a href="https://t.me/JhonsonTel" class="btn btn-ghost" id="t-tg-btn" target="_blank" rel="noopener"></a>
+      <button class="btn btn-cream" id="recPrimaryBtn" style="font-size:15px;padding:13px 30px;"></button>
+      <button class="btn btn-ghost" id="recAltBtn" style="font-size:14px;padding:13px 24px;"></button>
     </div>
+    <p id="recSoftWrap" style="margin-top:14px;font-size:14px;"><a href="#" id="recSoftBtn" style="color:inherit;text-decoration:underline;opacity:.9;"></a></p>
   </div>
 </div>
 
@@ -249,7 +263,7 @@ ru:{
   lblName:"Имя",lblCompany:"Компания",lblEmail:"Телефон или Telegram",
   phName:"Алексей",phCompany:"Название компании",phEmail:"+7 999 123-45-67 или @username",
   consentText:'Я согласен на обработку персональных данных в соответствии с <a href="privacy-policy.html" target="_blank" rel="noopener">Политикой обработки персональных данных</a>',
-  skipBtn:"Пропустить и посмотреть результат →",
+  skipBtn:"← К результату",
   submitBtn:"Оставить контакт",
   sending:"Отправляем...",errMsg:"Ошибка. Попробуйте еще раз.",
   successMsg:"Спасибо! Мы свяжемся с вами.",
@@ -260,6 +274,11 @@ ru:{
   ctaLow:{title:"Ваш бизнес под угрозой — разберем детально",desc:"На личном разборе с Евгением Теленковым считаем стоимость дня простоя, находим три главных уязвимости и определяем конкретный план действий."},
   ctaMid:{title:"Есть основа — закроем пробелы вместе",desc:"На разборе найдем, где система дает сбой под давлением, и составим конкретный план устранения."},
   ctaHigh:{title:"Сильная система — проверим независимым взглядом",desc:"Независимый аудит выявит уязвимости, которые не видны изнутри."},
+  profLabel:"Почти готово",profTitle:"Последний штрих — размер вашей компании?",profDesc:"Это поможет подобрать подходящий формат под вашу ситуацию.",
+  sizeSm:"До 50 сотрудников",sizeMd:"50–250 сотрудников",sizeLg:"Более 250 сотрудников",
+  recEyebrow:"Вам подойдёт",ctaBuy:"Купить →",ctaApply:"Отправить заявку →",ctaWait:"В лист ожидания →",orAlt:"Или: ",
+  recSoft:"Не уверены? Личный разбор с экспертом →",
+  leadTitle:"Оставьте контакт — свяжемся",leadDescTpl:"Обсудим «{p}» и ваш результат. Пришлём детали и поможем оформить.",
   scoreLabel:(s)=>`${s} / 26`,levelLabel:(n,name)=>`Уровень ${n} — ${name}`,
   subjectTpl:(name,co,n,nl)=>`Диагностика BCM: ${name} (${co}) — Уровень ${n} — ${nl}`,
 },
@@ -279,7 +298,7 @@ en:{
   lblName:"Name",lblCompany:"Company",lblEmail:"Phone or Telegram",
   phName:"John",phCompany:"Company name",phEmail:"+1 555 123 4567 or @username",
   consentText:'I consent to the processing of my personal data in accordance with the <a href="privacy-policy.html" target="_blank" rel="noopener">Personal Data Processing Policy</a>',
-  skipBtn:"Skip and see my result →",
+  skipBtn:"← Back to result",
   submitBtn:"Leave contact",
   sending:"Sending...",errMsg:"Error. Please try again.",
   successMsg:"Thank you! We will get in touch.",
@@ -290,6 +309,11 @@ en:{
   ctaLow:{title:"Your business is at risk — let's review it in detail",desc:"In a personal session with Evgeny Telenkov, we calculate your daily downtime cost, find three critical vulnerabilities and build a specific action plan."},
   ctaMid:{title:"Good foundation — let's close the gaps",desc:"In the review we will find where your system breaks under pressure and build a specific improvement plan."},
   ctaHigh:{title:"Strong system — let's validate it independently",desc:"An independent audit will surface vulnerabilities invisible from the inside."},
+  profLabel:"Almost done",profTitle:"One last thing — your company size?",profDesc:"This helps us recommend the right format for your situation.",
+  sizeSm:"Up to 50 employees",sizeMd:"50–250 employees",sizeLg:"250+ employees",
+  recEyebrow:"Recommended for you",ctaBuy:"Buy →",ctaApply:"Send request →",ctaWait:"Join the waitlist →",orAlt:"Or: ",
+  recSoft:"Not sure? Personal review with an expert →",
+  leadTitle:"Leave your contact",leadDescTpl:"Let's discuss “{p}” and your result. We'll send details and help you get started.",
   scoreLabel:(s)=>`${s} / 26`,levelLabel:(n,name)=>`Level ${n} — ${name}`,
   subjectTpl:(name,co,n,nl)=>`BCM Assessment: ${name} (${co}) — Level ${n} — ${nl}`,
 }
@@ -501,6 +525,8 @@ function renderUI() {
     "t-intro-desc":t.introDesc,"t-intro-hl":t.introHl,
     "t-m1":t.meta[0],"t-m2":t.meta[1],"t-m3":t.meta[2],
     "t-start-btn":t.startBtn,
+    "t-prof-label":t.profLabel,"t-prof-title":t.profTitle,"t-prof-desc":t.profDesc,
+    "t-size-sm":t.sizeSm,"t-size-md":t.sizeMd,"t-size-lg":t.sizeLg,
     "t-what-label":t.whatLabel,"t-risks-label":t.risksLabel,"t-steps-label":t.stepsLabel,
     "t-cont-label":t.contLabel,"t-cont-title":t.contTitle,"t-cont-desc":t.contDesc,
     "t-lbl-name":t.lblName,"t-lbl-company":t.lblCompany,"t-lbl-email":t.lblEmail,
@@ -584,7 +610,7 @@ function nextQ() {
     finalScore = Math.round(answers.reduce((s,a,i)=>s+(a!==null?qs[i].opts[a].s:0),0)*2)/2;
     finalLevel = getLevel(finalScore);
     finalSteps = buildSteps(finalLevel, answers);
-    showContactScreen();
+    showProfile();
   }
 }
 
@@ -599,6 +625,75 @@ function getLevel(score) {
   if(score<18) return lvs[2];
   if(score<23) return lvs[3];
   return lvs[4];
+}
+
+// ═══════════════════════════════════
+// РЕКОМЕНДАЦИЯ ПРОДУКТА ПО ДИАГНОСТИКЕ
+// ═══════════════════════════════════
+var finalSize='md', notified=false, leadProduct='';
+var SIZE_LABEL={sm:'до 50 сотрудников',md:'50–250 сотрудников',lg:'более 250 сотрудников'};
+var PRODUCTS={
+ templates:{ru:'Пакет шаблонов «BCM-старт»',en:'Template pack “BCM Start”',url:'shablony.html',mode:'buy'},
+ course:{ru:'Онлайн-курс «Непрерывность и ISO 22301»',en:'Online course “Continuity & ISO 22301”',url:'onlajn-kurs.html',mode:'buy'},
+ game:{ru:'Кризисная игра «День Икс»',en:'Crisis game “Day X”',url:'krizisnaya-igra.html',mode:'apply'},
+ dashboard:{ru:'Дашборд непрерывности и рисков',en:'Continuity & Risk Dashboard',url:'dashboard.html',mode:'apply'},
+ turnkey:{ru:'BCM под ключ',en:'BCM audit and development',url:'bcm-pod-klyuch.html',mode:'apply'},
+ audit:{ru:'BCM под ключ — независимый аудит',en:'BCM — independent audit',url:'bcm-pod-klyuch.html',mode:'apply'},
+ cert:{ru:'Сертификация «Специалист по непрерывности»',en:'Certification “Continuity Specialist”',url:'index.html#products',mode:'wait'},
+ review:{ru:'Личный разбор с экспертом',en:'Personal review with an expert',url:'',mode:'apply'}
+};
+var MATRIX={
+ sm:{
+  1:{p:'templates',a:'course',why:{ru:'Системы пока нет — заложите фундамент готовыми шаблонами: быстро и недорого.',en:'No system yet — lay the foundation with ready templates: fast and inexpensive.'}},
+  2:{p:'course',a:'templates',why:{ru:'Реакция есть, системы нет — курс превратит тушение пожаров в понятный план.',en:'You react but have no system — the course turns firefighting into a clear plan.'}},
+  3:{p:'course',a:'review',why:{ru:'База есть — доведите её до системы: пройдите курс и закрепите практики.',en:'You have a base — turn it into a system: take the course and lock in the practices.'}},
+  4:{p:'review',a:'cert',why:{ru:'Сильно для вашего размера — разберём результат с экспертом и наметим тонкую настройку.',en:'Strong for your size — let us review the result with an expert and fine-tune.'}},
+  5:{p:'cert',a:'review',why:{ru:'Вы в топе — подтвердите статус сертификацией и держите планку.',en:'You are at the top — confirm your status with certification and keep the bar high.'}}
+ },
+ md:{
+  1:{p:'turnkey',a:'review',why:{ru:'На вашем масштабе один сбой стоит дорого — нужна система: аудит, план, учения. Не уверены в объёме — начните с личного разбора.',en:'At your scale one failure is costly — you need a system: audit, plan, drills. Unsure of scope — start with a personal review.'}},
+  2:{p:'turnkey',a:'game',why:{ru:'Пора от реакции к системе — внедрим BCM под ключ; проверить готовность можно в кризисной игре.',en:'Time to move from reaction to a system — we implement BCM end-to-end; test readiness in the crisis game.'}},
+  3:{p:'game',a:'dashboard',why:{ru:'База есть — проверьте план под давлением в кризисной игре и найдите слабые места на практике.',en:'You have a base — stress-test the plan in the crisis game and find weak spots in practice.'}},
+  4:{p:'dashboard',a:'game',why:{ru:'Система работает — сделайте устойчивость видимой на дашборде и держите её под контролем.',en:'The system works — make resilience visible on a dashboard and keep it under control.'}},
+  5:{p:'audit',a:'cert',why:{ru:'Сильная система — проверьте независимым взглядом то, что не видно изнутри.',en:'Strong system — validate independently what is invisible from the inside.'}}
+ },
+ lg:{
+  1:{p:'turnkey',a:'review',why:{ru:'Для компании вашего масштаба отсутствие BCM — критический риск. Нужен полноценный проект внедрения.',en:'For a company your size, the absence of BCM is a critical risk. A full implementation project is needed.'}},
+  2:{p:'turnkey',a:'dashboard',why:{ru:'Реактивный режим на таком масштабе опасен — внедрим систему непрерывности под ключ.',en:'Reactive mode at this scale is dangerous — we implement a continuity system end-to-end.'}},
+  3:{p:'dashboard',a:'game',why:{ru:'Держите устойчивость на одном экране — для совета директоров и управленческих решений.',en:'Keep resilience on one screen — for the board and management decisions.'}},
+  4:{p:'audit',a:'dashboard',why:{ru:'Сильная система — независимый аудит выявит уязвимости, невидимые изнутри.',en:'Strong system — an independent audit surfaces vulnerabilities invisible from the inside.'}},
+  5:{p:'audit',a:'dashboard',why:{ru:'Вы в топе — закрепите результат независимым аудитом и мониторингом на дашборде.',en:'You are at the top — lock in the result with an independent audit and dashboard monitoring.'}}
+ }
+};
+function recCell(){ return (MATRIX[finalSize]||MATRIX.md)[finalLevel.n]; }
+function ctaLabel(mode){ var t=T[lang]; return mode==='buy'?t.ctaBuy:(mode==='wait'?t.ctaWait:t.ctaApply); }
+function actFor(key){ var p=PRODUCTS[key]; return function(){ if(p.mode==='buy'&&p.url){ window.location.href=p.url; } else { showLeadForm(key); } }; }
+function showProfile(){ notified=false; showScreen('s-profile'); updateProgress(0.9); }
+function selectSize(sz){ finalSize=sz; showResults(); }
+function renderRecommendation(){
+  var t=T[lang], c=recCell(), pk=c.p;
+  document.getElementById('recEyebrow').textContent=t.recEyebrow;
+  document.getElementById('recName').textContent=PRODUCTS[pk][lang];
+  document.getElementById('recWhy').textContent=c.why[lang];
+  var pb=document.getElementById('recPrimaryBtn'); pb.textContent=ctaLabel(PRODUCTS[pk].mode); pb.onclick=actFor(pk);
+  var ab=document.getElementById('recAltBtn'); ab.textContent=t.orAlt+PRODUCTS[c.a][lang]; ab.onclick=actFor(c.a);
+  var sw=document.getElementById('recSoftWrap'), sb=document.getElementById('recSoftBtn');
+  if(pk!=='review'&&c.a!=='review'){ sw.style.display='block'; sb.textContent=t.recSoft; sb.onclick=function(e){e.preventDefault();showLeadForm('review');}; }
+  else { sw.style.display='none'; }
+}
+function showLeadForm(key){
+  var t=T[lang]; leadProduct=key;
+  document.getElementById('t-cont-title').textContent=t.leadTitle;
+  document.getElementById('t-cont-desc').textContent=t.leadDescTpl.replace('{p}',PRODUCTS[key][lang]);
+  formSubmitted=false;
+  document.getElementById('fName').value='';document.getElementById('fCompany').value='';document.getElementById('fEmail').value='';
+  document.getElementById('fConsent').checked=false;
+  document.getElementById('contactSuccess').style.display='none';
+  document.getElementById('errorNote').style.display='none';
+  document.getElementById('sendingNote').style.display='none';
+  document.querySelector('.btn-row').style.display='flex';
+  document.getElementById('btnSubmit').disabled=false;document.getElementById('btnSkip').disabled=false;
+  showScreen('s-contacts');
 }
 
 // ═══════════════════════════════════
@@ -619,23 +714,25 @@ function showContactScreen() {
 }
 
 function skipForm() {
-  sendSkippedNotification();
   showResults();
 }
 
-async function sendSkippedNotification() {
+async function sendResultNotification() {
   const t = T[lang];
   const lv = finalLevel;
+  const c = recCell();
   const body = {
-    name: "Стесняшка",
+    name: "Диагностика (без контакта)",
     company: "—",
     email: "—",
+    product: PRODUCTS[c.p].ru,
+    comment: "Размер компании: " + SIZE_LABEL[finalSize],
     language: lang.toUpperCase(),
     score: t.scoreLabel(finalScore),
     level: t.levelLabel(lv.n, lv.name),
     description: lv.desc,
     risks: lv.risks,
-    recommendations: finalSteps,
+    recommendations: "▸ Размер: " + SIZE_LABEL[finalSize] + " · рекомендуем: " + PRODUCTS[c.p].ru + "\n\n" + finalSteps,
     answers: buildSummary()
   };
   try {
@@ -692,7 +789,8 @@ function showResults() {
   document.getElementById("resSteps").innerHTML =
     stepsLines.map(l=>`<p style="margin-bottom:8px">${l}</p>`).join("");
 
-  setCTA(lv);
+  if(!notified){ notified=true; sendResultNotification(); }
+  renderRecommendation();
 }
 
 // ═══════════════════════════════════
@@ -724,14 +822,18 @@ async function submitForm() {
   const err  = document.getElementById("errorNote");
   btn.disabled=true; skip.disabled=true; note.style.display="block"; err.style.display="none";
 
+  const c = recCell();
+  const recRu = PRODUCTS[leadProduct] ? PRODUCTS[leadProduct].ru : "—";
   const body = {
     name, company: company + " · " + contact, email: "—",
+    product: recRu,
+    comment: "Размер компании: " + SIZE_LABEL[finalSize],
     language: lang.toUpperCase(),
     score: t.scoreLabel(finalScore),
     level: t.levelLabel(lv.n, lv.name),
     description: lv.desc,
     risks: lv.risks,
-    recommendations: finalSteps,
+    recommendations: "▸ Размер: " + SIZE_LABEL[finalSize] + " · системная рекомендация: " + PRODUCTS[c.p].ru + " · интересует: " + recRu + "\n\n" + finalSteps,
     answers: buildSummary()
   };
 

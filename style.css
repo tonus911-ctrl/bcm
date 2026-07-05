@@ -140,8 +140,8 @@ tr:hover td{background:#fcfcff}
 /* ── CTA-банд (диагностика / разбор) ── */
 .cta-band{background:var(--ink);border-radius:18px;padding:34px 30px;margin:40px 0;text-align:center;position:relative;overflow:hidden}
 .cta-band::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:var(--yellow);opacity:.10;border-radius:50%}
-.cta-band h3{font-size:24px;font-weight:800;color:#fff;margin-bottom:10px;position:relative}
-.cta-band p{font-size:15px;color:#aab;margin-bottom:22px;position:relative}
+.cta-band h3{font-size:24px;font-weight:800;color:#fff !important;margin-bottom:10px;position:relative}
+.cta-band p{font-size:15px;color:#dfe4ee !important;margin-bottom:22px;position:relative}
 .cta-band .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
 
 /* ── Блок перелинковки ── */

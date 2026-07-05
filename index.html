@@ -880,7 +880,7 @@ footer {
   background: var(--cream);
   border-radius: 2px;
 }
-.paths-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: stretch; max-width: 1040px; margin: 0 auto; }
+.paths-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; align-items: stretch; max-width: 760px; margin: 0 auto; }
 @media(max-width:880px){ .paths-grid{grid-template-columns:1fr;gap:20px} .path-or{display:none} }
 .path-card { border-radius: 16px; padding: 32px 28px 28px; border: 2px solid #e0e0e0; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
 .path-card .btn { margin-top: auto; }
@@ -1170,23 +1170,12 @@ footer{background:#14142a;}
           <li id="pp2">Три главных уязвимости</li>
           <li id="pp3">Резюме за 24 часа на почту</li>
         </ul>
-        <button class="np-form btn btn-cream btn-full" data-prod="Личный разбор · 30 минут" data-mode="apply" id="paths-paid-btn">Записаться →</button>
-      </div>
-      <div class="path-card path-free">
-        <div class="path-badge" id="paths-train-badge" style="background:rgba(202,164,0,.12);color:#a87f00;">Обучение · от 20 000 ₽</div>
-        <h3 class="path-title" id="paths-train-title">Курс по непрерывности (BCP)</h3>
-        <p class="path-desc-txt" id="paths-train-desc">6 модулей, 16 часов. Для руководителей и собственников — внедрить непрерывность системно.</p>
-        <ul class="path-features">
-          <li id="ptr1">BIA, BCP, кризисное управление</li>
-          <li id="ptr2">Реальные кейсы и практика</li>
-          <li id="ptr3">Сертификат по итогам</li>
-        </ul>
-        <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn btn-black btn-full" id="paths-train-btn">Узнать о курсе →</a>
+        <button class="np-form btn btn-outline btn-full" data-prod="Личный разбор · 30 минут" data-mode="apply" id="paths-paid-btn">Записаться →</button>
       </div>
     </div>
   </div>
 </section>
-<!-- ══ ПРОДУКТЫ ══ -->
+<!-- ══ ПРОДУКТЫ (по намерению) ══ -->
 <section class="products-section" id="products" style="padding:72px 24px;background:#f5f7fa;border-top:1px solid #e7e8ea;">
   <div class="wrap">
     <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
@@ -1194,54 +1183,73 @@ footer{background:#14142a;}
       <h2 class="section-title" id="pr-title" style="margin-bottom:10px;">Выберите формат под вашу задачу</h2>
       <p class="section-desc" id="pr-desc" style="margin:0 auto;">От готовых шаблонов до корпоративного внедрения и сертификации. Каждый продукт можно взять отдельно.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;">
+<div style="margin:0 0 30px;">
+      <h3 id="grp1" style="font-size:15px;font-weight:800;color:#1B3A5C;margin:0 0 14px;letter-spacing:.01em;">Самостоятельно · быстрый старт без нас</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
       <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr1-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#ffec89;color:#5c4a00;margin-bottom:14px;">С этого начать</span>
         <h3 id="pr1-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="shablony.html" style="color:#1B3A5C;text-decoration:none;">Пакет шаблонов «BCM-старт»</a></h3>
         <p id="pr1-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Готовые шаблоны BCP, BIA, DRP, реестр процессов и чек-лист + мини-курс «как пользоваться».</p>
+        <div class="prod-for" id="pr1-for" style="font-size:12.5px;color:#7a7f87;margin:0 0 12px;border-left:2px solid #e3d9b8;padding-left:9px;">Для кого: малый бизнес и те, кто внедряет BCM сам</div>
         <div id="pr1-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">4 900 ₽</div>
         <a href="shablony.html" id="pr1-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
-        <button class="np-form btn btn-black btn-full" data-prod="Пакет шаблонов BCM-старт" data-mode="apply" id="pr1-btn">Отправить заявку</button>
+        <button class="np-form btn btn-black btn-full" data-prod="Пакет шаблонов BCM-старт" data-mode="buy" id="pr1-btn">Купить →</button>
       </div>
       <div class="prod-card featured" style="border:2px solid #1B3A5C;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;position:relative;">
         <span class="prod-ribbon" id="pr-rec">Рекомендуем</span>
         <span id="pr2-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e8f0ff;color:#1B3A5C;margin-bottom:14px;">Онлайн</span>
         <h3 id="pr2-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="onlajn-kurs.html" style="color:#1B3A5C;text-decoration:none;">Онлайн-курс «Непрерывность и ISO 22301»</a></h3>
         <p id="pr2-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Самостоятельный курс с доступом сразу после оплаты: BIA, BCP, DRP, учения. Сертификат по итогам.</p>
+        <div class="prod-for" id="pr2-for" style="font-size:12.5px;color:#7a7f87;margin:0 0 12px;border-left:2px solid #e3d9b8;padding-left:9px;">Для кого: руководители и специалисты — разобраться системно</div>
         <div id="pr2-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">19 900 ₽</div>
         <a href="onlajn-kurs.html" id="pr2-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
-        <button class="np-form btn btn-cream btn-full" data-prod="Онлайн-курс по ISO 22301" data-mode="apply" id="pr2-btn">Отправить заявку</button>
+        <button class="np-form btn btn-cream btn-full" data-prod="Онлайн-курс по ISO 22301" data-mode="buy" id="pr2-btn">Купить →</button>
       </div>
+      </div>
+    </div>
+    <div style="margin:0 0 30px;">
+      <h3 id="grp2" style="font-size:15px;font-weight:800;color:#1B3A5C;margin:0 0 14px;letter-spacing:.01em;">С экспертом · практика и внедрение вместе</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
       <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr3-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e8f0ff;color:#1B3A5C;margin-bottom:14px;">С ведущим</span>
         <h3 id="pr3-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="krizisnaya-igra.html" style="color:#1B3A5C;text-decoration:none;">Кризисная бизнес-игра «День Икс»</a></h3>
         <p id="pr3-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Анкета -> кастомная кризисная ситуация -> роли -> живой отыгрыш с ведущим. Практика, а не теория.</p>
+        <div class="prod-for" id="pr3-for" style="font-size:12.5px;color:#7a7f87;margin:0 0 12px;border-left:2px solid #e3d9b8;padding-left:9px;">Для кого: команды, которым нужна практика реагирования</div>
         <div id="pr3-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">150 000 ₽ / сессия</div>
         <a href="krizisnaya-igra.html" id="pr3-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
         <button class="np-form btn btn-black btn-full" data-prod="Кризисная игра День Икс" data-mode="apply" id="pr3-btn">Отправить заявку</button>
       </div>
       <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
+        <span id="pr6-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e3f6ea;color:#1a7a3a;margin-bottom:14px;">Новое</span>
+        <h3 id="pr6-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="dashboard.html" style="color:#1B3A5C;text-decoration:none;">Дашборд непрерывности и рисков</a></h3>
+        <p id="pr6-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Панель мониторинга устойчивости в реальном времени: индекс, риски, статус планов и метрики.</p>
+        <div class="prod-for" id="pr6-for" style="font-size:12.5px;color:#7a7f87;margin:0 0 12px;border-left:2px solid #e3d9b8;padding-left:9px;">Для кого: риск-менеджеры и советы директоров — устойчивость в цифрах</div>
+        <div id="pr6-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">от 100 000 ₽</div>
+        <a href="dashboard.html" id="pr6-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
+        <button class="np-form btn btn-black btn-full" data-prod="Дашборд непрерывности и рисков" data-mode="apply" id="pr6-btn">Отправить заявку</button>
+      </div>
+      </div>
+    </div>
+    <div style="margin:0 0 8px;">
+      <h3 id="grp3" style="font-size:15px;font-weight:800;color:#1B3A5C;margin:0 0 14px;letter-spacing:.01em;">Корпоративно · системно, под ключ</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr4-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e8f0ff;color:#1B3A5C;margin-bottom:14px;">Корпоративно</span>
         <h3 id="pr4-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="bcm-pod-klyuch.html" style="color:#1B3A5C;text-decoration:none;">«BCM под ключ»</a></h3>
         <p id="pr4-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Аудит непрерывности, разработка плана, кризисные учения и сопровождение. Внедрение под ключ.</p>
+        <div class="prod-for" id="pr4-for" style="font-size:12.5px;color:#7a7f87;margin:0 0 12px;border-left:2px solid #e3d9b8;padding-left:9px;">Для кого: средний и крупный бизнес — внедрение под ключ</div>
         <div id="pr4-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">от 300 000 ₽</div>
         <a href="bcm-pod-klyuch.html" id="pr4-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
         <button class="np-form btn btn-black btn-full" data-prod="BCM под ключ (корпоративный пакет)" data-mode="apply" id="pr4-btn">Отправить заявку</button>
       </div>
       <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
-        <span id="pr6-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#e3f6ea;color:#1a7a3a;margin-bottom:14px;">Новое</span>
-        <h3 id="pr6-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;"><a href="dashboard.html" style="color:#1B3A5C;text-decoration:none;">Дашборд непрерывности и рисков</a></h3>
-        <p id="pr6-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Панель мониторинга устойчивости в реальном времени: индекс, риски, статус планов и метрики.</p>
-        <div id="pr6-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">от 100 000 ₽</div>
-        <a href="dashboard.html" id="pr6-more" style="font-size:13px;color:#a87f00;text-decoration:none;margin-bottom:12px;display:inline-block;">Подробнее →</a>
-        <button class="np-form btn btn-black btn-full" data-prod="Дашборд непрерывности и рисков" data-mode="apply" id="pr6-btn">Отправить заявку</button>
-      </div>
-      <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:18px;padding:24px;display:flex;flex-direction:column;background:#fff;">
         <span id="pr5-b" style="align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#fff0d6;color:#8a5a00;margin-bottom:14px;">Скоро · осень 2026</span>
         <h3 id="pr5-t" style="font-size:19px;line-height:1.25;margin:0 0 8px;color:#1B3A5C;">Сертификация «Специалист по непрерывности»</h3>
         <p id="pr5-d" style="font-size:14.5px;line-height:1.5;color:#555;margin:0 0 14px;flex:1;">Авторская программа подготовки и сертификат — нишевая сертификация по BCM. В разработке.</p>
+        <div class="prod-for" id="pr5-for" style="font-size:12.5px;color:#7a7f87;margin:0 0 12px;border-left:2px solid #e3d9b8;padding-left:9px;">Для кого: специалисты, кому нужен подтвержденный статус</div>
         <div id="pr5-p" style="font-size:14px;font-weight:700;color:#1B3A5C;margin-bottom:10px;">Запись открыта</div>
         <button class="np-form btn btn-black btn-full" data-prod="Сертификация по непрерывности бизнеса" data-mode="wait" id="pr5-btn">Записаться в лист ожидания</button>
+      </div>
       </div>
     </div>
     <p id="pr-foot" style="text-align:center;font-size:13px;color:#9a9a9a;margin-top:24px;">Курс с преподавателем (BCP, 6 модулей) — на <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" style="color:#888;">risk-place.ru</a>.</p>
@@ -1837,6 +1845,10 @@ window.setLang = function(lang) {
     <input id="wlName" type="text" placeholder="Ваше имя" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;">
     <input id="wlContact" type="text" placeholder="Email или телефон / Telegram" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;">
     <textarea id="wlComment" rows="2" placeholder="Комментарий (необязательно)" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:14px;resize:vertical;"></textarea>
+    <div id="wlQual">
+      <select id="wlSize" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;color:#333;background:#fff;"></select>
+      <input id="wlConcern" type="text" placeholder="Что беспокоит больше всего? (необязательно)" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:14px;">
+    </div>
     <label id="wlConsentLabel" for="wlConsent" style="display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#444;margin:0 0 16px;cursor:pointer;background:#f7f8fa;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px;">
       <input type="checkbox" id="wlConsent" style="width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:#1B3A5C;">
       <span id="wlConsentText">Я согласен с <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">политикой конфиденциальности</a> и на обработку персональных данных</span>
@@ -1858,7 +1870,9 @@ var FORM_I18N = {
        submitApply:'Отправить заявку', submitWait:'Записаться в лист ожидания',
        sending:'Отправляем…', ok:'Готово! Мы свяжемся с вами.',
        err:'Не удалось отправить. Попробуйте еще раз или напишите в Telegram.',
-       need:'Заполните имя и контакт', needConsent:'Подтвердите согласие с политикой' },
+       need:'Заполните имя и контакт', needConsent:'Подтвердите согласие с политикой',
+       headBuy:'Оформление покупки', subBuy:'Оставьте контакты — пришлем ссылку на оплату и доступ к продукту.', submitBuy:'Оформить покупку',
+       sizePh:'Размер компании (необязательно)', sizes:['до 50 сотрудников','50–250 сотрудников','более 250 сотрудников'], concernPh:'Что беспокоит больше всего? (необязательно)' },
   en:{ headApply:'Product request', headWait:'Waitlist',
        subApply:'Leave your contact — we will reach out with details and help you get started.',
        subWait:'Leave your contact — we will tell you about the launch first and offer the first-cohort price.',
@@ -1867,20 +1881,27 @@ var FORM_I18N = {
        submitApply:'Send request', submitWait:'Join the waitlist',
        sending:'Sending…', ok:'Done! We will get in touch.',
        err:'Could not send. Please try again or message us on Telegram.',
-       need:'Please fill in name and contact', needConsent:'Please confirm consent to the policy' }
+       need:'Please fill in name and contact', needConsent:'Please confirm consent to the policy',
+       headBuy:'Order', subBuy:'Leave your contact — we will send a payment link and product access.', submitBuy:'Place order',
+       sizePh:'Company size (optional)', sizes:['up to 50 employees','50–250 employees','250+ employees'], concernPh:'What worries you most? (optional)' }
 };
 function fLang(){ return (typeof currentLang!=='undefined' && currentLang==='en') ? 'en':'ru'; }
 var wlProd='', wlMode='apply';
 function openForm(prod,label,mode){
   var t=FORM_I18N[fLang()]; wlProd=prod; wlMode=mode||'apply';
-  document.getElementById('wlHead').textContent = (wlMode==='wait')?t.headWait:t.headApply;
+  document.getElementById('wlHead').textContent = (wlMode==='wait')?t.headWait:((wlMode==='buy')?t.headBuy:t.headApply);
   document.getElementById('wlProduct').textContent = label||prod;
-  document.getElementById('wlSub').textContent = (wlMode==='wait')?t.subWait:t.subApply;
+  document.getElementById('wlSub').textContent = (wlMode==='wait')?t.subWait:((wlMode==='buy')?t.subBuy:t.subApply);
   document.getElementById('wlName').placeholder=t.name;
   document.getElementById('wlContact').placeholder=t.contact;
   document.getElementById('wlComment').placeholder=t.comment;
+  var _q=document.getElementById('wlQual');
+  if(_q){ _q.style.display=(wlMode==='buy')?'none':'block';
+    var _sel=document.getElementById('wlSize'); _sel.innerHTML=''; var _o0=document.createElement('option'); _o0.value=''; _o0.textContent=t.sizePh; _sel.appendChild(_o0);
+    (t.sizes||[]).forEach(function(sz){ var o=document.createElement('option'); o.value=sz; o.textContent=sz; _sel.appendChild(o); });
+    var _cc=document.getElementById('wlConcern'); _cc.placeholder=t.concernPh; _cc.value=''; }
   document.getElementById('wlConsentText').innerHTML=t.consent;
-  document.getElementById('wlSubmit').textContent=(wlMode==='wait')?t.submitWait:t.submitApply;
+  document.getElementById('wlSubmit').textContent=(wlMode==='wait')?t.submitWait:((wlMode==='buy')?t.submitBuy:t.submitApply);
   document.getElementById('wlName').value='';document.getElementById('wlContact').value='';document.getElementById('wlComment').value='';
   document.getElementById('wlConsent').checked=false;
   document.getElementById('wlNote').style.display='none';document.getElementById('wlOk').style.display='none';document.getElementById('wlErr').style.display='none';
@@ -1902,14 +1923,21 @@ document.getElementById('wlSubmit').addEventListener('click',async function(){
   var name=document.getElementById('wlName').value.trim();
   var contact=document.getElementById('wlContact').value.trim();
   var comment=document.getElementById('wlComment').value.trim();
+  var qsize=(wlMode!=='buy')?document.getElementById('wlSize').value:'';
+  var qconcern=(wlMode!=='buy')?document.getElementById('wlConcern').value.trim():'';
   var consent=document.getElementById('wlConsent').checked;
   var note=document.getElementById('wlNote'),ok=document.getElementById('wlOk'),err=document.getElementById('wlErr');
   if(!name||!contact){ err.textContent=t.need; err.style.display='block'; return; }
   if(!consent){ err.textContent=t.needConsent; err.style.display='block'; return; }
   err.style.display='none'; this.disabled=true; note.textContent=t.sending; note.style.display='block';
-  var body={ formTitle:(wlMode==='wait')?'Заявка в лист ожидания (новый продукт)':'Заявка на продукт',
-    name:name, company:contact, email:'—', product:wlProd, comment:comment||'—',
-    description:((wlMode==='wait')?'Лист ожидания: ':'Заявка: ')+wlProd, language:fLang().toUpperCase() };
+  var _extra=[]; if(qsize)_extra.push('Размер компании: '+qsize); if(qconcern)_extra.push('Беспокоит: '+qconcern);
+  var _fc=[comment].concat(_extra).filter(Boolean).join('\n')||'—';
+  var _ft=(wlMode==='wait')?'Заявка в лист ожидания (новый продукт)':((wlMode==='buy')?'Оформление покупки':'Заявка на продукт');
+  var _dp=(wlMode==='wait')?'Лист ожидания: ':((wlMode==='buy')?'Покупка: ':'Заявка: ');
+  var body={ formTitle:_ft,
+    name:name, company:contact, email:'—', product:wlProd, comment:_fc,
+    companySize:qsize||'—', concern:qconcern||'—',
+    description:_dp+wlProd+(_extra.length?(' | '+_extra.join(' | ')):''), language:fLang().toUpperCase() };
   try{
     var res=await fetch('https://risk-place-quiz.tonus911.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
     var r=await res.json(); if(!res.ok||!r.success) throw new Error('fail');
@@ -1926,12 +1954,13 @@ var PATCH_LANG = {
   'paths-paid-badge':'По заявке','paths-paid-title':'Личный разбор · 30 минут','paths-paid-desc':'Мы разберем вашу конкретную ситуацию и способы снижения риска.','pp1':'Стоимость дня простоя в рублях','pp2':'Три главных уязвимости','pp3':'Резюме за 24 часа на почту','paths-paid-btn':'Записаться →',
   'paths-train-badge':'Обучение · от 20 000 ₽','paths-train-title':'Курс по непрерывности (BCP)','paths-train-desc':'6 модулей, 16 часов. Для руководителей и собственников — внедрить непрерывность системно.','ptr1':'BIA, BCP, кризисное управление','ptr2':'Реальные кейсы и практика','ptr3':'Сертификат по итогам','paths-train-btn':'Узнать о курсе →',
   'pr-eyebrow':'Продукты по непрерывности','pr-title':'Выберите формат под вашу задачу','pr-desc':'От готовых шаблонов до корпоративного внедрения и сертификации. Каждый продукт можно взять отдельно.','pr-foot':'Курс с преподавателем (BCP, 6 модулей) — на risk-place.ru.','pr-rec':'Рекомендуем',
-  'pr1-b':'С этого начать','pr1-t':'Пакет шаблонов «BCM-старт»','pr1-d':'Готовые шаблоны BCP, BIA, DRP, реестр процессов и чек-лист + мини-курс «как пользоваться».','pr1-p':'4 900 ₽','pr1-more':'Подробнее →','pr1-btn':'Отправить заявку',
-  'pr2-b':'Онлайн','pr2-t':'Онлайн-курс «Непрерывность и ISO 22301»','pr2-d':'Самостоятельный курс с доступом сразу после оплаты: BIA, BCP, DRP, учения. Сертификат по итогам.','pr2-p':'19 900 ₽','pr2-more':'Подробнее →','pr2-btn':'Отправить заявку',
+  'pr1-b':'С этого начать','pr1-t':'Пакет шаблонов «BCM-старт»','pr1-d':'Готовые шаблоны BCP, BIA, DRP, реестр процессов и чек-лист + мини-курс «как пользоваться».','pr1-p':'4 900 ₽','pr1-more':'Подробнее →','pr1-btn':'Купить →',
+  'pr2-b':'Онлайн','pr2-t':'Онлайн-курс «Непрерывность и ISO 22301»','pr2-d':'Самостоятельный курс с доступом сразу после оплаты: BIA, BCP, DRP, учения. Сертификат по итогам.','pr2-p':'19 900 ₽','pr2-more':'Подробнее →','pr2-btn':'Купить →',
   'pr3-b':'С ведущим','pr3-t':'Кризисная бизнес-игра «День Икс»','pr3-d':'Анкета → кастомная кризисная ситуация → роли → живой отыгрыш с ведущим. Практика, а не теория.','pr3-p':'150 000 ₽ / сессия','pr3-more':'Подробнее →','pr3-btn':'Отправить заявку',
   'pr4-b':'Корпоративно','pr4-t':'«BCM под ключ»','pr4-d':'Аудит непрерывности, разработка плана, кризисные учения и сопровождение. Внедрение под ключ.','pr4-p':'от 300 000 ₽','pr4-more':'Подробнее →','pr4-btn':'Отправить заявку',
   'pr5-b':'Скоро · осень 2026','pr5-t':'Сертификация «Специалист по непрерывности»','pr5-d':'Авторская программа подготовки и сертификат — нишевая сертификация по BCM. В разработке.','pr5-p':'Запись открыта','pr5-btn':'Записаться в лист ожидания',
   'pr6-b':'Новое','pr6-t':'Дашборд непрерывности и рисков','pr6-d':'Панель мониторинга устойчивости в реальном времени: индекс, риски, статус планов и метрики.','pr6-p':'от 100 000 ₽','pr6-more':'Подробнее →','pr6-btn':'Отправить заявку',
+  'grp1':'Самостоятельно · быстрый старт без нас','grp2':'С экспертом · практика и внедрение вместе','grp3':'Корпоративно · системно, под ключ','pr1-for':'Для кого: малый бизнес и те, кто внедряет BCM сам','pr2-for':'Для кого: руководители и специалисты — разобраться системно','pr3-for':'Для кого: команды, которым нужна практика реагирования','pr6-for':'Для кого: риск-менеджеры и советы директоров — устойчивость в цифрах','pr4-for':'Для кого: средний и крупный бизнес — внедрение под ключ','pr5-for':'Для кого: специалисты, кому нужен подтвержденный статус',
   'about-short':'20 лет в управлении рисками: Билайн, Норникель, Роснефть, EY. «Лучший риск-менеджер России — 2020» по версии РусРиск, зампред ТК-010 «Менеджмент риска» Росстандарта. Лично разрабатывал планы непрерывности для Норникеля, Ростеха, НРД и АСВ, обучил 300+ специалистов.','about-more':'Подробнее о подходе и эксперте →'
  },
  en:{
@@ -1941,12 +1970,13 @@ var PATCH_LANG = {
   'paths-paid-badge':'On request','paths-paid-title':'Personal Review · 30 min','paths-paid-desc':'We will review your specific situation and risk mitigation options.','pp1':'Daily downtime cost in monetary terms','pp2':'Three main vulnerabilities','pp3':'Written summary within 24 hrs','paths-paid-btn':'Book now →',
   'paths-train-badge':'Training · from $200','paths-train-title':'Business Continuity Course (BCP)','paths-train-desc':'6 modules, 16 hours. For executives and owners — implement continuity systematically.','ptr1':'BIA, BCP, crisis management','ptr2':'Real cases and practice','ptr3':'Certificate on completion','paths-train-btn':'About the course →',
   'pr-eyebrow':'Business continuity products','pr-title':'Choose the format for your task','pr-desc':'From ready templates to corporate implementation and certification. Each product can be taken separately.','pr-foot':'Instructor-led course (BCP, 6 modules) — on risk-place.ru.','pr-rec':'Recommended',
-  'pr1-b':'Start here','pr1-t':'Template pack "BCM Start"','pr1-d':'Ready BCP, BIA, DRP templates, process register and checklist + a mini-course on how to use them.','pr1-p':'$49','pr1-more':'Details →','pr1-btn':'Send request',
-  'pr2-b':'Online','pr2-t':'Online course "Continuity & ISO 22301"','pr2-d':'Self-paced course with instant access after payment: BIA, BCP, DRP, drills. Certificate on completion.','pr2-p':'$199','pr2-more':'Details →','pr2-btn':'Send request',
+  'pr1-b':'Start here','pr1-t':'Template pack "BCM Start"','pr1-d':'Ready BCP, BIA, DRP templates, process register and checklist + a mini-course on how to use them.','pr1-p':'$49','pr1-more':'Details →','pr1-btn':'Buy →',
+  'pr2-b':'Online','pr2-t':'Online course "Continuity & ISO 22301"','pr2-d':'Self-paced course with instant access after payment: BIA, BCP, DRP, drills. Certificate on completion.','pr2-p':'$199','pr2-more':'Details →','pr2-btn':'Buy →',
   'pr3-b':'Facilitated','pr3-t':'Crisis business game "Day X"','pr3-d':'Questionnaire → custom crisis scenario → roles → live play with a facilitator. Practice, not theory.','pr3-p':'$1,500 / session','pr3-more':'Details →','pr3-btn':'Send request',
   'pr4-b':'Corporate','pr4-t':'"BCM audit and development"','pr4-d':'Continuity audit, plan development, crisis drills and support. Full implementation.','pr4-p':'from $3,000','pr4-more':'Details →','pr4-btn':'Send request',
   'pr5-b':'Coming · autumn 2026','pr5-t':'Certification "Continuity Specialist"','pr5-d':'Author-led training program and certificate — a niche BCM certification. In development.','pr5-p':'Waitlist open','pr5-btn':'Join the waitlist',
   'pr6-b':'New','pr6-t':'Continuity & Risk Dashboard','pr6-d':'Real-time resilience monitoring: index, risks, plan status and metrics.','pr6-p':'from $1,000','pr6-more':'Details →','pr6-btn':'Send request',
+  'grp1':'Self-service · quick start without us','grp2':'With an expert · practice and rollout together','grp3':'Corporate · systematic, turnkey','pr1-for':'For: small business and DIY BCM teams','pr2-for':'For: managers and specialists — a systematic grasp','pr3-for':'For: teams that need hands-on response practice','pr6-for':'For: risk managers and boards — resilience in numbers','pr4-for':'For: mid and large business — turnkey implementation','pr5-for':'For: specialists who need a certified status',
   'about-short':'20 years in risk management: Beeline, Nornickel, Rosneft, EY. "Best Risk Manager of Russia 2020" (RusRisk), deputy chair of Rosstandart TC-010 "Risk Management". Personally built continuity plans for Nornickel, Rostec, NSD and DIA, trained 300+ specialists.','about-more':'More about the approach and expert →'
  }
 };

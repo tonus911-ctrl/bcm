@@ -177,18 +177,6 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   </div>
 </div>
 
-<!-- PROFILE (company size) -->
-<div class="screen" id="s-profile">
-  <div class="eyebrow" id="t-prof-label"></div>
-  <h2 class="big-title" id="t-prof-title"></h2>
-  <p class="sub-text" id="t-prof-desc"></p>
-  <div style="display:flex;flex-direction:column;gap:12px;margin-top:6px;">
-    <button class="option" id="t-size-sm" onclick="selectSize('sm')"></button>
-    <button class="option" id="t-size-md" onclick="selectSize('md')"></button>
-    <button class="option" id="t-size-lg" onclick="selectSize('lg')"></button>
-  </div>
-</div>
-
 <!-- CONTACT FORM (optional, before results) -->
 <div class="screen" id="s-contacts">
   <div class="eyebrow" id="t-cont-label"></div>
@@ -610,7 +598,9 @@ function nextQ() {
     finalScore = Math.round(answers.reduce((s,a,i)=>s+(a!==null?qs[i].opts[a].s:0),0)*2)/2;
     finalLevel = getLevel(finalScore);
     finalSteps = buildSteps(finalLevel, answers);
-    showProfile();
+    finalSize = SIZE_MAP[answers[0]] || 'md';
+    notified = false;
+    showResults();
   }
 }
 
@@ -632,6 +622,8 @@ function getLevel(score) {
 // ═══════════════════════════════════
 var finalSize='md', notified=false, leadProduct='';
 var SIZE_LABEL={sm:'до 50 сотрудников',md:'50–250 сотрудников',lg:'более 250 сотрудников'};
+var SIZE_MAP=['sm','sm','md','lg']; // ответ на вопрос 1 (2–7 / 8–30 / 31–200 / >200) → размер
+var SIZE_TEXT=['2–7 человек','8–30 человек','31–200 человек','более 200 человек']; // для лида в Telegram — как ответил
 var PRODUCTS={
  templates:{ru:'Пакет шаблонов «BCM-старт»',en:'Template pack “BCM Start”',url:'shablony.html',mode:'buy'},
  course:{ru:'Онлайн-курс «Непрерывность и ISO 22301»',en:'Online course “Continuity & ISO 22301”',url:'onlajn-kurs.html',mode:'buy'},
@@ -668,8 +660,6 @@ var MATRIX={
 function recCell(){ return (MATRIX[finalSize]||MATRIX.md)[finalLevel.n]; }
 function ctaLabel(mode){ var t=T[lang]; return mode==='buy'?t.ctaBuy:(mode==='wait'?t.ctaWait:t.ctaApply); }
 function actFor(key){ var p=PRODUCTS[key]; return function(){ if(p.mode==='buy'&&p.url){ window.location.href=p.url; } else { showLeadForm(key); } }; }
-function showProfile(){ notified=false; showScreen('s-profile'); updateProgress(0.9); }
-function selectSize(sz){ finalSize=sz; showResults(); }
 function renderRecommendation(){
   var t=T[lang], c=recCell(), pk=c.p;
   document.getElementById('recEyebrow').textContent=t.recEyebrow;
@@ -726,13 +716,13 @@ async function sendResultNotification() {
     company: "—",
     email: "—",
     product: PRODUCTS[c.p].ru,
-    comment: "Размер компании: " + SIZE_LABEL[finalSize],
+    comment: "Размер компании: " + (SIZE_TEXT[answers[0]]||SIZE_LABEL[finalSize]),
     language: lang.toUpperCase(),
     score: t.scoreLabel(finalScore),
     level: t.levelLabel(lv.n, lv.name),
     description: lv.desc,
     risks: lv.risks,
-    recommendations: "▸ Размер: " + SIZE_LABEL[finalSize] + " · рекомендуем: " + PRODUCTS[c.p].ru + "\n\n" + finalSteps,
+    recommendations: "▸ Размер: " + (SIZE_TEXT[answers[0]]||SIZE_LABEL[finalSize]) + " · рекомендуем: " + PRODUCTS[c.p].ru + "\n\n" + finalSteps,
     answers: buildSummary()
   };
   try {
@@ -827,13 +817,13 @@ async function submitForm() {
   const body = {
     name, company: company + " · " + contact, email: "—",
     product: recRu,
-    comment: "Размер компании: " + SIZE_LABEL[finalSize],
+    comment: "Размер компании: " + (SIZE_TEXT[answers[0]]||SIZE_LABEL[finalSize]),
     language: lang.toUpperCase(),
     score: t.scoreLabel(finalScore),
     level: t.levelLabel(lv.n, lv.name),
     description: lv.desc,
     risks: lv.risks,
-    recommendations: "▸ Размер: " + SIZE_LABEL[finalSize] + " · системная рекомендация: " + PRODUCTS[c.p].ru + " · интересует: " + recRu + "\n\n" + finalSteps,
+    recommendations: "▸ Размер: " + (SIZE_TEXT[answers[0]]||SIZE_LABEL[finalSize]) + " · системная рекомендация: " + PRODUCTS[c.p].ru + " · интересует: " + recRu + "\n\n" + finalSteps,
     answers: buildSummary()
   };
 

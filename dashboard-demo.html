@@ -106,12 +106,13 @@ td.c,th.c{text-align:center}
   </div>
 
   <div class="verdict">
-    <span class="tag" data-ru="Диагноз" data-en="Diagnosis">Диагноз</span>
+    <span class="tag" data-ru="Описание текущей ситуации" data-en="Current situation">Описание текущей ситуации</span>
     <h2 data-ru="Средняя защищенность. Бизнес переживет мелкие сбои, но крупный инцидент остановит выручку." data-en="Medium protection. The business survives minor failures, but a major incident would halt revenue.">Средняя защищенность. Бизнес переживет мелкие сбои, но крупный инцидент остановит выручку.</h2>
     <p data-ru="3 критичные зоны требуют действий: нет плана на первые часы кибератаки, нет изолированных резервных копий, прием заказов восстанавливается 26 часов при цели 4. Приоритет — закрыть эти три пробела." data-en="3 critical areas need action: no first-hours cyberattack plan, no isolated backups, order intake recovers in 26 hours against a 4-hour target. Priority — close these three gaps.">3 критичные зоны требуют действий: нет плана на первые часы кибератаки, нет изолированных резервных копий, прием заказов восстанавливается 26 часов при цели 4. Приоритет — закрыть эти три пробела.</p>
   </div>
 
   <h2 class="sec" data-ru="Ключевые метрики" data-en="Key metrics">Ключевые метрики</h2>
+  <div class="demo-note" data-ru="Расшифровка: MTTR — среднее время восстановления после сбоя · MTTD — среднее время обнаружения инцидента · RTO — целевое время восстановления процесса · RPO — допустимый объем потери данных (за какой период не страшно потерять)." data-en="Glossary: MTTR — mean time to recovery · MTTD — mean time to detect · RTO — recovery time objective · RPO — recovery point objective (how much data you can afford to lose).">Расшифровка: MTTR — среднее время восстановления после сбоя · MTTD — среднее время обнаружения инцидента · RTO — целевое время восстановления процесса · RPO — допустимый объем потери данных (за какой период не страшно потерять).</div>
   <div class="kpis">
 <div class="kpi kpi-amber"><div class="kpi-v">68 <span class="kpi-sub">/100</span></div><div class="kpi-l" data-ru="Индекс устойчивости" data-en="Resilience index">Индекс устойчивости</div></div>
 <div class="kpi kpi-green"><div class="kpi-v">+4 <span class="kpi-sub">за квартал</span></div><div class="kpi-l" data-ru="Тренд индекса" data-en="Index trend (quarter)">Тренд индекса</div></div>
@@ -180,11 +181,11 @@ td.c,th.c{text-align:center}
   <table>
     <thead><tr><th data-ru="Процесс" data-en="Process">Процесс</th><th class="c" data-ru="RTO цель" data-en="RTO target">RTO цель</th><th class="c" data-ru="RTO факт" data-en="RTO actual">RTO факт</th><th data-ru="Статус" data-en="Status">Статус</th></tr></thead>
     <tbody>
-<tr><td data-ru="Прием и обработка заказов" data-en="Order intake &amp; processing">Прием и обработка заказов</td><td class="c">4 ч</td><td class="c">26 ч</td><td class="c"><span class="dot dot-red"></span><span data-ru="Критично" data-en="Critical">Критично</span></td></tr>
-<tr><td data-ru="Отгрузка и логистика" data-en="Shipping &amp; logistics">Отгрузка и логистика</td><td class="c">8 ч</td><td class="c">30 ч</td><td class="c"><span class="dot dot-red"></span><span data-ru="Критично" data-en="Critical">Критично</span></td></tr>
-<tr><td data-ru="Производственная линия" data-en="Production line">Производственная линия</td><td class="c">12 ч</td><td class="c">18 ч</td><td class="c"><span class="dot dot-amber"></span><span data-ru="Внимание" data-en="Watch">Внимание</span></td></tr>
-<tr><td data-ru="Финансы и расчеты" data-en="Finance &amp; payments">Финансы и расчеты</td><td class="c">24 ч</td><td class="c">20 ч</td><td class="c"><span class="dot dot-green"></span><span data-ru="Норма" data-en="OK">Норма</span></td></tr>
-<tr><td data-ru="Клиентская поддержка" data-en="Customer support">Клиентская поддержка</td><td class="c">24 ч</td><td class="c">28 ч</td><td class="c"><span class="dot dot-amber"></span><span data-ru="Внимание" data-en="Watch">Внимание</span></td></tr>
+<tr><td data-ru="Прием и обработка заказов" data-en="Order intake &amp; processing">Прием и обработка заказов</td><td class="c">4 ч</td><td class="c">26 ч</td><td><span class="dot dot-red"></span><span data-ru="Критично" data-en="Critical">Критично</span></td></tr>
+<tr><td data-ru="Отгрузка и логистика" data-en="Shipping &amp; logistics">Отгрузка и логистика</td><td class="c">8 ч</td><td class="c">30 ч</td><td><span class="dot dot-red"></span><span data-ru="Критично" data-en="Critical">Критично</span></td></tr>
+<tr><td data-ru="Производственная линия" data-en="Production line">Производственная линия</td><td class="c">12 ч</td><td class="c">18 ч</td><td><span class="dot dot-amber"></span><span data-ru="Внимание" data-en="Watch">Внимание</span></td></tr>
+<tr><td data-ru="Финансы и расчеты" data-en="Finance &amp; payments">Финансы и расчеты</td><td class="c">24 ч</td><td class="c">20 ч</td><td><span class="dot dot-green"></span><span data-ru="Норма" data-en="OK">Норма</span></td></tr>
+<tr><td data-ru="Клиентская поддержка" data-en="Customer support">Клиентская поддержка</td><td class="c">24 ч</td><td class="c">28 ч</td><td><span class="dot dot-amber"></span><span data-ru="Внимание" data-en="Watch">Внимание</span></td></tr>
     </tbody>
   </table>
 

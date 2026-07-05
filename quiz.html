@@ -186,7 +186,7 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
     <div class="form-group"><label class="form-label" id="t-lbl-name"></label><input class="form-input" type="text" id="fName"></div>
     <div class="form-group"><label class="form-label" id="t-lbl-company"></label><input class="form-input" type="text" id="fCompany"></div>
   </div>
-  <div class="form-group"><label class="form-label" id="t-lbl-email"></label><input class="form-input" type="email" id="fEmail"></div>
+  <div class="form-group"><label class="form-label" id="t-lbl-email"></label><input class="form-input" type="text" id="fEmail"></div>
 
   <div class="consent-row">
     <input type="checkbox" id="fConsent">
@@ -194,8 +194,8 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   </div>
 
   <div class="btn-row">
-    <button class="btn btn-ghost" id="btnSkip" onclick="skipForm()"></button>
-    <button class="btn btn-black" id="btnSubmit" onclick="submitForm()"></button>
+    <button class="btn btn-cream" id="btnSkip" onclick="skipForm()"></button>
+    <button class="btn btn-ghost" id="btnSubmit" onclick="submitForm()"></button>
   </div>
   <p class="sending-note" id="sendingNote"></p>
   <p class="error-note" id="errorNote"></p>
@@ -237,23 +237,23 @@ ru:{
   lang:"ru",logo:"risk-place.ru",logoUrl:"https://bcm.risk-place.ru/",
   introLabel:"Экспресс-диагностика",
   introTitle:"Насколько устойчив ваш бизнес к серьезному сбою?",
-  introDesc:"13 вопросов — результат вы увидите сразу и получите на почту. Никакого жаргона, только практические вопросы.",
+  introDesc:"13 вопросов — результат вы увидите сразу на экране. Никакого жаргона, только практические вопросы.",
   introHl:"Кибератака, уход ключевого сотрудника, пандемия, сбой поставщика — один инцидент может остановить бизнес на недели. Узнайте, готовы ли вы.",
   meta:["5–7 минут","13 вопросов","Бесплатно"],
   startBtn:"Начать диагностику →",
   qBack:"← Назад",qNext:"Далее →",qFinish:"Получить результат →",
   whatLabel:"Что это значит",risksLabel:"Ключевые риски",stepsLabel:"Что мы сделаем вместе",
   contLabel:"Опционально",
-  contTitle:"Получить результат на почту?",
-  contDesc:"Если хотите сохранить результат и получить его в письме — заполните форму. Это необязательно: можно посмотреть результат прямо сейчас, нажав «Пропустить».",
-  lblName:"Имя",lblCompany:"Компания",lblEmail:"Email",
-  phName:"Алексей",phCompany:"Название компании",phEmail:"alex@company.ru",
+  contTitle:"Хотите разбор результата от эксперта?",
+  contDesc:"Оставьте контакт — эксперт свяжется и поможет разобрать ваш результат. Это необязательно: результат можно посмотреть прямо сейчас.",
+  lblName:"Имя",lblCompany:"Компания",lblEmail:"Телефон или Telegram",
+  phName:"Алексей",phCompany:"Название компании",phEmail:"+7 999 123-45-67 или @username",
   consentText:'Я согласен на обработку персональных данных в соответствии с <a href="privacy-policy.html" target="_blank" rel="noopener">Политикой обработки персональных данных</a>',
-  skipBtn:"Пропустить →",
-  submitBtn:"Отправить форму и получить результат →",
+  skipBtn:"Пропустить и посмотреть результат →",
+  submitBtn:"Оставить контакт",
   sending:"Отправляем...",errMsg:"Ошибка. Попробуйте еще раз.",
-  successMsg:"Спасибо! Результат отправлен на почту.",
-  alert:"Заполните имя, компанию и email.",
+  successMsg:"Спасибо! Мы свяжемся с вами.",
+  alert:"Заполните имя, компанию и контакт.",
   alertConsent:"Поставьте отметку о согласии на обработку персональных данных.",
   ctaBtn:"Узнать стоимость разбора →",
   tgBtn:"Написать в Telegram →",
@@ -267,23 +267,23 @@ en:{
   lang:"en",logo:"risk-place.ru",logoUrl:"https://bcm.risk-place.ru/",
   introLabel:"Business Resilience Assessment",
   introTitle:"How prepared is your business for a serious disruption?",
-  introDesc:"13 plain-language questions — results shown immediately and sent to your email.",
+  introDesc:"13 plain-language questions — results shown immediately on screen. No jargon, just practical questions.",
   introHl:"Cyberattack, key person departure, pandemic, supplier failure — one incident can stop your business for weeks. Find out if you're ready.",
   meta:["5–7 minutes","13 questions","Free"],
   startBtn:"Start Assessment →",
   qBack:"← Back",qNext:"Next →",qFinish:"Get My Results →",
   whatLabel:"What this means",risksLabel:"Key risks",stepsLabel:"What we will do together",
   contLabel:"Optional",
-  contTitle:"Get your results by email?",
-  contDesc:"If you'd like to save your results and receive them by email, fill in the form. This is optional — you can view your results right now by clicking \"Skip\".",
-  lblName:"Name",lblCompany:"Company",lblEmail:"Email",
-  phName:"John",phCompany:"Company name",phEmail:"john@company.com",
+  contTitle:"Want an expert to review your result?",
+  contDesc:"Leave your contact and an expert will get in touch to help interpret your result. Optional — you can view your result right now.",
+  lblName:"Name",lblCompany:"Company",lblEmail:"Phone or Telegram",
+  phName:"John",phCompany:"Company name",phEmail:"+1 555 123 4567 or @username",
   consentText:'I consent to the processing of my personal data in accordance with the <a href="privacy-policy.html" target="_blank" rel="noopener">Personal Data Processing Policy</a>',
-  skipBtn:"Skip →",
-  submitBtn:"Submit form and get results →",
+  skipBtn:"Skip and see my result →",
+  submitBtn:"Leave contact",
   sending:"Sending...",errMsg:"Error. Please try again.",
-  successMsg:"Thank you! Your results have been sent by email.",
-  alert:"Please fill in name, company and email.",
+  successMsg:"Thank you! We will get in touch.",
+  alert:"Please fill in name, company and contact.",
   alertConsent:"Please check the consent box to proceed.",
   ctaBtn:"See review pricing →",
   tgBtn:"Message on Telegram →",
@@ -711,10 +711,10 @@ async function submitForm() {
   const t = T[lang];
   const name    = document.getElementById("fName").value.trim();
   const company = document.getElementById("fCompany").value.trim();
-  const email   = document.getElementById("fEmail").value.trim();
+  const contact = document.getElementById("fEmail").value.trim();
   const consent = document.getElementById("fConsent").checked;
 
-  if(!name||!company||!email){alert(t.alert);return;}
+  if(!name||!company||!contact){alert(t.alert);return;}
   if(!consent){alert(t.alertConsent);return;}
 
   const lv   = finalLevel;
@@ -725,7 +725,7 @@ async function submitForm() {
   btn.disabled=true; skip.disabled=true; note.style.display="block"; err.style.display="none";
 
   const body = {
-    name, company, email,
+    name, company: company + " · " + contact, email: "—",
     language: lang.toUpperCase(),
     score: t.scoreLabel(finalScore),
     level: t.levelLabel(lv.n, lv.name),

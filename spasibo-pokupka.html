@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спасибо за покупку | risk-place.ru</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
+.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#8F8F8F;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ty{max-width:640px;margin:0 auto;padding:72px 20px 90px;text-align:center}
+.ty-badge{display:inline-flex;align-items:center;justify-content:center;width:74px;height:74px;border-radius:50%;background:#e6f6ec;color:#1a7a3a;font-size:38px;margin:0 0 22px}
+.ty h1{font-size:clamp(26px,4vw,36px);font-weight:800;color:var(--ink);margin:0 0 14px;line-height:1.2}
+.ty p{font-size:17px;line-height:1.65;color:#3a3f48;margin:0 0 16px}
+.ty .box{background:#fafbff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:24px 0;text-align:left}
+.ty .box b{color:var(--ink)}
+.ty .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <nav class="nav" id="nav">
+      <a href="materialy.html" id="nMat">Материалы по BCM</a>
+      <a href="index.html#products" id="nProd">Продукты</a>
+      <a href="o-podhode.html" id="nAbout">О нас</a>
+      <span class="lang-toggle"><button class="lang-btn active" id="btnRU" onclick="setLang('ru')">RU</button><button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button></span>
+    </nav>
+  </div>
+</header>
+
+<section class="ty">
+  <div class="ty-badge">✓</div>
+  <h1 id="tyH1">Спасибо за покупку!</h1>
+  <p id="tyLead">Оплата получена. Мы уже готовим для вас свежий пакет материалов.</p>
+  <div class="box">
+    <p id="tyBox" style="margin:0;"><b>Материалы придут на ваш email в течение 24 часов.</b> Обычно быстрее. Проверьте, пожалуйста, папку «Спам», если письма нет. Если возникнут вопросы — напишите нам, мы на связи.</p>
+  </div>
+  <div class="actions">
+    <a href="index.html" class="btn btn-black" id="tyHome">На главную</a>
+    <a href="materialy.html" class="btn btn-outline" id="tyMat">Материалы по BCM</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="copy" id="fCopy">© 2026 Евгений Теленков · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Обучение и консалтинг по управлению рисками на risk-place.ru</a></div>
+  </div>
+</footer>
+
+<script>
+var LANG={
+  "nMat":{"ru":"Материалы по BCM","en":"BCM materials"},
+  "nProd":{"ru":"Продукты","en":"Products"},
+  "nAbout":{"ru":"О нас","en":"About us"},
+  "tyH1":{"ru":"Спасибо за покупку!","en":"Thank you for your purchase!"},
+  "tyLead":{"ru":"Оплата получена. Мы уже готовим для вас свежий пакет материалов.","en":"Payment received. We are already preparing a fresh materials pack for you."},
+  "tyBox":{"ru":"<b>Материалы придут на ваш email в течение 24 часов.</b> Обычно быстрее. Проверьте, пожалуйста, папку «Спам», если письма нет. Если возникнут вопросы — напишите нам, мы на связи.","en":"<b>The materials will arrive at your email within 24 hours.</b> Usually sooner. Please check your Spam folder if you don't see the email. If you have any questions, just message us — we're here."},
+  "tyHome":{"ru":"На главную","en":"Home"},
+  "tyMat":{"ru":"Материалы по BCM","en":"BCM materials"},
+  "fCopy":{"ru":"© 2026 Евгений Теленков · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Обучение и консалтинг по управлению рисками на risk-place.ru</a>","en":"© 2026 Evgeny Telenkov · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Risk management training and consulting at risk-place.ru</a>"}
+};
+var currentLang='ru';
+(function(){var ru=['ru','be','kk','ky','uk','uz','tg'];var list=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];var has=list.some(function(L){L=(L||'').toLowerCase();return ru.some(function(x){return L.indexOf(x)===0;});});currentLang=has?'ru':'en';})();
+function setLang(lang){currentLang=lang;document.documentElement.lang=lang;Object.keys(LANG).forEach(function(id){var el=document.getElementById(id);if(el&&LANG[id][lang]!==undefined)el.innerHTML=LANG[id][lang];});var a=document.getElementById('btnRU'),b=document.getElementById('btnEN');if(a)a.classList.toggle('active',lang==='ru');if(b)b.classList.toggle('active',lang==='en');}
+setLang(currentLang);
+</script>
+</body>
+</html>

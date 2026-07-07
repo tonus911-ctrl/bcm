@@ -707,6 +707,24 @@ function skipForm() {
   showResults();
 }
 
+// Надёжная отправка в воркер: до 3 попыток с нарастающей паузой — защита от разовых
+// сетевых сбоев и «холодного старта» воркера сразу после деплоя.
+async function postWorker(body, tries) {
+  tries = tries || 3;
+  var payload = JSON.stringify(body);
+  for (var i = 0; i < tries; i++) {
+    try {
+      var res = await fetch("https://risk-place-quiz.tonus911.workers.dev", {
+        method: "POST", headers: { "Content-Type": "text/plain" },
+        body: payload, keepalive: true
+      });
+      if (res && res.ok) return res;
+    } catch (e) { /* разовый сбой — повторим */ }
+    if (i < tries - 1) await new Promise(function (r) { setTimeout(r, 800 * (i + 1)); });
+  }
+  return null;
+}
+
 async function sendResultNotification() {
   const t = T[lang];
   const lv = finalLevel;
@@ -725,16 +743,8 @@ async function sendResultNotification() {
     recommendations: "▸ Размер: " + (SIZE_TEXT[answers[0]]||SIZE_LABEL[finalSize]) + " · рекомендуем: " + PRODUCTS[c.p].ru + "\n\n" + finalSteps,
     answers: buildSummary()
   };
-  try {
-    await fetch("https://risk-place-quiz.tonus911.workers.dev",{
-      method:"POST",
-      headers:{"Content-Type":"text/plain"},
-      body:JSON.stringify(body),
-      keepalive:true
-    });
-  } catch(e) {
-    // Тихо игнорируем — пользователь не должен видеть ошибку при пропуске формы
-  }
+  // Надёжно, с повторами (см. postWorker). Ошибку пользователю не показываем.
+  await postWorker(body);
 }
 
 // ═══════════════════════════════════
@@ -828,13 +838,10 @@ async function submitForm() {
   };
 
   try {
-    const res = await fetch("https://risk-place-quiz.tonus911.workers.dev",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(body)
-    });
+    const res = await postWorker(body);
+    if(!res) throw new Error("fail");
     const result = await res.json();
-    if(!res.ok || !result.success) throw new Error("fail");
+    if(!result.success) throw new Error("fail");
 
     formSubmitted = true;
     note.style.display="none";

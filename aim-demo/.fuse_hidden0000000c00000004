@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Resilience Assessment — AIM Partners</title>
+<meta name="description" content="Бесплатная диагностика устойчивости бизнеса от AIM Partners. 13 вопросов — результат сразу. Free business resilience assessment by AIM Partners.">
+<meta name="keywords" content="непрерывность бизнеса, устойчивость бизнеса, BCM, BCP, план непрерывности, управление рисками, кибербезопасность, кризисное управление, business continuity, risk management, BCM assessment, business resilience">
+<meta property="og:title" content="Business Resilience Assessment — AIM Partners">
+<meta property="og:description" content="13 вопросов — узнайте уровень устойчивости вашего бизнеса. Результат сразу и на почту. Бесплатно.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#C4A05A;--black:#242C2A;--dark:#242C2A;--card:#E8E5E1;--gray:#6B7170;--border:#B8B4AF;--text:#212B2A;--text2:#5A6260;--bg:#ffffff}
+body{font-family:'Inter','Calibri',Arial,sans-serif;background:var(--bg);color:var(--text)}
+.header{background:var(--black);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.logo{color:var(--cream);font-size:16px;font-weight:700;text-decoration:none;display:flex;align-items:center}
+
+.lang-toggle{display:flex;background:rgba(255,255,255,.12);border-radius:7px;padding:3px;gap:3px;border:1px solid rgba(255,255,255,.2)}
+.lang-btn{padding:7px 16px;border-radius:5px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.6);transition:all .15s}
+.lang-btn.active{background:var(--cream);color:var(--black)}
+.lang-btn:hover:not(.active){color:#fff}
+.progress-bar-wrap{background:rgba(33,43,42,0.2);height:3px}
+.progress-bar{height:3px;background:var(--cream);transition:width .4s;width:0%}
+.container{max-width:620px;margin:0 auto;padding:36px 20px 60px}
+.screen{display:none}.screen.active{display:block}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);margin-bottom:12px}
+.big-title{font-size:26px;font-weight:700;line-height:1.25;margin-bottom:14px;color:var(--text)}
+.sub-text{font-size:15px;line-height:1.65;color:var(--text2);margin-bottom:24px}
+.highlight-box{background:rgba(196,160,90,0.15);border:1px solid rgba(196,160,90,0.5);border-radius:10px;padding:14px 18px;font-size:14px;line-height:1.6;margin-bottom:28px;color:var(--text)}
+.meta-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.meta-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--text2)}
+.meta-dot{width:7px;height:7px;border-radius:50%;background:var(--cream);flex-shrink:0}
+.q-counter{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.q-text{font-size:18px;font-weight:700;line-height:1.35;margin-bottom:24px;color:var(--text)}
+.options{display:flex;flex-direction:column;gap:9px}
+.option{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:14px 18px;cursor:pointer;font-size:14px;font-family:inherit;line-height:1.45;color:var(--text);text-align:left;transition:all .15s}
+.option:hover{border-color:var(--black);background:rgba(196,160,90,0.12)}
+.option.selected{border-color:var(--black);background:rgba(196,160,90,0.18)}
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:8px;font-size:14px;font-family:inherit;font-weight:700;cursor:pointer;border:none;text-decoration:none;transition:opacity .15s,transform .1s}
+.btn:active{transform:scale(.98)}
+.btn-black{background:var(--black);color:#fff}.btn-black:hover{opacity:.85}
+.btn-cream{background:var(--cream);color:var(--black);border:1.5px solid var(--cream)}.btn-cream:hover{opacity:.88}
+.btn-ghost{background:transparent;color:var(--text2);border:1.5px solid var(--border)}.btn-ghost:hover{border-color:var(--black);color:var(--black)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn-full{width:100%;justify-content:center}
+.btn-row{display:flex;gap:10px}
+.btn-row .btn{flex:1}
+@media(max-width:480px){.btn-row{flex-direction:column}}
+.form-label{display:block;font-size:12px;font-weight:700;color:var(--text2);margin-bottom:5px}
+.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;color:var(--text);background:#fff;outline:none;transition:border-color .15s}
+.form-input:focus{border-color:var(--black)}
+.form-group{margin-bottom:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.privacy-note{font-size:11px;color:var(--text2);line-height:1.5;margin-top:10px}
+.sending-note{font-size:12px;color:var(--gray);text-align:center;margin-top:8px;display:none}
+.error-note{font-size:12px;color:#c0392b;text-align:center;margin-top:8px;display:none}
+.result-banner{border-radius:12px;padding:26px 22px;margin-bottom:20px}
+.level-badge{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:20px;display:inline-block;margin-bottom:10px}
+.result-title-big{font-size:24px;font-weight:700;margin-bottom:4px}
+.result-sub{font-size:14px;opacity:.75}
+.score-pill{display:inline-flex;background:rgba(0,0,0,.12);border-radius:20px;padding:4px 13px;font-size:12px;color:inherit;margin-bottom:4px}
+.level-track{display:flex;gap:5px;margin-bottom:20px}
+.l-seg{flex:1;height:7px;border-radius:4px;background:rgba(33,43,42,0.15)}
+.l-seg.filled{background:currentColor}
+.result-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--cream);margin-bottom:8px}
+.card-text{font-size:14px;line-height:1.65;color:var(--text)}
+.result-cta{background:var(--black);border-radius:12px;padding:26px 22px;margin-top:22px;text-align:center}
+.result-cta h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px}
+.result-cta p{font-size:14px;color:#9A9E9D;line-height:1.6;margin-bottom:20px}
+
+/* Consent checkbox */
+.consent-row{display:flex;align-items:flex-start;gap:10px;margin:16px 0}
+.consent-row input[type=checkbox]{appearance:none;-webkit-appearance:none;margin:2px 0 0 0;width:18px;height:18px;min-width:18px;flex-shrink:0;cursor:pointer;border:1.5px solid var(--border);border-radius:4px;background:#fff;position:relative}
+.consent-row input[type=checkbox]:checked{background:var(--black);border-color:var(--black)}
+.consent-row input[type=checkbox]:checked::after{content:"";position:absolute;left:5px;top:1px;width:4px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.consent-row label{font-size:12px;color:var(--text2);line-height:1.55;cursor:pointer}
+.consent-row a{color:var(--black);text-decoration:underline}
+
+.contact-success{background:#eafaf1;border:1.5px solid #27ae60;border-radius:10px;padding:16px 18px;font-size:14px;line-height:1.6;color:#0e5230;display:none;margin-top:12px}
+
+.t1{background:#fff0ee}.t1 .result-title-big,.t1 .result-sub{color:#7d1f1f}.t1 .level-badge{background:#c0392b;color:#fff}.t1-c{color:#c0392b}
+.t2{background:#fff5e8}.t2 .result-title-big,.t2 .result-sub{color:#7a3200}.t2 .level-badge{background:#e67e22;color:#fff}.t2-c{color:#e67e22}
+.t3{background:#F9EBC6}.t3 .result-title-big,.t3 .result-sub{color:#6b4f00}.t3 .level-badge{background:#c89800;color:#fff}.t3-c{color:#c89800}
+.t4{background:#e8f0ff}.t4 .result-title-big,.t4 .result-sub{color:#0d3870}.t4 .level-badge{background:#2980b9;color:#fff}.t4-c{color:#2980b9}
+.t5{background:#eafaf1}.t5 .result-title-big,.t5 .result-sub{color:#0e5230}.t5 .level-badge{background:#27ae60;color:#fff}.t5-c{color:#27ae60}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="https://aimpartners.org" class="logo" id="hLogo"><svg xmlns="http://www.w3.org/2000/svg" height="44" viewBox="0 0 180 44" aria-label="AIM Partners" style="display:block;">
+  <text x="0" y="22" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="300" letter-spacing="1" fill="#D8D4CC">AIM</text>
+  <text x="0" y="42" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="300" letter-spacing="0.5" fill="#D8D4CC">Partners</text>
+</svg></a>
+  <div class="lang-toggle">
+    <button class="lang-btn" id="btnRU" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+<div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="container">
+
+<!-- INTRO -->
+<div class="screen" id="s-intro">
+  <div class="eyebrow" id="t-intro-label"></div>
+  <h1 class="big-title" id="t-intro-title"></h1>
+  <p class="sub-text" id="t-intro-desc"></p>
+  <div class="highlight-box" id="t-intro-hl"></div>
+  <div class="meta-row">
+    <div class="meta-item"><div class="meta-dot"></div><span id="t-m1"></span></div>
+    <div class="meta-item"><div class="meta-dot"></div><span id="t-m2"></span></div>
+    <div class="meta-item"><div class="meta-dot"></div><span id="t-m3"></span></div>
+  </div>
+  <button class="btn btn-black btn-full" id="t-start-btn" onclick="startQuiz()"></button>
+</div>
+
+<!-- QUESTIONS -->
+<div class="screen" id="s-questions">
+  <div class="q-counter" id="qCounter"></div>
+  <div class="q-text" id="qText"></div>
+  <div class="options" id="qOptions"></div>
+  <div class="nav-row">
+    <button class="btn btn-ghost" id="btnBack" onclick="prevQ()"></button>
+    <button class="btn btn-black" id="btnNext" onclick="nextQ()" disabled></button>
+  </div>
+</div>
+
+<!-- CONTACT FORM (optional, before results) -->
+<div class="screen" id="s-contacts">
+  <div class="eyebrow" id="t-cont-label"></div>
+  <h2 class="big-title" id="t-cont-title"></h2>
+  <p class="sub-text" id="t-cont-desc"></p>
+  <div class="form-row">
+    <div class="form-group"><label class="form-label" id="t-lbl-name"></label><input class="form-input" type="text" id="fName"></div>
+    <div class="form-group"><label class="form-label" id="t-lbl-company"></label><input class="form-input" type="text" id="fCompany"></div>
+  </div>
+  <div class="form-group"><label class="form-label" id="t-lbl-email"></label><input class="form-input" type="email" id="fEmail"></div>
+
+  <div class="consent-row">
+    <input type="checkbox" id="fConsent">
+    <label for="fConsent" id="t-consent"></label>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-ghost" id="btnSkip" onclick="skipForm()"></button>
+    <button class="btn btn-black" id="btnSubmit" onclick="submitForm()"></button>
+  </div>
+  <p class="sending-note" id="sendingNote"></p>
+  <p class="error-note" id="errorNote"></p>
+  <div class="contact-success" id="contactSuccess"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="screen" id="s-results">
+  <div id="resBanner" class="result-banner">
+    <div id="resBadge" class="level-badge"></div>
+    <div class="score-pill" id="resPill"></div>
+    <div class="result-title-big" id="resTitle"></div>
+    <div class="result-sub" id="resSub"></div>
+  </div>
+  <div class="level-track" id="resTrack"></div>
+  <div class="result-card"><div class="card-label" id="t-what-label"></div><div class="card-text" id="resDesc"></div></div>
+  <div class="result-card"><div class="card-label" id="t-risks-label"></div><div class="card-text" id="resRisks"></div></div>
+  <div class="result-card"><div class="card-label" id="t-steps-label"></div><div class="card-text" id="resSteps"></div></div>
+  <div class="result-cta">
+    <h3 id="t-cta-title"></h3>
+    <p id="t-cta-desc"></p>
+    <a href="https://aimpartners.org/#contact" class="btn btn-cream" id="t-cta-btn" style="font-size:15px;padding:13px 30px;"></a>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════
+// WORKER ENDPOINT (релей в Telegram, работает в РФ)
+// ═══════════════════════════════════
+const WORKER_URL = "https://risk-place-quiz.tonus911.workers.dev";
+const FORM_TITLE  = "Заявка с AIM-квиза";
+
+// ═══════════════════════════════════
+// UI STRINGS
+// ═══════════════════════════════════
+const T = {
+ru:{
+  lang:"ru",logo:"AIM Partners",logoUrl:"https://aimpartners.org",
+  introLabel:"Экспресс-диагностика",
+  introTitle:"Насколько устойчив ваш бизнес к серьезному сбою?",
+  introDesc:"13 вопросов — результат вы увидите сразу и получите на почту. Никакого жаргона, только практические вопросы.",
+  introHl:"Кибератака, уход ключевого сотрудника, пандемия, сбой поставщика — один инцидент может остановить бизнес на недели. Узнайте, готовы ли вы.",
+  meta:["5–7 минут","13 вопросов","Бесплатно"],
+  startBtn:"Начать диагностику →",
+  qBack:"← Назад",qNext:"Далее →",qFinish:"Получить результат →",
+  whatLabel:"Что это значит",risksLabel:"Ключевые риски",stepsLabel:"Что мы сделаем вместе",
+  contLabel:"Опционально",
+  contTitle:"Получить результат на почту?",
+  contDesc:"Если хотите сохранить результат и получить его в письме — заполните форму. Это необязательно: можно посмотреть результат прямо сейчас, нажав «Пропустить».",
+  lblName:"Имя",lblCompany:"Компания",lblEmail:"Email",
+  phName:"Алексей",phCompany:"Название компании",phEmail:"alex@company.ru",
+  consentText:'Я согласен на обработку персональных данных в соответствии с <a href="privacy-policy.html" target="_blank" rel="noopener">Политикой обработки персональных данных</a>',
+  skipBtn:"Пропустить →",
+  submitBtn:"Отправить форму и получить результат →",
+  sending:"Отправляем...",errMsg:"Ошибка. Попробуйте еще раз.",
+  successMsg:"Спасибо! Результат отправлен на почту.",
+  alert:"Заполните имя, компанию и email.",
+  alertConsent:"Поставьте отметку о согласии на обработку персональных данных.",
+  ctaTitle:"Обсудим вашу ситуацию",
+  ctaDesc:"Выработаем оптимальный план действий.",
+  ctaBtn:"Связаться с нами →",
+  scoreLabel:(s)=>`${s} / 26`,levelLabel:(n,name)=>`Уровень ${n} — ${name}`,
+  subjectTpl:(name,co,n,nl)=>`Диагностика BCM: ${name} (${co}) — Уровень ${n} — ${nl}`,
+},
+en:{
+  lang:"en",logo:"AIM Partners",logoUrl:"https://aimpartners.org",
+  introLabel:"Business Resilience Assessment",
+  introTitle:"How prepared is your business for a serious disruption?",
+  introDesc:"13 plain-language questions — results shown immediately and sent to your email.",
+  introHl:"Cyberattack, key person departure, pandemic, supplier failure — one incident can stop your business for weeks. Find out if you're ready.",
+  meta:["5–7 minutes","13 questions","Free"],
+  startBtn:"Start Assessment →",
+  qBack:"← Back",qNext:"Next →",qFinish:"Get My Results →",
+  whatLabel:"What this means",risksLabel:"Key risks",stepsLabel:"What we will do together",
+  contLabel:"Optional",
+  contTitle:"Get your results by email?",
+  contDesc:"If you'd like to save your results and receive them by email, fill in the form. This is optional — you can view your results right now by clicking \"Skip\".",
+  lblName:"Name",lblCompany:"Company",lblEmail:"Email",
+  phName:"John",phCompany:"Company name",phEmail:"john@company.com",
+  consentText:'I consent to the processing of my personal data in accordance with the <a href="privacy-policy.html" target="_blank" rel="noopener">Personal Data Processing Policy</a>',
+  skipBtn:"Skip →",
+  submitBtn:"Submit form and get results →",
+  sending:"Sending...",errMsg:"Error. Please try again.",
+  successMsg:"Thank you! Your results have been sent by email.",
+  alert:"Please fill in name, company and email.",
+  alertConsent:"Please check the consent box to proceed.",
+  ctaTitle:"Let's discuss your situation",
+  ctaDesc:"We will develop the optimal action plan.",
+  ctaBtn:"Contact Us →",
+  scoreLabel:(s)=>`${s} / 26`,levelLabel:(n,name)=>`Level ${n} — ${name}`,
+  subjectTpl:(name,co,n,nl)=>`BCM Assessment: ${name} (${co}) — Level ${n} — ${nl}`,
+}
+};
+
+// ═══════════════════════════════════
+// QUESTIONS — 13 each language (AIM-специфика сохранена)
+// ═══════════════════════════════════
+const QU = {
+ru:[
+  // Q1 — без изменений
+  {text:"Сколько человек работает в вашей компании?",
+   opts:[{t:"2–7 человек — небольшая команда, решения принимаем быстро",s:2},{t:"8–30 человек",s:1.5},{t:"31–200 человек",s:1},{t:"Больше 200 человек",s:0.5}]},
+  // Q2 — без изменений
+  {text:"Если ваша компания полностью остановится на одну неделю — насколько это критично?",
+   opts:[{t:"Катастрофа — потеряем клиентов и вряд ли оправимся",s:0},{t:"Очень серьезно — большие потери, но выживем",s:0.5},{t:"Неприятно, но есть финансовая подушка на месяц-два",s:1.5},{t:"Не критично — наша модель выдержит такой простой",s:2}]},
+  // Q3 — без изменений
+  {text:"Знаете ли вы три главных процесса, без которых бизнес не работает, и что конкретно может их остановить?",
+   opts:[{t:"Нет, никогда об этом не думали",s:0},{t:"Есть смутное понимание, но ничего не зафиксировано",s:0.5},{t:"Да, понимаем — но только в голове у пары человек",s:1},{t:"Да, все задокументировано и команда знает",s:2}]},
+  // Q4 — без изменений
+  {text:"Знаете ли вы, сколько денег теряет бизнес за один день полной остановки?",
+   opts:[{t:"Нет, никогда не считали",s:0},{t:"Есть примерное ощущение, но не в цифрах",s:0.5},{t:"Считали приблизительно",s:1},{t:"Да, каждый ключевой процесс оценен в деньгах",s:2}]},
+  // Q5 — без изменений
+  {text:"Если ваш основной телефон, почта или ключевая система не работают — как вы свяжетесь с клиентами и поставщиками?",
+   opts:[{t:"Никак — резервных каналов нет",s:0},{t:"Что-нибудь придумаем, но плана нет",s:0.5},{t:"Есть несколько вариантов, но они не записаны",s:1},{t:"Есть задокументированный список резервных каналов связи",s:2}]},
+  // Q6 — AIM: добавлен промежуточный вариант (5 опций)
+  {text:"Есть ли у вас письменный план действий на случай серьезного сбоя?",
+   opts:[
+     {t:"Нет совсем",s:0},
+     {t:"Есть отдельные заметки или идеи",s:0.5},
+     {t:"Есть неформальные договоренности — все понимают «примерно»",s:1},
+     {t:"Есть документы по отдельным процессам, но не все процессы охвачены",s:1.5},
+     {t:"Да, есть документ с конкретными шагами, ролями и сроками по всем ключевым процессам",s:2}
+   ]},
+  // Q7 — AIM: убрано «случайно», добавлены цифры потерь
+  {text:"Случался ли в вашей компании серьезный кризис — пандемия, потеря крупного клиента, аварийная остановка?",
+   opts:[
+     {t:"Нет, серьезных кризисов пока не было",s:0.5},
+     {t:"Да, было тяжело — выручка компании сократилась на 30–50% к предыдущему году",s:0},
+     {t:"Да, было сложно, но ущерб от кризиса составил не более 10% от выручки",s:1},
+     {t:"Да, у нас был план — справились организованно, с минимальными потерями",s:2}
+   ]},
+  // Q8 — без изменений
+  {text:"Проверяли ли вы на практике, что реально произойдет, если завтра случится кризис?",
+   opts:[{t:"Нет, никогда",s:0},{t:"Обсуждали, но до реальной проверки не доходило",s:0.5},{t:"Разбирали сценарии на словах, без тестирования",s:1},{t:"Да, проводили учения или имитацию кризисной ситуации",s:2}]},
+  // Q9 — AIM: переработаны все 4 варианта
+  {text:"Насколько защищены ваши данные и IT-системы от взлома или сбоя?",
+   opts:[
+     {t:"Есть базовая защита, но без системного подхода",s:0},
+     {t:"Лучшие практики внедрены в ряде процессов, но нет единого подхода на уровне всей компании",s:0.5},
+     {t:"Лучшие практики внедрены в рамках ключевых направлений, но без охвата всей группы",s:1},
+     {t:"Комплексная защита и план действий при атаке или сбое на всех уровнях компании",s:2}
+   ]},
+  // Q10 — без изменений
+  {text:"Кто в вашей компании отвечает за то, что произойдет, если что-то пойдет не так?",
+   opts:[{t:"Никто специально этим не занимается",s:0},{t:"Есть человек, но это у него не основная задача",s:0.5},{t:"Есть ответственный, но без четких полномочий",s:1},{t:"Есть выделенный человек или команда с четкой ответственностью",s:2}]},
+  // Q11 — без изменений
+  {text:"Если ваш ключевой сотрудник завтра уйдет — насколько это парализует компанию?",
+   opts:[{t:"Полностью — все держится на одном человеке",s:0},{t:"Сильно — потребуются недели, чтобы выйти в нормальный режим",s:0.5},{t:"Частично — основные функции есть кому подхватить",s:1},{t:"Практически нет — знания и процессы задокументированы",s:2}]},
+  // Q12 — без изменений
+  {text:"Когда последний раз вы пересматривали свои договоренности и планы на случай кризиса?",
+   opts:[{t:"Плана нет — пересматривать нечего",s:0},{t:"Никогда не пересматривали",s:0.5},{t:"Больше года назад",s:1},{t:"Меньше года назад, с актуальными данными",s:2}]},
+  // Q13 — AIM: ответы дополнены методом 3-2-1
+  {text:"Делаете ли вы резервные копии важных данных и проверяли ли, что они реально восстанавливаются?",
+   opts:[
+     {t:"Нет или делаем редко и бессистемно",s:0},
+     {t:"Копии делаем, но реальное восстановление не проверяли",s:0.5},
+     {t:"Копии делаем регулярно по методу 3-2-1: 3 копии, 2 разных носителя, 1 вне офиса",s:1},
+     {t:"Регулярно делаем по методу 3-2-1 и проверяем, что данные реально восстанавливаются",s:2}
+   ]}
+],
+en:[
+  // Q1 — unchanged
+  {text:"How many people work in your company?",
+   opts:[{t:"2–7 people — small team, we make decisions fast",s:2},{t:"8–30 people",s:1.5},{t:"31–200 people",s:1},{t:"More than 200 people",s:0.5}]},
+  // Q2 — unchanged
+  {text:"If your company completely stopped working for one week — how serious would that be?",
+   opts:[{t:"Catastrophic — we'd lose clients and might not recover",s:0},{t:"Very serious — major losses, but we'd survive",s:0.5},{t:"Painful, but we have a financial cushion for a month or two",s:1.5},{t:"Not critical — our model can handle such downtime",s:2}]},
+  // Q3 — unchanged
+  {text:"Do you know the three core processes your business cannot function without — and what could stop them?",
+   opts:[{t:"No, we've never thought about it",s:0},{t:"We have a vague sense, but nothing written down",s:0.5},{t:"Yes, but only in the heads of a couple of people",s:1},{t:"Yes, documented and the whole team is aware",s:2}]},
+  // Q4 — unchanged
+  {text:"Do you know how much money your business loses for every full day of downtime?",
+   opts:[{t:"No, we've never calculated it",s:0},{t:"We have a rough feeling, but not in numbers",s:0.5},{t:"We've estimated it approximately",s:1},{t:"Yes, each key process has been valued in monetary terms",s:2}]},
+  // Q5 — unchanged
+  {text:"If your main phone, email or key system stops working — how would you reach clients and suppliers?",
+   opts:[{t:"We couldn't — there are no backup channels",s:0},{t:"We'd figure something out, but there's no plan",s:0.5},{t:"There are some options, but they're not written down",s:1},{t:"We have a documented list of backup communication channels",s:2}]},
+  // Q6 — AIM: added intermediate option (5 options)
+  {text:"Do you have a written action plan for a serious business disruption?",
+   opts:[
+     {t:"No plan at all",s:0},
+     {t:"Some notes or ideas exist",s:0.5},
+     {t:"Informal agreements — everyone roughly knows what to do",s:1},
+     {t:"Documents exist for some processes, but not all processes are covered",s:1.5},
+     {t:"Yes, a document with specific steps, roles and timelines covering all key processes",s:2}
+   ]},
+  // Q7 — AIM: removed "by luck", added financial figures
+  {text:"Has your company ever experienced a serious crisis — pandemic, major client loss, emergency shutdown?",
+   opts:[
+     {t:"No, we've never had a serious crisis",s:0.5},
+     {t:"Yes, it was tough — revenue dropped by 30–50% compared to the previous year",s:0},
+     {t:"Yes, it was hard, but the impact was no more than 10% of revenue",s:1},
+     {t:"Yes, we had a plan and recovered with minimal losses",s:2}
+   ]},
+  // Q8 — unchanged
+  {text:"Have you ever actually tested what would happen if a crisis hit tomorrow?",
+   opts:[{t:"No, never",s:0},{t:"We discussed it, but never got to actually testing it",s:0.5},{t:"We talked through scenarios verbally, without testing",s:1},{t:"Yes, we have run drills or crisis rehearsals",s:2}]},
+  // Q9 — AIM: reworked all 4 options
+  {text:"How well protected is your data and IT infrastructure from hacking or failure?",
+   opts:[
+     {t:"Basic protection in place, but no systematic approach",s:0},
+     {t:"Best practices implemented in some processes, but no unified approach across the company",s:0.5},
+     {t:"Best practices implemented across key business areas, but not the full group",s:1},
+     {t:"Comprehensive protection and incident response plan across all levels of the company",s:2}
+   ]},
+  // Q10 — unchanged
+  {text:"Who in your company is responsible for what happens when something goes wrong?",
+   opts:[{t:"Nobody is specifically responsible",s:0},{t:"Someone handles it, but it's not their main job",s:0.5},{t:"There's a responsible person, but without clear authority",s:1},{t:"A dedicated person or team with clear responsibility",s:2}]},
+  // Q11 — unchanged
+  {text:"If your key person left tomorrow — how much would it paralyse the company?",
+   opts:[{t:"Completely — everything depends on one person",s:0},{t:"Severely — it would take weeks to get back to normal",s:0.5},{t:"Partially — core functions have someone to cover",s:1},{t:"Barely — knowledge and processes are documented",s:2}]},
+  // Q12 — unchanged
+  {text:"How recently have you reviewed your crisis plans and arrangements?",
+   opts:[{t:"There is no plan to review",s:0},{t:"Never reviewed",s:0.5},{t:"More than a year ago",s:1},{t:"Less than a year ago, with current data",s:2}]},
+  // Q13 — AIM: options updated with 3-2-1 method
+  {text:"Do you back up important data regularly — and have you tested that it actually restores?",
+   opts:[
+     {t:"No, or rarely and unsystematically",s:0},
+     {t:"We back up, but haven't tested real recovery",s:0.5},
+     {t:"We back up regularly using the 3-2-1 method: 3 copies, 2 different media, 1 offsite",s:1},
+     {t:"We back up regularly using 3-2-1 and verify that data actually restores",s:2}
+   ]}
+]
+};
+
+// ═══════════════════════════════════
+// LEVELS — base text + adaptive steps
+// ═══════════════════════════════════
+const LV = {
+ru:[
+  {n:1,name:"Начальный",theme:"t1",tc:"t1-c",
+   sub:"Серьезных защитных механизмов нет",
+   desc:"Бизнес не готов к серьезным сбоям. Один инцидент — кибератака, уход ключевого человека, сбой поставщика, пандемия — может остановить работу на недели. Риски не оценены, ответственность не распределена.",
+   risks:"Полная остановка при первом серьезном инциденте. Потеря клиентов из-за длительного простоя. Никто не знает, что делать в первые часы кризиса.",
+   stepsSmall:"Начнем с трех простых шагов, которые не потребуют много времени.\n1. Запишите в почту или мессенджер: кто ваши ключевые клиенты, контакты основных поставщиков, где хранятся важные документы.\n2. Переместите все критичные файлы в облако (Google Drive, Яндекс Диск) — доступ у минимум двух человек.\n3. Скопируйте базу клиентов в отдельную таблицу, не зависящую от одного компьютера.\nЭто один день работы, который снизит риски в несколько раз. Поможем настроить за одну встречу.",
+   stepsBig:"На первой встрече составим карту критических рисков: найдем 3–5 процессов, без которых бизнес встанет, и оценим каждый в деньгах — сколько стоит один день простоя. Разработаем карту угроз: кибератака, уход ключевого сотрудника, сбой поставщика. Применим каждую угрозу к финансовой модели компании и определим, с чего начинать в первую очередь."},
+  {n:2,name:"Реактивный",theme:"t2",tc:"t2-c",
+   sub:"Есть отдельные меры, системы нет",
+   desc:"Компания реагирует на проблемы по мере их возникновения. Есть разрозненные меры, но нет плана, нет ролей, нет понимания стоимости остановки. Один крупный сбой займет недели.",
+   risks:"Хаос в первые часы кризиса. Зависимость от людей, которые «все знают в голове». Потеря выручки при простое дольше 3–5 дней.",
+   stepsSmall:"Главный риск небольшой команды — все держится на одном человеке. Разберем вместе, какие функции критичны, и решим, как распределить их так, чтобы уход любого сотрудника не остановил работу.\nПосчитаем, сколько стоит один день вашего простоя, и определим — какой финансовый резерв нужен, чтобы пережить неожиданную остановку без паники. Для небольшой команды это может быть вполне конкретная и реалистичная сумма.",
+   stepsBig:"Диагностика денежного потока: где скрытые точки концентрации риска, какой сценарий ударит сильнее всего. Разработаем первичный план антикризисных действий с конкретными шагами и ролями. Проведем кабинетное учение — имитацию кризиса, которая покажет реальные пробелы. Проанализируем риски со стороны конкурентов и изменений законодательства в вашей отрасли."},
+  {n:3,name:"Развивающийся",theme:"t3",tc:"t3-c",
+   sub:"Понимание есть — система еще не выстроена",
+   desc:"Осознание рисков есть, отдельные элементы защиты работают. Но нет регулярного тестирования, часть процессов не охвачена, команда не тренирована. Риск снижен, но не управляем.",
+   risks:"Пробелы обнаруживаются только в реальном кризисе. Команда знает теоретически, но не практически.",
+   stepsSmall:"Зафиксируем письменно все ключевые договоренности: кто за что отвечает, как связаться в кризис, где хранятся данные. Посчитаем день простоя в деньгах и определим финансовую подушку — сколько нужно держать в резерве. Проведем простую проверку: что случится, если одновременно уйдет ключевой сотрудник и упадет основной инструмент работы.",
+   stepsBig:"Стресс-тест на 3–5 ключевых сценариев: что происходит с выручкой при каждом? Закроем критические пробелы в плане. Обучение команды — не лекция, а практика: как действовать в первые часы кризиса. Определим допустимое время восстановления для каждого процесса и заложим резервные мощности."},
+  {n:4,name:"Управляемый",theme:"t4",tc:"t4-c",
+   sub:"Система работает, есть точки роста",
+   desc:"Работающая система защиты. Критичные процессы задокументированы, планы восстановления есть, команда обучена. Зоны роста — смежные риски и нестандартные сценарии.",
+   risks:"Нестандартные сценарии (одновременные инциденты) могут застать врасплох. Смежные риски — поставщики, партнеры — могут быть не охвачены.",
+   stepsSmall:"Расширим систему на партнеров и поставщиков. Подключим финансовую модель — покажем, как каждый сценарий выглядит в деньгах. Проанализируем регуляторные изменения, которые могут повлиять на вашу отрасль.",
+   stepsBig:"Расширение на цепочку поставщиков и партнеров — именно здесь часто скрыт главный риск. Анализ конкурентной среды и регуляторных изменений в вашей отрасли. Подключим финансовую модель к плану восстановления. При необходимости — подготовка к сертификации по ISO 22301."},
+  {n:5,name:"Оптимизированный",theme:"t5",tc:"t5-c",
+   sub:"Зрелая система — продолжайте развивать",
+   desc:"Зрелая система. Угрозы оцифрованы, планы работают и тестируются, команда знает свои роли. Бизнес восстановится после большинства инцидентов в минимальные сроки.",
+   risks:"Риск самоуспокоения. Новые угрозы и регуляторные изменения могут опередить план.",
+   stepsSmall:"Независимый аудит системы — найдем уязвимости, которые не видны изнутри. Интеграция управления рисками в стратегическое планирование. Анализ законодательных изменений, которые могут повлиять на вашу отрасль в горизонте 1–2 лет.",
+   stepsBig:"Независимый аудит системы непрерывности. Интеграция управления рисками в стратегическое планирование. Расширение на всю экосистему партнеров. Анализ конкурентной среды и регуляторных рисков в горизонте 1–2 лет."}
+],
+en:[
+  {n:1,name:"Initial",theme:"t1",tc:"t1-c",
+   sub:"No business protection system exists",
+   desc:"Your business is not prepared for serious disruptions. One incident — cyberattack, key person departure, pandemic, supplier failure — can stop operations for weeks.",
+   risks:"Full shutdown at the first serious incident. Client loss due to extended downtime. Nobody knows what to do in the first hours.",
+   stepsSmall:"Let's start with three simple steps that won't take much time.\n1. Write down in email or a chat: your key clients, main supplier contacts, where important documents are stored.\n2. Move all critical files to cloud storage (Google Drive, Dropbox) — at least two people must have access.\n3. Copy your client database to a separate spreadsheet, not dependent on one computer.\nThis is one day's work that will reduce your risks significantly. We can help set this up in a single meeting.",
+   stepsBig:"In our first session, we will map your critical risks: identify 3–5 processes that would stop your business and price each one — exactly how much a single day of downtime costs. We will build a threat map and model each threat against your company's financial model to determine where to start first."},
+  {n:2,name:"Reactive",theme:"t2",tc:"t2-c",
+   sub:"Scattered measures, no system",
+   desc:"The company reacts to problems as they arise. Scattered protective measures, but no plan, no roles, no understanding of costs.",
+   risks:"Chaos in the first hours of a crisis. Dependency on people who know everything in their heads. Revenue loss if downtime exceeds 3–5 days.",
+   stepsSmall:"The main risk for a small team is that everything depends on one person. We will work out which functions are critical and how to distribute them so that any person's departure doesn't stop the business.\nWe will calculate exactly how much one day of your downtime costs and determine what financial reserve you need to survive an unexpected shutdown without panic.",
+   stepsBig:"Cash flow diagnosis: hidden risk concentration points and which scenario hits hardest. Develop a primary crisis action plan with specific steps and roles. Run a tabletop exercise — a crisis simulation that reveals real gaps. Analyse competitive and regulatory risks in your industry."},
+  {n:3,name:"Developing",theme:"t3",tc:"t3-c",
+   sub:"Awareness exists — system does not yet",
+   desc:"Risk awareness exists and individual protective elements work. But no regular testing, some processes uncovered, team not trained.",
+   risks:"Gaps only discovered during a real crisis. Team knows theoretically but not practically.",
+   stepsSmall:"Document all key arrangements in writing: who is responsible for what, how to reach people in a crisis, where data is stored. Calculate one day of downtime in monetary terms and determine a financial cushion. Run a simple check: what happens if a key person leaves at the same time your main tool goes down.",
+   stepsBig:"Stress-test across 3–5 key scenarios: what happens to revenue in each? Close critical gaps. Team training — not a lecture, but practical exercises. Define recovery time targets for each process."},
+  {n:4,name:"Managed",theme:"t4",tc:"t4-c",
+   sub:"System works — growth areas remain",
+   desc:"A working protection system. Critical processes documented, recovery plans exist, team trained. Growth areas: adjacent risks and non-standard scenarios.",
+   risks:"Non-standard scenarios may catch you off guard. Supply chain and partner risks may not be covered.",
+   stepsSmall:"Extend the system to partners and suppliers. Connect the financial model — show what each scenario looks like in monetary terms. Analyse regulatory changes that could affect your industry.",
+   stepsBig:"Extension to supply chain and partners — this is often where the main risk hides. Analysis of competitive dynamics and regulatory changes. Connect the financial model to the recovery plan. Prepare for ISO 22301 certification if needed."},
+  {n:5,name:"Optimised",theme:"t5",tc:"t5-c",
+   sub:"Mature system — keep developing",
+   desc:"Mature risk management system. Threats quantified, plans work and are tested, team knows their roles.",
+   risks:"Risk of complacency. New threats and regulatory changes may outpace the plan.",
+   stepsSmall:"Independent audit of the system — finding vulnerabilities not visible from inside. Integrate risk management into strategic planning. Analyse legislative changes likely to affect your industry over the next 1–2 years.",
+   stepsBig:"Independent audit of your continuity system. Integration of risk management into strategic planning. Extension across your full partner ecosystem. Competitive and regulatory risk analysis over a 1–2 year horizon."}
+]
+};
+
+// ═══════════════════════════════════
+// ADAPTIVE STEPS LOGIC
+// ═══════════════════════════════════
+function buildSteps(lv, answers) {
+  const qs = QU[lang];
+  const isSmall       = answers[0] === 0;
+  const isConcentrated= answers[2] === 2;
+  const highImpact    = answers[1] !== null && qs[1].opts[answers[1]].s <= 0.5;
+  const survivedLuck  = answers[6] !== null && qs[6].opts[answers[6]].s === 0;
+
+  let steps = isSmall ? lv.stepsSmall : lv.stepsBig;
+
+  if (isConcentrated && lv.n <= 3) {
+    steps += lang === "ru"
+      ? "\n\nОтдельно разберем распределение функций: сейчас критические процессы сосредоточены у одного-двух человек. Это ваша главная зона риска. Перераспределим так, чтобы уход любого сотрудника не парализовал работу."
+      : "\n\nWe will specifically address function distribution: critical processes are currently concentrated in one or two people. This is your main risk zone. We will redistribute so that any person's departure does not paralyse operations.";
+  }
+
+  if (highImpact && lv.n <= 3) {
+    steps += lang === "ru"
+      ? "\n\nПоскольку остановка критична для вашего бизнеса, важно не просто знать риски, но и понять — какой сценарий реализуется с наибольшей вероятностью именно в вашей отрасли. Начнем с него: это дает максимальную защиту при минимальных усилиях и времени."
+      : "\n\nSince downtime is critical for your business, the priority is to identify which specific scenario is most likely to hit your industry first. We start there: this gives you maximum protection for minimum effort and time.";
+  }
+
+  const alreadyHasReserve = steps.includes(lang === "ru" ? "финансов" : "financial reserve") ||
+                            steps.includes(lang === "ru" ? "подушку" : "reserve you need");
+  if (lv.n <= 4 && !alreadyHasReserve) {
+    steps += lang === "ru"
+      ? "\n\nОтдельно рассчитаем, сколько стоит один день простоя вашего бизнеса в деньгах и определим размер финансовой подушки — конкретную сумму, которую стоит держать в резерве на случай непредвиденной остановки. Это один из самых практичных инструментов защиты, доступных любой компании."
+      : "\n\nWe will also calculate exactly how much one day of your downtime costs in monetary terms and determine the size of the financial reserve — a specific amount worth keeping as a buffer against an unexpected shutdown. This is one of the most practical protective tools available to any company.";
+  }
+
+  if (survivedLuck && lv.n <= 3) {
+    steps += lang === "ru"
+      ? "\n\nВажно: то, что вы уже пережили кризис — это ценный опыт. Но выживание «вопреки» и выживание «благодаря системе» — разные вещи. Следующий кризис может пойти иначе. Используем ваш опыт, чтобы построить защиту, которая работает не случайно."
+      : "\n\nImportant: the fact that you have already survived a crisis is valuable experience. But surviving despite everything and surviving because of a system are very different things. The next crisis may unfold differently. We will use your experience to build protection that works by design, not by luck.";
+  }
+
+  return steps;
+}
+
+// ═══════════════════════════════════
+// STATE
+// ═══════════════════════════════════
+let lang = "ru";
+let cur = 0;
+let answers = [];
+let finalScore = 0;
+let finalLevel = null;
+let finalSteps = "";
+let formSubmitted = false;
+
+(function(){
+  var ru = ["ru","be","kk","ky","uz","uk","tg"];
+  var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language||navigator.userLanguage||""];
+  lang = list.some(function(L){ L=(L||"").toLowerCase(); return ru.some(function(x){ return L.indexOf(x)===0; }); }) ? "ru" : "en";
+})();
+
+// ═══════════════════════════════════
+// UI
+// ═══════════════════════════════════
+function renderUI() {
+  const t = T[lang];
+  document.documentElement.lang = t.lang;
+  document.getElementById("hLogo").href = t.logoUrl;
+  document.getElementById("btnRU").classList.toggle("active", lang==="ru");
+  document.getElementById("btnEN").classList.toggle("active", lang==="en");
+  const ids = {
+    "t-intro-label":t.introLabel,"t-intro-title":t.introTitle,
+    "t-intro-desc":t.introDesc,"t-intro-hl":t.introHl,
+    "t-m1":t.meta[0],"t-m2":t.meta[1],"t-m3":t.meta[2],
+    "t-start-btn":t.startBtn,
+    "t-what-label":t.whatLabel,"t-risks-label":t.risksLabel,"t-steps-label":t.stepsLabel,
+    "t-cont-label":t.contLabel,"t-cont-title":t.contTitle,"t-cont-desc":t.contDesc,
+    "t-lbl-name":t.lblName,"t-lbl-company":t.lblCompany,"t-lbl-email":t.lblEmail,
+    "btnSkip":t.skipBtn,"btnSubmit":t.submitBtn,"sendingNote":t.sending,"errorNote":t.errMsg,
+    "t-cta-title":t.ctaTitle,"t-cta-desc":t.ctaDesc,"t-cta-btn":t.ctaBtn
+  };
+  Object.entries(ids).forEach(([id,val])=>{
+    const el = document.getElementById(id);
+    if(el) el.textContent = val;
+  });
+  document.getElementById("t-consent").innerHTML = t.consentText;
+  document.getElementById("fName").placeholder    = t.phName;
+  document.getElementById("fCompany").placeholder = t.phCompany;
+  document.getElementById("fEmail").placeholder   = t.phEmail;
+  document.getElementById("t-cta-btn").href = "https://aimpartners.org/#contact";
+  const screen = document.querySelector(".screen.active");
+  if(screen && screen.id==="s-questions") renderQ();
+}
+
+function setLang(l) {
+  lang = l;
+  answers = new Array(QU[lang].length).fill(null);
+  cur = 0;
+  formSubmitted = false;
+  renderUI();
+}
+
+function showScreen(id) {
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+
+function updateProgress(pct) {
+  document.getElementById("progressBar").style.width=(pct*100)+"%";
+}
+
+// ═══════════════════════════════════
+// QUIZ
+// ═══════════════════════════════════
+function startQuiz() {
+  answers = new Array(QU[lang].length).fill(null);
+  cur = 0;
+  showScreen("s-questions");
+  renderQ();
+}
+
+function renderQ() {
+  const t = T[lang], qs = QU[lang], q = qs[cur];
+  document.getElementById("qCounter").textContent =
+    lang==="ru" ? `Вопрос ${cur+1} из ${qs.length}` : `Question ${cur+1} of ${qs.length}`;
+  document.getElementById("qText").textContent = q.text;
+  const wrap = document.getElementById("qOptions");
+  wrap.innerHTML = "";
+  q.opts.forEach((opt,i)=>{
+    const btn = document.createElement("button");
+    btn.className = "option"+(answers[cur]===i?" selected":"");
+    btn.textContent = opt.t;
+    btn.onclick = ()=>selectOpt(i);
+    wrap.appendChild(btn);
+  });
+  document.getElementById("btnBack").textContent = t.qBack;
+  document.getElementById("btnBack").style.visibility = cur===0?"hidden":"visible";
+  document.getElementById("btnNext").textContent = cur===qs.length-1 ? t.qFinish : t.qNext;
+  document.getElementById("btnNext").disabled = answers[cur]===null;
+  updateProgress(cur/qs.length);
+}
+
+function selectOpt(i) {
+  answers[cur] = i;
+  document.querySelectorAll(".option").forEach((el,idx)=>el.classList.toggle("selected",idx===i));
+  document.getElementById("btnNext").disabled = false;
+}
+
+function nextQ() {
+  if(answers[cur]===null) return;
+  const qs = QU[lang];
+  if(cur<qs.length-1){cur++;renderQ();}
+  else {
+    finalScore = Math.round(answers.reduce((s,a,i)=>s+(a!==null?qs[i].opts[a].s:0),0)*2)/2;
+    finalLevel = getLevel(finalScore);
+    finalSteps = buildSteps(finalLevel, answers);
+    showContactScreen();
+  }
+}
+
+function prevQ() {
+  if(cur>0){cur--;renderQ();}
+}
+
+function getLevel(score) {
+  const lvs = LV[lang];
+  if(score<6)  return lvs[0];
+  if(score<12) return lvs[1];
+  if(score<18) return lvs[2];
+  if(score<23) return lvs[3];
+  return lvs[4];
+}
+
+// ═══════════════════════════════════
+// OPTIONAL CONTACT FORM
+// ═══════════════════════════════════
+function showContactScreen() {
+  showScreen("s-contacts");
+  updateProgress(0.92);
+  formSubmitted = false;
+  document.getElementById("fName").value="";
+  document.getElementById("fCompany").value="";
+  document.getElementById("fEmail").value="";
+  document.getElementById("fConsent").checked=false;
+  document.getElementById("contactSuccess").style.display="none";
+  document.getElementById("errorNote").style.display="none";
+  document.getElementById("sendingNote").style.display="none";
+  document.querySelector(".btn-row").style.display="flex";
+}
+
+function skipForm() {
+  sendSkippedNotification();
+  showResults();
+}
+
+// Надёжная отправка в воркер: до 3 попыток с нарастающей паузой — защита от разовых
+// сетевых сбоев и «холодного старта» воркера сразу после деплоя.
+async function postWorker(body, tries) {
+  tries = tries || 3;
+  var payload = JSON.stringify(body);
+  for (var i = 0; i < tries; i++) {
+    try {
+      var res = await fetch(WORKER_URL, {
+        method: "POST", headers: { "Content-Type": "text/plain" },
+        body: payload, keepalive: true
+      });
+      if (res && res.ok) return res;
+    } catch (e) { /* разовый сбой — повторим */ }
+    if (i < tries - 1) await new Promise(function (r) { setTimeout(r, 800 * (i + 1)); });
+  }
+  return null;
+}
+
+async function sendSkippedNotification() {
+  const t = T[lang];
+  const lv = finalLevel;
+  const body = {
+    formTitle: FORM_TITLE,
+    name: "Стесняшка",
+    company: "—",
+    email: "—",
+    language: lang.toUpperCase(),
+    score: t.scoreLabel(finalScore),
+    level: t.levelLabel(lv.n, lv.name),
+    description: lv.desc,
+    risks: lv.risks,
+    recommendations: finalSteps,
+    answers: buildSummary()
+  };
+  // Надёжно, с повторами (см. postWorker). Ошибку пользователю не показываем.
+  await postWorker(body);
+}
+
+// ═══════════════════════════════════
+// RESULTS
+// ═══════════════════════════════════
+function showResults() {
+  const t = T[lang], lv = finalLevel;
+  showScreen("s-results");
+  updateProgress(1);
+
+  document.getElementById("resBanner").className = "result-banner "+lv.theme;
+  document.getElementById("resBadge").textContent = t.levelLabel(lv.n,lv.name);
+  document.getElementById("resPill").textContent  = t.scoreLabel(finalScore);
+  document.getElementById("resTitle").textContent = lv.name;
+  document.getElementById("resSub").textContent   = lv.sub;
+
+  const track = document.getElementById("resTrack");
+  track.innerHTML="";
+  for(let i=1;i<=5;i++){
+    const seg=document.createElement("div");
+    seg.className="l-seg"+(i<=lv.n?" filled "+lv.tc:"");
+    track.appendChild(seg);
+  }
+
+  document.getElementById("resDesc").textContent = lv.desc;
+  document.getElementById("resRisks").innerHTML =
+    lv.risks.split(". ").filter(Boolean)
+      .map(s=>`<p style="margin-bottom:5px">— ${s.trim().replace(/\.+$/,"")}.</p>`).join("");
+  const stepsLines = finalSteps.split("\n").filter(Boolean);
+  document.getElementById("resSteps").innerHTML =
+    stepsLines.map(l=>`<p style="margin-bottom:8px">${l}</p>`).join("");
+}
+
+// ═══════════════════════════════════
+// FORM SUBMIT (optional, before results)
+// ═══════════════════════════════════
+function buildSummary() {
+  const qs = QU[lang];
+  return qs.map((q,i)=>{
+    const a = answers[i];
+    return `Q${i+1}: ${q.text}\n → ${a!==null?q.opts[a].t:"—"} (${a!==null?q.opts[a].s:0})`;
+  }).join("\n\n");
+}
+
+async function submitForm() {
+  if(formSubmitted) return;
+  const t = T[lang];
+  const name    = document.getElementById("fName").value.trim();
+  const company = document.getElementById("fCompany").value.trim();
+  const email   = document.getElementById("fEmail").value.trim();
+  const consent = document.getElementById("fConsent").checked;
+
+  if(!name||!company||!email){alert(t.alert);return;}
+  if(!consent){alert(t.alertConsent);return;}
+
+  const lv   = finalLevel;
+  const btn  = document.getElementById("btnSubmit");
+  const skip = document.getElementById("btnSkip");
+  const note = document.getElementById("sendingNote");
+  const err  = document.getElementById("errorNote");
+  btn.disabled=true; skip.disabled=true; note.style.display="block"; err.style.display="none";
+
+  const body = {
+    formTitle: FORM_TITLE,
+    name, company, email,
+    language: lang.toUpperCase(),
+    score: t.scoreLabel(finalScore),
+    level: t.levelLabel(lv.n, lv.name),
+    description: lv.desc,
+    risks: lv.risks,
+    recommendations: finalSteps,
+    answers: buildSummary()
+  };
+
+  try {
+    const res = await postWorker(body);
+    if(!res) throw new Error("fail");
+    const result = await res.json();
+    if(!result.success) throw new Error("fail");
+
+    formSubmitted = true;
+    note.style.display="none";
+    document.querySelector(".btn-row").style.display="none";
+    const success = document.getElementById("contactSuccess");
+    success.textContent = t.successMsg;
+    success.style.display="block";
+
+    setTimeout(showResults, 1100);
+  } catch(e) {
+    note.style.display="none";
+    err.style.display="block";
+    btn.disabled=false; skip.disabled=false;
+  }
+}
+
+// ═══════════════════════════════════
+// INIT
+// ═══════════════════════════════════
+renderUI();
+showScreen("s-intro");
+</script>
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(96530203,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/96530203" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+
+</body>
+</html>

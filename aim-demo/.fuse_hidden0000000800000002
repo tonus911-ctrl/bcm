@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Непрерывность бизнеса (BCM) — AIM Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1D2C2A; --ink2:#002925; --beige:#DED7D1; --grey:#D5D1CC;
+  --accent:#D16058; --accent-d:#b94b43; --paper:#f6f4f1; --line:#e4dfd8; --muted:#6f726d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:16px}
+h1,h2,h3,.logo{font-family:'Raleway','Inter',Arial,sans-serif;font-weight:800;line-height:1.15;color:var(--ink)}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.hdr{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:20}
+.hdr .bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{font-size:21px;letter-spacing:.02em;color:var(--ink)}
+.logo b{color:var(--accent);font-weight:800}
+.nav{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.nav a{color:var(--ink);font-weight:600;font-size:15px}
+.nav a:hover{color:var(--accent)}
+.nav .navcta{background:var(--accent);color:#fff;padding:9px 18px;border-radius:6px}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 24px;border-radius:7px;border:none;cursor:pointer;font-size:15px;font-family:'Inter'}
+.btn:hover{background:var(--accent-d);color:#fff}
+.phero{background:var(--ink);color:#fff;padding:56px 0 50px}
+.phero .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:12px}
+.phero h1{color:#fff;font-size:clamp(28px,4vw,42px);max-width:760px;margin-bottom:18px}
+.phero p{color:var(--grey);font-size:17px;max-width:720px;margin-bottom:12px}
+.back{display:inline-block;color:var(--grey);font-size:14px;margin-bottom:22px}
+.back:hover{color:#fff}
+.sec{padding:56px 0}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:#fff;display:flex;flex-direction:column}
+.prod .num{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-family:'Raleway';font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:14px}
+.prod h3{font-size:19px;margin-bottom:10px}
+.prod p{color:var(--muted);font-size:14.5px;margin-bottom:16px;flex:1}
+.prod .act{margin-top:auto}
+.mini{background:var(--ink);border-radius:12px;padding:14px;margin-bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mini .t{background:rgba(255,255,255,.06);border-left:3px solid var(--accent);border-radius:7px;padding:8px 10px}
+.mini .t .v{color:#fff;font-family:'Raleway';font-weight:800;font-size:17px}
+.mini .t .k{color:var(--grey);font-size:10.5px}
+.linkbtn{display:inline-block;color:var(--accent);font-weight:700;font-size:15px}
+.ctaband{background:var(--ink2);color:#fff;border-radius:18px;padding:34px;text-align:center;margin:10px 0 4px}
+.ctaband h2{color:#fff;font-size:24px;margin-bottom:8px}
+.ctaband p{color:var(--grey);margin-bottom:18px}
+.foot{background:var(--ink2);color:#fff;padding:52px 0 30px;margin-top:20px}
+.foot .cols{display:grid;grid-template-columns:1.2fr 1.4fr 1fr;gap:34px}
+.foot h4{color:var(--grey);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;font-weight:700}
+.foot a,.foot li{color:#cfd3cf;font-size:14.5px;list-style:none;margin-bottom:9px;display:block}
+.foot a:hover{color:var(--accent)}
+.foot .flogo{font-family:'Raleway';font-weight:800;font-size:20px;color:#fff;margin-bottom:10px}
+.foot .flogo b{color:var(--accent)}
+.foot .copy{color:#8b918c;font-size:13px;margin-top:30px;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}
+@media(max-width:900px){.prods{grid-template-columns:1fr}.foot .cols{grid-template-columns:1fr}.nav a:not(.navcta){display:none}}
+</style>
+</head>
+<body>
+
+<header class="hdr"><div class="container bar">
+  <a href="index.html" class="logo">AIM <b>Partners</b></a>
+  <nav class="nav">
+    <a href="index.html#uslugi">Услуги</a>
+    <a href="#">О нас</a>
+    <a href="#">Контакты</a>
+    <a href="#" class="navcta">Связаться</a>
+  </nav>
+</div></header>
+
+<section class="phero"><div class="container">
+  <a href="index.html" class="back">← Все услуги</a>
+  <div class="eyebrow">Управление рисками</div>
+  <h1>Непрерывность бизнеса (BCM)</h1>
+  <p>Кибератака, сбой ИТ, потеря поставщика или площадки способны остановить выручку на дни. Непрерывность бизнеса (BCM) — система, которая позволяет восстановиться за часы, а не недели, и заранее закрыть узкие места.</p>
+  <p>Для страхования это ещё и рычаг: компания с работающим BCM привлекательнее для страховщика — ниже вероятность и размер убытка, лучше условия покрытия.</p>
+</div></section>
+
+<section class="sec"><div class="container">
+  <div class="prods">
+
+    <div class="prod">
+      <div class="num">1</div>
+      <h3>Диагностика непрерывности</h3>
+      <p>Оценка готовности бизнеса к сбоям: критичные процессы, узкие места, целевое и фактическое время восстановления (RTO/RPO). На выходе вы получите — отчет с приоритетами. Начать можно с бесплатной экспресс-диагностики за 5 минут.</p>
+      <div class="act"><a href="quiz.html" class="btn">Пройти бесплатный квиз</a></div>
+    </div>
+
+    <div class="prod">
+      <div class="num">2</div>
+      <h3>Внедрение под ключ</h3>
+      <p>Не обучение, а рабочая система: планы BCP и DRP под ваши процессы, роли и сценарии на инцидент, тренировочные учения. Также формируем перечень единых точек отказа с мероприятиями по деэскалации риска. Берем на себя весь цикл — от аудита до проверенного в деле плана.</p>
+      <div class="act"><a href="#" class="linkbtn">Обсудить внедрение →</a></div>
+    </div>
+
+    <div class="prod">
+      <div class="num">3</div>
+      <h3>Дашборд непрерывности и рисков</h3>
+      <p>Одна панель для руководства и риск-менеджеров: индекс устойчивости, критичные процессы, время восстановления и главные риски в реальных цифрах.</p>
+      <div class="mini">
+        <div class="t"><div class="v">68/100</div><div class="k">Индекс устойчивости</div></div>
+        <div class="t"><div class="v">8</div><div class="k">Критичных процессов</div></div>
+        <div class="t"><div class="v">3</div><div class="k">В зоне риска</div></div>
+        <div class="t"><div class="v">26 ч</div><div class="k">MTTR</div></div>
+      </div>
+      <div class="act"><a href="dashboard.html" class="btn">Открыть дашборд</a></div>
+    </div>
+
+  </div>
+
+  <div class="ctaband" style="margin-top:40px">
+    <h2>Обсудим непрерывность вашего бизнеса?</h2>
+    <p>Начните с бесплатной диагностики или сразу поставьте задачу — эксперт подключится на встрече.</p>
+    <a href="#" class="btn">Обсудить проект</a>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="container">
+  <div class="cols">
+    <div>
+      <div class="flogo">AIM <b>Partners</b></div>
+      <div style="color:#8b918c;font-size:14px">Эксперт в корпоративном страховании и управлении рисками.</div>
+    </div>
+    <div>
+      <h4>Услуги</h4>
+      <a href="index.html#uslugi">Страхование имущества и перерыва</a>
+      <a href="index.html#uslugi">Кибер-риски</a>
+      <a href="index.html#uslugi">Риск-инжиниринг</a>
+      <a href="nepreryvnost.html">Непрерывность бизнеса (BCM)</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="#">info@aimpartners.org</a>
+      <a href="#">Реквизиты</a>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+  <div class="copy">© 2011–2026, AIM Partners · прототип интеграции раздела «Непрерывность бизнеса»</div>
+</div></footer>
+
+</body>
+</html>

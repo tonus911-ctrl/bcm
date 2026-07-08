@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>AIM Partners — Страхование и консалтинг</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1D2C2A; --ink2:#002925; --beige:#DED7D1; --grey:#D5D1CC;
+  --accent:#D16058; --accent-d:#b94b43; --paper:#f6f4f1; --line:#e4dfd8; --muted:#6f726d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:16px}
+h1,h2,h3,.logo{font-family:'Raleway','Inter',Arial,sans-serif;font-weight:800;line-height:1.15;color:var(--ink)}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.hdr{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:20}
+.hdr .bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{font-size:21px;letter-spacing:.02em;color:var(--ink)}
+.logo b{color:var(--accent);font-weight:800}
+.nav{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.nav a{color:var(--ink);font-weight:600;font-size:15px;font-family:'Inter'}
+.nav a:hover{color:var(--accent)}
+.nav .navcta{background:var(--accent);color:#fff;padding:9px 18px;border-radius:6px}
+.nav .navcta:hover{background:var(--accent-d)}
+.hero{background:var(--ink);color:#fff;padding:74px 0}
+.hero .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:14px}
+.hero h1{color:#fff;font-size:clamp(30px,4.4vw,46px);max-width:820px;margin-bottom:16px}
+.hero p{color:var(--grey);font-size:18px;max-width:640px;margin-bottom:26px}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:13px 26px;border-radius:7px;font-family:'Inter';border:none;cursor:pointer;font-size:15px}
+.btn:hover{background:var(--accent-d);color:#fff}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+.stats{background:var(--ink2);color:#fff;padding:26px 0}
+.stats .row{display:flex;gap:40px;flex-wrap:wrap;justify-content:center;text-align:center}
+.stats .n{font-family:'Raleway';font-weight:800;font-size:30px;color:var(--accent)}
+.stats .l{color:var(--grey);font-size:14px}
+.sec{padding:64px 0}
+.sec-h{font-size:clamp(24px,3.2vw,34px);margin-bottom:8px}
+.sec-sub{color:var(--muted);font-size:16px;margin-bottom:30px;max-width:640px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{border:1px solid var(--line);border-radius:14px;padding:24px 22px;background:#fff;display:flex;flex-direction:column;transition:.15s;min-height:150px}
+.card:hover{border-color:var(--accent);box-shadow:0 8px 26px rgba(29,44,42,.08)}
+.card h3{font-size:18px;margin-bottom:auto;font-weight:700}
+.card .more{margin-top:16px;color:var(--accent);font-weight:700;font-size:15px}
+.card.ours{border:1px solid var(--accent);border-left:4px solid var(--accent);background:linear-gradient(180deg,#fff,#fdf6f4)}
+.card .tag{align-self:flex-start;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:3px 10px;margin-bottom:12px}
+.card .desc{color:var(--muted);font-size:14.5px;margin-top:8px}
+.foot{background:var(--ink2);color:#fff;padding:52px 0 30px;margin-top:20px}
+.foot .cols{display:grid;grid-template-columns:1.2fr 1.4fr 1fr;gap:34px}
+.foot h4{color:var(--grey);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;font-family:'Inter';font-weight:700}
+.foot a,.foot li{color:#cfd3cf;font-size:14.5px;list-style:none;margin-bottom:9px;display:block}
+.foot a:hover{color:var(--accent)}
+.foot .flogo{font-family:'Raleway';font-weight:800;font-size:20px;color:#fff;margin-bottom:10px}
+.foot .flogo b{color:var(--accent)}
+.foot .copy{color:#8b918c;font-size:13px;margin-top:30px;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}
+@media(max-width:820px){.foot .cols{grid-template-columns:1fr}.nav{gap:16px}.nav a:not(.navcta){display:none}}
+</style>
+</head>
+<body>
+
+<header class="hdr"><div class="container bar">
+  <a href="index.html" class="logo">AIM <b>Partners</b></a>
+  <nav class="nav">
+    <a href="#">О нас</a>
+    <a href="#uslugi">Услуги</a>
+    <a href="#">Партнеры</a>
+    <a href="#">Контакты</a>
+    <a href="#" class="navcta">Связаться</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="container">
+  <div class="eyebrow">Страхование и консалтинг</div>
+  <h1>Защита бизнеса и профессиональное управление рисками</h1>
+  <p>Мы разрабатываем индивидуальные страховые программы и решения, обеспечивая надежную защиту бизнеса крупнейших компаний.</p>
+  <a href="#" class="btn">Связаться с нами</a>
+</div></section>
+
+<section class="stats"><div class="container row">
+  <div><div class="n">10+</div><div class="l">лет опыта у каждого эксперта</div></div>
+  <div><div class="n">15+</div><div class="l">страховщиков в режиме одного окна</div></div>
+  <div><div class="n">20+</div><div class="l">видов страхования</div></div>
+</div></section>
+
+<section class="sec" id="uslugi"><div class="container">
+  <h2 class="sec-h">Услуги</h2>
+  <div class="sec-sub">Страхование и управление рисками для корпоративных клиентов.</div>
+  <div class="cards">
+    <div class="card"><h3>Страхование имущества и перерыва в деятельности</h3><span class="more">Подробнее →</span></div>
+    <div class="card"><h3>Страхование грузов</h3><span class="more">Подробнее →</span></div>
+    <div class="card"><h3>Страхование ответственности директоров</h3><span class="more">Подробнее →</span></div>
+    <div class="card"><h3>Страхование кибер-рисков</h3><span class="more">Подробнее →</span></div>
+    <div class="card"><h3>Страхование гражданской ответственности</h3><span class="more">Подробнее →</span></div>
+    <div class="card"><h3>Страхование профессиональной ответственности</h3><span class="more">Подробнее →</span></div>
+    <div class="card"><h3>Страхование опасных объектов</h3><span class="more">Подробнее →</span></div>
+    <div class="card"><h3>Риск-инжиниринг</h3><span class="more">Подробнее →</span></div>
+    <a href="nepreryvnost.html" class="card ours" style="text-decoration:none">
+      <span class="tag">Новое направление</span>
+      <h3>Непрерывность бизнеса (BCM)</h3>
+      <div class="desc">Аудит, внедрение под ключ и дашборд устойчивости — чтобы бизнес восстанавливался за часы, а не недели.</div>
+      <span class="more">Подробнее →</span>
+    </a>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="container">
+  <div class="cols">
+    <div>
+      <div class="flogo">AIM <b>Partners</b></div>
+      <div style="color:#8b918c;font-size:14px">Эксперт в корпоративном страховании и управлении рисками.</div>
+    </div>
+    <div>
+      <h4>Услуги</h4>
+      <a href="#">Страхование имущества и перерыва</a>
+      <a href="#">Страхование грузов</a>
+      <a href="#">Ответственность директоров</a>
+      <a href="#">Кибер-риски</a>
+      <a href="#">Риск-инжиниринг</a>
+      <a href="nepreryvnost.html">Непрерывность бизнеса (BCM)</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="#">info@aimpartners.org</a>
+      <a href="#">Реквизиты</a>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+  <div class="copy">© 2011–2026, AIM Partners · прототип интеграции раздела «Непрерывность бизнеса»</div>
+</div></footer>
+
+</body>
+</html>

@@ -781,6 +781,7 @@ function setCTA(lv) {
 }
 
 function showResults() {
+  sendQuizCompleted();  // счетчик прохождений: любой путь к результату
   const t = T[lang], lv = finalLevel;
   showScreen("s-results");
   updateProgress(1);

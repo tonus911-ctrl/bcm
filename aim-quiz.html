@@ -703,6 +703,7 @@ async function sendSkippedNotification() {
 // RESULTS
 // ═══════════════════════════════════
 function showResults() {
+  sendQuizCompleted();  // счетчик прохождений: любой путь к результату
   const t = T[lang], lv = finalLevel;
   showScreen("s-results");
   updateProgress(1);

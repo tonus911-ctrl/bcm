@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Варианты оформления групп — превью</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B3A5C;--cream:#F9EBC6;--gold:#e3d9b8;--muted:#555;--for:#7a7f87;--line:#e7e8ea}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Figtree',Arial,sans-serif;color:#12233a;background:#eef1f5;line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding:28px 22px 60px}
+.vlabel{display:inline-block;background:var(--navy);color:#fff;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-radius:8px;padding:6px 14px;margin:34px 0 4px}
+.vhint{color:#5b6472;font-size:14px;margin:0 0 18px}
+.canvas{background:#fff;border:1px solid #e2e5ea;border-radius:18px;padding:26px 26px 30px}
+.sec-title{font-size:24px;font-weight:800;color:var(--navy);margin:0 0 4px}
+.sec-desc{color:var(--muted);font-size:14px;margin:0 0 22px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border:1px solid var(--line);border-radius:16px;padding:18px 18px;background:#fff;display:flex;flex-direction:column}
+.badge{align-self:flex-start;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.b-cream{background:#ffec89;color:#5c4a00}.b-blue{background:#e8f0ff;color:#1B3A5C}.b-green{background:#e3f6ea;color:#1a7a3a}.b-soon{background:#fff0d6;color:#8a5a00}
+.ct{font-size:16px;font-weight:800;color:var(--navy);margin:0 0 6px;line-height:1.25}
+.cf{font-size:12px;color:var(--for);border-left:2px solid var(--gold);padding-left:8px;margin:0 0 10px}
+.cp{font-size:13px;font-weight:800;color:var(--navy);margin-top:auto}
+.more{font-size:13px;font-weight:700;color:var(--navy);border-bottom:2px solid var(--cream);align-self:flex-start;margin-top:8px}
+
+/* diagnostic slim banner */
+.diag{display:flex;align-items:center;gap:14px;background:#fbf3d6;border:1px solid #efe0a8;border-radius:14px;padding:12px 18px;margin:0 0 22px}
+.diag .z{font-size:22px}
+.diag b{color:var(--navy);font-size:15px}
+.diag span{color:#6a5b28;font-size:13.5px}
+.diag a{margin-left:auto;background:var(--navy);color:#fff;font-weight:700;font-size:13.5px;border-radius:8px;padding:9px 16px;white-space:nowrap;text-decoration:none}
+
+/* VARIANT A — секции-ленты */
+.laneA{margin:0 0 18px;border:1px solid #e5e8ee;border-radius:16px;overflow:hidden}
+.laneA-h{display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;padding:13px 18px}
+.laneA-h .n{width:30px;height:30px;border-radius:8px;background:var(--cream);color:var(--navy);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.laneA-h .t{font-size:15px;font-weight:800}
+.laneA-h .s{margin-left:auto;color:#cdd8e6;font-size:12.5px}
+.laneA-b{padding:16px 16px 18px;background:#fff}
+
+/* VARIANT B — тонированные дорожки */
+.laneB{border-radius:16px;padding:16px 16px 18px;margin:0 0 16px;border:1px solid transparent}
+.laneB-1{background:#fbf6e6;border-color:#efe3b8}
+.laneB-2{background:#eef4fb;border-color:#d6e4f5}
+.laneB-3{background:#eef1f8;border-color:#dbe3f0}
+.laneB-h{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+.laneB-h .n{width:30px;height:30px;border-radius:8px;background:var(--navy);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.laneB-h .t{font-size:15px;font-weight:800;color:var(--navy)}
+.laneB-h .s{margin-left:auto;color:#6b7280;font-size:12.5px}
+.freecard{border:1.5px dashed #1a7a3a;background:#f2fbf5}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="vlabel">Вариант A · секции-ленты</div>
+  <div class="vhint">Каждая группа — секция с широкой тёмной шапкой (номер + название + для кого). Диагностика — тонкий баннер одной строкой сверху.</div>
+  <div class="canvas">
+    <h2 class="sec-title">Выберите формат под вашу задачу</h2>
+    <p class="sec-desc">От готовых шаблонов до корпоративного внедрения. Каждый продукт можно взять отдельно.</p>
+
+    <div class="diag">
+      <span class="z">⚡</span>
+      <div><b>Не знаете, с чего начать?</b> <span>Пройдите экспресс-диагностику непрерывности за 5 минут — бесплатно.</span></div>
+      <a href="#">Пройти диагностику →</a>
+    </div>
+
+    <div class="laneA">
+      <div class="laneA-h"><span class="n">01</span><span class="t">Самостоятельно · быстрый старт</span><span class="s">для малого бизнеса и тех, кто внедряет сам</span></div>
+      <div class="laneA-b"><div class="cards">
+        <div class="card"><span class="badge b-cream">С этого начать</span><div class="ct">Пакет шаблонов «BCM-старт»</div><div class="cf">Малый бизнес и те, кто внедряет BCM сам</div><div class="cp">4 900 ₽</div><span class="more">Подробнее →</span></div>
+        <div class="card"><span class="badge b-blue">Онлайн</span><div class="ct">Онлайн-курс «Непрерывность и ISO 22301»</div><div class="cf">Руководители и специалисты</div><div class="cp">19 900 ₽</div><span class="more">Подробнее →</span></div>
+      </div></div>
+    </div>
+
+    <div class="laneA">
+      <div class="laneA-h"><span class="n">02</span><span class="t">С экспертом · практика и внедрение вместе</span><span class="s">команды и риск-менеджеры</span></div>
+      <div class="laneA-b"><div class="cards">
+        <div class="card"><span class="badge b-blue">С ведущим</span><div class="ct">Кризисная бизнес-игра «День Икс»</div><div class="cf">Команды, которым нужна практика реагирования</div><div class="cp">150 000 ₽ / сессия</div><span class="more">Подробнее →</span></div>
+        <div class="card"><span class="badge b-green">Новое</span><div class="ct">Дашборд непрерывности и рисков</div><div class="cf">Риск-менеджеры и советы директоров</div><div class="cp">от 100 000 ₽</div><span class="more">Подробнее →</span></div>
+      </div></div>
+    </div>
+
+    <div class="laneA">
+      <div class="laneA-h"><span class="n">03</span><span class="t">Корпоративно · системно, под ключ</span><span class="s">средний и крупный бизнес</span></div>
+      <div class="laneA-b"><div class="cards">
+        <div class="card"><span class="badge b-blue">Корпоративно</span><div class="ct">«BCM под ключ»</div><div class="cf">Средний и крупный бизнес — внедрение под ключ</div><div class="cp">от 300 000 ₽</div><span class="more">Подробнее →</span></div>
+        <div class="card"><span class="badge b-soon">Скоро · осень 2026</span><div class="ct">Сертификация ISO 22301</div><div class="cf">Компании, которым нужен сертификат</div><div class="cp">по запросу</div><span class="more">Подробнее →</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="vlabel">Вариант B · тонированные дорожки</div>
+  <div class="vhint">Каждая группа — тонированная «коробка» со своим оттенком и рамкой. Диагностика — как отдельный бесплатный продукт (первая карточка в группе 01).</div>
+  <div class="canvas">
+    <h2 class="sec-title">Выберите формат под вашу задачу</h2>
+    <p class="sec-desc">От готовых шаблонов до корпоративного внедрения. Каждый продукт можно взять отдельно.</p>
+
+    <div class="laneB laneB-1">
+      <div class="laneB-h"><span class="n">01</span><span class="t">Самостоятельно · быстрый старт</span><span class="s">малый бизнес и те, кто внедряет сам</span></div>
+      <div class="cards">
+        <div class="card freecard"><span class="badge b-green">Бесплатно</span><div class="ct">Экспресс-диагностика непрерывности</div><div class="cf">13 вопросов за 5 минут — узнать уровень и три главных риска</div><div class="cp">0 ₽</div><span class="more">Пройти диагностику →</span></div>
+        <div class="card"><span class="badge b-cream">С этого начать</span><div class="ct">Пакет шаблонов «BCM-старт»</div><div class="cf">Малый бизнес и те, кто внедряет BCM сам</div><div class="cp">4 900 ₽</div><span class="more">Подробнее →</span></div>
+      </div>
+    </div>
+
+    <div class="laneB laneB-2">
+      <div class="laneB-h"><span class="n">02</span><span class="t">С экспертом · практика и внедрение вместе</span><span class="s">команды и риск-менеджеры</span></div>
+      <div class="cards">
+        <div class="card"><span class="badge b-blue">С ведущим</span><div class="ct">Кризисная бизнес-игра «День Икс»</div><div class="cf">Команды, которым нужна практика реагирования</div><div class="cp">150 000 ₽ / сессия</div><span class="more">Подробнее →</span></div>
+        <div class="card"><span class="badge b-green">Новое</span><div class="ct">Дашборд непрерывности и рисков</div><div class="cf">Риск-менеджеры и советы директоров</div><div class="cp">от 100 000 ₽</div><span class="more">Подробнее →</span></div>
+      </div>
+    </div>
+
+    <div class="laneB laneB-3">
+      <div class="laneB-h"><span class="n">03</span><span class="t">Корпоративно · системно, под ключ</span><span class="s">средний и крупный бизнес</span></div>
+      <div class="cards">
+        <div class="card"><span class="badge b-blue">Корпоративно</span><div class="ct">«BCM под ключ»</div><div class="cf">Средний и крупный бизнес — внедрение под ключ</div><div class="cp">от 300 000 ₽</div><span class="more">Подробнее →</span></div>
+        <div class="card"><span class="badge b-soon">Скоро · осень 2026</span><div class="ct">Сертификация ISO 22301</div><div class="cf">Компании, которым нужен сертификат</div><div class="cp">по запросу</div><span class="more">Подробнее →</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

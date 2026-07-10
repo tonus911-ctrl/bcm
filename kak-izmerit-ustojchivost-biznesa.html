@@ -165,6 +165,14 @@
   </div>
 </div>
 
+<h2 id="metriki">Ключевые метрики устойчивости</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Метрика</th><th>Что показывает</th><th>Ориентир для МСБ</th></tr></thead>
+<tbody><tr><td>RTO</td><td>За какое время нужно восстановить процесс</td><td>Критичные процессы — часы, остальные — дни</td></tr><tr><td>RPO</td><td>Какой объем данных допустимо потерять</td><td>От 15 минут до 24 часов в зависимости от процесса</td></tr><tr><td>MTPD</td><td>Максимально терпимый период простоя, после которого ущерб необратим</td><td>Определяется в <a href="bia-analiz-vozdeystviya.html">BIA</a> для каждого процесса</td></tr><tr><td>Стоимость часа простоя</td><td>Денежная цена каждого часа остановки</td><td>Считается заранее (<a href="stoimost-dnya-prostoya.html">методика расчета</a>)</td></tr><tr><td>Дата последних учений</td><td>Проверялся ли план на практике</td><td>Не реже раза в год</td></tr></tbody>
+</table>
+</div>
+
 <h2 id="faq">Частые вопросы</h2>
 <h3>Чем отличаются RTO и RPO?</h3><p>RTO — за сколько времени нужно восстановить процесс (про время простоя). RPO — какой объем данных допустимо потерять (про точку отката данных). Первый отвечает на «как быстро вернемся», второй — «сколько данных не жалко потерять».</p>
 <h3>Зачем нужен BIA, если и так понятно, что важно?</h3><p>BIA переводит интуицию в цифры: ранжирует процессы по критичности и стоимости простоя. Это позволяет вкладываться в защиту там, где это реально окупается, а не «везде понемногу».</p>
@@ -205,6 +213,7 @@ for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){retur
 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(96530203,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/96530203" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
 </body>

@@ -689,7 +689,26 @@ function showLeadForm(key){
 // ═══════════════════════════════════
 // OPTIONAL CONTACT FORM
 // ═══════════════════════════════════
+
+// Счетчик прохождений: тихое событие сразу после последнего вопроса (10.07.2026).
+// Уходит до формы контактов, чтобы считать всех дошедших до результата.
+let quizCountedSent = false;
+function sendQuizCompleted() {
+  if (quizCountedSent) return;
+  quizCountedSent = true;
+  try {
+    postWorker({
+      event: "quiz_completed",
+      quiz: "BCM",
+      language: lang.toUpperCase(),
+      score: T[lang].scoreLabel(finalScore),
+      level: T[lang].levelLabel(finalLevel.n, finalLevel.name)
+    }, 2);
+  } catch (e) {}
+}
+
 function showContactScreen() {
+  sendQuizCompleted();
   showScreen("s-contacts");
   updateProgress(0.92);
   formSubmitted = false;

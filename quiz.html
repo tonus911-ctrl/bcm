@@ -659,7 +659,7 @@ var MATRIX={
 };
 function recCell(){ return (MATRIX[finalSize]||MATRIX.md)[finalLevel.n]; }
 function ctaLabel(mode){ var t=T[lang]; return mode==='buy'?t.ctaBuy:(mode==='wait'?t.ctaWait:t.ctaApply); }
-function actFor(key){ var p=PRODUCTS[key]; return function(){ if(p.mode==='buy'&&p.url){ window.location.href=p.url; } else { showLeadForm(key); } }; }
+function actFor(key){ var p=PRODUCTS[key]; return function(){ try { ym(110579884, 'reachGoal', 'product_click'); } catch (e) {} if(p.mode==='buy'&&p.url){ window.location.href=p.url; } else { showLeadForm(key); } }; }
 function renderRecommendation(){
   var t=T[lang], c=recCell(), pk=c.p;
   document.getElementById('recEyebrow').textContent=t.recEyebrow;
@@ -696,6 +696,7 @@ let quizCountedSent = false;
 function sendQuizCompleted() {
   if (quizCountedSent) return;
   quizCountedSent = true;
+  try { ym(110579884, 'reachGoal', 'quiz_completed'); } catch (e) {}
   try {
     postWorker({
       event: "quiz_completed",
@@ -864,6 +865,7 @@ async function submitForm() {
     if(!result.success) throw new Error("fail");
 
     formSubmitted = true;
+    try { ym(110579884, 'reachGoal', 'lead_form'); } catch (e) {}
     note.style.display="none";
     document.querySelector(".btn-row").style.display="none";
     const success = document.getElementById("contactSuccess");

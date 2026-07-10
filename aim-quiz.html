@@ -630,6 +630,7 @@ let quizCountedSent = false;
 function sendQuizCompleted() {
   if (quizCountedSent) return;
   quizCountedSent = true;
+  try { ym(110579884, 'reachGoal', 'quiz_completed'); } catch (e) {}
   try {
     postWorker({
       event: "quiz_completed",
@@ -779,6 +780,7 @@ async function submitForm() {
     if(!result.success) throw new Error("fail");
 
     formSubmitted = true;
+    try { ym(110579884, 'reachGoal', 'lead_form'); } catch (e) {}
     note.style.display="none";
     document.querySelector(".btn-row").style.display="none";
     const success = document.getElementById("contactSuccess");

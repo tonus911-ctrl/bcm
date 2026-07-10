@@ -1162,7 +1162,6 @@ footer{background:#14142a;}
         <p data-ru="13 вопросов — узнаете уровень устойчивости, три главных риска и первые шаги." data-en="13 questions — learn your resilience level, top three risks and first steps." style="font-size:14px;line-height:1.5;color:#555;margin:0 0 12px;flex:1;">13 вопросов — узнаете уровень устойчивости, три главных риска и первые шаги.</p>
         <div data-ru="Для кого: всем — с чего начать" data-en="For: everyone — where to start" style="font-size:12.5px;color:#7a7f87;border-left:2px solid #e3d9b8;padding-left:9px;margin:0 0 12px;">Для кого: всем — с чего начать</div>
         <div data-ru="Бесплатно" data-en="Free" style="font-size:15px;font-weight:800;color:#1a7a3a;margin:0 0 12px;">Бесплатно</div>
-        <a href="https://bcm.risk-place.ru/quiz.html" class="btn btn-outline btn-full" style="margin-bottom:8px;" data-ru="Подробнее →" data-en="Details →">Подробнее →</a>
         <a class="btn btn-cream btn-full" href="https://bcm.risk-place.ru/quiz.html" data-ru="Пройти квиз →" data-en="Take the quiz →">Пройти квиз →</a>
       </div>
       <div class="prod-card" style="border:1px solid #e7e8ea;border-radius:16px;padding:24px 20px 20px;display:flex;flex-direction:column;background:#fff;position:relative;">
@@ -1233,7 +1232,6 @@ footer{background:#14142a;}
         <p id="pr5-d" style="font-size:14px;line-height:1.5;color:#555;margin:0 0 12px;flex:1;">Авторская программа подготовки и сертификат — нишевая сертификация по BCM. В разработке.</p>
         <div class="prod-for" id="pr5-for" style="font-size:12.5px;color:#7a7f87;border-left:2px solid #e3d9b8;padding-left:9px;margin:0 0 12px;">Для кого: специалисты, кому нужен подтвержденный статус</div>
         <div id="pr5-p" style="font-size:15px;font-weight:800;color:#1B3A5C;margin:0 0 12px;">Запись открыта</div>
-        <a href="#" id="pr5-more" class="btn btn-outline btn-full" style="margin-bottom:8px;" data-ru="Подробнее →" data-en="Details →">Подробнее →</a>
         <button class="np-form btn btn-black btn-full" data-prod="Сертификация по непрерывности бизнеса" data-mode="wait" id="pr5-btn">Записаться в лист ожидания</button>
       </div>
       </div>
@@ -1785,10 +1783,8 @@ if (heroEl) ioStrip.observe(heroEl);
     <p id="wlSub" style="font-size:14px;color:#666;margin:0 0 18px;">Оставьте контакты — свяжемся и расскажем подробности.</p>
     <input id="wlName" type="text" placeholder="Ваше имя" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;">
     <input id="wlContact" type="text" placeholder="Email или телефон / Telegram" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;">
-    <textarea id="wlComment" rows="2" placeholder="Комментарий (необязательно)" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:14px;resize:vertical;"></textarea>
     <div id="wlQual">
-      <select id="wlSize" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;color:#333;background:#fff;"></select>
-      <input id="wlConcern" type="text" placeholder="Что беспокоит больше всего? (необязательно)" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:14px;">
+      <textarea id="wlConcern" rows="3" placeholder="Что беспокоит больше всего? (необязательно)" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:14px;resize:vertical;"></textarea>
     </div>
     <label id="wlConsentLabel" for="wlConsent" style="display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#444;margin:0 0 16px;cursor:pointer;background:#f7f8fa;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px;">
       <input type="checkbox" id="wlConsent" style="width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:#1B3A5C;">
@@ -1835,15 +1831,12 @@ function openForm(prod,label,mode){
   document.getElementById('wlSub').textContent = (wlMode==='wait')?t.subWait:((wlMode==='buy')?t.subBuy:t.subApply);
   document.getElementById('wlName').placeholder=t.name;
   document.getElementById('wlContact').placeholder=t.contact;
-  document.getElementById('wlComment').placeholder=t.comment;
   var _q=document.getElementById('wlQual');
   if(_q){ _q.style.display=(wlMode==='buy')?'none':'block';
-    var _sel=document.getElementById('wlSize'); _sel.innerHTML=''; var _o0=document.createElement('option'); _o0.value=''; _o0.textContent=t.sizePh; _sel.appendChild(_o0);
-    (t.sizes||[]).forEach(function(sz){ var o=document.createElement('option'); o.value=sz; o.textContent=sz; _sel.appendChild(o); });
     var _cc=document.getElementById('wlConcern'); _cc.placeholder=t.concernPh; _cc.value=''; }
   document.getElementById('wlConsentText').innerHTML=t.consent;
   document.getElementById('wlSubmit').textContent=(wlMode==='wait')?t.submitWait:((wlMode==='buy')?t.submitBuy:t.submitApply);
-  document.getElementById('wlName').value='';document.getElementById('wlContact').value='';document.getElementById('wlComment').value='';
+  document.getElementById('wlName').value='';document.getElementById('wlContact').value='';
   document.getElementById('wlConsent').checked=false;
   document.getElementById('wlNote').style.display='none';document.getElementById('wlOk').style.display='none';document.getElementById('wlErr').style.display='none';
   document.getElementById('wlSubmit').disabled=false;
@@ -1863,8 +1856,8 @@ document.getElementById('wlSubmit').addEventListener('click',async function(){
   var t=FORM_I18N[fLang()];
   var name=document.getElementById('wlName').value.trim();
   var contact=document.getElementById('wlContact').value.trim();
-  var comment=document.getElementById('wlComment').value.trim();
-  var qsize=(wlMode!=='buy')?document.getElementById('wlSize').value:'';
+  var comment='';
+  var qsize='';
   var qconcern=(wlMode!=='buy')?document.getElementById('wlConcern').value.trim():'';
   var consent=document.getElementById('wlConsent').checked;
   var note=document.getElementById('wlNote'),ok=document.getElementById('wlOk'),err=document.getElementById('wlErr');

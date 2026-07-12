@@ -1240,22 +1240,83 @@ footer{background:#14142a;}
   </div>
 </section>
 <!-- ══ МАТЕРИАЛЫ (3 последних) ══ -->
-<section class="kb-section" style="padding:72px 24px;background:#fff;border-top:1px solid #e7e8ea;border-bottom:1px solid #e7e8ea;">
+<style>
+.kb-split{display:grid;grid-template-columns:50% 50%;gap:0;align-items:stretch;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px -30px rgba(20,24,43,0.35);background:#fff;}
+.kb-row{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border:1px solid #E7E4DC;border-radius:14px;padding:15px 20px;text-decoration:none;transition:background .15s,border-color .15s;}
+.kb-row:hover{background:#FBFAF6;border-color:#D8D3C6;}
+@media(max-width:880px){
+  .kb-split{grid-template-columns:1fr;}
+  .kb-row{grid-template-columns:1fr;gap:8px;}
+  .kb-row-more{display:none;}
+}
+</style>
+<section class="kb-section" style="padding:52px 24px;background:#F7F5F0;">
   <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
-      <div>
-        <div class="section-eyebrow" id="kb-eyebrow">Полезные материалы</div>
-        <h2 class="section-title" id="kb-title" style="margin-bottom:6px;">Свежие материалы по непрерывности бизнеса</h2>
-        <p class="section-desc" id="kb-desc" style="margin-bottom:0;max-width:680px;">Разбираем BCM по шагам: что это, план непрерывности (BCP), ISO 22301, анализ воздействия (BIA), аварийное восстановление.</p>
+    <div class="kb-split">
+
+      <!-- LEFT 40%: BOOK -->
+      <div style="background:#F4F1E9;padding:32px 34px;display:flex;flex-direction:column;gap:20px;color:#16181F;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="width:30px;height:2px;background:#B79B52;"></span>
+          <span data-ru="НОВАЯ КНИГА" data-en="NEW BOOK" style="font-size:13px;font-weight:700;letter-spacing:0.22em;color:#8C7A3F;">НОВАЯ КНИГА</span>
+        </div>
+
+        <div style="display:flex;gap:24px;align-items:flex-start;flex:1;min-width:0;flex-wrap:wrap;">
+          <div style="flex:0 0 158px;width:158px;aspect-ratio:1106/1524;background:linear-gradient(150deg,#20253F 0%,#141830 70%);border-radius:8px;box-shadow:0 22px 40px -14px rgba(0,0,0,0.6),inset 1px 0 0 rgba(255,255,255,0.06);padding:20px 17px;display:flex;flex-direction:column;position:relative;">
+            <div style="position:absolute;left:0;top:16px;bottom:16px;width:4px;background:rgba(0,0,0,0.35);border-radius:4px;"></div>
+            <div data-ru="СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ" data-en="A GUIDE FOR EXECUTIVES" style="font-size:7px;font-weight:700;letter-spacing:0.15em;color:#C9B26A;margin-top:30px;">СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ</div>
+            <div style="font-size:42px;font-weight:800;color:#fff;line-height:1.02;margin-top:22px;letter-spacing:-0.01em;">BCM</div>
+            <div data-ru="без иллюзий" data-en="without illusions" style="font-size:29px;font-weight:800;color:#ECE3C0;line-height:1.02;letter-spacing:-0.01em;">без иллюзий</div>
+            <div data-ru="Как защитить денежный поток компании" data-en="How to protect the company cash flow" style="font-size:11px;font-weight:500;color:#C9B26A;margin-top:13px;line-height:1.25;">Как защитить денежный поток компании</div>
+            <div style="height:2px;background:#B79B52;margin-top:14px;width:100%;"></div>
+            <div style="margin-top:auto;font-size:9px;font-weight:700;color:#ECE7DA;">bcm.risk-place.ru</div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;flex:1 1 190px;min-width:0;align-self:stretch;">
+            <div data-ru="Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя." data-en="A practical continuity map — from assessing vulnerabilities to the day of an outage." style="font-size:15px;font-weight:400;line-height:1.5;color:#5E606A;">Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя.</div>
+            <div style="display:flex;flex-direction:column;gap:11px;margin-top:4px;">
+              <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.4;color:#33353E;"><span style="color:#8C7A3F;font-weight:800;margin-top:-1px;">→</span><span data-ru="Оценка уязвимостей и критичных процессов" data-en="Assessing vulnerabilities and critical processes">Оценка уязвимостей и критичных процессов</span></div>
+              <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.4;color:#33353E;"><span style="color:#8C7A3F;font-weight:800;margin-top:-1px;">→</span><span data-ru="Готовый план BCP и сценарии восстановления" data-en="A ready BCP plan and recovery scenarios">Готовый план BCP и сценарии восстановления</span></div>
+              <div style="display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.4;color:#33353E;"><span style="color:#8C7A3F;font-weight:800;margin-top:-1px;">→</span><span data-ru="Действия в день, когда системы легли" data-en="What to do on the day the systems go down">Действия в день, когда системы легли</span></div>
+            </div>
+            <div data-ru="PDF&nbsp;· бесплатно" data-en="PDF&nbsp;· free" style="font-size:13px;font-weight:600;letter-spacing:0.02em;color:#8C7A3F;margin-top:auto;">PDF&nbsp;· бесплатно</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid rgba(20,24,43,0.1);">
+          <a href="kniga.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:10px;background:#EFE04E;color:#16181F;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;text-decoration:none;box-shadow:0 10px 24px -8px rgba(239,224,78,0.5);"><span data-ru="Получить книгу" data-en="Get the book">Получить книгу</span><span style="font-size:17px;">→</span></a>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#6E7079;"><span style="font-size:14px;">🔒</span><span data-ru="Отправим на почту после короткой формы с контактами" data-en="We'll email it after a short contact form">Отправим на почту после короткой формы с контактами</span></div>
+        </div>
       </div>
-      <a href="materialy.html" class="btn btn-cream" id="kb-btn" style="white-space:nowrap;">Все материалы →</a>
-    </div>
-    <div class="kb-cards" id="kbCards">
+
+      <!-- RIGHT 60%: MATERIALS -->
+      <div style="padding:32px 34px;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+          <span style="width:30px;height:2px;background:#C9B26A;"></span>
+          <span data-ru="Полезные материалы" data-en="Useful resources" style="font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#8C7A3F;">Полезные материалы</span>
+        </div>
+        <h2 style="margin:0;font-size:28px;font-weight:800;line-height:1.16;letter-spacing:-0.02em;color:#16181F;font-family:'Figtree','Inter','Calibri',Arial,sans-serif;" data-ru="Свежие материалы по непрерывности бизнеса" data-en="Latest business continuity resources">Свежие материалы по непрерывности бизнеса</h2>
+        <p style="margin:14px 0 0;font-size:15px;line-height:1.5;color:#6E7079;max-width:640px;" data-ru="Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление." data-en="Articles and templates on BCM: what it is, how to build a continuity plan (BCP), ISO 22301, business impact analysis (BIA) and disaster recovery.">Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.</p>
+        <a href="materialy.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:9px;margin-top:20px;background:#EFE04E;color:#16181F;font-size:15px;font-weight:800;padding:13px 24px;border-radius:999px;text-decoration:none;"><span data-ru="Все материалы по категориям" data-en="All materials by category">Все материалы по категориям</span><span>→</span></a>
+
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:24px;">
 <!--LATEST_START-->
-<a href="bcm-bcp-drp-otlichie.html" class="kb-card"><div class="kb-card-cat">Основы BCM</div><div class="kb-card-t">BCM, BCP, DRP — отличия</div><div class="kb-card-d">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и примеры…</div><div class="kb-card-more">Читать →</div></a>
-<a href="bcm-dlya-soveta-direktorov.html" class="kb-card"><div class="kb-card-cat">Управление рисками</div><div class="kb-card-t">BCM для совета директоров</div><div class="kb-card-d">Как обосновать инвестиции в непрерывность бизнеса перед советом директоров и собственниками: язык денег, риск-аппетит…</div><div class="kb-card-more">Читать →</div></a>
-<a href="bcm-dlya-sro-stroitelstvo.html" class="kb-card"><div class="kb-card-cat">Отраслевые риски</div><div class="kb-card-t">BCM для строительства и СРО</div><div class="kb-card-d">Зачем строительным компаниям и членам СРО нужна непрерывность бизнеса: риски проектов, подрядчиков и поставок, и как…</div><div class="kb-card-more">Читать →</div></a>
+          <a href="bcm-bcp-drp-otlichie.html" class="kb-row">
+            <div style="font-size:15px;font-weight:600;line-height:1.4;color:#16181F;" data-ru="BCM, BCP, DRP и риск-менеджмент — чем отличаются простыми словами" data-en="BCM, BCP, DRP and risk management — how they differ, in plain words">BCM, BCP, DRP и риск-менеджмент — чем отличаются простыми словами</div>
+            <div class="kb-row-more" style="display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;color:#16181F;white-space:nowrap;"><span data-ru="Читать" data-en="Read">Читать</span><span style="color:#8C7A3F;">→</span></div>
+          </a>
+          <a href="bcm-dlya-soveta-direktorov.html" class="kb-row">
+            <div style="font-size:15px;font-weight:600;line-height:1.4;color:#16181F;" data-ru="BCM для совета директоров: как обосновать инвестиции на языке денег" data-en="BCM for the board: how to justify the investment in the language of money">BCM для совета директоров: как обосновать инвестиции на языке денег</div>
+            <div class="kb-row-more" style="display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;color:#16181F;white-space:nowrap;"><span data-ru="Читать" data-en="Read">Читать</span><span style="color:#8C7A3F;">→</span></div>
+          </a>
+          <a href="bcm-dlya-sro-stroitelstvo.html" class="kb-row">
+            <div style="font-size:15px;font-weight:600;line-height:1.4;color:#16181F;" data-ru="BCM для строительства и СРО: риски проектов, подрядчиков и поставок" data-en="BCM for construction and SRO: project, contractor and supply risks">BCM для строительства и СРО: риски проектов, подрядчиков и поставок</div>
+            <div class="kb-row-more" style="display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;color:#16181F;white-space:nowrap;"><span data-ru="Читать" data-en="Read">Читать</span><span style="color:#8C7A3F;">→</span></div>
+          </a>
 <!--LATEST_END-->
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

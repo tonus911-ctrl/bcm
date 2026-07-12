@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Книга «BCM без иллюзий» — как защитить денежный поток компании | risk-place.ru</title>
+<meta name="description" content="Бесплатный справочник для руководителя «BCM без иллюзий»: практическая карта непрерывности бизнеса — оценка уязвимостей, BIA по ISO 22301, план BCP и действия в день, когда системы легли. Оставьте контакты — вышлем PDF на почту.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta property="og:title" content="Книга «BCM без иллюзий» — как защитить денежный поток компании">
+<meta property="og:description" content="Практическая карта непрерывности бизнеса: оценка уязвимостей, BIA, план BCP и действия в день сбоя. Бесплатный PDF за короткую форму.">
+<meta property="og:type" content="website">
+<style>
+.lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
+.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#8F8F8F;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.kn-hero{background:#F7F5F0;padding:56px 24px 64px}
+.kn-wrap{max-width:1120px;margin:0 auto}
+.kn-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:44px;align-items:start}
+.kn-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.kn-eyebrow span.line{width:30px;height:2px;background:#B79B52}
+.kn-eyebrow span.txt{font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#8C7A3F}
+.kn-title{font-family:'Figtree','Inter',Arial,sans-serif;font-size:clamp(30px,4.4vw,46px);font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#16181F;margin:0 0 14px}
+.kn-title .accent{color:#8C7A3F}
+.kn-sub{font-size:18px;line-height:1.5;color:#5E606A;margin:0 0 24px;max-width:520px}
+.kn-bul{display:flex;flex-direction:column;gap:12px;margin:0 0 26px}
+.kn-bul div{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;line-height:1.45;color:#33353E}
+.kn-bul .ar{color:#8C7A3F;font-weight:800}
+.kn-meta{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:#8C7A3F}
+.kn-cover{flex:0 0 210px;width:210px;aspect-ratio:1106/1524;background:linear-gradient(150deg,#20253F 0%,#141830 70%);border-radius:9px;box-shadow:0 30px 54px -16px rgba(0,0,0,.6),inset 1px 0 0 rgba(255,255,255,.06);padding:26px 22px;display:flex;flex-direction:column;position:relative;margin-bottom:28px}
+.kn-cover .spine{position:absolute;left:0;top:18px;bottom:18px;width:4px;background:rgba(0,0,0,.35);border-radius:4px}
+.kn-cover .c1{font-size:9px;font-weight:700;letter-spacing:.16em;color:#C9B26A;margin-top:40px}
+.kn-cover .c2{font-size:56px;font-weight:800;color:#fff;line-height:1.02;margin-top:30px;letter-spacing:-.01em}
+.kn-cover .c3{font-size:40px;font-weight:800;color:#ECE3C0;line-height:1.02;letter-spacing:-.01em}
+.kn-cover .c4{font-size:14px;font-weight:500;color:#C9B26A;margin-top:18px;line-height:1.25}
+.kn-cover .cline{height:2px;background:#B79B52;margin-top:20px}
+.kn-cover .c5{margin-top:auto;font-size:10px;font-weight:700;color:#ECE7DA}
+.kn-form{background:#fff;border:1px solid #E7E4DC;border-radius:20px;padding:32px 30px;box-shadow:0 24px 60px -34px rgba(20,24,43,.35)}
+.kn-form h2{font-family:'Figtree','Inter',Arial,sans-serif;font-size:23px;font-weight:800;color:#16181F;margin:0 0 6px}
+.kn-form p.f-lead{font-size:14.5px;line-height:1.5;color:#6E7079;margin:0 0 22px}
+.kn-field{margin-bottom:14px}
+.kn-field label{display:block;font-size:13px;font-weight:700;color:#33353E;margin-bottom:6px}
+.kn-field input{width:100%;border:1px solid #d8dae1;border-radius:11px;padding:13px 15px;font-size:15px;font-family:inherit;color:#16181F;background:#fbfaf7}
+.kn-field input:focus{outline:none;border-color:#8C7A3F;background:#fff}
+.kn-consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:#6E7079;margin:6px 0 18px}
+.kn-consent input{margin-top:2px}
+.kn-submit{width:100%;background:#EFE04E;color:#16181F;border:none;border-radius:999px;padding:16px 24px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 26px -10px rgba(239,224,78,.6)}
+.kn-submit:hover{filter:brightness(0.97)}
+.kn-note{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6E7079;margin-top:14px;justify-content:center}
+.kn-err{display:none;background:#fdecec;color:#a3272a;border-radius:10px;padding:10px 14px;font-size:13px;margin-top:12px}
+.kn-thanks{display:none;text-align:center;padding:14px 6px}
+.kn-thanks .tick{width:66px;height:66px;border-radius:50%;background:#e6f6ec;color:#1a7a3a;font-size:34px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.kn-thanks h2{font-size:22px;margin:0 0 10px}
+.kn-thanks p{font-size:15px;line-height:1.6;color:#3a3f48;margin:0}
+.kn-inside{padding:64px 24px;background:#fff}
+.kn-inside h2{font-family:'Figtree','Inter',Arial,sans-serif;font-size:clamp(24px,3vw,32px);font-weight:800;color:#16181F;margin:0 0 8px;text-align:center}
+.kn-inside .isub{font-size:16px;color:#6E7079;text-align:center;margin:0 auto 36px;max-width:620px}
+.kn-parts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:960px;margin:0 auto}
+.kn-part{display:flex;gap:14px;align-items:flex-start;border:1px solid #ECEAE3;border-radius:14px;padding:18px 20px;background:#FBFAF6}
+.kn-part .num{flex:0 0 34px;width:34px;height:34px;border-radius:9px;background:#16181F;color:#ECE3C0;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.kn-part .pt{font-size:15.5px;font-weight:700;color:#16181F;line-height:1.32}
+.kn-part .pd{font-size:13px;color:#6E7079;margin-top:3px;line-height:1.4}
+.kn-road{max-width:960px;margin:22px auto 0;border:1px dashed #C9B26A;border-radius:14px;padding:18px 22px;background:#FCFAF1;font-size:15px;color:#33353E;text-align:center}
+.kn-road b{color:#8C7A3F}
+@media(max-width:860px){
+  .kn-grid{grid-template-columns:1fr;gap:32px}
+  .kn-parts{grid-template-columns:1fr}
+}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(96530203,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/96530203" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <nav class="nav" id="nav">
+      <a href="materialy.html" id="nMat">Материалы по BCM</a>
+      <a href="index.html#products" id="nProd">Продукты</a>
+      <a href="o-podhode.html" id="nAbout">О нас</a>
+      <span class="lang-toggle"><button class="lang-btn active" id="btnRU" onclick="setLang('ru')">RU</button><button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button></span>
+    </nav>
+  </div>
+</header>
+
+<section class="kn-hero">
+  <div class="kn-wrap">
+    <div class="kn-grid">
+
+      <!-- LEFT: pitch -->
+      <div>
+        <div class="kn-eyebrow"><span class="line"></span><span class="txt" data-ru="Новая книга · бесплатно" data-en="New book · free">Новая книга · бесплатно</span></div>
+        <h1 class="kn-title" data-ru="BCM <span class='accent'>без иллюзий</span>" data-en="BCM <span class='accent'>without illusions</span>">BCM <span class="accent">без иллюзий</span></h1>
+        <p class="kn-sub" data-ru="Практическая карта непрерывности бизнеса: от оценки уязвимостей до работы в тот день, когда системы легли. Справочник для собственника и первого лица компании." data-en="A practical map of business continuity: from assessing vulnerabilities to working on the day the systems go down. A guide for the owner and the top executive.">Практическая карта непрерывности бизнеса: от оценки уязвимостей до работы в тот день, когда системы легли. Справочник для собственника и первого лица компании.</p>
+
+        <div class="kn-cover">
+          <span class="spine"></span>
+          <div class="c1" data-ru="СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ" data-en="A GUIDE FOR EXECUTIVES">СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ</div>
+          <div class="c2">BCM</div>
+          <div class="c3" data-ru="без иллюзий" data-en="without illusions">без иллюзий</div>
+          <div class="c4" data-ru="Как защитить денежный поток компании" data-en="How to protect the company cash flow">Как защитить денежный поток компании</div>
+          <div class="cline"></div>
+          <div class="c5">bcm.risk-place.ru</div>
+        </div>
+
+        <div class="kn-bul">
+          <div><span class="ar">→</span><span data-ru="Оценка уязвимостей и критичных процессов денежного потока" data-en="Assessing vulnerabilities and critical cash-flow processes">Оценка уязвимостей и критичных процессов денежного потока</span></div>
+          <div><span class="ar">→</span><span data-ru="BIA по ISO 22301 и готовый план BCP" data-en="BIA per ISO 22301 and a ready BCP plan">BIA по ISO 22301 и готовый план BCP</span></div>
+          <div><span class="ar">→</span><span data-ru="Действия в день, когда системы легли, и дорожная карта на 90 дней" data-en="What to do on the day the systems go down, plus a 90-day roadmap">Действия в день, когда системы легли, и дорожная карта на 90 дней</span></div>
+        </div>
+        <div class="kn-meta" data-ru="PDF · 15 страниц · бесплатно" data-en="PDF · 15 pages · free">PDF · 15 страниц · бесплатно</div>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div class="kn-form">
+        <div id="formBox">
+          <h2 data-ru="Получить книгу" data-en="Get the book">Получить книгу</h2>
+          <p class="f-lead" data-ru="Оставьте контакты — вышлем PDF на вашу почту в течение 24 часов." data-en="Leave your details — we'll email the PDF within 24 hours.">Оставьте контакты — вышлем PDF на вашу почту в течение 24 часов.</p>
+          <form id="bookForm" novalidate>
+            <div class="kn-field">
+              <label for="kName" data-ru="Имя" data-en="Name">Имя</label>
+              <input type="text" id="kName" autocomplete="name" required>
+            </div>
+            <div class="kn-field">
+              <label for="kEmail" data-ru="E-mail (куда прислать книгу)" data-en="E-mail (where to send the book)">E-mail (куда прислать книгу)</label>
+              <input type="email" id="kEmail" autocomplete="email" required>
+            </div>
+            <div class="kn-field">
+              <label for="kPhone" data-ru="Телефон (по желанию)" data-en="Phone (optional)">Телефон (по желанию)</label>
+              <input type="tel" id="kPhone" autocomplete="tel">
+            </div>
+            <label class="kn-consent"><input type="checkbox" id="kConsent" required><span data-ru="Согласен на обработку персональных данных и получение книги на указанную почту." data-en="I agree to the processing of my personal data and to receiving the book at the email above.">Согласен на обработку персональных данных и получение книги на указанную почту.</span></label>
+            <button type="submit" class="kn-submit" id="kSubmit"><span data-ru="Получить книгу" data-en="Get the book">Получить книгу</span><span>→</span></button>
+            <div class="kn-err" id="kErr" data-ru="Проверьте имя, корректный e-mail и согласие." data-en="Please check your name, a valid e-mail and the consent box.">Проверьте имя, корректный e-mail и согласие.</div>
+          </form>
+          <div class="kn-note"><span>🔒</span><span data-ru="Без спама. Контакты — только для отправки материалов." data-en="No spam. Your details are only used to send the materials.">Без спама. Контакты — только для отправки материалов.</span></div>
+        </div>
+        <div class="kn-thanks" id="thanksBox">
+          <div class="tick">✓</div>
+          <h2 data-ru="Спасибо! Заявка принята" data-en="Thank you! Request received">Спасибо! Заявка принята</h2>
+          <p data-ru="Пришлем книгу «BCM без иллюзий» на вашу почту в течение 24 часов. Обычно быстрее. Проверьте папку «Спам», если письма нет." data-en="We'll email the book «BCM without illusions» within 24 hours — usually sooner. Please check your Spam folder if you don't see it.">Пришлем книгу «BCM без иллюзий» на вашу почту в течение 24 часов. Обычно быстрее. Проверьте папку «Спам», если письма нет.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="kn-inside">
+  <h2 data-ru="Что внутри" data-en="What's inside">Что внутри</h2>
+  <p class="isub" data-ru="Восемь коротких частей — по шагам, от «где вы сломаетесь» до работы в день сбоя. Без воды и без иллюзий." data-en="Eight short parts, step by step — from «where you'll break» to working on the day of the outage. No fluff, no illusions.">Восемь коротких частей — по шагам, от «где вы сломаетесь» до работы в день сбоя. Без воды и без иллюзий.</p>
+  <div class="kn-parts">
+    <div class="kn-part"><div class="num">I</div><div><div class="pt" data-ru="Почему денежный поток хрупок" data-en="Why cash flow is fragile">Почему денежный поток хрупок</div><div class="pd" data-ru="Уязвимости, которых не видит собственник, и четыре угрозы, что чаще всего кладут бизнес." data-en="The vulnerabilities the owner doesn't see, and the four threats that most often take a business down.">Уязвимости, которых не видит собственник, и четыре угрозы, что чаще всего кладут бизнес.</div></div></div>
+    <div class="kn-part"><div class="num">II</div><div><div class="pt" data-ru="Шаг 1. Оценка: где вы сломаетесь" data-en="Step 1. Assessment: where you'll break">Шаг 1. Оценка: где вы сломаетесь</div><div class="pd" data-ru="Как устроен денежный поток, точки концентрации риска и критические уязвимости." data-en="How cash flow works, points of risk concentration and critical vulnerabilities.">Как устроен денежный поток, точки концентрации риска и критические уязвимости.</div></div></div>
+    <div class="kn-part"><div class="num">III</div><div><div class="pt" data-ru="Шаг 2. BIA по ISO 22301" data-en="Step 2. BIA per ISO 22301">Шаг 2. BIA по ISO 22301</div><div class="pd" data-ru="Анализ воздействия на бизнес простыми словами: на что смотреть и как считать." data-en="Business impact analysis in plain words: what to look at and how to measure it.">Анализ воздействия на бизнес простыми словами: на что смотреть и как считать.</div></div></div>
+    <div class="kn-part"><div class="num">IV</div><div><div class="pt" data-ru="Шаг 3. Укрепление. IT-устойчивость" data-en="Step 3. Hardening. IT resilience">Шаг 3. Укрепление. IT-устойчивость</div><div class="pd" data-ru="Резервирование и восстановление, облако, санкции и трехцветная модель." data-en="Backup and recovery, cloud, sanctions and the traffic-light model.">Резервирование и восстановление, облако, санкции и трехцветная модель.</div></div></div>
+    <div class="kn-part"><div class="num">V</div><div><div class="pt" data-ru="Шаг 3. Укрепление. Люди" data-en="Step 3. Hardening. People">Шаг 3. Укрепление. Люди</div><div class="pd" data-ru="Что делает с людьми стресс, кто как ведет себя в кризисе и как готовить команду." data-en="What stress does to people, how they behave in a crisis and how to prepare the team.">Что делает с людьми стресс, кто как ведет себя в кризисе и как готовить команду.</div></div></div>
+    <div class="kn-part"><div class="num">VI</div><div><div class="pt" data-ru="GR: регуляторы и госорганы" data-en="GR: regulators and authorities">GR: регуляторы и госорганы</div><div class="pd" data-ru="Кому и о чем докладывать и как подготовиться к этому заранее." data-en="Who to report to, about what, and how to prepare in advance.">Кому и о чем докладывать и как подготовиться к этому заранее.</div></div></div>
+    <div class="kn-part"><div class="num">VII</div><div><div class="pt" data-ru="Требования регуляторов" data-en="Regulatory requirements">Требования регуляторов</div><div class="pd" data-ru="Что требуют стандарты и регуляторы — и что из этого действительно важно." data-en="What standards and regulators require — and what actually matters.">Что требуют стандарты и регуляторы — и что из этого действительно важно.</div></div></div>
+    <div class="kn-part"><div class="num">VIII</div><div><div class="pt" data-ru="Работа, когда все легло" data-en="Working when everything is down">Работа, когда все легло</div><div class="pd" data-ru="Сценарий: завтра у вас не работают CRM и ERP. Что делать по часам." data-en="Scenario: tomorrow your CRM and ERP are down. What to do, hour by hour.">Сценарий: завтра у вас не работают CRM и ERP. Что делать по часам.</div></div></div>
+  </div>
+  <div class="kn-road" data-ru="В конце — <b>дорожная карта на 90 дней</b>: с чего начать и что сделать первым, чтобы бизнес стал устойчивее." data-en="At the end — a <b>90-day roadmap</b>: where to start and what to do first to make the business more resilient.">В конце — <b>дорожная карта на 90 дней</b>: с чего начать и что сделать первым, чтобы бизнес стал устойчивее.</div>
+</section>
+
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="copy" id="fCopy">© 2026 Евгений Теленков · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Обучение и консалтинг по управлению рисками на risk-place.ru</a></div>
+  </div>
+</footer>
+
+<script>
+var ru=['ru','be','kk','ky','uk','uz','tg'];
+var currentLang='ru';
+(function(){var list=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];var has=list.some(function(L){L=(L||'').toLowerCase();return ru.some(function(x){return L.indexOf(x)===0;});});currentLang=has?'ru':'en';})();
+var PH={"kName":{"ru":"Например, Ирина","en":"e.g. Irina"},"kEmail":{"ru":"name@company.ru","en":"name@company.com"},"kPhone":{"ru":"+7 ...","en":"+7 ..."}};
+var NAV={"nMat":{"ru":"Материалы по BCM","en":"BCM materials"},"nProd":{"ru":"Продукты","en":"Products"},"nAbout":{"ru":"О нас","en":"About us"},"fCopy":{"ru":"© 2026 Евгений Теленков · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Обучение и консалтинг по управлению рисками на risk-place.ru</a>","en":"© 2026 Evgeny Telenkov · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Risk management training and consulting at risk-place.ru</a>"}};
+function aDL(lg){document.querySelectorAll('[data-ru]').forEach(function(el){var v=el.getAttribute('data-'+lg);if(v!=null)el.innerHTML=v;});}
+function setLang(lang){currentLang=lang;document.documentElement.lang=lang;aDL(lang);
+  Object.keys(NAV).forEach(function(id){var el=document.getElementById(id);if(el&&NAV[id][lang]!=null)el.innerHTML=NAV[id][lang];});
+  Object.keys(PH).forEach(function(id){var el=document.getElementById(id);if(el)el.placeholder=PH[id][lang];});
+  var a=document.getElementById('btnRU'),b=document.getElementById('btnEN');if(a)a.classList.toggle('active',lang==='ru');if(b)b.classList.toggle('active',lang==='en');}
+setLang(currentLang);
+
+async function postWorker(body, tries){
+  tries=tries||3; var payload=JSON.stringify(body);
+  for(var i=0;i<tries;i++){
+    try{var res=await fetch("https://risk-place-quiz.tonus911.workers.dev",{method:"POST",headers:{"Content-Type":"text/plain"},body:payload,keepalive:true});if(res&&res.ok)return res;}catch(e){}
+    if(i<tries-1)await new Promise(function(r){setTimeout(r,800*(i+1));});
+  }
+  return null;
+}
+function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+document.getElementById('bookForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var name=document.getElementById('kName').value.trim();
+  var email=document.getElementById('kEmail').value.trim();
+  var phone=document.getElementById('kPhone').value.trim();
+  var consent=document.getElementById('kConsent').checked;
+  var err=document.getElementById('kErr');
+  if(!name||!validEmail(email)||!consent){err.style.display='block';return;}
+  err.style.display='none';
+  var btn=document.getElementById('kSubmit');btn.disabled=true;btn.style.opacity='0.6';
+  try{ym(96530203,'reachGoal','book_lead');}catch(e){}
+  try{ym(110579884,'reachGoal','book_lead');}catch(e){}
+  var body={
+    name:name,
+    email:email,
+    company:phone?("Телефон: "+phone):"—",
+    product:"Книга «BCM без иллюзий» — лид-магнит",
+    comment:"КНИГА (лид-магнит). Имя: "+name+" · Email: "+email+" · Телефон: "+(phone||"—"),
+    language:currentLang.toUpperCase()
+  };
+  await postWorker(body);
+  document.getElementById('formBox').style.display='none';
+  document.getElementById('thanksBox').style.display='block';
+});
+</script>
+</body>
+</html>

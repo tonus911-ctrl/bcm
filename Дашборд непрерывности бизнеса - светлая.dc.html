@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#EEF1F4;}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;color:#363B41;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:#12B5C9;text-decoration:none;} a:hover{color:#0f97a8;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
+<template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#FFFFFF"></rect><rect x="18" y="24" width="64" height="5" rx="2.5" fill="#12B5C9"></rect><rect x="18" y="42" width="30" height="26" rx="4" fill="#12B5C9"></rect><rect x="52" y="42" width="30" height="26" rx="4" fill="#F5A623"></rect><rect x="18" y="74" width="64" height="5" rx="2.5" fill="#F35B54"></rect></svg></template>
+<div style="background:#EEF1F4;min-height:100vh;padding:34px 26px 54px;">
+  <div style="max-width:1280px;margin:0 auto;background:#FFFFFF;border:1px solid #E5E8EC;border-radius:22px;padding:30px 30px 38px;box-shadow:0 4px 20px rgba(30,42,56,.05);">
+
+    <!-- ШАПКА -->
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;border-bottom:2px solid #EDF0F3;padding-bottom:20px;">
+      <div>
+        <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#9AA3AB;font-weight:700;margin-bottom:8px;">Компания АВС · демонстрационный стенд</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:.02em;line-height:1.1;text-transform:uppercase;color:#12B5C9;">Дашборд непрерывности бизнеса</div>
+        <div style="margin-top:12px;font-size:13px;color:#6C747C;display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
+          <span>Обновлено: 10 июля 2026</span>
+          <span style="color:#C7CDD3;">·</span>
+          <span>Частота обновления: ежемесячно</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="text-align:right;">
+          <div style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#9AA3AB;font-weight:700;">Отчетный месяц</div>
+          <div style="font-size:22px;font-weight:800;line-height:1.1;margin-top:2px;color:#363B41;">{{ activeMonth }}</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <sc-for list="{{ prevMonths }}" as="m" hint-placeholder-count="2">
+            <button onClick="{{ m.onClick }}" style="font-family:inherit;font-size:12.5px;font-weight:600;color:#4C5157;background:#FFFFFF;border:1px solid #DCE1E6;border-radius:10px;padding:8px 13px;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease;" style-hover="background:#E8FAFC;border-color:#12B5C9;color:#0f97a8;">{{ m.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- ГЕРОЙ -->
+    <div style="display:grid;grid-template-columns:minmax(320px,0.85fr) minmax(320px,1.15fr);gap:22px;margin-top:24px;">
+
+      <!-- Спидометр -->
+      <div style="background:#FFFFFF;border:1px solid #E5E8EC;border-radius:18px;padding:24px 26px 22px;box-shadow:0 2px 10px rgba(30,42,56,.05);display:flex;flex-direction:column;">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#12B5C9;font-weight:700;text-align:center;">Интегральный индекс устойчивости</div>
+        <div style="height:3px;width:56px;background:#12B5C9;border-radius:2px;margin:8px auto 0;"></div>
+        <div style="max-width:300px;margin:14px auto 0;width:100%;">{{ heroGaugeEl }}</div>
+        <div style="text-align:center;margin-top:2px;">
+          <span style="font-size:60px;font-weight:800;line-height:.9;color:#C9A24B;">64</span>
+          <span style="font-size:15px;color:#9AA3AB;letter-spacing:.04em;margin-left:6px;font-weight:600;">/ 100</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:8px;">
+          <span style="color:#2FA98A;font-weight:700;font-size:14px;">&#9650; +4 за квартал</span>
+        </div>
+        <div style="margin-top:18px;background:#12B5C9;color:#FFFFFF;border-radius:14px;padding:15px 18px;font-size:14px;line-height:1.45;">
+          <b>Средняя защищенность.</b> Три зоны требуют немедленных действий.
+        </div>
+      </div>
+
+      <!-- Бизнес параметры -->
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div>
+          <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#F5A623;font-weight:700;">Бизнес параметры</div>
+          <div style="height:3px;width:44px;background:#F5A623;border-radius:2px;margin-top:8px;"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;">
+          <div style="aspect-ratio:1/1;background:#FFFFFF;border:1px solid #E5E8EC;border-top:4px solid #F35B54;border-radius:12px;padding:11px;box-shadow:0 2px 8px rgba(30,42,56,.05);display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
+            <div style="font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:#9AA3AB;font-weight:700;line-height:1.25;">Стоимость дня простоя</div>
+            <div><div style="font-size:19px;font-weight:800;line-height:1;color:#363B41;">&#8381;1,8</div><div style="font-size:9.5px;color:#6C747C;margin-top:1px;">млн в сутки</div></div>
+          </div>
+          <div style="aspect-ratio:1/1;background:#FFFFFF;border:1px solid #E5E8EC;border-top:4px solid #F5A623;border-radius:12px;padding:11px;box-shadow:0 2px 8px rgba(30,42,56,.05);display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
+            <div style="font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:#9AA3AB;font-weight:700;line-height:1.25;">Финансовый резерв</div>
+            <div><div style="font-size:19px;font-weight:800;line-height:1;color:#F5A623;">12</div><div style="font-size:9.5px;color:#6C747C;margin-top:1px;">дней запаса</div></div>
+          </div>
+          <div style="aspect-ratio:1/1;background:#FFFFFF;border:1px solid #E5E8EC;border-top:4px solid #F35B54;border-radius:12px;padding:11px;box-shadow:0 2px 8px rgba(30,42,56,.05);display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
+            <div style="font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:#9AA3AB;font-weight:700;line-height:1.25;">Выручка в аварийном режиме</div>
+            <div><div style="font-size:19px;font-weight:800;line-height:1;color:#F35B54;">35%</div><div style="font-size:9.5px;color:#6C747C;margin-top:1px;">от нормы</div></div>
+          </div>
+          <div style="aspect-ratio:1/1;background:#FFFFFF;border:1px solid #E5E8EC;border-top:4px solid #12B5C9;border-radius:12px;padding:11px;box-shadow:0 2px 8px rgba(30,42,56,.05);display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
+            <div style="font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:#9AA3AB;font-weight:700;line-height:1.25;">Критичных процессов</div>
+            <div><div style="font-size:19px;font-weight:800;line-height:1;color:#363B41;">8</div><div style="font-size:9.5px;color:#6C747C;margin-top:1px;">в периметре</div></div>
+          </div>
+          <div style="aspect-ratio:1/1;background:#FFFFFF;border:1px solid #E5E8EC;border-top:4px solid #12B5C9;border-radius:12px;padding:11px;box-shadow:0 2px 8px rgba(30,42,56,.05);display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
+            <div style="font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:#9AA3AB;font-weight:700;line-height:1.25;">Площадки</div>
+            <div><div style="font-size:19px;font-weight:800;line-height:1;color:#363B41;">3</div><div style="font-size:9.5px;color:#6C747C;margin-top:1px;">производств. точки</div></div>
+          </div>
+          <div style="aspect-ratio:1/1;background:#FFFFFF;border:1px solid #E5E8EC;border-top:4px solid #12B5C9;border-radius:12px;padding:11px;box-shadow:0 2px 8px rgba(30,42,56,.05);display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
+            <div style="font-size:8px;letter-spacing:.03em;text-transform:uppercase;color:#9AA3AB;font-weight:700;line-height:1.25;">Сотрудников</div>
+            <div><div style="font-size:19px;font-weight:800;line-height:1;color:#363B41;">220</div><div style="font-size:9.5px;color:#6C747C;margin-top:1px;">всего в компании</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ЗАГОЛОВОК БЛОКОВ -->
+    <div style="margin:40px 0 18px;">
+      <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9AA3AB;font-weight:700;">Структура индекса</div>
+      <div style="font-size:23px;font-weight:800;margin-top:4px;color:#363B41;">Основные блоки и компоненты устойчивости</div>
+      <div style="height:3px;width:60px;background:#12B5C9;border-radius:2px;margin-top:10px;"></div>
+    </div>
+
+    <!-- ШЕСТЬ БЛОКОВ -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;">
+      <sc-for list="{{ blocks }}" as="block" hint-placeholder-count="6">
+        <div style="background:#FFFFFF;border:1px solid #E5E8EC;border-radius:16px;padding:22px 22px 10px;box-shadow:0 2px 10px rgba(30,42,56,.05);border-top:3px solid {{ block.color }};transition:box-shadow .2s ease,transform .2s ease;" style-hover="box-shadow:0 8px 22px rgba(30,42,56,.12);transform:translateY(-2px);">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+            <div style="font-size:16.5px;font-weight:700;line-height:1.22;max-width:64%;color:#363B41;">{{ block.name }}</div>
+            <div style="font-size:11px;color:#6C747C;background:#EEF1F4;border-radius:999px;padding:4px 11px;white-space:nowrap;font-weight:600;">вес {{ block.weight }}%</div>
+          </div>
+          <!-- линейная шкала балла блока (красно-зеленая, без изменений) -->
+          <div style="display:flex;align-items:center;gap:12px;margin-top:14px;">
+            <div style="display:flex;align-items:baseline;gap:5px;white-space:nowrap;">
+              <span style="font-size:30px;font-weight:800;line-height:1;color:{{ block.color }};">{{ block.score }}</span>
+              <span style="font-size:11px;color:#9AA3AB;font-weight:600;">/100</span>
+            </div>
+            <div style="flex:1;">
+              <div style="position:relative;height:9px;border-radius:999px;background:linear-gradient(90deg,#B5502F 0%,#C9A24B 50%,#3E7C5A 100%);opacity:.92;">
+                <div style="position:absolute;top:50%;width:4px;height:20px;border-radius:2px;background:#363B41;left:{{ block.markerLeft }};transform:translate(-50%,-50%);box-shadow:0 0 0 3px #FFFFFF;"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:9.5px;color:#AEB5BC;margin-top:3px;"><span>0</span><span style="font-size:11px;font-weight:700;color:{{ block.trendColor }};">{{ block.trendText }}</span><span>100</span></div>
+            </div>
+          </div>
+          <div style="margin-top:6px;">
+            <sc-for list="{{ block.indicators }}" as="ind" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid #EEF1F4;animation:fadeIn .35s ease;">
+                <span style="width:9px;height:9px;border-radius:50%;flex:none;background:{{ ind.color }};box-shadow:0 0 0 3px {{ ind.halo }};"></span>
+                <span style="font-size:12.5px;color:#54595F;flex:1;line-height:1.3;">{{ ind.name }}</span>
+                <span style="font-size:15.5px;font-weight:800;color:{{ ind.color }};">{{ ind.score }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- ДИНАМИКА -->
+    <div style="margin:40px 0 18px;">
+      <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9AA3AB;font-weight:700;">Динамика</div>
+      <div style="font-size:23px;font-weight:800;margin-top:4px;color:#363B41;">Индекс за четыре квартала</div>
+      <div style="height:3px;width:60px;background:#F5A623;border-radius:2px;margin-top:10px;"></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+      <div style="flex:1.5;min-width:340px;background:#FFFFFF;border:1px solid #E5E8EC;border-radius:16px;padding:24px 26px;box-shadow:0 2px 10px rgba(30,42,56,.05);">
+        <div style="font-size:12px;color:#6C747C;">Интегральный индекс устойчивости, баллов</div>
+        <div style="margin-top:10px;">{{ dynEl }}</div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11.5px;color:#9AA3AB;">
+          <span>III кв. 25</span><span>IV кв. 25</span><span>I кв. 26</span><span>II кв. 26</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#FFFFFF;border:1px solid #F3D3D0;border-top:3px solid #F35B54;border-radius:14px;padding:18px 20px;box-shadow:0 2px 10px rgba(30,42,56,.05);">
+          <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#F35B54;font-weight:700;margin-bottom:4px;">Три самые слабые зоны</div>
+          <sc-for list="{{ weakest }}" as="z" hint-placeholder-count="3">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #F3E2E1;">
+              <span style="font-size:12.5px;color:#54595F;flex:1;line-height:1.25;">{{ z.name }}</span>
+              <span style="font-size:16px;font-weight:800;color:#F35B54;">{{ z.score }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #CFE7DE;border-top:3px solid #2FA98A;border-radius:14px;padding:18px 20px;box-shadow:0 2px 10px rgba(30,42,56,.05);">
+          <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#2FA98A;font-weight:700;margin-bottom:4px;">Три самые сильные зоны</div>
+          <sc-for list="{{ strongest }}" as="z" hint-placeholder-count="3">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #DCEDE7;">
+              <span style="font-size:12.5px;color:#54595F;flex:1;line-height:1.25;">{{ z.name }}</span>
+              <span style="font-size:16px;font-weight:800;color:#2FA98A;">{{ z.score }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- МОДУЛИ -->
+    <div style="margin:40px 0 18px;">
+      <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9AA3AB;font-weight:700;">Конфигурация</div>
+      <div style="font-size:23px;font-weight:800;margin-top:4px;color:#363B41;">Состав дашборда — отраслевые модули</div>
+      <div style="height:3px;width:60px;background:#F35B54;border-radius:2px;margin-top:10px;"></div>
+      <div style="font-size:13px;color:#6C747C;margin-top:12px;">Собираем дашборд блоками под отрасль. Включите модуль — в блоках появятся профильные показатели.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;">
+      <sc-for list="{{ modules }}" as="mod" hint-placeholder-count="4">
+        <div onClick="{{ mod.onClick }}" style="display:flex;gap:14px;align-items:flex-start;background:{{ mod.bg }};border:1px solid {{ mod.border }};border-radius:14px;padding:18px 20px;cursor:{{ mod.cursor }};transition:border-color .2s ease,background .2s ease;">
+          <span style="width:24px;height:24px;border-radius:7px;flex:none;margin-top:1px;border:2px solid {{ mod.boxBorder }};background:{{ mod.boxBg }};display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:14px;font-weight:800;">{{ mod.check }}</span>
+          <div>
+            <div style="font-size:15.5px;font-weight:700;line-height:1.2;color:#363B41;">{{ mod.label }}</div>
+            <div style="font-size:12px;color:#6C747C;margin-top:4px;line-height:1.35;">{{ mod.desc }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <div style="margin-top:46px;padding-top:20px;border-top:2px solid #EDF0F3;text-align:center;font-size:12px;color:#9AA3AB;line-height:1.6;">
+      Демонстрационные данные · собрано движком BC Dashboard · данные не покидают контур компании
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { modules: [], monthIdx: 0 };
+
+  get monthList(){ return ['Июль 2026', 'Июнь 2026', 'Май 2026', 'Апрель 2026', 'Март 2026']; }
+
+  toggle(key){
+    this.setState(s => {
+      const has = s.modules.includes(key);
+      return { modules: has ? s.modules.filter(m => m !== key) : [...s.modules, key] };
+    });
+  }
+
+  band(s){ return s >= 80 ? '#3E7C5A' : s >= 50 ? '#C9A24B' : '#B5502F'; }
+  halo(s){ return s >= 80 ? 'rgba(62,124,90,.15)' : s >= 50 ? 'rgba(201,162,75,.15)' : 'rgba(181,80,47,.15)'; }
+
+  gauge(score, { r = 120, pad = 16, sw = 18 } = {}){
+    const ce = React.createElement;
+    const cx = r + pad, cy = r + pad, W = 2 * (r + pad), H = r + pad + pad * 0.5;
+    const P = (ang, rr) => { const a = ang * Math.PI / 180; return [cx + rr * Math.cos(a), cy - rr * Math.sin(a)]; };
+    const f = Math.max(0, Math.min(1, score / 100));
+    const s0 = P(180, r), e0 = P(0, r), ev = P(180 - 180 * f, r), np = P(180 - 180 * f, r * 0.78);
+    const bg = `M${s0[0]} ${s0[1]} A${r} ${r} 0 0 1 ${e0[0]} ${e0[1]}`;
+    const val = `M${s0[0]} ${s0[1]} A${r} ${r} 0 0 1 ${ev[0]} ${ev[1]}`;
+    const col = this.band(score);
+    return ce('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', style: { display: 'block', overflow: 'visible' } }, [
+      ce('path', { key: 'bg', d: bg, fill: 'none', stroke: '#E7EBEF', strokeWidth: sw, strokeLinecap: 'round' }),
+      ce('path', { key: 'v', d: val, fill: 'none', stroke: col, strokeWidth: sw, strokeLinecap: 'round' }),
+      ce('line', { key: 'n', x1: cx, y1: cy, x2: np[0], y2: np[1], stroke: '#363B41', strokeWidth: 4, strokeLinecap: 'round' }),
+      ce('circle', { key: 'h', cx, cy, r: 7, fill: '#363B41' })
+    ]);
+  }
+
+  lineChart(values, { W = 540, H = 190, color = '#12B5C9' } = {}){
+    const ce = React.createElement;
+    const min = 46, max = 68, pl = 14, pr = 14, pt = 26, pb = 16;
+    const iw = W - pl - pr, ih = H - pt - pb;
+    const pts = values.map((v, i) => [pl + i * iw / (values.length - 1), pt + ih * (1 - (v - min) / (max - min))]);
+    const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0] + ' ' + p[1]).join(' ');
+    const area = line + ` L${pts[pts.length - 1][0]} ${pt + ih} L${pts[0][0]} ${pt + ih} Z`;
+    const kids = [
+      ce('path', { key: 'a', d: area, fill: 'rgba(18,181,201,0.10)', stroke: 'none' }),
+      ce('path', { key: 'l', d: line, fill: 'none', stroke: color, strokeWidth: 3, strokeLinecap: 'round', strokeLinejoin: 'round' })
+    ];
+    pts.forEach((p, i) => {
+      kids.push(ce('circle', { key: 'd' + i, cx: p[0], cy: p[1], r: 5, fill: '#FFFFFF', stroke: color, strokeWidth: 3 }));
+      kids.push(ce('text', { key: 't' + i, x: p[0], y: p[1] - 13, textAnchor: 'middle', style: { font: '800 14px "Segoe UI",sans-serif', fill: '#363B41' } }, String(values[i])));
+    });
+    return ce('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', style: { display: 'block' } }, kids);
+  }
+
+  get data(){
+    return [
+      { name: 'ИТ-инфраструктура и данные', weight: 31, score: 52, trend: 3, indicators: [
+        { name: 'Резервное копирование критичных систем', score: 78 },
+        { name: 'Изолированность копий от сети', score: 25 },
+        { name: 'Тест восстановления (давность)', score: 40 },
+        { name: 'Выполнение RPO', score: 55 },
+        { name: 'Резервирование каналов и площадок', score: 62 }
+      ]},
+      { name: 'Критичные процессы', weight: 22, score: 66, trend: 5, indicators: [
+        { name: 'Покрытие BIA', score: 75 },
+        { name: 'Выполнение RTO (факт против цели)', score: 38 },
+        { name: 'Закрытость единых точек отказа', score: 60 },
+        { name: 'Владельцы процессов назначены', score: 90 },
+        { name: 'Резерв критичного оборудования', score: 55, module: 'manufacturing' },
+        { name: 'Резервные логистические хабы', score: 66, module: 'logistics' }
+      ]},
+      { name: 'Финансовая устойчивость', weight: 14, score: 58, trend: 2, indicators: [
+        { name: 'Стоимость дня простоя посчитана', score: 85 },
+        { name: 'Финансовый резерв в днях', score: 55 },
+        { name: 'Выручка в аварийном режиме', score: 35 },
+        { name: 'Страхование перерыва в деятельности', score: 58 },
+        { name: 'Соответствие требованиям ЦБ к операционной надежности', score: 48, module: 'finance' }
+      ]},
+      { name: 'Планы и документация', weight: 12, score: 71, trend: 6, indicators: [
+        { name: 'Покрытие BCP', score: 68 },
+        { name: 'Покрытие DRP', score: 45 },
+        { name: 'Актуальность планов', score: 80 },
+        { name: 'План первых часов кризиса', score: 90 },
+        { name: 'План на случай сбоя платежей', score: 42, module: 'finance' }
+      ]},
+      { name: 'Люди и готовность', weight: 11, score: 74, trend: 4, indicators: [
+        { name: 'Учения', score: 65 },
+        { name: 'Дублеры ключевых ролей', score: 70 },
+        { name: 'Осведомленность', score: 78 },
+        { name: 'Схема оповещения проверена', score: 84 }
+      ]},
+      { name: 'Внешние зависимости', weight: 10, score: 69, trend: 0, indicators: [
+        { name: 'Альтернативы поставщикам', score: 62 },
+        { name: 'Непрерывность в SLA', score: 58 },
+        { name: 'Внешние сервисы и план Б', score: 71 },
+        { name: 'Концентрация выручки', score: 85 },
+        { name: 'Запас критичных запчастей', score: 60, module: 'manufacturing' },
+        { name: 'Альтернативные маршруты доставки', score: 58, module: 'logistics' }
+      ]}
+    ];
+  }
+
+  renderVals(){
+    const mods = this.state.modules;
+    const series = [52, 58, 60, 64];
+
+    const blocks = this.data.map(b => {
+      const inds = b.indicators
+        .filter(i => !i.module || mods.includes(i.module))
+        .map(i => ({ name: i.name, score: i.score, color: this.band(i.score), halo: this.halo(i.score) }));
+      const td = b.trend > 0 ? { t: '\u25B2 +' + b.trend, c: '#2FA98A' }
+        : b.trend < 0 ? { t: '\u25BC ' + b.trend, c: '#F35B54' }
+        : { t: '\u25AC без изменений', c: '#9AA3AB' };
+      return {
+        name: b.name, weight: b.weight, score: b.score,
+        color: this.band(b.score),
+        markerLeft: b.score + '%',
+        indicators: inds, trendText: td.t, trendColor: td.c
+      };
+    });
+
+    const base = [];
+    this.data.forEach(b => b.indicators.forEach(i => { if (!i.module) base.push({ name: i.name, score: i.score }); }));
+    const weakest = [...base].sort((a, b) => a.score - b.score).slice(0, 3);
+    const strongest = [...base].sort((a, b) => b.score - a.score).slice(0, 3);
+
+    const list = this.monthList;
+    const mi = this.state.monthIdx;
+    const activeMonth = list[mi];
+    const prevMonths = [list[mi + 1], list[mi + 2]]
+      .map((label, k) => label ? { label, onClick: () => this.setState({ monthIdx: mi + 1 + k }) } : null)
+      .filter(Boolean);
+
+    const defs = [
+      { key: 'base', label: 'Базовый набор', desc: 'Универсальные требования непрерывности', locked: true },
+      { key: 'finance', label: 'Страхование и финансы', desc: 'Требования ЦБ к операционной надежности' },
+      { key: 'manufacturing', label: 'Производство', desc: 'Оборудование и запчасти' },
+      { key: 'logistics', label: 'Логистика', desc: 'Маршруты и хабы' }
+    ];
+    const modules = defs.map(m => {
+      const checked = m.locked || mods.includes(m.key);
+      return {
+        label: m.label, desc: m.desc, check: checked ? '\u2713' : '',
+        boxBg: checked ? (m.locked ? '#9AA3AB' : '#12B5C9') : 'transparent',
+        boxBorder: checked ? (m.locked ? '#9AA3AB' : '#12B5C9') : '#C7CDD3',
+        bg: checked ? '#E8FAFC' : '#FFFFFF',
+        border: checked ? '#B4E8EF' : '#E5E8EC',
+        cursor: m.locked ? 'default' : 'pointer',
+        onClick: m.locked ? () => {} : () => this.toggle(m.key)
+      };
+    });
+
+    return {
+      heroGaugeEl: this.gauge(64, { r: 120, pad: 16, sw: 18 }),
+      dynEl: this.lineChart(series, { W: 540, H: 190, color: '#12B5C9' }),
+      activeMonth, prevMonths,
+      blocks, weakest, strongest, modules
+    };
+  }
+}
+</script>
+</body>
+</html>

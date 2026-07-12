@@ -1,0 +1,60 @@
+# risk-place.ru — Business Continuity Management (BCM)
+
+> Expert resource on business continuity management (BCM), business continuity planning (BCP) and disaster recovery (DRP) for company owners and executives. Practical, plain-language guides, templates, ISO 22301 explainers, a free resilience self-assessment and a free handbook. Bilingual (Russian and English).
+
+The practice is led by Evgeny Telenkov — 20 years in risk management (Beeline, Nornickel, Rosneft, EY), "Best Risk Manager of Russia 2020" (RusRisk), co-author of Russian GOST R risk-management standards. The site turns hands-on continuity experience into actionable guidance: how to assess vulnerabilities, quantify the cost of downtime, build a BCP/DRP, run drills, and keep operating on the day systems go down.
+
+Every English article below has a Russian-language counterpart at the same path without the `en-` prefix (for example https://bcm.risk-place.ru/iso-22301.html). The complete URL list is in the sitemap: https://bcm.risk-place.ru/sitemap.xml
+
+## Start here
+- [Home](https://bcm.risk-place.ru/): overview of BCM services, products and the approach.
+- [Free resilience self-assessment](https://bcm.risk-place.ru/quiz.html): 13 questions that reveal your business continuity maturity level and top risks.
+- [Free handbook "BCM without illusions"](https://bcm.risk-place.ru/kniga.html): a 15-page practical guide to protecting company cash flow.
+- [About and the experts](https://bcm.risk-place.ru/o-podhode.html): credentials and the working method.
+- [All materials — Russian](https://bcm.risk-place.ru/materialy.html) and [all materials — English](https://bcm.risk-place.ru/materialy-en.html).
+
+## Core concepts (English)
+- [BCM, BCP, DRP — differences](https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.html): how business continuity, BCP, DRP and risk management differ, in plain words.
+- [Business continuity management](https://bcm.risk-place.ru/en-nepreryvnost-biznesa.html): what BCM is and why it protects revenue.
+- [ISO 22301](https://bcm.risk-place.ru/en-iso-22301.html): the international BCM standard, requirements and implementation.
+- [Business impact analysis (BIA)](https://bcm.risk-place.ru/en-bia-analiz-vozdeystviya.html): what a BIA is and how to run it.
+- [Business continuity plan (BCP)](https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html): how to build a working BCP.
+- [Disaster recovery plan](https://bcm.risk-place.ru/en-plan-avariynogo-vosstanovleniya.html): DRP essentials and recovery scenarios.
+- [Business backup plan](https://bcm.risk-place.ru/en-rezervnyy-plan-biznesa.html): a reserve plan for critical operations.
+- [Register of critical processes](https://bcm.risk-place.ru/en-reestr-kriticheskih-processov.html): how to identify and rank critical processes.
+- [Risk matrix](https://bcm.risk-place.ru/en-matrica-riskov.html): building and using a risk matrix.
+- [Cost of one day of downtime](https://bcm.risk-place.ru/en-stoimost-dnya-prostoya.html): how to quantify downtime in money.
+- [How to measure business resilience](https://bcm.risk-place.ru/en-kak-izmerit-ustojchivost-biznesa.html): metrics and indicators.
+- [Crisis readiness checklist](https://bcm.risk-place.ru/en-chek-list-gotovnosti-k-krizisu.html): a practical readiness checklist.
+- [Continuity drills](https://bcm.risk-place.ru/en-ucheniya-po-nepreryvnosti.html): how to run business continuity exercises.
+- [How to make hard decisions](https://bcm.risk-place.ru/en-kak-prinimat-slozhnye-resheniya.html): decision-making under uncertainty.
+
+## Scenarios and industry risks (English)
+- [7 days of downtime: a ransomware lesson](https://bcm.risk-place.ru/en-7-dney-prostoya-kiberataka.html): a real ransomware case on a large insurer.
+- [Action plan during a cyberattack](https://bcm.risk-place.ru/en-plan-deystviy-pri-kiberatake.html): step-by-step actions in the first hours.
+- [Why the IT department is not business protection](https://bcm.risk-place.ru/en-it-otdel-ne-zaschita-biznesa.html): why IT staff and antivirus are not enough.
+- [Cyberattacks on small and mid-sized business](https://bcm.risk-place.ru/en-kiberataki-msb-rossiya.html): fresh statistics and takeaways.
+- [Why companies hide cyberattacks](https://bcm.risk-place.ru/en-pochemu-kompanii-skryvayut-kiberataki.html): the hidden cost of concealment.
+- [Loss of a key employee](https://bcm.risk-place.ru/en-poterya-klyuchevogo-sotrudnika.html): reducing single-person dependency.
+- [Loss of a supplier](https://bcm.risk-place.ru/en-poterya-postavshchika.html): supply-chain continuity.
+- [BCM for the board of directors](https://bcm.risk-place.ru/en-bcm-dlya-soveta-direktorov.html): justifying continuity investment in the language of money.
+- [BCM for construction and SRO](https://bcm.risk-place.ru/en-bcm-dlya-sro-stroitelstvo.html): project, contractor and supply risks.
+- [BCM and insurance](https://bcm.risk-place.ru/en-bcm-i-strahovanie.html): how continuity and insurance relate.
+- [BCM and data protection](https://bcm.risk-place.ru/en-bcm-i-zashchita-dannyh.html): continuity and personal-data protection.
+- [Geopolitical risks and continuity](https://bcm.risk-place.ru/en-geopoliticheskie-riski-i-nepreryvnost.html): sanctions and external constraints.
+- [Savings risks](https://bcm.risk-place.ru/en-riski-sberezheniy.html): risks to financial reserves.
+- [IT risks](https://bcm.risk-place.ru/en-riski-v-it.html): IT resilience and recovery.
+- [Oil and gas industry risks](https://bcm.risk-place.ru/en-riski-neftegazovoy-otrasli.html): sector-specific continuity risks.
+- [Metallurgy risks](https://bcm.risk-place.ru/en-riski-v-metallurgii.html): sector-specific continuity risks.
+- [Risk management in a large bank](https://bcm.risk-place.ru/en-upravlenie-riskami-v-krupnom-banke.html): an enterprise risk-management case.
+
+## Products and services
+- [Templates pack "BCM Start"](https://bcm.risk-place.ru/shablony.html): ready BCP, BIA, DRP templates, a process register and a checklist.
+- [Online course "Continuity and ISO 22301"](https://bcm.risk-place.ru/onlajn-kurs.html): self-paced course with a certificate.
+- [Crisis game "Day X"](https://bcm.risk-place.ru/krizisnaya-igra.html): a facilitated crisis simulation.
+- [Continuity and risk dashboard](https://bcm.risk-place.ru/dashboard.html): real-time resilience monitoring.
+- [BCM turnkey](https://bcm.risk-place.ru/bcm-pod-klyuch.html): continuity audit, plan development, drills and implementation.
+
+## Optional
+- [Privacy policy](https://bcm.risk-place.ru/privacy-policy.html)
+- Full URL list (Russian and English): https://bcm.risk-place.ru/sitemap.xml

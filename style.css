@@ -14,12 +14,12 @@
   --navy:#1B3A5C;
   --sage:#3D7A6B;
   --muted:#515478;
-  --gray:#8F8F8F;
+  --gray:#5f636d;
   --line:#e7e8ea;
   --bg:#ffffff;
   --bg-soft:#fafbff;
   --maxw:760px;        /* ширина колонки статьи */
-  --maxw-wide:1040px;  /* ширина «широких» секций */
+  --maxw-wide:1280px;  /* ширина «широких» секций */
 }
 html{scroll-behavior:smooth}
 html,body{width:100%;min-width:320px;overflow-x:hidden}

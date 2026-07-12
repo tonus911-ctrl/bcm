@@ -574,6 +574,16 @@ function renderUI() {
 
 function setLang(l) {
   lang = l;
+  var active = document.querySelector(".screen.active");
+  if (active && active.id === "s-results" && answers && answers.length) {
+    // На экране результата: пересчитываем уровень и шаги под новый язык
+    // и заново отрисовываем результат целиком (не стираем ответы).
+    finalLevel = getLevel(finalScore);
+    finalSteps = buildSteps(finalLevel, answers);
+    renderUI();
+    showResults();
+    return;
+  }
   answers = new Array(QU[lang].length).fill(null);
   cur = 0;
   formSubmitted = false;

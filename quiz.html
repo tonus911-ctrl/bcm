@@ -234,6 +234,35 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
     </div>
     <p id="recSoftWrap" style="margin-top:14px;font-size:14px;"><a href="#" id="recSoftBtn" style="color:inherit;text-decoration:underline;opacity:.9;"></a></p>
   </div>
+
+  <!-- ══ Книга-подарок за прохождение (лид-магнит) ══ -->
+  <div id="qbBlock" style="margin-top:22px;border:2px solid #C9B26A;background:#FBF7EA;border-radius:18px;padding:22px 24px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:0 0 116px;width:116px;aspect-ratio:1106/1524;background:linear-gradient(150deg,#20253F 0%,#141830 70%);border-radius:7px;box-shadow:0 16px 32px -12px rgba(0,0,0,.55);padding:15px 13px;display:flex;flex-direction:column;position:relative;">
+      <div style="font-size:6px;font-weight:700;letter-spacing:.14em;color:#C9B26A;margin-top:20px;">СПРАВОЧНИК</div>
+      <div style="font-size:28px;font-weight:800;color:#fff;line-height:1;margin-top:14px;">BCM</div>
+      <div style="font-size:16px;font-weight:800;color:#ECE3C0;line-height:1.05;">без иллюзий</div>
+      <div style="height:2px;background:#B79B52;margin-top:12px;"></div>
+      <div style="margin-top:auto;font-size:6px;font-weight:700;color:#ECE7DA;">bcm.risk-place.ru</div>
+    </div>
+    <div id="qbForm" style="flex:1;min-width:250px;">
+      <div id="qb-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8C7A3F;margin-bottom:5px;"></div>
+      <h3 id="qb-title" style="font-size:20px;margin:0 0 6px;color:#16181F;"></h3>
+      <p id="qb-desc" style="font-size:14px;line-height:1.5;color:#5E606A;margin:0 0 14px;"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <input id="qbName" class="form-input" type="text" style="flex:1;min-width:130px;">
+        <input id="qbEmail" class="form-input" type="email" style="flex:1.4;min-width:170px;">
+      </div>
+      <label style="display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.4;color:#6E7079;margin-bottom:14px;cursor:pointer;"><input type="checkbox" id="qbConsent" style="margin-top:2px;"><span id="qb-consent"></span></label>
+      <button id="qbBtn" class="btn btn-cream" onclick="submitQuizBook()" style="font-size:15px;padding:13px 26px;"><span id="qb-btn"></span></button>
+      <div id="qbErr" style="display:none;color:#a3272a;font-size:13px;margin-top:10px;"></div>
+      <div id="qb-note" style="font-size:12px;color:#8a8f98;margin-top:10px;"></div>
+    </div>
+    <div id="qbThanks" style="display:none;flex:1;min-width:250px;">
+      <div style="width:52px;height:52px;border-radius:50%;background:#e6f6ec;color:#1a7a3a;font-size:28px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">✓</div>
+      <div id="qb-ok-title" style="font-size:19px;font-weight:800;color:#16181F;margin-bottom:6px;"></div>
+      <div id="qb-ok-desc" style="font-size:14px;line-height:1.55;color:#4a4f58;"></div>
+    </div>
+  </div>
 </div>
 
 </div>
@@ -272,9 +301,9 @@ ru:{
   ctaHigh:{title:"Сильная система — проверим независимым взглядом",desc:"Независимый аудит выявит уязвимости, которые не видны изнутри."},
   profLabel:"Почти готово",profTitle:"Последний штрих — размер вашей компании?",profDesc:"Это поможет подобрать подходящий формат под вашу ситуацию.",
   sizeSm:"До 50 сотрудников",sizeMd:"50–250 сотрудников",sizeLg:"Более 250 сотрудников",
-  recEyebrow:"Вам подойдёт",ctaBuy:"Купить →",ctaApply:"Отправить заявку →",ctaWait:"В лист ожидания →",orAlt:"Или: ",
+  recEyebrow:"Вам подойдет",ctaBuy:"Купить →",ctaApply:"Отправить заявку →",ctaWait:"В лист ожидания →",orAlt:"Или: ",
   recSoft:"Не уверены? Личный разбор с экспертом →",
-  leadTitle:"Оставьте контакт — свяжемся",leadDescTpl:"Обсудим «{p}» и ваш результат. Пришлём детали и поможем оформить.",
+  leadTitle:"Оставьте контакт — свяжемся",leadDescTpl:"Обсудим «{p}» и ваш результат. Пришлем детали и поможем оформить.",
   scoreLabel:(s)=>`${s} / 26`,levelLabel:(n,name)=>`Уровень ${n} — ${name}`,
   subjectTpl:(name,co,n,nl)=>`Диагностика BCM: ${name} (${co}) — Уровень ${n} — ${nl}`,
 },
@@ -646,15 +675,15 @@ var MATRIX={
  sm:{
   1:{p:'templates',a:'course',why:{ru:'Системы пока нет — заложите фундамент готовыми шаблонами: быстро и недорого.',en:'No system yet — lay the foundation with ready templates: fast and inexpensive.'}},
   2:{p:'course',a:'templates',why:{ru:'Реакция есть, системы нет — курс превратит тушение пожаров в понятный план.',en:'You react but have no system — the course turns firefighting into a clear plan.'}},
-  3:{p:'course',a:'review',why:{ru:'База есть — доведите её до системы: пройдите курс и закрепите практики.',en:'You have a base — turn it into a system: take the course and lock in the practices.'}},
-  4:{p:'review',a:'cert',why:{ru:'Сильно для вашего размера — разберём результат с экспертом и наметим тонкую настройку.',en:'Strong for your size — let us review the result with an expert and fine-tune.'}},
+  3:{p:'course',a:'review',why:{ru:'База есть — доведите ее до системы: пройдите курс и закрепите практики.',en:'You have a base — turn it into a system: take the course and lock in the practices.'}},
+  4:{p:'review',a:'cert',why:{ru:'Сильно для вашего размера — разберем результат с экспертом и наметим тонкую настройку.',en:'Strong for your size — let us review the result with an expert and fine-tune.'}},
   5:{p:'cert',a:'review',why:{ru:'Вы в топе — подтвердите статус сертификацией и держите планку.',en:'You are at the top — confirm your status with certification and keep the bar high.'}}
  },
  md:{
-  1:{p:'turnkey',a:'review',why:{ru:'На вашем масштабе один сбой стоит дорого — нужна система: аудит, план, учения. Не уверены в объёме — начните с личного разбора.',en:'At your scale one failure is costly — you need a system: audit, plan, drills. Unsure of scope — start with a personal review.'}},
+  1:{p:'turnkey',a:'review',why:{ru:'На вашем масштабе один сбой стоит дорого — нужна система: аудит, план, учения. Не уверены в объеме — начните с личного разбора.',en:'At your scale one failure is costly — you need a system: audit, plan, drills. Unsure of scope — start with a personal review.'}},
   2:{p:'turnkey',a:'game',why:{ru:'Пора от реакции к системе — внедрим BCM под ключ; проверить готовность можно в кризисной игре.',en:'Time to move from reaction to a system — we implement BCM end-to-end; test readiness in the crisis game.'}},
   3:{p:'game',a:'dashboard',why:{ru:'База есть — проверьте план под давлением в кризисной игре и найдите слабые места на практике.',en:'You have a base — stress-test the plan in the crisis game and find weak spots in practice.'}},
-  4:{p:'dashboard',a:'game',why:{ru:'Система работает — сделайте устойчивость видимой на дашборде и держите её под контролем.',en:'The system works — make resilience visible on a dashboard and keep it under control.'}},
+  4:{p:'dashboard',a:'game',why:{ru:'Система работает — сделайте устойчивость видимой на дашборде и держите ее под контролем.',en:'The system works — make resilience visible on a dashboard and keep it under control.'}},
   5:{p:'audit',a:'cert',why:{ru:'Сильная система — проверьте независимым взглядом то, что не видно изнутри.',en:'Strong system — validate independently what is invisible from the inside.'}}
  },
  lg:{
@@ -735,7 +764,7 @@ function skipForm() {
   showResults();
 }
 
-// Надёжная отправка в воркер: до 3 попыток с нарастающей паузой — защита от разовых
+// Надежная отправка в воркер: до 3 попыток с нарастающей паузой — защита от разовых
 // сетевых сбоев и «холодного старта» воркера сразу после деплоя.
 async function postWorker(body, tries) {
   tries = tries || 3;
@@ -771,7 +800,7 @@ async function sendResultNotification() {
     recommendations: "▸ Размер: " + (SIZE_TEXT[answers[0]]||SIZE_LABEL[finalSize]) + " · рекомендуем: " + PRODUCTS[c.p].ru + "\n\n" + finalSteps,
     answers: buildSummary()
   };
-  // Надёжно, с повторами (см. postWorker). Ошибку пользователю не показываем.
+  // Надежно, с повторами (см. postWorker). Ошибку пользователю не показываем.
   await postWorker(body);
 }
 
@@ -820,6 +849,7 @@ function showResults() {
 
   if(!notified){ notified=true; sendResultNotification(); }
   renderRecommendation();
+  renderBookMagnet();
 }
 
 // ═══════════════════════════════════
@@ -886,6 +916,54 @@ async function submitForm() {
     err.style.display="block";
     btn.disabled=false; skip.disabled=false;
   }
+}
+
+// ═══════════════════════════════════
+// КНИГА-ПОДАРОК (лид-магнит на экране результата)
+// ═══════════════════════════════════
+function renderBookMagnet(){
+  var ru=(lang==='ru'); var t=T[lang];
+  var m={
+    'qb-eyebrow':['Подарок за прохождение','A gift for completing'],
+    'qb-title':['Заберите книгу «BCM без иллюзий» — бесплатно','Get the book «BCM without illusions» — free'],
+    'qb-desc':['15 страниц практики: как защитить денежный поток — оценка, план BCP, действия в день сбоя.','15 pages of practice: how to protect cash flow — assessment, a BCP plan, actions on the day of an outage.'],
+    'qb-btn':['Забрать книгу бесплатно →','Get the book for free →'],
+    'qb-note':['Пришлем PDF на вашу почту в течение 24 часов.','We will email the PDF within 24 hours.'],
+    'qb-ok-title':['Спасибо! Книга уже в пути','Thank you! The book is on its way'],
+    'qb-ok-desc':['Пришлем «BCM без иллюзий» на почту в течение 24 часов. Проверьте папку «Спам».','We will email «BCM without illusions» within 24 hours. Please check your Spam folder.']
+  };
+  for(var k in m){var e=document.getElementById(k);if(e)e.textContent=ru?m[k][0]:m[k][1];}
+  var cs=document.getElementById('qb-consent'); if(cs)cs.innerHTML=t.consentText;
+  var np=document.getElementById('qbName'); if(np)np.placeholder=ru?'Имя':'Name';
+  var ep=document.getElementById('qbEmail'); if(ep)ep.placeholder=ru?'E-mail — куда прислать книгу':'E-mail — where to send the book';
+  var er=document.getElementById('qbErr'); if(er)er.textContent=ru?'Проверьте имя, корректный e-mail и согласие.':'Check your name, a valid e-mail and consent.';
+  var fb=document.getElementById('qbForm'); if(fb)fb.style.display='';
+  var tb=document.getElementById('qbThanks'); if(tb)tb.style.display='none';
+  var bt=document.getElementById('qbBtn'); if(bt){bt.disabled=false;bt.style.opacity='';}
+}
+async function submitQuizBook(){
+  var t=T[lang];
+  var name=document.getElementById('qbName').value.trim();
+  var email=document.getElementById('qbEmail').value.trim();
+  var consent=document.getElementById('qbConsent').checked;
+  var err=document.getElementById('qbErr');
+  var okEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if(!name||!okEmail||!consent){err.style.display='block';return;}
+  err.style.display='none';
+  var btn=document.getElementById('qbBtn'); btn.disabled=true; btn.style.opacity='0.6';
+  try{ ym(110579884,'reachGoal','book_lead_quiz'); }catch(e){}
+  var lv=finalLevel;
+  var body={
+    name:name, company:'—', email:email,
+    product:'Книга «BCM без иллюзий» (лид-магнит из квиза)',
+    comment:'КНИГА из квиза. Имя: '+name+' · Email: '+email+' · Уровень: '+t.levelLabel(lv.n,lv.name)+' · Балл: '+t.scoreLabel(finalScore),
+    language:lang.toUpperCase(),
+    score:t.scoreLabel(finalScore),
+    level:t.levelLabel(lv.n,lv.name)
+  };
+  try{ await postWorker(body); }catch(e){}
+  document.getElementById('qbForm').style.display='none';
+  document.getElementById('qbThanks').style.display='block';
 }
 
 // ═══════════════════════════════════

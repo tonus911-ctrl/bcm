@@ -85,10 +85,9 @@ m[i].l=1*new Date();
 for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
-ym(96530203,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/96530203" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
@@ -222,7 +221,6 @@ document.getElementById('bookForm').addEventListener('submit',async function(e){
   if(!name||!validEmail(email)||!consent){err.style.display='block';return;}
   err.style.display='none';
   var btn=document.getElementById('kSubmit');btn.disabled=true;btn.style.opacity='0.6';
-  try{ym(96530203,'reachGoal','book_lead');}catch(e){}
   try{ym(110579884,'reachGoal','book_lead');}catch(e){}
   var body={
     name:name,

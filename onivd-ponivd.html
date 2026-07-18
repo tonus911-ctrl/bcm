@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ОНиВД и ПОНиВД: требования ЦБ и как составить план | risk-place.ru</title>
+<meta name="description" content="Что такое ОНиВД и ПОНиВД: требования Банка России к обеспечению непрерывности и восстановления деятельности, кому обязательно, структура плана и типичные ошибки.">
+<meta name="keywords" content="онивд, понивд, план обеспечения непрерывности и восстановления деятельности, непрерывность деятельности банка, положение цб непрерывность">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/onivd-ponivd.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/onivd-ponivd.html">
+<meta property="og:title" content="ОНиВД и ПОНиВД: требования ЦБ и как составить план">
+<meta property="og:description" content="Что такое ОНиВД и ПОНиВД: требования Банка России к обеспечению непрерывности и восстановления деятельности, кому обязательно, структура плана и типичные ошибки.">
+<meta property="og:image" content="https://bcm.risk-place.ru/onivd-ponivd.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ОНиВД и ПОНиВД: требования ЦБ и как составить план">
+<meta name="twitter:description" content="Что такое ОНиВД и ПОНиВД: требования Банка России к обеспечению непрерывности и восстановления деятельности, кому обязательно, структура плана и типичные ошибки.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/onivd-ponivd.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/onivd-ponivd.html"><link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-onivd-ponivd.html"><link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/onivd-ponivd.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/onivd-ponivd.html#article",
+      "headline": "Анализ воздействия на бизнес (BIA): как провести",
+      "description": "Что такое BIA (анализ воздействия на бизнес), зачем он нужен и как его провести: критичные процессы, RTO и RPO, стоимость простоя. Метод и шаблон простыми словами.",
+      "image": "https://bcm.risk-place.ru/onivd-ponivd.png",
+      "datePublished": "2026-06-28",
+      "dateModified": "2026-06-28",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Person",
+        "name": "Евгений Теленков",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/onivd-ponivd.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Материалы",
+          "item": "https://bcm.risk-place.ru/materialy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Анализ воздействия (BIA)",
+          "item": "https://bcm.risk-place.ru/onivd-ponivd.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем BIA отличается от оценки рисков?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оценка рисков отвечает «что может случиться и с какой вероятностью». BIA отвечает «насколько больно будет, если процесс остановится, и как быстро его надо вернуть». В BCM их используют вместе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое RTO и RPO простыми словами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RTO — за сколько восстановить процесс. RPO — какой объем данных допустимо потерять. Первое про время, второе про точку отката данных."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли провести BIA в небольшой компании?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Достаточно взять 3–5 ключевых процессов, оценить последствия их простоя по времени и задать целевые сроки восстановления. Это можно сделать за один рабочий день."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="index.html#products">Продукты</a><a href="materialy.html">Материалы</a><a href="o-podhode.html">О нас</a><a href="quiz.html">Диагностика</a><a href="index.html#contacts">Контакты</a><span class="lang-sw"><a href="onivd-ponivd.html" style="background:#14142a;color:#fff;border-color:#14142a">RU</a><a href="en-onivd-ponivd.html">EN</a></span><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>ОНиВД и ПОНиВД</div>
+  <div class="article-head">
+    <div class="eyebrow">Регуляторные требования</div>
+    <h1>ОНиВД и ПОНиВД: требования ЦБ и как составить план</h1>
+    <p class="lead">Банк России требует от финансовых организаций не «папку с планами», а работающую систему обеспечения непрерывности и восстановления деятельности. Разбираем, кому это обязательно, что должно быть в ПОНиВД и на чем чаще всего спотыкаются при проверках.</p>
+    <div class="meta-row">Опубликовано: 18 июля 2026 г. · Автор: Евгений Теленков · ≈ 9 мин чтения</div>
+  </div>
+  <img src="onivd-ponivd.png" alt="ОНиВД и ПОНиВД: требования ЦБ к непрерывности деятельности" class="article-cover">
+  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#chto">Что такое ОНиВД и ПОНиВД</a></li><li><a href="#komu">Кому это обязательно</a></li><li><a href="#trebovaniya">Что требует регулятор</a></li><li><a href="#struktura">Структура ПОНиВД: 9 разделов</a></li><li><a href="#oshibki">Типичные ошибки при проверках</a></li><li><a href="#kak">Как сделать план работающим</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
+  <article class="article">
+<h2 id="chto">Что такое ОНиВД и ПОНиВД</h2>
+<p>ОНиВД — обеспечение непрерывности и (или) восстановления деятельности. Так Банк России называет то, что в международной практике известно как управление непрерывностью бизнеса (BCM). ПОНиВД — план обеспечения непрерывности и восстановления деятельности, главный документ этой системы.</p>
+<p>Разница с «обычным» BCM — в статусе. Для банков, страховых, НФО и участников платежных систем непрерывность — не добрая воля, а надзорное требование: регулятор проверяет наличие плана, его актуальность, результаты тестирований и то, как быстро организация возвращается к работе после сбоя.</p>
+<h2 id="komu">Кому это обязательно</h2>
+<p>Требования к непрерывности деятельности в разном объеме распространяются на кредитные организации, некредитные финансовые организации, страховые компании, профучастников рынка ценных бумаг, операторов платежных систем и значимых поставщиков платежных услуг. Отдельные требования к операционной надежности установлены для банков и НФО в части защиты информации и допустимого времени простоя критичных процессов.</p>
+<p>Практический ориентир: если ваша организация поднадзорна Банку России — у вас должен быть ПОНиВД, назначенные ответственные, регулярные тестирования и отчетность по инцидентам. Если вы обслуживаете такую организацию как подрядчик — будьте готовы, что требования непрерывности придут к вам через договор.</p>
+<h2 id="trebovaniya">Что требует регулятор</h2>
+<p>Смысл требований сводится к пяти вещам:</p>
+<ul>
+<li><b>Назначенная ответственность.</b> За непрерывность отвечает конкретное лицо уровня руководства, а не «служба в целом».</li>
+<li><b>Анализ критичных процессов.</b> Организация знает, какие процессы критичны, какое время простоя для них допустимо и какие ресурсы нужны для восстановления.</li>
+<li><b>Документированный план.</b> ПОНиВД описывает сценарии, порядок действий, роли, коммуникации и резервные мощности.</li>
+<li><b>Регулярные тестирования.</b> План проверяется на практике — с фиксацией результатов и доработкой по итогам.</li>
+<li><b>Отчетность об инцидентах.</b> О событиях, влияющих на непрерывность, организация уведомляет регулятора в установленном порядке.</li>
+</ul>
+<h2 id="struktura">Структура ПОНиВД: 9 разделов</h2>
+<p>Рабочая структура плана, которая закрывает требования и остается пригодной для реального кризиса:</p>
+<ol>
+<li>Область действия: перечень критичных процессов и систем с целевым временем восстановления.</li>
+<li>Роли и полномочия: кризисный штаб, заместители, порядок принятия решений.</li>
+<li>Сценарии нарушений: отказ ИТ, недоступность офиса, потеря персонала, сбой подрядчика, кибератака.</li>
+<li>Порядок активации плана: кто, при каких условиях и как объявляет режим нарушения.</li>
+<li>Действия по восстановлению: пошаговые процедуры для каждого сценария.</li>
+<li>Внутренние и внешние коммуникации: сотрудники, клиенты, регулятор, СМИ.</li>
+<li>Резервные ресурсы: площадки, каналы связи, резервирование данных и мощностей.</li>
+<li>Порядок тестирования: виды учений, периодичность, критерии успеха.</li>
+<li>Порядок актуализации: когда план пересматривается и кто за это отвечает.</li>
+</ol>
+<h2 id="oshibki">Типичные ошибки при проверках</h2>
+<p><b>План есть — системы нет.</b> Документ написан консультантом три года назад, телефоны устарели, половина названных сотрудников уволилась. Формально требование выполнено, фактически при инциденте план бесполезен — и проверка это видит по датам актуализации и результатам тестирований.</p>
+<p><b>Тестирования на бумаге.</b> Протоколы учений составляются без самих учений. Риск двойной: и надзорный, и реальный — первый настоящий сбой становится первым тестом.</p>
+<p><b>Нет связи с деньгами.</b> План не отвечает на вопрос, сколько стоит час простоя каждого критичного процесса — а значит, невозможно обоснованно выбирать, что восстанавливать первым и сколько разумно тратить на резервирование.</p>
+<h2 id="kak">Как сделать план работающим</h2>
+<p>Наш подход — измеримая непрерывность. Вместо толстого документа «для проверки» — компактный план плюс управленческий дашборд: индекс устойчивости 0-100, стоимость часа простоя по критичным процессам, светофоры по слабым местам. Такой контур закрывает требования регулятора автоматически — потому что система реально работает, а не изображается. Посмотрите <a href="dashboard.html">живое демо дашборда</a> — это то, что видит правление.</p>
+<h2 id="faq">Частые вопросы</h2>
+<p><b>Чем ПОНиВД отличается от BCP?</b> По сути ничем: это план непрерывности, названный в терминологии Банка России. Если у вас уже есть работающий BCP — его нужно привести к требованиям регулятора по составу разделов и порядку тестирований.</p>
+<p><b>Можно ли купить готовый шаблон?</b> Шаблон ускоряет старт, но проверку проходит не документ, а система: назначенные роли, свежие тестирования, актуальные контакты. Шаблон без внедрения — риск, а не защита.</p>
+<p><b>Сколько времени занимает построение?</b> Для средней организации — 4-8 недель до работающего плана первой версии: анализ критичных процессов, план, первое тестирование.</p>
+</article>
+  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">План непрерывности (BCP) →</div><div class="rc-d">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Дашборд непрерывности →</div><div class="rc-d">Индекс устойчивости 0-100, стоимость дня простоя и светофоры для руководства. Живое демо.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Главная</a>
+      <a href="materialy.html">Материалы по BCM</a>
+      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a>
+      <a href="quiz.html">Диагностика</a>
+      <a href="privacy-policy.html">Политика конфиденциальности</a>
+      <a href="oferta.html">Публичная оферта</a>
+    </div>
+    <div class="copy">© 2026 Евгений Теленков · BCM-консалтинг · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Обучение и консалтинг по управлению рисками на risk-place.ru</a></div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to lower your business interruption insurance premium | risk-place.ru</title>
+<meta name="description" content="What to show the underwriter to lower a business interruption premium: BIA, tested recovery plans, backup architecture. How BCM maturity turns into a discount.">
+<meta name="keywords" content="business interruption insurance premium, lower insurance premium, underwriting business continuity">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/en-strahovanie-pereryvov-premiya.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/en-strahovanie-pereryvov-premiya.html">
+<meta property="og:title" content="How to lower your business interruption premium">
+<meta property="og:description" content="What to show the underwriter to lower a business interruption premium: BIA, tested recovery plans, backup architecture. How BCM maturity turns into a discount.">
+<meta property="og:image" content="https://bcm.risk-place.ru/strahovanie-pereryvov-premiya.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to lower your business interruption premium">
+<meta name="twitter:description" content="What to show the underwriter to lower a business interruption premium: BIA, tested recovery plans, backup architecture. How BCM maturity turns into a discount.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/strahovanie-pereryvov-premiya.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/strahovanie-pereryvov-premiya.html">
+<link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-strahovanie-pereryvov-premiya.html">
+<link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/strahovanie-pereryvov-premiya.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/en-strahovanie-pereryvov-premiya.html#article",
+      "headline": "Business impact analysis (BIA): how to run it",
+      "description": "What a BIA (business impact analysis) is, why you need it and how to run it: critical processes, RTO and RPO, downtime cost. Method and template in plain language.",
+      "image": "https://bcm.risk-place.ru/strahovanie-pereryvov-premiya.png",
+      "datePublished": "2026-06-28",
+      "dateModified": "2026-06-28",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Evgeny Telenkov",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/en-strahovanie-pereryvov-premiya.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Materials",
+          "item": "https://bcm.risk-place.ru/materialy-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Business impact analysis (BIA)",
+          "item": "https://bcm.risk-place.ru/en-strahovanie-pereryvov-premiya.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is a BIA different from a risk assessment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A risk assessment answers \"what can happen and how likely.\" A BIA answers \"how painful it is if a process stops and how fast it must come back.\" In BCM they are used together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are RTO and RPO in plain language?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RTO is how fast to restore a process. RPO is how much data can be lost. The first is about time, the second about the data rollback point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a small company run a BIA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in a single working day."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="index.html#products">Products</a><a href="materialy-en.html">Materials</a><a href="o-podhode.html">About us</a><a href="quiz.html">Assessment</a><a href="index.html#contacts">Contacts</a><span class="lang-sw"><a href="strahovanie-pereryvov-premiya.html">RU</a><a href="en-strahovanie-pereryvov-premiya.html" style="background:#14142a;color:#fff;border-color:#14142a">EN</a></span><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Book a review</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Materials</a><span>/</span>BI insurance premium</div>
+  <div class="article-head">
+    <div class="eyebrow">Insurance and continuity</div>
+    <h1>How to lower your business interruption premium</h1>
+    <p class="lead">A business interruption premium is not a fixed price — it is the underwriter's estimate of your risk. The more convincingly you demonstrate control over downtime, the cheaper it is to insure. Here is what actually earns the discount.</p>
+    <div class="meta-row">Published: July 18, 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
+  </div>
+  <img src="strahovanie-pereryvov-premiya.png" alt="How to lower your business interruption insurance premium" class="article-cover">
+  <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#how">How underwriters price your risk</a></li><li><a href="#docs">Five documents to show</a></li><li><a href="#numbers">Numbers that cut the premium</a></li><li><a href="#worse">What raises the premium</a></li><li><a href="#link">BCM and insurance together</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+  <article class="article">
+<h2 id="how">How underwriters price your risk</h2>
+<p>The insurer sells you coverage for downtime losses, and the price reflects two expectations: how often a stoppage may happen and how long it will last. The first is about prevention; the second — about recovery speed. A company that recovers in two days is several times cheaper to insure than one that will stand still for three weeks, even at the same incident probability.</p>
+<p>Without your documents, the underwriter prices you «by industry» — that is, by the worst case with a margin. Everything you failed to show is interpreted against you.</p>
+<h2 id="docs">Five documents to show</h2>
+<ol>
+<li><b>Business impact analysis</b> — proof that you know your critical processes and the cost of their downtime (<a href="en-bia-analiz-vozdeystviya.html">how to run a BIA</a>).</li>
+<li><b>A continuity and recovery plan</b> with recovery time objectives for key systems and production lines.</li>
+<li><b>Exercise records</b> from the last year. A tested plan is worth an order of magnitude more than a written one.</li>
+<li><b>Backup architecture</b> — data copies, standby capacity, alternative suppliers, manual workarounds.</li>
+<li><b>Incident history with lessons</b> — not the absence of failures, but mature reactions to them.</li>
+</ol>
+<h2 id="numbers">Numbers that cut the premium</h2>
+<p>Three figures work hardest: recovery time measured in exercises rather than declared; the share of revenue the business retains in degraded mode thanks to workarounds; and the cost of one day down calculated by method, not by feel (<a href="en-stoimost-dnya-prostoya.html">the method</a>). The same numbers define the right sum insured and indemnity period — without them companies routinely buy the wrong coverage for the wrong duration.</p>
+<h2 id="worse">What raises the premium</h2>
+<ul>
+<li>Single-site operations and sole suppliers without alternatives — single points of failure (<a href="en-edinaya-tochka-otkaza.html">how to find them</a>).</li>
+<li>Backups living on the same network as production systems.</li>
+<li>Paper plans without exercises — underwriters have learned to tell living documents from decorative ones.</li>
+<li>Omissions in the proposal form: a mismatch discovered at claim time can cost you the payout.</li>
+</ul>
+<h2 id="link">BCM and insurance together</h2>
+<p>Continuity and insurance are two halves of the same cash-flow protection: BCM shortens and prevents downtime, insurance covers what cannot be shortened. Mature BCM lowers the premium and improves claim outcomes, while the insurance lens shows where investing in resilience beats paying for risk. Our <a href="dashboard.html">resilience dashboard</a> puts the underwriter's numbers on one screen — so you negotiate as an equal.</p>
+<h2 id="faq">FAQ</h2>
+<p><b>How much can the premium drop?</b> Depends on the industry and your current rating; the practical range for demonstrated BCM maturity runs from noticeable percentages to tens of percent — plus better deductibles, indemnity periods and exclusions.</p>
+<p><b>We already have a policy — too late?</b> No: documents are reviewed at renewal, and substantial improvements justify mid-term renegotiation.</p>
+<p><b>Cheaper policy or right coverage?</b> Right coverage. The biggest BI losses come from underinsurance and wrong indemnity periods, not from premium size.</p>
+</article>
+  <section class="related"><div class="related-title">Read next</div><div class="related-grid"><a href="en-plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">Business continuity plan (BCP) →</div><div class="rc-d">How to build a BCP in 7 steps: structure, roles, template.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Resilience dashboard →</div><div class="rc-d">A 0-100 resilience index, cost of downtime and traffic lights for the board. Live demo.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">5-minute maturity check →</div><div class="rc-d">Your resilience level, top three risks and first steps. Free.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Home</a>
+      <a href="materialy-en.html">BCM materials</a>
+      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a>
+      <a href="quiz.html">Assessment</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="oferta.html">Public offer</a>
+    </div>
+    <div class="copy">© 2026 Evgeny Telenkov · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Risk management training and consulting at risk-place.ru</a></div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>

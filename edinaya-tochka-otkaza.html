@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Единая точка отказа: как найти и устранить в бизнесе | risk-place.ru</title>
+<meta name="description" content="Единая точка отказа (SPOF) в бизнесе: как найти незаменимые элементы — серверы, людей, поставщиков, площадки — и устранить их без больших бюджетов. Метод и примеры.">
+<meta name="keywords" content="единая точка отказа, spof, single point of failure, незаменимый сотрудник, зависимость от поставщика">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/edinaya-tochka-otkaza.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/edinaya-tochka-otkaza.html">
+<meta property="og:title" content="Единая точка отказа: как найти и устранить">
+<meta property="og:description" content="Единая точка отказа (SPOF) в бизнесе: как найти незаменимые элементы — серверы, людей, поставщиков, площадки — и устранить их без больших бюджетов. Метод и примеры.">
+<meta property="og:image" content="https://bcm.risk-place.ru/edinaya-tochka-otkaza.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Единая точка отказа: как найти и устранить">
+<meta name="twitter:description" content="Единая точка отказа (SPOF) в бизнесе: как найти незаменимые элементы — серверы, людей, поставщиков, площадки — и устранить их без больших бюджетов. Метод и примеры.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/edinaya-tochka-otkaza.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/edinaya-tochka-otkaza.html"><link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html"><link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/edinaya-tochka-otkaza.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/edinaya-tochka-otkaza.html#article",
+      "headline": "Анализ воздействия на бизнес (BIA): как провести",
+      "description": "Что такое BIA (анализ воздействия на бизнес), зачем он нужен и как его провести: критичные процессы, RTO и RPO, стоимость простоя. Метод и шаблон простыми словами.",
+      "image": "https://bcm.risk-place.ru/edinaya-tochka-otkaza.png",
+      "datePublished": "2026-06-28",
+      "dateModified": "2026-06-28",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Person",
+        "name": "Евгений Теленков",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/edinaya-tochka-otkaza.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Материалы",
+          "item": "https://bcm.risk-place.ru/materialy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Анализ воздействия (BIA)",
+          "item": "https://bcm.risk-place.ru/edinaya-tochka-otkaza.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем BIA отличается от оценки рисков?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оценка рисков отвечает «что может случиться и с какой вероятностью». BIA отвечает «насколько больно будет, если процесс остановится, и как быстро его надо вернуть». В BCM их используют вместе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое RTO и RPO простыми словами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RTO — за сколько восстановить процесс. RPO — какой объем данных допустимо потерять. Первое про время, второе про точку отката данных."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли провести BIA в небольшой компании?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Достаточно взять 3–5 ключевых процессов, оценить последствия их простоя по времени и задать целевые сроки восстановления. Это можно сделать за один рабочий день."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="index.html#products">Продукты</a><a href="materialy.html">Материалы</a><a href="o-podhode.html">О нас</a><a href="quiz.html">Диагностика</a><a href="index.html#contacts">Контакты</a><span class="lang-sw"><a href="edinaya-tochka-otkaza.html" style="background:#14142a;color:#fff;border-color:#14142a">RU</a><a href="en-edinaya-tochka-otkaza.html">EN</a></span><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Единая точка отказа</div>
+  <div class="article-head">
+    <div class="eyebrow">Оценка рисков и BIA</div>
+    <h1>Единая точка отказа: как найти и устранить</h1>
+    <p class="lead">Единая точка отказа — элемент, отказ которого останавливает всю цепочку: сервер, человек, поставщик, площадка, файл Excel. Компании обычно узнают о своих точках отказа в момент отказа. Разбираем, как найти их заранее и что делать — часто без бюджета вообще.</p>
+    <div class="meta-row">Опубликовано: 18 июля 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
+  </div>
+  <img src="edinaya-tochka-otkaza.png" alt="Единая точка отказа (SPOF): как найти и устранить" class="article-cover">
+  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#chto">Что такое SPOF и почему их не видно</a></li><li><a href="#gde">Где искать: 6 типовых мест</a></li><li><a href="#metod">Метод поиска за неделю</a></li><li><a href="#ustranenie">Устранение: диверсификация, резерв, документация</a></li><li><a href="#lyudi">Отдельно о людях</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
+  <article class="article">
+<h2 id="chto">Что такое SPOF и почему их не видно</h2>
+<p>Single point of failure — единственный элемент, через который проходит критичный поток: платежи, отгрузка, данные, решения. Пока элемент работает, он невидим: система выглядит надежной. Отказ превращает его в бутылочное горлышко всей компании — и оказывается, что резерва нет, замены нет, инструкция в голове одного человека.</p>
+<p>Точки отказа не видны по двум причинам: они срослись с рутиной («так исторически сложилось») и никому не поручено их искать. Поиск SPOF — самая быстрая по отдаче работа во всей непрерывности.</p>
+<h2 id="gde">Где искать: 6 типовых мест</h2>
+<ol>
+<li><b>ИТ:</b> единственный сервер/канал/ЦОД, база без реплики, самописная система, которую понимает один разработчик, единственный админ с полными правами.</li>
+<li><b>Люди:</b> незаменимый главбух, единственный носитель отношений с ключевым клиентом, технолог, у которого «все в голове».</li>
+<li><b>Поставщики:</b> единственный поставщик критичного сырья или сервиса, один логистический маршрут, один банк для всех расчетов.</li>
+<li><b>Площадки:</b> одно производство, один склад, офис, без которого не работает колл-центр.</li>
+<li><b>Данные и документы:</b> ключевой файл на локальном диске, лицензии и доступы, оформленные на одного сотрудника.</li>
+<li><b>Клиенты и каналы:</b> один клиент с половиной выручки, один маркетплейс как единственный канал продаж.</li>
+</ol>
+<h2 id="metod">Метод поиска за неделю</h2>
+<p>Берете 5-7 критичных процессов (из <a href="reestr-kriticheskih-processov.html">реестра критических процессов</a>) и для каждого проходите цепочку вопросом: «что произойдет, если этот элемент исчезнет на неделю — есть ли замена и сколько стоит простой?» Все, где ответ «замены нет», попадает в список SPOF с двумя атрибутами: цена дня простоя (<a href="stoimost-dnya-prostoya.html">как считать</a>) и стоимость устранения. Сортировка по соотношению — готовый план работ: сверху окажутся дыры, закрываемые почти бесплатно.</p>
+<h2 id="ustranenie">Устранение: диверсификация, резерв, документация</h2>
+<p>Три стратегии по нарастанию стоимости. <b>Документация</b> — почти бесплатно: инструкции, дублирование знаний, передача доступов. <b>Диверсификация</b> — второй поставщик, второй банк, второй канал продаж: дешевле, чем кажется, если начинать до кризиса. <b>Резервирование</b> — вторая площадка, реплика базы, резервный канал: единственная стратегия, требующая бюджета, и именно здесь важно не перестараться — резервировать по цене простоя, а не по страху. Заметная часть SPOF устраняется организационными мерами в рамках зарплат — это то самое «умное расходование», когда устойчивость растет без новых затрат.</p>
+<h2 id="lyudi">Отдельно о людях</h2>
+<p>Человеческие SPOF — самые частые и самые деликатные: резервирование человека выглядит как недоверие. Рабочие ходы: парная работа на критичных операциях, обязательные отпуска (лучший тест незаменимости), документирование как часть роли, а не как разовая повинность. Подробный разбор — в статье <a href="poterya-klyuchevogo-sotrudnika.html">о риске потери ключевого сотрудника</a>.</p>
+<h2 id="faq">Частые вопросы</h2>
+<p><b>Чем SPOF отличается от обычного риска?</b> Это риск с бинарным профилем: не «может ухудшиться», а «остановится полностью». Поэтому в реестре рисков точки отказа заслуживают отдельной пометки.</p>
+<p><b>Сколько SPOF — норма?</b> Ноль недостижим и не нужен: цель — знать все свои точки отказа и осознанно решать по каждой: устранить, зарезервировать или принять с открытыми глазами.</p>
+<p><b>Как удержать список актуальным?</b> Пересматривать при каждом изменении: новый продукт, переезд, смена поставщика. У нас это часть ежегодного цикла BIA и видно на <a href="dashboard.html">дашборде</a> в блоке слабых мест.</p>
+</article>
+  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">План непрерывности (BCP) →</div><div class="rc-d">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Дашборд непрерывности →</div><div class="rc-d">Индекс устойчивости 0-100, стоимость дня простоя и светофоры для руководства. Живое демо.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Главная</a>
+      <a href="materialy.html">Материалы по BCM</a>
+      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a>
+      <a href="quiz.html">Диагностика</a>
+      <a href="privacy-policy.html">Политика конфиденциальности</a>
+      <a href="oferta.html">Публичная оферта</a>
+    </div>
+    <div class="copy">© 2026 Евгений Теленков · BCM-консалтинг · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Обучение и консалтинг по управлению рисками на risk-place.ru</a></div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>

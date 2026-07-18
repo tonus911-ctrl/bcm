@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single points of failure: how to find and fix them | risk-place.ru</title>
+<meta name="description" content="Single points of failure in a business: how to find irreplaceable servers, people, suppliers and sites — and fix them, often with no budget at all. Method and examples.">
+<meta name="keywords" content="single point of failure, SPOF, key person risk, supplier dependency">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html">
+<meta property="og:title" content="Single points of failure: how to find and fix them">
+<meta property="og:description" content="Single points of failure in a business: how to find irreplaceable servers, people, suppliers and sites — and fix them, often with no budget at all. Method and examples.">
+<meta property="og:image" content="https://bcm.risk-place.ru/edinaya-tochka-otkaza.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Single points of failure: how to find and fix them">
+<meta name="twitter:description" content="Single points of failure in a business: how to find irreplaceable servers, people, suppliers and sites — and fix them, often with no budget at all. Method and examples.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/edinaya-tochka-otkaza.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/edinaya-tochka-otkaza.html">
+<link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html">
+<link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/edinaya-tochka-otkaza.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html#article",
+      "headline": "Business impact analysis (BIA): how to run it",
+      "description": "What a BIA (business impact analysis) is, why you need it and how to run it: critical processes, RTO and RPO, downtime cost. Method and template in plain language.",
+      "image": "https://bcm.risk-place.ru/edinaya-tochka-otkaza.png",
+      "datePublished": "2026-06-28",
+      "dateModified": "2026-06-28",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Evgeny Telenkov",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Materials",
+          "item": "https://bcm.risk-place.ru/materialy-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Business impact analysis (BIA)",
+          "item": "https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is a BIA different from a risk assessment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A risk assessment answers \"what can happen and how likely.\" A BIA answers \"how painful it is if a process stops and how fast it must come back.\" In BCM they are used together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are RTO and RPO in plain language?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RTO is how fast to restore a process. RPO is how much data can be lost. The first is about time, the second about the data rollback point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a small company run a BIA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in a single working day."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="index.html#products">Products</a><a href="materialy-en.html">Materials</a><a href="o-podhode.html">About us</a><a href="quiz.html">Assessment</a><a href="index.html#contacts">Contacts</a><span class="lang-sw"><a href="edinaya-tochka-otkaza.html">RU</a><a href="en-edinaya-tochka-otkaza.html" style="background:#14142a;color:#fff;border-color:#14142a">EN</a></span><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Book a review</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Materials</a><span>/</span>Single point of failure</div>
+  <div class="article-head">
+    <div class="eyebrow">Risk assessment and BIA</div>
+    <h1>Single points of failure: how to find and fix them</h1>
+    <p class="lead">A single point of failure is an element whose loss stops the whole chain: a server, a person, a supplier, a site, an Excel file. Companies usually discover their SPOFs at the moment of failure. Here is how to find them in advance — and fix many for free.</p>
+    <div class="meta-row">Published: July 18, 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
+  </div>
+  <img src="edinaya-tochka-otkaza.png" alt="Single points of failure: how to find and fix them" class="article-cover">
+  <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#what">What a SPOF is and why they stay invisible</a></li><li><a href="#where">Where to look: six typical places</a></li><li><a href="#method">A one-week search method</a></li><li><a href="#fix">Fixing: documentation, diversification, redundancy</a></li><li><a href="#people">A note on people</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+  <article class="article">
+<h2 id="what">What a SPOF is and why they stay invisible</h2>
+<p>A single point of failure is the only element a critical flow passes through: payments, shipping, data, decisions. While it works, it is invisible — the system looks reliable. Its failure turns it into the bottleneck of the whole company, and it turns out there is no backup, no substitute, and the instructions live in one person's head.</p>
+<p>SPOFs stay invisible for two reasons: they have merged with routine («it just grew that way»), and nobody is tasked with finding them. SPOF hunting is the highest-return work in all of continuity.</p>
+<h2 id="where">Where to look: six typical places</h2>
+<ol>
+<li><b>IT:</b> a single server, channel or data center; a database without a replica; a homegrown system one developer understands; a single admin with full rights.</li>
+<li><b>People:</b> the irreplaceable chief accountant; the only holder of a key client relationship; the technologist with everything «in the head».</li>
+<li><b>Suppliers:</b> a sole supplier of critical input, one logistics route, one bank for all payments.</li>
+<li><b>Sites:</b> one production facility, one warehouse, an office without which the call center stops.</li>
+<li><b>Data and documents:</b> a key file on a local drive; licenses and accesses registered to one employee.</li>
+<li><b>Clients and channels:</b> one client with half the revenue; one marketplace as the only sales channel.</li>
+</ol>
+<h2 id="method">A one-week search method</h2>
+<p>Take 5-7 critical processes (from your <a href="en-reestr-kriticheskih-processov.html">critical process register</a>) and walk each chain with one question: «what happens if this element disappears for a week — is there a substitute, and what does the downtime cost?» Everything answered «no substitute» goes on the SPOF list with two attributes: cost of a day down (<a href="en-stoimost-dnya-prostoya.html">how to price it</a>) and cost to fix. Sorting by the ratio gives you a ready work plan — the top will be holes that close almost for free.</p>
+<h2 id="fix">Fixing: documentation, diversification, redundancy</h2>
+<p>Three strategies in order of cost. <b>Documentation</b> — nearly free: instructions, knowledge sharing, access handover. <b>Diversification</b> — a second supplier, second bank, second sales channel: cheaper than it looks if started before the crisis. <b>Redundancy</b> — a second site, a database replica, a standby channel: the only strategy that needs budget, and exactly where not to overdo it — reserve according to the cost of downtime, not according to fear. A large share of SPOFs is fixed by organizational measures within existing salaries — resilience growing without new spend.</p>
+<h2 id="people">A note on people</h2>
+<p>Human SPOFs are the most common and the most delicate: backing a person up can look like distrust. Working moves: paired work on critical operations, mandatory vacations (the best irreplaceability test), documentation as part of the role rather than a one-off chore. A deeper dive — in <a href="en-poterya-klyuchevogo-sotrudnika.html">the key person risk article</a>.</p>
+<h2 id="faq">FAQ</h2>
+<p><b>How is a SPOF different from a normal risk?</b> It has a binary profile: not «may degrade» but «stops completely». That earns SPOFs their own flag in the risk register.</p>
+<p><b>How many SPOFs are acceptable?</b> Zero is unreachable and unnecessary: the goal is to know all of yours and decide each consciously — fix, reserve, or accept with open eyes.</p>
+<p><b>How to keep the list current?</b> Review on every change: new product, relocation, supplier switch. In our practice it is part of the annual BIA cycle and visible on the <a href="dashboard.html">dashboard</a> among weak spots.</p>
+</article>
+  <section class="related"><div class="related-title">Read next</div><div class="related-grid"><a href="en-plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">Business continuity plan (BCP) →</div><div class="rc-d">How to build a BCP in 7 steps: structure, roles, template.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Resilience dashboard →</div><div class="rc-d">A 0-100 resilience index, cost of downtime and traffic lights for the board. Live demo.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">5-minute maturity check →</div><div class="rc-d">Your resilience level, top three risks and first steps. Free.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Home</a>
+      <a href="materialy-en.html">BCM materials</a>
+      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a>
+      <a href="quiz.html">Assessment</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="oferta.html">Public offer</a>
+    </div>
+    <div class="copy">© 2026 Evgeny Telenkov · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Risk management training and consulting at risk-place.ru</a></div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>

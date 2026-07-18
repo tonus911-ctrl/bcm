@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyberattack protection for business: the system and its second half | risk-place.ru</title>
+<meta name="description" content="Cyberattack protection is a system of two halves: reduce the probability of a breach — and survive the one that gets through. Technical basics, organizational measures, and resilience.">
+<meta name="keywords" content="cyberattack protection business, cyber resilience, incident response, cost of downtime">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/en-zashchita-ot-kiberatak.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/en-zashchita-ot-kiberatak.html">
+<meta property="og:title" content="Cyberattack protection: the system — and its second half">
+<meta property="og:description" content="Cyberattack protection is a system of two halves: reduce the probability of a breach — and survive the one that gets through. Technical basics, organizational measures, and resilience.">
+<meta property="og:image" content="https://bcm.risk-place.ru/zashchita-ot-kiberatak.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cyberattack protection: the system — and its second half">
+<meta name="twitter:description" content="Cyberattack protection is a system of two halves: reduce the probability of a breach — and survive the one that gets through. Technical basics, organizational measures, and resilience.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/zashchita-ot-kiberatak.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14142a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/zashchita-ot-kiberatak.html">
+<link rel="alternate" hreflang="en" href="https://bcm.risk-place.ru/en-zashchita-ot-kiberatak.html">
+<link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/zashchita-ot-kiberatak.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/en-zashchita-ot-kiberatak.html#article",
+      "headline": "Business impact analysis (BIA): how to run it",
+      "description": "What a BIA (business impact analysis) is, why you need it and how to run it: critical processes, RTO and RPO, downtime cost. Method and template in plain language.",
+      "image": "https://bcm.risk-place.ru/zashchita-ot-kiberatak.png",
+      "datePublished": "2026-06-28",
+      "dateModified": "2026-06-28",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Evgeny Telenkov",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/en-zashchita-ot-kiberatak.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Materials",
+          "item": "https://bcm.risk-place.ru/materialy-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Business impact analysis (BIA)",
+          "item": "https://bcm.risk-place.ru/en-zashchita-ot-kiberatak.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is a BIA different from a risk assessment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A risk assessment answers \"what can happen and how likely.\" A BIA answers \"how painful it is if a process stops and how fast it must come back.\" In BCM they are used together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are RTO and RPO in plain language?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RTO is how fast to restore a process. RPO is how much data can be lost. The first is about time, the second about the data rollback point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a small company run a BIA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in a single working day."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav"><a href="index.html#products">Products</a><a href="materialy-en.html">Materials</a><a href="o-podhode.html">About us</a><a href="quiz.html">Assessment</a><a href="index.html#contacts">Contacts</a><span class="lang-sw"><a href="zashchita-ot-kiberatak.html">RU</a><a href="en-zashchita-ot-kiberatak.html" style="background:#14142a;color:#fff;border-color:#14142a">EN</a></span><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Book a review</a></nav>
+  </div>
+</header>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Materials</a><span>/</span>Cyberattack protection</div>
+  <div class="article-head">
+    <div class="eyebrow">Cyber resilience</div>
+    <h1>Cyberattack protection: the system — and its second half</h1>
+    <p class="lead">Protection is not an antivirus, it is a system of two halves: make a successful attack unlikely, and survive the one that happens anyway. Everyone sells the first half; the second is rarely discussed — yet it determines how many days your business stands still.</p>
+    <div class="meta-row">Published: July 18, 2026 · Author: Evgeny Telenkov · ≈ 7 min read</div>
+  </div>
+  <img src="zashchita-ot-kiberatak.png" alt="Cyberattack protection for business: the system and its second half" class="article-cover">
+  <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#system">What a protection system is</a></li><li><a href="#tech">The technical half: basic hygiene</a></li><li><a href="#org">Organizational measures: cheaper and heavier</a></li><li><a href="#second">The second half: surviving a successful attack</a></li><li><a href="#money">Counting protection in money</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+  <article class="article">
+<h2 id="system">What a protection system is</h2>
+<p>Ask for «cyberattack protection» and you will get a list of technologies: antivirus, firewall, monitoring. Necessary — and insufficient. A protection system answers two questions at once: how to make a successful attack unlikely, and what happens to the business if it succeeds anyway. The second question is less comfortable, so it is usually skipped.</p>
+<p>A third of successful attacks arrive through contractors and partners, and about as many start with stolen credentials. Both routes walk past your perimeter — regardless of how much it cost.</p>
+<h2 id="tech">The technical half: basic hygiene</h2>
+<ul>
+<li>Patching: most attacks exploit long-known vulnerabilities with available fixes.</li>
+<li>Multi-factor authentication wherever there is remote access or admin rights.</li>
+<li>Backups on the 3-2-1 rule with an isolated copy (details in <a href="en-zashchita-ot-shifrovalshchika.html">the ransomware readiness article</a>).</li>
+<li>Network segmentation and least-privilege access.</li>
+<li>Monitoring and logging: you cannot stop an attack you cannot see.</li>
+</ul>
+<h2 id="org">Organizational measures: cheaper and heavier</h2>
+<p>The most underrated part of protection costs almost nothing, because it is done within existing salaries:</p>
+<ul>
+<li><b>An incident playbook</b> — who isolates, who decides, who calls lawyers and the insurer.</li>
+<li><b>Pre-drafted communications</b> — what to tell staff, clients and the press in the first hours. Companies that go silent or contradict themselves lose more on reputation than on downtime — see <a href="en-pochemu-kompanii-skryvayut-kiberataki.html">why companies hide cyberattacks</a>.</li>
+<li><b>Training people</b> — phishing remains the main entry door; an hour per quarter measurably lowers click rates.</li>
+<li><b>Contractor requirements</b> — access rules, VPN, a duty to report incidents.</li>
+</ul>
+<h2 id="second">The second half: surviving a successful attack</h2>
+<p>Assume the attack got through. From that moment four things decide the outcome: isolated backups, a rehearsed recovery plan, manual workarounds for critical operations, and ready communications. This is business continuity — the discipline that starts where security tooling ends. The good news: this half is mostly organizational, built with management will rather than a hardware budget.</p>
+<h2 id="money">Counting protection in money</h2>
+<p>A security budget becomes defensible when two numbers stand next to each other: the cost of one hour of downtime for key processes, and the current realistic recovery time. We put them on one screen — the <a href="dashboard.html">resilience dashboard</a> shows a 0-100 index, the price of downtime and weak spots. With that screen, the budget conversation turns into an investment decision: you can see where one dollar of protection saves ten dollars of losses — and where you are already over-insured and can stop spending.</p>
+<h2 id="faq">FAQ</h2>
+<p><b>Where should a small business start?</b> Four nearly free steps: multi-factor authentication, patching, one isolated copy of critical data, a one-page incident playbook.</p>
+<p><b>How much should we spend?</b> Anchor on the cost of downtime, not on a percentage of the IT budget: price one day of full stop (<a href="en-stoimost-dnya-prostoya.html">method here</a>) and compare it with the price of measures that shorten it.</p>
+<p><b>We outsourced security — are we covered?</b> The vendor covers the technical half. Responsibility for the second half — recovery, workarounds, communications — does not transfer with the contract.</p>
+</article>
+  <section class="related"><div class="related-title">Read next</div><div class="related-grid"><a href="en-plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">Business continuity plan (BCP) →</div><div class="rc-d">How to build a BCP in 7 steps: structure, roles, template.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Resilience dashboard →</div><div class="rc-d">A 0-100 resilience index, cost of downtime and traffic lights for the board. Live demo.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">5-minute maturity check →</div><div class="rc-d">Your resilience level, top three risks and first steps. Free.</div></a></div></section>
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
+    <div class="f-links">
+      <a href="index.html">Home</a>
+      <a href="materialy-en.html">BCM materials</a>
+      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a>
+      <a href="quiz.html">Assessment</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="oferta.html">Public offer</a>
+    </div>
+    <div class="copy">© 2026 Evgeny Telenkov · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Risk management training and consulting at risk-place.ru</a></div>
+  </div>
+</footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>

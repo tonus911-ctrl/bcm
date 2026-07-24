@@ -51,7 +51,7 @@ Every English article below has a Russian-language counterpart at the same path 
 ## Products and services
 - [Templates pack "BCM Start"](https://bcm.risk-place.ru/shablony.html): ready BCP, BIA, DRP templates, a process register and a checklist.
 - [Online course "Continuity and ISO 22301"](https://bcm.risk-place.ru/onlajn-kurs.html): self-paced course with a certificate.
-- [Crisis game "Day X"](https://bcm.risk-place.ru/krizisnaya-igra.html): a facilitated crisis simulation.
+- [Business continuity stress test](https://bcm.risk-place.ru/stress-test-nepreryvnosti.html): a two-day strategic session — diagnostic, crisis simulation and a CEO report; crisis readiness testing.
 - [Continuity and risk dashboard](https://bcm.risk-place.ru/dashboard.html): real-time resilience monitoring.
 - [BCM turnkey](https://bcm.risk-place.ru/bcm-pod-klyuch.html): continuity audit, plan development, drills and implementation.
 

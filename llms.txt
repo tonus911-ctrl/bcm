@@ -46,6 +46,7 @@ Every English article below has a Russian-language counterpart at the same path 
 - [IT risks](https://bcm.risk-place.ru/en-riski-v-it.html): IT resilience and recovery.
 - [Oil and gas industry risks](https://bcm.risk-place.ru/en-riski-neftegazovoy-otrasli.html): sector-specific continuity risks.
 - [Metallurgy risks](https://bcm.risk-place.ru/en-riski-v-metallurgii.html): sector-specific continuity risks.
+- [Employee cybersecurity training: what works and what is missing](https://bcm.risk-place.ru/en-obuchenie-sotrudnikov-kiberbezopasnosti.html): awareness platforms, phishing simulations, and why executive-team readiness is the second half of cyber risk.
 - [Risk management in a large bank](https://bcm.risk-place.ru/en-upravlenie-riskami-v-krupnom-banke.html): an enterprise risk-management case.
 
 ## Products and services

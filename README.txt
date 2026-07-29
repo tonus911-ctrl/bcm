@@ -24,3 +24,5 @@
 
 Адрес публикации: https://tonus911-ctrl.github.io/bcm/
 Инструкция по индексации: ../SEO-настройка-и-индексация.md
+
+rebuild trigger: 2026-07-29 hero-lighthouse

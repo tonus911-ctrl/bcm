@@ -26,3 +26,4 @@
 Инструкция по индексации: ../SEO-настройка-и-индексация.md
 
 rebuild trigger: 2026-07-29 hero-lighthouse
+rebuild trigger 2: 2026-07-29 evening, post-incident redeploy

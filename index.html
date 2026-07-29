@@ -993,6 +993,20 @@ body, button, input, textarea,
 .btn-outline{color:#14142a;border-color:#d3d6df;}
 .btn-outline:hover{color:#000;border-color:#14142a;}
 
+/* hero: маяк фоном во весь блок (тест-вариант 2, 2026-07-29) */
+.hero::before,.hero::after{display:none}
+.hero{background:linear-gradient(96deg,rgba(13,26,45,.92) 0%,rgba(13,26,45,.78) 40%,rgba(13,26,45,.32) 72%,rgba(13,26,45,.10) 100%),url(hero-lighthouse-wide.jpg) right top/cover no-repeat;min-height:620px;display:flex;align-items:center;}
+.hero .wrap{width:100%;}
+.hero-eyebrow{color:#F9EBC6;}
+.hero-title{color:#fff;}
+.hero-title em{color:#F9EBC6;}
+.hero-sub{color:rgba(255,255,255,.85);}
+.hero .btn-outline{color:#fff;border-color:rgba(255,255,255,.42);}
+.hero .btn-outline:hover{color:#fff;border-color:#fff;}
+@media(max-width:920px){
+  .hero{background:linear-gradient(rgba(13,26,45,.82),rgba(13,26,45,.66)),url(hero-lighthouse-wide.jpg) 72% top/cover no-repeat;min-height:0;}
+}
+
 .benefit-card{background:#fafbff;border:1.5px solid #e7e8ea;}
 .benefit-title{color:#14142a;}
 .benefit-text{color:#515478;}
@@ -1094,7 +1108,7 @@ footer{background:#14142a;}
       <a href="https://bcm.risk-place.ru/quiz.html" class="btn btn-cream btn-quiz" id="hero-btn1">Пройти диагностику бесплатно →</a>
       <button class="np-form btn btn-outline btn-contact" data-prod="Обсудить задачу" data-mode="apply" id="hero-btn2">Обсудить задачу</button>
     </div>
-    <p style="margin-top:18px;font-size:14px;color:#5f636d;"><span id="hero-train-pre">Нужно глубже? </span><a href="obuchenie-nepreryvnosti-biznesa.html" id="hero-train-link" style="color:#1B3A5C;font-weight:700;text-decoration:none;">Курс по непрерывности бизнеса →</a></p>
+    <p style="margin-top:18px;font-size:14px;color:rgba(255,255,255,.78);"><span id="hero-train-pre">Нужно глубже? </span><a href="obuchenie-nepreryvnosti-biznesa.html" id="hero-train-link" style="color:#F9EBC6;font-weight:700;text-decoration:none;">Курс по непрерывности бизнеса →</a></p>
   </div>
 </section>
 <!-- ══ STATS ══ -->

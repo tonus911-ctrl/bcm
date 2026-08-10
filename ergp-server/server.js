@@ -12,9 +12,10 @@
    работает в Cloudflare, и поведение курса не меняется.
    ===================================================================== */
 
-const http = require("http");
-const fs   = require("fs");
-const path = require("path");
+const http  = require("http");
+const fs    = require("fs");
+const path  = require("path");
+const spawn = require("child_process").spawn;
 
 const DATA_DIR = process.env.ERGP_DATA || "/opt/ergp/data";
 const PORT     = parseInt(process.env.ERGP_PORT || "8080", 10);
@@ -63,9 +64,40 @@ const KV = {
 
 const worker = require("./worker.js");
 
+/* ---------- выгрузка резервной копии ----------
+   GET /api/admin/backup?key=<ADMIN_KEY>
+   Отдает СВЕЖИЙ архив всей папки данных: карточки студентов, прогресс,
+   счетчик номеров и сам файл курса. Этого архива достаточно, чтобы
+   восстановить курс с нуля на чистом сервере: install.sh + распаковка.
+   Архив собирается на лету, ничего лишнего на диске не остается.        */
+function tryBackup(req, res, url){
+  if (url.pathname !== "/api/admin/backup") return false;
+  const key = url.searchParams.get("key");
+  if (!ADMIN_KEY || key !== ADMIN_KEY){
+    res.writeHead(403, {"Content-Type": "application/json; charset=utf-8"});
+    res.end('{"err":"auth"}');
+    return true;
+  }
+  const day = new Date().toISOString().slice(0, 10);
+  res.writeHead(200, {
+    "Content-Type": "application/gzip",
+    "Content-Disposition": 'attachment; filename="ergp-backup-' + day + '.tar.gz"',
+    "Cache-Control": "no-store"
+  });
+  const tar = spawn("tar", ["-czf", "-", "-C", path.dirname(DATA_DIR), path.basename(DATA_DIR)]);
+  tar.stdout.pipe(res);
+  tar.stderr.on("data", function(){});
+  tar.on("error", function(){ try { res.end(); } catch(e){} });
+  return true;
+}
+
 /* ---------- мост: запрос Node -> Request -> worker -> ответ Node ---------- */
 const server = http.createServer(async (req, res) => {
   try {
+    {
+      const u = new URL(req.url, "http://localhost");
+      if (tryBackup(req, res, u)) return;
+    }
     const proto = (req.headers["x-forwarded-proto"] || "http").split(",")[0].trim();
     const host  = (req.headers["x-forwarded-host"] || req.headers.host || "localhost").split(",")[0].trim();
     const url   = proto + "://" + host + req.url;

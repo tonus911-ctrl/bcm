@@ -17,6 +17,17 @@ const fs    = require("fs");
 const path  = require("path");
 const spawn = require("child_process").spawn;
 
+/* Код курса написан для Cloudflare, где crypto есть всегда. В Node 18 этот
+   объект глобально не объявлен, и выдача нового доступа падала с ошибкой
+   «crypto is not defined». Подставляем встроенную реализацию из самого Node,
+   тогда worker.js остается неизменным. Поймано 10.08.2026. */
+if (typeof globalThis.crypto === "undefined" || !globalThis.crypto.randomUUID){
+  globalThis.crypto = require("crypto").webcrypto || require("crypto");
+}
+if (!globalThis.crypto.randomUUID){
+  globalThis.crypto.randomUUID = require("crypto").randomUUID;
+}
+
 const DATA_DIR = process.env.ERGP_DATA || "/opt/ergp/data";
 const PORT     = parseInt(process.env.ERGP_PORT || "8080", 10);
 const ADMIN_KEY= process.env.ADMIN_KEY || "";

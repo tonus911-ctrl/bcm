@@ -31,6 +31,23 @@ function brandPage(title, text, lang){
 }
 
 /* ---------- студентский контур ---------- */
+
+/* ---------- языки курса ----------
+   Поддерживаются ru, en, ar. Ключ файла курса в хранилище:
+     asset:course       — русская версия (историческое имя, не меняем)
+     asset:course:en    — английская
+     asset:course:ar    — арабская
+   Выбор языка при выдаче курса, по убыванию приоритета:
+     1) параметр адреса ?lang=
+     2) поле lang в карточке участника
+     3) ru для участников, заведенных до появления языков
+     4) en для всех новых
+   Если выбранный язык еще не загружен, отдается доступный с пометкой.        */
+const LANGS = ["en", "ar", "ru"];
+function normLang(v){ return LANGS.indexOf(String(v || "").toLowerCase()) > -1 ? String(v).toLowerCase() : null; }
+function assetKey(lang){ return lang === "ru" ? "asset:course" : "asset:course:" + lang; }
+function metaKey(lang){ return lang === "ru" ? "asset:meta" : "asset:meta:" + lang; }
+
 async function serveCourse(url, kv){
   const t = url.searchParams.get("t");
   if (!t) return brandPage("Access by personal link",
@@ -42,14 +59,43 @@ async function serveCourse(url, kv){
     "Доступ к курсу действовал до " + fmtRu(st.until) + ". Ваш прогресс сохранен — после продления все откроется на том же месте. Напишите нам: <b>" + CONTACT_EMAIL + "</b>");
   const rec = (await kv.get("prog:" + t, "json")) || {};
   rec.lastSeen = new Date().toISOString();
-  await kv.put("prog:" + t, JSON.stringify(rec));
-  const tplHtml = await kv.get("asset:course");
+
+  // выбор языка: адрес -> карточка участника -> ru для старых, en для новых
+  const asked = normLang(url.searchParams.get("lang"));
+  const prev = normLang(st.lang);
+  let lang = asked || prev || (st.created && st.created < "2026-08-11" ? "ru" : "en");
+
+  let tplHtml = await kv.get(assetKey(lang));
+  let fallback = null;
+  if (!tplHtml){
+    // Запрошенного языка еще нет. Откатываемся по порядку: прежний выбор
+    // участника, затем английский, затем русский, затем арабский.
+    for (const alt of [prev, "en", "ru", "ar"]){
+      if (!alt || alt === lang) continue;
+      const cand = await kv.get(assetKey(alt));
+      if (cand){ tplHtml = cand; fallback = lang; lang = alt; break; }
+    }
+  } else if (asked && asked !== prev){
+    // Осознанный выбор запоминаем только если этот язык действительно есть.
+    st.lang = asked;
+    await kv.put("student:" + t, JSON.stringify(st));
+  }
   if (!tplHtml) return brandPage("Курс готовится к запуску",
     "Материалы курса еще загружаются. Попробуйте зайти позже или напишите нам: <b>" + CONTACT_EMAIL + "</b>");
+
+  await kv.put("prog:" + t, JSON.stringify(rec));
+
+  const langsReady = [];
+  for (const L of LANGS){ if (await kv.get(metaKey(L))) langsReady.push(L); }
+  if (langsReady.indexOf(lang) < 0) langsReady.push(lang);
+
   const html = tplHtml
     .replace('"__STUDENT_JSON__"', JSON.stringify({name: st.name, email: st.email, sid: st.sid, until: fmtRu(st.until)}))
     .replace('"__TOKEN__"', JSON.stringify(t))
-    .replace('"__SERVER_PROG__"', JSON.stringify(rec.prog || null));
+    .replace('"__SERVER_PROG__"', JSON.stringify(rec.prog || null))
+    .replace('"__LANG__"', JSON.stringify(lang))
+    .replace('"__LANGS_READY__"', JSON.stringify(langsReady))
+    .replace('"__LANG_FALLBACK__"', JSON.stringify(fallback));
   return new Response(html, {headers: {"Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store"}});
 }
 
@@ -103,15 +149,18 @@ async function adminUpload(req, kv, adminKey, url){
   if (body.indexOf('"__STUDENT_JSON__"') < 0 || body.indexOf('"__TOKEN__"') < 0)
     return json({err: "в файле нет маркеров персонализации — нужен course-asset.html из релиза"}, 400);
   if (body.trimEnd().slice(-7) !== "</html>") return json({err: "файл оборван — нет закрывающего тега html"}, 400);
-  await kv.put("asset:course", body);
-  const meta = {size: body.length, uploaded: new Date().toISOString()};
-  await kv.put("asset:meta", JSON.stringify(meta));
-  return json({ok: true, size: meta.size, uploaded: meta.uploaded});
+  const lang = normLang(url.searchParams.get("lang")) || "ru";
+  await kv.put(assetKey(lang), body);
+  const meta = {size: body.length, uploaded: new Date().toISOString(), lang: lang};
+  await kv.put(metaKey(lang), JSON.stringify(meta));
+  return json({ok: true, lang: lang, size: meta.size, uploaded: meta.uploaded});
 }
 async function adminAsset(url, kv, adminKey){
   if (!authOk(url, adminKey)) return json({err: "auth"}, 403);
   const meta = await kv.get("asset:meta", "json");
-  return json({ok: true, meta: meta || null});
+  const byLang = {};
+  for (const L of LANGS){ byLang[L] = (await kv.get(metaKey(L), "json")) || null; }
+  return json({ok: true, meta: meta || null, langs: byLang});
 }
 function authOk(url, adminKey){
   const k = url.searchParams.get("key");
@@ -149,7 +198,8 @@ async function adminAdd(req, kv, adminKey, url){
   await kv.put("counter", String(n));
   const sid = "S-2026-" + String(n).padStart(4, "0");
   const token = crypto.randomUUID().replace(/-/g, "");
-  const st = {name: name, email: email, sid: sid, until: addDays(todayISO(), days), active: true, created: todayISO()};
+  const lang = normLang(b.lang) || "en";   // по умолчанию английский, решение Евгения 10.08.2026
+  const st = {name: name, email: email, sid: sid, until: addDays(todayISO(), days), active: true, created: todayISO(), lang: lang};
   await kv.put("student:" + token, JSON.stringify(st));
   const base = url.pathname.indexOf("/course/") === 0 ? "/course" : "";
   return json({ok: true, token: token, sid: sid, until: st.until, link: url.origin + base + "/?t=" + token});
@@ -238,6 +288,7 @@ td{padding:10px 10px;border-top:1px solid #F1EEE8;font-size:13.5px;vertical-alig
 <div class="add" style="gap:14px">
   <b style="font-size:13px">Файл курса:</b> <span id="asset-info" style="font-size:13px;color:#3D4149">проверяю...</span>
   <input type="file" id="up" accept=".html">
+  <select id="uplang" style="font-family:inherit;font-size:13px;padding:4px 6px"><option value="ru">русский</option><option value="en">English</option><option value="ar">العربية</option></select>
   <button onclick="uploadCourse()">Загрузить курс</button>
 </div>
 <div id="msg"></div>
@@ -327,15 +378,22 @@ async function loadAsset(){
   document.getElementById("asset-info").textContent = d.meta
     ? Math.round(d.meta.size/1024) + " КБ, загружен " + fmtTs(d.meta.uploaded)
     : "НЕ ЗАГРУЖЕН — курс не будет открываться у студентов";
+  const names = {ru: "русский", en: "English", ar: "العربية"};
+  const parts = ["ru","en","ar"].map(function(L){
+    const m = (d.langs||{})[L];
+    return names[L] + ": " + (m ? Math.round(m.size/1024) + " КБ, " + fmtTs(m.uploaded) : "нет");
+  });
+  document.getElementById("asset-info").innerHTML += "<br>" + parts.join(" · ");
 }
 async function uploadCourse(){
   const f = document.getElementById("up").files[0];
-  if (!f){ msg("Выбери файл course-asset.html"); return; }
-  msg("Загружаю " + Math.round(f.size/1024) + " КБ...");
+  const lang = document.getElementById("uplang").value;
+  if (!f){ msg("Выбери файл курса"); return; }
+  msg("Загружаю " + Math.round(f.size/1024) + " КБ, язык " + lang + "...");
   const text = await f.text();
-  const r = await fetch(BASE + "/api/admin/upload?key="+encodeURIComponent(KEY), {method:"POST", body: text});
+  const r = await fetch(BASE + "/api/admin/upload?key="+encodeURIComponent(KEY)+"&lang="+lang, {method:"POST", body: text});
   const d = await r.json();
-  if (d.ok){ msg("Курс загружен: " + Math.round(d.size/1024) + " КБ"); loadAsset(); }
+  if (d.ok){ msg("Загружен " + d.lang + ": " + Math.round(d.size/1024) + " КБ"); loadAsset(); }
   else msg("Ошибка загрузки: " + (d.err||r.status));
 }
 load(); loadAsset();

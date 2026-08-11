@@ -188,7 +188,8 @@ const server = http.createServer(async (req, res) => {
     }
 
     const request = new Request(url, {method: req.method, headers, body});
-    const out = await worker.fetch(request, {ERGP: KV, ADMIN_KEY: ADMIN_KEY, HEALTH_KEY: HEALTH_KEY});
+    const out = await worker.fetch(request, {ERGP: KV, ADMIN_KEY: ADMIN_KEY, HEALTH_KEY: HEALTH_KEY,
+      BOT_TOKEN: process.env.BOT_TOKEN, CHAT_ID: process.env.CHAT_ID});
 
     const outHeaders = {};
     out.headers.forEach((v, k) => { outHeaders[k] = v; });

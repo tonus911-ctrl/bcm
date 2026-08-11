@@ -256,6 +256,74 @@ async function adminMemo(url, kv, adminKey){
   return new Response(html, {headers: {"Content-Type": "text/html; charset=utf-8"}});
 }
 
+
+/* ---------- заявки с сайта: демонстрация и тестировщики ----------
+   Форма на risk-place.org шлет сюда JSON. Мы сохраняем заявку в хранилище,
+   показываем ее в админке и, если заданы BOT_TOKEN и CHAT_ID, дублируем в
+   Telegram. Почту сервер не шлет — приглашение отправляет Евгений сам.     */
+
+const LEAD_ORIGINS = ["https://risk-place.org", "https://www.risk-place.org"];
+
+function corsHeaders(req){
+  const o = req.headers.get("Origin") || "";
+  const allow = LEAD_ORIGINS.indexOf(o) > -1 ? o : LEAD_ORIGINS[0];
+  return {"Access-Control-Allow-Origin": allow,
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type"};
+}
+
+async function apiLead(req, kv, env){
+  const cors = corsHeaders(req);
+  let b; try { b = await req.json(); } catch(e){
+    return new Response('{"err":"body"}', {status: 400,
+      headers: Object.assign({"Content-Type": "application/json"}, cors)});
+  }
+  const type = b.type === "tester" ? "tester" : "demo";
+  const name = String(b.name || "").trim().slice(0, 200);
+  const email = String(b.email || "").trim().slice(0, 200);
+  if (!name || !email || email.indexOf("@") < 0)
+    return new Response('{"err":"name and email required"}', {status: 400,
+      headers: Object.assign({"Content-Type": "application/json"}, cors)});
+  const lead = {
+    type: type, name: name, email: email,
+    org: String(b.org || "").trim().slice(0, 300),
+    role: String(b.role || "").trim().slice(0, 300),
+    message: String(b.message || "").trim().slice(0, 4000),
+    lang: b.lang === "ar" ? "ar" : "en",
+    page: String(b.page || "").slice(0, 50),
+    ts: new Date().toISOString()
+  };
+  await kv.put("lead:" + Date.now() + "-" + Math.random().toString(36).slice(2, 8),
+               JSON.stringify(lead));
+  // Telegram — попытка, не обязательство: заявка уже сохранена.
+  try {
+    if (env && env.BOT_TOKEN && env.CHAT_ID){
+      const head = type === "tester" ? "ЗАЯВКА ТЕСТИРОВЩИКА (AR)" : "ЗАПРОС ДЕМО ERGP";
+      const text = head + "\n" + lead.name + " · " + lead.email +
+        (lead.org ? "\n" + lead.org : "") + (lead.role ? " · " + lead.role : "") +
+        (lead.message ? "\n---\n" + lead.message.slice(0, 1500) : "");
+      await fetch("https://api.telegram.org/bot" + env.BOT_TOKEN + "/sendMessage", {
+        method: "POST", headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({chat_id: env.CHAT_ID, text: text})
+      });
+    }
+  } catch(e){}
+  return new Response('{"ok":true}',
+    {headers: Object.assign({"Content-Type": "application/json"}, cors)});
+}
+
+async function adminLeads(url, kv, adminKey){
+  if (!authOk(url, adminKey)) return json({err: "auth"}, 403);
+  const list = await kv.list({prefix: "lead:"});
+  const out = [];
+  for (const k of list.keys.slice(-200)){
+    const v = await kv.get(k.name, "json");
+    if (v) out.push(v);
+  }
+  out.sort(function(a, b){ return a.ts < b.ts ? 1 : -1; });
+  return json({ok: true, leads: out});
+}
+
 function adminPage(url, adminKey){
   if (!authOk(url, adminKey)) return brandPage("Нет доступа", "Админ-страница доступна по секретному ключу: /admin?key=...");
   const html = `<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ERGP · Админ</title><style>
@@ -292,6 +360,8 @@ td{padding:10px 10px;border-top:1px solid #F1EEE8;font-size:13.5px;vertical-alig
   <button onclick="uploadCourse()">Загрузить курс</button>
 </div>
 <div id="msg"></div>
+<h3 style="margin:18px 0 6px">Заявки с сайта <button onclick="loadLeads()" style="font-size:12px">обновить</button></h3>
+<div id="leads" style="font-size:13px;color:#3D4149">загружаю...</div>
 <table><thead><tr><th>Студент</th><th>Модули 1-6</th><th>Тесты (попытки)</th><th>Итоговая</th><th>Где</th><th>Последний вход</th><th>Доступ до</th><th>Действия</th></tr></thead>
 <tbody id="tb"><tr><td colspan="8">Загрузка...</td></tr></tbody></table>
 </div>
@@ -372,6 +442,22 @@ async function upd(t, action){
   const d = await r.json();
   if (d.ok) load(); else msg("Ошибка: " + (d.err||r.status));
 }
+async function loadLeads(){
+  const r = await fetch(BASE + "/api/admin/leads?key="+encodeURIComponent(KEY));
+  const d = await r.json();
+  const box = document.getElementById("leads");
+  if (!d.ok){ box.textContent = "не удалось загрузить"; return; }
+  if (!d.leads.length){ box.textContent = "заявок пока нет"; return; }
+  box.innerHTML = "<table><thead><tr><th>Когда</th><th>Тип</th><th>Кто</th><th>Организация</th><th>Сообщение</th></tr></thead><tbody>" +
+    d.leads.map(function(l){
+      return "<tr><td>" + esc((l.ts||"").replace("T"," ").slice(0,16)) + "</td><td>" +
+        (l.type === "tester" ? "<b>тестировщик AR</b>" : "демо") + " · " + esc(l.lang||"") + "</td><td>" +
+        esc(l.name) + "<br>" + esc(l.email) + "</td><td>" + esc(l.org||"") +
+        (l.role ? "<br>" + esc(l.role) : "") + "</td><td style='max-width:420px;white-space:pre-wrap'>" +
+        esc(l.message||"") + "</td></tr>";
+    }).join("") + "</tbody></table>";
+}
+loadLeads();
 async function loadAsset(){
   const r = await fetch(BASE + "/api/admin/asset?key="+encodeURIComponent(KEY));
   const d = await r.json();
@@ -401,6 +487,126 @@ load(); loadAsset();
   return new Response(html, {headers: {"Content-Type": "text/html; charset=utf-8"}});
 }
 
+/* ---------- пульс: /health ----------
+   Зачем. Служба умеет быть формально живой и при этом отдавать участнику
+   пустоту: файл курса не загрузился, хранилище перестало писать, заглушки
+   не заменились. Проверка «отвечает ли порт» такого не видит. Поэтому здесь
+   служба сама себя осматривает и отвечает кодом 503, если что-то не так.
+   Наружу без ключа уходит только слово «в порядке или нет». Подробные числа
+   отдаются по отдельному ключу HEALTH_KEY, а не по ключу администратора:
+   наблюдателю нужны показания приборов, а не право менять данные.
+   Персональных данных в ответе нет ни при каком ключе.                      */
+
+const HEALTH_MIN_CHARS = 500000;   // страница короче — значит файл побился
+const HEALTH_DRY_TTL   = 3600000;  // пробную сборку повторяем не чаще раза в час
+let dryCache = null;
+
+async function dryRender(kv, lang){
+  /* Пробная сборка страницы для вымышленного участника. Ловит именно то,
+     чего не видит обычная проверка доступности: файл на месте, но собрать
+     из него страницу нельзя. Ничего не сохраняет.                          */
+  const tpl = await kv.get(assetKey(lang));
+  if (!tpl) return {ok: false, why: "файла курса нет в хранилище"};
+  const marks = ['"__STUDENT_JSON__"', '"__TOKEN__"', '"__SERVER_PROG__"',
+                 '"__LANG__"', '"__LANGS_READY__"', '"__LANG_FALLBACK__"'];
+  const html = tpl
+    .replace('"__STUDENT_JSON__"', JSON.stringify({name: "Проверка связи", email: "health@local", sid: "S-0000-0000", until: "01.01.2030"}))
+    .replace('"__TOKEN__"', '"health-probe"')
+    .replace('"__SERVER_PROG__"', "null")
+    .replace('"__LANG__"', JSON.stringify(lang))
+    .replace('"__LANGS_READY__"', "[]")
+    .replace('"__LANG_FALLBACK__"', "null");
+  const left = marks.filter(m => html.indexOf(m) > -1);
+  if (left.length) return {ok: false, why: "заглушки не заменились: " + left.join(", ")};
+  if (html.length < HEALTH_MIN_CHARS) return {ok: false, why: "страница подозрительно короткая, знаков " + html.length};
+  return {ok: true, chars: html.length};
+}
+
+async function health(url, kv, env){
+  const hk = env && env.HEALTH_KEY;
+  const detail = !!(hk && url.searchParams.get("key") === hk);
+  const problems = [], warnings = [];
+
+  // 1. файлы курса по языкам.
+  //    Проверяем не только запись о загрузке, но и сам файл. Иначе описание
+  //    остается, файл исчезает, а пульс до часа отвечает «в порядке» — эту
+  //    дыру нашла проверка tests/test-health.sh 10.08.2026.
+  const langsKb = {};
+  let stamp = "";
+  for (const L of LANGS){
+    const meta = await kv.get(metaKey(L), "json");
+    langsKb[L] = meta ? Math.round(meta.size / 1024) : null;
+    stamp += L + (meta ? meta.uploaded : "-");
+    if (!meta) continue;
+    let real = null;
+    if (typeof globalThis.__ergpAssetSize === "function"){
+      // на своем сервере размер берется без чтения файла целиком
+      try { real = await globalThis.__ergpAssetSize(assetKey(L)); } catch(e){}
+    } else {
+      const tpl = await kv.get(assetKey(L));
+      real = tpl === null ? null : tpl.length;
+    }
+    if (real === null) problems.push("описание языка " + L + " есть, а файла курса нет");
+    else if (real < HEALTH_MIN_CHARS) problems.push("файл курса " + L + " подозрительно мал, знаков " + real);
+    stamp += ":" + real;
+  }
+  if (langsKb.ru === null && langsKb.en === null && langsKb.ar === null)
+    problems.push("в хранилище нет ни одного файла курса");
+
+  // 2. пробная сборка страницы, не чаще раза в час и заново после новой загрузки
+  let dry;
+  if (dryCache && dryCache.stamp === stamp && Date.now() - dryCache.at < HEALTH_DRY_TTL){
+    dry = dryCache.res;
+  } else {
+    const lang = langsKb.ru !== null ? "ru" : (langsKb.en !== null ? "en" : "ar");
+    dry = await dryRender(kv, lang);
+    dry.lang = lang;
+    dryCache = {stamp: stamp, at: Date.now(), res: dry};
+  }
+  if (!dry.ok) problems.push("страница курса не собирается: " + dry.why);
+
+  // 3. хранилище пишет и отдает записанное
+  try {
+    const probe = "health:probe", now = String(Date.now());
+    await kv.put(probe, now);
+    if ((await kv.get(probe)) !== now) problems.push("хранилище не отдает только что записанное");
+  } catch(e){
+    problems.push("хранилище недоступно для записи: " + (e && e.message ? e.message : "ошибка"));
+  }
+
+  // 4. показатели машины. На Cloudflare их нет, и это не ошибка.
+  let host = null;
+  if (typeof globalThis.__ergpHostFacts === "function"){
+    try { host = await globalThis.__ergpHostFacts(); }
+    catch(e){ warnings.push("не удалось снять показатели машины"); }
+  }
+  if (host){
+    if (host.diskFreeMb !== null && host.diskFreeMb !== undefined){
+      if (host.diskFreeMb < 500) problems.push("на диске осталось " + host.diskFreeMb + " МБ");
+      else if (host.diskFreeMb < 2048) warnings.push("на диске осталось " + host.diskFreeMb + " МБ");
+    }
+    if (host.backupAgeH !== null && host.backupAgeH !== undefined && host.backupAgeH > 26)
+      warnings.push("последней ночной копии " + host.backupAgeH + " часов");
+    if (host.certDays !== null && host.certDays !== undefined){
+      if (host.certDays < 5) problems.push("сертификат истекает через " + host.certDays + " дн.");
+      else if (host.certDays < 14) warnings.push("сертификат истекает через " + host.certDays + " дн.");
+    }
+  }
+
+  const status = problems.length ? "fail" : (warnings.length ? "warn" : "ok");
+  const body = {status: status, problems: problems, warnings: warnings};
+  if (detail){
+    let students = null;
+    try { students = (await kv.list({prefix: "student:"})).keys.length; } catch(e){}
+    body.langsKb = langsKb;
+    body.page = dry.ok ? {lang: dry.lang, chars: dry.chars} : null;
+    body.host = host;
+    body.students = students;
+    body.time = new Date().toISOString();
+  }
+  return json(body, status === "fail" ? 503 : 200);
+}
+
 function page404(){ return brandPage("Page not found", "Please check the address or open the course using your personal link.", "en"); }
 
 module.exports = {
@@ -411,7 +617,12 @@ module.exports = {
     try {
       if (!kv) return brandPage("Настройка не завершена", "Не привязано KV-хранилище ERGP (Settings → Bindings).");
       const p = url.pathname.replace(/^\/course(?=\/|$)/, "") || "/";
+      if (p === "/api/lead" && req.method === "OPTIONS")
+        return new Response(null, {status: 204, headers: corsHeaders(req)});
+      if (p === "/api/lead" && req.method === "POST") return await apiLead(req, kv, env);
+      if (p === "/api/admin/leads") return await adminLeads(url, kv, adminKey);
       if (p === "/api/progress" && req.method === "POST") return await apiProgress(req, url, kv);
+      if (p === "/health") return await health(url, kv, env);
       if (p === "/admin") return adminPage(url, adminKey);
       if (p === "/api/admin/list") return await adminList(url, kv, adminKey);
       if (p === "/api/admin/add" && req.method === "POST") return await adminAdd(req, kv, adminKey, url);

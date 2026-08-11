@@ -31,6 +31,67 @@ if (!globalThis.crypto.randomUUID){
 const DATA_DIR = process.env.ERGP_DATA || "/opt/ergp/data";
 const PORT     = parseInt(process.env.ERGP_PORT || "8080", 10);
 const ADMIN_KEY= process.env.ADMIN_KEY || "";
+const HEALTH_KEY = process.env.HEALTH_KEY || "";
+const CERT_DIR = process.env.ERGP_CERT_DIR || "/etc/letsencrypt/live";
+
+/* ---------- показатели машины для пульса ----------
+   Код курса написан для Cloudflare и про диски, копии и сертификаты ничего
+   не знает — да и знать не должен, иначе появятся два расходящихся варианта.
+   Поэтому мост кладет сюда функцию, а код курса вызывает ее, если она есть.
+   На Cloudflare ее не будет, и пульс просто не покажет этот раздел.        */
+/* Размер файла курса без чтения его целиком. Нужен пульсу: он спрашивает
+   раз в пять минут, а файл весит больше мегабайта на каждый язык.        */
+globalThis.__ergpAssetSize = async function(key){
+  try { return (await fs.promises.stat(keyToFile(key))).size; }
+  catch(e){ return null; }
+};
+
+globalThis.__ergpHostFacts = async function(){
+  const out = {diskFreeMb: null, backupAgeH: null, certDays: null};
+
+  // свободное место на диске
+  try {
+    if (fs.promises.statfs){
+      const s = await fs.promises.statfs(DATA_DIR);
+      out.diskFreeMb = Math.round(s.bsize * s.bavail / 1048576);
+    }
+  } catch(e){}
+
+  // возраст самой свежей ночной копии
+  try {
+    const dir = path.join(path.dirname(DATA_DIR), "backups");
+    const names = await fs.promises.readdir(dir);
+    let newest = 0;
+    for (const n of names){
+      try {
+        const st = await fs.promises.stat(path.join(dir, n));
+        if (st.isFile() && st.mtimeMs > newest) newest = st.mtimeMs;
+      } catch(e){}
+    }
+    out.backupAgeH = newest ? Math.round((Date.now() - newest) / 3600000) : null;
+  } catch(e){}
+
+  // сколько дней осталось сертификату шифрования
+  try {
+    const X509 = require("crypto").X509Certificate;
+    if (X509){
+      const dirs = await fs.promises.readdir(CERT_DIR);
+      let days = null;
+      for (const d of dirs){
+        try {
+          const pem = await fs.promises.readFile(path.join(CERT_DIR, d, "cert.pem"));
+          const left = Math.floor((new Date(new X509(pem).validTo) - Date.now()) / 86400000);
+          if (days === null || left < days) days = left;
+        } catch(e){}
+      }
+      out.certDays = days;
+    }
+  } catch(e){}
+
+  out.uptimeH = Math.round(process.uptime() / 360) / 10;
+  out.node = process.version;
+  return out;
+};
 
 /* ---------- хранилище: папка вместо KV ---------- */
 // Ключи вида "student:abc" превращаются в файлы "student__abc"
@@ -127,7 +188,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     const request = new Request(url, {method: req.method, headers, body});
-    const out = await worker.fetch(request, {ERGP: KV, ADMIN_KEY: ADMIN_KEY});
+    const out = await worker.fetch(request, {ERGP: KV, ADMIN_KEY: ADMIN_KEY, HEALTH_KEY: HEALTH_KEY});
 
     const outHeaders = {};
     out.headers.forEach((v, k) => { outHeaders[k] = v; });

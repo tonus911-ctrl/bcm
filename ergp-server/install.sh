@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =====================================================================
-#  ERGP · установка курса на российский сервер · v1 · 2026-08-10
+#  ERGP · установка курса на российский сервер · v2 · 2026-08-11
 #  Запускать один раз на чистой Ubuntu 24.04 из-под root:
 #     bash <(curl -fsSL https://bcm.risk-place.ru/ergp-server/install.sh)
 #  Скрипт ничего не спрашивает и не содержит секретов.
@@ -12,7 +12,7 @@ SRC="https://bcm.risk-place.ru/ergp-server"
 APP="/opt/ergp"
 DATA="$APP/data"
 
-echo "== 1/7 обновление системы и установка пакетов =="
+echo "== 1/9 обновление системы и установка пакетов =="
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
 apt-get install -y -qq nginx nodejs ca-certificates curl ufw >/dev/null
@@ -23,20 +23,32 @@ if [ "$NODEV" -lt 18 ]; then
 fi
 echo "   node v$(node -v), nginx $(nginx -v 2>&1 | sed 's/.*\///')"
 
-echo "== 2/7 каталоги =="
+echo "== 2/9 каталоги =="
 mkdir -p "$APP" "$DATA" "$APP/backups"
 
-echo "== 3/7 загрузка кода приложения =="
-curl -fsSL "$SRC/worker.js" -o "$APP/worker.js"
-curl -fsSL "$SRC/server.js" -o "$APP/server.js"
+echo "== 3/9 загрузка кода приложения =="
+# Если рядом с установщиком лежат worker.js и server.js, берем их и в сеть
+# не ходим. Это запасной путь на случай, когда репозиторий недоступен из
+# России: файлы заливаются на сервер вручную через MobaXterm, и установка
+# идет полностью офлайн. Добавлено 11.08.2026 после аварии с блокировкой.
+HERE="$(cd "$(dirname "$0")" 2>/dev/null && pwd || echo /nonexistent)"
+if [ -f "$HERE/worker.js" ] && [ -f "$HERE/server.js" ]; then
+  cp "$HERE/worker.js" "$APP/worker.js"
+  cp "$HERE/server.js" "$APP/server.js"
+  echo "   код взят из локальной папки $HERE, сеть не использовалась"
+else
+  curl -fsSL "$SRC/worker.js" -o "$APP/worker.js"
+  curl -fsSL "$SRC/server.js" -o "$APP/server.js"
+fi
 node --check "$APP/worker.js"
 node --check "$APP/server.js"
 echo "   worker.js $(stat -c%s "$APP/worker.js") байт, server.js $(stat -c%s "$APP/server.js") байт, синтаксис в порядке"
 
-echo "== 4/7 ключ администратора и служба =="
+echo "== 4/9 ключ администратора и служба =="
 if [ ! -f "$APP/env" ]; then
   KEY="ergp-$(head -c 16 /dev/urandom | od -An -tx1 | tr -d ' \n')"
-  printf 'ADMIN_KEY=%s\nERGP_DATA=%s\nERGP_PORT=8080\n' "$KEY" "$DATA" > "$APP/env"
+  HKEY="ergp-health-$(head -c 12 /dev/urandom | od -An -tx1 | tr -d ' \n')"
+  printf 'ADMIN_KEY=%s\nHEALTH_KEY=%s\nERGP_DATA=%s\nERGP_PORT=8080\n' "$KEY" "$HKEY" "$DATA" > "$APP/env"
   chmod 600 "$APP/env"
   NEWKEY=1
 else
@@ -68,7 +80,7 @@ systemctl enable --now ergp >/dev/null
 sleep 2
 systemctl is-active --quiet ergp && echo "   служба ergp запущена" || { echo "ОШИБКА: служба не поднялась"; journalctl -u ergp -n 20 --no-pager; exit 1; }
 
-echo "== 5/7 веб-сервер nginx =="
+echo "== 5/9 веб-сервер nginx =="
 cat > /etc/nginx/sites-available/ergp <<'NGINX'
 server {
     listen 80 default_server;
@@ -92,14 +104,14 @@ rm -f /etc/nginx/sites-enabled/default
 ln -sf /etc/nginx/sites-available/ergp /etc/nginx/sites-enabled/ergp
 nginx -t >/dev/null 2>&1 && systemctl reload nginx && echo "   nginx настроен и перезапущен"
 
-echo "== 6/7 фаервол =="
+echo "== 6/9 фаервол =="
 ufw allow 22/tcp >/dev/null
 ufw allow 80/tcp >/dev/null
 ufw allow 443/tcp >/dev/null
 yes | ufw enable >/dev/null 2>&1 || true
 echo "   открыты порты 22, 80, 443"
 
-echo "== 7/7 ежедневные резервные копии =="
+echo "== 7/9 ежедневные резервные копии =="
 cat > "$APP/backup.sh" <<'BK'
 #!/usr/bin/env bash
 set -e
@@ -113,6 +125,33 @@ cat > /etc/cron.d/ergp-backup <<'CRON'
 CRON
 "$APP/backup.sh"
 echo "   первая копия создана, дальше каждую ночь в 03:17, хранится 30 дней"
+
+echo "== 8/9 защита от ложных блокировок ТСПУ =="
+# HTTP/2: браузер открывает одно TLS-соединение вместо десятков, и фильтр
+# не принимает посетителей за VPN. TLS 1.2: рукопожатие частично читаемо,
+# фильтр видит обычный HTTPS и пропускает. Урок аварии 10-11.08.2026,
+# разбор в 4 - Документы/АУДИТ-устойчивость-к-блокировкам.
+# Правки применяются после certbot ниже, здесь только напоминание.
+
+echo "== 9/9 сертификат шифрования =="
+# Выпускается только если имя уже указывает на этот сервер. При переезде
+# сначала переключите запись A в DNS, подождите пять минут, затем:
+#   bash install.sh cert
+if [ "${1:-}" = "cert" ] || getent hosts ergp.risk-place.org | grep -q "$(hostname -I | awk '{print $1}')"; then
+  apt-get install -y -qq certbot python3-certbot-nginx >/dev/null 2>&1
+  if certbot --nginx -d ergp.risk-place.org --agree-tos -m info@risk-place.ru --redirect -n; then
+    sed -i 's/listen 443 ssl;/listen 443 ssl http2;/; s/listen \[::\]:443 ssl/listen [::]:443 ssl http2/' /etc/nginx/sites-enabled/ergp
+    sed -i 's/^ssl_protocols .*/ssl_protocols TLSv1.2;/' /etc/letsencrypt/options-ssl-nginx.conf
+    nginx -t && systemctl reload nginx
+    echo "   сертификат выпущен, включен HTTP/2, шифрование ограничено TLS 1.2"
+    curl -sI -o /dev/null -w "   проверка: HTTP %{http_version}\n" https://ergp.risk-place.org/ || true
+  else
+    echo "   ВНИМАНИЕ: сертификат не выпущен. Проверьте, что имя указывает сюда, и повторите: bash install.sh cert"
+  fi
+else
+  echo "   имя ergp.risk-place.org пока указывает не сюда."
+  echo "   После переключения DNS выполните: bash install.sh cert"
+fi
 
 echo
 echo "==================== ГОТОВО ===================="

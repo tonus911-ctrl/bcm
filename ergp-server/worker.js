@@ -262,7 +262,8 @@ async function adminMemo(url, kv, adminKey){
    показываем ее в админке и, если заданы BOT_TOKEN и CHAT_ID, дублируем в
    Telegram. Почту сервер не шлет — приглашение отправляет Евгений сам.     */
 
-const LEAD_ORIGINS = ["https://risk-place.org", "https://www.risk-place.org"];
+const LEAD_ORIGINS = ["https://risk-place.org", "https://www.risk-place.org",
+                      "https://bcm.risk-place.ru"];
 
 function corsHeaders(req){
   const o = req.headers.get("Origin") || "";
@@ -286,12 +287,13 @@ async function apiLead(req, kv, env){
   if (!name || !email || email.indexOf("@") < 0)
     return new Response('{"err":"name and email required"}', {status: 400,
       headers: Object.assign({"Content-Type": "application/json"}, cors)});
+  const source = b.source === "ru" ? "ru" : "";
   const lead = {
-    type: type, product: product, name: name, email: email,
+    type: type, product: product, source: source, name: name, email: email,
     org: String(b.org || "").trim().slice(0, 300),
     role: String(b.role || "").trim().slice(0, 300),
     message: String(b.message || "").trim().slice(0, 4000),
-    lang: b.lang === "ar" ? "ar" : "en",
+    lang: ["ar", "ru"].indexOf(b.lang) > -1 ? b.lang : "en",
     page: String(b.page || "").slice(0, 50),
     ts: new Date().toISOString()
   };
@@ -302,8 +304,9 @@ async function apiLead(req, kv, env){
     if (env && env.BOT_TOKEN && env.CHAT_ID){
       const PLABEL = {ergp: "СЕРТИФИКАЦИЯ ERGP", dashboard: "ДАШБОРД",
                       consulting: "КОНСАЛТИНГ", assessment: "САМООЦЕНКА"};
-      const head = type === "tester" ? "ЗАЯВКА ТЕСТИРОВЩИКА (AR)"
-        : "ЗАПРОС ДЕМО · " + (PLABEL[product] || "БЕЗ ПРОДУКТА");
+      const head = (type === "tester" ? "ЗАЯВКА ТЕСТИРОВЩИКА (AR)"
+        : "ЗАПРОС ДЕМО · " + (PLABEL[product] || "БЕЗ ПРОДУКТА")) +
+        (source === "ru" ? " · РОССИЙСКИЙ САЙТ" : "");
       const text = head + "\n" + lead.name + " · " + lead.email +
         (lead.org ? "\n" + lead.org : "") + (lead.role ? " · " + lead.role : "") +
         (lead.message ? "\n---\n" + lead.message.slice(0, 1500) : "");
@@ -457,7 +460,8 @@ async function loadLeads(){
   box.innerHTML = "<table><thead><tr><th>Когда</th><th>Тип</th><th>Продукт</th><th>Кто</th><th>Организация</th><th>Сообщение</th></tr></thead><tbody>" +
     d.leads.map(function(l){
       return "<tr><td>" + esc((l.ts||"").replace("T"," ").slice(0,16)) + "</td><td>" +
-        (l.type === "tester" ? "<b>тестировщик AR</b>" : "демо") + " · " + esc(l.lang||"") + "</td><td>" +
+        (l.type === "tester" ? "<b>тестировщик AR</b>" : "демо") + " · " + esc(l.lang||"") +
+        (l.source === "ru" ? " · <b>RU-сайт</b>" : "") + "</td><td>" +
         esc(PL[l.product] || "—") + "</td><td>" +
         esc(l.name) + "<br>" + esc(l.email) + "</td><td>" + esc(l.org||"") +
         (l.role ? "<br>" + esc(l.role) : "") + "</td><td style='max-width:420px;white-space:pre-wrap'>" +

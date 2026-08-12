@@ -279,13 +279,15 @@ async function apiLead(req, kv, env){
       headers: Object.assign({"Content-Type": "application/json"}, cors)});
   }
   const type = b.type === "tester" ? "tester" : "demo";
+  const PRODUCTS = ["ergp", "dashboard", "consulting", "assessment"];
+  const product = PRODUCTS.indexOf(b.product) >= 0 ? b.product : "";
   const name = String(b.name || "").trim().slice(0, 200);
   const email = String(b.email || "").trim().slice(0, 200);
   if (!name || !email || email.indexOf("@") < 0)
     return new Response('{"err":"name and email required"}', {status: 400,
       headers: Object.assign({"Content-Type": "application/json"}, cors)});
   const lead = {
-    type: type, name: name, email: email,
+    type: type, product: product, name: name, email: email,
     org: String(b.org || "").trim().slice(0, 300),
     role: String(b.role || "").trim().slice(0, 300),
     message: String(b.message || "").trim().slice(0, 4000),
@@ -298,7 +300,10 @@ async function apiLead(req, kv, env){
   // Telegram — попытка, не обязательство: заявка уже сохранена.
   try {
     if (env && env.BOT_TOKEN && env.CHAT_ID){
-      const head = type === "tester" ? "ЗАЯВКА ТЕСТИРОВЩИКА (AR)" : "ЗАПРОС ДЕМО ERGP";
+      const PLABEL = {ergp: "СЕРТИФИКАЦИЯ ERGP", dashboard: "ДАШБОРД",
+                      consulting: "КОНСАЛТИНГ", assessment: "САМООЦЕНКА"};
+      const head = type === "tester" ? "ЗАЯВКА ТЕСТИРОВЩИКА (AR)"
+        : "ЗАПРОС ДЕМО · " + (PLABEL[product] || "БЕЗ ПРОДУКТА");
       const text = head + "\n" + lead.name + " · " + lead.email +
         (lead.org ? "\n" + lead.org : "") + (lead.role ? " · " + lead.role : "") +
         (lead.message ? "\n---\n" + lead.message.slice(0, 1500) : "");
@@ -448,10 +453,12 @@ async function loadLeads(){
   const box = document.getElementById("leads");
   if (!d.ok){ box.textContent = "не удалось загрузить"; return; }
   if (!d.leads.length){ box.textContent = "заявок пока нет"; return; }
-  box.innerHTML = "<table><thead><tr><th>Когда</th><th>Тип</th><th>Кто</th><th>Организация</th><th>Сообщение</th></tr></thead><tbody>" +
+  var PL = {ergp: "ERGP", dashboard: "дашборд", consulting: "консалтинг", assessment: "самооценка"};
+  box.innerHTML = "<table><thead><tr><th>Когда</th><th>Тип</th><th>Продукт</th><th>Кто</th><th>Организация</th><th>Сообщение</th></tr></thead><tbody>" +
     d.leads.map(function(l){
       return "<tr><td>" + esc((l.ts||"").replace("T"," ").slice(0,16)) + "</td><td>" +
         (l.type === "tester" ? "<b>тестировщик AR</b>" : "демо") + " · " + esc(l.lang||"") + "</td><td>" +
+        esc(PL[l.product] || "—") + "</td><td>" +
         esc(l.name) + "<br>" + esc(l.email) + "</td><td>" + esc(l.org||"") +
         (l.role ? "<br>" + esc(l.role) : "") + "</td><td style='max-width:420px;white-space:pre-wrap'>" +
         esc(l.message||"") + "</td></tr>";

@@ -60,10 +60,19 @@ async function serveCourse(url, kv){
   const rec = (await kv.get("prog:" + t, "json")) || {};
   rec.lastSeen = new Date().toISOString();
 
+  // Разрешенные языки участника: st.langs = ["ar"] и т.п.
+  // Пустое поле или его отсутствие = разрешены все языки.
+  const allowed = (Array.isArray(st.langs) && st.langs.length)
+    ? st.langs.filter(function(x){ return LANGS.indexOf(x) > -1; })
+    : LANGS.slice();
+
   // выбор языка: адрес -> карточка участника -> ru для старых, en для новых
-  const asked = normLang(url.searchParams.get("lang"));
-  const prev = normLang(st.lang);
+  let asked = normLang(url.searchParams.get("lang"));
+  if (asked && allowed.indexOf(asked) < 0) asked = null;
+  let prev = normLang(st.lang);
+  if (prev && allowed.indexOf(prev) < 0) prev = null;
   let lang = asked || prev || (st.created && st.created < "2026-08-11" ? "ru" : "en");
+  if (allowed.indexOf(lang) < 0) lang = allowed[0];
 
   let tplHtml = await kv.get(assetKey(lang));
   let fallback = null;
@@ -72,6 +81,7 @@ async function serveCourse(url, kv){
     // участника, затем английский, затем русский, затем арабский.
     for (const alt of [prev, "en", "ru", "ar"]){
       if (!alt || alt === lang) continue;
+      if (allowed.indexOf(alt) < 0) continue;
       const cand = await kv.get(assetKey(alt));
       if (cand){ tplHtml = cand; fallback = lang; lang = alt; break; }
     }
@@ -86,7 +96,10 @@ async function serveCourse(url, kv){
   await kv.put("prog:" + t, JSON.stringify(rec));
 
   const langsReady = [];
-  for (const L of LANGS){ if (await kv.get(metaKey(L))) langsReady.push(L); }
+  for (const L of LANGS){
+    if (allowed.indexOf(L) < 0) continue;
+    if (await kv.get(metaKey(L))) langsReady.push(L);
+  }
   if (langsReady.indexOf(lang) < 0) langsReady.push(lang);
 
   const html = tplHtml
@@ -180,6 +193,7 @@ async function adminList(url, kv, adminKey){
       const pr = (await kv.get("prog:" + token, "json")) || {};
       out.push({token: token, name: st.name, email: st.email, sid: st.sid, until: st.until,
         active: st.active !== false, created: st.created || "",
+        langs: (Array.isArray(st.langs) && st.langs.length) ? st.langs : null,
         lastSeen: pr.lastSeen || "", summary: pr.summary || null});
     }
     cursor = page.list_complete ? null : page.cursor;
@@ -198,8 +212,13 @@ async function adminAdd(req, kv, adminKey, url){
   await kv.put("counter", String(n));
   const sid = "S-2026-" + String(n).padStart(4, "0");
   const token = crypto.randomUUID().replace(/-/g, "");
-  const lang = normLang(b.lang) || "en";   // по умолчанию английский, решение Евгения 10.08.2026
+  // Ограничение языков: массив вида ["ar"]. Пусто или все три = без ограничений.
+  const reqLangs = Array.isArray(b.langs)
+    ? b.langs.filter(function(x){ return LANGS.indexOf(x) > -1; }) : [];
+  let lang = normLang(b.lang) || "en";   // по умолчанию английский, решение Евгения 10.08.2026
+  if (reqLangs.length && reqLangs.indexOf(lang) < 0) lang = reqLangs[0];
   const st = {name: name, email: email, sid: sid, until: addDays(todayISO(), days), active: true, created: todayISO(), lang: lang};
+  if (reqLangs.length && reqLangs.length < LANGS.length) st.langs = reqLangs;
   await kv.put("student:" + token, JSON.stringify(st));
   const base = url.pathname.indexOf("/course/") === 0 ? "/course" : "";
   return json({ok: true, token: token, sid: sid, until: st.until, link: url.origin + base + "/?t=" + token});
@@ -222,9 +241,18 @@ async function adminUpdate(req, kv, adminKey, url){
     if (b.until && /^\d{4}-\d{2}-\d{2}$/.test(b.until)) st.until = b.until;
     st.edited = new Date().toISOString();
   }
+  else if (b.action === "langs"){
+    const langs = Array.isArray(b.langs)
+      ? b.langs.filter(function(x){ return LANGS.indexOf(x) > -1; }) : [];
+    if (!langs.length || langs.length >= LANGS.length) delete st.langs;
+    else {
+      st.langs = langs;
+      if (st.lang && langs.indexOf(st.lang) < 0) st.lang = langs[0];
+    }
+  }
   else return json({err: "action"}, 400);
   await kv.put("student:" + b.token, JSON.stringify(st));
-  return json({ok: true, until: st.until, active: st.active !== false, name: st.name, email: st.email});
+  return json({ok: true, until: st.until, active: st.active !== false, name: st.name, email: st.email, langs: st.langs || null});
 }
 
 async function adminMemo(url, kv, adminKey){
@@ -359,6 +387,11 @@ td{padding:10px 10px;border-top:1px solid #F1EEE8;font-size:13.5px;vertical-alig
   <input id="a-name" placeholder="Имя Фамилия" style="width:220px">
   <input id="a-email" placeholder="email" style="width:220px">
   <input id="a-days" placeholder="дней (180)" style="width:90px">
+  <span style="font-size:13px;display:flex;gap:8px;align-items:center"><b>Языки:</b>
+    <label><input type="checkbox" id="a-l-en" checked> EN</label>
+    <label><input type="checkbox" id="a-l-ar" checked> AR</label>
+    <label><input type="checkbox" id="a-l-ru" checked> RU</label>
+  </span>
   <button onclick="addStudent()">Создать доступ</button>
 </div>
 <div class="add" style="gap:14px">
@@ -401,16 +434,28 @@ async function load(){
     const capCls = cap==="СОХРАНЕНА"?"ok":(cap==="В РАБОТЕ"?"wk":"");
     const tr = document.createElement("tr");
     if (!s.active) tr.className = "off";
-    tr.innerHTML = "<td>"+esc(s.name)+"<br><span class='sid'>"+esc(s.email)+" · "+esc(s.sid)+(s.active?"":" · ВЫКЛ")+"</span></td>"+
+    const lmark = (s.langs && s.langs.length)
+      ? "<br><span class='sid' style='color:#A03F12'>только " + s.langs.map(function(x){return x.toUpperCase();}).join("+") + "</span>" : "";
+    tr.innerHTML = "<td>"+esc(s.name)+"<br><span class='sid'>"+esc(s.email)+" · "+esc(s.sid)+(s.active?"":" · ВЫКЛ")+"</span>"+lmark+"</td>"+
       "<td>"+bars+"</td><td style='font-family:monospace'>"+tests+"</td>"+
       "<td><span class='cap-l "+capCls+"'>"+esc(cap)+"</span><br><a href='" + BASE + "/api/admin/memo?key="+encodeURIComponent(KEY)+"&t="+s.token+"' target='_blank' style='font-size:12px'>читать</a></td>"+
       "<td>"+esc(sm.loc||"—")+"</td><td>"+fmtTs(s.lastSeen)+"</td><td>"+fmtRu(s.until)+"</td>"+
       "<td><button class='rowbtn' onclick='copyLink(\\""+s.token+"\\")'>ссылка</button>"+
       "<button class='rowbtn' onclick='editStudent(\\""+s.token+"\\")'>правка</button>"+
+      "<button class='rowbtn' onclick='langsStudent(\\""+s.token+"\\",\\""+(s.langs||[]).join(",")+"\\")'>языки</button>"+
       "<button class='rowbtn' onclick='upd(\\""+s.token+"\\",\\"extend\\")'>+90 дн</button>"+
       "<button class='rowbtn warn' onclick='upd(\\""+s.token+"\\",\\""+(s.active?"off":"on")+"\\")'>"+(s.active?"выкл":"вкл")+"</button></td>";
     tb.appendChild(tr);
   });
+}
+async function langsStudent(t, cur){
+  const v = prompt("Разрешенные языки через запятую (en, ar, ru).\\nПусто или все три = без ограничений.", cur || "en,ar,ru");
+  if (v === null) return;
+  const langs = v.split(",").map(function(x){ return x.trim().toLowerCase(); }).filter(function(x){ return ["en","ar","ru"].indexOf(x) > -1; });
+  const r = await fetch(BASE + "/api/admin/update?key="+encodeURIComponent(KEY), {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({token:t, action:"langs", langs:langs})});
+  const d = await r.json();
+  if (d.ok){ msg(d.langs ? ("Языки ограничены: " + d.langs.join(", ").toUpperCase()) : "Ограничение языков снято — доступны все"); load(); }
+  else msg("Ошибка: " + (d.err||r.status));
 }
 function copyLink(t){
   const link = location.origin + BASE + "/?t=" + t;
@@ -422,7 +467,9 @@ async function addStudent(){
   const email = document.getElementById("a-email").value.trim();
   const days = document.getElementById("a-days").value.trim();
   if (!name || !email){ msg("Заполни имя и email"); return; }
-  const r = await fetch(BASE + "/api/admin/add?key="+encodeURIComponent(KEY), {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({name:name, email:email, days:days})});
+  const langs = ["en","ar","ru"].filter(function(L){ return document.getElementById("a-l-"+L).checked; });
+  if (!langs.length){ msg("Отметь хотя бы один язык"); return; }
+  const r = await fetch(BASE + "/api/admin/add?key="+encodeURIComponent(KEY), {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({name:name, email:email, days:days, langs:langs})});
   const d = await r.json();
   if (d.ok){ msg("Создан " + d.sid + " до " + fmtRu(d.until) + ". Ссылка: " + d.link); document.getElementById("a-name").value=""; document.getElementById("a-email").value=""; load(); }
   else msg("Ошибка: " + (d.err||r.status));

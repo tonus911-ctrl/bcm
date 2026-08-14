@@ -241,6 +241,15 @@ async function adminUpdate(req, kv, adminKey, url){
     if (b.until && /^\d{4}-\d{2}-\d{2}$/.test(b.until)) st.until = b.until;
     st.edited = new Date().toISOString();
   }
+  else if (b.action === "until"){
+    const v = String(b.until || "").trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) return json({err: "дата в формате ГГГГ-ММ-ДД"}, 400);
+    const d = new Date(v + "T00:00:00Z");
+    if (isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== v)
+      return json({err: "такой даты не существует"}, 400);
+    st.until = v;
+    st.edited = new Date().toISOString();
+  }
   else if (b.action === "langs"){
     const langs = Array.isArray(b.langs)
       ? b.langs.filter(function(x){ return LANGS.indexOf(x) > -1; }) : [];
@@ -443,10 +452,36 @@ async function load(){
       "<td><button class='rowbtn' onclick='copyLink(\\""+s.token+"\\")'>ссылка</button>"+
       "<button class='rowbtn' onclick='editStudent(\\""+s.token+"\\")'>правка</button>"+
       "<button class='rowbtn' onclick='langsStudent(\\""+s.token+"\\",\\""+(s.langs||[]).join(",")+"\\")'>языки</button>"+
+      "<button class='rowbtn' onclick='untilStudent(\\""+s.token+"\\",\\""+(s.until||"")+"\\")'>срок</button>"+
       "<button class='rowbtn' onclick='upd(\\""+s.token+"\\",\\"extend\\")'>+90 дн</button>"+
       "<button class='rowbtn warn' onclick='upd(\\""+s.token+"\\",\\""+(s.active?"off":"on")+"\\")'>"+(s.active?"выкл":"вкл")+"</button></td>";
     tb.appendChild(tr);
   });
+}
+async function untilStudent(t, cur){
+  const hint = "Доступ до какого числа?\\n\\nМожно ввести:\\n  31.12.2026  или  2026-12-31 — точная дата\\n  +30 — добавить 30 дней к текущему сроку\\n  -7 — сократить на 7 дней";
+  const v = prompt(hint, fmtRu(cur));
+  if (v === null) return;
+  const s = v.trim();
+  let iso = null;
+  if (/^[+-]\\d+$/.test(s)){
+    const base = new Date(((cur && cur >= new Date().toISOString().slice(0,10)) ? cur : new Date().toISOString().slice(0,10)) + "T00:00:00Z");
+    base.setUTCDate(base.getUTCDate() + parseInt(s, 10));
+    iso = base.toISOString().slice(0, 10);
+  } else if (/^\\d{2}\\.\\d{2}\\.\\d{4}$/.test(s)){
+    const p = s.split(".");
+    iso = p[2] + "-" + p[1] + "-" + p[0];
+  } else if (/^\\d{4}-\\d{2}-\\d{2}$/.test(s)){
+    iso = s;
+  } else { msg("Не понял дату. Примеры: 31.12.2026, 2026-12-31, +30"); return; }
+  const r = await fetch(BASE + "/api/admin/update?key="+encodeURIComponent(KEY), {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({token:t, action:"until", until:iso})});
+  const d = await r.json();
+  if (d.ok){
+    const past = iso < new Date().toISOString().slice(0,10);
+    msg("Срок доступа: " + fmtRu(d.until) + (past ? " — это прошедшая дата, доступ закрыт" : ""));
+    load();
+  }
+  else msg("Ошибка: " + (d.err||r.status));
 }
 async function langsStudent(t, cur){
   const v = prompt("Разрешенные языки через запятую (en, ar, ru).\\nПусто или все три = без ограничений.", cur || "en,ar,ru");

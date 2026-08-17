@@ -120,6 +120,21 @@
   ]
 }
 </script>
+<style>
+/* ── Навигация по разделу (опорная страница) ── */
+.pillar-nav{background:#F4E7D3;border:1px solid #E0D2B8;border-radius:16px;padding:24px 26px;margin:34px 0 6px}
+.pn-num{display:block;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8A6D2F}
+.pn-t{font-size:21px;font-weight:700;line-height:1.25;color:#16181F;margin:6px 0 6px}
+.pn-d{font-size:14.5px;line-height:1.6;color:#4A4740;margin:0 0 16px;max-width:640px}
+.pn-list{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px 26px}
+.pn-list li{border-top:1px solid #E2D5BC;padding-top:10px}
+.pn-list a{display:block;font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none;line-height:1.35}
+.pn-list a:hover{text-decoration:underline}
+.pn-list span{display:block;font-size:13px;color:#5B564A;line-height:1.5;margin-top:3px}
+.pn-all{display:inline-block;font-size:14.5px;font-weight:700;color:#1B3A5C;text-decoration:none;border-bottom:2px solid #C9B896;padding-bottom:1px}
+.pn-all:hover{border-color:#1B3A5C}
+@media(max-width:640px){.pillar-nav{padding:20px 18px;border-radius:12px}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -183,6 +198,25 @@
   </div>
 </div>
 
+<h2 id="chto-trebuet-cb">Стандарт и требования Банка России рядом</h2>
+<p>В России у компании обычно два источника требований, и они не противоречат друг другу. Международный стандарт задает управленческую рамку: цикл, роли, доказательства. Банк России в положениях об обеспечении непрерывности и восстановлении деятельности задает обязательный минимум для поднадзорных организаций — состав плана, сроки восстановления, порядок информирования.</p>
+<p>На практике удобнее строить систему по стандарту, а требования регулятора закрывать как обязательный подраздел внутри нее. Обратный порядок — сначала выполнить предписание, потом «когда-нибудь» выстроить систему — приводит к папке документов, которая живет отдельно от компании. Что именно требует регулятор и как выглядит рабочий план, разобрано в материале <a href="onivd-ponivd.html">ОНиВД и ПОНиВД</a>.</p>
+
+<h2 id="poryadok-vnedreniya">В каком порядке внедряют</h2>
+<p>Порядок важнее скорости. Шаги, которые пропускают чаще всего, стоят потом дороже всего.</p>
+<ul>
+<li><strong>Определить границы.</strong> Какие подразделения, площадки и процессы входят в систему. Попытка охватить все сразу — самая частая причина, по которой проект глохнет на третий месяц.</li>
+<li><strong>Провести анализ воздействия.</strong> Без него приоритеты восстановления назначаются интуитивно — см. <a href="bia-analiz-vozdeystviya.html">анализ воздействия на бизнес</a>.</li>
+<li><strong>Написать планы.</strong> Отдельно действия людей и отдельно восстановление систем: <a href="plan-nepreryvnosti-biznesa.html">план непрерывности</a> и <a href="plan-avariynogo-vosstanovleniya.html">план аварийного восстановления</a>.</li>
+<li><strong>Обучить и провести учения.</strong> Документ, который команда видит впервые в кризис, не работает — см. <a href="ucheniya-po-nepreryvnosti.html">учения по непрерывности</a>.</li>
+<li><strong>Проверить и улучшить.</strong> Внутренний аудит, разбор учений, пересмотр целевых сроков. Это и есть замыкание цикла, ради которого стандарт написан.</li>
+</ul>
+<p>Быстро понять текущее состояние до начала проекта помогают <a href="chek-list-gotovnosti-k-krizisu.html">чек-лист готовности</a> и <a href="stress-test-nepreryvnosti.html">стресс-тест непрерывности</a>.</p>
+
+<h2 id="dokazatelstva">Что аудитор попросит показать</h2>
+<p>Соответствие подтверждают не текстами, а следами работы. Просят обычно одно и то же: утвержденные границы системы и политику с подписью руководства, результаты анализа воздействия с целевыми сроками, подтвержденными владельцами процессов, актуальные планы с датой последнего пересмотра, отчеты об учениях с перечнем выявленных недостатков и, главное, доказательства, что по этим недостаткам что-то сделали.</p>
+<p>Последний пункт отличает живую систему от бумажной. Отчет об учениях, в котором все прошло идеально, вызывает у опытного аудитора больше вопросов, чем отчет с десятью замечаниями и планом их устранения. Как выстроить обучение команды под это — в материале <a href="obuchenie-nepreryvnosti-biznesa.html">корпоративный курс по непрерывности</a>.</p>
+
 <h2 id="faq">Частые вопросы</h2>
 <h3>Какая редакция ISO 22301 действует сейчас?</h3><p>ISO 22301:2019 с поправкой 2024 года (Amd 1, климатические аспекты). Это актуальная версия международного стандарта непрерывности бизнеса.</p>
 <h3>Обязательно ли сертифицироваться по ISO 22301?</h3><p>Нет. Стандарт можно использовать как методологию без сертификации. Сертификат нужен, когда его требуют клиенты, тендеры или регулятор.</p>
@@ -198,6 +232,14 @@
   </div>
 </div>
   </article>
+<section class="pillar-nav" aria-labelledby="pn-t">
+  <div class="pn-head"><span class="pn-num">Раздел 05 · Внедрение</span>
+    <h2 class="pn-t" id="pn-t">Внедрение и стандарты</h2>
+    <p class="pn-d">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p></div>
+  <ul class="pn-list"><li><a href="onivd-ponivd.html">ОНиВД и ПОНиВД (требования ЦБ)</a><span>Требования Банка России, структура плана, типичные ошибки</span></li><li><a href="ucheniya-po-nepreryvnosti.html">Учения по непрерывности</a><span>Кабинетные, симуляции, технические тесты и как провести</span></li><li><a href="chek-list-gotovnosti-k-krizisu.html">Чек-лист готовности к кризису</a><span>Практический чек-лист из 12 пунктов</span></li><li><a href="obuchenie-nepreryvnosti-biznesa.html">Корпоративный курс BCM/BCP</a><span>Корпоративный курс: 6 модулей, 16 часов, с сертификатом</span></li><li><a href="stress-test-nepreryvnosti.html">Стресс-тест непрерывности бизнеса: вердикт и план за 2 дня</a><span>Вердикт и план за два дня, стресс-симуляция</span></li></ul>
+  <a class="pn-all" href="materialy.html#vnedrenie">Все материалы раздела в библиотеке →</a>
+</section>
+
   <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 дней простоя: урок кибератаки →</div><div class="rc-d">Реальный кейс атаки шифровальщика на крупного страховщика: 7 дней простоя, неработающие сайт и приложение. Как</div></a><a href="bcm-bcp-drp-otlichie.html" class="related-card"><div class="rc-t">BCM, BCP, DRP — отличия →</div><div class="rc-d">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и п</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a><a href="shablony.html" class="related-card"><div class="rc-t">Шаблоны BCM-документов →</div><div class="rc-d">Готовые шаблоны: план непрерывности, BIA, реестр процессов, карточка кризисного штаба.</div></a></div></section>
 </div>
 <footer class="site-footer">

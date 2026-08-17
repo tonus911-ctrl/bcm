@@ -1286,7 +1286,7 @@ footer{background:#14142a;}
 </section>
 <!-- ══ МАТЕРИАЛЫ (3 последних) ══ -->
 <style>
-.kb-split{display:grid;grid-template-columns:50% 50%;gap:0;align-items:stretch;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px -30px rgba(20,24,43,0.35);background:#fff;}
+.kb-split{display:grid;grid-template-columns:1fr;gap:0;align-items:stretch;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px -30px rgba(20,24,43,0.35);background:#fff;}
 .kb-row{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border:1px solid #E7E4DC;border-radius:14px;padding:15px 20px;text-decoration:none;transition:background .15s,border-color .15s;}
 .kb-row:hover{background:#FBFAF6;border-color:#D8D3C6;}
 @media(max-width:880px){
@@ -1334,69 +1334,86 @@ footer{background:#14142a;}
         </div>
       </div>
 
-      <!-- RIGHT 60%: MATERIALS -->
-      <div style="padding:32px 34px;display:flex;flex-direction:column;">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
-          <span style="width:30px;height:2px;background:#C9B26A;"></span>
-          <span data-ru="Полезные материалы" data-en="Useful resources" style="font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#8C7A3F;">Полезные материалы</span>
-        </div>
-        <h2 style="margin:0;font-size:28px;font-weight:800;line-height:1.16;letter-spacing:-0.02em;color:#16181F;font-family:'Figtree','Inter','Calibri',Arial,sans-serif;" data-ru="Свежие материалы по непрерывности бизнеса" data-en="Latest business continuity resources">Свежие материалы по непрерывности бизнеса</h2>
-        <p style="margin:14px 0 0;font-size:15px;line-height:1.5;color:#4f545e;max-width:640px;" data-ru="Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление." data-en="Articles and templates on BCM: what it is, how to build a continuity plan (BCP), ISO 22301, business impact analysis (BIA) and disaster recovery.">Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.</p>
-        <a href="materialy.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:9px;margin-top:20px;background:transparent;color:#1B3A5C;font-size:15px;font-weight:700;padding:12px 22px;border:1px solid #cdd3df;border-radius:999px;text-decoration:none;"><span data-ru="Все материалы по категориям" data-en="All materials by category">Все материалы по категориям</span><span>→</span></a>
-
-        <div style="display:flex;flex-direction:column;gap:14px;margin-top:24px;">
-<!--LATEST_START-->
-          <a href="onivd-ponivd.html" class="kb-row">
-            <div style="font-size:15px;font-weight:600;line-height:1.4;color:#16181F;" data-ru="ОНиВД и ПОНиВД: требования ЦБ и как составить рабочий план" data-en="Regulatory continuity requirements: Russia, UAE, Saudi Arabia">ОНиВД и ПОНиВД: требования ЦБ и как составить рабочий план</div>
-            <div class="kb-row-more" style="display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;color:#16181F;white-space:nowrap;"><span data-ru="Читать" data-en="Read">Читать</span><span style="color:#8C7A3F;">→</span></div>
-          </a>
-          <a href="zashchita-ot-shifrovalshchika.html" class="kb-row">
-            <div style="font-size:15px;font-weight:600;line-height:1.4;color:#16181F;" data-ru="Защита от вируса-шифровальщика: как подготовить компанию" data-en="Ransomware readiness: prepare the company and rehearse recovery">Защита от вируса-шифровальщика: как подготовить компанию</div>
-            <div class="kb-row-more" style="display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;color:#16181F;white-space:nowrap;"><span data-ru="Читать" data-en="Read">Читать</span><span style="color:#8C7A3F;">→</span></div>
-          </a>
-          <a href="zashchita-ot-kiberatak.html" class="kb-row">
-            <div style="font-size:15px;font-weight:600;line-height:1.4;color:#16181F;" data-ru="Защита компании от кибератак: система, меры — и вторая половина" data-en="Cyberattack protection: the system and its second half">Защита компании от кибератак: система, меры — и вторая половина</div>
-            <div class="kb-row-more" style="display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700;color:#16181F;white-space:nowrap;"><span data-ru="Читать" data-en="Read">Читать</span><span style="color:#8C7A3F;">→</span></div>
-          </a>
-<!--LATEST_END-->
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
-<!-- ══ BENEFITS ══ -->
-<section style="padding: 72px 24px; background: #fffdf5;">
+<!-- ══ МЕТОДОЛОГИЯ ══ -->
+<section id="metodologiya" style="padding:76px 24px;background:#fffdf5;">
   <div class="wrap">
-    <div class="section-eyebrow" id="i18n-ben-eyebrow">Что вы получаете</div>
-    <h2 class="section-title" id="i18n-ben-title">Результат, который можно измерить</h2>
-    <div class="benefits-grid" style="margin-top: 36px;">
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="20" r="11" stroke="#F9EBC6" stroke-width="2"/><path d="M18 14v6l4 2" stroke="#F9EBC6" stroke-width="2" stroke-linecap="round"/><path d="M14 4h8" stroke="#F9EBC6" stroke-width="2" stroke-linecap="round"/><path d="M18 4v3" stroke="#F9EBC6" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div class="benefit-title" id="ben-1-title">Сроки и объем восстановления — зафиксированы</div>
-        <div class="benefit-text" id="ben-1-d">RTO (максимально допустимое время простоя) и RPO (допустимые потери данных) — зафиксированы для каждого критичного процесса.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M11 8h10c3.3 0 6 2.7 6 6s-2.7 6-6 6H11V8z" stroke="#F9EBC6" stroke-width="2" stroke-linejoin="round"/><path d="M11 20h12" stroke="#F9EBC6" stroke-width="2" stroke-linecap="round"/><path d="M11 25h12" stroke="#F9EBC6" stroke-width="2" stroke-linecap="round"/><path d="M11 8v20" stroke="#F9EBC6" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div class="benefit-title" id="ben-2-t">Риски в деньгах</div>
-        <div class="benefit-text" id="ben-2-d">Каждый риск оцифрован: сколько стоит один день простоя, утечка данных, потеря поставщика. Никаких абстракций.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="8" y="6" width="20" height="24" rx="2" stroke="#F9EBC6" stroke-width="2"/><path d="M13 13h10M13 18h10M13 23h6" stroke="#F9EBC6" stroke-width="2" stroke-linecap="round"/><path d="M14 6V5a2 2 0 014 0v1" stroke="#F9EBC6" stroke-width="2"/><rect x="14" y="4" width="8" height="4" rx="1" stroke="#F9EBC6" stroke-width="2"/></svg></div>
-        <div class="benefit-title" id="ben-3-t">Рабочие алгоритмы</div>
-        <div class="benefit-text" id="ben-3-d">Пошаговые инструкции восстановления для каждого сценария — кибератака, сбой ИТ, потеря ключевого сотрудника, форс-мажор.</div>
-      </div>
+
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <span style="width:30px;height:2px;background:#C9B26A;"></span>
+      <span data-ru="Методология непрерывности" data-en="Continuity methodology" style="font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#8C7A3F;">Методология непрерывности</span>
     </div>
+
+    <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:end;margin-bottom:38px;" class="meth-head">
+      <div>
+        <h2 style="font-family:'Figtree','Inter',Arial,sans-serif;font-size:38px;line-height:1.15;font-weight:800;color:#14142a;margin:0 0 14px;" data-ru="База знаний по непрерывности бизнеса" data-en="A working knowledge base on business continuity">База знаний по непрерывности бизнеса</h2>
+        <p style="font-size:17px;line-height:1.6;color:#4f545e;margin:0;" data-ru="Все, чему мы учим и что внедряем у клиентов, опубликовано здесь. Методики, готовые структуры документов, требования регуляторов и разборы реальных сценариев — без регистрации и без оплаты." data-en="Everything we teach and implement for clients is published here. Methods, document structures, regulatory requirements and real scenario breakdowns — free and open.">Все, чему мы учим и что внедряем у клиентов, опубликовано здесь. Методики, готовые структуры документов, требования регуляторов и разборы реальных сценариев — без регистрации и без оплаты.</p>
+      </div>
+      <form onsubmit="return mSearch(event)" style="display:flex;gap:10px;">
+        <input id="mq" type="search" autocomplete="off" placeholder="RTO, BIA, шифровальщик…" style="flex:1;min-width:0;padding:14px 18px;border:1.5px solid #dcd7c8;border-radius:12px;font-size:15.5px;font-family:inherit;background:#fff;color:#14142a;">
+        <button type="submit" style="border:0;cursor:pointer;background:#1B3A5C;color:#fff;font-family:inherit;font-size:15.5px;font-weight:700;padding:14px 24px;border-radius:12px;" data-ru="Найти" data-en="Search">Найти</button>
+      </form>
+    </div>
+
+    <div class="meth-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+
+      <a href="materialy.html#osnovy" class="meth-card" style="display:block;text-decoration:none;background:#fff;border:1px solid #e7e3d8;border-radius:16px;padding:26px 26px 24px;">
+        <div style="font-family:Consolas,monospace;font-size:12.5px;letter-spacing:0.16em;color:#8C7A3F;margin-bottom:10px;">01</div>
+        <div style="font-size:20px;font-weight:800;color:#14142a;margin-bottom:9px;" data-ru="Основы непрерывности" data-en="Continuity fundamentals">Основы непрерывности</div>
+        <div style="font-size:14.5px;line-height:1.55;color:#5f636d;" data-ru="Что такое BCM и зачем он бизнесу, чем план непрерывности отличается от плана восстановления, непрерывность деятельности в двух значениях, роль совета директоров." data-en="What BCM is and why a business needs it, how a continuity plan differs from a recovery plan, the two meanings of operational continuity, the board's role.">Что такое BCM и зачем он бизнесу, чем план непрерывности отличается от плана восстановления, непрерывность деятельности в двух значениях, роль совета директоров.</div>
+      </a>
+
+      <a href="materialy.html#bia" class="meth-card" style="display:block;text-decoration:none;background:#fff;border:1px solid #e7e3d8;border-radius:16px;padding:26px 26px 24px;">
+        <div style="font-family:Consolas,monospace;font-size:12.5px;letter-spacing:0.16em;color:#8C7A3F;margin-bottom:10px;">02</div>
+        <div style="font-size:20px;font-weight:800;color:#14142a;margin-bottom:9px;" data-ru="Анализ воздействия и восстановление" data-en="Impact analysis and recovery">Анализ воздействия и восстановление</div>
+        <div style="font-size:14.5px;line-height:1.55;color:#5f636d;" data-ru="Методика BIA, целевые показатели RTO и RPO, реестр критических процессов, расчет стоимости часа простоя, поиск единой точки отказа." data-en="BIA methodology, RTO and RPO targets, the register of critical processes, the cost of an hour of downtime, finding the single point of failure.">Методика BIA, целевые показатели RTO и RPO, реестр критических процессов, расчет стоимости часа простоя, поиск единой точки отказа.</div>
+      </a>
+
+      <a href="materialy.html#riski" class="meth-card" style="display:block;text-decoration:none;background:#fff;border:1px solid #e7e3d8;border-radius:16px;padding:26px 26px 24px;">
+        <div style="font-family:Consolas,monospace;font-size:12.5px;letter-spacing:0.16em;color:#8C7A3F;margin-bottom:10px;">03</div>
+        <div style="font-size:20px;font-weight:800;color:#14142a;margin-bottom:9px;" data-ru="Управление рисками" data-en="Risk management">Управление рисками</div>
+        <div style="font-size:14.5px;line-height:1.55;color:#5f636d;" data-ru="Матрица рисков и как ее построить, система управления рисками предприятия, аппетит к риску, три линии защиты, индикаторы KRI и чем они отличаются от KPI." data-en="The risk matrix and how to build it, the enterprise risk management system, risk appetite, the three lines model, KRIs and how they differ from KPIs.">Матрица рисков и как ее построить, система управления рисками предприятия, аппетит к риску, три линии защиты, индикаторы KRI и чем они отличаются от KPI.</div>
+      </a>
+
+      <a href="materialy.html#krizis" class="meth-card" style="display:block;text-decoration:none;background:#fff;border:1px solid #e7e3d8;border-radius:16px;padding:26px 26px 24px;">
+        <div style="font-family:Consolas,monospace;font-size:12.5px;letter-spacing:0.16em;color:#8C7A3F;margin-bottom:10px;">04</div>
+        <div style="font-size:20px;font-weight:800;color:#14142a;margin-bottom:9px;" data-ru="Кризис и киберугрозы" data-en="Crisis and cyber threats">Кризис и киберугрозы</div>
+        <div style="font-size:14.5px;line-height:1.55;color:#5f636d;" data-ru="Первые часы после атаки шифровальщика, антикризисный план, кризисные коммуникации, киберучения, кибератаки на средний бизнес в России." data-en="The first hours after a ransomware attack, the crisis plan, crisis communications, cyber exercises, attacks on mid-sized Russian companies.">Первые часы после атаки шифровальщика, антикризисный план, кризисные коммуникации, киберучения, кибератаки на средний бизнес в России.</div>
+      </a>
+
+      <a href="materialy.html#vnedrenie" class="meth-card" style="display:block;text-decoration:none;background:#fff;border:1px solid #e7e3d8;border-radius:16px;padding:26px 26px 24px;">
+        <div style="font-family:Consolas,monospace;font-size:12.5px;letter-spacing:0.16em;color:#8C7A3F;margin-bottom:10px;">05</div>
+        <div style="font-size:20px;font-weight:800;color:#14142a;margin-bottom:9px;" data-ru="Внедрение и стандарты" data-en="Implementation and standards">Внедрение и стандарты</div>
+        <div style="font-size:14.5px;line-height:1.55;color:#5f636d;" data-ru="ИСО 22301 и ГОСТ Р, требования ЦБ по ОНиВД и ПОНиВД, учения по непрерывности, как измерить и протестировать устойчивость, зрелость системы." data-en="ISO 22301 and the Russian national standard, central bank continuity requirements, continuity exercises, how to measure and test resilience, maturity levels.">ИСО 22301 и ГОСТ Р, требования ЦБ по ОНиВД и ПОНиВД, учения по непрерывности, как измерить и протестировать устойчивость, зрелость системы.</div>
+      </a>
+
+      <a href="materialy.html#otrasli" class="meth-card" style="display:block;text-decoration:none;background:#fff;border:1px solid #e7e3d8;border-radius:16px;padding:26px 26px 24px;">
+        <div style="font-family:Consolas,monospace;font-size:12.5px;letter-spacing:0.16em;color:#8C7A3F;margin-bottom:10px;">06</div>
+        <div style="font-size:20px;font-weight:800;color:#14142a;margin-bottom:9px;" data-ru="Отраслевая практика" data-en="Industry practice">Отраслевая практика</div>
+        <div style="font-size:14.5px;line-height:1.55;color:#5f636d;" data-ru="Нефтегаз, горнодобыча и металлургия, ИТ-проекты, строительство и требования СРО, банки, потеря поставщика и ключевого сотрудника." data-en="Oil and gas, mining and metals, IT projects, construction and industry-body requirements, banks, losing a supplier or a key person.">Нефтегаз, горнодобыча и металлургия, ИТ-проекты, строительство и требования СРО, банки, потеря поставщика и ключевого сотрудника.</div>
+      </a>
+
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:32px;padding-top:26px;border-top:1px solid #e7e3d8;">
+      <div style="font-size:15px;color:#5f636d;" data-ru="Более 100 материалов на русском и английском. Пополняется каждую неделю." data-en="Over 100 materials in Russian and English. Updated every week.">Более 100 материалов на русском и английском. Пополняется каждую неделю.</div>
+      <a href="materialy.html" style="display:inline-flex;align-items:center;gap:9px;background:#1B3A5C;color:#fff;text-decoration:none;font-size:15.5px;font-weight:700;padding:13px 26px;border-radius:999px;"><span data-ru="Открыть библиотеку" data-en="Open the library">Открыть библиотеку</span><span style="font-size:17px;">→</span></a>
+    </div>
+
   </div>
 </section>
 <style>
-.path-paid .btn-outline{color:#F9EBC6 !important;border-color:#F9EBC6 !important;background:transparent !important;}
-.path-paid .btn-outline:hover{color:#fff !important;border-color:#fff !important;}
+.meth-card{transition:border-color .18s, box-shadow .18s, transform .18s;}
+.meth-card:hover{border-color:#C9B26A;box-shadow:0 14px 30px -20px rgba(20,20,42,.35);transform:translateY(-2px);}
+@media(max-width:1000px){.meth-grid{grid-template-columns:repeat(2,1fr)!important;}.meth-head{grid-template-columns:1fr!important;gap:22px!important;}}
+@media(max-width:640px){.meth-grid{grid-template-columns:1fr!important;}}
 </style>
 <script>
-(function(){function aDL(){var lg=(document.documentElement.lang==='en')?'en':'ru';document.querySelectorAll('[data-ru]').forEach(function(el){var v=el.getAttribute('data-'+lg);if(v!=null)el.innerHTML=v;});}
-try{new MutationObserver(aDL).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});}catch(e){}
-if(document.readyState!=='loading')aDL();else document.addEventListener('DOMContentLoaded',aDL);})();
+function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').value||'').trim();
+ try{if(typeof gtag==='function')gtag('event','library_search',{page:'home',q:q});}catch(x){}
+ location.href='materialy.html'+(q?('?q='+encodeURIComponent(q)):'');return false;}
 </script>
 <!-- ══ ПОЛОСА ДОВЕРИЯ ══ -->
 <section style="padding:26px 24px;background:#fff;border-top:1px solid #eef0f3;">
@@ -1517,8 +1534,6 @@ const LANG = {
     "i18n-prob-title": "Ситуации, в которых нужна непрерывность бизнеса",
     "i18n-proc-eyebrow": "Как выглядит работа",
     "i18n-proc-title": "От диагностики до работающей системы — 4 шага",
-    "i18n-ben-eyebrow": "Что вы получаете",
-    "i18n-ben-title": "Результат, который можно измерить",
     "i18n-about-eyebrow": "Об эксперте",
     "i18n-cta-title": "Узнайте, насколько устойчив<br>ваш бизнес — <em>за 5 минут</em>",
     "i18n-cta-sub": "Бесплатный тест из 10 вопросов покажет уровень зрелости системы непрерывности бизнеса (BCM) вашей компании и конкретные зоны риска.",
@@ -1564,12 +1579,8 @@ const LANG = {
     "proc-3-d": "Проводим кабинетные учения и стресс-тесты. Только живая тренировка покажет, что реально работает, а что остается на бумаге.",
     "proc-4-t": "Поддержка и обновление",
     "proc-4-d": "Бизнес меняется — план тоже. Помогаем актуализировать BCM (систему непрерывности) при изменениях в компании и на рынке.",
-    "ben-1-title": "Сроки и объем восстановления — зафиксированы",
-    "ben-1-d": "RTO (максимально допустимое время простоя) и RPO (допустимые потери данных) — зафиксированы для каждого критичного процесса.",
     "ben-2-t": "Риски в деньгах",
-    "ben-2-d": "Каждый риск оцифрован: сколько стоит один день простоя, утечка данных, потеря поставщика. Никаких абстракций.",
     "ben-3-t": "Рабочие алгоритмы",
-    "ben-3-d": "Пошаговые инструкции восстановления для каждого сценария — кибератака, сбой ИТ, потеря ключевого сотрудника, форс-мажор.",
     "ben-4-t": "Обученная команда",
     "ben-4-d": "Каждый сотрудник знает свою роль в кризисе. Учения показывают пробелы до реального инцидента, а не во время него.",
     "ben-5-t": "Резервные цепочки",
@@ -1581,9 +1592,6 @@ const LANG = {
     "hEdu": "Обучение и консалтинг",
     "about-more": "Все курсы и услуги — на risk-place.ru →",
     "footer-part": "Часть проекта risk-place.ru — обучение и консалтинг по управлению рисками",
-    "kb-eyebrow": "Полезные материалы",
-    "kb-title": "Свежие материалы по непрерывности бизнеса",
-    "kb-desc": "Статьи и шаблоны по BCM: что это, как составить план непрерывности (BCP), стандарт ISO 22301, анализ воздействия (BIA) и аварийное восстановление.",
     "kb-btn": "Все материалы →",
     "about-role": "Директор по рискам · Кандидат экономических наук",
     "tag1": "Билайн", "tag2": "Норникель", "tag3": "Роснефть", "tag4": "EY",
@@ -1625,16 +1633,13 @@ const LANG = {
       l1h: "Антивирус и патчи", l1d: "Защита от вирусов, обновления ПО",
       l2h: "Файрвол и шифрование", l2d: "Защита периметра и данных",
       l3h: "Резервные копии", l3d: "Бэкапы данных и конфигураций",
-      l4h: "Мониторинг сети", l4d: "Отслеживание инцидентов в ИТ",
-    },
+      l4h: "Мониторинг сети", l4d: "Отслеживание инцидентов в ИТ"},
     svgR: {
       title: "ДЕНЕЖНЫЙ ПОТОК", sub: "Что остается без защиты",
       r1h: "Потеря выручки", r1d: "Простой = прямые финансовые убытки",
       r2h: "Срыв поставок", r2d: "Цепочка партнеров — не задокументирована",
       r3h: "Потеря клиентов", r3d: "Долгий простой = уход к конкуренту",
-      r4h: "Репутационный ущерб", r4d: "Никто не готов — клиенты это видят",
-    },
-  },
+      r4h: "Репутационный ущерб", r4d: "Никто не готов — клиенты это видят"}},
   en: {
     htmlLang: "en",
     hLogo: 'risk<span style="color:var(--cream)">-</span>place.ru',
@@ -1649,8 +1654,6 @@ const LANG = {
     "i18n-prob-title": "Situations where business continuity is needed",
     "i18n-proc-eyebrow": "How It Works",
     "i18n-proc-title": "From Diagnosis to a Working System — 4 Steps",
-    "i18n-ben-eyebrow": "What You Get",
-    "i18n-ben-title": "Results You Can Measure",
     "i18n-about-eyebrow": "About the Expert",
     "i18n-cta-title": "Discover How Resilient Your Business Is — <em>in 5 Minutes</em>",
     "i18n-cta-sub": "A free 10-question assessment will show your BCM maturity level and identify your specific risk zones.",
@@ -1696,12 +1699,8 @@ const LANG = {
     "proc-3-d": "We run tabletop exercises and stress-tests. Only live training reveals what actually works versus what stays on paper.",
     "proc-4-t": "Support & Updates",
     "proc-4-d": "Business changes — so does the plan. We help keep your BCM system current as your company and market evolve.",
-    "ben-1-title": "Recovery Timelines — Defined",
-    "ben-1-d": "RTO (maximum tolerable downtime) and RPO (acceptable data loss) — documented for every critical process.",
     "ben-2-t": "Risks Valued in Money",
-    "ben-2-d": "Each risk quantified: cost of one day's downtime, data breach, supplier loss. No abstractions.",
     "ben-3-t": "Step-by-Step Playbooks",
-    "ben-3-d": "Recovery instructions for every scenario — cyberattack, IT failure, key person departure, force majeure.",
     "ben-4-t": "Trained Team",
     "ben-4-d": "Every employee knows their role in a crisis. Drills reveal gaps before a real incident — not during one.",
     "ben-5-t": "Backup Chains",
@@ -1713,9 +1712,6 @@ const LANG = {
     "hEdu": "Training & consulting",
     "about-more": "All courses & services — at risk-place.ru →",
     "footer-part": "Part of risk-place.ru — training & consulting in risk management",
-    "kb-eyebrow": "Useful resources",
-    "kb-title": "Latest business continuity resources",
-    "kb-desc": "Articles and templates on BCM: what it is, how to build a BCP, ISO 22301, business impact analysis (BIA) and disaster recovery.",
     "kb-btn": "All resources →",
     "about-role": "Risk Director · PhD in Economics",
     "tag1": "Beeline", "tag2": "Norilsk Nickel", "tag3": "Rosneft", "tag4": "EY",
@@ -1757,16 +1753,13 @@ const LANG = {
       l1h: "Antivirus & patches", l1d: "Malware protection, software updates",
       l2h: "Firewall & encryption", l2d: "Perimeter security and data protection",
       l3h: "Backup copies", l3d: "Data and configuration backups",
-      l4h: "Network monitoring", l4d: "Tracking IT incidents in real time",
-    },
+      l4h: "Network monitoring", l4d: "Tracking IT incidents in real time"},
     svgR: {
       title: "CASH FLOW", sub: "What remains unprotected",
       r1h: "Revenue loss", r1d: "Downtime = direct financial losses",
       r2h: "Supply chain failure", r2d: "Partner chain — not documented",
       r3h: "Customer loss", r3d: "Long downtime = clients go to competitors",
-      r4h: "Reputational damage", r4d: "No plan visible — clients notice",
-    },
-  }
+      r4h: "Reputational damage", r4d: "No plan visible — clients notice"}}
 };
 let currentLang = "ru";
 (function(){

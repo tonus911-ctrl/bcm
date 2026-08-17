@@ -332,7 +332,7 @@ section:last-of-type { padding-bottom: 40px; }
 .btn-black:hover { opacity: 0.82; }
 .btn-full { width: 100%; justify-content: center; }
 /* ── Stats ── */
-.stats-section{background:#F3EFE5;padding:43px 24px;}
+.stats-section{background:#F1EAD9;padding:43px 24px;}
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -756,7 +756,7 @@ section:last-of-type { padding-bottom: 40px; }
   line-height: 1.55;
 }
 /* ── Contacts ── */
-.contacts-section { background: #F3EFE5; padding:43px 24px 48px; }
+.contacts-section { background: #F1EAD9; padding:43px 24px 48px; }
 .contacts-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -1058,18 +1058,7 @@ footer{background:#14142a;}
 .btn-black{background:var(--navy)}
 .btn-black:hover{opacity:.9}
 .header-cta{background:var(--yellow)!important;color:#14142a!important}
-/* Контакты — акцентная navy-полоса (сильное завершение) */
-.contacts-section{background:#1B3A5C}
-.contacts-section .section-eyebrow{color:#ffec89}
-.contacts-section .section-eyebrow::before{background:#ffec89}
-.contacts-section .section-title{color:#fff}
-.contacts-section #i18n-cont-hint{color:#c9cce0!important}
-.contacts-section #i18n-cont-also{color:#aab1c6!important}
-.contacts-section .contact-card-sm{border-color:rgba(255,255,255,.18)!important;background:rgba(255,255,255,.04)}
-.contacts-section .contact-card-sm:hover{border-color:#ffec89!important}
-.contacts-section .contact-type{color:#ffec89!important}
-.contacts-section .contact-value{color:#fff!important}
-.contacts-section [style*="border-top"]{border-top-color:rgba(255,255,255,.18)!important}
+/* Контакты — теплая подложка (спокойное завершение) */
 </style>
 </head>
 <body>
@@ -1110,8 +1099,8 @@ footer{background:#14142a;}
 <style>
 /* ── Полоса цифр (identity) ── */}
 /* ── Флагман: сертификация ── */
-.cert-section{background:#F3EFE5;padding:43px 24px;border-top:1px solid #eadfbf;border-bottom:1px solid #eadfbf;}
-.cert-card{background:#FFFDF4;border:2px solid #1B3A5C;border-radius:24px;padding:44px 40px;box-shadow:0 14px 36px rgba(27,58,92,.12);}
+.cert-section{background:#F1EAD9;padding:43px 24px;border-top:1px solid #eadfbf;border-bottom:1px solid #eadfbf;}
+.cert-card{background:#FBF6EA;border:2px solid #1B3A5C;border-radius:24px;padding:44px 40px;box-shadow:0 14px 36px rgba(27,58,92,.12);}
 @media(max-width:640px){.cert-card{padding:30px 22px;}}
 .cert-facts{list-style:none;padding:0;margin:28px 0 32px;display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;}
 @media(max-width:760px){.cert-facts{grid-template-columns:1fr;}}
@@ -1371,10 +1360,10 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
 </style>
 
 <!-- ══ ПОЛОСА ДОВЕРИЯ ══ -->
-<section style="padding:20px 24px;background:#FFFFFF;border-top:1px solid #ECE7DC;">
+<section style="padding:20px 24px;background:#1B3A5C;border-top:1px solid #1B3A5C;">
   <div class="wrap" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-    <span style="display:inline-flex;align-items:baseline;gap:7px;"><b style="font-size:22px;font-weight:800;color:var(--navy);font-family:'Figtree','Inter',Arial,sans-serif;" data-ru="15+ лет" data-en="15+ years">15+ лет</b><span style="font-size:14px;color:#6b6f78;" data-ru="практики управления рисками" data-en="of hands-on risk management">практики управления рисками</span></span><span style="width:1px;height:22px;background:#e2e5ea;"></span><span id="trust-txt" data-ru="Практику ведут три признанных эксперта — риск-менеджмент, устойчивость и комплаенс" data-en="Three recognised experts lead the practice — risk management, resilience and compliance" style="font-size:14.5px;color:#515478;">Практику ведут три признанных эксперта — риск-менеджмент, устойчивость и комплаенс</span>
-    <a href="o-podhode.html#experts" id="trust-more" data-ru="Наши эксперты →" data-en="Meet the experts →" style="color:var(--navy);font-weight:700;text-decoration:none;font-size:14.5px;white-space:nowrap;">Наши эксперты →</a>
+    <span style="display:inline-flex;align-items:baseline;gap:7px;"><b style="font-size:22px;font-weight:800;color:#FFEC89;font-family:'Figtree','Inter',Arial,sans-serif;" data-ru="15+ лет" data-en="15+ years">15+ лет</b><span style="font-size:14px;color:#C9CCE0;" data-ru="практики управления рисками" data-en="of hands-on risk management">практики управления рисками</span></span><span style="width:1px;height:22px;background:rgba(255,255,255,.22);"></span><span id="trust-txt" data-ru="Практику ведут три признанных эксперта — риск-менеджмент, устойчивость и комплаенс" data-en="Three recognised experts lead the practice — risk management, resilience and compliance" style="font-size:14.5px;color:#DDE1EC;">Практику ведут три признанных эксперта — риск-менеджмент, устойчивость и комплаенс</span>
+    <a href="o-podhode.html#experts" id="trust-more" data-ru="Наши эксперты →" data-en="Meet the experts →" style="color:#FFEC89;font-weight:700;text-decoration:none;font-size:14.5px;white-space:nowrap;">Наши эксперты →</a>
   </div>
 </section>
 <!-- ══ CONTACTS ══ -->

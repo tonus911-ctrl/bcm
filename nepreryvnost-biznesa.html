@@ -120,6 +120,21 @@
   ]
 }
 </script>
+<style>
+/* ── Навигация по разделу (опорная страница) ── */
+.pillar-nav{background:#F4E7D3;border:1px solid #E0D2B8;border-radius:16px;padding:24px 26px;margin:34px 0 6px}
+.pn-num{display:block;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8A6D2F}
+.pn-t{font-size:21px;font-weight:700;line-height:1.25;color:#16181F;margin:6px 0 6px}
+.pn-d{font-size:14.5px;line-height:1.6;color:#4A4740;margin:0 0 16px;max-width:640px}
+.pn-list{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px 26px}
+.pn-list li{border-top:1px solid #E2D5BC;padding-top:10px}
+.pn-list a{display:block;font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none;line-height:1.35}
+.pn-list a:hover{text-decoration:underline}
+.pn-list span{display:block;font-size:13px;color:#5B564A;line-height:1.5;margin-top:3px}
+.pn-all{display:inline-block;font-size:14.5px;font-weight:700;color:#1B3A5C;text-decoration:none;border-bottom:2px solid #C9B896;padding-bottom:1px}
+.pn-all:hover{border-color:#1B3A5C}
+@media(max-width:640px){.pillar-nav{padding:20px 18px;border-radius:12px}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -180,7 +195,27 @@
   <li><strong>План аварийного восстановления (DRP).</strong> ИТ-часть: как восстановить системы и данные, целевые показатели RTO и RPO.</li>
   <li><strong>Учения и тестирование.</strong> Только живая тренировка показывает, что реально работает, а что осталось на бумаге.</li>
 </ul>
-<p>Эти элементы мы подробно разбираем в отдельных материалах — ссылки на них появятся по мере публикации в разделе «Материалы по BCM».</p>
+<p>Каждый элемент разобран отдельно: <a href="bia-analiz-vozdeystviya.html">анализ воздействия на бизнес</a>, <a href="plan-nepreryvnosti-biznesa.html">план непрерывности</a>, <a href="plan-avariynogo-vosstanovleniya.html">план аварийного восстановления</a> и <a href="ucheniya-po-nepreryvnosti.html">учения</a>.</p>
+
+<h2 id="kto-otvechaet">Кто отвечает за непрерывность в компании</h2>
+<p>Самая частая ошибка — назначить ответственным ИТ-директора. Логика понятная: чаще всего останавливаются системы, значит пусть ИТ и занимается. Но у ИТ-директора нет полномочий решить, какой процесс восстанавливать первым, если ресурсов хватает только на один. Это решение про деньги и обязательства перед клиентами, а не про серверы.</p>
+<p>Рабочая схема выглядит так. <strong>Владелец процесса</strong> — руководитель направления, который отвечает за конкретный бизнес-процесс и знает, что произойдет, если процесс встанет на день. Он называет допустимое время простоя и подтверждает его своей подписью. <strong>Координатор непрерывности</strong> — человек, который собирает картину целиком, ведет реестр, готовит учения. В компании до тысячи человек это обычно совмещенная роль, а не отдельная штатная единица. <strong>Спонсор</strong> — член правления или собственник, который защищает бюджет и разрешает споры о приоритетах.</p>
+<p>Отдельная история — <strong>кризисный штаб</strong>. Это не те же люди в тех же ролях. В штабе нужны решающий, связной с ИТ, коммуникатор и человек, который ведет журнал событий. Состав штаба и порядок его сбора описывают заранее, иначе первые часы уходят на выяснение, кто главный. Подробнее — в материале про <a href="antikrizisnyy-plan-kompanii.html">антикризисный план</a>.</p>
+
+<h2 id="priznaki">Как отличить работающую систему от бумажной</h2>
+<p>Документы можно купить или скачать, и внешне они будут выглядеть прилично. Разница видна по нескольким признакам, которые легко проверить самому.</p>
+<ul>
+<li><strong>Допустимое время простоя названо бизнесом, а не ИТ.</strong> Если цифры RTO выставил системный администратор исходя из возможностей оборудования, это не требование бизнеса, а описание текущего состояния.</li>
+<li><strong>План умещается в действия первых часов.</strong> Толстый документ, который в кризис никто не откроет, бесполезен. Рабочий план начинается с одной страницы конкретных шагов.</li>
+<li><strong>Учения проводились и по их итогам что-то менялось.</strong> Учения, после которых не изменился ни один пункт плана, скорее всего были формальными.</li>
+<li><strong>Резервные копии восстанавливали, а не только делали.</strong> Копия, из которой ни разу не разворачивали систему, — это предположение, а не гарантия.</li>
+<li><strong>Есть внешние зависимости.</strong> Если в плане нет ни слова про поставщиков, каналы связи и подрядчиков, охват неполный. Разбор — в материалах про <a href="poterya-postavshchika.html">потерю поставщика</a> и <a href="edinaya-tochka-otkaza.html">единую точку отказа</a>.</li>
+</ul>
+<p>Быстро проверить себя по всем пунктам помогает <a href="chek-list-gotovnosti-k-krizisu.html">чек-лист готовности к кризису</a>.</p>
+
+<h2 id="terminy">Термины, которые встретятся</h2>
+<p>В теме много английских сокращений, и они мешают больше, чем помогают. Минимальный набор такой. <strong>BCM</strong> — управление непрерывностью бизнеса, вся система целиком. <strong>BCP</strong> — план непрерывности, документ про действия людей. <strong>DRP</strong> — план аварийного восстановления, документ про восстановление систем и данных. <strong>BIA</strong> — анализ воздействия на бизнес, процедура, которая определяет критичность процессов. <strong>RTO</strong> — за какое время процесс должен вернуться в работу. <strong>RPO</strong> — какой объем данных допустимо потерять, измеряется во времени.</p>
+<p>Разницу между уровнями подробно объясняет материал <a href="bcm-bcp-drp-otlichie.html">BCM, BCP и DRP — в чем отличия</a>, а измеримые показатели — <a href="kak-izmerit-ustojchivost-biznesa.html">как измерить устойчивость бизнеса</a>.</p>
 
 <h2 id="start">С чего начать</h2>
 <p>Не нужно сразу заказывать большой проект. Начните с быстрой самооценки — она покажет уровень устойчивости вашего бизнеса, три главные зоны риска и первые конкретные шаги.</p>
@@ -210,6 +245,20 @@
   </div>
 </div>
   </article>
+  <section class="pillar-nav" aria-labelledby="pn-t">
+    <div class="pn-head">
+      <span class="pn-num">Раздел 01 · Основы</span>
+      <h2 class="pn-t" id="pn-t">Основы непрерывности</h2>
+      <p class="pn-d">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p>
+    </div>
+    <ul class="pn-list">
+      <li><a href="nepreryvnost-deyatelnosti.html">Непрерывность деятельности</a><span>Два значения термина — принцип в отчетности и операционная непрерывность</span></li>
+      <li><a href="bcm-bcp-drp-otlichie.html">BCM, BCP, DRP — отличия</a><span>Уровни управления, таблица сравнения и примеры</span></li>
+      <li><a href="it-otdel-ne-zaschita-biznesa.html">ИТ-отдел не защищает бизнес</a><span>Почему антивирус и системный администратор не спасают от остановки</span></li>
+      <li><a href="bcm-dlya-soveta-direktorov.html">BCM для совета директоров</a><span>Как обосновать инвестиции на языке денег и риск-аппетита</span></li>
+    </ul>
+    <a class="pn-all" href="materialy.html#osnovy">Все материалы раздела в библиотеке →</a>
+  </section>
   <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 дней простоя: урок кибератаки →</div><div class="rc-d">Реальный кейс атаки шифровальщика на крупного страховщика: 7 дней простоя, неработающие сайт и приложение. Как</div></a><a href="bcm-bcp-drp-otlichie.html" class="related-card"><div class="rc-t">BCM, BCP, DRP — отличия →</div><div class="rc-d">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и п</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a><a href="rezervnyy-plan-biznesa.html" class="related-card"><div class="rc-t">Резервный план бизнеса →</div><div class="rc-d">Какие точки отказа есть у любого бизнеса и как построить план Б: поставщики, люди, ИТ, каналы продаж.</div></a></div></section>
 </div>
 <footer class="site-footer">

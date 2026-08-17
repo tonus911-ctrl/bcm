@@ -332,10 +332,7 @@ section:last-of-type { padding-bottom: 40px; }
 .btn-black:hover { opacity: 0.82; }
 .btn-full { width: 100%; justify-content: center; }
 /* ── Stats ── */
-.stats-section {
-  background: var(--cream);
-  padding: 32px 24px;
-}
+.stats-section{background:#FAF8F3;padding:72px 24px;}
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -759,7 +756,7 @@ section:last-of-type { padding-bottom: 40px; }
   line-height: 1.55;
 }
 /* ── Contacts ── */
-.contacts-section { background: #fff; padding: 60px 24px 48px; }
+.contacts-section { background: #FAF8F3; padding: 72px 24px 48px; }
 .contacts-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -1111,16 +1108,9 @@ footer{background:#14142a;}
   </div>
 </section>
 <style>
-/* ── Полоса цифр (identity) ── */
-.idnum-band{background:#14142a;padding:34px 24px;border-top:1px solid rgba(255,255,255,.08);}
-.idnum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;}
-.idnum-item{padding:10px 24px;border-right:1px solid rgba(255,255,255,.14);}
-.idnum-item:last-child{border-right:none;}
-@media(max-width:640px){.idnum-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.14);padding:14px 4px;}.idnum-item:last-child{border-bottom:none;}}
-.idnum-num{font-size:26px;font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:4px;font-family:'Figtree','Inter','Calibri',Arial,sans-serif;}
-.idnum-lbl{font-size:13px;color:rgba(255,255,255,.66);line-height:1.45;}
+/* ── Полоса цифр (identity) ── */}
 /* ── Флагман: сертификация ── */
-.cert-section{background:#FBF7EC;padding:80px 24px;border-top:1px solid #eadfbf;border-bottom:1px solid #eadfbf;}
+.cert-section{background:#FAF8F3;padding:72px 24px;border-top:1px solid #eadfbf;border-bottom:1px solid #eadfbf;}
 .cert-card{background:#FFFDF4;border:2px solid #1B3A5C;border-radius:24px;padding:44px 40px;box-shadow:0 14px 36px rgba(27,58,92,.12);}
 @media(max-width:640px){.cert-card{padding:30px 22px;}}
 .cert-facts{list-style:none;padding:0;margin:28px 0 32px;display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;}
@@ -1144,6 +1134,10 @@ footer{background:#14142a;}
 <!-- ══ STATS ══ -->
 <section class="stats-section">
   <div class="wrap">
+    <div style="max-width:820px;margin:0 0 34px;">
+      <div class="section-eyebrow" data-ru="Масштаб проблемы" data-en="The scale of the problem">Масштаб проблемы</div>
+      <h2 class="section-title" data-ru="Во что обходится остановка бизнеса" data-en="What a business stoppage actually costs">Во что обходится остановка бизнеса</h2>
+    </div>
     <div class="stats-grid">
       <div class="stat-item">
         <div class="stat-num" id="stat-n1">1,5 трлн</div>
@@ -1197,12 +1191,12 @@ footer{background:#14142a;}
   </div>
 </section>
 <!-- ══ ПРОДУКТЫ (по намерению) ══ -->
-<section class="products-section" id="products" style="padding:72px 24px;background:#f5f7fa;border-top:1px solid #e7e8ea;">
+<section class="products-section" id="products" style="padding:72px 24px;background:#FFFFFF;">
   <div class="wrap">
-    <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
+    <div style="max-width:820px;margin:0 0 36px;">
       <div class="section-eyebrow" id="pr-eyebrow">Продукты по непрерывности</div>
       <h2 class="section-title" id="pr-title" style="margin-bottom:10px;">Выберите формат под вашу задачу</h2>
-      <p class="section-desc" id="pr-desc" style="margin:0 auto;">От готовых шаблонов до корпоративного внедрения и сертификации. Каждый продукт можно взять отдельно.</p>
+      <p class="section-desc" id="pr-desc" style="margin:0;">От готовых шаблонов до корпоративного внедрения и сертификации. Каждый продукт можно взять отдельно.</p>
     </div>
 <!-- Дашборд — крупный подблок -->
     <div class="dash-flag">
@@ -1240,19 +1234,6 @@ footer{background:#14142a;}
     </div>
   </div>
 </section>
-<!-- ══ ЦИФРЫ КУРСА ══ -->
-<section class="idnum-band">
-  <div class="wrap">
-    <div class="idnum-grid">
-      <div class="idnum-item">
-        <div class="idnum-num" data-ru="123 главы" data-en="123 chapters">123 главы</div>
-        <div class="idnum-lbl" data-ru="онлайн-программа · 6 модулей" data-en="online program · 6 modules">онлайн-программа · 6 модулей</div>
-      </div><div class="idnum-item">
-        <div class="idnum-num" data-ru="3 языка" data-en="3 languages">3 языка</div>
-        <div class="idnum-lbl" data-ru="русский, английский, арабский" data-en="Russian, English, Arabic">русский, английский, арабский</div>
-      </div></div>
-  </div>
-</section>
 <!-- ══ СЕРТИФИКАЦИЯ (флагман) ══ -->
 <section class="cert-section" id="certification">
   <div class="wrap" style="max-width:980px;">
@@ -1275,17 +1256,14 @@ footer{background:#14142a;}
   </div>
 </section>
 <!-- ══ МЕТОДОЛОГИЯ ══ -->
-<section id="metodologiya" style="padding:76px 24px;background:#fffdf5;">
+<section id="metodologiya" style="padding:72px 24px;background:#FFFFFF;">
   <div class="wrap">
 
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <span style="width:30px;height:2px;background:#C9B26A;"></span>
-      <span data-ru="Методология непрерывности" data-en="Continuity methodology" style="font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#8C7A3F;">Методология непрерывности</span>
-    </div>
+    <div class="section-eyebrow" data-ru="Методология непрерывности" data-en="Continuity methodology">Методология непрерывности</div>
 
     <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:end;margin-bottom:38px;" class="meth-head">
       <div>
-        <h2 style="font-family:'Figtree','Inter',Arial,sans-serif;font-size:38px;line-height:1.15;font-weight:800;color:#14142a;margin:0 0 14px;" data-ru="База знаний по непрерывности бизнеса" data-en="A working knowledge base on business continuity">База знаний по непрерывности бизнеса</h2>
+        <h2 class="section-title" data-ru="База знаний по непрерывности бизнеса" data-en="A working knowledge base on business continuity">База знаний по непрерывности бизнеса</h2>
         <p style="font-size:17px;line-height:1.6;color:#4f545e;margin:0;" data-ru="Все, чему мы учим и что внедряем у клиентов, опубликовано здесь. Методики, готовые структуры документов, требования регуляторов и разборы реальных сценариев — без регистрации и без оплаты." data-en="Everything we teach and implement for clients is published here. Methods, document structures, regulatory requirements and real scenario breakdowns — free and open.">Все, чему мы учим и что внедряем у клиентов, опубликовано здесь. Методики, готовые структуры документов, требования регуляторов и разборы реальных сценариев — без регистрации и без оплаты.</p>
       </div>
       <form onsubmit="return mSearch(event)" style="display:flex;gap:10px;">
@@ -1353,7 +1331,7 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
  location.href='materialy.html'+(q?('?q='+encodeURIComponent(q)):'');return false;}
 </script>
 <!-- ══ КНИГА (лид-магнит) ══ -->
-<section class="kb-section" style="padding:34px 24px;background:#F7F5F0;">
+<section class="kb-section" style="padding:72px 24px;background:#FAF8F3;">
   <div class="wrap">
     <div class="kb-row" style="display:flex;align-items:center;gap:28px;background:#F4F1E9;border-radius:16px;padding:22px 26px;">
 
@@ -1370,10 +1348,7 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
 
       <!-- текст -->
       <div style="flex:1 1 300px;min-width:0;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:9px;">
-          <span style="width:26px;height:2px;background:#B79B52;"></span>
-          <span data-ru="НОВАЯ КНИГА · PDF, бесплатно" data-en="NEW BOOK · PDF, free" style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#8C7A3F;">НОВАЯ КНИГА · PDF, бесплатно</span>
-        </div>
+        <div class="section-eyebrow" style="margin-bottom:10px;" data-ru="Новая книга · PDF, бесплатно" data-en="New book · PDF, free">Новая книга · PDF, бесплатно</div>
         <div data-ru="Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя." data-en="A practical continuity map — from assessing vulnerabilities to the day of an outage." style="font-size:17px;font-weight:700;line-height:1.35;color:#16181F;margin-bottom:9px;">Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя.</div>
         <div class="kb-bullets" style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;line-height:1.35;color:#4f545e;">
           <span><span style="color:#8C7A3F;font-weight:800;">→</span> <span data-ru="Оценка уязвимостей и критичных процессов" data-en="Assessing vulnerabilities and critical processes">Оценка уязвимостей и критичных процессов</span></span>
@@ -1396,8 +1371,8 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
 </style>
 
 <!-- ══ ПОЛОСА ДОВЕРИЯ ══ -->
-<section style="padding:26px 24px;background:#fff;border-top:1px solid #eef0f3;">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center;">
+<section style="padding:34px 24px;background:#FFFFFF;border-top:1px solid #ECE7DC;">
+  <div class="wrap" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <span style="display:inline-flex;align-items:baseline;gap:7px;"><b style="font-size:22px;font-weight:800;color:var(--navy);font-family:'Figtree','Inter',Arial,sans-serif;" data-ru="15+ лет" data-en="15+ years">15+ лет</b><span style="font-size:14px;color:#6b6f78;" data-ru="практики управления рисками" data-en="of hands-on risk management">практики управления рисками</span></span><span style="width:1px;height:22px;background:#e2e5ea;"></span><span id="trust-txt" data-ru="Практику ведут три признанных эксперта — риск-менеджмент, устойчивость и комплаенс" data-en="Three recognised experts lead the practice — risk management, resilience and compliance" style="font-size:14.5px;color:#515478;">Практику ведут три признанных эксперта — риск-менеджмент, устойчивость и комплаенс</span>
     <a href="o-podhode.html#experts" id="trust-more" data-ru="Наши эксперты →" data-en="Meet the experts →" style="color:var(--navy);font-weight:700;text-decoration:none;font-size:14.5px;white-space:nowrap;">Наши эксперты →</a>
   </div>

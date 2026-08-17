@@ -120,6 +120,21 @@
   ]
 }
 </script>
+<style>
+/* ── Навигация по разделу (опорная страница) ── */
+.pillar-nav{background:#F4E7D3;border:1px solid #E0D2B8;border-radius:16px;padding:24px 26px;margin:34px 0 6px}
+.pn-num{display:block;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8A6D2F}
+.pn-t{font-size:21px;font-weight:700;line-height:1.25;color:#16181F;margin:6px 0 6px}
+.pn-d{font-size:14.5px;line-height:1.6;color:#4A4740;margin:0 0 16px;max-width:640px}
+.pn-list{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px 26px}
+.pn-list li{border-top:1px solid #E2D5BC;padding-top:10px}
+.pn-list a{display:block;font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none;line-height:1.35}
+.pn-list a:hover{text-decoration:underline}
+.pn-list span{display:block;font-size:13px;color:#5B564A;line-height:1.5;margin-top:3px}
+.pn-all{display:inline-block;font-size:14.5px;font-weight:700;color:#1B3A5C;text-decoration:none;border-bottom:2px solid #C9B896;padding-bottom:1px}
+.pn-all:hover{border-color:#1B3A5C}
+@media(max-width:640px){.pillar-nav{padding:20px 18px;border-radius:12px}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -170,6 +185,25 @@
   </div>
 </div>
 
+<h2 id="pervye-60">Первые 60 минут: что делают и чего не делают</h2>
+<p>Первый час определяет, сколько продлится остановка. В это время решают четыре задачи, и порядок между ними имеет значение.</p>
+<ul>
+<li><strong>Остановить распространение.</strong> Отключение сегмента сети почти всегда дешевле, чем шифрование еще двух серверов. Право на такое отключение должно быть выдано дежурному заранее, письменно.</li>
+<li><strong>Собрать штаб.</strong> Не совещание на двадцать человек, а четыре роли: кто решает, кто говорит с ИТ, кто говорит наружу, кто ведет журнал событий.</li>
+<li><strong>Начать журнал.</strong> Время, действие, кто выполнил. Позже он понадобится и страховщику, и регулятору, и внутреннему разбору. Восстановить его по памяти невозможно.</li>
+<li><strong>Оценить масштаб, а не причину.</strong> Какие процессы встали, сколько это стоит в час, что критично вернуть первым. Расследование причин — потом.</li>
+</ul>
+<p>Чего в первый час не делают: не ищут виноватых, не общаются с прессой без подготовленного заявления, не восстанавливают из резервной копии, пока не поняли, не заражена ли сама копия, и не платят выкуп на эмоциях. Подробный разбор атаки шифровальщика — в материале <a href="zashchita-ot-shifrovalshchika.html">защита от шифровальщика</a>.</p>
+
+<h2 id="kto-govorit">Кто говорит наружу</h2>
+<p>Молчание в первые часы читается рынком как потеря контроля, а поспешное заявление с неверными цифрами приходится опровергать. Поэтому наружу говорит один назначенный человек, и говорит по заготовке.</p>
+<p>Заготовку пишут заранее, в спокойное время, отдельно для сотрудников, клиентов, партнеров и, если нужно, для регулятора. Внутри — факт, что известно на данный момент, что делается и когда будет следующее сообщение. Обещание срока восстановления, которое потом нарушат, вредит сильнее самой аварии. Разбор с примерами — в материале <a href="krizisnye-kommunikacii.html">кризисные коммуникации</a>.</p>
+<p>Отдельно стоит вопрос об уведомлении регулятора при утечке персональных данных: сроки и обязанности разобраны в материале <a href="bcm-i-zashchita-dannyh.html">BCM и защита данных</a>. Почему компании тянут с раскрытием и чем это оборачивается — в материале <a href="pochemu-kompanii-skryvayut-kiberataki.html">почему компании скрывают кибератаки</a>.</p>
+
+<h2 id="do-ataki">Что решают до атаки, а не во время</h2>
+<p>В кризисе не принимают решений, которые можно было принять заранее. Заранее определяют: кто имеет право отключить сеть и остановить производство, по какому каналу связывается штаб, если корпоративная почта недоступна, где лежат контакты ключевых людей вне рабочих систем, какие процессы восстанавливают первыми и в каком порядке.</p>
+<p>Последний пункт — результат <a href="bia-analiz-vozdeystviya.html">анализа воздействия на бизнес</a>, остальное входит в <a href="antikrizisnyy-plan-kompanii.html">антикризисный план</a>. Проверяется все это единственным способом — <a href="kiberucheniya.html">киберучениями</a>, настольной репетицией атаки. Реальный пример того, во что обходится неготовность, — <a href="7-dney-prostoya-kiberataka.html">семь дней простоя после кибератаки</a>.</p>
+
 <h2 id="faq">Частые вопросы</h2>
 <h3>Что сделать в самую первую очередь при атаке?</h3><p>Изолировать зараженные системы от сети, чтобы остановить распространение, и собрать заранее назначенную команду реагирования. Технику не выключать бездумно — можно уничтожить улики.</p>
 <h3>Платить ли вымогателям за расшифровку?</h3><p>Как правило, нет: оплата не гарантирует восстановление и поощряет новые атаки. Опирайтесь на изолированные резервные копии и план восстановления.</p>
@@ -185,6 +219,14 @@
   </div>
 </div>
   </article>
+<section class="pillar-nav" aria-labelledby="pn-t">
+  <div class="pn-head"><span class="pn-num">Раздел 04 · Кризис</span>
+    <h2 class="pn-t" id="pn-t">Кризис и киберугрозы</h2>
+    <p class="pn-d">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p></div>
+  <ul class="pn-list"><li><a href="zashchita-ot-shifrovalshchika.html">Защита от шифровальщика</a><span>Изолированные копии, план восстановления, репетиция</span></li><li><a href="zashchita-ot-kiberatak.html">Защита от кибератак</a><span>Снизить вероятность атаки и пережить ту, что прошла</span></li><li><a href="7-dney-prostoya-kiberataka.html">7 дней простоя: урок кибератаки</a><span>Реальный кейс: неделя простоя у крупного страховщика</span></li><li><a href="kiberataki-msb-rossiya.html">Кибератаки на МСБ: статистика</a><span>Свежая статистика атак на российский бизнес</span></li><li><a href="pochemu-kompanii-skryvayut-kiberataki.html">Почему скрывают кибератаки</a><span>Почему инциденты прячут за «плановыми работами»</span></li><li><a href="bcm-i-zashchita-dannyh.html">BCM и защита данных</a><span>152-ФЗ, утечки и оборотные штрафы</span></li><li><a href="kiberucheniya.html">Киберучения</a><span>Настольная репетиция атаки: сценарий 72 часа, роли, метрики</span></li><li><a href="krizisnye-kommunikacii.html">Кризисные коммуникации</a><span>Что говорить сотрудникам, клиентам и СМИ в первые часы</span></li><li><a href="obuchenie-sotrudnikov-kiberbezopasnosti.html">Обучение сотрудников кибербезопасности: что работает и чего в нем не хватает</a><span>Фишинг-симуляции и чему на самом деле стоит учить</span></li><li><a href="antikrizisnyy-plan-kompanii.html">Антикризисный план</a><span>Штаб, первые сутки, коммуникации и тренировки за семь шагов</span></li></ul>
+  <a class="pn-all" href="materialy.html#krizis">Все материалы раздела в библиотеке →</a>
+</section>
+
   <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 дней простоя: урок кибератаки →</div><div class="rc-d">Реальный кейс атаки шифровальщика на крупного страховщика: 7 дней простоя, неработающие сайт и приложение. Как</div></a><a href="bcm-bcp-drp-otlichie.html" class="related-card"><div class="rc-t">BCM, BCP, DRP — отличия →</div><div class="rc-d">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и п</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a><a href="bcm-i-zashchita-dannyh.html" class="related-card"><div class="rc-t">BCM и защита данных →</div><div class="rc-d">Как непрерывность бизнеса связана с защитой данных: резервные копии, RPO, восстановление после атак.</div></a></div></section>
 </div>
 <footer class="site-footer">

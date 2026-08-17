@@ -46,8 +46,8 @@
     {
       "@type": "Article",
       "@id": "https://bcm.risk-place.ru/en-edinaya-tochka-otkaza.html#article",
-      "headline": "Business impact analysis (BIA): how to run it",
-      "description": "What a BIA (business impact analysis) is, why you need it and how to run it: critical processes, RTO and RPO, downtime cost. Method and template in plain language.",
+      "headline": "Single points of failure: how to find and fix them",
+      "description": "Single points of failure in a business: how to find irreplaceable servers, people, suppliers and sites — and fix them, often with no budget at all. Method and examples.",
       "image": "https://bcm.risk-place.ru/edinaya-tochka-otkaza.png",
       "datePublished": "2026-06-28",
       "dateModified": "2026-06-28",
@@ -95,26 +95,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How is a BIA different from a risk assessment?",
+          "name": "How is a SPOF different from a normal risk?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A risk assessment answers \"what can happen and how likely.\" A BIA answers \"how painful it is if a process stops and how fast it must come back.\" In BCM they are used together."
+            "text": "It has a binary profile: not «may degrade» but «stops completely». That earns SPOFs their own flag in the risk register."
           }
         },
         {
           "@type": "Question",
-          "name": "What are RTO and RPO in plain language?",
+          "name": "How many SPOFs are acceptable?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "RTO is how fast to restore a process. RPO is how much data can be lost. The first is about time, the second about the data rollback point."
+            "text": "Zero is unreachable and unnecessary: the goal is to know all of yours and decide each consciously — fix, reserve, or accept with open eyes."
           }
         },
         {
           "@type": "Question",
-          "name": "Can a small company run a BIA?",
+          "name": "How to keep the list current?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in a single working day."
+            "text": "Review on every change: new product, relocation, supplier switch. In our practice it is part of the annual BIA cycle and visible on the dashboard among weak spots."
           }
         }
       ]

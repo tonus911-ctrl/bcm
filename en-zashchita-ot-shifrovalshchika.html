@@ -46,8 +46,8 @@
     {
       "@type": "Article",
       "@id": "https://bcm.risk-place.ru/en-zashchita-ot-shifrovalshchika.html#article",
-      "headline": "Business impact analysis (BIA): how to run it",
-      "description": "What a BIA (business impact analysis) is, why you need it and how to run it: critical processes, RTO and RPO, downtime cost. Method and template in plain language.",
+      "headline": "Ransomware readiness: prepare the company, rehearse the recovery",
+      "description": "Ransomware readiness in practice: isolated backups, network segmentation, a rehearsed recovery plan and manual workarounds. The outcome is decided before the attack.",
       "image": "https://bcm.risk-place.ru/zashchita-ot-shifrovalshchika.png",
       "datePublished": "2026-06-28",
       "dateModified": "2026-06-28",
@@ -95,26 +95,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How is a BIA different from a risk assessment?",
+          "name": "Should we pay the ransom?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A risk assessment answers \"what can happen and how likely.\" A BIA answers \"how painful it is if a process stops and how fast it must come back.\" In BCM they are used together."
+            "text": "A bad option: payment guarantees nothing, marks you as a paying target and carries legal risk in many jurisdictions. The only reliable alternative is restoring from isolated backups."
           }
         },
         {
           "@type": "Question",
-          "name": "What are RTO and RPO in plain language?",
+          "name": "We have antivirus and a SOC — is that not enough?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "RTO is how fast to restore a process. RPO is how much data can be lost. The first is about time, the second about the data rollback point."
+            "text": "That is the first half of defense: reducing probability. The second half — surviving the attack that gets through — is cheaper than the first, and almost always missing."
           }
         },
         {
           "@type": "Question",
-          "name": "Can a small company run a BIA?",
+          "name": "Where to start from zero?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in a single working day."
+            "text": "Inventory of critical systems plus one isolated copy of the main database. A week of work, minimal budget — and it cuts potential downtime several-fold."
           }
         }
       ]

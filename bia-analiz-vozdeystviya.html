@@ -120,6 +120,21 @@
   ]
 }
 </script>
+<style>
+/* ── Навигация по разделу (опорная страница) ── */
+.pillar-nav{background:#F4E7D3;border:1px solid #E0D2B8;border-radius:16px;padding:24px 26px;margin:34px 0 6px}
+.pn-num{display:block;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8A6D2F}
+.pn-t{font-size:21px;font-weight:700;line-height:1.25;color:#16181F;margin:6px 0 6px}
+.pn-d{font-size:14.5px;line-height:1.6;color:#4A4740;margin:0 0 16px;max-width:640px}
+.pn-list{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px 26px}
+.pn-list li{border-top:1px solid #E2D5BC;padding-top:10px}
+.pn-list a{display:block;font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none;line-height:1.35}
+.pn-list a:hover{text-decoration:underline}
+.pn-list span{display:block;font-size:13px;color:#5B564A;line-height:1.5;margin-top:3px}
+.pn-all{display:inline-block;font-size:14.5px;font-weight:700;color:#1B3A5C;text-decoration:none;border-bottom:2px solid #C9B896;padding-bottom:1px}
+.pn-all:hover{border-color:#1B3A5C}
+@media(max-width:640px){.pillar-nav{padding:20px 18px;border-radius:12px}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -173,6 +188,24 @@
   </div>
 </div>
 
+<h2 id="kto-nazyvaet">Кто называет RTO и почему это не ИТ</h2>
+<p>Целевое время восстановления должен назвать владелец процесса — руководитель, который отвечает за результат и понимает последствия остановки. Если цифру ставит ИТ-служба, получается описание текущих возможностей оборудования, а не требование бизнеса. Разница принципиальная: в первом случае вы узнаете, что есть, во втором — что нужно.</p>
+<p>Первый ответ владельца процесса почти всегда «нам нужно немедленно». Это нормально. Дальше задают второй вопрос, и он отрезвляет: сколько компания готова заплатить за то, чтобы восстановление заняло час вместо суток. Как только допустимое время связывают с бюджетом резервирования, цифры становятся реалистичными.</p>
+<p>Утверждает результат не аналитик и не координатор, а спонсор — член правления или собственник. Подпись под таблицей RTO означает принятое обязательство, а не заполненный документ. Как эту логику доносят до совета директоров, разобрано в материале <a href="bcm-dlya-soveta-direktorov.html">BCM для совета директоров</a>.</p>
+
+<h2 id="oshibki-bia">Пять ошибок, которые обесценивают анализ</h2>
+<ul>
+<li><strong>Опросили всех.</strong> Анкета по всей компании дает сто процессов, и каждый оказывается «критичным». Опрашивать надо владельцев ключевых направлений, а не всех подряд.</li>
+<li><strong>Оценили в баллах вместо денег.</strong> Шкала от одного до пяти удобна аналитику и бесполезна финансовому директору. Считайте потери в рублях за час и за сутки — см. <a href="stoimost-dnya-prostoya.html">стоимость дня простоя</a>.</li>
+<li><strong>Забыли про зависимости.</strong> Процесс может быть не критичным сам по себе, но питать три критичных. Такие связи видны через <a href="reestr-kriticheskih-processov.html">реестр критических процессов</a>, а точки концентрации — через <a href="edinaya-tochka-otkaza.html">единую точку отказа</a>.</li>
+<li><strong>Не учли сезонность.</strong> День простоя в конце квартала и в середине июля стоят разного. Для процессов с пиками указывают худший период.</li>
+<li><strong>Положили в стол.</strong> Анализ без следующего шага — это отчет. Результат обязан превратиться в требования к резервированию и в <a href="plan-nepreryvnosti-biznesa.html">план непрерывности</a>.</li>
+</ul>
+
+<h2 id="chto-poluchaetsya">Что получается на выходе</h2>
+<p>Правильно проведенный анализ дает не документ, а четыре решения. Первое — список процессов, которые восстанавливают в первую очередь, и порядок между ними. Второе — цифры допустимого простоя и допустимой потери данных по каждому, подтвержденные бизнесом. Третье — обоснованный бюджет: видно, где резервирование действительно нужно, а где компания переплачивает за избыточную надежность. Четвертое — разрыв между тем, что требуется, и тем, что инфраструктура обеспечивает сегодня.</p>
+<p>Последний пункт обычно и оказывается самым полезным. Разрыв между заявленным RTO и реальной возможностью восстановиться проверяется только практикой — <a href="ucheniya-po-nepreryvnosti.html">учениями</a> и <a href="stress-test-nepreryvnosti.html">стресс-тестом</a>. Что делать с результатами дальше, разобрано в материалах <a href="kak-izmerit-ustojchivost-biznesa.html">как измерить устойчивость бизнеса</a> и <a href="rezervnyy-plan-biznesa.html">резервный план бизнеса</a>.</p>
+
 <h2 id="faq">Частые вопросы</h2>
 <h3>Чем BIA отличается от оценки рисков?</h3><p>Оценка рисков отвечает «что может случиться и с какой вероятностью». BIA отвечает «насколько больно будет, если процесс остановится, и как быстро его надо вернуть». В BCM их используют вместе.</p>
 <h3>Что такое RTO и RPO простыми словами?</h3><p>RTO — за сколько восстановить процесс. RPO — какой объем данных допустимо потерять. Первое про время, второе про точку отката данных.</p>
@@ -188,6 +221,13 @@
   </div>
 </div>
   </article>
+  <section class="pillar-nav" aria-labelledby="pn-t">
+    <div class="pn-head"><span class="pn-num">Раздел 02 · Анализ воздействия</span>
+      <h2 class="pn-t" id="pn-t">Анализ воздействия и восстановление</h2>
+      <p class="pn-d">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p></div>
+    <ul class="pn-list"><li><a href="reestr-kriticheskih-processov.html">Реестр критических процессов</a><span>Какие процессы критичны и как составить реестр за день</span></li><li><a href="stoimost-dnya-prostoya.html">Стоимость дня простоя</a><span>Как посчитать потери за час и за сутки на реальном кейсе</span></li><li><a href="edinaya-tochka-otkaza.html">Единая точка отказа</a><span>Как найти незаменимые элементы и устранить их без бюджета</span></li><li><a href="kak-izmerit-ustojchivost-biznesa.html">Как измерить устойчивость</a><span>BIA, RTO и RPO простыми словами и проверка в учениях</span></li><li><a href="plan-avariynogo-vosstanovleniya.html">План аварийного восстановления (DRP)</a><span>Восстановление систем и данных, чем DRP отличается от плана непрерывности</span></li><li><a href="plan-nepreryvnosti-biznesa.html">План непрерывности бизнеса (BCP)</a><span>Структура плана и рабочий документ за семь шагов</span></li><li><a href="rezervnyy-plan-biznesa.html">Резервный план бизнеса</a><span>Что должно быть готово заранее, чтобы пережить сбой</span></li></ul>
+    <a class="pn-all" href="materialy.html#bia">Все материалы раздела в библиотеке →</a>
+  </section>
   <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 дней простоя: урок кибератаки →</div><div class="rc-d">Реальный кейс атаки шифровальщика на крупного страховщика: 7 дней простоя, неработающие сайт и приложение. Как</div></a><a href="bcm-bcp-drp-otlichie.html" class="related-card"><div class="rc-t">BCM, BCP, DRP — отличия →</div><div class="rc-d">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и п</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a><a href="shablony.html" class="related-card"><div class="rc-t">Шаблоны BCM-документов →</div><div class="rc-d">Готовые шаблоны: план непрерывности, BIA, реестр процессов, карточка кризисного штаба.</div></a></div></section>
 </div>
 <footer class="site-footer">

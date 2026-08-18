@@ -75,28 +75,6 @@
 :root{--ink:#1E222B;--muted:#565A63;--panel:#F5F1E8;--line:#E3D9C2;--gold:#C9A94E;--gold-dark:#7A5E17;--navy:#1B3A5C;}
 body{background:#FFFFFF;color:var(--ink);}
 /* шапка */
-.uh{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-.uh-bar{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:26px;min-height:62px;}
-.uh-logo{font-size:20px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:.01em;white-space:nowrap;font-family:'Figtree','Inter',Arial,sans-serif;}
-.uh-logo .lp{color:var(--gold-dark);}
-.uh-logo,.uf-logo{display:inline-flex;align-items:center;gap:9px;}
-.uh-txt{white-space:nowrap;letter-spacing:.01em;}
-.uh-mark{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1.5px solid var(--gold);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;}
-.uh-mark img{display:block;mix-blend-mode:multiply;}
-.uf-logo .uh-mark{width:30px;height:30px;}
-.uh-nav{display:flex;align-items:center;gap:20px;margin-left:auto;flex-wrap:wrap;}
-.uh-nav a{font-size:14.5px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 2px;border-bottom:2px solid transparent;}
-.uh-nav a:hover{color:var(--ink);}
-.uh-nav a.act{color:var(--ink);border-bottom-color:var(--gold);}
-.uh-lang{display:flex;gap:2px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:3px;}
-.uh-lang a{font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:999px;}
-.uh-lang a.act{background:var(--gold);color:var(--ink);}
-.uh-burger{display:none;margin-left:auto;background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink);}
-@media(max-width:880px){
-  .uh-burger{display:block;}
-  .uh-nav{display:none;position:absolute;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:14px 20px;gap:12px;}
-  .uh-nav.open{display:flex;}
-}
 /* контент */
 /* герой страницы */
 .psearch{display:flex;gap:10px;margin-top:20px;max-width:620px;}
@@ -128,14 +106,6 @@ body{background:#FFFFFF;color:var(--ink);}
 .gl-band-a{font-size:14.5px;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--line);padding-bottom:1px;}
 .gl-band-a:hover{border-color:var(--navy);}
 /* футер */
-.uf{background:#1E222B;padding:30px 0;}
-.uf-bar{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
-.uf-logo{font-size:17px;font-weight:800;color:#fff;text-decoration:none;font-family:'Figtree','Inter',Arial,sans-serif;}
-.uf-logo .lp{color:var(--gold);}
-.uf-links{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto;}
-.uf-links a{font-size:13.5px;color:#B9BCC4;text-decoration:none;}
-.uf-links a:hover{color:#fff;}
-.uf-copy{flex:1 1 100%;font-size:12.5px;color:#8A8F99;}
 .hidden{display:none!important;}
 .count{font-size:14.5px;color:var(--muted);margin:18px 0 0;display:none;}
 .count b{color:var(--ink);}

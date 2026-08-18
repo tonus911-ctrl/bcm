@@ -191,11 +191,12 @@ body {
 }
 .logo {
   color: #fff;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
   text-decoration: none;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
+.logo .logo-place { color: #E05A4E; }
 .logo span { color: var(--cream); }
 .header-contacts {
   display: flex;
@@ -381,7 +382,7 @@ section:last-of-type { padding-bottom: 40px; }
   display: inline-block;
   width: 28px;
   height: 2px;
-  background: var(--cream);
+  background: #C9A94E;
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -1064,7 +1065,7 @@ footer{background:#1E222B;}
 <body>
 <!-- ══ HEADER ══ -->
 <header class="site-header">
-  <a href="https://bcm.risk-place.ru/" class="logo" id="hLogo">risk<span>-</span>place.ru</a>
+  <a href="https://bcm.risk-place.ru/" class="logo" id="hLogo">bcm.risk-<span class="logo-place">place</span>.ru</a>
   <div style="display:flex;align-items:center;gap:8px;">
   <div class="header-contacts" id="hContacts">
     <a href="onlajn-kurs.html" data-ru="Сертификация" data-en="Certification">Сертификация</a>
@@ -1229,7 +1230,7 @@ footer{background:#1E222B;}
   </section>
 <!-- ══ СЕРТИФИКАЦИЯ (флагман) ══ -->
 <section class="cert-section" id="certification">
-  <div class="wrap" style="max-width:980px;">
+  <div class="wrap">
     <div class="cert-card">
       <span class="dash-flag-badge" data-ru="Флагманская программа" data-en="Flagship programme">Флагманская программа</span>
       <h2 class="section-title" style="font-size:clamp(20px,2.3vw,26px);margin:10px 0 6px;" data-ru="ERGP — курс и сертификация по управлению устойчивостью" data-en="ERGP — a course and certification in resilience governance">ERGP — курс и сертификация по управлению устойчивостью</h2>
@@ -1314,6 +1315,38 @@ footer{background:#1E222B;}
       <span class="mg-cta" data-ru="Открыть →" data-en="Open →">Открыть →</span>
     </a>
 
+<div class="kb-row" style="display:flex;align-items:center;gap:28px;background:#F5F1E8;border:1px solid #E3D9C2;border-radius:14px;padding:18px 22px;margin-top:22px;">
+
+      <!-- обложка -->
+      <div style="flex:0 0 88px;width:88px;aspect-ratio:1106/1524;position:relative;background:linear-gradient(150deg,#1E222B 0%,#1B3A5C 70%);border-radius:6px;box-shadow:0 14px 26px -16px rgba(20,24,43,.55);padding:14px 11px;display:flex;flex-direction:column;overflow:hidden;">
+        <div style="position:absolute;left:0;top:10px;bottom:10px;width:3px;background:rgba(0,0,0,.35);border-radius:3px;"></div>
+        <div data-ru="СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ" data-en="A GUIDE FOR EXECUTIVES" style="font-size:4.6px;font-weight:700;letter-spacing:.14em;color:#7A5E17;">СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ</div>
+        <div style="font-size:26px;font-weight:800;color:#fff;line-height:1.02;margin-top:13px;">BCM</div>
+        <div data-ru="без иллюзий" data-en="without illusions" style="font-size:17px;font-weight:800;color:#E3D9C2;line-height:1.05;">без иллюзий</div>
+        <div data-ru="Как защитить денежный поток компании" data-en="How to protect the company cash flow" style="font-size:6.5px;font-weight:500;color:#7A5E17;margin-top:8px;line-height:1.25;">Как защитить денежный поток компании</div>
+        <div style="height:1.5px;background:#7A5E17;margin-top:8px;"></div>
+        <div style="margin-top:auto;font-size:5.5px;font-weight:700;color:#E3D9C2;">bcm.risk-place.ru</div>
+      </div>
+
+      <!-- текст -->
+      <div style="flex:1 1 300px;min-width:0;">
+        <div class="section-eyebrow" style="margin-bottom:10px;" data-ru="Новая книга · PDF, бесплатно" data-en="New book · PDF, free">Новая книга · PDF, бесплатно</div>
+        <div data-ru="Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя." data-en="A practical continuity map — from assessing vulnerabilities to the day of an outage." style="font-size:17px;font-weight:700;line-height:1.35;color:#1E222B;margin-bottom:9px;">Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя.</div>
+        <div class="kb-bullets" style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;line-height:1.35;color:#565A63;">
+          <span><span style="color:#7A5E17;font-weight:800;">→</span> <span data-ru="Оценка уязвимостей и критичных процессов" data-en="Assessing vulnerabilities and critical processes">Оценка уязвимостей и критичных процессов</span></span>
+          <span><span style="color:#7A5E17;font-weight:800;">→</span> <span data-ru="Готовый план BCP и сценарии восстановления" data-en="A ready BCP plan and recovery scenarios">Готовый план BCP и сценарии восстановления</span></span>
+          <span><span style="color:#7A5E17;font-weight:800;">→</span> <span data-ru="Действия в день, когда системы легли" data-en="What to do on the day the systems go down">Действия в день, когда системы легли</span></span>
+        </div>
+      </div>
+
+      <!-- действие -->
+      <div style="flex:0 0 240px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;">
+        <a href="kniga.html" style="display:inline-flex;align-items:center;gap:9px;background:#1B3A5C;color:#FFFFFF;font-size:15px;font-weight:800;padding:13px 24px;border-radius:999px;text-decoration:none;white-space:nowrap;"><span data-ru="Получить книгу" data-en="Get the book">Получить книгу</span><span style="font-size:16px;">→</span></a>
+        <div style="display:flex;align-items:center;gap:7px;font-size:12.5px;color:#565A63;max-width:230px;line-height:1.3;"><span>🔒</span><span data-ru="Отправим на почту после короткой формы" data-en="We'll email it after a short form">Отправим на почту после короткой формы</span></div>
+      </div>
+
+    </div>
+
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:32px;padding-top:26px;border-top:1px solid #E3D9C2;">
       <div style="font-size:15px;color:#565A63;" data-ru="Более 100 материалов на русском и английском. Пополняется каждую неделю." data-en="Over 100 materials in Russian and English. Updated every week.">Более 100 материалов на русском и английском. Пополняется каждую неделю.</div>
       <a href="materialy.html" style="display:inline-flex;align-items:center;gap:9px;background:#1B3A5C;color:#fff;text-decoration:none;font-size:15.5px;font-weight:700;padding:13px 26px;border-radius:999px;"><span data-ru="Открыть библиотеку" data-en="Open the library">Открыть библиотеку</span><span style="font-size:17px;">→</span></a>
@@ -1342,46 +1375,6 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
  try{if(typeof gtag==='function')gtag('event','library_search',{page:'home',q:q});}catch(x){}
  location.href='materialy.html'+(q?('?q='+encodeURIComponent(q)):'');return false;}
 </script>
-<!-- ══ КНИГА (лид-магнит) ══ -->
-<section class="kb-section" style="padding:43px 24px;background:#F5F1E8;">
-  <div class="wrap">
-    <div class="kb-row" style="display:flex;align-items:center;gap:28px;background:#FFFFFF;border-radius:16px;padding:22px 26px;">
-
-      <!-- обложка -->
-      <div style="flex:0 0 104px;width:104px;aspect-ratio:1106/1524;position:relative;background:linear-gradient(150deg,#1E222B 0%,#1B3A5C 70%);border-radius:6px;box-shadow:0 14px 26px -16px rgba(20,24,43,.55);padding:14px 11px;display:flex;flex-direction:column;overflow:hidden;">
-        <div style="position:absolute;left:0;top:10px;bottom:10px;width:3px;background:rgba(0,0,0,.35);border-radius:3px;"></div>
-        <div data-ru="СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ" data-en="A GUIDE FOR EXECUTIVES" style="font-size:4.6px;font-weight:700;letter-spacing:.14em;color:#7A5E17;">СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ</div>
-        <div style="font-size:26px;font-weight:800;color:#fff;line-height:1.02;margin-top:13px;">BCM</div>
-        <div data-ru="без иллюзий" data-en="without illusions" style="font-size:17px;font-weight:800;color:#E3D9C2;line-height:1.05;">без иллюзий</div>
-        <div data-ru="Как защитить денежный поток компании" data-en="How to protect the company cash flow" style="font-size:6.5px;font-weight:500;color:#7A5E17;margin-top:8px;line-height:1.25;">Как защитить денежный поток компании</div>
-        <div style="height:1.5px;background:#7A5E17;margin-top:8px;"></div>
-        <div style="margin-top:auto;font-size:5.5px;font-weight:700;color:#E3D9C2;">bcm.risk-place.ru</div>
-      </div>
-
-      <!-- текст -->
-      <div style="flex:1 1 300px;min-width:0;">
-        <div class="section-eyebrow" style="margin-bottom:10px;" data-ru="Новая книга · PDF, бесплатно" data-en="New book · PDF, free">Новая книга · PDF, бесплатно</div>
-        <div data-ru="Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя." data-en="A practical continuity map — from assessing vulnerabilities to the day of an outage." style="font-size:17px;font-weight:700;line-height:1.35;color:#1E222B;margin-bottom:9px;">Практическая карта непрерывности: от оценки уязвимостей до работы в день сбоя.</div>
-        <div class="kb-bullets" style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;line-height:1.35;color:#565A63;">
-          <span><span style="color:#7A5E17;font-weight:800;">→</span> <span data-ru="Оценка уязвимостей и критичных процессов" data-en="Assessing vulnerabilities and critical processes">Оценка уязвимостей и критичных процессов</span></span>
-          <span><span style="color:#7A5E17;font-weight:800;">→</span> <span data-ru="Готовый план BCP и сценарии восстановления" data-en="A ready BCP plan and recovery scenarios">Готовый план BCP и сценарии восстановления</span></span>
-          <span><span style="color:#7A5E17;font-weight:800;">→</span> <span data-ru="Действия в день, когда системы легли" data-en="What to do on the day the systems go down">Действия в день, когда системы легли</span></span>
-        </div>
-      </div>
-
-      <!-- действие -->
-      <div style="flex:0 0 240px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;">
-        <a href="kniga.html" style="display:inline-flex;align-items:center;gap:9px;background:#1B3A5C;color:#FFFFFF;font-size:15px;font-weight:800;padding:13px 24px;border-radius:999px;text-decoration:none;white-space:nowrap;"><span data-ru="Получить книгу" data-en="Get the book">Получить книгу</span><span style="font-size:16px;">→</span></a>
-        <div style="display:flex;align-items:center;gap:7px;font-size:12.5px;color:#565A63;max-width:230px;line-height:1.3;"><span>🔒</span><span data-ru="Отправим на почту после короткой формы" data-en="We'll email it after a short form">Отправим на почту после короткой формы</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<style>
-@media(max-width:900px){.kb-row{flex-wrap:wrap!important;gap:20px!important;}.kb-bullets{flex-direction:column!important;}.kb-row>div:last-child{flex:1 1 100%!important;}}
-</style>
-
 <!-- ══ ПОЛОСА ДОВЕРИЯ ══ -->
 <section style="padding:34px 24px;background:#FFFFFF;border-top:1px solid #E3D9C2;">
   <div class="wrap" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
@@ -1422,6 +1415,10 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
       </div>
       <input id="cf-org" data-phru="Компания" data-phen="Company" placeholder="Компания">
       <textarea id="cf-msg" rows="4" data-phru="Сообщение (необязательно)" data-phen="Message (optional)" placeholder="Сообщение (необязательно)"></textarea>
+      <label style="display:flex;align-items:flex-start;gap:10px;margin:2px 0 14px;cursor:pointer;">
+        <input type="checkbox" id="cf-consent" style="width:20px;height:20px;flex:0 0 20px;margin:2px 0 0;cursor:pointer;accent-color:#1B3A5C;">
+        <span style="font-size:13.5px;line-height:1.5;color:#5B564A;" data-ru='Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">политики обработки персональных данных</a>' data-en='I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">personal data policy</a>'>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">политики обработки персональных данных</a></span>
+      </label>
       <button class="btn btn-cream" id="cf-send" style="font-size:16px;padding:15px 34px;border-radius:10px;border:none;cursor:pointer;"><span data-ru="Отправить запрос" data-en="Send the request">Отправить запрос</span></button>
       <p class="cnote" id="cf-note"></p>
       <p class="calt"><span data-ru="Предпочитаете переписку —" data-en="Prefer messaging?">Предпочитаете переписку —</span> <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">&#9992;&#65039; <span data-ru="Телеграм" data-en="Telegram">Телеграм</span></a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
@@ -1450,7 +1447,11 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
       note.textContent=(l==="en")?"Please fill in your name and work email.":"Заполните имя и рабочую почту.";
       note.classList.add("err");return;
     }
-    var body={type:"demo",product:document.getElementById("cf-product").value,source:"ru",
+    var cons=document.getElementById("cf-consent");
+      if(cons&&!cons.checked){ note.style.display="block";
+        note.textContent=(l==="en")?"Please tick the consent box to send the request.":"Отметьте согласие на обработку персональных данных.";
+        note.classList.add("err");return; }
+      var body={type:"demo",product:document.getElementById("cf-product").value,source:"ru",
       name:name,email:email,org:document.getElementById("cf-org").value.trim(),role:"",
       message:document.getElementById("cf-msg").value.trim(),lang:l,page:"ru-home"};
     fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)})
@@ -1472,7 +1473,7 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
 <footer>
   <a href="https://risk-place.ru" class="footer-logo">risk<span>-</span>place.ru</a>
   <a href="https://risk-place.ru/page24" target="_blank" rel="noopener" class="footer-copy" id="footer-part" style="text-decoration:none;">Часть проекта risk-place.ru — обучение и консалтинг по управлению рисками</a>
-  <div class="footer-copy" id="footer-copy">© 2026 Евгений Теленков · BCM-консалтинг</div>
+  <div class="footer-copy" id="footer-copy">© 2026 Risk-place · <span data-ru="Управление непрерывностью бизнеса и рисками" data-en="Business continuity and risk management">Управление непрерывностью бизнеса и рисками</span></div>
   <div class="footer-copy" style="margin-top:6px;"><a href="privacy-policy.html" style="color:inherit;text-decoration:none;">Политика конфиденциальности</a> · <a href="oferta.html" style="color:inherit;text-decoration:none;" data-ru="Публичная оферта" data-en="Public offer">Публичная оферта</a></div>
 </footer>
 <!-- Yandex.Metrika -->
@@ -1572,7 +1573,7 @@ const LANG = {
     "hero-btn2": "Обсудить задачу",
     "cta-btn1": "Пройти диагностику бесплатно →",
     "cta-btn2": "Сразу к консультации",
-    footerCopy: "© 2026 Евгений Теленков · BCM-консалтинг",
+    footerCopy: "© 2026 Risk-place · Управление непрерывностью бизнеса и рисками",
     // Paid session
     "paid-eyebrow": "Личный разбор · 30 минут",
     "paid-title": "Разбор вашей ситуации —<br>конкретный результат за 30 минут",
@@ -1692,7 +1693,7 @@ const LANG = {
     "hero-btn2": "Discuss Your Challenge",
     "cta-btn1": "Take Free Assessment →",
     "cta-btn2": "Schedule a Consultation",
-    footerCopy: "© 2026 Evgeny Telenkov · BCM Consulting",
+    footerCopy: "© 2026 Risk-place · Business continuity and risk management",
     // Paid session
     "paid-eyebrow": "Personal review · 30 minutes",
     "paid-title": "Your Business Review —<br>A Concrete Result in 30 Minutes",
@@ -2018,6 +2019,28 @@ window.setLang = function(lang){
   if(document.readyState!=='loading')aDL();else document.addEventListener('DOMContentLoaded',aDL);
 })();
 </script>
-<!-- rebuild 2026-08-18 16:56 -->
+
+<!-- ══ УВЕДОМЛЕНИЕ О COOKIE ══ -->
+<div id="ckBar" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1E222B;padding:14px 20px;">
+  <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <span style="flex:1 1 420px;font-size:13.5px;line-height:1.5;color:#D8CFB8;" data-ru='Мы используем файлы cookie и сервисы веб-аналитики (Яндекс Метрика, Google Analytics), чтобы сайт работал и становился удобнее. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy-policy.html" style="color:#C9A94E;">политикой обработки персональных данных</a>.' data-en='We use cookies and web analytics (Yandex Metrica, Google Analytics) to run and improve this site. By continuing, you agree to the <a href="privacy-policy.html" style="color:#C9A94E;">personal data policy</a>.'>Мы используем файлы cookie и сервисы веб-аналитики (Яндекс Метрика, Google Analytics), чтобы сайт работал и становился удобнее. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy-policy.html" style="color:#C9A94E;">политикой обработки персональных данных</a>.</span>
+    <button id="ckOk" style="flex:0 0 auto;background:#C9A94E;color:#1E222B;border:none;border-radius:9px;padding:10px 22px;font-size:14px;font-weight:700;cursor:pointer;" data-ru="Понятно" data-en="Got it">Понятно</button>
+  </div>
+</div>
+<script>
+(function(){
+  try{
+    if(!localStorage.getItem('ckAck')){
+      var b=document.getElementById('ckBar'); if(b)b.style.display='block';
+      var ok=document.getElementById('ckOk');
+      if(ok)ok.addEventListener('click',function(){
+        try{localStorage.setItem('ckAck','1');}catch(e){}
+        b.style.display='none';
+      });
+    }
+  }catch(e){}
+})();
+</script>
+<!-- rebuild 2026-08-18 17:14 -->
 </body>
 </html>

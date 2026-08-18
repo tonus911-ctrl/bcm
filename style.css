@@ -1,30 +1,36 @@
 /* ═══════════════════════════════════════════════════════════
    risk-place.ru · BCM — общая дизайн-система для опорных страниц
-   Светлая тема под стиль основного сайта (Figtree, жёлтый/кремовый).
+   Светлая тема под стиль основного сайта (Georgia, бумага/терракота — палитра А, 18.08.2026).
    Подключается на каждой контентной странице: <link rel="stylesheet" href="../assets/style.css">
    ═══════════════════════════════════════════════════════════ */
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --cream:#ffebc1;
-  --yellow:#ffec89;
-  --gold:#caa400;
-  --gold-dark:#9c7a12;
-  --ink:#14142a;
-  --navy:#1B3A5C;
+  --paper:#FDFBF7;        /* бумага — фон страницы */
+  --panel:#F1EEE8;        /* панель — тёплые подложки */
+  --line:#E1DCD3;         /* границы */
+  --accent:#C4571C;       /* терракота — единственный акцент */
+  --accent-dark:#A34D19;  /* тёмная терракота — надзаголовки */
+  --navy:#1B3A5C;         /* кнопки и ссылки */
+  --ink:#16181F;          /* основной текст */
+  --muted:#5B564A;        /* вторичный текст */
+  --gray:#5B564A;
+  --faint:#8A8578;        /* самый тихий текст на белом/бумаге */
+  /* старые имена — на новые значения, чтобы ничего не сломать */
+  --cream:#F1EEE8;
+  --yellow:#C4571C;
+  --gold:#A34D19;
+  --gold-dark:#A34D19;
   --sage:#3D7A6B;
-  --muted:#515478;
-  --gray:#5f636d;
-  --line:#e7e8ea;
-  --bg:#ffffff;
-  --bg-soft:#fafbff;
-  --maxw:760px;        /* ширина колонки статьи */
-  --maxw-wide:1280px;  /* ширина «широких» секций */
+  --bg:#FDFBF7;
+  --bg-soft:#F1EEE8;
+  --maxw:760px;
+  --maxw-wide:1280px;
 }
 html{scroll-behavior:smooth}
 html,body{width:100%;min-width:320px;overflow-x:hidden}
 body{
-  font-family:'Figtree','Inter','Calibri',Arial,sans-serif;
+  font-family:Georgia,'Times New Roman',serif;
   color:var(--ink);
   background:var(--bg);
   line-height:1.65;
@@ -52,7 +58,7 @@ img{max-width:100%;height:auto}
 .nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;transition:color .15s}
 .nav a:hover{color:var(--ink)}
 .nav .nav-cta{
-  background:var(--yellow);color:var(--ink);font-weight:700;
+  background:var(--accent-dark);color:#FFFFFF;font-weight:700;
   padding:9px 18px;border-radius:50px;font-size:14px;
 }
 .nav .nav-cta:hover{opacity:.88;color:var(--ink)}
@@ -74,7 +80,7 @@ img{max-width:100%;height:auto}
 
 /* ── Шапка статьи ── */
 .article-head{padding:20px 0 8px}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:14px}
+.eyebrow{font-family:Consolas,monospace;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:14px}
 h1{font-size:clamp(28px,4.2vw,42px);font-weight:800;line-height:1.15;color:var(--ink);margin-bottom:14px}
 .lead{font-size:19px;color:var(--muted);line-height:1.6;margin-bottom:6px}
 .meta-row{font-size:13px;color:var(--gray);padding:14px 0 0;border-bottom:1px solid var(--line);margin-bottom:8px}
@@ -130,7 +136,7 @@ tr:hover td{background:#fcfcff}
   font-size:15px;font-family:inherit;font-weight:700;cursor:pointer;border:none;text-decoration:none;
   transition:opacity .15s,transform .1s}
 .btn:active{transform:scale(.98)}
-.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-yellow{background:var(--accent-dark);color:#FFFFFF}
 .btn-yellow:hover{opacity:.88}
 .btn-dark{background:var(--navy);color:#fff}
 .btn-dark:hover{opacity:.85;color:#fff}

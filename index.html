@@ -197,6 +197,10 @@ body {
   letter-spacing: 0.02em;
 }
 .logo .logo-place { color: #C9A94E; }
+.logo { display:inline-flex; align-items:center; gap:10px; }
+.logo .uh-txt { white-space:nowrap; letter-spacing:.02em; }
+.logo-mark { flex:0 0 auto; width:36px; height:36px; border-radius:50%; background:#FFFFFF; border:1.5px solid #C9A94E; display:inline-flex; align-items:center; justify-content:center; overflow:hidden; }
+.logo-mark img { display:block; mix-blend-mode:multiply; }
 .logo span { color: var(--cream); }
 .header-contacts {
   display: flex;
@@ -1065,7 +1069,7 @@ footer{background:#1E222B;}
 <body>
 <!-- ══ HEADER ══ -->
 <header class="site-header">
-  <a href="https://bcm.risk-place.ru/" class="logo" id="hLogo">bcm.risk-<span class="logo-place">place</span>.ru</a>
+  <a href="https://bcm.risk-place.ru/" class="logo" id="hLogo"><span class="logo-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="logo-place">place</span>.ru</span></a>
   <div style="display:flex;align-items:center;gap:8px;">
   <div class="header-contacts" id="hContacts">
     <a href="onlajn-kurs.html" data-ru="Сертификация" data-en="Certification">Сертификация</a>
@@ -1470,12 +1474,29 @@ function mSearch(e){e.preventDefault();var q=(document.getElementById('mq').valu
 })();
 </script>
 <!-- ══ FOOTER ══ -->
-<footer>
-  <a href="https://risk-place.ru" class="footer-logo">risk<span>-</span>place.ru</a>
-  <a href="https://risk-place.ru/page24" target="_blank" rel="noopener" class="footer-copy" id="footer-part" style="text-decoration:none;">Часть проекта risk-place.ru — обучение и консалтинг по управлению рисками</a>
-  <div class="footer-copy" id="footer-copy">© 2026 Risk-place · <span data-ru="Управление непрерывностью бизнеса и рисками" data-en="Business continuity and risk management">Управление непрерывностью бизнеса и рисками</span></div>
-  <div class="footer-copy" style="margin-top:6px;"><a href="privacy-policy.html" style="color:inherit;text-decoration:none;">Политика конфиденциальности</a> · <a href="oferta.html" style="color:inherit;text-decoration:none;" data-ru="Публичная оферта" data-en="Public offer">Публичная оферта</a></div>
+<footer class="uf">
+  <div class="uf-bar">
+    <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <div class="uf-links">
+      <a href="produkty.html" data-ru="Продукты" data-en="Products">Продукты</a><a href="materialy.html" data-ru="Библиотека" data-en="Library">Библиотека</a><a href="slovar.html" data-ru="Словарь" data-en="Glossary">Словарь</a><a href="quiz.html" data-ru="Диагностика" data-en="Assessment">Диагностика</a>
+      <a href="privacy-policy.html" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a><a href="oferta.html" data-ru="Публичная оферта" data-en="Public offer">Публичная оферта</a>
+    </div>
+    <div class="uf-copy" id="footer-copy">© 2026 Risk-place · <span data-ru="Управление непрерывностью бизнеса и рисками" data-en="Business continuity and risk management">Управление непрерывностью бизнеса и рисками</span> · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:inherit;" data-ru="часть проекта risk-place.ru" data-en="part of the risk-place.ru project">часть проекта risk-place.ru</a></div>
+  </div>
 </footer>
+<style>
+.uf{background:#1E222B;padding:30px 24px;}
+.uf-bar{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+.uf-logo{font-size:17px;font-weight:800;color:#fff;text-decoration:none;font-family:'Figtree','Inter',Arial,sans-serif;display:inline-flex;align-items:center;gap:9px;}
+.uf-logo .lp{color:#C9A94E;}
+.uf-logo .uh-txt{white-space:nowrap;letter-spacing:.01em;}
+.uf-logo .uh-mark{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:#FFFFFF;border:1.5px solid #C9A94E;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;}
+.uf-logo .uh-mark img{display:block;mix-blend-mode:multiply;}
+.uf-links{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto;}
+.uf-links a{font-size:13.5px;color:#B9BCC4;text-decoration:none;}
+.uf-links a:hover{color:#fff;}
+.uf-copy{flex:1 1 100%;font-size:12.5px;color:#8A8F99;}
+</style>
 <!-- Yandex.Metrika -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -1490,7 +1511,7 @@ ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 const LANG = {
   ru: {
     htmlLang: "ru",
-    hLogo: 'bcm.risk-<span class="logo-place">place</span>.ru',
+    hLogo: '<span class="logo-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="logo-place">place</span>.ru</span>',
     hCta: "Связаться",
     hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     siteUrl: "https://bcm.risk-place.ru/",
@@ -1573,7 +1594,7 @@ const LANG = {
     "hero-btn2": "Обсудить задачу",
     "cta-btn1": "Пройти диагностику бесплатно →",
     "cta-btn2": "Сразу к консультации",
-    footerCopy: "© 2026 Risk-place · Управление непрерывностью бизнеса и рисками",
+    footerCopy: "© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">часть проекта risk-place.ru</a>",
     // Paid session
     "paid-eyebrow": "Личный разбор · 30 минут",
     "paid-title": "Разбор вашей ситуации —<br>конкретный результат за 30 минут",
@@ -1610,7 +1631,7 @@ const LANG = {
       r4h: "Репутационный ущерб", r4d: "Никто не готов — клиенты это видят"}},
   en: {
     htmlLang: "en",
-    hLogo: 'bcm.risk-<span class="logo-place">place</span>.ru',
+    hLogo: '<span class="logo-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="logo-place">place</span>.ru</span>',
     hCta: "Get in Touch",
     hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     siteUrl: "https://bcm.risk-place.ru/",
@@ -1693,7 +1714,7 @@ const LANG = {
     "hero-btn2": "Discuss Your Challenge",
     "cta-btn1": "Take Free Assessment →",
     "cta-btn2": "Schedule a Consultation",
-    footerCopy: "© 2026 Risk-place · Business continuity and risk management",
+    footerCopy: "© 2026 Risk-place · Business continuity and risk management · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">part of the risk-place.ru project</a>",
     // Paid session
     "paid-eyebrow": "Personal review · 30 minutes",
     "paid-title": "Your Business Review —<br>A Concrete Result in 30 Minutes",
@@ -2041,6 +2062,6 @@ window.setLang = function(lang){
   }catch(e){}
 })();
 </script>
-<!-- rebuild 2026-08-18 17:26 -->
+<!-- rebuild 2026-08-18 18:51 -->
 </body>
 </html>

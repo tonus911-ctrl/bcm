@@ -142,13 +142,15 @@ body{background:#FFFFFF;color:var(--ink);}
 </style>
 </head>
 <body>
+<!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <button class="uh-burger" id="uhBurger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
     <nav class="uh-nav" id="uhNav"><a href="produkty.html">Products</a><a href="materialy-en.html" class="act">Library</a><a href="slovar-en.html">Glossary</a><a href="o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a><a href="quiz.html">Assessment</a><span class="uh-lang"><a href="materialy.html">RU</a><a href="materialy-en.html" class="act">EN</a></span></nav>
   </div>
 </header>
+<!--/TPL:HEADER-->
 <div class="phero">
   <div class="uw">
     <div class="crumbs"><a href="index.html">Home</a> / Library</div>
@@ -180,6 +182,7 @@ body{background:#FFFFFF;color:var(--ink);}
     <a href="quiz.html">Take the assessment →</a>
   </section>
 </div>
+<!--TPL:FOOTER-->
 <footer class="uf">
   <div class="uf-bar">
     <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
@@ -187,6 +190,7 @@ body{background:#FFFFFF;color:var(--ink);}
     <div class="uf-copy">© 2026 Risk-place · Business continuity and risk management · <a href="https://risk-place.ru" target="_blank" rel="noopener">part of the risk-place.ru project</a></div>
   </div>
 </footer>
+<!--/TPL:FOOTER-->
 <script>
 (function(){
   var b=document.getElementById('uhBurger'),n=document.getElementById('uhNav');

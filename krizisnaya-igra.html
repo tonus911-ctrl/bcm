@@ -32,11 +32,11 @@
 .lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
 .lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#8F8F8F;cursor:pointer;font-family:inherit}
 .lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.phero-sub{font-size:19px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
+.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
 .phero-price{font-size:22px;font-weight:800;color:var(--navy)}
 .psec{padding:34px 0}
-.psec h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--ink);margin:0 0 16px;line-height:1.25}
+.psec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);margin:0 0 16px;line-height:1.25}
 .psec h3{font-size:19px;font-weight:700;color:var(--ink);margin:22px 0 8px}
 .psec p{font-size:17px;color:#26263a;line-height:1.65;margin:0 0 14px}
 .psec ul,.psec ol{margin:0 0 16px 22px;font-size:17px;color:#26263a}
@@ -61,6 +61,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Кризисная бизнес-игра День Икс", "serviceType": "Crisis simulation / tabletop exercise", "description": "Командная симуляция инцидента под отрасль клиента с ведущим.", "provider": {"@type": "Organization", "name": "risk-place.ru"}, "offers": {"@type": "Offer", "price": "150000", "priceCurrency": "RUB"}}</script>
 </head>
 <body>
+<!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
@@ -68,6 +69,7 @@
     <nav class="uh-nav" id="uhNav"><a href="produkty.html" class="act">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="quiz.html">Диагностика</a><span class="uh-lang"><a href="krizisnaya-igra.html" class="act">RU</a><a href="https://risk-place.org/">EN</a></span></nav>
   </div>
 </header>
+<!--/TPL:HEADER-->
 <section class="phero"><div class="uw">
   <div id="heroTxt"><div class="eyebrow" id="heroEyebrow">Командная сессия с ведущим</div><h1 id="heroH1">Кризисная бизнес-игра «День Икс»</h1><p class="phero-sub" id="heroSub">Командная симуляция инцидента под вашу отрасль. Команда вживую принимает решения — а мы показываем, где готовность проседает.</p></div>
   <div class="phero-cta"><span class="phero-price" id="heroPrice">150 000 ₽ / сессия</span><button class="btn btn-yellow np-form" data-prod="Кризисная игра День Икс" data-mode="apply" id="heroBtn">Отправить заявку</button></div>
@@ -78,6 +80,7 @@
 <section class="psec"><div class="container"><div id="s4"><h2>Что вы получите</h2><ul><li>Реальную картину готовности команды к кризису.</li><li>Список конкретных пробелов в плане и процессах.</li><li>Отчет с приоритетными улучшениями.</li><li>Документальное подтверждение проведенных учений (ISO 22301).</li></ul></div></div></section>
 <section class="psec"><div class="container"><div id="s5"><h2>Частые вопросы</h2><div class="faq-q">Сколько человек участвует?</div><p class="faq-a">Оптимально — управленческая команда и ключевые роли. Точный состав обсудим по анкете.</p><div class="faq-q">Сколько длится?</div><p class="faq-a">Обычно 3–4 часа вместе с разбором.</p><div class="faq-q">Нужен ли готовый план непрерывности?</div><p class="faq-a">Нет. Игра полезна и без плана — она покажет, что нужно создать в первую очередь.</p></div></div></section>
 
+<!--TPL:FOOTER-->
 <footer class="uf">
   <div class="uf-bar">
     <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
@@ -85,6 +88,7 @@
     <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener">часть проекта risk-place.ru</a></div>
   </div>
 </footer>
+<!--/TPL:FOOTER-->
 <!-- Yandex.Metrika -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

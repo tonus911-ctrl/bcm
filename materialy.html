@@ -142,21 +142,15 @@ body{background:#FFFFFF;color:var(--ink);}
 </style>
 </head>
 <body>
+<!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <button class="uh-burger" id="uhBurger" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav">
-      <a href="produkty.html">Продукты</a>
-      <a href="materialy.html" class="act">Библиотека</a>
-      <a href="slovar.html">Словарь</a>
-      <a href="o-podhode.html">О нас</a>
-      <a href="index.html#contacts">Контакты</a>
-      <a href="quiz.html">Диагностика</a>
-      <span class="uh-lang"><a href="materialy.html" class="act">RU</a><a href="materialy-en.html">EN</a></span>
-    </nav>
+    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <nav class="uh-nav" id="uhNav"><a href="produkty.html">Продукты</a><a href="materialy.html" class="act">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="quiz.html">Диагностика</a><span class="uh-lang"><a href="materialy.html" class="act">RU</a><a href="materialy-en.html">EN</a></span></nav>
   </div>
 </header>
+<!--/TPL:HEADER-->
 <div class="phero">
   <div class="uw">
     <div class="crumbs"><a href="index.html">Главная</a> / Библиотека</div>
@@ -189,16 +183,15 @@ body{background:#FFFFFF;color:var(--ink);}
     <a href="quiz.html">Пройти диагностику →</a>
   </section>
 </div>
+<!--TPL:FOOTER-->
 <footer class="uf">
   <div class="uf-bar">
     <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <div class="uf-links">
-      <a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="quiz.html">Диагностика</a>
-      <a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a>
-    </div>
-    <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:inherit;">часть проекта risk-place.ru</a></div>
+    <div class="uf-links"><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="quiz.html">Диагностика</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
+    <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener">часть проекта risk-place.ru</a></div>
   </div>
 </footer>
+<!--/TPL:FOOTER-->
 <script>
 (function(){
   var b=document.getElementById('uhBurger'),n=document.getElementById('uhNav');

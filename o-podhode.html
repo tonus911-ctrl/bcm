@@ -43,17 +43,19 @@
 .tcard ul{list-style:none;margin:0;padding:0;text-align:left;}
 .tcard li{font-size:13.5px;color:var(--muted);line-height:1.5;padding:6px 0 6px 14px;position:relative;border-top:1px solid #F0EBDD;}
 .tcard li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:5px;border-radius:50%;background:var(--gold);}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:st;margin:0;padding:0;list-style:none;}
-.steps li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;position:relative;counter-increment:st;}
-.steps li::before{content:counter(st);display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:14px;margin-bottom:10px;}
-.steps b{display:block;font-size:15.5px;color:var(--ink);margin-bottom:4px;}
-.steps span{font-size:13.5px;color:var(--muted);line-height:1.5;}
-.gets{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:0;list-style:none;}
-.gets li{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff;}
-.gets b{display:block;font-size:15px;color:var(--ink);margin-bottom:5px;}
-.gets span{font-size:13.5px;color:var(--muted);line-height:1.5;}
-@media(max-width:960px){.team{grid-template-columns:1fr;}.steps{grid-template-columns:repeat(2,1fr);}.gets{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:620px){.steps,.gets{grid-template-columns:1fr;}}
+.cwrap{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px 28px;margin:26px 0 44px;}
+.cform{max-width:640px;margin-top:8px;}
+.cform input,.cform select,.cform textarea{width:100%;box-sizing:border-box;border:1.5px solid #D8CFB8;border-radius:10px;padding:13px 15px;font-size:15px;font-family:inherit;background:#fff;margin-bottom:12px;color:var(--ink);}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--gold);}
+.cform .clabel{display:block;font-size:13px;font-weight:700;color:var(--navy);margin:0 0 6px;}
+.cform .crow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.cnote{font-size:14.5px;color:#1B6B4A;min-height:20px;margin:6px 0 0;}
+.cnote.err{color:#A3351A;}
+.calt{margin-top:18px;font-size:13.5px;color:var(--muted);}
+.calt a{color:var(--navy);text-decoration:none;font-weight:600;}
+.calt a:hover{text-decoration:underline;}
+@media(max-width:960px){.team{grid-template-columns:1fr;}}
+@media(max-width:560px){.cform .crow{grid-template-columns:1fr;}.cwrap{padding:22px 16px;}}
 </style>
 </head>
 <body>
@@ -62,7 +64,7 @@
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav"><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html" class="act">О нас</a><a href="index.html#contacts">Контакты</a><a href="quiz.html">Диагностика</a><span class="uh-lang"><a href="o-podhode.html" class="act">RU</a><a href="https://risk-place.org/">EN</a></span></nav>
+    <nav class="uh-nav" id="uhNav"><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html" class="act">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="o-podhode.html" class="act">RU</a><a href="https://risk-place.org/">EN</a></span></nav>
   </div>
 </header>
 <!--/TPL:HEADER-->
@@ -119,32 +121,33 @@
     </div>
   </section>
 
-  <section class="tsec">
-    <h2>Как выглядит работа — 4 шага</h2>
-    <ol class="steps">
-      <li><b>Диагностика и BIA</b><span>Определяем критичные процессы и оцениваем каждый в деньгах.</span></li>
-      <li><b>Разработка BCP</b><span>План с конкретными шагами, ролями и сроками восстановления.</span></li>
-      <li><b>Учения и тестирование</b><span>Кабинетные учения и стресс-тесты — что реально работает.</span></li>
-      <li><b>Поддержка и обновление</b><span>Актуализируем систему при изменениях в компании и на рынке.</span></li>
-    </ol>
-  </section>
-
-  <section class="tsec">
-    <h2>Что вы получаете</h2>
-    <ul class="gets">
-      <li><b>Сроки восстановления зафиксированы</b><span>RTO и RPO для каждого критичного процесса.</span></li>
-      <li><b>Риски в деньгах</b><span>Стоимость простоя, утечки, потери поставщика — без абстракций.</span></li>
-      <li><b>Рабочие алгоритмы</b><span>Пошаговые инструкции для каждого сценария.</span></li>
-      <li><b>Обученная команда</b><span>Каждый знает свою роль в кризисе.</span></li>
-      <li><b>Резервные цепочки</b><span>Альтернативные поставщики, логистика, связь.</span></li>
-      <li><b>Соответствие стандартам</b><span>Логика ИСО 22301 и ИСО 27031 — основа для сертификации.</span></li>
-    </ul>
-  </section>
-
-  <section class="pcta" style="margin-top:34px;">
-    <h3>Обсудить вашу задачу</h3>
-    <p>Расскажите о ситуации — предложим формат работы и следующий шаг в течение рабочего дня.</p>
-    <a href="index.html#contacts">Связаться с нами →</a>
+  <section class="tsec" id="contact">
+    <div class="cwrap">
+      <h2>Задайте вопрос или запишитесь на демонстрацию</h2>
+      <p class="sub">Расскажите о вашей задаче — ответим в течение рабочего дня и предложим следующий шаг.</p>
+      <div class="cform">
+        <label class="clabel" for="cf-product">Что вас интересует?</label>
+        <select id="cf-product">
+          <option value="question">Задать вопрос команде</option>
+          <option value="dashboard">Дашборд непрерывности — демонстрация</option>
+          <option value="ergp">Программа ERGP — демонстрация</option>
+          <option value="consulting">Аудит и внедрение — расчет</option>
+        </select>
+        <div class="crow">
+          <input id="cf-name" placeholder="Имя" required>
+          <input id="cf-email" type="email" placeholder="Рабочая почта" required>
+        </div>
+        <input id="cf-org" placeholder="Компания">
+        <textarea id="cf-msg" rows="4" placeholder="Ваш вопрос или удобное время для демонстрации"></textarea>
+        <label style="display:flex;align-items:flex-start;gap:10px;margin:2px 0 14px;cursor:pointer;">
+          <input type="checkbox" id="cf-consent" style="width:20px;height:20px;flex:0 0 20px;margin:2px 0 0;cursor:pointer;accent-color:#1B3A5C;">
+          <span style="font-size:13.5px;line-height:1.5;color:#5B564A;">Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">политики обработки персональных данных</a></span>
+        </label>
+        <button class="btn btn-yellow" id="cf-send" style="font-size:16px;border:none;cursor:pointer;">Отправить</button>
+        <p class="cnote" id="cf-note"></p>
+        <p class="calt">Предпочитаете переписку — <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Телеграм</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
+      </div>
+    </div>
   </section>
 
 </div>
@@ -158,6 +161,42 @@
 </footer>
 <!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<script>
+(function(){
+  var btn=document.getElementById("cf-send");
+  if(!btn)return;
+  btn.addEventListener("click",function(e){
+    e.preventDefault();
+    var note=document.getElementById("cf-note");
+    var email=document.getElementById("cf-email").value.trim();
+    var name=document.getElementById("cf-name").value.trim();
+    if(!name||email.indexOf("@")<0){
+      note.textContent="Заполните имя и рабочую почту.";
+      note.classList.add("err");return;
+    }
+    var cons=document.getElementById("cf-consent");
+    if(cons&&!cons.checked){
+      note.textContent="Отметьте согласие на обработку персональных данных.";
+      note.classList.add("err");return;
+    }
+    var body={type:"demo",product:document.getElementById("cf-product").value,source:"ru",
+      name:name,email:email,org:document.getElementById("cf-org").value.trim(),role:"",
+      message:document.getElementById("cf-msg").value.trim(),lang:"ru",page:"o-podhode"};
+    fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)})
+      .then(function(r){
+        if(!r.ok)throw 0;
+        note.textContent="Спасибо! Ответим в течение рабочего дня и предложим следующий шаг.";
+        note.classList.remove("err");
+        try{ym(110579884,"reachGoal","about_lead_submit");}catch(x){}
+        try{gtag("event","about_lead_submit",{product:body.product});}catch(x){}
+      })
+      .catch(function(){
+        note.textContent="Не получилось отправить. Напишите нам: info@risk-place.ru";
+        note.classList.add("err");
+      });
+  });
+})();
+</script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

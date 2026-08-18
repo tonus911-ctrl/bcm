@@ -196,7 +196,7 @@ body {
   text-decoration: none;
   letter-spacing: 0.02em;
 }
-.logo .logo-place { color: #E05A4E; }
+.logo .logo-place { color: #C9A94E; }
 .logo span { color: var(--cream); }
 .header-contacts {
   display: flex;
@@ -246,7 +246,7 @@ body {
   color: #777;
   transition: background 0.15s, color 0.15s;
 }
-.lang-btn.active { background: var(--cream); color: #000; }
+.lang-btn.active { background: #C9A94E; color: #1E222B; }
 .lang-btn:hover:not(.active) { color: #fff; }
 /* ── Sections ── */
 section { padding: 80px 24px; }
@@ -978,7 +978,7 @@ body, button, input, textarea,
 .header-contacts a:hover{color:#000;}
 #hBookBtn{color:#565A63 !important;}
 .lang-toggle{background:#F5F1E8;}
-.lang-btn{color:#565A63;}
+.lang-btn{color:#D8CFB8;background:transparent;}
 
 .hero{background:#fff;}
 .hero::before{background:#C9A94E;opacity:.20;}
@@ -1306,6 +1306,7 @@ footer{background:#1E222B;}
 
     </div>
 
+    <div style="font-size:15px;color:#565A63;margin-top:26px;" data-ru="Более 100 материалов на русском и английском. Пополняется каждую неделю." data-en="Over 100 materials in Russian and English. Updated every week.">Более 100 материалов на русском и английском. Пополняется каждую неделю.</div>
     <a href="slovar.html" class="meth-gloss">
       <span class="mg-num">69</span>
       <span class="mg-body">
@@ -1347,8 +1348,7 @@ footer{background:#1E222B;}
 
     </div>
 
-    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:32px;padding-top:26px;border-top:1px solid #E3D9C2;">
-      <div style="font-size:15px;color:#565A63;" data-ru="Более 100 материалов на русском и английском. Пополняется каждую неделю." data-en="Over 100 materials in Russian and English. Updated every week.">Более 100 материалов на русском и английском. Пополняется каждую неделю.</div>
+    <div style="display:flex;justify-content:center;margin-top:30px;padding-top:24px;border-top:1px solid #E3D9C2;">
       <a href="materialy.html" style="display:inline-flex;align-items:center;gap:9px;background:#1B3A5C;color:#fff;text-decoration:none;font-size:15.5px;font-weight:700;padding:13px 26px;border-radius:999px;"><span data-ru="Открыть библиотеку" data-en="Open the library">Открыть библиотеку</span><span style="font-size:17px;">→</span></a>
     </div>
 
@@ -1490,7 +1490,7 @@ ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 const LANG = {
   ru: {
     htmlLang: "ru",
-    hLogo: 'risk<span style="color:var(--cream)">-</span>place.ru',
+    hLogo: 'bcm.risk-<span class="logo-place">place</span>.ru',
     hCta: "Связаться",
     hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     siteUrl: "https://bcm.risk-place.ru/",
@@ -1610,7 +1610,7 @@ const LANG = {
       r4h: "Репутационный ущерб", r4d: "Никто не готов — клиенты это видят"}},
   en: {
     htmlLang: "en",
-    hLogo: 'risk<span style="color:var(--cream)">-</span>place.ru',
+    hLogo: 'bcm.risk-<span class="logo-place">place</span>.ru',
     hCta: "Get in Touch",
     hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     siteUrl: "https://bcm.risk-place.ru/",
@@ -2041,6 +2041,6 @@ window.setLang = function(lang){
   }catch(e){}
 })();
 </script>
-<!-- rebuild 2026-08-18 17:14 -->
+<!-- rebuild 2026-08-18 17:26 -->
 </body>
 </html>

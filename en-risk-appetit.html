@@ -31,7 +31,7 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#14142a">
+<meta name="theme-color" content="#1E222B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -121,9 +121,9 @@
 </script>
 <style>
 /* ── Возврат к опорной странице раздела (сателлит) ── */
-.sat-up{background:#F4E7D3;border:1px solid #E0D2B8;border-radius:14px;padding:16px 20px;margin:30px 0 4px;
+.sat-up{background:#F5F1E8;border:1px solid #E3D9C2;border-radius:14px;padding:16px 20px;margin:30px 0 4px;
  display:flex;align-items:baseline;gap:8px 14px;flex-wrap:wrap}
-.sat-up-l{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8A6D2F;flex:0 0 100%}
+.sat-up-l{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#7A5E17;flex:0 0 100%}
 .sat-up a{font-size:15.5px;font-weight:700;color:#1B3A5C;text-decoration:none}
 .sat-up a:hover{text-decoration:underline}
 .sat-up span.sep{color:#B9A985}
@@ -131,11 +131,11 @@
 </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="bar">
-    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
-    <nav class="nav" id="nav"><a href="produkty.html">Products</a><a href="materialy-en.html">Materials</a><a href="o-podhode.html">About us</a><a href="quiz.html">Assessment</a><a href="index.html#contacts">Contacts</a><span class="lang-sw"><a href="risk-appetit.html">RU</a><a href="en-risk-appetit.html" style="background:#14142a;color:#fff;border-color:#14142a">EN</a></span><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Book a review</a></nav>
+<header class="uh">
+  <div class="uh-bar">
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <nav class="uh-nav" id="uhNav"><a href="produkty.html">Products</a><a href="materialy-en.html" class="act">Library</a><a href="slovar-en.html">Glossary</a><a href="o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a><a href="quiz.html">Assessment</a><span class="uh-lang"><a href="risk-appetit.html">RU</a><a href="en-risk-appetit.html" class="act">EN</a></span></nav>
   </div>
 </header>
 <div class="container">
@@ -173,18 +173,11 @@
 </section>
   <section class="related"><div class="related-title">Read next</div><div class="related-grid"><a href="en-sistema-upravleniya-riskami.html" class="related-card"><div class="rc-t">Risk management system →</div><div class="rc-d">A register of 15 risks with named owners, money instead of colour scales.</div></a><a href="en-matrica-riskov.html" class="related-card"><div class="rc-t">Risk matrix →</div><div class="rc-d">Likelihood and impact scales, and how to prioritise what you find.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">5-minute assessment →</div><div class="rc-d">Your resilience level, three main gaps and first steps. Free.</div></a></div></section>
 </div>
-<footer class="site-footer">
-  <div class="bar">
-    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <div class="f-links">
-      <a href="index.html">Home</a>
-      <a href="materialy-en.html">BCM materials</a>
-      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Training &amp; consulting</a>
-      <a href="quiz.html">Assessment</a>
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="oferta.html">Public offer</a>
-    </div>
-    <div class="copy">© 2026 Evgeny Telenkov · BCM · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Risk management training and consulting at risk-place.ru</a></div>
+<footer class="uf">
+  <div class="uf-bar">
+    <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <div class="uf-links"><a href="produkty.html">Products</a><a href="materialy-en.html">Library</a><a href="slovar-en.html">Glossary</a><a href="quiz.html">Assessment</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a></div>
+    <div class="uf-copy">© 2026 Risk-place · Business continuity and risk management · <a href="https://risk-place.ru" target="_blank" rel="noopener">part of the risk-place.ru project</a></div>
   </div>
 </footer>
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>

@@ -31,7 +31,7 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#14142a">
+<meta name="theme-color" content="#1E222B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -121,9 +121,9 @@
 </script>
 <style>
 /* ── Возврат к опорной странице раздела (сателлит) ── */
-.sat-up{background:#F4E7D3;border:1px solid #E0D2B8;border-radius:14px;padding:16px 20px;margin:30px 0 4px;
+.sat-up{background:#F5F1E8;border:1px solid #E3D9C2;border-radius:14px;padding:16px 20px;margin:30px 0 4px;
  display:flex;align-items:baseline;gap:8px 14px;flex-wrap:wrap}
-.sat-up-l{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8A6D2F;flex:0 0 100%}
+.sat-up-l{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#7A5E17;flex:0 0 100%}
 .sat-up a{font-size:15.5px;font-weight:700;color:#1B3A5C;text-decoration:none}
 .sat-up a:hover{text-decoration:underline}
 .sat-up span.sep{color:#B9A985}
@@ -131,11 +131,11 @@
 </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="bar">
-    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
-    <nav class="nav" id="nav"><a href="produkty.html">Продукты</a><a href="materialy.html">Материалы</a><a href="o-podhode.html">О нас</a><a href="quiz.html">Диагностика</a><a href="index.html#contacts">Контакты</a><span class="lang-sw"><a href="risk-appetit.html" style="background:#14142a;color:#fff;border-color:#14142a">RU</a><a href="en-risk-appetit.html">EN</a></span><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a></nav>
+<header class="uh">
+  <div class="uh-bar">
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <nav class="uh-nav" id="uhNav"><a href="produkty.html">Продукты</a><a href="materialy.html" class="act">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="quiz.html">Диагностика</a><span class="uh-lang"><a href="risk-appetit.html" class="act">RU</a><a href="en-risk-appetit.html">EN</a></span></nav>
   </div>
 </header>
 <div class="container">
@@ -177,18 +177,11 @@
 </section>
   <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="sistema-upravleniya-riskami.html" class="related-card"><div class="rc-t">СУР без бюрократии →</div><div class="rc-d">Система управления рисками, которой пользуется руководство: 15 рисков, владельцы, деньги.</div></a><a href="matrica-riskov.html" class="related-card"><div class="rc-t">Матрица рисков →</div><div class="rc-d">Шкалы вероятности и влияния, приоритизация рисков и что с ними делать дальше.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
 </div>
-<footer class="site-footer">
-  <div class="bar">
-    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <div class="f-links">
-      <a href="index.html">Главная</a>
-      <a href="materialy.html">Материалы по BCM</a>
-      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a>
-      <a href="quiz.html">Диагностика</a>
-      <a href="privacy-policy.html">Политика конфиденциальности</a>
-      <a href="oferta.html">Публичная оферта</a>
-    </div>
-    <div class="copy">© 2026 Евгений Теленков · BCM-консалтинг · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Обучение и консалтинг по управлению рисками на risk-place.ru</a></div>
+<footer class="uf">
+  <div class="uf-bar">
+    <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <div class="uf-links"><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="quiz.html">Диагностика</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
+    <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener">часть проекта risk-place.ru</a></div>
   </div>
 </footer>
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>

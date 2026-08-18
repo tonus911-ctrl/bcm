@@ -198,10 +198,10 @@ body {
 }
 .logo .logo-place { color: #C9A94E; }
 .logo { display:inline-flex; align-items:center; gap:10px; }
-.logo .uh-txt { white-space:nowrap; letter-spacing:.02em; }
+.logo .uh-txt { white-space:nowrap; letter-spacing:.02em; color:inherit; }
 .logo-mark { flex:0 0 auto; width:36px; height:36px; border-radius:50%; background:#FFFFFF; border:1.5px solid #C9A94E; display:inline-flex; align-items:center; justify-content:center; overflow:hidden; }
 .logo-mark img { display:block; mix-blend-mode:multiply; }
-.logo span { color: var(--cream); }
+.logo .lp,.logo .logo-place{color:#C9A94E}
 .header-contacts {
   display: flex;
   align-items: center;
@@ -977,7 +977,7 @@ body, button, input, textarea,
 /* ── Light theme (match main site) ── */
 .site-header{background:#fff;border-bottom:1px solid #E3D9C2;}
 .logo{color:#1E222B;}
-.logo span{color:#7A5E17;}
+.logo .lp,.logo .logo-place{color:#C9A94E}
 .header-contacts a{color:#565A63;}
 .header-contacts a:hover{color:#000;}
 #hBookBtn{color:#565A63 !important;}
@@ -2062,6 +2062,6 @@ window.setLang = function(lang){
   }catch(e){}
 })();
 </script>
-<!-- rebuild 2026-08-18 18:51 -->
+<!-- rebuild 2026-08-18 19:07 -->
 </body>
 </html>

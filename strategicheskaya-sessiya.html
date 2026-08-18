@@ -27,7 +27,7 @@
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#14142a">
+<meta name="theme-color" content="#1E222B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -70,11 +70,11 @@
 </script>
 </head>
 <body>
-<header class="site-header">
-  <div class="bar">
-    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
-    <nav class="nav" id="nav"><a href="produkty.html">Продукты</a><a href="materialy.html">Материалы</a><a href="o-podhode.html">О нас</a><a href="quiz.html">Диагностика</a><a href="index.html#contacts">Контакты</a><a href="index.html#contacts" target="_blank" rel="noopener" class="nav-cta">Записаться на разбор</a></nav>
+<header class="uh">
+  <div class="uh-bar">
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <nav class="uh-nav" id="uhNav"><a href="produkty.html" class="act">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="quiz.html">Диагностика</a></nav>
   </div>
 </header>
 <div class="container">
@@ -140,18 +140,11 @@
   </article>
   <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="testirovanie-gotovnosti.html" class="related-card"><div class="rc-t">Тестирование готовности к кризису →</div><div class="rc-d">Методы проверки готовности компании: кабинетные учения, симуляции, технические тесты. С чего начать.</div></a><a href="stress-test-nepreryvnosti.html" class="related-card"><div class="rc-t">Стресс-тест непрерывности за 2 дня →</div><div class="rc-d">Диагностика, стресс-симуляция «шифровальщик» и заключение для ГД с расчетом ущерба в деньгах.</div></a><a href="ucheniya-po-nepreryvnosti.html" class="related-card"><div class="rc-t">Учения по непрерывности →</div><div class="rc-d">Виды учений и как их проводить: кабинетные, симуляции, технические тесты.</div></a></div></section>
 </div>
-<footer class="site-footer">
-  <div class="bar">
-    <a href="index.html" class="logo">risk<span>-</span>place.ru</a>
-    <div class="f-links">
-      <a href="index.html">Главная</a>
-      <a href="materialy.html">Материалы по BCM</a>
-      <a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Обучение и консалтинг</a>
-      <a href="quiz.html">Диагностика</a>
-      <a href="privacy-policy.html">Политика конфиденциальности</a>
-      <a href="oferta.html">Публичная оферта</a>
-    </div>
-    <div class="copy">© 2026 Евгений Теленков · BCM-консалтинг · <a href="https://risk-place.ru" target="_blank" rel="noopener" style="color:#aaa;">Обучение и консалтинг по управлению рисками на risk-place.ru</a></div>
+<footer class="uf">
+  <div class="uf-bar">
+    <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <div class="uf-links"><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="quiz.html">Диагностика</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
+    <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener">часть проекта risk-place.ru</a></div>
   </div>
 </footer>
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>

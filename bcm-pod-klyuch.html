@@ -11,15 +11,15 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BCM под ключ: внедрение непрерывности бизнеса под ключ | risk-place.ru</title>
-<meta name="description" content="Внедрение системы непрерывности бизнеса под ключ: аудит, разработка плана BCP и DRP, кризисные учения и сопровождение. Соответствие ISO 22301. От 300 000 рублей.">
+<title>BCM под ключ: аудит и повышение метрик выживания бизнеса | risk-place.ru</title>
+<meta name="description" content="Проверяем готовность компании к атаке шифровальщика и пожару, затем поднимаем метрики выживания: план BCM и DRP, кабинетный стресс-тест, реестр точек отказа, риск-экономика для финансового директора. От 300 000 рублей, 1-2 месяца.">
 <meta name="author" content="Евгений Теленков">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://bcm.risk-place.ru/bcm-pod-klyuch.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bcm.risk-place.ru/bcm-pod-klyuch.html">
-<meta property="og:title" content="«BCM под ключ» — внедрение непрерывности">
-<meta property="og:description" content="Внедрение системы непрерывности бизнеса под ключ: аудит, разработка плана BCP и DRP, кризисные учения и сопровождение. Соответствие ISO 22301. От 300 000 рублей.">
+<meta property="og:title" content="BCM под ключ: аудит и повышение метрик выживания">
+<meta property="og:description" content="Аудит — треть работы. Две трети — исправления: новые планы, новые договоренности, измеримое восстановление. От 300 000 ₽, 1-2 месяца.">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm.png">
 <meta property="og:site_name" content="risk-place.ru">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -28,36 +28,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
-.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#8F8F8F;cursor:pointer;font-family:inherit}
-.lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* только контентные блоки этой страницы; шапка/герой/футер — из style.css */
 .phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
 .phero-price{font-size:22px;font-weight:800;color:var(--navy)}
-.psec{padding:34px 0}
-.psec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);margin:0 0 16px;line-height:1.25}
-.psec h3{font-size:19px;font-weight:700;color:var(--ink);margin:22px 0 8px}
+.phero-terms{font-size:13.5px;color:var(--muted)}
+.phero-alt{font-size:14.5px;color:var(--navy);text-decoration:none;font-weight:600}
+.phero-alt:hover{text-decoration:underline}
+.psec{padding:34px 0 8px}
+.psec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);margin:0 0 6px;line-height:1.25}
+.psec .sub{font-size:14.5px;color:var(--muted);margin:0 0 20px;max-width:760px;line-height:1.6}
 .psec p{font-size:17px;color:#26263a;line-height:1.65;margin:0 0 14px}
-.psec ul,.psec ol{margin:0 0 16px 22px;font-size:17px;color:#26263a}
-.psec li{margin-bottom:8px}
+/* ценность в цифрах */
+.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:8px 0 6px}
+.val{border:1px solid var(--line);border-radius:14px;padding:20px 18px;background:#fff}
+.val b{display:block;font-size:26px;font-weight:800;color:var(--navy);margin-bottom:6px;line-height:1.1}
+.val span{font-size:13.5px;color:var(--muted);line-height:1.5}
+/* артефакты */
+.arts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0}
+.art{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.art .mk{background:var(--panel);border-bottom:1px solid var(--line);padding:16px 18px;min-height:118px}
+.art .cap{padding:14px 18px 16px}
+.art .cap b{display:block;font-size:16px;color:var(--ink);margin-bottom:4px}
+.art .cap span{font-size:13.5px;color:var(--muted);line-height:1.5}
+.mk .mk-t{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:9px}
+.mk-score{display:flex;align-items:baseline;gap:6px}
+.mk-score b{font-size:34px;font-weight:800;color:var(--navy)}
+.mk-score i{font-style:normal;font-size:14px;color:var(--muted)}
+.mk-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#26263a;padding:5px 0;border-top:1px dashed var(--line)}
+.mk-row:first-of-type{border-top:none}
+.mk-row .n{font-weight:700;color:var(--navy)}
+.mk-row .r{font-weight:700;color:#A3351A}
+.mk-row .g{font-weight:700;color:#1B6B4A}
+.mk-tags{display:flex;flex-wrap:wrap;gap:6px}
+.mk-tags span{font-size:11.5px;padding:4px 9px;border-radius:7px;background:#fff;border:1px solid var(--line);color:#26263a}
+.mk-tags span.hot{background:var(--navy);border-color:var(--navy);color:#fff}
+.mk-axis{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin-top:8px}
+.mk-flow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#26263a}
+.mk-flow b{background:var(--navy);color:#fff;border-radius:7px;padding:5px 9px;font-size:12px;font-weight:700}
+.mk-flow s{text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 9px}
+.mk-flow em{font-style:normal;color:var(--gold-dark);font-weight:800}
+.mk-note{font-size:10.5px;color:var(--muted);margin-top:8px}
+@media(max-width:960px){.vals{grid-template-columns:repeat(2,1fr)}.arts{grid-template-columns:1fr}}
+@media(max-width:520px){.vals{grid-template-columns:1fr}}
+/* шаги */
 .steps{counter-reset:st;list-style:none;margin:0;padding:0}
-.steps li{position:relative;padding:0 0 18px 52px;margin:0}
-.steps li::before{counter-increment:st;content:counter(st);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--yellow);color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
-.steps li b{display:block;font-size:17px;color:var(--ink);margin-bottom:2px}
-.steps li span{font-size:15.5px;color:var(--muted)}
-.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:8px 0}
-.pcard{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fcfcfd}
-.pcard b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
-.pcard span{font-size:14.5px;color:var(--muted);line-height:1.5}
+.steps li{position:relative;padding:0 0 20px 52px;margin:0}
+.steps li::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.steps li b{display:block;font-size:17px;color:var(--ink);margin-bottom:3px}
+.steps li span{font-size:15.5px;color:var(--muted);line-height:1.6}
+/* пример */
+.exbox{border-left:4px solid var(--gold);background:var(--bg-soft);border-radius:0 12px 12px 0;padding:18px 22px;margin:6px 0 10px}
+.exbox b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
+.exbox p{font-size:15.5px;margin:0;color:#26263a;line-height:1.65}
+/* faq */
 .faq-q{font-size:17px;font-weight:700;color:var(--ink);margin:18px 0 6px}
 .faq-a{font-size:16px;color:#26263a;line-height:1.6;margin:0}
+/* финал */
+.final{background:var(--navy);border-radius:18px;padding:38px 34px;margin:36px 0 46px;text-align:center}
+.final h2{font-size:clamp(20px,2.4vw,27px);font-weight:800;color:#fff;margin:0 0 10px;line-height:1.3}
+.final p{font-size:15.5px;color:#C9D4E2;margin:0 0 22px}
+.final .btn{font-size:16px;border:none;cursor:pointer}
+.final .alt{display:block;margin-top:14px;font-size:14px;color:#C9D4E2}
+.final .alt a{color:#fff;font-weight:600}
+/* модалка заявки */
 .modal-ov{display:none;position:fixed;inset:0;background:rgba(20,30,45,.55);z-index:9999;align-items:center;justify-content:center;padding:18px}
 .modal-bx{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative;max-height:92vh;overflow:auto}
 .modal-bx input,.modal-bx textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;font-family:inherit}
 .consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#444;margin:2px 0 16px;cursor:pointer;background:#f7f8fa;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
 .consent input{width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:var(--navy)}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "BCM под ключ", "serviceType": "Business continuity implementation", "description": "Внедрение непрерывности под ключ: аудит, BCP/DRP, учения, сопровождение.", "provider": {"@type": "Organization", "name": "risk-place.ru"}, "offers": {"@type": "Offer", "price": "300000", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "300000", "priceCurrency": "RUB"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "BCM под ключ", "serviceType": "Business continuity implementation", "description": "Аудит готовности к двум критичным сценариям и повышение метрик выживания: план BCM и DRP, стресс-тест, реестр точек отказа, план на 90 дней.", "provider": {"@type": "Organization", "name": "risk-place.ru"}, "offers": {"@type": "Offer", "price": "300000", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "300000", "priceCurrency": "RUB"}}}</script>
 </head>
 <body>
 <!--TPL:HEADER-->
@@ -65,28 +106,159 @@
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav"><a href="produkty.html" class="act">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="bcm-pod-klyuch.html" class="act">RU</a><a href="https://risk-place.org/">EN</a></span></nav>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="produkty.html" class="act">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="bcm-pod-klyuch.html" class="act">RU</a><a href="https://risk-place.org/gap-assessment.html">EN</a></span></nav>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <section class="phero"><div class="uw">
-  <div id="heroTxt"><div class="eyebrow" id="heroEyebrow">Корпоративный проект</div><h1 id="heroH1">«BCM под ключ» — внедрение непрерывности</h1><p class="phero-sub" id="heroSub">Не только обучение, а реальное внедрение: от аудита до работающего плана и учений. При необходимости берем функцию непрерывности на себя.</p></div>
-  <div class="phero-cta"><span class="phero-price" id="heroPrice">от 300 000 ₽</span><button class="btn btn-yellow np-form" data-prod="BCM под ключ (корпоративный пакет)" data-mode="apply" id="heroBtn">Отправить заявку</button></div>
+  <div class="crumbs"><a href="index.html">Главная</a> / <a href="produkty.html">Продукты</a> / BCM под ключ</div>
+  <div class="phero-eyebrow">Продукт · аудит и внедрение · 1-2 месяца</div>
+  <h1>BCM под ключ: аудит и повышение метрик выживания</h1>
+  <p class="phero-sub">Проверяем готовность компании к двум критичным сценариям — атаке шифровальщика и пожару с недоступностью площадки — и затем поднимаем метрики выживания. Аудит — треть работы. Две трети — исправления: новые планы, новые договоренности, измеримое восстановление.</p>
+  <div class="phero-cta">
+    <span class="phero-price">от 300 000 ₽</span>
+    <span class="phero-terms">фиксированный объем · 1-2 месяца · бесплатные исправления включены</span>
+  </div>
+  <div class="phero-cta">
+    <button class="btn btn-yellow np-form" data-prod="BCM под ключ (аудит и внедрение)" data-mode="apply">Отправить заявку</button>
+    <a class="phero-alt" href="quiz.html">Сначала пройти бесплатную диагностику →</a>
+  </div>
 </div></section>
-<section class="psec"><div class="container"><div id="s1"><h2>Кому подойдет</h2><p>Компаниям без своего риск-менеджера и тем, кому нужно соответствие ISO 22301 для контрагентов, банка, биржи или тендера. Мы закрываем весь цикл — от диагностики до внедренной и проверенной системы.</p></div></div></section>
-<section class="psec"><div class="container"><div id="s2"><h2>Этапы работы</h2><ol class="steps"><li><b>Аудит непрерывности</b><span>Оценка зрелости, критичных процессов и уязвимостей.</span></li><li><b>Разработка плана (BCP и DRP)</b><span>Документы под вашу бизнес-модель: роли, сценарии, RTO и RPO.</span></li><li><b>Кризисные учения</b><span>Проверяем план на практике, дорабатываем по результатам.</span></li><li><b>Сопровождение</b><span>Поддерживаем систему в актуальном состоянии при изменениях.</span></li></ol></div></div></section>
-<section class="psec"><div class="container"><div id="s3"><h2>Результат</h2><ul><li>Внедренная система непрерывности, а не документ на полке.</li><li>Соответствие ISO 22301 — основа для контрагентов и сертификации.</li><li>Обученная команда и проведенные учения.</li><li>Снижение реальных потерь от простоя.</li></ul></div></div></section>
-<section class="psec"><div class="container"><div id="s4"><h2>Частые вопросы</h2><div class="faq-q">Сколько длится проект?</div><p class="faq-a">Зависит от масштаба — обсуждаем после аудита. Возможен формат абонемента «непрерывность как услуга».</p><div class="faq-q">Работаете с малым бизнесом?</div><p class="faq-a">Да, объем адаптируется под размер компании и бюджет.</p><div class="faq-q">С чего начать?</div><p class="faq-a">С заявки или бесплатной диагностики — оценим ситуацию и предложим объем.</p></div></div></section>
+
+<section class="psec"><div class="container">
+  <h2>Ценность в цифрах</h2>
+  <div class="vals">
+    <div class="val"><b>7 дней → 2</b><span>типичный простой после шифровальщика, сокращенный проверенным восстановлением — по отраслевой статистике потерь</span></div>
+    <div class="val"><b>6 мес → 1</b><span>перерыв в работе после пожара — наш опыт ведения непрерывности в тяжелой промышленности</span></div>
+    <div class="val"><b>от 300 000 ₽</b><span>программа — против месяцев защищенной выручки; риск-экономику докажем вашему финансовому директору на ваших числах</span></div>
+    <div class="val"><b>2/3</b><span>работы — исправления и рост метрик, а не написание отчета</span></div>
+  </div>
+</div></section>
+
+<section class="psec"><div class="container">
+  <h2>Что вы получаете — артефакты</h2>
+  <p class="sub">Каждый элемент ниже — рабочий документ, который остается у вас. Именно за это вы платите — и именно это увидят совет директоров, страховщик и аудиторы.</p>
+  <div class="arts">
+    <div class="art">
+      <div class="mk"><div class="mk-t">Скор готовности</div>
+        <div class="mk-score"><b>46</b><i>/100</i></div>
+        <div class="mk-row"><span>Трек «Шифровальщик»</span><span class="n">52</span></div>
+        <div class="mk-row"><span>Трек «Пожар»</span><span class="n">41</span></div>
+      </div>
+      <div class="cap"><b>Отчет об аудите готовности</b><span>Ваша позиция по обоим сценариям — честная, в баллах, с тремя самыми громкими пробелами наверху</span></div>
+    </div>
+    <div class="art">
+      <div class="mk"><div class="mk-t">Процесс × влияние</div>
+        <div class="mk-tags"><span>Кадры</span><span>Логистика</span><span class="hot">Продажи</span><span>Финансы</span><span>Юристы</span><span class="hot">ERP</span><span>Закупки</span><span>Админ</span><span class="hot">Склад</span></div>
+        <div class="mk-axis"><span>← слабое влияние</span><span>критично →</span></div>
+      </div>
+      <div class="cap"><b>Карта рисков ключевых процессов</b><span>Какой процесс несет риск какого сценария и сколько стоит один потерянный день — по каждому процессу</span></div>
+    </div>
+    <div class="art">
+      <div class="mk"><div class="mk-t">Единые точки отказа</div>
+        <div class="mk-row"><span>1 поставщик · ключевое сырье</span><span class="r">6 млн ₽/день</span></div>
+        <div class="mk-row"><span>1 система · ERP</span><span class="r">4 млн ₽/день</span></div>
+        <div class="mk-row"><span>1 человек · главный инженер</span><span class="n">риск</span></div>
+        <div class="mk-row"><span>1 маршрут · подъезд к площадке</span><span class="n">риск</span></div>
+      </div>
+      <div class="cap"><b>Реестр единых точек отказа</b><span>Один поставщик, одна система, один человек, одна площадка — найдены, оценены в деньгах, решение по каждому зафиксировано</span></div>
+    </div>
+    <div class="art">
+      <div class="mk"><div class="mk-t">Выручка → EBITDA</div>
+        <div class="mk-flow"><b>Выручка 100</b><s>− себестоимость</s><s>− операционные расходы</s><b>EBITDA 38</b></div>
+        <div class="mk-note">где потерянный день на самом деле режет прибыль</div>
+      </div>
+      <div class="cap"><b>Модель устойчивости «Выручка → EBITDA»</b><span>Как на самом деле делается ваша выручка, какие затраты ее создают и где сбой врезается в прибыль</span></div>
+    </div>
+    <div class="art">
+      <div class="mk"><div class="mk-t">День стресс-теста · журнал</div>
+        <div class="mk-row"><span>T+0 · ERP погас</span><span class="n">старт</span></div>
+        <div class="mk-row"><span>T+40 мин · ручной режим включен</span><span class="g">ок</span></div>
+        <div class="mk-row"><span>T+2 ч · заказы снова идут</span><span class="g">ок</span></div>
+        <div class="mk-row"><span>Находок в журнале</span><span class="n">7</span></div>
+      </div>
+      <div class="cap"><b>Протокол стресс-теста</b><span>Кабинетный день, задокументированный: что сломалось, когда погасли CRM и ERP и закрылась площадка — с таймингами</span></div>
+    </div>
+    <div class="art">
+      <div class="mk"><div class="mk-t">План BCM · DRP</div>
+        <div class="mk-row"><span>1 · Активация и триггеры</span><span class="n">стр. 1</span></div>
+        <div class="mk-row"><span>2 · Роли и полномочия</span><span class="n">стр. 3</span></div>
+        <div class="mk-row"><span>3 · Чек-лист первых часов</span><span class="n">стр. 5</span></div>
+        <div class="mk-row"><span>4 · Восстановление ИТ (DRP)</span><span class="n">стр. 9</span></div>
+      </div>
+      <div class="cap"><b>План непрерывности (BCM) + план восстановления ИТ (DRP)</b><span>Короткие, исполнимые, написанные для вашего худшего дня — а не для полки</span></div>
+    </div>
+    <div class="art">
+      <div class="mk"><div class="mk-t">Схема восстановления</div>
+        <div class="mk-flow"><b>объявить</b><em>→</em><s>обходной режим</s><em>→</em><b>восстановить</b></div>
+        <div class="mk-row" style="margin-top:9px"><span>Цель: возврат к норме</span><span class="n">72 ч</span></div>
+        <div class="mk-row"><span>Владелец каждого шага</span><span class="g">назначен</span></div>
+      </div>
+      <div class="cap"><b>Схема восстановления</b><span>Кто, что и в какой час делает, с какими полномочиями — от сбоя до нормальной работы</span></div>
+    </div>
+    <div class="art">
+      <div class="mk"><div class="mk-t">Метрики выживания · 90 дней</div>
+        <div class="mk-row"><span>Целевое время восстановления (RTO)</span><span class="n">2 дня</span></div>
+        <div class="mk-row"><span>Пожар: перерыв в работе</span><span class="n">1 мес</span></div>
+        <div class="mk-row"><span>Недели 1-2 · бесплатные исправления</span><span class="g">сделано</span></div>
+        <div class="mk-row"><span>Недели 3-12 · план вложений</span><span class="n">экономика</span></div>
+      </div>
+      <div class="cap"><b>Метрики выживания + план на 90 дней</b><span>Метрики, готовые для дашборда, и план их роста — бесплатное исправлено, платное доказано риск-экономикой</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="psec"><div class="container">
+  <h2>Как мы к этому приходим</h2>
+  <ol class="steps">
+    <li><b>Два сценария, выбранные вместе с вами</b><span>По умолчанию — атака шифровальщика и пожар с недоступностью площадки. В зависимости от отрасли заменяем на то, что угрожает именно вам: потеря ключевого поставщика, уход ключевых руководителей, срыв опорного контракта.</span></li>
+    <li><b>Факты и экономика</b><span>Сколько и на чем зарабатывает компания; источники финансирования; концентрация клиентов, поставщиков и подрядчиков; технологическая и сырьевая зависимость; единые точки отказа и узкие места.</span></li>
+    <li><b>Погружение в бизнес-модель</b><span>Как формируется выручка, какие затраты ее создают, как она превращается в EBITDA и чистую прибыль. Планирование непрерывности, пропускающее этот шаг, защищает не то.</span></li>
+    <li><b>Интервью с теми, кто делает деньги</b><span>Находим, кто ключевой на самом деле, как эти люди создают выручку и по каким принципам работают сегодня.</span></li>
+    <li><b>Затем ломаем эти принципы — на бумаге</b><span>Кабинетный стресс-тест: CRM или ERP гаснет, склад или производственный корпус закрыт из-за пожара. В реальности ничего не отключается — но компания проживает этот день в переговорной, а мы в деталях смотрим, на что она способна.</span></li>
+    <li><b>Восстановление, спроектированное вместе</b><span>Схему восстановления строим с вашей командой, а не за нее. Люди исполняют планы, которые помогали писать сами.</span></li>
+    <li><b>Метрики — и их рост</b><span>Внедряем метрики выживания и поднимаем их: новые планы, новые формулировки в договорах, оффлайн-копии, резервные реестры и каналы связи. Все, что чинится бесплатно, чиним вместе сразу; что требует вложений — доказываем риск-экономикой и оставляем вам рабочий план.</span></li>
+  </ol>
+</div></section>
+
+<section class="psec"><div class="container">
+  <div class="exbox">
+    <b>Маленький пример из программы</b>
+    <p>Реестр клиентов живет в CRM — именно ее шифровальщик и зашифрует. Поэтому во время программы мы выгружаем реестр в простой оффлайн-файл, который хранится вне офиса, и договариваемся о резервном канале: Telegram-контакт каждого ключевого клиента, собранный заранее, с готовыми шаблонами сообщений. Стоимость — ноль. Эффект в день X: продажи продолжают говорить с клиентами, пока ИТ восстанавливается. Программа состоит из таких исправлений.</p>
+  </div>
+</div></section>
+
+<section class="psec"><div class="container">
+  <h2>Частые вопросы</h2>
+  <div class="faq-q">Входят ли исправления в цену?</div>
+  <p class="faq-a">Все, что чинится без капитальных затрат, чиним вместе в ходе программы: планы, реестры, резервные каналы, формулировки договоров, тренировки. Меры, требующие вложений, получают обоснование риск-экономикой, доказывающее окупаемость; решение остается за вами.</p>
+  <div class="faq-q">Вы правда отключите наши системы?</div>
+  <p class="faq-a">Нет. Стресс-тест кабинетный: потерю CRM и ERP или закрытие площадки моделируем в структурированном упражнении. Производство не трогаем — но решения, пробелы и тайминги этого дня настоящие.</p>
+  <div class="faq-q">Наш главный риск — не шифровальщик и не пожар. Подойдет ли программа?</div>
+  <p class="faq-a">Да. Два сценария по умолчанию — отправная точка. Для торгового дома это может быть срыв опорного контракта, для семейной компании — уход ключевых руководителей, для производства — потеря ключевого поставщика. Два сценария, которые реально угрожают вам, согласуем на старте.</p>
+  <div class="faq-q">Работаете с малым бизнесом?</div>
+  <p class="faq-a">Да, объем адаптируется под размер компании и бюджет.</p>
+</div></section>
+
+<section><div class="container">
+  <div class="final">
+    <h2>Через два месяца метрики выживания вашей компании могут быть другими числами.</h2>
+    <p>Фиксированный объем, 1-2 месяца, бесплатные исправления включены.</p>
+    <button class="btn btn-yellow np-form" data-prod="BCM под ключ (аудит и внедрение)" data-mode="apply">Отправить заявку</button>
+    <span class="alt">или сначала <a href="quiz.html">пройдите бесплатную диагностику →</a></span>
+  </div>
+</div></section>
 
 <!--TPL:FOOTER-->
 <footer class="uf">
   <div class="uf-bar">
     <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <div class="uf-links"><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="quiz.html">Диагностика</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
+    <div class="uf-links"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
     <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener">часть проекта risk-place.ru</a></div>
   </div>
 </footer>
 <!--/TPL:FOOTER-->
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -115,21 +287,14 @@ ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   </div>
 </div>
 <script>
-var LANG={"nMat": {"ru": "Материалы по BCM", "en": "BCM materials"}, "nProd": {"ru": "Продукты", "en": "Products"}, "nAbout": {"ru": "О нас", "en": "About us"}, "nDiag": {"ru": "Диагностика", "en": "Assessment"}, "nCta": {"ru": "Записаться на разбор", "en": "Book a review"}, "fHome": {"ru": "Главная", "en": "Home"}, "fProd": {"ru": "Продукты", "en": "Products"}, "fMat": {"ru": "Материалы по BCM", "en": "BCM materials"}, "fAbout": {"ru": "О нас", "en": "About us"}, "fPriv": {"ru": "Политика конфиденциальности", "en": "Privacy policy"}, "fCopy": {"ru": "© 2026 Евгений Теленков · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Обучение и консалтинг по управлению рисками на risk-place.ru</a>", "en": "© 2026 Evgeny Telenkov · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Risk management training and consulting at risk-place.ru</a>"}, "heroEyebrow": {"ru": "Корпоративный проект", "en": "Corporate project"}, "heroH1": {"ru": "«BCM под ключ» — внедрение непрерывности", "en": "BCM audit and development"}, "heroSub": {"ru": "Не только обучение, а реальное внедрение: от аудита до работающего плана и учений. При необходимости берем функцию непрерывности на себя.", "en": "Not just training but real implementation: from audit to a working plan and drills. We can take on the continuity function for you."}, "heroPrice": {"ru": "от 300 000 ₽", "en": "from $3,000"}, "heroBtn": {"ru": "Отправить заявку", "en": "Send request"}, "s1": {"ru": "<h2>Кому подойдет</h2><p>Компаниям без своего риск-менеджера и тем, кому нужно соответствие ISO 22301 для контрагентов, банка, биржи или тендера. Мы закрываем весь цикл — от диагностики до внедренной и проверенной системы.</p>", "en": "<h2>Who it is for</h2><p>Companies without an in-house risk manager and those who need ISO 22301 compliance for partners, a bank, an exchange or a tender. We cover the whole cycle — from diagnostics to an implemented and tested system.</p>"}, "s2": {"ru": "<h2>Этапы работы</h2><ol class=\"steps\"><li><b>Аудит непрерывности</b><span>Оценка зрелости, критичных процессов и уязвимостей.</span></li><li><b>Разработка плана (BCP и DRP)</b><span>Документы под вашу бизнес-модель: роли, сценарии, RTO и RPO.</span></li><li><b>Кризисные учения</b><span>Проверяем план на практике, дорабатываем по результатам.</span></li><li><b>Сопровождение</b><span>Поддерживаем систему в актуальном состоянии при изменениях.</span></li></ol>", "en": "<h2>Stages of work</h2><ol class=\"steps\"><li><b>Continuity audit</b><span>Maturity assessment, critical processes and vulnerabilities.</span></li><li><b>Plan development (BCP and DRP)</b><span>Documents for your business model: roles, scenarios, RTO and RPO.</span></li><li><b>Crisis drills</b><span>We test the plan in practice and refine it by the results.</span></li><li><b>Ongoing support</b><span>We keep the system current as the company changes.</span></li></ol>"}, "s3": {"ru": "<h2>Результат</h2><ul><li>Внедренная система непрерывности, а не документ на полке.</li><li>Соответствие ISO 22301 — основа для контрагентов и сертификации.</li><li>Обученная команда и проведенные учения.</li><li>Снижение реальных потерь от простоя.</li></ul>", "en": "<h2>Result</h2><ul><li>An implemented continuity system, not a document on a shelf.</li><li>ISO 22301 compliance — a basis for partners and certification.</li><li>A trained team and completed drills.</li><li>Reduced real downtime losses.</li></ul>"}, "s4": {"ru": "<h2>Частые вопросы</h2><div class=\"faq-q\">Сколько длится проект?</div><p class=\"faq-a\">Зависит от масштаба — обсуждаем после аудита. Возможен формат абонемента «непрерывность как услуга».</p><div class=\"faq-q\">Работаете с малым бизнесом?</div><p class=\"faq-a\">Да, объем адаптируется под размер компании и бюджет.</p><div class=\"faq-q\">С чего начать?</div><p class=\"faq-a\">С заявки или бесплатной диагностики — оценим ситуацию и предложим объем.</p>", "en": "<h2>FAQ</h2><div class=\"faq-q\">How long does the project take?</div><p class=\"faq-a\">It depends on scale — we discuss it after the audit. A \"continuity as a service\" subscription is possible.</p><div class=\"faq-q\">Do you work with small business?</div><p class=\"faq-a\">Yes, the scope adapts to company size and budget.</p><div class=\"faq-q\">Where to start?</div><p class=\"faq-a\">With a request or the free assessment — we will evaluate and propose a scope.</p>"}};
-var currentLang='ru';
-(function(){var ru=['ru','be','kk','ky','uk','uz','tg'];var list=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];var has=list.some(function(L){L=(L||'').toLowerCase();return ru.some(function(x){return L.indexOf(x)===0;});});currentLang=has?'ru':'en';})();
-function setLang(lang){currentLang=lang;document.documentElement.lang=lang;Object.keys(LANG).forEach(function(id){var el=document.getElementById(id);if(el&&LANG[id][lang]!==undefined)el.innerHTML=LANG[id][lang];});var a=document.getElementById('btnRU'),b=document.getElementById('btnEN');if(a)a.classList.toggle('active',lang==='ru');if(b)b.classList.toggle('active',lang==='en');}
-setLang(currentLang);
-(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();
-var FORM_I18N={ru:{headApply:'Заявка на продукт',headWait:'Лист ожидания',subApply:'Оставьте контакты — свяжемся и расскажем детали, поможем оформить.',subWait:'Оставьте контакты — сообщим о старте первыми.',name:'Ваше имя',contact:'Email или телефон / Telegram',comment:'Комментарий (необязательно)',consent:'Я согласен с <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">политикой конфиденциальности</a> и на обработку персональных данных',submitApply:'Отправить заявку',submitWait:'Записаться в лист ожидания',sending:'Отправляем…',ok:'Готово! Мы свяжемся с вами.',err:'Не удалось отправить. Попробуйте еще раз или напишите в Telegram.',need:'Заполните имя и контакт',needConsent:'Подтвердите согласие с политикой'},en:{headApply:'Product request',headWait:'Waitlist',subApply:'Leave your contact — we will reach out with details.',subWait:'Leave your contact — we will tell you about the launch first.',name:'Your name',contact:'Email or phone / Telegram',comment:'Comment (optional)',consent:'I agree to the <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">privacy policy</a> and to the processing of personal data',submitApply:'Send request',submitWait:'Join the waitlist',sending:'Sending…',ok:'Done! We will get in touch.',err:'Could not send. Please try again or message us on Telegram.',need:'Please fill in name and contact',needConsent:'Please confirm consent to the policy'}};
-function fLang(){return currentLang==='en'?'en':'ru';}
-var wlProd='',wlMode='apply';
-function openForm(prod,label,mode){var t=FORM_I18N[fLang()];wlProd=prod;wlMode=mode||'apply';document.getElementById('wlHead').textContent=(wlMode==='wait')?t.headWait:t.headApply;document.getElementById('wlProduct').textContent=label||prod;document.getElementById('wlSub').textContent=(wlMode==='wait')?t.subWait:t.subApply;document.getElementById('wlName').placeholder=t.name;document.getElementById('wlContact').placeholder=t.contact;document.getElementById('wlComment').placeholder=t.comment;document.getElementById('wlConsentText').innerHTML=t.consent;document.getElementById('wlSubmit').textContent=(wlMode==='wait')?t.submitWait:t.submitApply;document.getElementById('wlName').value='';document.getElementById('wlContact').value='';document.getElementById('wlComment').value='';document.getElementById('wlConsent').checked=false;document.getElementById('wlNote').style.display='none';document.getElementById('wlOk').style.display='none';document.getElementById('wlErr').style.display='none';document.getElementById('wlSubmit').disabled=false;document.getElementById('wlOverlay').style.display='flex';document.body.style.overflow='hidden';}
+var FORM_I18N={ru:{headApply:'Заявка на продукт',subApply:'Оставьте контакты — свяжемся и расскажем детали, поможем оформить.',name:'Ваше имя',contact:'Email или телефон / Telegram',comment:'Комментарий (необязательно)',consent:'Я согласен с <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">политикой конфиденциальности</a> и на обработку персональных данных',submitApply:'Отправить заявку',sending:'Отправляем…',ok:'Готово! Мы свяжемся с вами.',err:'Не удалось отправить. Попробуйте еще раз или напишите в Telegram.',need:'Заполните имя и контакт',needConsent:'Подтвердите согласие с политикой'}};
+var wlProd='';
+function openForm(prod,label){var t=FORM_I18N.ru;wlProd=prod;document.getElementById('wlHead').textContent=t.headApply;document.getElementById('wlProduct').textContent=label||prod;document.getElementById('wlSub').textContent=t.subApply;document.getElementById('wlName').value='';document.getElementById('wlContact').value='';document.getElementById('wlComment').value='';document.getElementById('wlConsent').checked=false;document.getElementById('wlNote').style.display='none';document.getElementById('wlOk').style.display='none';document.getElementById('wlErr').style.display='none';document.getElementById('wlSubmit').disabled=false;document.getElementById('wlOverlay').style.display='flex';document.body.style.overflow='hidden';}
 function closeForm(){document.getElementById('wlOverlay').style.display='none';document.body.style.overflow='';}
 document.getElementById('wlClose').addEventListener('click',closeForm);
 document.getElementById('wlOverlay').addEventListener('click',function(e){if(e.target===this)closeForm();});
-document.querySelectorAll('.np-form').forEach(function(b){b.addEventListener('click',function(){var lb=this.getAttribute('data-label-'+fLang())||this.getAttribute('data-label')||this.getAttribute('data-prod');openForm(this.getAttribute('data-prod'),lb,this.getAttribute('data-mode'));});});
-document.getElementById('wlSubmit').addEventListener('click',async function(){var t=FORM_I18N[fLang()];var name=document.getElementById('wlName').value.trim();var contact=document.getElementById('wlContact').value.trim();var comment=document.getElementById('wlComment').value.trim();var consent=document.getElementById('wlConsent').checked;var note=document.getElementById('wlNote'),ok=document.getElementById('wlOk'),err=document.getElementById('wlErr');if(!name||!contact){err.textContent=t.need;err.style.display='block';return;}if(!consent){err.textContent=t.needConsent;err.style.display='block';return;}err.style.display='none';this.disabled=true;note.textContent=t.sending;note.style.display='block';var body={formTitle:(wlMode==='wait')?'Заявка в лист ожидания (новый продукт)':'Заявка на продукт',name:name,company:contact,email:'—',product:wlProd,comment:comment||'—',description:((wlMode==='wait')?'Лист ожидания: ':'Заявка: ')+wlProd,language:fLang().toUpperCase()};try{var res=await fetch('https://risk-place-quiz.tonus911.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});var r=await res.json();if(!res.ok||!r.success)throw new Error('fail');note.style.display='none';ok.textContent=t.ok;ok.style.display='block';setTimeout(closeForm,1600);}catch(e){note.style.display='none';err.textContent=t.err;err.style.display='block';this.disabled=false;}});
+document.querySelectorAll('.np-form').forEach(function(b){b.addEventListener('click',function(){openForm(this.getAttribute('data-prod'),this.getAttribute('data-label')||this.getAttribute('data-prod'));});});
+document.getElementById('wlSubmit').addEventListener('click',async function(){var t=FORM_I18N.ru;var name=document.getElementById('wlName').value.trim();var contact=document.getElementById('wlContact').value.trim();var comment=document.getElementById('wlComment').value.trim();var consent=document.getElementById('wlConsent').checked;var note=document.getElementById('wlNote'),ok=document.getElementById('wlOk'),err=document.getElementById('wlErr');if(!name||!contact){err.textContent=t.need;err.style.display='block';return;}if(!consent){err.textContent=t.needConsent;err.style.display='block';return;}err.style.display='none';this.disabled=true;note.textContent=t.sending;note.style.display='block';var body={formTitle:'Заявка на продукт',name:name,company:contact,email:'—',product:wlProd,comment:comment||'—',description:'Заявка: '+wlProd,language:'RU'};try{var res=await fetch('https://risk-place-quiz.tonus911.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});var r=await res.json();if(!res.ok||!r.success)throw new Error('fail');note.style.display='none';ok.textContent=t.ok;ok.style.display='block';try{ym(110579884,"reachGoal","bcm_pod_klyuch_lead");}catch(x){}try{gtag("event","bcm_pod_klyuch_lead",{});}catch(x){}setTimeout(closeForm,1600);}catch(e){note.style.display='none';err.textContent=t.err;err.style.display='block';this.disabled=false;}});
 </script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /test.html
+Disallow: /*.dc.html
+Disallow: /spasibo-pokupka.html
 
 Sitemap: https://bcm.risk-place.ru/sitemap.xml

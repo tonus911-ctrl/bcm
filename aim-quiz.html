@@ -100,6 +100,7 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:var(--bg);color:v
 .t4{background:#e8f0ff}.t4 .result-title-big,.t4 .result-sub{color:#0d3870}.t4 .level-badge{background:#2980b9;color:#fff}.t4-c{color:#2980b9}
 .t5{background:#eafaf1}.t5 .result-title-big,.t5 .result-sub{color:#0e5230}.t5 .level-badge{background:#27ae60;color:#fff}.t5-c{color:#27ae60}
 </style>
+<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm.png">
 </head>
 <body>
 
@@ -670,7 +671,7 @@ function skipForm() {
   showResults();
 }
 
-// Надёжная отправка в воркер: до 3 попыток с нарастающей паузой — защита от разовых
+// Надежная отправка в воркер: до 3 попыток с нарастающей паузой — защита от разовых
 // сетевых сбоев и «холодного старта» воркера сразу после деплоя.
 async function postWorker(body, tries) {
   tries = tries || 3;
@@ -704,7 +705,7 @@ async function sendSkippedNotification() {
     recommendations: finalSteps,
     answers: buildSummary()
   };
-  // Надёжно, с повторами (см. postWorker). Ошибку пользователю не показываем.
+  // Надежно, с повторами (см. postWorker). Ошибку пользователю не показываем.
   await postWorker(body);
 }
 

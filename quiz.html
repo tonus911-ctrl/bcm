@@ -781,7 +781,7 @@ async function postWorker(body, tries) {
   var payload = JSON.stringify(body);
   for (var i = 0; i < tries; i++) {
     try {
-      var res = await fetch("https://risk-place-quiz.tonus911.workers.dev", {
+      var res = await fetch("https://ergp.risk-place.org/api/lead", {
         method: "POST", headers: { "Content-Type": "text/plain" },
         body: payload, keepalive: true
       });

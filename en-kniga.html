@@ -201,7 +201,7 @@ var ru=['ru','be','kk','ky','uk','uz','tg'];
 async function postWorker(body, tries){
   tries=tries||3; var payload=JSON.stringify(body);
   for(var i=0;i<tries;i++){
-    try{var res=await fetch("https://risk-place-quiz.tonus911.workers.dev",{method:"POST",headers:{"Content-Type":"text/plain"},body:payload,keepalive:true});if(res&&res.ok)return res;}catch(e){}
+    try{var res=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"text/plain"},body:payload,keepalive:true});if(res&&res.ok)return res;}catch(e){}
     if(i<tries-1)await new Promise(function(r){setTimeout(r,800*(i+1));});
   }
   return null;

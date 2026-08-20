@@ -57,14 +57,14 @@
 .pcard b{display:block;font-size:16px;color:var(--ink);margin-bottom:5px;line-height:1.3}
 .pcard span{font-size:14px;color:var(--muted);line-height:1.5}
 /* модули */
-.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0}
-.modx{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
+.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0;align-items:stretch}
+.modx{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;display:flex;flex-direction:column;height:100%}
 .modx-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:9px}
 .modx .n{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
 .modx h3{font-size:17px;font-weight:800;color:var(--ink);margin:0;line-height:1.3;font-family:'Figtree','Inter',Arial,sans-serif}
 .modx .chp{font-size:12.5px;color:var(--gold-dark);font-weight:700}
 .modx .desc{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0 0 12px}
-.modx .art{background:var(--panel);border-radius:10px;padding:11px 13px;font-size:13.5px;color:#26263a;line-height:1.45}
+.modx .art{background:var(--panel);border-radius:10px;padding:11px 13px;font-size:13.5px;color:#26263a;line-height:1.45;margin-top:auto}
 .modx .art b{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:3px}
 @media(max-width:900px){.modgrid,.pcards{grid-template-columns:1fr}}
 /* шаги проверки знаний */
@@ -120,6 +120,15 @@
 .faq-a{font-size:15px;color:#26263a;line-height:1.6;margin:0;max-width:none}
 .faq-a a{color:var(--navy);font-weight:600}
 @media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
+/* последняя секция перед футером — воздух */
+.psec:last-of-type{padding-bottom:56px}
+/* директор программы */
+.dirbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 26px;margin:8px 0 2px;display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start}
+.dirbox img{width:120px;height:120px;border-radius:50%;object-fit:cover;display:block}
+.dirbox .dn{font-size:19px;font-weight:800;color:var(--ink);display:block;margin-bottom:3px;font-family:'Figtree','Inter',Arial,sans-serif}
+.dirbox .dr{font-size:13.5px;color:var(--gold-dark);font-weight:700;display:block;margin-bottom:10px}
+.dirbox p{font-size:15.5px;color:#26263a;line-height:1.65;margin:0;max-width:74ch}
+@media(max-width:640px){.dirbox{grid-template-columns:1fr;gap:16px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"ERGP — Enterprise Resilience Governance Professional","description":"Онлайн-курс и сертификация по управлению устойчивостью бизнеса: 6 модулей, 123 главы, тесты с проходным баллом, итоговая работа с разбором и именной сертификат с уникальным номером.","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"},"offers":{"@type":"Offer","price":"19900","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -148,9 +157,9 @@
     </div>
     <div class="phero-cta">
       <a class="btn btn-dark" href="#demo">Запросить демонстрацию по Zoom</a>
-      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Купить доступ · 19 900 ₽</a>
+      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Программа и сертификация · 19 900 ₽</a>
     </div>
-    <p class="phero-note"><b>После оплаты доступ придет на вашу почту в течение 24 часов.</b> Email вы укажете на странице оплаты.</p>
+    <p class="phero-note"><b>После оплаты письмо с входом в программу придет на вашу почту в течение 24 часов.</b> Email вы укажете на странице оплаты.</p>
   </div>
 </div>
 
@@ -241,6 +250,18 @@
   </div>
 </div></section>
 
+<section class="psec"><div class="uw">
+  <h2>Директор программы</h2>
+  <div class="dirbox">
+    <img src="exp-telenkov.jpg" alt="Евгений Теленков" width="460" height="460" loading="lazy">
+    <div>
+      <span class="dn">Евгений Теленков</span>
+      <span class="dr">Кандидат экономических наук · «Лучший риск-менеджер России 2020» (РусРиск)</span>
+      <p>Пятнадцать лет во главе риск-функций крупных компаний. В «Норникеле» построил непрерывность бизнеса с нуля — более 20 планов непрерывности. Директор по рискам нефтехимического мегапроекта стоимостью 20 млрд долларов (АГХК, СИБУР) с более чем 200 индикаторами строительных рисков. Риск-консалтинг в Ernst &amp; Young, риск-менеджмент в «Билайн» и «Роснефти». Заместитель председателя технического комитета 010 «Менеджмент риска» Росстандарта. Подготовил более 300 специалистов.</p>
+    </div>
+  </div>
+</div></section>
+
 <section class="psec" id="demo"><div class="uw">
   <h2>Посмотрите курс изнутри</h2>
   <div class="demo-wrap">
@@ -275,12 +296,12 @@
     <div class="price-card">
       <div class="price-big">19 900 ₽</div>
       <ul>
-        <li>Доступ ко всем 6 модулям, 123 главам и обновлениям</li>
+        <li>Все 6 модулей и 123 главы программы, с обновлениями — доступ к материалам на 6 месяцев</li>
         <li>Шесть тестов и итоговая работа с разбором на онлайн-встрече</li>
         <li>Именной сертификат ERGP с уникальным номером</li>
       </ul>
-      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Купить доступ · 19 900 ₽</a>
-      <p class="prnote">После оплаты доступ придет на вашу почту в течение 24 часов — email вы укажете на странице оплаты.</p>
+      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Программа и сертификация · 19 900 ₽</a>
+      <p class="prnote">После оплаты письмо с входом в программу придет на вашу почту в течение 24 часов — email вы укажете на странице оплаты.</p>
     </div>
     <div class="org-card">
       <b>Для организаций</b>
@@ -294,7 +315,7 @@
   <h2>Частые вопросы</h2>
   <div class="faq-grid">
     <div><div class="faq-q">Что такое ERGP?</div><p class="faq-a">ERGP — Enterprise Resilience Governance Professional, онлайн-курс и сертификация по управлению устойчивостью бизнеса. Название международное, потому что программа издается на трех языках и выходит также для международного рынка.</p></div>
-    <div><div class="faq-q">Сколько времени занимает курс?</div><p class="faq-a">Вы проходите программу ERGP в своем темпе — старт в любой день. Доступ не сгорает: возвращайтесь к главам и тестам, когда удобно.</p></div>
+    <div><div class="faq-q">Сколько времени занимает курс?</div><p class="faq-a">Вы проходите программу ERGP в своем темпе, старт в любой день. Доступ к материалам открыт 6 месяцев с даты оплаты — этого хватает с запасом, чтобы пройти все шесть модулей, ответить на вопросы самопроверки и вернуться к нужным главам перед итоговой работой.</p></div>
     <div><div class="faq-q">Что за сертификат я получу?</div><p class="faq-a">Именной сертификат ERGP с уникальным номером — сертификат risk-place о прохождении программы, это не государственный документ. Его ценность — в проверке знаний, которая за ним стоит: шесть тестов и разбор итоговой работы. Подлинность проверяется по номеру.</p></div>
     <div><div class="faq-q">Чем ERGP отличается от вебинаров и однодневных курсов?</div><p class="faq-a">Это системная программа с проверкой знаний, а не запись лекций: после каждой части — самопроверка, после каждого модуля — тест, в конце — итоговая работа с разбором на онлайн-встрече.</p></div>
     <div><div class="faq-q">Можно ли пройти командой?</div><p class="faq-a">Да, есть групповой доступ для команды. Напишите нам — обсудим формат и условия.</p></div>

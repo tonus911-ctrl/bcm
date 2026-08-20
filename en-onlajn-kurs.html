@@ -56,14 +56,14 @@
 .pcard b{display:block;font-size:16px;color:var(--ink);margin-bottom:5px;line-height:1.3}
 .pcard span{font-size:14px;color:var(--muted);line-height:1.5}
 /* модули */
-.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0}
-.modx{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
+.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0;align-items:stretch}
+.modx{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;display:flex;flex-direction:column;height:100%}
 .modx-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:9px}
 .modx .n{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
 .modx h3{font-size:17px;font-weight:800;color:var(--ink);margin:0;line-height:1.3;font-family:'Figtree','Inter',Arial,sans-serif}
 .modx .chp{font-size:12.5px;color:var(--gold-dark);font-weight:700}
 .modx .desc{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0 0 12px}
-.modx .art{background:var(--panel);border-radius:10px;padding:11px 13px;font-size:13.5px;color:#26263a;line-height:1.45}
+.modx .art{background:var(--panel);border-radius:10px;padding:11px 13px;font-size:13.5px;color:#26263a;line-height:1.45;margin-top:auto}
 .modx .art b{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:3px}
 @media(max-width:900px){.modgrid,.pcards{grid-template-columns:1fr}}
 /* шаги проверки знаний */
@@ -119,6 +119,13 @@
 .faq-a{font-size:15px;color:#26263a;line-height:1.6;margin:0;max-width:none}
 .faq-a a{color:var(--navy);font-weight:600}
 @media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
+.psec:last-of-type{padding-bottom:56px}
+.dirbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 26px;margin:8px 0 2px;display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start}
+.dirbox img{width:120px;height:120px;border-radius:50%;object-fit:cover;display:block}
+.dirbox .dn{font-size:19px;font-weight:800;color:var(--ink);display:block;margin-bottom:3px;font-family:'Figtree','Inter',Arial,sans-serif}
+.dirbox .dr{font-size:13.5px;color:var(--gold-dark);font-weight:700;display:block;margin-bottom:10px}
+.dirbox p{font-size:15.5px;color:#26263a;line-height:1.65;margin:0;max-width:74ch}
+@media(max-width:640px){.dirbox{grid-template-columns:1fr;gap:16px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"ERGP \u2014 Enterprise Resilience Governance Professional","description":"Online course and certification in business resilience governance for teams operating in Russia: 6 modules, 123 chapters, module tests, a final assignment with an expert review and a personal numbered certificate.","inLanguage":"en","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"},"offers":{"@type":"Offer","price":"19900","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -147,9 +154,9 @@
     </div>
     <div class="phero-cta">
       <a class="btn btn-dark" href="#demo">Request a Zoom demo</a>
-      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Buy access · 19,900 RUB</a>
+      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Course and certification · 19,900 RUB</a>
     </div>
-    <p class="phero-note"><b>After payment, access is sent to your email within 24 hours.</b> You enter the email on the payment page.</p>
+    <p class="phero-note"><b>After payment, your enrolment email arrives within 24 hours.</b> You enter the email on the payment page.</p>
   </div>
 </div>
 
@@ -237,6 +244,18 @@
   </div>
 </div></section>
 
+<section class="psec"><div class="uw">
+  <h2>Programme Director</h2>
+  <div class="dirbox">
+    <img src="exp-telenkov.jpg" alt="Evgeny Telenkov" width="460" height="460" loading="lazy">
+    <div>
+      <span class="dn">Evgeny Telenkov</span>
+      <span class="dr">PhD in Economics · Best Risk Manager of the Year 2020 (RusRisk)</span>
+      <p>Fifteen years leading risk functions in large companies. Built business continuity from zero at Nornickel — more than 20 continuity plans. Chief Risk Officer of a $20bn petrochemical megaproject (AGCC, SIBUR) with over 200 construction risk indicators. Risk consulting at Ernst &amp; Young, risk management at Beeline and Rosneft. Deputy chair of Technical Committee 010 "Risk Management" at Rosstandart. Has prepared more than 300 specialists.</p>
+    </div>
+  </div>
+</div></section>
+
 <section class="psec" id="demo"><div class="uw">
   <h2>See the course from the inside</h2>
   <div class="demo-wrap">
@@ -271,12 +290,12 @@
     <div class="price-card">
       <div class="price-big">19,900 RUB</div>
       <ul>
-        <li>Access to all 6 modules, 123 chapters and future updates</li>
+        <li>All 6 modules and 123 chapters, with programme updates — 6 months of access</li>
         <li>Six tests and the final assignment with an expert review online</li>
         <li>Personal ERGP certificate with a unique number</li>
       </ul>
-      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Buy access · 19,900 RUB</a>
-      <p class="prnote">After payment, access is sent to your email within 24 hours — you enter the email on the payment page.</p>
+      <a class="btn btn-yellow" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Course and certification · 19,900 RUB</a>
+      <p class="prnote">After payment, your enrolment email arrives within 24 hours — you enter the email on the payment page.</p>
     </div>
     <div class="org-card">
       <b>For organisations</b>
@@ -291,7 +310,7 @@
   <div class="faq-grid">
     <div><div class="faq-q">What is ERGP?</div><p class="faq-a">ERGP stands for Enterprise Resilience Governance Professional — an online course and certification in business resilience governance. This edition is written in English for the Russian market.</p></div>
     <div><div class="faq-q">How is this different from the risk-place.org edition?</div><p class="faq-a">Same discipline, different market. This edition is priced in roubles and built around the standards Russian entities are audited against, including GOST R ISO 22301. The <a href="https://risk-place.org/resilience-governance-certificate.html" target="_blank" rel="noopener">risk-place.org edition</a> is built for the Gulf, around NCEMA and central bank requirements there.</p></div>
-    <div><div class="faq-q">How long does the course take?</div><p class="faq-a">You work through ERGP at your own pace and start any day. Access does not expire: come back to chapters and tests whenever it suits you.</p></div>
+    <div><div class="faq-q">How long does the course take?</div><p class="faq-a">You work through ERGP at your own pace and start any day. Access to the materials runs for 6 months from payment — enough to complete all six modules, work through the self-checks and revisit chapters before the final assignment.</p></div>
     <div><div class="faq-q">What kind of certificate will I get?</div><p class="faq-a">A personal ERGP certificate with a unique number — a risk-place certificate of completion, not a state document. Its value is the assessment behind it: six tests and a reviewed final assignment. Authenticity is verified by number.</p></div>
     <div><div class="faq-q">How is this different from webinars and one-day courses?</div><p class="faq-a">It is a systematic programme with assessment, not a recording of lectures: a self-check after each part, a test after each module, and a final assignment reviewed with an expert.</p></div>
     <div><div class="faq-q">Can we take it as a team?</div><p class="faq-a">Yes, team access is available. Write to us and we will agree the format and terms.</p></div>

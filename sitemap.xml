@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/bcm-bcp-drp-otlichie.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -396,7 +396,7 @@
     <priority>0.3</priority>
   </url>
 
-<url><loc>https://bcm.risk-place.ru/onivd-ponivd.html</loc><lastmod>2026-07-18</lastmod></url>
+<url><loc>https://bcm.risk-place.ru/onivd-ponivd.html</loc><lastmod>2026-08-21</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/zashchita-ot-shifrovalshchika.html</loc><lastmod>2026-07-18</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/zashchita-ot-kiberatak.html</loc><lastmod>2026-07-18</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/strahovanie-pereryvov-premiya.html</loc><lastmod>2026-07-18</lastmod></url>
@@ -481,4 +481,130 @@
 <url><loc>https://bcm.risk-place.ru/en-produkty.html</loc><lastmod>2026-08-20</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-o-podhode.html</loc><lastmod>2026-08-20</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html</loc><lastmod>2026-08-20</lastmod></url>
+  <url>
+    <loc>https://bcm.risk-place.ru/dashboard-demo.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-bcm-dlya-soveta-direktorov.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-bia-analiz-vozdeystviya.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-kak-izmerit-ustojchivost-biznesa.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-kri-i-kpi.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-matrica-riskov.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-nepreryvnost-biznesa.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-operacionnaya-ustojchivost.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-plan-deystviy-pri-kiberatake.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-plan-nepreryvnosti-biznesa.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-risk-appetit.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-strahovanie-pereryvov-premiya.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-tri-linii-zashchity.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-ucheniya-po-nepreryvnosti.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/en-zashchita-ot-shifrovalshchika.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/index.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/oferta.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/strategicheskaya-sessiya.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/test.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/yandex_0b19594c1c84a83f.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcm.risk-place.ru/Дашборд непрерывности бизнеса - светлая.dc.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

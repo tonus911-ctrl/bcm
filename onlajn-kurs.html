@@ -129,6 +129,26 @@
 .dirbox .dr{font-size:13.5px;color:var(--gold-dark);font-weight:700;display:block;margin-bottom:10px}
 .dirbox p{font-size:15.5px;color:#26263a;line-height:1.65;margin:0;max-width:74ch}
 @media(max-width:640px){.dirbox{grid-template-columns:1fr;gap:16px}}
+
+/* --- живые скриншоты курса --- */
+.shots{max-width:980px;margin:0 auto}
+.shots-lang{display:flex;align-items:center;gap:10px;background:var(--panel);border:1.5px solid var(--gold);border-radius:10px;padding:11px 16px;margin:0 0 14px;font-size:15px;color:var(--ink)}
+.shots-lang b{color:var(--gold-dark)}
+.shots .frame{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(30,34,43,.08)}
+.shots .frame img{display:block;width:100%;height:auto;cursor:zoom-in}
+.shots .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(30,34,43,.75);color:#fff;font-size:20px;cursor:pointer;line-height:1}
+.shots .nav:hover{background:var(--gold-dark)}
+.shots .prev{left:12px}.shots .next{right:12px}
+.shots .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 4px 0;flex-wrap:wrap}
+.shots .capt{font-size:14.5px;color:var(--muted)}
+.shots .dots{display:flex;gap:7px}
+.shots .dots button{width:10px;height:10px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0}
+.shots .dots button.on{background:var(--gold-dark)}
+.shots .hint{font-size:12.5px;color:#8A8478}
+.slbox{display:none;position:fixed;inset:0;background:rgba(30,34,43,.93);z-index:200;overflow:auto;padding:30px 16px;text-align:center}
+.slbox.open{display:block}
+.slbox img{max-width:min(96vw,1700px);width:100%;height:auto;border-radius:8px;cursor:zoom-out}
+.slbox .x{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:34px;cursor:pointer;line-height:1}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"ERGP — Enterprise Resilience Governance Professional","description":"Онлайн-курс и сертификация по управлению устойчивостью бизнеса: 6 модулей, 123 главы, тесты с проходным баллом, итоговая работа с разбором и именной сертификат с уникальным номером.","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"},"offers":{"@type":"Offer","price":"19900","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -262,11 +282,62 @@
   </div>
 </div></section>
 
+
+<section class="psec" id="shots"><div class="uw">
+  <h2>Живые скриншоты курса</h2>
+  <p style="font-size:16px;color:var(--muted);max-width:76ch;margin:6px 0 18px">Это не рекламные картинки, а настоящие главы программы — ровно так их видит участник: авторский текст, схемы и вопросы для самопроверки.</p>
+  <div class="shots">
+    <div class="shots-lang"><span>🌐</span><span><b>Главы на скриншотах показаны в английской редакции.</b> Программа полностью доступна и в русской редакции — весь текст, тесты и итоговая работа.</span></div>
+    <div class="frame">
+      <img id="csImg" src="assets/course-shots/shot1.jpg" alt="Живой скриншот курса ERGP" loading="lazy">
+      <button class="nav prev" onclick="csGo(-1)" aria-label="Назад">‹</button>
+      <button class="nav next" onclick="csGo(1)" aria-label="Вперед">›</button>
+    </div>
+    <div class="bar">
+      <span class="capt" id="csCap">Базовый словарь: риск, непрерывность, кризис, устойчивость</span>
+      <span class="dots" id="csDots"><button data-i="0" class="on" aria-label="1"></button><button data-i="1" aria-label="2"></button><button data-i="2" aria-label="3"></button><button data-i="3" aria-label="4"></button><button data-i="4" aria-label="5"></button></span>
+      <span class="hint">Нажмите на скриншот, чтобы увеличить</span>
+    </div>
+  </div>
+</div></section>
+<div class="slbox" id="csBox" onclick="csClose(event)"><button class="x" onclick="csClose(event)" aria-label="Закрыть">×</button><img id="csBig" alt=""></div>
+<script>
+var csI=0, csN=5, csCaps=["Базовый словарь: риск, непрерывность, кризис, устойчивость","Заявление об аппетите к риску: структура и формулировки","Роль директора по рискам: мандат, независимость, отношения","Зрелость управления устойчивостью и самооценка","Чтение незнакомой юрисдикции — разбор на примере"];
+function csDraw(){
+  document.getElementById('csImg').src='assets/course-shots/shot'+(csI+1)+'.jpg';
+  document.getElementById('csImg').alt=csCaps[csI];
+  document.getElementById('csCap').textContent=csCaps[csI];
+  var ds=document.getElementById('csDots').children;
+  for(var k=0;k<ds.length;k++){ds[k].className=(k===csI)?'on':'';}
+}
+function csGo(d){csI=(csI+d+csN)%csN;csDraw();try{ym(110579884,'reachGoal','course_shots');}catch(e){}}
+document.getElementById('csDots').addEventListener('click',function(e){
+  var i=e.target.getAttribute('data-i'); if(i!==null){csI=parseInt(i,10);csDraw();}
+});
+document.getElementById('csImg').addEventListener('click',function(){
+  document.getElementById('csBig').src='assets/course-shots/shot'+(csI+1)+'-full.jpg';
+  document.getElementById('csBig').alt=csCaps[csI];
+  document.getElementById('csBox').classList.add('open');
+  document.body.style.overflow='hidden';
+  try{ym(110579884,'reachGoal','course_shots_zoom');}catch(e){}
+});
+function csClose(e){
+  if(e.target.id==='csBig')return;
+  document.getElementById('csBox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(document.getElementById('csBox').classList.contains('open') && e.key==='Escape'){
+    document.getElementById('csBox').classList.remove('open');document.body.style.overflow='';
+  }
+});
+</script>
+
 <section class="psec" id="demo"><div class="uw">
   <h2>Посмотрите курс изнутри</h2>
   <div class="demo-wrap">
     <div>
-      <p>За 20 минут по Zoom покажем программу ERGP изнутри и ответим на ваши вопросы. На демонстрации вы увидите:</p>
+      <p>Скриншоты выше — статичные. За 20 минут по Zoom покажем программу ERGP вживую и ответим на ваши вопросы. На демонстрации вы увидите:</p>
       <ul>
         <li>главы и вопросы для самопроверки;</li>
         <li>тесты модулей и проходной балл;</li>

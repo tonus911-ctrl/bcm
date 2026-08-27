@@ -39,14 +39,19 @@
    тонкими линиями, нумерация в отдельной колонке, две заливки на всю
    страницу — блок демонстрации и врезка о директоре программы. */
 
+/* Абзацы с классом внутри .uw пишем как «.uw p.класс». Правило «.uw p»
+   весит класс плюс тег и перебивает одиночный класс, из-за чего кегль и
+   отступы такого абзаца молча обнуляются. Проверено 27.08.2026 на подписи
+   под кнопками: она прилипала к ним, сколько бы пикселей ей ни задавали. */
+
 /* ── шапка страницы ── */
 .phero{background:var(--panel);border-bottom:1px solid var(--line);padding:6px 0 30px}
 .phero h1{font-size:clamp(21px,2.2vw,26px);font-weight:800;line-height:1.2;margin:0 0 10px;color:var(--ink)}
 .phero-eyebrow{font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);margin:18px 0 10px}
-.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
+.uw p.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
-.phero-note b{color:var(--ink);font-weight:700}
+.uw p.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
+.uw p.phero-note b{color:var(--ink);font-weight:700}
 .crumbs{font-size:13.5px;color:var(--muted);padding:16px 0 0}
 .crumbs a{color:var(--muted);text-decoration:none}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
@@ -129,13 +134,13 @@
 
 /* ── сертификат ── */
 .certimg{display:block;width:100%;height:auto;border:1px solid var(--line)}
-.certcap{font-size:13.5px;line-height:1.5;color:var(--muted);margin:10px 0 0}
+.uw p.certcap{font-size:13.5px;line-height:1.5;color:var(--muted);margin:10px 0 0}
 .verify{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
 .vtitle{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
 .vrow{display:flex;gap:10px;flex-wrap:wrap}
 .vrow .fld{flex:1 1 240px;width:auto}
-.vans{display:none;font-size:13.5px;line-height:1.55;color:#26263a;margin:12px 0 0}
-.vans a{color:var(--navy);font-weight:600}
+.uw p.vans{display:none;font-size:13.5px;line-height:1.55;color:#26263a;margin:12px 0 0}
+.uw p.vans a{color:var(--navy);font-weight:600}
 
 /* ── скриншоты курса ── */
 .shots{max-width:980px}
@@ -159,9 +164,9 @@
 .consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
 .consent a{color:var(--navy);font-weight:600}
 .demo .pill{width:100%}
-.msg-ok{display:none;font-size:15px;font-weight:600;color:#1B6B4A;margin:12px 0 0;text-align:center}
-.msg-err{display:none;font-size:13.5px;color:#A3351A;margin:12px 0 0;text-align:center}
-.msg-note{display:none;font-size:13.5px;color:var(--muted);margin:12px 0 0;text-align:center}
+.uw p.msg-ok{display:none;font-size:15px;font-weight:600;color:#1B6B4A;margin:12px 0 0;text-align:center}
+.uw p.msg-err{display:none;font-size:13.5px;color:#A3351A;margin:12px 0 0;text-align:center}
+.uw p.msg-note{display:none;font-size:13.5px;color:var(--muted);margin:12px 0 0;text-align:center}
 
 /* ── стоимость ── */
 .price{font-size:30px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
@@ -193,9 +198,9 @@
 .tariff .who{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:8px}
 .tariff .sum{font-size:30px;font-weight:800;color:var(--navy);line-height:1.15}
 .tariff .per{font-size:13.5px;color:var(--muted);margin:2px 0 10px}
-.tariff .ex{font-size:15px;line-height:1.55;color:#26263a}
-.tariff .ex b{font-weight:700;color:var(--ink)}
-.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:76ch}
+.uw .tariff p.ex{font-size:15px;line-height:1.55;color:#26263a}
+.uw .tariff p.ex b{font-weight:700;color:var(--ink)}
+.uw p.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:76ch}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"SAFE — культура безопасности и оценка рисков на рабочем месте","description":"Корпоративная программа для всех сотрудников: 5 модулей, 30 глав, схемы, тесты и именной сертификат.","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"},"offers":{"@type":"Offer","price":"5000","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -500,7 +505,7 @@ var csI = 0, csN = 4, csCaps = [
   "Как складывается происшествие и где его останавливает человек",
   "Две половины одной защиты: что делает компания и что делаете вы",
   "Что вам обязаны дать до начала работы",
-  "Пять действий, которые никто не сделает за вас"];
+  "Что зависит только от вас: разбор пяти обязанностей"];
 function csDraw(){
   document.getElementById('csImg').src = 'assets/safe-shots/shot' + (csI + 1) + '.jpg';
   document.getElementById('csCap').textContent = csCaps[csI];

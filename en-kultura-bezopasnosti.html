@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SAFE — safety culture and workplace risk assessment</title>
 <meta name="description" content="SAFE is a corporate programme on safety culture for every employee: 5 modules, 30 chapters, diagrams, tests and a personal certificate. From 5,000 ₽ per person, on a phone, nothing to install.">
+<meta name="author" content="Евгений Теленков">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/kultura-bezopasnosti.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-kultura-bezopasnosti.html">
@@ -24,7 +25,7 @@
 <meta property="og:description" content="A corporate programme for the entire workforce: 5 modules, 30 chapters, tests and a personal certificate. From 5,000 ₽ per person.">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm.png">
 <meta property="og:site_name" content="risk-place.ru">
-<meta property="og:locale" content="en_GB">
+<meta property="og:locale" content="ru_RU">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#1E222B">
@@ -33,109 +34,173 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ТОЛЬКО контентные блоки этой страницы. Шапка, герой, ширина, футер — из style.css */
-.psec{padding:34px 0 8px}
-.psec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);margin:0 0 8px;line-height:1.25;font-family:'Figtree','Inter',Arial,sans-serif}
-.psec p{font-size:17px;color:#26263a;line-height:1.65;margin:0 0 14px;max-width:900px}
-.psec ul,.psec ol{margin:0 0 16px 22px;font-size:17px;color:#26263a}
-.psec li{margin-bottom:8px}
-/* герой */
-.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
+/* ТОЛЬКО контентные блоки этой страницы. Шапка, ширина, подвал — из style.css.
+   Оформление по макету от 27.08.2026: без карточек и рамок, разделение
+   тонкими линиями, нумерация в отдельной колонке, две заливки на всю
+   страницу — блок демонстрации и врезка о директоре программы. */
+
+/* Абзацы с классом внутри .uw пишем как «.uw p.класс». Правило «.uw p»
+   весит класс плюс тег и перебивает одиночный класс, из-за чего кегль и
+   отступы такого абзаца молча обнуляются. Проверено 27.08.2026 на подписи
+   под кнопками: она прилипала к ним, сколько бы пикселей ей ни задавали. */
+
+/* ── шапка страницы ── */
+.phero{background:var(--panel);border-bottom:1px solid var(--line);padding:6px 0 30px}
+.phero h1{font-size:clamp(21px,2.2vw,26px);font-weight:800;line-height:1.2;margin:0 0 10px;color:var(--ink)}
+.phero-eyebrow{font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);margin:18px 0 10px}
+.uw p.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.phero-note{font-size:13.5px;color:var(--muted);margin:14px 0 0;max-width:760px}
-.phero-note b{color:var(--ink)}
-.facts{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 0}
+.uw p.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
+.uw p.phero-note b{color:var(--ink);font-weight:700}
+.crumbs{font-size:13.5px;color:var(--muted);padding:16px 0 0}
+.crumbs a{color:var(--muted);text-decoration:none}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
 .fact{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
 .fact b{display:block;font-size:19px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
-.fact span{font-size:12.5px;color:var(--muted);line-height:1.45}
-@media(max-width:900px){.facts{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.facts{grid-template-columns:1fr}}
-/* для кого */
-.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:6px 0}
-.pcard{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
-.pcard b{display:block;font-size:16px;color:var(--ink);margin-bottom:5px;line-height:1.3}
-.pcard span{font-size:14px;color:var(--muted);line-height:1.5}
-/* модули */
-.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0;align-items:stretch}
-.modx{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;display:flex;flex-direction:column;height:100%}
-.modx-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:9px}
-.modx .n{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
-.modx h3{font-size:17px;font-weight:800;color:var(--ink);margin:0;line-height:1.3;font-family:'Figtree','Inter',Arial,sans-serif}
-.modx .chp{font-size:12.5px;color:var(--gold-dark);font-weight:700}
-.modx .desc{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0 0 12px}
-.modx .art{background:var(--panel);border-radius:10px;padding:11px 13px;font-size:13.5px;color:#26263a;line-height:1.45;margin-top:auto}
-.modx .art b{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:3px}
-@media(max-width:900px){.modgrid,.pcards{grid-template-columns:1fr}}
-/* шаги проверки знаний */
-.steps{counter-reset:st;list-style:none;margin:0;padding:0}
-.steps li{position:relative;padding:0 0 18px 52px;margin:0}
-.steps li::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
-.steps li b{display:block;font-size:16.5px;color:var(--ink);margin-bottom:2px}
-.steps li span{font-size:15px;color:var(--muted);line-height:1.6}
-/* сертификат */
-.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin:8px 0}
-.cert-frame{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
-.cert-frame img{display:block;width:100%;height:auto}
-.cert-cap{font-size:12.5px;color:var(--muted);margin:8px 0 0}
-.cert-points{list-style:none;margin:0 0 18px;padding:0}
-.cert-points li{position:relative;padding:0 0 12px 20px;font-size:15px;color:var(--muted);line-height:1.55}
-.cert-points li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
-.cert-points b{color:var(--ink);font-weight:700}
-.cert-verify{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
-.cv-title{font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:10px}
-.cert-row{display:flex;gap:10px;flex-wrap:wrap}
-.cert-row input{flex:1 1 200px;border:1.5px solid #D8CFB8;border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink)}
-.cert-row input:focus{outline:none;border-color:var(--gold)}
-.cert-ans{display:none;font-size:14px;color:#26263a;line-height:1.55;margin-top:12px}
-.cert-ans a{color:var(--navy);font-weight:600}
-@media(max-width:900px){.cert-grid{grid-template-columns:1fr}}
-/* демонстрация */
-.demo-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 26px;margin:8px 0 10px}
-.demo-wrap ul{margin:0 0 0 20px;font-size:15.5px;color:var(--muted)}
-.demo-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
-.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.demo-box input,.demo-box textarea{width:100%;box-sizing:border-box;border:1.5px solid #D8CFB8;border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit;background:#fff;margin-bottom:10px;color:var(--ink)}
-.demo-box input:focus,.demo-box textarea:focus{outline:none;border-color:var(--gold)}
-.demo-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#5B564A;line-height:1.5;margin:2px 0 14px;cursor:pointer}
-.demo-consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
-.demo-consent a{color:var(--navy);font-weight:600}
-@media(max-width:900px){.demo-wrap,.demo-grid{grid-template-columns:1fr}}
-/* стоимость */
-.price-wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;margin:8px 0}
-.price-card{border:1px solid var(--line);border-radius:16px;padding:24px;background:#fff}
-.price-big{font-size:30px;font-weight:800;color:var(--navy);margin-bottom:12px}
-.price-card ul{list-style:none;margin:0 0 18px;padding:0}
-.price-card li{position:relative;padding:0 0 9px 20px;font-size:15px;color:var(--muted);line-height:1.5}
-.price-card li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
-.prnote{font-size:12.5px;color:var(--muted);margin:12px 0 0;line-height:1.5}
-.org-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-.org-card b{display:block;font-size:16px;color:var(--ink);margin-bottom:8px}
-.org-card p{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0 0 10px;max-width:none}
-.org-card a{color:var(--navy);font-weight:600}
-@media(max-width:900px){.price-wrap{grid-template-columns:1fr}}
-/* вопросы */
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:6px 0}
-.faq-q{font-size:16.5px;font-weight:700;color:var(--ink);margin:0 0 6px;line-height:1.3}
-.faq-a{font-size:15px;color:#26263a;line-height:1.6;margin:0;max-width:none}
-.faq-a a{color:var(--navy);font-weight:600}
-@media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
-.psec:last-of-type{padding-bottom:56px}
-.dirbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 26px;margin:8px 0 2px;display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start}
-.dirbox img{width:120px;height:120px;border-radius:50%;object-fit:cover;display:block}
-.dirbox .dn{font-size:19px;font-weight:800;color:var(--ink);display:block;margin-bottom:3px;font-family:'Figtree','Inter',Arial,sans-serif}
-.dirbox .dr{font-size:13.5px;color:var(--gold-dark);font-weight:700;display:block;margin-bottom:10px}
-.dirbox p{font-size:15.5px;color:#26263a;line-height:1.65;margin:0;max-width:74ch}
-@media(max-width:640px){.dirbox{grid-template-columns:1fr;gap:16px}}
+.fact span{font-size:13.5px;color:var(--muted);line-height:1.45}
 
+/* ── общее для разделов ── */
+.psec{padding:46px 0 0}
+.psec:last-of-type{padding-bottom:64px}
+/* ── текст и списки: правила висят на контейнере .uw, а не на классе
+   раздела. Иначе блоки со своим классом (демонстрация, врезка о директоре)
+   выпадают из правил и попадают под глобальный сброс отступов. ── */
+.uw h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 16px}
+.uw p{font-size:16px;line-height:1.65;color:#26263a;margin:0 0 14px;max-width:76ch;text-wrap:pretty}
+.uw p:last-child{margin-bottom:0}
+.uw p.sub{color:var(--muted)}
+.uw p.note{font-size:13.5px;line-height:1.55;color:var(--muted)}
+
+/* Маркер всегда заходит под текст абзаца сверху, а не встает с ним на одну
+   линию. Отступ содержимого 28px, маркер живет внутри этого поля. */
+.uw ul,.uw ol{margin:0 0 14px;padding-left:28px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
+.uw ul:last-child,.uw ol:last-child{margin-bottom:0}
+.uw li{margin-bottom:10px}
+.uw li:last-child{margin-bottom:0}
+.uw li b{font-weight:700;color:var(--ink)}
+
+/* Стык абзаца и списка: полстроки воздуха, чтобы перечисление не слипалось
+   со строкой, которая его вводит. Полстроки при кегле 16 и интерлиньяже
+   1.65 — это 13px, задаем в долях строки, чтобы держалось при любом кегле. */
+.uw p + ul,.uw p + ol{margin-top:.5lh}
+.uw ul + p,.uw ol + p{margin-top:.5lh}
+@supports not (margin-top: 1lh){
+  .uw p + ul,.uw p + ol,.uw ul + p,.uw ol + p{margin-top:13px}
+}
+
+/* Общее правило раздела: два смысловых куска внутри блока никогда не стоят
+   вплотную, между ними минимум полстроки. Сетка тарифов, колонки, плитки
+   фактов и подписи под ними подчиняются тому же закону, что абзац и список.
+   Селекторы с тегом p подняты по весу, иначе их перебивает .uw p. */
+.uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify,.uw .dgrid{margin-bottom:.5lh}
+.uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
+.uw p.tnote,.uw p.note,.uw p.certcap{margin-top:.5lh}
+@supports not (margin-top: 1lh){
+  .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify,.uw .dgrid{margin-bottom:11px}
+  .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
+  .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:11px}
+}
+
+/* ── строки с номером: модули программы и ступени проверки знаний ── */
+.numrow{display:grid;grid-template-columns:72px 1fr;gap:20px}
+.numrow .num{font-size:17px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em}
+.mods .numrow{padding:22px 0;border-top:1px solid var(--line)}
+.mods h3{font-size:17px;font-weight:700;color:var(--ink);margin:0 0 6px;line-height:1.35}
+.mods h3 span{font-weight:400;color:var(--muted)}
+.mods p{font-size:16px;line-height:1.6;margin:0;max-width:74ch}
+.art{font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:8px}
+.art b{font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark)}
+.steps .numrow{padding:0 0 18px}
+.steps .numrow:last-child{padding:0}
+.steps b{display:block;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.steps .t{font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* ── две колонки, схлопываются сами по ширине ── */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;align-items:start}
+
+/* ── кнопки ── */
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;
+  border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;font-family:inherit}
+.pill-navy{background:var(--navy);color:#fff}
+.pill-gold{background:var(--gold);color:var(--ink)}
+.pill:hover{opacity:.9}
+.pill-navy:hover,.pill-gold:hover{color:inherit}
+.pill-navy:hover{color:#fff}
+
+/* ── поля ввода ── */
+.fld{border:1.5px solid #D8CFB8;border-radius:10px;padding:12px 14px;font-size:15px;
+  background:#fff;color:var(--ink);font-family:inherit;width:100%}
+.fld:focus{outline:none;border-color:var(--gold)}
+
+/* ── сертификат ── */
+.certimg{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.uw p.certcap{font-size:13.5px;line-height:1.5;color:var(--muted);margin:10px 0 0}
+.verify{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.vtitle{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
+.vrow{display:flex;gap:10px;flex-wrap:wrap}
+.vrow .fld{flex:1 1 240px;width:auto}
+.uw p.vans{display:none;font-size:13.5px;line-height:1.55;color:#26263a;margin:12px 0 0}
+.uw p.vans a{color:var(--navy);font-weight:600}
+
+/* ── скриншоты курса ── */
+.shots{max-width:980px}
+.shot{display:block;width:100%;height:auto;border:1px solid var(--line);cursor:zoom-in}
+.shotbar{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;padding:14px 0 0}
+.shotbar .cap{font-size:15px;line-height:1.5;color:#26263a}
+.shotnav{display:flex;align-items:baseline;gap:16px;white-space:nowrap}
+.shotnav button{background:none;border:none;padding:0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);font-family:inherit}
+.shotnav .n{font-size:13.5px;color:var(--muted)}
+.slbox{display:none;position:fixed;inset:0;background:rgba(30,34,43,.93);z-index:200;overflow:auto;padding:30px 16px;text-align:center}
+.slbox.open{display:block}
+.slbox img{max-width:min(96vw,1700px);width:100%;height:auto;cursor:zoom-out}
+.slbox .x{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:34px;
+  cursor:pointer;line-height:1;padding:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+
+/* ── демонстрация: полоса с заливкой на всю ширину ── */
+.demo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin:46px 0 0}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.uw textarea.fld{margin-top:10px;resize:vertical}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 16px;cursor:pointer}
+.consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
+.consent a{color:var(--navy);font-weight:600}
+.demo .pill{width:100%}
+.uw p.msg-ok{display:none;font-size:15px;font-weight:600;color:#1B6B4A;margin:12px 0 0;text-align:center}
+.uw p.msg-err{display:none;font-size:13.5px;color:#A3351A;margin:12px 0 0;text-align:center}
+.uw p.msg-note{display:none;font-size:13.5px;color:var(--muted);margin:12px 0 0;text-align:center}
+
+/* ── стоимость ── */
+.price{font-size:30px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
+.orgt{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+
+/* ── директор программы: врезка с заливкой ── */
+.dirsec{background:var(--panel);border-top:1px solid var(--line);padding:46px 0 52px;margin:46px 0 0}
+.dir{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
+.dir img{flex:0 0 112px;width:112px;height:112px;border-radius:50%;object-fit:cover;display:block}
+.dir .body{flex:1 1 420px}
+.dir .nm{display:block;font-size:19px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.dir .rl{display:block;font-size:13.5px;font-weight:700;color:var(--gold-dark);margin-bottom:12px}
+
+/* ── вопросы ── */
+.faq{padding:18px 0;border-top:1px solid var(--line)}
+.faq .q{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 4px;line-height:1.35}
+.faq p{margin:0}
+
+@media(max-width:560px){
+  .numrow{grid-template-columns:44px 1fr;gap:12px}
+  .psec{padding:34px 0 0}
+  .demo,.dirsec{padding:34px 0}
+}
+
+/* ── тарифы: три ступени по числу участников ── */
 .tariffs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:6px 0 0}
 .tariff{border-top:2px solid var(--line);padding:18px 0 0}
 .tariff.pick{border-top-color:var(--gold)}
 .tariff .who{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:8px}
 .tariff .sum{font-size:30px;font-weight:800;color:var(--navy);line-height:1.15}
 .tariff .per{font-size:13.5px;color:var(--muted);margin:2px 0 10px}
-.tariff .ex{font-size:15px;line-height:1.55;color:#26263a}
-.tariff .ex b{font-weight:700;color:var(--ink)}
-.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:76ch}
+.uw .tariff p.ex{font-size:15px;line-height:1.55;color:#26263a}
+.uw .tariff p.ex b{font-weight:700;color:var(--ink)}
+.uw p.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:76ch}
 </style>
 </head>
 <body>
@@ -397,14 +462,14 @@
     var name=v('dmName'),email=v('dmEmail'),org=v('dmOrg'),role=v('dmRole'),msg=v('dmMsg');
     var note=document.getElementById('dmNote'),ok=document.getElementById('dmOk'),err=document.getElementById('dmErr');
     ok.style.display='none';
-    if(!name||!email||!org||!role){err.textContent='Please fill in your name, email, organisation and role';err.style.display='block';return;}
-    if(!document.getElementById('dmConsent').checked){err.textContent='Please tick the consent box to send the request';err.style.display='block';return;}
+    if(!name||!email||!org||!role){err.textContent='Fill in your name, email, company and role';err.style.display='block';return;}
+    if(!document.getElementById('dmConsent').checked){err.textContent='Please confirm consent to personal data processing';err.style.display='block';return;}
     err.style.display='none';this.disabled=true;note.textContent='Sending…';note.style.display='block';
-    var body={type:'demo',product:'safe',source:'ru',name:name,email:email,org:org,role:role,message:msg||'',lang:'en',page:'en-safe'};
+    var body={type:'demo',product:'safe',source:'ru',name:name,email:email,org:org,role:role,message:msg||'',lang:'ru',page:'ru-safe'};
     try{
       var res=await fetch('https://ergp.risk-place.org/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       if(!res.ok)throw new Error('fail');
-      note.style.display='none';ok.textContent='Thank you — we will reply by email and suggest a time';ok.style.display='block';
+      note.style.display='none';ok.textContent='Thank you, we will reply by email and suggest a time';ok.style.display='block';
       try{ym(110579884,'reachGoal','safe_request');}catch(e){}
       try{gtag('event','safe_request');}catch(e){}
     }catch(e){
@@ -421,5 +486,35 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<script>
+/* карусель скриншотов: пять снимков, подпись и лайтбокс */
+var csI = 0, csN = 4, csCaps = [
+  "How an incident builds up, and where a person stops it",
+  "Two halves of one defence: what the company does and what you do",
+  "What you must be given before work starts",
+  "What depends on you alone: five duties explained"];
+function csDraw(){
+  document.getElementById('csImg').src = 'assets/safe-shots/shot' + (csI + 1) + '.jpg';
+  document.getElementById('csCap').textContent = csCaps[csI];
+  document.getElementById('csNum').textContent = (csI + 1) + ' of ' + csN;
+}
+function csGo(d){ csI = (csI + d + csN) % csN; csDraw(); }
+function csOpen(){
+  document.getElementById('csBig').src = 'assets/safe-shots/shot' + (csI + 1) + '-full.jpg';
+  document.getElementById('csBox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function csClose(e){
+  if (e && e.target && e.target.id === 'csBig') return;
+  document.getElementById('csBox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') csClose();
+  else if (e.key === 'ArrowLeft') csGo(-1);
+  else if (e.key === 'ArrowRight') csGo(1);
+});
+csDraw();
+</script>
 </body>
 </html>

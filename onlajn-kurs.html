@@ -57,22 +57,31 @@
 /* ── общее для разделов ── */
 .psec{padding:46px 0 0}
 .psec:last-of-type{padding-bottom:64px}
-.psec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 16px}
-.psec p{font-size:16px;line-height:1.65;color:#26263a;margin:0 0 14px;max-width:76ch;text-wrap:pretty}
-.psec p:last-child{margin-bottom:0}
-.psec p.sub{color:var(--muted)}
-.psec p.note{font-size:13.5px;line-height:1.55;color:var(--muted)}
+/* ── текст и списки: правила висят на контейнере .uw, а не на классе
+   раздела. Иначе блоки со своим классом (демонстрация, врезка о директоре)
+   выпадают из правил и попадают под глобальный сброс отступов. ── */
+.uw h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 16px}
+.uw p{font-size:16px;line-height:1.65;color:#26263a;margin:0 0 14px;max-width:76ch;text-wrap:pretty}
+.uw p:last-child{margin-bottom:0}
+.uw p.sub{color:var(--muted)}
+.uw p.note{font-size:13.5px;line-height:1.55;color:var(--muted)}
 
-/* ── списки: одно правило на всю страницу ──
-   Маркер всегда заходит под текст абзаца сверху, а не встает с ним на одну
-   линию. Отступ содержимого 28px, маркер живет внутри этого поля.
-   Правило привязано к контейнеру .uw, а не к разделу, иначе списки в
-   блоках с заливкой остаются без отступа. */
+/* Маркер всегда заходит под текст абзаца сверху, а не встает с ним на одну
+   линию. Отступ содержимого 28px, маркер живет внутри этого поля. */
 .uw ul,.uw ol{margin:0 0 14px;padding-left:28px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
 .uw ul:last-child,.uw ol:last-child{margin-bottom:0}
 .uw li{margin-bottom:10px}
 .uw li:last-child{margin-bottom:0}
 .uw li b{font-weight:700;color:var(--ink)}
+
+/* Стык абзаца и списка: полстроки воздуха, чтобы перечисление не слипалось
+   со строкой, которая его вводит. Полстроки при кегле 16 и интерлиньяже
+   1.65 — это 13px, задаем в долях строки, чтобы держалось при любом кегле. */
+.uw p + ul,.uw p + ol{margin-top:.5lh}
+.uw ul + p,.uw ol + p{margin-top:.5lh}
+@supports not (margin-top: 1lh){
+  .uw p + ul,.uw p + ol,.uw ul + p,.uw ol + p{margin-top:13px}
+}
 
 /* ── строки с номером: модули программы и ступени проверки знаний ── */
 .numrow{display:grid;grid-template-columns:72px 1fr;gap:20px}
@@ -325,7 +334,7 @@
 </div></section>
 
 <section class="demo" id="demo"><div class="uw">
-  <h2 style="font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 20px">Посмотрите курс изнутри</h2>
+  <h2 style="margin-bottom:20px">Посмотрите курс изнутри</h2>
   <div class="duo">
     <div>
       <p>Скриншоты выше — статичные. За 20 минут по Zoom покажем программу ERGP вживую и ответим на ваши вопросы. На демонстрации вы увидите:</p>
@@ -392,7 +401,7 @@
 </div></section>
 
 <section class="dirsec"><div class="uw">
-  <h2 style="font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 20px">Директор программы</h2>
+  <h2 style="margin-bottom:20px">Директор программы</h2>
   <div class="dir">
     <img src="exp-telenkov.jpg" alt="Евгений Теленков" width="460" height="460" loading="lazy">
     <div class="body">

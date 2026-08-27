@@ -19,50 +19,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Figtree','Inter',Arial,sans-serif;background:#eef1f5;color:#14142a;line-height:1.5}
+body{font-family:'Figtree','Inter',Arial,sans-serif;background:#eef1f5;color:#1E222B;line-height:1.5}
 a{color:#1B3A5C}
-.top{background:#14142a;color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top{background:#1E222B;color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .top .logo{color:#fff;font-weight:800;text-decoration:none}
 .top .logo span{color:#ffec89}
 .top .right{display:flex;align-items:center;gap:14px}
-.top a.back{color:#cfd3e0;text-decoration:none;font-size:14px}
+.top a.back{color:#cfd3e0;text-decoration:none;font-size:15px}
 .lang{display:inline-flex;gap:4px}
 .lang button{background:none;border:1px solid #44465e;color:#aab;border-radius:7px;padding:4px 9px;font-size:12px;font-weight:700;cursor:pointer}
-.lang button.active{background:#ffec89;color:#14142a;border-color:#ffec89}
+.lang button.active{background:#ffec89;color:#1E222B;border-color:#ffec89}
 .wrap{max-width:1280px;margin:0 auto;padding:22px 20px 60px}
 .demo-note{background:#fff7e0;border:1px solid #f0e2b0;border-radius:12px;padding:10px 16px;font-size:13.5px;color:#6b5a1a;margin-bottom:18px}
 .head{display:flex;gap:22px;flex-wrap:wrap;align-items:stretch;margin-bottom:18px}
 .card{background:#fff;border:1px solid #e2e5ea;border-radius:16px;padding:20px 22px}
 .company{flex:1;min-width:280px}
 .company h1{font-size:22px;margin-bottom:4px}
-.company .sub{color:#6b6f80;font-size:14px;margin-bottom:14px}
-.company .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;font-size:14px}
+.company .sub{color:#6b6f80;font-size:15px;margin-bottom:14px}
+.company .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;font-size:15px}
 .company .facts b{color:#1B3A5C}
 .gaugebox{width:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .gauge{width:160px;height:160px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:conic-gradient(#e6a817 0 68%,#e7e9ee 68% 100%)}
 .gauge .inner{width:120px;height:120px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.gauge .num{font-size:40px;font-weight:800;color:#14142a;line-height:1}
+.gauge .num{font-size:34px;font-weight:800;color:#1E222B;line-height:1}
 .gauge .of{font-size:13px;color:#8a8f9e}
 .gaugebox .band{margin-top:10px;font-weight:800;color:#b9791a}
 .gaugebox .prev{font-size:13px;color:#8a8f9e;margin-top:2px}
 .verdict{background:linear-gradient(180deg,#1B3A5C,#16324f);color:#fff;border-radius:16px;padding:20px 24px;margin-bottom:22px}
 .verdict h2{font-size:19px;margin-bottom:6px}
 .verdict p{color:#d6dcea;font-size:15px}
-.verdict .tag{display:inline-block;background:#e6a817;color:#14142a;font-weight:800;font-size:13px;border-radius:999px;padding:3px 12px;margin-bottom:8px}
-h2.sec{font-size:18px;margin:26px 0 12px}
+.verdict .tag{display:inline-block;background:#e6a817;color:#1E222B;font-weight:800;font-size:13px;border-radius:999px;padding:3px 12px;margin-bottom:8px}
+h2.sec{font-size:19px;margin:26px 0 12px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
 .kpi{background:#fff;border:1px solid #e2e5ea;border-radius:14px;padding:14px 16px;border-left:4px solid #1B3A5C}
 .kpi-red{border-left-color:#d0392b}.kpi-amber{border-left-color:#e6a817}.kpi-green{border-left-color:#1a9e57}.kpi-navy{border-left-color:#1B3A5C}
-.kpi-v{font-size:24px;font-weight:800;color:#14142a}
+.kpi-v{font-size:24px;font-weight:800;color:#1E222B}
 .kpi-sub{font-size:12px;font-weight:600;color:#9096a5}
 .kpi-l{font-size:13px;color:#6b6f80;margin-top:3px}
 .bar-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-.bar-lbl{flex:0 0 260px;font-size:14.5px}
+.bar-lbl{flex:0 0 260px;font-size:15px}
 .bar-track{flex:1;height:12px;background:#e7e9ee;border-radius:999px;overflow:hidden}
 .bar-fill{height:100%;border-radius:999px}
 .bar-red{background:#d0392b}.bar-amber{background:#e6a817}.bar-green{background:#1a9e57}
-.bar-val{flex:0 0 34px;text-align:right;font-weight:800;font-size:14px}
-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e2e5ea;border-radius:14px;overflow:hidden;font-size:14px}
+.bar-val{flex:0 0 34px;text-align:right;font-weight:800;font-size:15px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e2e5ea;border-radius:14px;overflow:hidden;font-size:15px}
 th,td{padding:11px 14px;text-align:left;border-bottom:1px solid #eef0f3}
 th{background:#f6f8fb;font-weight:700;color:#485}
 th{color:#334}
@@ -72,13 +72,13 @@ td.c,th.c{text-align:center}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
 .dot-red{background:#d0392b}.dot-amber{background:#e6a817}.dot-green{background:#1a9e57}
 .defs{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:8px}
-.def{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e5ea;border-radius:12px;padding:10px 14px;font-size:14px}
+.def{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e5ea;border-radius:12px;padding:10px 14px;font-size:15px}
 .def-mark{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;flex:0 0 24px}
 .def-ok .def-mark{background:#1a9e57}.def-warn .def-mark{background:#e6a817}.def-bad .def-mark{background:#d0392b}
 .def-txt{flex:1}
 .def-st{font-size:12px;font-weight:700;color:#8a8f9e}
 .cta{background:#fff;border:1px solid #e2e5ea;border-radius:16px;padding:22px;margin-top:26px;text-align:center}
-.cta a{display:inline-block;background:#ffec89;color:#14142a;font-weight:800;text-decoration:none;border-radius:10px;padding:12px 24px;margin-top:8px}
+.cta a{display:inline-block;background:#ffec89;color:#1E222B;font-weight:800;text-decoration:none;border-radius:10px;padding:12px 24px;margin-top:8px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 @media(max-width:820px){.grid2{grid-template-columns:1fr}.bar-lbl{flex-basis:150px}.company .facts{grid-template-columns:1fr}}
 </style>

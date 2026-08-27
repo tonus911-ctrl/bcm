@@ -49,14 +49,14 @@ img{max-width:100%;height:auto}
   max-width:var(--maxw-wide);margin:0 auto;padding:0 20px;height:64px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.logo{color:var(--ink);font-size:18px;font-weight:800;text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.logo{color:var(--ink);font-size:19px;font-weight:800;text-decoration:none;letter-spacing:.01em;white-space:nowrap}
 .logo .lp,.logo .logo-place{color:var(--gold)}
 .nav{display:flex;align-items:center;gap:22px}
-.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;transition:color .15s}
+.nav a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:600;transition:color .15s}
 .nav a:hover{color:var(--ink)}
 .nav .nav-cta{
   background:var(--gold);color:var(--ink);font-weight:700;
-  padding:9px 18px;border-radius:50px;font-size:14px;
+  padding:9px 18px;border-radius:50px;font-size:15px;
 }
 .nav .nav-cta:hover{opacity:.88;color:var(--ink)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;font-size:24px;color:var(--ink);line-height:1}
@@ -85,7 +85,7 @@ h1{font-size:clamp(28px,4.2vw,42px);font-weight:800;line-height:1.15;color:var(-
 /* ── Проза статьи ── */
 .article{padding:24px 0 8px}
 .article h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;line-height:1.25;color:var(--ink);margin:28px 0 18px}
-.article h3{font-size:20px;font-weight:700;color:var(--ink);margin:26px 0 10px}
+.article h3{font-size:19px;font-weight:700;color:var(--ink);margin:26px 0 10px}
 .article p{font-size:16px;color:#26263a;margin-bottom:16px}
 .article ul,.article ol{margin:0 0 16px 22px;font-size:16px;color:#26263a}
 .article li{margin-bottom:8px}
@@ -94,7 +94,7 @@ h1{font-size:clamp(28px,4.2vw,42px);font-weight:800;line-height:1.15;color:var(-
 .article blockquote{
   border-left:4px solid var(--gold);background:var(--bg-soft);
   border-radius:0 12px 12px 0;padding:16px 22px;margin:22px 0;
-  font-size:18px;font-style:italic;color:var(--ink)
+  font-size:19px;font-style:italic;color:var(--ink)
 }
 .article img{border-radius:12px;margin:20px 0}
 .article-cover{width:100%;border-radius:16px;margin:10px 0 6px;display:block}
@@ -163,7 +163,7 @@ tr:hover td{background:#fcfcff}
 .site-footer .logo .lp,.logo .logo-place{color:var(--gold)}
 .site-footer .copy{font-size:13.5px;color:#6b6b80}
 .site-footer .f-links{display:flex;gap:18px;flex-wrap:wrap}
-.site-footer .f-links a{color:#aaa;font-size:13px;text-decoration:none}
+.site-footer .f-links a{color:#B9A985;font-size:13px;text-decoration:none}
 .site-footer .f-links a:hover{color:var(--yellow)}
 
 /* утилиты */
@@ -173,14 +173,14 @@ tr:hover td{background:#fcfcff}
 
 /* ── Переключатель языка (RU/EN) в шапке ── */
 .lang-sw{display:inline-flex;gap:4px;margin-left:6px}
-.lang-sw a{border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#8F8F8F;text-decoration:none;line-height:1}
+.lang-sw a{border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#565A63;text-decoration:none;line-height:1}
 .lang-sw a:hover{border-color:var(--ink);color:var(--ink)}
 @media(max-width:760px){.lang-sw{padding:8px 20px}}
 
 /* ══ УНИВЕРСАЛЬНАЯ ШАПКА И ФУТЕР · эталон materialy · 18.08.2026 ══ */
 .uh{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
 .uh-bar{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:26px;min-height:62px;}
-.uh-logo{font-size:20px;font-weight:800;color:var(--ink);text-decoration:none;white-space:nowrap;font-family:'Figtree','Inter',Arial,sans-serif;display:inline-flex;align-items:center;gap:9px;}
+.uh-logo{font-size:19px;font-weight:800;color:var(--ink);text-decoration:none;white-space:nowrap;font-family:'Figtree','Inter',Arial,sans-serif;display:inline-flex;align-items:center;gap:9px;}
 .uh-logo .lp{color:var(--gold-dark);}
 .uh-txt{white-space:nowrap;letter-spacing:.01em;}
 .uh-mark{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1.5px solid var(--gold);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -221,6 +221,30 @@ tr:hover td{background:#fcfcff}
 .sec-go{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;font-size:15px;font-weight:700;padding:11px 22px;border-radius:999px;}
 .sec-go:hover{filter:brightness(1.12);}
 .pcta{background:var(--ink);border-radius:16px;padding:30px 28px;margin:34px 0 40px;text-align:center;}
-.pcta h3{color:#fff;font-size:20px;margin:0 0 6px;font-family:'Figtree','Inter',Arial,sans-serif;}
+.pcta h3{color:#fff;font-size:19px;margin:0 0 6px;font-family:'Figtree','Inter',Arial,sans-serif;}
 .pcta p{color:#B9BCC4;font-size:15px;margin:0 0 16px;}
 .pcta a{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;padding:12px 26px;border-radius:999px;font-size:15px;}
+
+/* ── перенесено со страниц 27.08.2026: было продублировано на 46 страницах ── */
+/* ── Возврат к опорной странице раздела (сателлит) ── */
+.sat-up{background:#F5F1E8;border:1px solid #E3D9C2;border-radius:14px;padding:16px 20px;margin:30px 0 4px;
+ display:flex;align-items:baseline;gap:8px 14px;flex-wrap:wrap}
+.sat-up-l{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#7A5E17;flex:0 0 100%}
+.sat-up a{font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none}
+.sat-up a:hover{text-decoration:underline}
+.sat-up span.sep{color:#B9A985}
+.sat-up a.sec{font-weight:600;font-size:15px}
+
+/* ── перенесено со страниц 27.08.2026: было продублировано на 6 страницах ── */
+/* ── Навигация по разделу (опорная страница) ── */
+.pillar-nav{background:#F5F1E8;border:1px solid #E3D9C2;border-radius:16px;padding:24px 26px;margin:34px 0 6px}
+.pn-num{display:block;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#7A5E17}
+.pn-t{font-size:22px;font-weight:700;line-height:1.25;color:#1E222B;margin:6px 0 6px}
+.pn-d{font-size:15px;line-height:1.6;color:#565A63;margin:0 0 16px;max-width:640px}
+.pn-list{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px 26px}
+.pn-list li{border-top:1px solid #E3D9C2;padding-top:10px}
+.pn-list a{display:block;font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none;line-height:1.35}
+.pn-list a:hover{text-decoration:underline}
+.pn-list span{display:block;font-size:13px;color:#565A63;line-height:1.5;margin-top:3px}
+.pn-all{display:inline-block;font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none;border-bottom:2px solid #D8CFB8;padding-bottom:1px}
+.pn-all:hover{border-color:#1B3A5C}

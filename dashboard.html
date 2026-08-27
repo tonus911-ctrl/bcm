@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 .lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
-.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#8F8F8F;cursor:pointer;font-family:inherit}
+.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#565A63;cursor:pointer;font-family:inherit}
 .lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
 .phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
@@ -47,17 +47,17 @@
 .steps li{position:relative;padding:0 0 18px 52px;margin:0}
 .steps li::before{counter-increment:st;content:counter(st);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--yellow);color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
 .steps li b{display:block;font-size:17px;color:var(--ink);margin-bottom:2px}
-.steps li span{font-size:15.5px;color:var(--muted)}
+.steps li span{font-size:15px;color:var(--muted)}
 .pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:8px 0}
 .pcard{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fcfcfd}
 .pcard b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
-.pcard span{font-size:14.5px;color:var(--muted);line-height:1.5}
+.pcard span{font-size:15px;color:var(--muted);line-height:1.5}
 .faq-q{font-size:17px;font-weight:700;color:var(--ink);margin:18px 0 6px}
 .faq-a{font-size:16px;color:#26263a;line-height:1.6;margin:0}
 .modal-ov{display:none;position:fixed;inset:0;background:rgba(20,30,45,.55);z-index:9999;align-items:center;justify-content:center;padding:18px}
 .modal-bx{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative;max-height:92vh;overflow:auto}
 .modal-bx input,.modal-bx textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;font-family:inherit}
-.consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#444;margin:2px 0 16px;cursor:pointer;background:#f7f8fa;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#1E222B;margin:2px 0 16px;cursor:pointer;background:#F5F1E8;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
 .consent input{width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:var(--navy)}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Дашборд непрерывности и рисков", "description": "Панель мониторинга устойчивости бизнеса: индекс устойчивости, статус процессов, RTO/RPO, единые точки отказа, статус планов и учений.", "brand": {"@type": "Brand", "name": "risk-place.ru"}, "potentialAction": {"@type": "ScheduleAction", "name": "Заказать демонстрацию дашборда"}}</script>
@@ -107,11 +107,11 @@
 
 </div></section>
 
-<section class="psec" style="background:#f7f8fa;"><div class="container-wide">
+<section class="psec" style="background:#F5F1E8;"><div class="container-wide">
 
 <h2 style="text-align:center;">Вот как это выглядит</h2>
 <p style="text-align:center;color:#8a8f97;">Нажмите — откроется живой пример на вымышленных данных компании ABC.</p>
-<a href="dashboard-demo.html" style="display:block;text-decoration:none;color:inherit;max-width:860px;margin:0 auto;"><div style="border:1px solid #E3D9C2;border-radius:16px;overflow:hidden;box-shadow:0 12px 34px rgba(20,40,70,.10);background:#fff;"><div style="display:flex;align-items:center;justify-content:space-between;background:#1B3A5C;color:#fff;padding:12px 18px;font-size:14px;"><span style="font-weight:700;">Дашборд непрерывности · компания ABC</span><span style="opacity:.75;">обновлено сегодня</span></div><div style="display:flex;gap:14px;flex-wrap:wrap;padding:20px;"><div style="flex:1;min-width:170px;text-align:center;background:#fff7e0;border:1px solid #f0e2b0;border-radius:12px;padding:18px 12px;"><div style="font-size:40px;font-weight:800;color:#1B3A5C;line-height:1;">68<span style="font-size:16px;color:#b39b4a;">/100</span></div><div style="font-size:13px;color:#6b5a1a;font-weight:600;margin-top:6px;">Индекс устойчивости · тренд +4</div></div><div style="flex:2;min-width:250px;display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="background:#fdecec;border-radius:10px;padding:10px 12px;"><b style="color:#c0392b;font-size:16px;">26 ч</b><div style="font-size:12px;color:#777;">MTTR · цель 4 ч</div></div><div style="background:#fdecec;border-radius:10px;padding:10px 12px;"><b style="color:#c0392b;font-size:16px;">3 / 8</b><div style="font-size:12px;color:#777;">процессов в зоне риска</div></div><div style="background:#fff7e0;border-radius:10px;padding:10px 12px;"><b style="color:#a87f00;font-size:16px;">5</b><div style="font-size:12px;color:#777;">единых точек отказа</div></div><div style="background:#eef2f8;border-radius:10px;padding:10px 12px;"><b style="color:#1B3A5C;font-size:16px;">₽1,8 млн</b><div style="font-size:12px;color:#777;">стоимость дня простоя</div></div></div></div><div style="text-align:center;background:#F9EBC6;color:#1B3A5C;padding:12px;font-weight:800;font-size:15px;">Открыть живой пример дашборда →</div></div></a>
+<a href="dashboard-demo.html" style="display:block;text-decoration:none;color:inherit;max-width:860px;margin:0 auto;"><div style="border:1px solid #E3D9C2;border-radius:16px;overflow:hidden;box-shadow:0 12px 34px rgba(20,40,70,.10);background:#fff;"><div style="display:flex;align-items:center;justify-content:space-between;background:#1B3A5C;color:#fff;padding:12px 18px;font-size:15px;"><span style="font-weight:700;">Дашборд непрерывности · компания ABC</span><span style="opacity:.75;">обновлено сегодня</span></div><div style="display:flex;gap:14px;flex-wrap:wrap;padding:20px;"><div style="flex:1;min-width:170px;text-align:center;background:#fff7e0;border:1px solid #f0e2b0;border-radius:12px;padding:18px 12px;"><div style="font-size:34px;font-weight:800;color:#1B3A5C;line-height:1;">68<span style="font-size:16px;color:#b39b4a;">/100</span></div><div style="font-size:13px;color:#6b5a1a;font-weight:600;margin-top:6px;">Индекс устойчивости · тренд +4</div></div><div style="flex:2;min-width:250px;display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="background:#fdecec;border-radius:10px;padding:10px 12px;"><b style="color:#A3351A;font-size:16px;">26 ч</b><div style="font-size:12px;color:#565A63;">MTTR · цель 4 ч</div></div><div style="background:#fdecec;border-radius:10px;padding:10px 12px;"><b style="color:#A3351A;font-size:16px;">3 / 8</b><div style="font-size:12px;color:#565A63;">процессов в зоне риска</div></div><div style="background:#fff7e0;border-radius:10px;padding:10px 12px;"><b style="color:#a87f00;font-size:16px;">5</b><div style="font-size:12px;color:#565A63;">единых точек отказа</div></div><div style="background:#eef2f8;border-radius:10px;padding:10px 12px;"><b style="color:#1B3A5C;font-size:16px;">₽1,8 млн</b><div style="font-size:12px;color:#565A63;">стоимость дня простоя</div></div></div></div><div style="text-align:center;background:#F9EBC6;color:#1B3A5C;padding:12px;font-weight:800;font-size:15px;">Открыть живой пример дашборда →</div></div></a>
 <div style="text-align:center;margin-top:22px;"><button class="btn btn-yellow np-form" data-prod="Демонстрация дашборда" data-label-ru="Демонстрация дашборда" data-label-en="Dashboard demo" data-mode="apply">Заказать демонстрацию</button></div>
 
 
@@ -159,7 +159,7 @@
 
 </div></section>
 
-<section class="psec" style="background:#f7f8fa;"><div class="container-wide">
+<section class="psec" style="background:#F5F1E8;"><div class="container-wide">
 
 <h2>Уровни продукта</h2>
 <div class="pcards">
@@ -167,7 +167,7 @@
 <div class="pcard"><b>Интеграция</b><span>Подключение к вашей витрине данных или системам (BI, ERP, ITSM): проектирование состава, маппинг, правила качества. Реализуется вместе с вашей ИТ-командой.</span></div>
 <div class="pcard"><b>Ежемесячный сервис · опция</b><span>Мы сами собираем обновления, пересобираем дашборд и присылаем короткий комментарий эксперта: что изменилось и на что смотреть.</span></div>
 </div>
-<p style="margin-top:14px;color:#8a8f97;font-size:14.5px;">Стоимость зависит от масштаба и уровня — обсудим на демонстрации, когда примерим продукт на ваш бизнес.</p><div style="margin-top:16px;"><button class="btn btn-yellow np-form" data-prod="Демонстрация дашборда" data-label-ru="Демонстрация дашборда" data-label-en="Dashboard demo" data-mode="apply">Заказать демонстрацию</button></div>
+<p style="margin-top:14px;color:#8a8f97;font-size:15px;">Стоимость зависит от масштаба и уровня — обсудим на демонстрации, когда примерим продукт на ваш бизнес.</p><div style="margin-top:16px;"><button class="btn btn-yellow np-form" data-prod="Демонстрация дашборда" data-label-ru="Демонстрация дашборда" data-label-en="Dashboard demo" data-mode="apply">Заказать демонстрацию</button></div>
 
 
 </div></section>
@@ -296,18 +296,18 @@ ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 <!-- ФОРМА -->
 <div class="modal-ov" id="wlOverlay">
   <div class="modal-bx" role="dialog" aria-modal="true">
-    <button id="wlClose" aria-label="Закрыть" style="position:absolute;top:14px;right:16px;border:none;background:none;font-size:26px;color:#aaa;cursor:pointer;">&times;</button>
+    <button id="wlClose" aria-label="Закрыть" style="position:absolute;top:14px;right:16px;border:none;background:none;font-size:26px;color:#B9A985;cursor:pointer;">&times;</button>
     <div id="wlHead" style="font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:6px;">Заявка на демонстрацию</div>
-    <h3 id="wlProduct" style="font-size:20px;line-height:1.25;margin:0 0 6px;color:var(--navy);">Продукт</h3>
-    <p id="wlSub" style="font-size:14px;color:#666;margin:0 0 18px;">Оставьте контакты — свяжемся и расскажем детали.</p>
+    <h3 id="wlProduct" style="font-size:19px;line-height:1.25;margin:0 0 6px;color:var(--navy);">Продукт</h3>
+    <p id="wlSub" style="font-size:15px;color:#565A63;margin:0 0 18px;">Оставьте контакты — свяжемся и расскажем детали.</p>
     <input id="wlName" type="text" placeholder="Ваше имя">
     <input id="wlContact" type="text" placeholder="Email или телефон / Telegram">
     <textarea id="wlComment" rows="2" placeholder="Комментарий (необязательно)"></textarea>
     <label class="consent" for="wlConsent"><input type="checkbox" id="wlConsent"><span id="wlConsentText">Я согласен с <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">политикой конфиденциальности</a> и на обработку персональных данных</span></label>
     <button id="wlSubmit" class="btn btn-yellow" style="width:100%;justify-content:center;">Отправить заявку</button>
-    <div id="wlNote" style="display:none;font-size:14px;color:#666;margin-top:12px;text-align:center;">Отправляем…</div>
-    <div id="wlOk" style="display:none;font-size:15px;color:#1a7a3a;margin-top:12px;text-align:center;font-weight:600;">Готово! Мы свяжемся с вами.</div>
-    <div id="wlErr" style="display:none;font-size:14px;color:#c0392b;margin-top:12px;text-align:center;"></div>
+    <div id="wlNote" style="display:none;font-size:15px;color:#565A63;margin-top:12px;text-align:center;">Отправляем…</div>
+    <div id="wlOk" style="display:none;font-size:15px;color:#1B6B4A;margin-top:12px;text-align:center;font-weight:600;">Готово! Мы свяжемся с вами.</div>
+    <div id="wlErr" style="display:none;font-size:15px;color:#A3351A;margin-top:12px;text-align:center;"></div>
   </div>
 </div>
 <script>

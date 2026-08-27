@@ -44,16 +44,15 @@
    отступы такого абзаца молча обнуляются. Проверено 27.08.2026 на подписи
    под кнопками: она прилипала к ним, сколько бы пикселей ей ни задавали. */
 
-/* ── шапка страницы ── */
-.phero{background:var(--panel);border-bottom:1px solid var(--line);padding:6px 0 30px}
-.phero h1{font-size:clamp(21px,2.2vw,26px);font-weight:800;line-height:1.2;margin:0 0 10px;color:var(--ink)}
-.phero-eyebrow{font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);margin:18px 0 10px}
+/* ── шапка страницы ──
+   Правила .phero, .phero h1, .phero-eyebrow, .crumbs и .crumbs a живут в
+   общем style.css и здесь намеренно не повторяются: два одинаковых правила
+   в двух местах рано или поздно расходятся, и потом непонятно, какое из них
+   победило. Сторож стилей следит, чтобы дубли не вернулись. */
 .uw p.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
 .uw p.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
 .uw p.phero-note b{color:var(--ink);font-weight:700}
-.crumbs{font-size:13.5px;color:var(--muted);padding:16px 0 0}
-.crumbs a{color:var(--muted);text-decoration:none}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
 .fact{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
 .fact b{display:block;font-size:19px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}

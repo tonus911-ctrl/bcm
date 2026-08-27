@@ -37,34 +37,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--cream:#F9EBC6;--black:#000;--gray:#8F8F8F;--border:#dedede}
+:root{--cream:#F9EBC6;--black:#000;--gray:#565A63;--border:#dedede}
 body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var(--black)}
 .header{background:var(--black);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
 .logo{color:#fff;font-size:16px;font-weight:700;text-decoration:none}
 .logo span{color:var(--cream)}
-.lang-toggle{display:flex;background:#222;border-radius:7px;padding:3px;gap:3px}
-.lang-btn{padding:7px 16px;border-radius:5px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:none;background:transparent;color:#777;transition:all .15s}
+.lang-toggle{display:flex;background:#1E222B;border-radius:7px;padding:3px;gap:3px}
+.lang-btn{padding:7px 16px;border-radius:5px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:none;background:transparent;color:#565A63;transition:all .15s}
 .lang-btn.active{background:var(--cream);color:#000}
 .lang-btn:hover:not(.active){color:#fff}
 .progress-bar-wrap{background:#e0e0e0;height:3px}
 .progress-bar{height:3px;background:var(--black);transition:width .4s;width:0%}
 .container{max-width:620px;margin:0 auto;padding:36px 20px 60px}
 .screen{display:none}.screen.active{display:block}
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
 .big-title{font-size:26px;font-weight:700;line-height:1.25;margin-bottom:14px}
 .sub-text{font-size:15px;line-height:1.65;color:var(--gray);margin-bottom:24px}
-.highlight-box{background:var(--cream);border-radius:10px;padding:14px 18px;font-size:14px;line-height:1.6;margin-bottom:28px}
+.highlight-box{background:var(--cream);border-radius:10px;padding:14px 18px;font-size:15px;line-height:1.6;margin-bottom:28px}
 .meta-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:32px}
 .meta-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--gray)}
 .meta-dot{width:7px;height:7px;border-radius:50%;background:var(--black);flex-shrink:0}
-.q-counter{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
-.q-text{font-size:18px;font-weight:700;line-height:1.35;margin-bottom:24px}
+.q-counter{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
+.q-text{font-size:19px;font-weight:700;line-height:1.35;margin-bottom:24px}
 .options{display:flex;flex-direction:column;gap:9px}
-.option{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:14px 18px;cursor:pointer;font-size:14px;font-family:inherit;line-height:1.45;color:var(--black);text-align:left;transition:all .15s}
+.option{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:14px 18px;cursor:pointer;font-size:15px;font-family:inherit;line-height:1.45;color:var(--black);text-align:left;transition:all .15s}
 .option:hover{border-color:var(--black);background:var(--cream)}
 .option.selected{border-color:var(--black);background:var(--cream)}
 .nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
-.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:8px;font-size:14px;font-family:inherit;font-weight:700;cursor:pointer;border:none;text-decoration:none;transition:opacity .15s,transform .1s}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:8px;font-size:15px;font-family:inherit;font-weight:700;cursor:pointer;border:none;text-decoration:none;transition:opacity .15s,transform .1s}
 .btn:active{transform:scale(.98)}
 .btn-black{background:var(--black);color:#fff}.btn-black:hover{opacity:.82}
 .btn-cream{background:var(--cream);color:var(--black);border:1.5px solid var(--black)}.btn-cream:hover{opacity:.88}
@@ -75,30 +75,30 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
 .btn-row .btn{flex:1}
 @media(max-width:480px){.btn-row{flex-direction:column}}
 .form-label{display:block;font-size:12px;font-weight:700;color:var(--gray);margin-bottom:5px}
-.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;color:var(--black);background:#fff;outline:none;transition:border-color .15s}
+.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;color:var(--black);background:#fff;outline:none;transition:border-color .15s}
 .form-input:focus{border-color:var(--black)}
 .form-group{margin-bottom:14px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:480px){.form-row{grid-template-columns:1fr}}
-.privacy-note{font-size:11px;color:var(--gray);line-height:1.5;margin-top:10px}
+.privacy-note{font-size:12px;color:var(--gray);line-height:1.5;margin-top:10px}
 .sending-note{font-size:12px;color:var(--gray);text-align:center;margin-top:8px;display:none}
-.error-note{font-size:12px;color:#c0392b;text-align:center;margin-top:8px;display:none}
+.error-note{font-size:12px;color:#A3351A;text-align:center;margin-top:8px;display:none}
 .result-banner{border-radius:12px;padding:26px 22px;margin-bottom:20px}
-.level-badge{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:20px;display:inline-block;margin-bottom:10px}
+.level-badge{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:20px;display:inline-block;margin-bottom:10px}
 .result-title-big{font-size:24px;font-weight:700;margin-bottom:4px}
-.result-sub{font-size:14px;opacity:.75}
+.result-sub{font-size:15px;opacity:.75}
 .score-pill{display:inline-flex;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 13px;font-size:12px;color:#fff;margin-bottom:4px}
 .level-track{display:flex;gap:5px;margin-bottom:20px}
 .l-seg{flex:1;height:7px;border-radius:4px;background:#e0e0e0}
 .l-seg.filled{background:currentColor}
 .result-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px}
-.card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:8px}
-.card-text{font-size:14px;line-height:1.65;color:#222}
+.card-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:8px}
+.card-text{font-size:15px;line-height:1.65;color:#1E222B}
 
 /* CTA block (paid offer, after results) */
 .result-cta{background:var(--black);border-radius:12px;padding:26px 22px;margin-top:22px;text-align:center}
-.result-cta h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px}
-.result-cta p{font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:20px}
+.result-cta h3{font-size:19px;font-weight:700;color:#fff;margin-bottom:8px}
+.result-cta p{font-size:15px;color:var(--gray);line-height:1.6;margin-bottom:20px}
 .cta-buttons{display:flex;flex-direction:column;align-items:center;gap:10px}
 
 /* Consent checkbox */
@@ -109,13 +109,13 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
 .consent-row label{font-size:12px;color:var(--gray);line-height:1.55;cursor:pointer}
 .consent-row a{color:var(--black);text-decoration:underline}
 
-.contact-success{background:#eafaf1;border:1.5px solid #27ae60;border-radius:10px;padding:16px 18px;font-size:14px;line-height:1.6;color:#0e5230;display:none;margin-top:12px}
+.contact-success{background:#eafaf1;border:1.5px solid #1B6B4A;border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.6;color:#0e5230;display:none;margin-top:12px}
 
-.t1{background:#fff0ee}.t1 .result-title-big,.t1 .result-sub{color:#7d1f1f}.t1 .level-badge{background:#c0392b;color:#fff}.t1-c{color:#c0392b}
+.t1{background:#fff0ee}.t1 .result-title-big,.t1 .result-sub{color:#7d1f1f}.t1 .level-badge{background:#A3351A;color:#fff}.t1-c{color:#A3351A}
 .t2{background:#fff5e8}.t2 .result-title-big,.t2 .result-sub{color:#7a3200}.t2 .level-badge{background:#e67e22;color:#fff}.t2-c{color:#e67e22}
 .t3{background:#F9EBC6}.t3 .result-title-big,.t3 .result-sub{color:#6b4f00}.t3 .level-badge{background:#c89800;color:#fff}.t3-c{color:#c89800}
 .t4{background:#e8f0ff}.t4 .result-title-big,.t4 .result-sub{color:#0d3870}.t4 .level-badge{background:#2980b9;color:#fff}.t4-c{color:#2980b9}
-.t5{background:#eafaf1}.t5 .result-title-big,.t5 .result-sub{color:#0e5230}.t5 .level-badge{background:#27ae60;color:#fff}.t5-c{color:#27ae60}
+.t5{background:#eafaf1}.t5 .result-title-big,.t5 .result-sub{color:#0e5230}.t5 .level-badge{background:#1B6B4A;color:#fff}.t5-c{color:#1B6B4A}
 </style>
 <link rel="canonical" href="https://bcm.risk-place.ru/quiz.html">
 <meta property="og:url" content="https://bcm.risk-place.ru/quiz.html">
@@ -226,41 +226,41 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   <!-- Персональная рекомендация по итогам диагностики -->
   <div class="result-cta">
     <div id="recEyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-bottom:4px;"></div>
-    <h3 id="recName" style="font-size:21px;margin:2px 0 8px;"></h3>
+    <h3 id="recName" style="font-size:22px;margin:2px 0 8px;"></h3>
     <p id="recWhy" style="margin-bottom:18px;"></p>
     <div class="cta-buttons">
       <button class="btn btn-cream" id="recPrimaryBtn" style="font-size:15px;padding:13px 30px;"></button>
-      <button class="btn btn-ghost" id="recAltBtn" style="font-size:14px;padding:13px 24px;"></button>
+      <button class="btn btn-ghost" id="recAltBtn" style="font-size:15px;padding:13px 24px;"></button>
     </div>
-    <p id="recSoftWrap" style="margin-top:14px;font-size:14px;"><a href="#" id="recSoftBtn" style="color:inherit;text-decoration:underline;opacity:.9;"></a></p>
+    <p id="recSoftWrap" style="margin-top:14px;font-size:15px;"><a href="#" id="recSoftBtn" style="color:inherit;text-decoration:underline;opacity:.9;"></a></p>
   </div>
 
   <!-- ══ Книга-подарок за прохождение (лид-магнит) ══ -->
-  <div id="qbBlock" style="margin-top:22px;border:2px solid #C9B26A;background:#FBF7EA;border-radius:18px;padding:22px 24px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;">
+  <div id="qbBlock" style="margin-top:22px;border:2px solid #C9A94E;background:#FBF7EA;border-radius:18px;padding:22px 24px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;">
     <div style="flex:0 0 116px;width:116px;aspect-ratio:1106/1524;background:linear-gradient(150deg,#20253F 0%,#141830 70%);border-radius:7px;box-shadow:0 16px 32px -12px rgba(0,0,0,.55);padding:15px 13px;display:flex;flex-direction:column;position:relative;">
-      <div style="font-size:6px;font-weight:700;letter-spacing:.14em;color:#C9B26A;margin-top:20px;">СПРАВОЧНИК</div>
-      <div style="font-size:28px;font-weight:800;color:#fff;line-height:1;margin-top:14px;">BCM</div>
+      <div style="font-size:6px;font-weight:700;letter-spacing:.14em;color:#C9A94E;margin-top:20px;">СПРАВОЧНИК</div>
+      <div style="font-size:26px;font-weight:800;color:#fff;line-height:1;margin-top:14px;">BCM</div>
       <div style="font-size:16px;font-weight:800;color:#ECE3C0;line-height:1.05;">без иллюзий</div>
       <div style="height:2px;background:#B79B52;margin-top:12px;"></div>
       <div style="margin-top:auto;font-size:6px;font-weight:700;color:#ECE7DA;">bcm.risk-place.ru</div>
     </div>
     <div id="qbForm" style="flex:1;min-width:250px;">
-      <div id="qb-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8C7A3F;margin-bottom:5px;"></div>
-      <h3 id="qb-title" style="font-size:20px;margin:0 0 6px;color:#16181F;"></h3>
-      <p id="qb-desc" style="font-size:14px;line-height:1.5;color:#5E606A;margin:0 0 14px;"></p>
+      <div id="qb-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A5E17;margin-bottom:5px;"></div>
+      <h3 id="qb-title" style="font-size:19px;margin:0 0 6px;color:#16181F;"></h3>
+      <p id="qb-desc" style="font-size:15px;line-height:1.5;color:#5E606A;margin:0 0 14px;"></p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
         <input id="qbName" class="form-input" type="text" style="flex:1;min-width:130px;">
         <input id="qbEmail" class="form-input" type="email" style="flex:1.4;min-width:170px;">
       </div>
-      <label style="display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.4;color:#6E7079;margin-bottom:14px;cursor:pointer;"><input type="checkbox" id="qbConsent" style="margin-top:2px;"><span id="qb-consent"></span></label>
+      <label style="display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.4;color:#565A63;margin-bottom:14px;cursor:pointer;"><input type="checkbox" id="qbConsent" style="margin-top:2px;"><span id="qb-consent"></span></label>
       <button id="qbBtn" class="btn btn-cream" onclick="submitQuizBook()" style="font-size:15px;padding:13px 26px;"><span id="qb-btn"></span></button>
       <div id="qbErr" style="display:none;color:#a3272a;font-size:13px;margin-top:10px;"></div>
       <div id="qb-note" style="font-size:12px;color:#8a8f98;margin-top:10px;"></div>
     </div>
     <div id="qbThanks" style="display:none;flex:1;min-width:250px;">
-      <div style="width:52px;height:52px;border-radius:50%;background:#e6f6ec;color:#1a7a3a;font-size:28px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">✓</div>
+      <div style="width:52px;height:52px;border-radius:50%;background:#e6f6ec;color:#1B6B4A;font-size:26px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">✓</div>
       <div id="qb-ok-title" style="font-size:19px;font-weight:800;color:#16181F;margin-bottom:6px;"></div>
-      <div id="qb-ok-desc" style="font-size:14px;line-height:1.55;color:#4a4f58;"></div>
+      <div id="qb-ok-desc" style="font-size:15px;line-height:1.55;color:#4a4f58;"></div>
     </div>
   </div>
 </div>

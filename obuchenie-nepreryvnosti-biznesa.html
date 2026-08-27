@@ -91,11 +91,11 @@
    вплотную, между ними минимум полстроки. Сетка тарифов, колонки, плитки
    фактов и подписи под ними подчиняются тому же закону, что абзац и список.
    Селекторы с тегом p подняты по весу, иначе их перебивает .uw p. */
-.uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify,.uw .dgrid{margin-bottom:.5lh}
+.uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:.5lh}
 .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
 .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:.5lh}
 @supports not (margin-top: 1lh){
-  .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify,.uw .dgrid{margin-bottom:11px}
+  .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:11px}
   .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
   .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:11px}
 }
@@ -158,6 +158,11 @@
 /* ── демонстрация: полоса с заливкой на всю ширину ── */
 .demo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin:46px 0 0}
 .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+/* Форма: шаг между рядами полей и до поля сообщения одинаковый. Сетка
+   полей намеренно исключена из общего правила «полстроки»: иначе шаг
+   по вертикали выходит на пиксель больше, чем зазор между колонками,
+   и глаз читает разрыв как ошибку. */
+.uw .dgrid{margin-bottom:0}
 .uw textarea.fld{margin-top:10px;resize:vertical}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 16px;cursor:pointer}
 .consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
@@ -197,7 +202,8 @@
 .tariff .sum{font-size:30px;font-weight:800;color:var(--navy);line-height:1.15}
 .tariff .per{font-size:13.5px;color:var(--muted);margin:2px 0 10px}
 .uw .tariff p.ex{font-size:15px;line-height:1.55;color:#26263a}
-.uw p.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:76ch}
+/* подпись под тарифами идет на всю ширину блока, а не по колонке прозы */
+.uw p.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:none}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Корпоративный тренинг по непрерывности бизнеса","description":"Два дня с командой на материале вашей компании: разбор процессов, черновики планов и кабинетное учение.","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"}}</script>
 </head>

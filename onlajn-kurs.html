@@ -62,10 +62,17 @@
 .psec p:last-child{margin-bottom:0}
 .psec p.sub{color:var(--muted)}
 .psec p.note{font-size:13.5px;line-height:1.55;color:var(--muted)}
-.psec ul{margin:0;padding-left:24px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
-.psec li{margin-bottom:10px}
-.psec li:last-child{margin-bottom:0}
-.psec li b{font-weight:700;color:var(--ink)}
+
+/* ── списки: одно правило на всю страницу ──
+   Маркер всегда заходит под текст абзаца сверху, а не встает с ним на одну
+   линию. Отступ содержимого 28px, маркер живет внутри этого поля.
+   Правило привязано к контейнеру .uw, а не к разделу, иначе списки в
+   блоках с заливкой остаются без отступа. */
+.uw ul,.uw ol{margin:0 0 14px;padding-left:28px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
+.uw ul:last-child,.uw ol:last-child{margin-bottom:0}
+.uw li{margin-bottom:10px}
+.uw li:last-child{margin-bottom:0}
+.uw li b{font-weight:700;color:var(--ink)}
 
 /* ── строки с номером: модули программы и ступени проверки знаний ── */
 .numrow{display:grid;grid-template-columns:72px 1fr;gap:20px}

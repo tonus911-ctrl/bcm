@@ -42,7 +42,7 @@
 .phero-eyebrow{font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);margin:18px 0 10px}
 .phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.phero-note{font-size:13.5px;line-height:1.55;color:var(--muted);margin:14px 0 0;max-width:760px}
+.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
 .phero-note b{color:var(--ink);font-weight:700}
 .crumbs{font-size:13.5px;color:var(--muted);padding:16px 0 0}
 .crumbs a{color:var(--muted);text-decoration:none}
@@ -78,6 +78,19 @@
 .uw ul + p,.uw ol + p{margin-top:.5lh}
 @supports not (margin-top: 1lh){
   .uw p + ul,.uw p + ol,.uw ul + p,.uw ol + p{margin-top:13px}
+}
+
+/* Общее правило раздела: два смысловых куска внутри блока никогда не стоят
+   вплотную, между ними минимум полстроки. Сетка тарифов, колонки, плитки
+   фактов и подписи под ними подчиняются тому же закону, что абзац и список.
+   Селекторы с тегом p подняты по весу, иначе их перебивает .uw p. */
+.uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify,.uw .dgrid{margin-bottom:.5lh}
+.uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
+.uw p.tnote,.uw p.note,.uw p.certcap{margin-top:.5lh}
+@supports not (margin-top: 1lh){
+  .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify,.uw .dgrid{margin-bottom:11px}
+  .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
+  .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:11px}
 }
 
 /* ── строки с номером: модули программы и ступени проверки знаний ── */
@@ -138,7 +151,7 @@
 /* ── демонстрация: полоса с заливкой на всю ширину ── */
 .demo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin:46px 0 0}
 .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.demo textarea{margin-top:10px;resize:vertical}
+.uw textarea.fld{margin-top:10px;resize:vertical}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 16px;cursor:pointer}
 .consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
 .consent a{color:var(--navy);font-weight:600}
@@ -189,7 +202,7 @@
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html" class="act">Сертификация SAFE</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html" class="act">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Сертификация SAFE</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="onlajn-kurs.html" class="act">RU</a><a href="en-onlajn-kurs.html">EN</a></span></nav>
   </div>
 </header>
 <!--/TPL:HEADER-->
@@ -306,6 +319,47 @@
   </div>
 </div></section>
 
+<section class="psec" id="shots"><div class="uw">
+  <h2>Как выглядит программа изнутри</h2>
+  <p class="sub">Настоящие экраны, снятые в программе. Слева видно оглавление модуля и отметки о пройденном, справа — глава с разбором и схемой.</p>
+  <div class="shots">
+    <img class="shot" id="csImg" src="assets/safe-shots/shot1.jpg" alt="Экран программы SAFE" loading="lazy" onclick="csOpen()">
+    <div class="shotbar">
+      <span class="cap" id="csCap">Как складывается происшествие и где его останавливает человек</span>
+      <span class="shotnav">
+        <button type="button" onclick="csGo(-1)">‹ Назад</button>
+        <span class="n" id="csNum">1 из 4</span>
+        <button type="button" onclick="csGo(1)">Вперед ›</button>
+      </span>
+    </div>
+    <p class="note" style="margin:8px 0 0">Нажмите на снимок, чтобы увеличить.</p>
+  </div>
+</div></section>
+
+<section class="psec" id="cert"><div class="uw">
+  <h2>Именной сертификат</h2>
+  <div class="duo">
+    <div>
+      <img class="certimg" src="safe-certificate-sample.svg" alt="SAFE — образец именного сертификата" width="1600" height="1131" loading="lazy">
+      <p class="certcap">Образец. В настоящем сертификате стоят имя участника, номер и дата.</p>
+    </div>
+    <div>
+      <p>Сертификат уходит участнику на почту по итогам всей программы: после тестов по каждому модулю и итоговой проверки знаний из пятнадцати вопросов.</p>
+      <p>Сертификат называется так же, как программа, и говорит о подготовке человека, а не о государственной аккредитации. Он не заменяет документы, которые компания оформляет по требованиям охраны труда, и не выдается вместо них.</p>
+      <p>Он подтверждает то, ради чего программа и делалась: сотрудник умеет замечать опасности вокруг себя, оценивать их и действовать при происшествии. Подлинность каждого номера можно проверить.</p>
+      <p>Работодателю сертификаты группы приходят одним списком, вместе с отчетом о прохождении.</p>
+      <div class="verify">
+        <div class="vtitle">Проверка сертификата</div>
+        <div class="vrow">
+          <input type="text" class="fld" id="certNum" placeholder="Номер сертификата, например SAFE-2026-0001">
+          <button type="button" class="pill pill-navy" id="certBtn">Проверить</button>
+        </div>
+        <p class="vans" id="certAns">Публичный реестр запускается с первой группой участников. Чтобы проверить сертификат сегодня, напишите на <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — отвечаем в тот же день.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
 <section class="psec" id="price"><div class="uw">
   <h2>Стоимость</h2>
   <p class="sub">Цена за одного участника зависит от размера группы. Доступ к материалам открыт полгода с даты выдачи.</p>
@@ -346,7 +400,7 @@
         <li>личный кабинет: выдача доступов, прогресс группы, уведомления;</li>
         <li>именной сертификат участника.</li>
       </ul>
-      <p class="note">Или напишите на <a href="mailto:evgeny@risk-place.ru">evgeny@risk-place.ru</a> — ответим в тот же день.</p>
+      <p class="note">Или напишите на <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — ответим в тот же день.</p>
     </div>
     <div>
       <div class="dgrid">
@@ -373,10 +427,12 @@
     <div class="faq"><div class="q">Сколько времени занимает программа?</div><p>Около двух часов чистого чтения. Участник проходит ее в своем темпе, с телефона или компьютера, и может вернуться к любой главе.</p></div>
     <div class="faq"><div class="q">Нужно ли устанавливать программу или заводить пароли?</div><p>Нет. Каждый участник получает личную ссылку и открывает программу в браузере. Пароль не нужен, прогресс сохраняется автоматически.</p></div>
     <div class="faq"><div class="q">Как мы поймем, кто прошел, а кто нет?</div><p>В личном кабинете видно каждого участника: сколько глав пройдено, сданы ли тесты модулей, пройдена ли итоговая проверка. Когда участник заканчивает, приходит уведомление.</p></div>
-    <div class="faq"><div class="q">Что за сертификат получает сотрудник?</div><p>Именной сертификат risk-place с уникальным номером. Это не государственный документ; его ценность в проверке знаний, которая за ним стоит.</p></div>
+    <div class="faq"><div class="q">Что за сертификат получает сотрудник?</div><p>Именной сертификат «Культура безопасности и оценка рисков на рабочем месте» с уникальным номером — он называется так же, как сама программа. Это документ о подготовке, а не государственная аккредитация; он не заменяет документы, которые компания оформляет по требованиям охраны труда. Он подтверждает одно, но важное: человек прошел программу и на проверке знаний показал, что умеет видеть опасности вокруг себя, оценивать их и действовать при происшествии. Ценность здесь не в бумаге, а в знаниях и навыках, которые за ней стоят.</p></div>
     <div class="faq"><div class="q">Можно ли адаптировать содержание под нашу отрасль?</div><p>Да. Пятый модуль выпускается в отраслевых редакциях — металлургия, нефтегаз, склад и логистика, офис. Остальные модули общие для всех.</p></div>
-    <div class="faq"><div class="q">Как оплатить?</div><p>По счету от организации. Напишите на <a href="mailto:evgeny@risk-place.ru">evgeny@risk-place.ru</a>, пришлем счет и договор.</p></div>
+    <div class="faq"><div class="q">Как оплатить?</div><p>По счету от организации. Напишите на <a href="mailto:info@risk-place.ru">info@risk-place.ru</a>, пришлем счет и договор.</p></div>
 </div></section>
+
+<div class="slbox" id="csBox" onclick="csClose(event)"><button class="x" onclick="csClose(event)" aria-label="Закрыть">×</button><img id="csBig" alt=""></div>
 
 <section class="dirsec"><div class="uw">
   <h2 style="margin-bottom:20px">Директор программы</h2>
@@ -401,6 +457,10 @@
 <!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <script>
+(function(){var b=document.getElementById('certBtn');if(!b)return;
+  b.addEventListener('click',function(){var a=document.getElementById('certAns');if(a)a.style.display='block';
+    try{ym(110579884,'reachGoal','safe_cert_check');}catch(e){}
+    try{gtag('event','safe_cert_check');}catch(e){}});})();
 (function(){var btn=document.getElementById('dmSubmit');if(!btn)return;
   function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
   btn.addEventListener('click',async function(){
@@ -418,7 +478,7 @@
       try{ym(110579884,'reachGoal','safe_request');}catch(e){}
       try{gtag('event','safe_request');}catch(e){}
     }catch(e){
-      note.style.display='none';err.textContent='Не получилось отправить. Напишите нам: evgeny@risk-place.ru';err.style.display='block';this.disabled=false;
+      note.style.display='none';err.textContent='Не получилось отправить. Напишите нам: info@risk-place.ru';err.style.display='block';this.disabled=false;
     }});})();
 </script>
 <!-- Yandex.Metrika counter -->
@@ -431,5 +491,35 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<script>
+/* карусель скриншотов: пять снимков, подпись и лайтбокс */
+var csI = 0, csN = 4, csCaps = [
+  "Как складывается происшествие и где его останавливает человек",
+  "Две половины одной защиты: что делает компания и что делаете вы",
+  "Что вам обязаны дать до начала работы",
+  "Пять действий, которые никто не сделает за вас"];
+function csDraw(){
+  document.getElementById('csImg').src = 'assets/safe-shots/shot' + (csI + 1) + '.jpg';
+  document.getElementById('csCap').textContent = csCaps[csI];
+  document.getElementById('csNum').textContent = (csI + 1) + ' из ' + csN;
+}
+function csGo(d){ csI = (csI + d + csN) % csN; csDraw(); }
+function csOpen(){
+  document.getElementById('csBig').src = 'assets/safe-shots/shot' + (csI + 1) + '-full.jpg';
+  document.getElementById('csBox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function csClose(e){
+  if (e && e.target && e.target.id === 'csBig') return;
+  document.getElementById('csBox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') csClose();
+  else if (e.key === 'ArrowLeft') csGo(-1);
+  else if (e.key === 'ArrowRight') csGo(1);
+});
+csDraw();
+</script>
 </body>
 </html>

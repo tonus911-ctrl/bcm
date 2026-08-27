@@ -1079,8 +1079,11 @@ footer{background:#1E222B;}
    Список забирает место абзаца, поэтому карточка растет по высоте — так и
    задумано, читать четыре коротких пункта легче, чем один плотный абзац. */
 .prod-facts{list-style:none;padding:0;margin:0 0 16px;flex:1;display:grid;gap:9px}
-.prod-facts li{display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:15px;line-height:1.5;color:#565A63}
-.prod-facts .ck{color:#7A5E17;font-weight:700;line-height:1.5}
+.prod-facts li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.55;color:#565A63}
+/* Знак пункта тот же, что у флагмана ERGP: кружок кремовой заливки с
+   золотой галочкой внутри. Один прием на весь блок программ. */
+.prod-facts .ck{flex-shrink:0;width:22px;height:22px;background:#F5F1E8;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:#C9A94E;font-size:13px;font-weight:700;margin-top:2px}
 .prod-facts strong{color:#1E222B;font-weight:700}
 </style>
 </head>
@@ -1285,7 +1288,7 @@ footer{background:#1E222B;}
         <ul class="prod-facts">
         <li><span class="ck">✓</span><span><strong data-ru="Два дня с вашей командой" data-en="Two days with your team">Два дня с вашей командой</strong><span data-ru=" — очно на площадке компании или по видеосвязи, до восьми участников." data-en=" — on site or over video, up to eight participants."> — очно на площадке компании или по видеосвязи, до восьми участников.</span></span></li>
         <li><span class="ck">✓</span><span><strong data-ru="Работа на ваших процессах" data-en="Work on your own processes">Работа на ваших процессах</strong><span data-ru=" — разбираем реальные операции компании, а не учебные примеры из книги." data-en=" — we go through the company's real operations, not textbook examples."> — разбираем реальные операции компании, а не учебные примеры из книги.</span></span></li>
-        <li><span class="ck">✓</span><span><strong data-ru="Черновики рабочих документов" data-en="Drafts of working documents">Черновики рабочих документов</strong><span data-ru=" — реестр критических процессов, стоимость дня простоя, каркас плана непрерывности." data-en=" — the register of critical processes, the cost of a day of downtime, the outline of the continuity plan."> — реестр критических процессов, стоимость дня простоя, каркас плана непрерывности.</span></span></li>
+        
         <li><span class="ck">✓</span><span><strong data-ru="Кризисное учение в финале" data-en="A crisis exercise at the end">Кризисное учение в финале</strong><span data-ru=" — проигрываем сценарий и разбираем решения команды по шагам." data-en=" — we play out a scenario and walk through the team's decisions step by step."> — проигрываем сценарий и разбираем решения команды по шагам.</span></span></li>
       </ul>
         <a href="obuchenie-nepreryvnosti-biznesa.html" class="prod-link-row"><span data-ru="Программа и условия" data-en="Programme and terms">Программа и условия</span><span>→</span></a>

@@ -11,8 +11,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BCM под ключ: аудит и повышение метрик выживания бизнеса</title>
-<meta name="description" content="Проверяем готовность компании к атаке шифровальщика и пожару, затем поднимаем метрики выживания: план BCM и DRP, кабинетный стресс-тест, реестр точек отказа, риск-экономика для финансового директора. От 300 000 рублей, 1-2 месяца.">
+<title>Построение системы непрерывности бизнеса под ключ</title>
+<meta name="description" content="Строим систему непрерывности бизнеса от аудита текущего состояния до работающих планов, обученных людей и измеримых метрик восстановления. Результат остается в компании.">
 <meta name="author" content="Евгений Теленков">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/bcm-pod-klyuch.html">
@@ -21,8 +21,8 @@
 <link rel="canonical" href="https://bcm.risk-place.ru/bcm-pod-klyuch.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bcm.risk-place.ru/bcm-pod-klyuch.html">
-<meta property="og:title" content="BCM под ключ: аудит и повышение метрик выживания">
-<meta property="og:description" content="Аудит — треть работы. Две трети — исправления: новые планы, новые договоренности, измеримое восстановление. От 300 000 ₽, 1-2 месяца.">
+<meta property="og:title" content="Построение системы непрерывности бизнеса под ключ">
+<meta property="og:description" content="От аудита готовности к действующей системе: планы, обученные люди, понимание рисков в деньгах и измеримые метрики восстановления.">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm.png">
 <meta property="og:site_name" content="risk-place.ru">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -100,8 +100,15 @@
 .modal-bx input,.modal-bx textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;font-family:inherit}
 .consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#444;margin:2px 0 16px;cursor:pointer;background:#f7f8fa;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
 .consent input{width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:var(--navy)}
+
+/* что остается в компании: список результата работы */
+.res{margin:0;padding-left:28px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
+.res li{margin-bottom:12px}
+.res li:last-child{margin-bottom:0}
+.res li b{font-weight:700;color:var(--ink)}
+.psec p.sub + .res{margin-top:.5lh}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "BCM под ключ", "serviceType": "Business continuity implementation", "description": "Аудит готовности к двум критичным сценариям и повышение метрик выживания: план BCM и DRP, стресс-тест, реестр точек отказа, план на 90 дней.", "provider": {"@type": "Organization", "name": "risk-place.ru"}, "offers": {"@type": "Offer", "price": "300000", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "300000", "priceCurrency": "RUB"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "BCM под ключ", "serviceType": "Business continuity implementation", "description": "Аудит готовности к двум критичным сценариям и повышение метрик выживания: план BCM и DRP, стресс-тест, реестр точек отказа, план на 90 дней.", "provider": {"@type": "Organization", "name": "risk-place.ru"}}</script>
 </head>
 <body>
 <!--TPL:HEADER-->
@@ -109,38 +116,48 @@
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="produkty.html" class="act">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="bcm-pod-klyuch.html" class="act">RU</a><a href="en-bcm-pod-klyuch.html">EN</a></span></nav>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Сертификация SAFE</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="bcm-pod-klyuch.html" class="act">RU</a><a href="en-bcm-pod-klyuch.html">EN</a></span></nav>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <section class="phero"><div class="uw">
-  <div class="crumbs"><a href="index.html">Главная</a> / <a href="produkty.html">Продукты</a> / BCM под ключ</div>
-  <div class="phero-eyebrow">Продукт · аудит и внедрение · 1-2 месяца</div>
-  <h1>BCM под ключ: аудит и повышение метрик выживания</h1>
-  <p class="phero-sub">Проверяем готовность компании к двум критичным сценариям — атаке шифровальщика и пожару с недоступностью площадки — и затем поднимаем метрики выживания. Аудит — треть работы. Две трети — исправления: новые планы, новые договоренности, измеримое восстановление.</p>
+  <div class="crumbs"><a href="index.html">Главная</a> / Построение системы непрерывности</div>
+  <div class="phero-eyebrow">Работа с компанией · от аудита к действующей системе · 1-2 месяца</div>
+  <h1>Построение системы непрерывности бизнеса под ключ</h1>
+  <p class="phero-sub">Начинаем с честного аудита того, что уже есть, и доводим до работающей системы. По итогам у вас остаются планы, которыми пользуются, люди, которые знают свои роли, понимание рисков в деньгах и метрики восстановления, которые можно показать совету директоров.</p>
   <div class="phero-cta">
-    <span class="phero-price">от 300 000 ₽</span>
-    <span class="phero-terms">фиксированный объем · 1-2 месяца · бесплатные исправления включены</span>
+    <span class="phero-terms">фиксированный объем работ · 1-2 месяца · исправления в ходе работы включены</span>
   </div>
   <div class="phero-cta">
-    <button class="btn btn-yellow np-form" data-prod="BCM под ключ (аудит и внедрение)" data-mode="apply">Отправить заявку</button>
+    <button class="btn btn-yellow np-form" data-prod="Построение системы непрерывности под ключ" data-mode="apply">Запросить стоимость</button>
     <a class="phero-alt" href="quiz.html">Сначала пройти бесплатную диагностику →</a>
   </div>
 </div></section>
 
+
+<section class="psec"><div class="container">
+  <h2>Что остается в компании после работы</h2>
+  <p class="sub">Не отчет на полку, а четыре вещи, которыми пользуются каждый день и которые видно снаружи.</p>
+  <ul class="res">
+    <li><b>Действующая система.</b> Планы непрерывности и восстановления, которые лежат не в папке, а в руках у дежурной смены; порядок объявления кризиса и обходные режимы работы.</li>
+    <li><b>Понимание рисков в деньгах.</b> Какой процесс сколько стоит за день простоя, где единые точки отказа и куда вкладываться в первую очередь.</li>
+    <li><b>Обученные люди.</b> Роли разобраны и отработаны на кабинетном сценарии: каждый знает, что делает в первый час и с какими полномочиями.</li>
+    <li><b>Метрики восстановления.</b> Целевое время и точка восстановления по ключевым процессам, подтвержденные испытанием, а не назначенные на бумаге.</li>
+  </ul>
+</div></section>
 <section class="psec"><div class="container">
   <h2>Ценность в цифрах</h2>
   <div class="vals">
     <div class="val"><b>7 дней → 2</b><span>типичный простой после шифровальщика, сокращенный проверенным восстановлением — по отраслевой статистике потерь</span></div>
     <div class="val"><b>6 мес → 1</b><span>перерыв в работе после пожара — наш опыт ведения непрерывности в тяжелой промышленности</span></div>
-    <div class="val"><b>от 300 000 ₽</b><span>программа — против месяцев защищенной выручки; риск-экономику докажем вашему финансовому директору на ваших числах</span></div>
+    <div class="val"><b>Все роли</b><span>разобраны с людьми: кто объявляет кризис, кто переводит работу в обходной режим, кто говорит с клиентами и регулятором</span></div>
     <div class="val"><b>2/3</b><span>работы — исправления и рост метрик, а не написание отчета</span></div>
   </div>
 </div></section>
 
 <section class="psec"><div class="container">
   <h2>Что вы получаете — артефакты</h2>
-  <p class="sub">Каждый элемент ниже — рабочий документ, который остается у вас. Именно за это вы платите — и именно это увидят совет директоров, страховщик и аудиторы.</p>
+  <p class="sub">Каждый элемент ниже — рабочий документ, который остается у вас. Именно это увидят совет директоров, страховщик и аудиторы.</p>
   <div class="arts">
     <div class="art">
       <div class="mk"><div class="mk-t">Скор готовности</div>
@@ -255,7 +272,8 @@
 <!--TPL:FOOTER-->
 <footer class="uf">
   <div class="uf-bar">
-        <div class="uf-links"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="produkty.html">Продукты</a><a href="materialy.html">Библиотека</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
+    <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <div class="uf-links"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Сертификация SAFE</a><a href="materialy.html">Методология</a><a href="slovar.html">Словарь</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
     <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener">часть проекта risk-place.ru</a></div>
   </div>
 </footer>

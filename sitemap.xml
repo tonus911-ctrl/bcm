@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/materialy.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -205,7 +205,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/materialy-en.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -349,13 +349,19 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/onlajn-kurs.html</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bcm.risk-place.ru/kultura-bezopasnosti.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://bcm.risk-place.ru/stress-test-nepreryvnosti.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -367,7 +373,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/bcm-pod-klyuch.html</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -406,7 +412,7 @@
 <url><loc>https://bcm.risk-place.ru/krizisnye-kommunikacii.html</loc><lastmod>2026-07-18</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/edinaya-tochka-otkaza.html</loc><lastmod>2026-07-18</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/kiberucheniya.html</loc><lastmod>2026-07-18</lastmod></url>
-<url><loc>https://bcm.risk-place.ru/obuchenie-nepreryvnosti-biznesa.html</loc><lastmod>2026-07-18</lastmod></url>
+<url><loc>https://bcm.risk-place.ru/obuchenie-nepreryvnosti-biznesa.html</loc><lastmod>2026-08-27</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-onivd-ponivd.html</loc><lastmod>2026-07-18</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-zashchita-ot-kiberatak.html</loc><lastmod>2026-07-18</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-antikrizisnyy-plan-kompanii.html</loc><lastmod>2026-07-18</lastmod></url>
@@ -457,12 +463,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bcm.risk-place.ru/krizisnaya-igra.html</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://bcm.risk-place.ru/slovar.html</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -474,17 +474,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://bcm.risk-place.ru/produkty.html</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
 <url><loc>https://bcm.risk-place.ru/en-onlajn-kurs.html</loc><lastmod>2026-08-20</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-dashboard.html</loc><lastmod>2026-08-20</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-bcm-pod-klyuch.html</loc><lastmod>2026-08-20</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-kniga.html</loc><lastmod>2026-08-20</lastmod></url>
-<url><loc>https://bcm.risk-place.ru/en-produkty.html</loc><lastmod>2026-08-20</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-o-podhode.html</loc><lastmod>2026-08-20</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html</loc><lastmod>2026-08-20</lastmod></url>
   <url>
@@ -579,7 +572,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/index.html</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

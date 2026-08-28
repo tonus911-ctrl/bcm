@@ -4,4 +4,27 @@ Disallow: /test.html
 Disallow: /*.dc.html
 Disallow: /spasibo-pokupka.html
 
+# --- Роботы ИИ-ассистентов: доступ разрешен явно ---
+# Поисковые роботы ИИ приходят за ответом на вопрос пользователя
+# и ставят ссылку на источник, поэтому доступ им открыт.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: cohere-ai
+User-agent: Bytespider
+Allow: /
+Disallow: /test.html
+Disallow: /*.dc.html
+Disallow: /spasibo-pokupka.html
+
 Sitemap: https://bcm.risk-place.ru/sitemap.xml
+
+# Карта сайта для языковых моделей
+# https://bcm.risk-place.ru/llms.txt

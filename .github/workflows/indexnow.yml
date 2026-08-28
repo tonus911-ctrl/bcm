@@ -1,0 +1,69 @@
+# Уведомление поисковых систем об изменившихся страницах (протокол IndexNow).
+# Срабатывает при каждом пуше в main и отправляет ТОЛЬКО измененные html-файлы.
+# Принимают: Bing, Яндекс, Naver, Seznam, Yep. Google в протоколе не участвует.
+# Ключ IndexNow не является секретом — он лежит в открытом виде в корне сайта,
+# поэтому хранится прямо здесь, а не в секретах репозитория.
+
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html']
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'Адреса через пробел (пусто — отправить всю карту сайта)'
+        required: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Собрать список измененных страниц
+        id: collect
+        run: |
+          KEY="ef792efab3cee09bb14d8cc5693cb88f"
+          HOST="bcm.risk-place.ru"
+          if [ -n "${{ github.event.inputs.urls }}" ]; then
+            printf '%s\n' ${{ github.event.inputs.urls }} > urls.txt
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # ручной запуск без списка: берем все из карты сайта
+            grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's|</\?loc>||g' > urls.txt
+          else
+            git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} -- '*.html' \
+              | sed "s|^|https://$HOST/|" > urls.txt
+          fi
+          # главную отдаем коротким адресом
+          sed -i "s|https://$HOST/index.html|https://$HOST/|" urls.txt
+          sort -u urls.txt -o urls.txt
+          echo "Страниц к отправке: $(wc -l < urls.txt)"
+          cat urls.txt
+
+      - name: Отправить в IndexNow
+        run: |
+          KEY="ef792efab3cee09bb14d8cc5693cb88f"
+          HOST="bcm.risk-place.ru"
+          COUNT=$(wc -l < urls.txt)
+          if [ "$COUNT" -eq 0 ]; then echo "Измененных страниц нет, отправлять нечего."; exit 0; fi
+          if [ "$COUNT" -gt 10000 ]; then echo "Больше 10000 адресов, обрезаю."; head -10000 urls.txt > u && mv u urls.txt; fi
+          python3 - <<'PY' > body.json
+          import json, os
+          urls=[l.strip() for l in open('urls.txt') if l.strip()]
+          print(json.dumps({"host": "bcm.risk-place.ru", "key": "ef792efab3cee09bb14d8cc5693cb88f",
+                            "keyLocation": "https://bcm.risk-place.ru/ef792efab3cee09bb14d8cc5693cb88f.txt",
+                            "urlList": urls}, ensure_ascii=False))
+          PY
+          echo "--- тело запроса:"; head -c 600 body.json; echo
+          CODE=$(curl -s -o resp.txt -w '%{http_code}' -X POST 'https://api.indexnow.org/indexnow' \
+                   -H 'Content-Type: application/json; charset=utf-8' --data @body.json)
+          echo "Ответ IndexNow: $CODE"; cat resp.txt
+          case "$CODE" in
+            200) echo "Принято." ;;
+            202) echo "Ключ на проверке, адреса приняты. Это нормально при первом запуске." ;;
+            *)   echo "Ошибка отправки."; exit 1 ;;
+          esac

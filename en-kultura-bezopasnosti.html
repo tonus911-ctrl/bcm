@@ -195,6 +195,21 @@
   .demo,.dirsec{padding:34px 0}
 }
 
+/* ── третья кнопка героя: текстовая, чтобы не спорить с двумя основными ── */
+.pill-link{display:inline-flex;align-items:center;font-size:15px;font-weight:700;
+  color:var(--navy);text-decoration:none;padding:14px 4px}
+.pill-link:hover{text-decoration:underline;color:var(--navy)}
+
+/* ── блок «одному участнику»: та же заливка, что у демонстрации ── */
+.solo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:44px 0;margin:46px 0 0}
+.solo .price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 6px}
+.solo .price-sum{font-size:34px;font-weight:800;color:var(--navy);line-height:1.1}
+.solo .price-per{font-size:15px;color:var(--muted)}
+.solo-buy{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px}
+.solo-buy ol{margin:0;padding-left:22px;font-size:15px;line-height:1.6;color:#26263a}
+.solo-buy li{margin-bottom:8px}
+.solo-buy li:last-child{margin-bottom:0}
 /* ── тарифы: три ступени по числу участников ── */
 .tariffs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:6px 0 0}
 .tariff{border-top:2px solid var(--line);padding:18px 0 0}
@@ -232,10 +247,11 @@
       <div class="fact"><b>Certificate</b><span>personal, with a number</span></div>
     </div>
     <div class="phero-cta">
-      <a class="pill pill-gold" href="#price">See pricing</a>
-      <a class="pill pill-navy" href="#demo">Look inside the programme</a>
+      <a class="pill pill-gold" href="#price">Pricing for a company</a>
+      <a class="pill pill-navy" href="#odin">Take it alone · 9,900 ₽</a>
+      <a class="pill-link" href="#demo">Look inside the programme →</a>
     </div>
-    <p class="phero-note"><b>From 5,000 ₽ per person for groups of 50 and above.</b> Payment by invoice from your company.</p>
+    <p class="phero-note"><b>Companies</b> — from 5,000 ₽ per person for groups of 50 and above, payment by invoice. <b>A single participant</b> — 9,900 ₽, six months of access.</p>
   </div>
 </div>
 
@@ -360,9 +376,40 @@
   </div>
 </div></section>
 
+<section class="solo" id="odin"><div class="uw">
+  <h2>Take the programme on your own</h2>
+  <div class="duo">
+    <div>
+      <div class="price-row"><span class="price-sum">9,900 ₽</span><span class="price-per">for one participant, six months of access</span></div>
+      <p>For those who need the programme personally rather than for a crew: an occupational safety specialist, a foreman, the head of a small site, a self-employed contractor. The content is exactly the same as in the corporate version — five modules, thirty chapters, tests and the final knowledge check.</p>
+      <ul>
+        <li>A personal link arrives by email, no password needed.</li>
+        <li>Your own pace, from a phone or a computer, return to any chapter.</li>
+        <li>A personal certificate with a number after the knowledge check.</li>
+        <li>Access to the material stays open for six months from the date it is issued.</li>
+      </ul>
+      <p class="note">Need it for a group — see the <a href="#price">company pricing</a>, the price per person is lower there.</p>
+    </div>
+    <div>
+      <div class="solo-buy">
+        <div class="vtitle">How to get access</div>
+        <ol>
+          <li>You send a request — an invoice or a payment link comes to your email.</li>
+          <li>After payment the personal link arrives within one working day.</li>
+          <li>You go at your own pace; the certificate follows the knowledge check.</li>
+        </ol>
+        <div class="phero-cta" style="margin-top:18px">
+          <a class="pill pill-gold" id="soloBuy" href="#demo">Get access for 9,900 ₽</a>
+        </div>
+        <p class="note">Card payment is being connected; for now access is issued on request within a working day.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
 <section class="psec" id="price"><div class="uw">
-  <h2>Pricing</h2>
-  <p class="sub">The price per participant depends on the size of the group. Access to the material stays open for six months from the date it is issued.</p>
+  <h2>Pricing for a company</h2>
+  <p class="sub">The price per participant depends on the size of the group: the larger the group, the lower the price per person. Access to the material stays open for six months from the date it is issued.</p>
   <div class="tariffs">
       <div class="tariff">
         <div class="who">Up to 19 participants</div>
@@ -429,6 +476,7 @@
     <div class="faq"><div class="q">How do we see who has completed it?</div><p>The management view shows every participant: chapters read, module tests passed, final check completed. You get a notification when someone finishes.</p></div>
     <div class="faq"><div class="q">What kind of certificate does an employee receive?</div><p>A personal certificate named after the programme itself — «Safety culture and workplace risk assessment» — with a unique number. It is a record of preparation, not a state accreditation, and it does not replace the documents a company issues under occupational safety rules. What it confirms is the thing that matters: the person completed the programme and demonstrated, on the knowledge check, that they can see hazards around them, assess them and act during an incident.</p></div>
     <div class="faq"><div class="q">Can the content be adapted to our industry?</div><p>Yes. Module five is released in industry editions — metals, oil and gas, warehousing and logistics, office. The other modules are common to all.</p></div>
+    <div class="faq"><div class="q">Can one person take the programme without a company?</div><p>Yes. Individual access costs 9,900 ₽ and the content is identical. See the section <a href="#odin">take the programme on your own</a>.</p></div>
     <div class="faq"><div class="q">How do we pay?</div><p>By invoice from your company. Write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> and we will send an invoice and a contract.</p></div>
 </div></section>
 
@@ -450,7 +498,7 @@
 <footer class="uf">
   <div class="uf-bar">
     <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <div class="uf-links"><a href="en-onlajn-kurs.html">ERGP Certification</a><a href="en-kultura-bezopasnosti.html">SAFE Certification</a><a href="materialy-en.html">Methodology</a><a href="slovar-en.html">Glossary</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a></div>
+    <div class="uf-links"><a href="en-onlajn-kurs.html">ERGP Certification</a><a href="en-kultura-bezopasnosti.html">SAFE Certification</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a></div>
     <div class="uf-copy">© 2026 Risk-place · Business continuity and risk management · <a href="https://risk-place.ru" target="_blank" rel="noopener">part of the risk-place.ru project</a></div>
   </div>
 </footer>

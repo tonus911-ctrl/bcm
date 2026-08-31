@@ -96,6 +96,8 @@
 .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:.5lh}
 @supports not (margin-top: 1lh){
   .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:11px}
+.uw .phero-cta,.uw .btn-row,.uw .cta-row{margin-bottom:22px}
+.uw .phero-cta + *,.uw .btn-row + *,.uw .cta-row + *{margin-top:22px}
   .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
   .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:11px}
 }
@@ -195,9 +197,13 @@
   .demo,.dirsec{padding:34px 0}
 }
 
-.phero-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:18px 0 0}
-.phero-price b{font-size:30px;font-weight:800;letter-spacing:-0.02em;color:var(--ink);line-height:1}
+.phero-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:22px 0 0;padding-left:26px}
+.phero-price b{font-size:20px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);line-height:1.2}
 .phero-price span{font-size:14px;color:var(--muted)}
+
+.psec-grey{background:#F2F3F5;border-radius:18px;padding:30px 34px;margin-top:34px}
+.psec-grey > .uw{padding:0}
+@media(max-width:640px){.psec-grey{padding:22px 18px;border-radius:14px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"ERGP — Enterprise Resilience Governance Professional","description":"Онлайн-курс и сертификация по управлению устойчивостью бизнеса: 6 модулей, 123 главы, тесты с проходным баллом, итоговая работа с разбором и именной сертификат с уникальным номером.","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"},"offers":{"@type":"Offer","price":"19900","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -391,7 +397,7 @@
   </div>
 </div></section>
 
-<section class="psec"><div class="uw">
+<section class="psec psec-grey"><div class="uw">
   <h2>Стоимость и что входит</h2>
   <div class="duo">
     <div>

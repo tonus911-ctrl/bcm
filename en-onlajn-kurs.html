@@ -42,6 +42,8 @@
 /* герой */
 .phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
 .phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+.uw .phero-cta,.uw .btn-row,.uw .cta-row{margin-bottom:22px}
+.uw .phero-cta + *,.uw .btn-row + *,.uw .cta-row + *{margin-top:22px}
 .phero-note{font-size:13.5px;color:var(--muted);margin:14px 0 0;max-width:760px}
 .phero-note b{color:var(--ink)}
 .facts{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 0}
@@ -127,9 +129,13 @@
 .dirbox p{font-size:15px;color:#26263a;line-height:1.65;margin:0;max-width:74ch}
 @media(max-width:640px){.dirbox{grid-template-columns:1fr;gap:16px}}
 
-.phero-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:18px 0 0}
-.phero-price b{font-size:30px;font-weight:800;letter-spacing:-0.02em;color:var(--ink);line-height:1}
+.phero-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:22px 0 0;padding-left:26px}
+.phero-price b{font-size:20px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);line-height:1.2}
 .phero-price span{font-size:14px;color:var(--muted)}
+
+.psec-grey{background:#F2F3F5;border-radius:18px;padding:30px 34px;margin-top:34px}
+.psec-grey > .uw{padding:0}
+@media(max-width:640px){.psec-grey{padding:22px 18px;border-radius:14px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"ERGP \u2014 Enterprise Resilience Governance Professional","description":"Online course and certification in business resilience governance for teams operating in Russia: 6 modules, 123 chapters, module tests, a final assignment with an expert review and a personal numbered certificate.","inLanguage":"en","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"},"offers":{"@type":"Offer","price":"19900","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}</script>
 </head>
@@ -289,7 +295,7 @@
   </div>
 </div></section>
 
-<section class="psec"><div class="uw">
+<section class="psec psec-grey"><div class="uw">
   <h2>Price and what is included</h2>
   <div class="price-wrap">
     <div class="price-card">

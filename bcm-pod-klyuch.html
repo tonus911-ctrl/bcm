@@ -77,7 +77,7 @@
 /* шаги */
 .steps{counter-reset:st;list-style:none;margin:0;padding:0}
 .steps li{position:relative;padding:0 0 20px 52px;margin:0}
-.steps li::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:0;top:0;font-size:20px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
+.steps li::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:0;top:0;font-size:19px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
 .steps li b{display:block;font-size:17px;color:var(--ink);margin-bottom:3px}
 .steps li span{font-size:15px;color:var(--muted);line-height:1.6}
 /* пример */
@@ -107,6 +107,11 @@
 .res li:last-child{margin-bottom:0}
 .res li b{font-weight:700;color:var(--ink)}
 .psec p.sub + .res{margin-top:.5lh}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 0}
+.facts .fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.facts .fact b{display:block;font-size:19px;font-weight:800;color:var(--ink);line-height:1.2}
+.facts .fact span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "BCM под ключ", "serviceType": "Business continuity implementation", "description": "Аудит готовности к двум критичным сценариям и повышение метрик выживания: план BCM и DRP, стресс-тест, реестр точек отказа, план на 90 дней.", "provider": {"@type": "Organization", "name": "risk-place.ru"}}</script>
 </head>
@@ -125,7 +130,8 @@
   <div class="phero-eyebrow">Работа с компанией · от аудита к действующей системе · 1-2 месяца</div>
   <h1>Построение системы непрерывности бизнеса под ключ</h1>
   <p class="phero-sub">Начинаем с честного аудита того, что уже есть, и доводим до работающей системы. По итогам у вас остаются планы, которыми пользуются, люди, которые знают свои роли, понимание рисков в деньгах и метрики восстановления, которые можно показать совету директоров.</p>
-  <div class="phero-cta">
+  <div class="facts"><div class="fact"><b>1-2</b><span>месяца работы</span></div><div class="fact"><b>4</b><span>артефакта на выходе</span></div><div class="fact"><b>Все роли</b><span>разобраны с людьми</span></div><div class="fact"><b>2/3</b><span>работы — исправления</span></div></div>
+<div class="phero-cta">
     <span class="phero-terms">фиксированный объем работ · 1-2 месяца · исправления в ходе работы включены</span>
   </div>
   <div class="phero-cta">

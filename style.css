@@ -255,3 +255,19 @@ tr:hover td{background:#fcfcff}
 .faq p,p.faq-a,.faq-grid p{padding-left:18px}
 .article h2#faq ~ p{padding-left:18px}
 @media(max-width:640px){.faq p,p.faq-a,.faq-grid p,.article h2#faq ~ p{padding-left:12px}}
+
+/* ── Компоненты единого шаблона (перенесены со страниц 31.08.2026) ── */
+.psec-grey{background:var(--panel);border-radius:18px;padding:30px 34px;margin-top:34px}
+.psec-grey > .uw{padding:0}
+.dashshot{margin:6px 0 0}
+.dashshot img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;box-shadow:0 18px 50px rgba(30,34,43,0.12)}
+.dashshot figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.uw p.phero-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:36px 0 0;padding-left:26px}
+.uw p.phero-price b{font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);line-height:1.2}
+.uw p.phero-price span{font-size:13.5px;color:var(--muted)}
+.uw .phero-cta,.uw .btn-row,.uw .cta-row{margin-bottom:26px}
+.uw .phero-cta + *,.uw .btn-row + *,.uw .cta-row + *,.uw .phero-cta + p,.uw .btn-row + p,.uw .cta-row + p{margin-top:26px}
+@media(max-width:640px){
+  .psec-grey{padding:22px 18px;border-radius:14px}
+  .uw p.phero-price{padding-left:12px}
+}

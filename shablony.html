@@ -44,7 +44,7 @@
 .psec li{margin-bottom:8px}
 .steps{counter-reset:st;list-style:none;margin:0;padding:0}
 .steps li{position:relative;padding:0 0 18px 52px;margin:0}
-.steps li::before{counter-increment:st;content:"0" counter(st);position:absolute;left:0;top:0;font-size:20px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
+.steps li::before{counter-increment:st;content:"0" counter(st);position:absolute;left:0;top:0;font-size:19px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
 .steps li b{display:block;font-size:17px;color:var(--ink);margin-bottom:2px}
 .steps li span{font-size:15px;color:var(--muted)}
 .pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:8px 0}
@@ -58,6 +58,11 @@
 .modal-bx input,.modal-bx textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;font-family:inherit}
 .consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#1E222B;margin:2px 0 16px;cursor:pointer;background:#F5F1E8;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
 .consent input{width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:var(--navy)}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 0}
+.facts .fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.facts .fact b{display:block;font-size:19px;font-weight:800;color:var(--ink);line-height:1.2}
+.facts .fact span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Пакет шаблонов BCM-старт", "description": "Готовые шаблоны по непрерывности бизнеса: BCP, BIA, DRP, реестр процессов, чек-лист.", "brand": {"@type": "Brand", "name": "risk-place.ru"}, "offers": {"@type": "Offer", "price": "4900", "priceCurrency": "RUB", "url": "https://bcm.risk-place.ru/shablony.html"}}</script>
 </head>
@@ -72,8 +77,10 @@
 </header>
 <!--/TPL:HEADER-->
 <section class="phero"><div class="uw">
+<div class="crumbs"><a href="index.html">Главная</a> / <a href="produkty.html">Продукты</a> / Пакет шаблонов</div>
   <div id="heroTxt"><div class="eyebrow" id="heroEyebrow">Цифровой продукт</div><h1 id="heroH1">Пакет шаблонов «BCM-старт»</h1><p class="phero-sub" id="heroSub">Готовые рабочие документы по непрерывности бизнеса. Не нужно начинать с чистого листа — берите проверенную структуру и адаптируйте под себя.</p></div>
-  <div class="phero-cta"><span class="phero-price" id="heroPrice">4 900 ₽</span><a class="btn btn-yellow" id="heroBtn" rel="noopener" href="https://link.payform.ru/?paymentLinkId=0c28e920-c4df-4432-84e5-98e9cdc943ca">Купить · оплата картой →</a></div>
+  <div class="facts"><div class="fact"><b>6</b><span>рабочих документов</span></div><div class="fact"><b>4 900 ₽</b><span>единый платеж</span></div><div class="fact"><b>1 вечер</b><span>до первого черновика</span></div><div class="fact"><b>Сразу</b><span>письмо после оплаты</span></div></div>
+<div class="phero-cta"><span class="phero-price" id="heroPrice">4 900 ₽</span><a class="btn btn-yellow" id="heroBtn" rel="noopener" href="https://link.payform.ru/?paymentLinkId=0c28e920-c4df-4432-84e5-98e9cdc943ca">Купить · оплата картой →</a></div>
   <p class="phero-note" id="heroNote">📩 <b>После оплаты пакет придет на ваш email в течение 24 часов.</b> Email вы укажете на странице оплаты — без него продажа невозможна.</p>
 </div></section>
 <section class="psec"><div class="container"><div id="s1"><h2>Почему начинать стоит с шаблонов</h2><p>Большинство компаний откладывают непрерывность, потому что не знают, с чего начать, и боятся большого проекта. Пакет снимает этот барьер: у вас сразу есть структура и понятные документы.</p><ul><li><b>Быстро:</b> первый черновик плана — за один вечер.</li><li><b>Доступно:</b> дешевле консультации, а пользу приносит сразу.</li><li><b>Без воды:</b> только рабочие формы, которые применяют в реальных компаниях.</li></ul></div></div></section>

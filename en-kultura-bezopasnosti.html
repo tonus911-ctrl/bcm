@@ -258,7 +258,7 @@
     <div class="phero-cta">
       <a class="pill pill-gold" href="#price">Pricing for a company</a>
       <a class="pill pill-navy" href="#odin">Take it alone</a>
-      <a class="pill-link" href="#demo">Look inside the programme →</a>
+      <a class="pill-link" href="#demo" data-want="demo">Look inside the programme →</a>
     </div>
     <p class="phero-price"><b>from 5,000 ₽</b><span>per person in a group of 50 or more · 9,900 ₽ for a single participant</span></p>
 <p class="phero-note">Companies pay by invoice. Access to the materials runs for six months from the day it is issued.</p>
@@ -409,7 +409,7 @@
           <li>You go at your own pace; the certificate follows the knowledge check.</li>
         </ol>
         <div class="phero-cta" style="margin-top:18px">
-          <a class="pill pill-gold" id="soloBuy" href="#demo">Get access for 9,900 ₽</a>
+          <a class="pill pill-gold" id="soloBuy" href="#demo" data-want="single">Get access for 9,900 ₽</a>
         </div>
         <p class="note">Card payment is being connected; for now access is issued on request within a working day.</p>
       </div>
@@ -442,12 +442,13 @@
   </div>
   <p class="tnote">The price covers all five modules, the tests, the final knowledge check, the personal certificate and the management view with group progress. Five thousand roubles per person is the floor of the range. Groups above three hundred participants and multi-site rollouts are discussed separately: access delivery and reporting are set up to fit you.</p>
   <div class="phero-cta" style="margin-top:22px">
-    <a class="pill pill-gold" href="#demo">Request pricing and an invoice</a>
+    <a class="pill pill-gold" href="#demo" data-want="quote">Request pricing and an invoice</a>
   </div>
 </div></section>
 
 <section class="psec" id="demo"><div class="uw">
-  <h2>Look inside the programme</h2>
+  <h2>Request form</h2>
+<p class="sub">One form for everything: a walkthrough of the programme, a quote and invoice for a company, or access for a single participant. We reply the same working day.</p>
   <div class="duo">
     <div>
       <p>In twenty minutes over a video call we show the programme through the eyes of a participant and through the eyes of the person accountable for safety. You will see:</p>
@@ -460,7 +461,8 @@
       <p class="note">Or write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — we answer the same day.</p>
     </div>
     <div>
-      <div class="dgrid">
+      <select class="fld" id="dmWant" style="margin-bottom:10px"><option value="quote">A quote and invoice for a company</option><option value="single">Access for a single participant</option><option value="demo">A walkthrough of the programme</option></select>
+<div class="dgrid">
         <input type="text" class="fld" id="dmName" placeholder="Your name">
         <input type="email" class="fld" id="dmEmail" placeholder="Work email">
         <input type="text" class="fld" id="dmOrg" placeholder="Company">
@@ -528,7 +530,7 @@
     if(!name||!email||!org||!role){err.textContent='Fill in your name, email, company and role';err.style.display='block';return;}
     if(!document.getElementById('dmConsent').checked){err.textContent='Please confirm consent to personal data processing';err.style.display='block';return;}
     err.style.display='none';this.disabled=true;note.textContent='Sending…';note.style.display='block';
-    var body={type:'demo',product:'safe',source:'ru',name:name,email:email,org:org,role:role,message:msg||'',lang:'ru',page:'ru-safe'};
+    var want=(document.getElementById('dmWant')||{}).value||'demo';var body={type:want,product:'safe',source:'ru',name:name,email:email,org:org,role:role,message:msg||'',lang:'ru',page:'ru-safe'};
     try{
       var res=await fetch('https://ergp.risk-place.org/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       if(!res.ok)throw new Error('fail');
@@ -578,6 +580,18 @@ document.addEventListener('keydown', function(e){
   else if (e.key === 'ArrowRight') csGo(1);
 });
 csDraw();
+</script>
+
+<script>
+function safeWantJump(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-want]');
+    if (!a) return;
+    var sel = document.getElementById('dmWant');
+    if (sel) sel.value = a.getAttribute('data-want');
+  });
+}
+safeWantJump();
 </script>
 </body>
 </html>

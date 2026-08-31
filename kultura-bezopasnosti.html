@@ -259,7 +259,7 @@
     <div class="phero-cta">
       <a class="pill pill-gold" href="#price">Рассчитать для компании</a>
       <a class="pill pill-navy" href="#odin">Пройти одному</a>
-      <a class="pill-link" href="#demo">Посмотреть программу изнутри →</a>
+      <a class="pill-link" href="#demo" data-want="demo">Посмотреть программу изнутри →</a>
     </div>
     <p class="phero-price"><b>от 5 000 ₽</b><span>за человека в группе от 50 · одному участнику 9 900 ₽</span></p>
 <p class="phero-note">Компаниям — оплата по счету от организации. Доступ к материалам открыт полгода с даты выдачи.</p>
@@ -422,7 +422,7 @@
           <li>Проходите в своем темпе, сертификат готовится по итогам проверки знаний.</li>
         </ol>
         <div class="phero-cta" style="margin-top:18px">
-          <a class="pill pill-gold" id="soloBuy" href="#demo">Получить доступ за 9 900 ₽</a>
+          <a class="pill pill-gold" id="soloBuy" href="#demo" data-want="single">Получить доступ за 9 900 ₽</a>
         </div>
         <p class="note">Онлайн-оплата картой подключается, пока доступ выдается по заявке в течение рабочего дня.</p>
       </div>
@@ -455,12 +455,13 @@
   </div>
   <p class="tnote">В стоимость входят все пять модулей, тесты, итоговая проверка знаний, именной сертификат и личный кабинет с прогрессом группы. Пять тысяч рублей за человека — минимальная цена в линейке, ниже мы не опускаемся. Группы от трехсот участников и несколько площадок обсуждаем отдельно: формат выдачи доступов и отчетность настраиваем под вас.</p>
   <div class="phero-cta" style="margin-top:22px">
-    <a class="pill pill-gold" href="#demo">Запросить расчет и счет</a>
+    <a class="pill pill-gold" href="#demo" data-want="quote">Запросить расчет и счет</a>
   </div>
 </div></section>
 
 <section class="psec" id="demo"><div class="uw">
-  <h2>Посмотреть программу изнутри</h2>
+  <h2>Заявка по программе</h2>
+<p class="sub">Одна форма на все: демонстрация программы, расчет и счет для компании, доступ для одного участника. Отвечаем в тот же рабочий день.</p>
   <div class="duo">
     <div>
       <p>За 20 минут по видеосвязи покажем программу глазами участника и глазами ответственного за охрану труда. На встрече вы увидите:</p>
@@ -473,7 +474,8 @@
       <p class="note">Или напишите на <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — ответим в тот же день.</p>
     </div>
     <div>
-      <div class="dgrid">
+      <select class="fld" id="dmWant" style="margin-bottom:10px"><option value="quote">Нужен расчет и счет для компании</option><option value="single">Нужен доступ для одного участника</option><option value="demo">Хочу посмотреть программу изнутри</option></select>
+<div class="dgrid">
         <input type="text" class="fld" id="dmName" placeholder="Ваше имя">
         <input type="email" class="fld" id="dmEmail" placeholder="Рабочая почта">
         <input type="text" class="fld" id="dmOrg" placeholder="Организация">
@@ -541,7 +543,7 @@
     if(!name||!email||!org||!role){err.textContent='Заполните имя, почту, организацию и должность';err.style.display='block';return;}
     if(!document.getElementById('dmConsent').checked){err.textContent='Отметьте согласие на обработку персональных данных';err.style.display='block';return;}
     err.style.display='none';this.disabled=true;note.textContent='Отправляем…';note.style.display='block';
-    var body={type:'demo',product:'safe',source:'ru',name:name,email:email,org:org,role:role,message:msg||'',lang:'ru',page:'ru-safe'};
+    var want=(document.getElementById('dmWant')||{}).value||'demo';var body={type:want,product:'safe',source:'ru',name:name,email:email,org:org,role:role,message:msg||'',lang:'ru',page:'ru-safe'};
     try{
       var res=await fetch('https://ergp.risk-place.org/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       if(!res.ok)throw new Error('fail');
@@ -591,6 +593,20 @@ document.addEventListener('keydown', function(e){
   else if (e.key === 'ArrowRight') csGo(1);
 });
 csDraw();
+</script>
+
+<script>
+/* Переход по кнопке подставляет намерение в форму: человек уже
+   сказал, чего хочет, и не должен выбирать это второй раз. */
+function safeWantJump(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-want]');
+    if (!a) return;
+    var sel = document.getElementById('dmWant');
+    if (sel) sel.value = a.getAttribute('data-want');
+  });
+}
+safeWantJump();
 </script>
 </body>
 </html>

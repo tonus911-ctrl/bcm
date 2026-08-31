@@ -257,9 +257,14 @@ tr:hover td{background:#fcfcff}
 @media(max-width:640px){.faq p,p.faq-a,.faq-grid p,.article h2#faq ~ p{padding-left:12px}}
 
 /* ── Компоненты единого шаблона (перенесены со страниц 31.08.2026) ── */
-.psec-grey{background:var(--panel);border-radius:18px;padding:30px 34px 34px;margin-top:34px}
+/* Селектор с тегом (section.psec-grey) взят намеренно: на страницах есть свое
+   правило .psec{padding:46px 0 0}, оно объявлено ниже подключения этого файла
+   и при равной специфичности побеждает — заливка теряла боковой и нижний
+   отступ, кнопка упиралась в край. Тег поднимает вес и возвращает отступы. */
+section.psec-grey{background:var(--panel);border-radius:18px;padding:30px 34px 34px;margin-top:34px}
 .psec-grey > .uw{padding:0}
 .psec-grey .uw > *:last-child{margin-bottom:0}
+.psec-grey .duo > div > *:last-child{margin-bottom:0}
 .dashshot{margin:6px 0 0}
 .dashshot img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;box-shadow:0 18px 50px rgba(30,34,43,0.12)}
 .dashshot figcaption{font-size:13px;color:var(--muted);margin-top:10px}
@@ -269,6 +274,6 @@ tr:hover td{background:#fcfcff}
 .uw .phero-cta,.uw .btn-row,.uw .cta-row{margin-bottom:26px}
 .uw .phero-cta + *,.uw .btn-row + *,.uw .cta-row + *,.uw .phero-cta + p,.uw .btn-row + p,.uw .cta-row + p{margin-top:26px}
 @media(max-width:640px){
-  .psec-grey{padding:22px 18px;border-radius:14px}
+  section.psec-grey{padding:22px 18px 26px;border-radius:14px}
   .uw p.phero-price{padding-left:12px}
 }

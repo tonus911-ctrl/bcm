@@ -257,8 +257,9 @@ tr:hover td{background:#fcfcff}
 @media(max-width:640px){.faq p,p.faq-a,.faq-grid p,.article h2#faq ~ p{padding-left:12px}}
 
 /* ── Компоненты единого шаблона (перенесены со страниц 31.08.2026) ── */
-.psec-grey{background:var(--panel);border-radius:18px;padding:30px 34px;margin-top:34px}
+.psec-grey{background:var(--panel);border-radius:18px;padding:30px 34px 34px;margin-top:34px}
 .psec-grey > .uw{padding:0}
+.psec-grey .uw > *:last-child{margin-bottom:0}
 .dashshot{margin:6px 0 0}
 .dashshot img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;box-shadow:0 18px 50px rgba(30,34,43,0.12)}
 .dashshot figcaption{font-size:13px;color:var(--muted);margin-top:10px}

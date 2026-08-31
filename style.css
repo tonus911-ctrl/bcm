@@ -248,3 +248,10 @@ tr:hover td{background:#fcfcff}
 .pn-list span{display:block;font-size:13px;color:#565A63;line-height:1.5;margin-top:3px}
 .pn-all{display:inline-block;font-size:15px;font-weight:700;color:#1B3A5C;text-decoration:none;border-bottom:2px solid #D8CFB8;padding-bottom:1px}
 .pn-all:hover{border-color:#1B3A5C}
+
+/* Ответы в «Частых вопросах» сдвинуты вправо целиком, а не первой строкой:
+   вопрос держит левый край, ответ читается как вложенный в него. Разметка
+   блока на сайте исторически четырех видов, поэтому и селекторов четыре. */
+.faq p,p.faq-a,.faq-grid p{padding-left:18px}
+.article h2#faq ~ p{padding-left:18px}
+@media(max-width:640px){.faq p,p.faq-a,.faq-grid p,.article h2#faq ~ p{padding-left:12px}}

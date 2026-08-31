@@ -6,6 +6,7 @@ const LANG = {
     hCta: "Связаться",
     hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     siteUrl: "https://bcm.risk-place.ru/",
+    "dash-shot": '<img src="dashboard-preview.jpg" alt="Дашборд непрерывности и рисков — интегральный индекс, стоимость дня простоя и статус планов" loading="lazy" class="dash-flag-img">',
     "i18n-hero-eyebrow": "Управление непрерывностью бизнеса · BCM / BCP",
     "i18n-hero-title": "Киберустойчивость и непрерывность бизнеса —<br><em>фундамент, который служит долгие годы.</em>",
     "i18n-hero-sub": "Кибератака, сбой ИТ, потеря поставщика — каждый из этих сценариев уже произошел с сотнями компаний. BCM (управление непрерывностью бизнеса) — это система, которая позволяет восстановить работу за часы, а не недели.",
@@ -121,6 +122,7 @@ const LANG = {
       r3h: "Потеря клиентов", r3d: "Долгий простой = уход к конкуренту",
       r4h: "Репутационный ущерб", r4d: "Никто не готов — клиенты это видят"}},
   en: {
+    "dash-shot": '<img src="dashboard-preview-en.jpg" alt="Business continuity dashboard — resilience index, cost of one day of downtime and plan status" loading="lazy" class="dash-flag-img">',
     htmlLang: "en",
     hLogo: '<span class="logo-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="logo-place">place</span>.ru</span>',
     hCta: "Get in Touch",
@@ -299,7 +301,8 @@ function setLang(lang) {
     "quiz-eyebrow","quiz-title","quiz-desc","quiz-hint",
     "contacts-calendly-btn","quote-author","ct-phone","ct-tg","ct-email","ct-li","ct-tc",
     "about-name","tag1","tag2","tag3","tag4","tag5","tag6","tag7","tag8","hKb",
-    "kb-eyebrow","kb-title","kb-desc","kb-btn","hEdu","about-more","footer-part"
+    "kb-eyebrow","kb-title","kb-desc","kb-btn","hEdu","about-more","footer-part",
+    "dash-shot"
   ];
   extIds.forEach(function(id) {
     var el = document.getElementById(id);

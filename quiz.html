@@ -570,8 +570,6 @@ let formSubmitted = false;
 function renderUI() {
   const t = T[lang];
   document.documentElement.lang = t.lang;
-  document.getElementById("hLogo").textContent = t.logo;
-  document.getElementById("hLogo").href = t.logoUrl;
   document.getElementById("btnRU").classList.toggle("active", lang==="ru");
   document.getElementById("btnEN").classList.toggle("active", lang==="en");
 

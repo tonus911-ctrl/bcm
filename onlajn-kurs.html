@@ -326,15 +326,15 @@
       <ul>
         <li><b>Именной, с уникальным номером.</b> Выдается на имя участника; у каждого сертификата — собственный номер.</li>
         <li><b>Выдается по итогам всей программы.</b> После всех шести тестов и разбора итоговой работы.</li>
-        <li><b>Подлинность проверяется по номеру.</b> Работодатель или клиент может убедиться, что сертификат действительно выдан.</li>
+        <li><b>Подлинность проверяется по номеру.</b> Работодатель вводит номер здесь или сканирует код с документа и сразу видит имя владельца, программу и срок действия.</li>
       </ul>
       <div class="verify">
         <div class="vtitle">Проверка сертификата по номеру</div>
         <div class="vrow">
-          <input type="text" class="fld" id="certNum" placeholder="Номер сертификата, например RP-2026-0001">
+          <input type="text" class="fld" id="certNum" placeholder="Номер сертификата, например ERGP-26-7K4M-Q9D3">
           <button type="button" class="pill pill-navy" id="certBtn">Проверить</button>
         </div>
-        <p class="vans" id="certAns">Публичный реестр запускается с первой группой участников. Чтобы проверить сертификат сегодня, напишите на <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — отвечаем в тот же день.</p>
+        <p class="vans" id="certAns" style="display:none"></p>
       </div>
     </div>
   </div>
@@ -450,10 +450,47 @@
 <!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <script>
-(function(){var b=document.getElementById('certBtn');if(!b)return;
-  b.addEventListener('click',function(){var a=document.getElementById('certAns');if(a)a.style.display='block';
-    try{ym(110579884,'reachGoal','ergp_cert_check');}catch(e){}
-    try{gtag('event','ergp_cert_check');}catch(e){}});})();
+/* Проверка сертификата по номеру. Спрашиваем реестр risk-place.org и
+   отвечаем словами. Разбор в 08 - Проверки/patch_verify_forms.py.   */
+function rpVerify(no, box, W){
+  no = String(no || "").trim().toUpperCase();
+  if (!no){ box.innerHTML = ""; box.style.display = "none"; return; }
+  box.style.display = "block";
+  box.textContent = W.asking;
+  try{ gtag('event','certificate_verify_attempt',{number:no}); }catch(e){}
+  try{ ym(110579884,'reachGoal','ergp_cert_check'); }catch(e){}
+  var esc = function(s){ return String(s == null ? "" : s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); };
+  var day = function(iso){
+    var m = String(iso||"").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    return m ? (+m[3]) + " " + W.mon[+m[2]-1] + " " + m[1] : "";
+  };
+  fetch("https://ergp.risk-place.org/api/verify" + "?no=" + encodeURIComponent(no))
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (!d || !d.ok) { box.textContent = W.err; return; }
+      if (!d.found){ box.textContent = d.reason === "format" ? W.badformat : W.notfound; return; }
+      var tail = d.status === "revoked" ? W.revoked : (d.status === "expired" ? W.expired : "");
+      box.innerHTML = "<b>" + esc(d.name) + "</b> — " + esc(d.credential || "")
+        + "<br>" + W.issued + " " + esc(day(d.issued)) + " · " + W.until + " " + esc(day(d.valid))
+        + "<br>" + (d.status === "valid" ? W.ok : "") + (tail ? " " + esc(tail) : "");
+    })
+    .catch(function(){ box.textContent = W.err; });
+}
+(function(){
+  var b = document.getElementById('certBtn'), i = document.getElementById('certNum');
+  if (!b || !i) return;
+  var go = function(){ rpVerify(i.value, document.getElementById('certAns'), {asking:"Смотрим в реестре…",
+   mon:["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"],
+   issued:"Выдан", until:"действует до", ok:"Сертификат действителен.",
+   expired:"Срок действия истек: программа пройдена, но сертификат больше не действует.",
+   revoked:"Сертификат отозван, полагаться на него нельзя.",
+   notfound:"Сертификат с таким номером risk-place не выдавала. Проверьте номер: в наших номерах не бывает букв O и I и цифр 0 и 1.",
+   badformat:"Это не похоже на наш номер. Формат такой: ERGP-26-XXXX-XXXX.",
+   err:"Реестр не ответил. Повторите через минуту или напишите на info@risk-place.ru."}); };
+  b.addEventListener('click', go);
+  i.addEventListener('keydown', function(e){ if (e.key === 'Enter') go(); });
+})();
 (function(){var btn=document.getElementById('dmSubmit');if(!btn)return;
   function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
   btn.addEventListener('click',async function(){

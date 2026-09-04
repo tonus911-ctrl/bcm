@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 520" width="1060" height="520" role="img" aria-label="The ERGP Circle">
+<style>text{font-family:'Figtree','IBM Plex Sans Arabic',system-ui,sans-serif}</style>
+<circle cx="530" cy="252" r="178" fill="#F1EEE8"/>
+<circle cx="530" cy="252" r="202" fill="none" stroke="#C4571C" stroke-width="1.5" stroke-dasharray="6 9" opacity=".55"/>
+<path d="M190,262 C280,262 300,252 326,252" fill="none" stroke="#C4571C" stroke-width="2.5"/>
+<path d="M870,262 C780,262 760,252 734,252" fill="none" stroke="#C4571C" stroke-width="2.5"/>
+<circle cx="326" cy="252" r="5" fill="#C4571C"/><circle cx="734" cy="252" r="5" fill="#C4571C"/>
+<g opacity="0.6"><circle cx="484.0" cy="178.0" r="13.9" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/><path d="M455.0,233.7 C455.0,205.8 467.8,198.9 484.0,198.9 C500.2,198.9 513.0,205.8 513.0,233.7 Z" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/></g>
+<g opacity="0.6"><circle cx="576.0" cy="178.0" r="13.9" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/><path d="M547.0,233.7 C547.0,205.8 559.8,198.9 576.0,198.9 C592.2,198.9 605.0,205.8 605.0,233.7 Z" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/></g>
+<g opacity="0.6"><circle cx="392.0" cy="222.0" r="13.4" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/><path d="M364.0,275.8 C364.0,248.9 376.3,242.2 392.0,242.2 C407.7,242.2 420.0,248.9 420.0,275.8 Z" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/></g>
+<g opacity="0.6"><circle cx="668.0" cy="222.0" r="13.4" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/><path d="M640.0,275.8 C640.0,248.9 652.3,242.2 668.0,242.2 C683.7,242.2 696.0,248.9 696.0,275.8 Z" fill="#F1EEE8" stroke="#8A8578" stroke-width="2.5"/></g>
+<g opacity="1.0"><circle cx="442.0" cy="250.0" r="21.1" fill="#0D1117" stroke="#F1EEE8" stroke-width="5" paint-order="stroke"/><path d="M398.0,334.5 C398.0,292.2 417.4,281.7 442.0,281.7 C466.6,281.7 486.0,292.2 486.0,334.5 Z" fill="#0D1117" stroke="#F1EEE8" stroke-width="5" paint-order="stroke"/></g>
+<g opacity="1.0"><circle cx="618.0" cy="250.0" r="21.1" fill="#0D1117" stroke="#F1EEE8" stroke-width="5" paint-order="stroke"/><path d="M574.0,334.5 C574.0,292.2 593.4,281.7 618.0,281.7 C642.6,281.7 662.0,292.2 662.0,334.5 Z" fill="#0D1117" stroke="#F1EEE8" stroke-width="5" paint-order="stroke"/></g>
+<g opacity="1.0"><circle cx="530.0" cy="224.0" r="24.5" fill="#0D1117" stroke="#F1EEE8" stroke-width="5" paint-order="stroke"/><path d="M479.0,321.9 C479.0,273.0 501.4,260.7 530.0,260.7 C558.6,260.7 581.0,273.0 581.0,321.9 Z" fill="#0D1117" stroke="#F1EEE8" stroke-width="5" paint-order="stroke"/></g>
+<circle cx="530" cy="252" r="178" fill="none" stroke="#C4571C" stroke-width="3"/>
+<g opacity="1.0"><circle cx="120.0" cy="222.0" r="21.6" fill="#C4571C"/><path d="M75.0,308.4 C75.0,265.2 94.8,254.4 120.0,254.4 C145.2,254.4 165.0,265.2 165.0,308.4 Z" fill="#C4571C"/></g>
+<g opacity="1.0"><circle cx="940.0" cy="222.0" r="21.6" fill="#C4571C"/><path d="M895.0,308.4 C895.0,265.2 914.8,254.4 940.0,254.4 C965.2,254.4 985.0,265.2 985.0,308.4 Z" fill="#C4571C"/></g>
+<text x="530" y="478" font-size="24" font-weight="600" fill="#16181F" text-anchor="middle">The ERGP Circle</text>
+<text x="530" y="504" font-size="16" font-weight="400" fill="#8A8578" text-anchor="middle">certified practitioners of resilience</text>
+<text x="530" y="26" font-size="15" font-weight="400" fill="#8A8578" text-anchor="middle">the Circle grows with every certificate</text>
+<text x="120" y="352" font-size="16" font-weight="600" fill="#16181F" text-anchor="middle">Evgeny Telenkov</text>
+<text x="120" y="374" font-size="15" font-weight="400" fill="#8A8578" text-anchor="middle">engagements with organisations</text>
+<text x="940" y="352" font-size="16" font-weight="600" fill="#16181F" text-anchor="middle">Erzhena Khilko</text>
+<text x="940" y="374" font-size="15" font-weight="400" fill="#8A8578" text-anchor="middle">programmes and Circle sessions</text>
+<text x="120" y="184" font-size="15" font-weight="500" fill="#C4571C" text-anchor="middle">Coordinators</text>
+<text x="940" y="184" font-size="15" font-weight="500" fill="#C4571C" text-anchor="middle">Coordinators</text>
+</svg>

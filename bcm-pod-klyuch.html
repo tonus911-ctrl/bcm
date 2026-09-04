@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://bcm.risk-place.ru/bcm-pod-klyuch.html">
 <meta property="og:title" content="Построение системы непрерывности бизнеса под ключ">
 <meta property="og:description" content="От аудита готовности к действующей системе: планы, обученные люди, понимание рисков в деньгах и измеримые метрики восстановления.">
-<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm.png">
+<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <meta property="og:site_name" content="risk-place.ru">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -112,6 +112,15 @@
 .facts .fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
 .facts .fact b{display:block;font-size:19px;font-weight:800;color:var(--ink);line-height:1.2}
 .facts .fact span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 6px}
+@media(max-width:760px){.opts{grid-template-columns:1fr}}
+.opt{background:#fff;border:1px solid var(--line,#E3D9C2);border-radius:14px;padding:20px 22px}
+.opt .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark,#7A5E17);font-weight:700;display:block;margin-bottom:6px}
+.opt b{display:block;font-size:17px;margin-bottom:6px}
+.opt p{font-size:14.5px;line-height:1.55;color:var(--muted,#565A63);margin:0}
+.opt a{color:var(--gold-dark,#7A5E17);font-weight:700;text-decoration:none}
+.optnote{font-size:14px;color:var(--muted,#565A63);margin-top:10px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "BCM под ключ", "serviceType": "Business continuity implementation", "description": "Аудит готовности к двум критичным сценариям и повышение метрик выживания: план BCM и DRP, стресс-тест, реестр точек отказа, план на 90 дней.", "provider": {"@type": "Organization", "name": "risk-place.ru"}}</script>
 </head>
@@ -121,18 +130,19 @@
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Сертификация SAFE</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="bcm-pod-klyuch.html" class="act">RU</a><a href="en-bcm-pod-klyuch.html">EN</a></span></nav>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html" class="act">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="uh-lang"><a href="bcm-pod-klyuch.html" class="act">RU</a><a href="en-bcm-pod-klyuch.html">EN</a></span></nav>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <section class="phero"><div class="uw">
-  <div class="crumbs"><a href="index.html">Главная</a> / Построение системы непрерывности</div>
+  <div class="crumbs"><a href="index.html">Главная</a> / <a href="dlya-kompanij.html">Для компаний</a> / Построение системы непрерывности</div>
   <div class="phero-eyebrow">Работа с компанией · от аудита к действующей системе · 1-2 месяца</div>
   <h1>Построение системы непрерывности бизнеса под ключ</h1>
   <p class="phero-sub">Начинаем с честного аудита того, что уже есть, и доводим до работающей системы. По итогам у вас остаются планы, которыми пользуются, люди, которые знают свои роли, понимание рисков в деньгах и метрики восстановления, которые можно показать совету директоров.</p>
   <div class="facts"><div class="fact"><b>1-2</b><span>месяца работы</span></div><div class="fact"><b>4</b><span>артефакта на выходе</span></div><div class="fact"><b>Все роли</b><span>разобраны с людьми</span></div><div class="fact"><b>2/3</b><span>работы — исправления</span></div></div>
 <div class="phero-cta">
-    <span class="phero-terms">фиксированный объем работ · 1-2 месяца · исправления в ходе работы включены</span>
+    <span class="phero-price">По объему работ</span>
+    <span class="phero-terms">расчет за два рабочих дня · 1-2 месяца · исправления в ходе работы включены</span>
   </div>
   <div class="phero-cta">
     <button class="btn btn-yellow np-form" data-prod="Построение системы непрерывности под ключ" data-mode="apply">Запросить стоимость</button>
@@ -254,6 +264,18 @@
   </div>
 </div></section>
 
+<section class="psec" id="options"><div class="container">
+  <h2>Состав работ собирается под задачу</h2>
+  <p>Основа программы одна: аудит готовности, анализ воздействия на бизнес, планы и люди, которые знают свои роли. Дальше добавляется то, что нужно именно вашей компании. Каждая опция входит в единый расчет, отдельно не продается.</p>
+  <div class="opts">
+    <div class="opt"><span class="k">Основа</span><b>Аудит готовности и анализ воздействия</b><p>Что есть сейчас, какие процессы критичны, сколько стоит день простоя и где разрыв между допустимым и фактическим временем восстановления. <a href="ocenka-riskov-nepreryvnosti.html">Как считаем →</a></p></div>
+    <div class="opt"><span class="k">Опция</span><b>Стресс-тест непрерывности за два дня</b><p>Кабинетная проверка на живом сценарии: отказ систем, потеря площадки, уход поставщика. Находим, где план ломается, до того, как это найдет кризис. <a href="stress-test-nepreryvnosti.html">Как проходит →</a></p></div>
+    <div class="opt"><span class="k">Опция</span><b>Стратегическая сессия по устойчивости</b><p>Полдня с руководством: риск-аппетит, критические процессы, решения, которые нужны от совета. Итог сессии становится рамкой всей программы. <a href="strategicheskaya-sessiya.html">Как проводим →</a></p></div>
+    <div class="opt"><span class="k">Опция</span><b>Риск-сюрвей площадок и поставщиков</b><p>Выезд на площадку и разбор цепочки поставок: единые точки отказа, концентрация на одном контрагенте, резервные каналы. Результат в реестре рисков с владельцами и сроками.</p></div>
+  </div>
+  <p class="optnote">Нужно обучить управленческую команду? <a href="obuchenie-nepreryvnosti-biznesa.html">Корпоративный тренинг по непрерывности</a> это отдельная программа на два дня, ее можно взять вместе с построением системы или без него.</p>
+</div></section>
+
 <section class="psec"><div class="container">
   <h2>Частые вопросы</h2>
   <div class="faq-q">Входят ли исправления в цену?</div>
@@ -276,13 +298,10 @@
 </div></section>
 
 <!--TPL:FOOTER-->
-<footer class="uf">
-  <div class="uf-bar">
-    <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <div class="uf-links"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Сертификация SAFE</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a></div>
-    <div class="uf-copy">© 2026 Risk-place · Управление непрерывностью бизнеса и рисками · <a href="https://risk-place.ru" target="_blank" rel="noopener">часть проекта risk-place.ru</a></div>
-  </div>
-</footer>
+<footer class="uf"><div class="in">
+  <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
+  <div class="row2"><a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a><span>© 2026 Risk-place · Управление непрерывностью бизнеса и рисками</span><a href="o-podhode.html">О нас</a><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="slovar.html">Словарь</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a><a href="https://risk-place.ru/">risk-place.ru</a></div>
+</div></footer>
 <!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika -->

@@ -2,7 +2,7 @@
 const LANG = {
   ru: {
     htmlLang: "ru",
-    hLogo: '<span class="logo-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="logo-place">place</span>.ru</span>',
+    hLogo: '<span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span>',
     hCta: "Связаться",
     hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     siteUrl: "https://bcm.risk-place.ru/",
@@ -124,7 +124,7 @@ const LANG = {
   en: {
     "dash-shot": '<img src="dashboard-preview-en.jpg" alt="Business continuity dashboard — resilience index, cost of one day of downtime and plan status" loading="lazy" class="dash-flag-img">',
     htmlLang: "en",
-    hLogo: '<span class="logo-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="logo-place">place</span>.ru</span>',
+    hLogo: '<span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span>',
     hCta: "Get in Touch",
     hCtaHref: "https://bcm.risk-place.ru/quiz.html",
     siteUrl: "https://bcm.risk-place.ru/",

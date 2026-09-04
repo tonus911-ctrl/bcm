@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://bcm.risk-place.ru/en-bcm-pod-klyuch.html">
 <meta property="og:title" content="Turnkey BCM in Russia: audit and raise your survival metrics">
 <meta property="og:description" content="The audit is one third of the work. Two thirds is fixing: new plans, new arrangements, measurable recovery. From 300,000 RUB, 1-2 months.">
-<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm.png">
+<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <meta property="og:site_name" content="risk-place.ru">
 <meta property="og:locale" content="en_GB">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -100,6 +100,15 @@
 .modal-bx input,.modal-bx textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;font-family:inherit}
 .consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#1E222B;margin:2px 0 16px;cursor:pointer;background:#F5F1E8;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
 .consent input{width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:var(--navy)}
+
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 6px}
+@media(max-width:760px){.opts{grid-template-columns:1fr}}
+.opt{background:#fff;border:1px solid var(--line,#E3D9C2);border-radius:14px;padding:20px 22px}
+.opt .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark,#7A5E17);font-weight:700;display:block;margin-bottom:6px}
+.opt b{display:block;font-size:17px;margin-bottom:6px}
+.opt p{font-size:14.5px;line-height:1.55;color:var(--muted,#565A63);margin:0}
+.opt a{color:var(--gold-dark,#7A5E17);font-weight:700;text-decoration:none}
+.optnote{font-size:14px;color:var(--muted,#565A63);margin-top:10px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Turnkey BCM", "serviceType": "Business continuity implementation", "description": "Readiness audit against two critical scenarios and an uplift of survival metrics: BCM and DR plans, stress test, register of single points of failure, 90-day action plan.", "areaServed": "RU", "inLanguage": "en", "provider": {"@type": "Organization", "name": "risk-place.ru"}, "offers": {"@type": "Offer", "price": "300000", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "300000", "priceCurrency": "RUB"}}}</script>
 </head>
@@ -109,18 +118,18 @@
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP Certification</a><a href="en-kultura-bezopasnosti.html">SAFE Certification</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a><span class="uh-lang"><a href="bcm-pod-klyuch.html">RU</a><a href="en-bcm-pod-klyuch.html" class="act">EN</a></span></nav>
+    <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html" class="act">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a><span class="uh-lang"><a href="bcm-pod-klyuch.html">RU</a><a href="en-bcm-pod-klyuch.html" class="act">EN</a></span></nav>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <section class="phero"><div class="uw">
-  <div class="crumbs"><a href="index.html">Home</a> / <a href="produkty.html">Products</a> / Turnkey BCM</div>
+  <div class="crumbs"><a href="index.html">Home</a> / <a href="en-dlya-kompanij.html">For companies</a> / Turnkey BCM</div>
   <div class="phero-eyebrow">Product · audit and implementation · 1-2 months</div>
   <h1>Turnkey BCM: audit and raise your survival metrics</h1>
   <p class="phero-sub">We test how ready your company is for two critical scenarios — a ransomware attack and a fire that closes a site — and then raise your survival metrics. The audit is one third of the work. Two thirds is fixing: new plans, new arrangements, measurable recovery. Delivered in Russia, in English, for teams that report to a foreign parent, an insurer or a group auditor.</p>
   <div class="phero-cta">
-    <span class="phero-price">from 300,000 RUB</span>
-    <span class="phero-terms">fixed scope · 1-2 months · free fixes included</span>
+    <span class="phero-price">Priced by scope</span>
+    <span class="phero-terms">quote within two working days · 1-2 months · free fixes included</span>
   </div>
   <div class="phero-cta">
     <button class="btn btn-yellow np-form" data-prod="Turnkey BCM (audit and implementation)" data-mode="apply">Send a request</button>
@@ -231,6 +240,18 @@
   </div>
 </div></section>
 
+<section class="psec" id="options"><div class="container">
+  <h2>The scope is assembled for your task</h2>
+  <p>The core is the same for every company: a readiness audit, a business impact analysis, plans and people who know their roles. On top of it we add what your company needs. Every option is part of one quote; none is sold separately.</p>
+  <div class="opts">
+    <div class="opt"><span class="k">Core</span><b>Readiness audit and business impact analysis</b><p>What exists today, which processes are critical, what a downtime day costs and where the gap is between tolerable and actual recovery time.</p></div>
+    <div class="opt"><span class="k">Option</span><b>Two-day continuity stress-test</b><p>A desk-based test on a live scenario: systems fail, a site is lost, a supplier leaves. We find where the plan breaks before a crisis finds it. <a href="en-stress-test-nepreryvnosti.html">How it runs →</a></p></div>
+    <div class="opt"><span class="k">Option</span><b>Resilience strategy session</b><p>Half a day with leadership: risk appetite, critical processes, the decisions the board must take. The outcome frames the whole programme.</p></div>
+    <div class="opt"><span class="k">Option</span><b>Risk survey of sites and suppliers</b><p>A site visit and a walk through the supply chain: single points of failure, concentration on one counterparty, fallback channels. The result lands in the risk register with owners and deadlines.</p></div>
+  </div>
+  <p class="optnote">Need to train the management team? <a href="en-obuchenie-nepreryvnosti-biznesa.html">Corporate continuity training</a> is a separate two-day programme; take it with the system build or on its own.</p>
+</div></section>
+
 <section class="psec"><div class="container">
   <h2>Frequently asked questions</h2>
   <div class="faq-q">Does the price include the fixes?</div>
@@ -253,13 +274,10 @@
 </div></section>
 
 <!--TPL:FOOTER-->
-<footer class="uf">
-  <div class="uf-bar">
-    <a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <div class="uf-links"><a href="en-onlajn-kurs.html">ERGP Certification</a><a href="en-kultura-bezopasnosti.html">SAFE Certification</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a></div>
-    <div class="uf-copy">© 2026 Risk-place · Business continuity and risk management · <a href="https://risk-place.ru" target="_blank" rel="noopener">part of the risk-place.ru project</a></div>
-  </div>
-</footer>
+<footer class="uf"><div class="in">
+  <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
+  <div class="row2"><a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a><span>© 2026 Risk-place · Business continuity and risk management</span><a href="en-o-podhode.html">About us</a><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="slovar-en.html">Glossary</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a><a href="https://risk-place.ru/">risk-place.ru</a></div>
+</div></footer>
 <!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika -->

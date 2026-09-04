@@ -17,7 +17,7 @@
 <meta property="og:title" content="Диагностика устойчивости бизнеса — risk-place.ru">
 <meta property="og:description" content="13 вопросов — узнайте уровень устойчивости вашего бизнеса. Результат сразу и на почту. Бесплатно.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm.png">
+<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="risk-place.ru">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Диагностика устойчивости бизнеса — BCM">
 <meta name="twitter:description" content="13 вопросов — узнайте уровень устойчивости бизнеса. Бесплатно, результат сразу.">
-<meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm.png">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <meta name="author" content="Евгений Теленков">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -174,6 +174,41 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   "isAccessibleForFree": true
 }
 </script>
+<!--TPL:CSS--><style>
+/* ══ УНИВЕРСАЛЬНАЯ ШАПКА И ПОДВАЛ · v2 · 04.09.2026 ══ */
+.uh{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #E3D9C2;}
+.uh-bar{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:22px;min-height:62px;}
+.uh-logo{font-size:19px;font-weight:800;color:#1E222B;text-decoration:none;white-space:nowrap;font-family:'Manrope','Figtree',Arial,sans-serif;display:inline-flex;align-items:center;gap:9px;}
+.uh-logo .lp{color:#7A5E17;}
+.uh-txt{white-space:nowrap;letter-spacing:.01em;}
+.uh-mark{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1.5px solid #C9A94E;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;}
+.uh-mark img{display:block;mix-blend-mode:multiply;}
+.uh-nav{display:flex;align-items:center;gap:16px;margin-left:auto;flex-wrap:nowrap;}
+.uh-nav a{font-size:15px;font-weight:400;color:#565A63;text-decoration:none;padding:6px 1px;border-bottom:2px solid transparent;white-space:nowrap;}
+.uh-nav a:hover{color:#1E222B;}
+.uh-nav a.act{color:#1E222B;border-bottom-color:#C9A94E;}
+.uh-lang{display:flex;gap:2px;background:#F5F1E8;border:1px solid #E3D9C2;border-radius:999px;padding:3px;margin-left:4px;}
+.uh-lang a{font-size:13px;font-weight:700;color:#565A63;text-decoration:none;padding:5px 11px;border-radius:999px;cursor:pointer;}
+.uh-lang a.act,.uh-lang a.active{background:#C9A94E;color:#1E222B;}
+.uh-burger{display:none;margin-left:auto;background:none;border:none;font-size:24px;cursor:pointer;color:#1E222B;}
+@media(max-width:960px){
+  .uh-burger{display:block;}
+  .uh-nav{display:none;position:absolute;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid #E3D9C2;flex-direction:column;align-items:flex-start;padding:14px 20px;gap:12px;}
+  .uh-nav.open{display:flex;}
+  .uh-lang{margin-left:0;}
+}
+.uf{background:#1E222B;color:#B9BCC4;}
+.uf .in{max-width:1080px;margin:0 auto;padding:34px 20px 26px;}
+.uf .row1{display:flex;flex-wrap:wrap;gap:10px 24px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.14);}
+.uf .row1 a{color:rgba(255,255,255,.95);text-decoration:none;font-size:15px;}
+.uf .row1 a:hover{color:#C9A94E;}
+.uf .row2{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:13.5px;color:#8A8F99;}
+.uf .row2 a{color:#B9BCC4;text-decoration:none;}
+.uf .row2 a:hover{color:#fff;}
+.uf-logo{font-size:16px;font-weight:800;color:#fff;text-decoration:none;font-family:'Manrope','Figtree',Arial,sans-serif;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+.uf-logo .lp{color:#C9A94E;}
+.uf-logo .uh-mark{width:28px;height:28px;}
+</style><!--/TPL:CSS-->
 </head>
 <body>
 
@@ -182,7 +217,7 @@ body{font-family:'Inter','Calibri',Arial,sans-serif;background:#f5f5f5;color:var
   <div class="uh-bar">
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
-    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Сертификация SAFE</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a><span class="lang-toggle"><button class="lang-btn" id="btnRU" onclick="setLang('ru')">RU</button><button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button></span></nav>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
   </div>
 </header>
 <!--/TPL:HEADER-->
@@ -1025,5 +1060,11 @@ ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
 
+<!--TPL:FOOTER-->
+<footer class="uf"><div class="in">
+  <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
+  <div class="row2"><a href="index.html" class="uf-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="22" height="22"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a><span>© 2026 Risk-place · Управление непрерывностью бизнеса и рисками</span><a href="o-podhode.html">О нас</a><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="slovar.html">Словарь</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a><a href="https://risk-place.ru/">risk-place.ru</a></div>
+</div></footer>
+<!--/TPL:FOOTER-->
 </body>
 </html>

@@ -366,12 +366,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bcm.risk-place.ru/shablony.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://bcm.risk-place.ru/bcm-pod-klyuch.html</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -600,6 +594,8 @@
 <url><loc>https://bcm.risk-place.ru/objazatelnoe-obuchenie-i-podgotovka.html</loc><lastmod>2026-08-27</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/ocenka-riskov-nepreryvnosti.html</loc><lastmod>2026-09-04</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/specialist-po-nepreryvnosti.html</loc><lastmod>2026-09-04</lastmod></url>
+<url><loc>https://bcm.risk-place.ru/dlya-kompanij.html</loc><lastmod>2026-09-04</lastmod></url>
+<url><loc>https://bcm.risk-place.ru/en-dlya-kompanij.html</loc><lastmod>2026-09-04</lastmod></url>
   <url>
     <loc>https://bcm.risk-place.ru/llms.txt</loc>
     <lastmod>2026-08-27</lastmod>

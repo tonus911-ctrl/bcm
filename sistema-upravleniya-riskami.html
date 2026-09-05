@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/sistema-upravleniya-riskami.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -122,32 +119,50 @@
   ]
 }
 </script>
-<style>
-@media(max-width:640px){.pillar-nav{padding:20px 18px;border-radius:12px}}
-</style>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="sistema-upravleniya-riskami.html" class="act">RU</a><a href="en-sistema-upravleniya-riskami.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Система управления рисками</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>Система управления рисками</div>
+  <div class="rule"></div>
   <div class="eyebrow">Управление рисками</div>
   <h1>Система управления рисками предприятия: без бюрократии</h1>
   <p class="lead">Систему управления рисками обычно строят как отчетность: реестры на сотни строк, карты, комитеты. Через год она живет своей жизнью, а решения принимаются без нее. Разбираем, как собрать СУР, которой пользуется руководство — компактную, с владельцами и цифрами.</p>
-  <div class="meta-row">Опубликовано: 18 июля 2026 г. · Автор: Евгений Теленков · ≈ 8 мин чтения</div>
+  <div class="meta">Опубликовано: 18 июля 2026 г. · Автор: Евгений Теленков · ≈ 8 мин чтения</div>
 </div></div>
-<div class="container">
-  <img src="sistema-upravleniya-riskami.png" alt="Система управления рисками предприятия без бюрократии" class="article-cover">
-  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#problema">Почему СУР вырождается в отчетность</a></li><li><a href="#printsipy">4 принципа живой системы</a></li><li><a href="#reestr">Реестр: 15 рисков вместо 150</a></li><li><a href="#vladeltsy">Владельцы и решения</a></li><li><a href="#metriki">Метрики вместо карт «вероятность-ущерб»</a></li><li><a href="#nepreryvnost">Связка с непрерывностью</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#problema">Почему СУР вырождается в отчетность</a>
+    <a href="#printsipy">4 принципа живой системы</a>
+    <a href="#reestr">Реестр: 15 рисков вместо 150</a>
+    <a href="#vladeltsy">Владельцы и решения</a>
+    <a href="#metriki">Метрики вместо карт «вероятность-ущерб»</a>
+    <a href="#nepreryvnost">Связка с непрерывностью</a>
+    <a href="#tri-linii">Кто владеет риском</a>
+    <a href="#risk-appetit">Сколько риска компания готова принять</a>
+    <a href="#pokazateli">Опережающие показатели</a>
+    <a href="#rabotaet-li">Как понять, что система работает</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 <h2 id="problema">Почему СУР вырождается в отчетность</h2>
 <p>Типовой путь: компания заводит реестр на 100-200 рисков, красит матрицу «вероятность-ущерб», собирает комитет раз в квартал. Через год реестр обновляет один специалист, руководители подписывают не читая, а реальные решения — инвестиции, запуск продуктов, выбор поставщиков — принимаются вообще без оглядки на этот контур. Система есть, управления нет.</p>
 <p>Корень проблемы: СУР спроектирована для отчета, а не для решений. Признак здоровья простой: если убрать все риск-документы, изменится ли хоть одно управленческое решение? Если нет — это имитация.</p>
@@ -189,22 +204,25 @@
 <p><b>Нужен ли отдельный риск-менеджер?</b> Среднему бизнесу — координатор на часть ставки (методология, календарь, реестр) при владельцах-руководителях. Полноценная функция нужна в регулируемых отраслях и там, где этого требуют инвесторы.</p>
 <p><b>По какому стандарту строить?</b> Идеи брать из ISO 31000, но стандарт — не цель: проверку «изменились ли решения» не заменяет ни один сертификат.</p>
 <p><b>Как продать СУР собственнику?</b> Не риск-терминами, а деньгами: «вот пять сценариев, каждый стоит нам X, вот что мы делаем, чтобы платить меньше». Это разговор об инвестициях, а не о комплаенсе.</p>
-</article>
-<section class="pillar-nav" aria-labelledby="pn-t">
-  <div class="pn-head"><span class="pn-num">Раздел 03 · Риски</span>
-    <h2 class="pn-t" id="pn-t">Управление рисками</h2>
-    <p class="pn-d">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p></div>
-  <ul class="pn-list"><li><a href="matrica-riskov.html">Матрица рисков</a><span>Шкалы вероятности и влияния, приоритизация рисков</span></li><li><a href="kak-prinimat-slozhnye-resheniya.html">Метод трех сценариев</a><span>Оценка риска решения через три сценария и два вопроса</span></li><li><a href="poterya-klyuchevogo-sotrudnika.html">Потеря ключевого сотрудника</a><span>Риск концентрации знаний на одном человеке</span></li><li><a href="poterya-postavshchika.html">Потеря поставщика</a><span>Резервные поставщики, диверсификация, план переключения</span></li><li><a href="geopoliticheskie-riski-i-nepreryvnost.html">Геополитические риски (Ормуз)</a><span>Как метод работает на уровне отраслей и стран</span></li><li><a href="upravlenie-riskami-v-krupnom-banke.html">Управление рисками в крупном банке</a><span>Изнутри: операционный риск, роль CRO, борьба с фродом</span></li><li><a href="bcm-i-strahovanie.html">BCM и страхование</a><span>Что покрывает страхование перерыва, а что нет</span></li><li><a href="strahovanie-pereryvov-premiya.html">Снизить премию BI-страхования</a><span>Что показать андеррайтеру, чтобы платить меньше</span></li><li><a href="riski-sberezheniy.html">Риски сбережений</a><span>Взгляд риск-менеджера на личные сбережения и диверсификацию</span></li><li><a href="tri-linii-zashchity.html">Три линии защиты: кто отвечает за риски в компании</a><span>Кто владеет риском, кто задает правила и кто проверяет обоих</span></li><li><a href="risk-appetit.html">Риск-аппетит: как сформулировать и зачем он нужен</a><span>Измеримая граница потерь, кто утверждает и как сформулировать</span></li><li><a href="kri-i-kpi.html">KRI и KPI: чем отличаются показатели риска и результата</a><span>Опережающие показатели риска против показателей результата</span></li></ul>
-  <a class="pn-all" href="materialy.html#riski">Все материалы раздела в библиотеке →</a>
-</section>
-
-  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">План непрерывности (BCP) →</div><div class="rc-d">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Дашборд непрерывности →</div><div class="rc-d">Индекс устойчивости 0-100, стоимость дня простоя и светофоры для руководства. Живое демо.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
 </div>
+<div class="pn">
+  <div><span class="k">Раздел 03 · Риски</span>
+    <h2 class="pt" id="pn-t">Управление рисками</h2>
+    <p class="pd">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p></div>
+  <ul><li><a href="matrica-riskov.html">Матрица рисков</a><span>Шкалы вероятности и влияния, приоритизация рисков</span></li><li><a href="kak-prinimat-slozhnye-resheniya.html">Метод трех сценариев</a><span>Оценка риска решения через три сценария и два вопроса</span></li><li><a href="poterya-klyuchevogo-sotrudnika.html">Потеря ключевого сотрудника</a><span>Риск концентрации знаний на одном человеке</span></li><li><a href="poterya-postavshchika.html">Потеря поставщика</a><span>Резервные поставщики, диверсификация, план переключения</span></li><li><a href="geopoliticheskie-riski-i-nepreryvnost.html">Геополитические риски (Ормуз)</a><span>Как метод работает на уровне отраслей и стран</span></li><li><a href="upravlenie-riskami-v-krupnom-banke.html">Управление рисками в крупном банке</a><span>Изнутри: операционный риск, роль CRO, борьба с фродом</span></li><li><a href="bcm-i-strahovanie.html">BCM и страхование</a><span>Что покрывает страхование перерыва, а что нет</span></li><li><a href="strahovanie-pereryvov-premiya.html">Снизить премию BI-страхования</a><span>Что показать андеррайтеру, чтобы платить меньше</span></li><li><a href="riski-sberezheniy.html">Риски сбережений</a><span>Взгляд риск-менеджера на личные сбережения и диверсификацию</span></li><li><a href="tri-linii-zashchity.html">Три линии защиты: кто отвечает за риски в компании</a><span>Кто владеет риском, кто задает правила и кто проверяет обоих</span></li><li><a href="risk-appetit.html">Риск-аппетит: как сформулировать и зачем он нужен</a><span>Измеримая граница потерь, кто утверждает и как сформулировать</span></li><li><a href="kri-i-kpi.html">KRI и KPI: чем отличаются показатели риска и результата</a><span>Опережающие показатели риска против показателей результата</span></li></ul>
+  <a class="more" href="materialy.html#riski">Все материалы раздела в библиотеке →</a>
+</div>
+
+  <div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="plan-nepreryvnosti-biznesa.html" class="rel-card"><div class="rt">План непрерывности (BCP) →</div><div class="rd">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="dashboard.html" class="rel-card"><div class="rt">Дашборд непрерывности →</div><div class="rd">Индекс устойчивости 0-100, стоимость дня простоя и светофоры для руководства. Живое демо.</div></a><a href="quiz.html" class="rel-card"><div class="rt">Диагностика за 5 минут →</div><div class="rd">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></div>
+</main>
+</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -216,6 +234,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

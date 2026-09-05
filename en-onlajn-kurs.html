@@ -28,334 +28,181 @@
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* ТОЛЬКО контентные блоки этой страницы. Шапка, ширина, подвал — of style.css.
-   Оформление по макету от 27.08.2026: без карточек и рамок, разделение
-   тонкими линиями, нумерация в отдельной колонке, две заливки на всю
-   страницу — блок демонстрации и врезка о директоре программы. */
-
-/* Абзацы с классом внутри .uw пишем как «.uw p.класс». Правило «.uw p»
-   весит класс плюс тег и перебивает одиночный класс, из-за чего кегль и
-   отступы такого абзаца молча обнуляются. Проверено 27.08.2026 на подписи
-   под кнопками: она прилипала к ним, сколько бы пикселей ей ни задавали. */
-
-/* ── шапка страницы ──
-   Правила .phero, .phero h1, .phero-eyebrow, .crumbs и .crumbs a живут в
-   общем style.css и здесь намеренно не повторяются: два одинаковых правила
-   в двух местах рано или поздно расходятся, и потом непонятно, какое of них
-   победило. Сторож стилей следит, чтобы дубли не вернулись. */
-.uw p.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
-.phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.uw p.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
-.uw p.phero-note b{color:var(--ink);font-weight:700}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
-.fact{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
-.fact b{display:block;font-size:19px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
-.fact span{font-size:13.5px;color:var(--muted);line-height:1.45}
-
-/* ── общее для разделов ── */
-.psec{padding:46px 0 0}
-.psec:last-of-type{padding-bottom:64px}
-/* ── текст и списки: правила висят на контейнере .uw, а не на классе
-   раздела. Иначе блоки со своим классом (демонстрация, врезка о директоре)
-   выпадают of правил и попадают под глобальный сброс отступов. ── */
-.uw h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 16px}
-.uw p{font-size:16px;line-height:1.65;color:#26263a;margin:0 0 14px;max-width:76ch;text-wrap:pretty}
-.uw p:last-child{margin-bottom:0}
-.uw p.sub{color:var(--muted)}
-.uw p.note{font-size:13.5px;line-height:1.55;color:var(--muted)}
-
-/* Маркер всегда заходит под текст абзаца сверху, а не встает с ним на одну
-   линию. Отступ содержимого 28px, маркер живет внутри этого поля. */
-.uw ul,.uw ol{margin:0 0 14px;padding-left:28px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
-.uw ul:last-child,.uw ol:last-child{margin-bottom:0}
-.uw li{margin-bottom:10px}
-.uw li:last-child{margin-bottom:0}
-.uw li b{font-weight:700;color:var(--ink)}
-
-/* Стык абзаца и списка: полстроки воздуха, чтобы перечисление не слипалось
-   со строкой, которая его вводит. Полстроки при кегле 16 и интерлиньяже
-   1.65 — это 13px, задаем в долях строки, чтобы держалось при любом кегле. */
-.uw p + ul,.uw p + ol{margin-top:.5lh}
-.uw ul + p,.uw ol + p{margin-top:.5lh}
-@supports not (margin-top: 1lh){
-  .uw p + ul,.uw p + ol,.uw ul + p,.uw ol + p{margin-top:13px}
-}
-
-/* Общее правило раздела: два смысловых куска внутри блока никогда не стоят
-   вплотную, между ними минимум полстроки. Сетка тарифов, колонки, плитки
-   фактов и подписи под ними подчиняются тому же закону, что абзац и список.
-   Селекторы с тегом p подняты по весу, иначе их перебивает .uw p. */
-.uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:.5lh}
-.uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
-.uw p.tnote,.uw p.note,.uw p.certcap{margin-top:.5lh}
-@supports not (margin-top: 1lh){
-  .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:11px}
-  .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
-  .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:11px}
-}
-
-/* ── строки с номером: модули программы и ступени проверки знаний ── */
-.numrow{display:grid;grid-template-columns:72px 1fr;gap:20px;align-items:baseline}
-.numrow .num{font-size:19px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
-.mods .numrow{padding:22px 0;border-top:1px solid var(--line)}
-.mods h3{font-size:17px;font-weight:700;color:var(--ink);margin:0 0 6px;line-height:1.35}
-.mods h3 span{font-weight:400;color:var(--muted)}
-.mods p{font-size:16px;line-height:1.6;margin:0;max-width:74ch}
-.art{font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:8px}
-.art b{font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark)}
-.steps .numrow{padding:0 0 18px}
-.steps .numrow:last-child{padding:0}
-.steps b{display:block;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:2px}
-.steps .t{font-size:15px;line-height:1.6;color:var(--muted)}
-
-/* ── две колонки, схлопываются сами по ширине ── */
-.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;align-items:start}
-
-/* ── кнопки ── */
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;
-  border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;font-family:inherit}
-.pill-navy{background:var(--navy);color:#fff}
-.pill-gold{background:var(--gold);color:var(--ink)}
-.pill:hover{opacity:.9}
-.pill-navy:hover,.pill-gold:hover{color:inherit}
-.pill-navy:hover{color:#fff}
-
-/* ── поля ввода ── */
-.fld{border:1.5px solid #D8CFB8;border-radius:10px;padding:12px 14px;font-size:15px;
-  background:#fff;color:var(--ink);font-family:inherit;width:100%}
-.fld:focus{outline:none;border-color:var(--gold)}
-
-/* ── сертификат ── */
-.certimg{display:block;width:100%;height:auto;border:1px solid var(--line)}
-.uw p.certcap{font-size:13.5px;line-height:1.5;color:var(--muted);margin:10px 0 0}
-.verify{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
-.vtitle{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
-.vrow{display:flex;gap:10px;flex-wrap:wrap}
-.vrow .fld{flex:1 1 240px;width:auto}
-.uw p.vans{display:none;font-size:13.5px;line-height:1.55;color:#26263a;margin:12px 0 0}
-.uw p.vans a{color:var(--navy);font-weight:600}
-
-/* ── скриншоты курса ── */
-.shots{max-width:980px}
-.shot{display:block;width:100%;height:auto;border:1px solid var(--line);cursor:zoom-in}
-.shotbar{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;padding:14px 0 0}
-.shotbar .cap{font-size:15px;line-height:1.5;color:#26263a}
-.shotnav{display:flex;align-items:baseline;gap:16px;white-space:nowrap}
-.shotnav button{background:none;border:none;padding:0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);font-family:inherit}
-.shotnav .n{font-size:13.5px;color:var(--muted)}
-.slbox{display:none;position:fixed;inset:0;background:rgba(30,34,43,.93);z-index:200;overflow:auto;padding:30px 16px;text-align:center}
-.slbox.open{display:block}
-.slbox img{max-width:min(96vw,1700px);width:100%;height:auto;cursor:zoom-out}
-.slbox .x{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:34px;
-  cursor:pointer;line-height:1;padding:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
-
-/* ── демонстрация: полоса с заливкой на всю ширину ── */
-.demo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin:46px 0 0}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-/* Форма: шаг между рядами полей и до поля сообщения одинаковый. Сетка
-   полей намеренно исключена of общего правила «полстроки»: иначе шаг
-   по вертикали выходит на пиксель больше, чем зазор между колонками,
-   и глаз читает разрыв как ошибку. */
-.uw .dgrid{margin-bottom:0}
-.uw textarea.fld{margin-top:10px;resize:vertical}
-.consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 16px;cursor:pointer}
-.consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
-.consent a{color:var(--navy);font-weight:600}
-.demo .pill{width:100%}
-.uw p.msg-ok{display:none;font-size:15px;font-weight:600;color:#1B6B4A;margin:12px 0 0;text-align:center}
-.uw p.msg-err{display:none;font-size:13.5px;color:#A3351A;margin:12px 0 0;text-align:center}
-.uw p.msg-note{display:none;font-size:13.5px;color:var(--muted);margin:12px 0 0;text-align:center}
-
-/* ── стоимость ── */
-.price{font-size:24px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:14px;padding-left:26px}
-.orgt{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
-
-/* ── директор программы: врезка с заливкой ── */
-.dirsec{background:var(--panel);border-top:1px solid var(--line);padding:46px 0 52px;margin:46px 0 0}
-.dir{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
-.dir img{flex:0 0 112px;width:112px;height:112px;border-radius:50%;object-fit:cover;display:block}
-.dir .body{flex:1 1 420px}
-.dir .nm{display:block;font-size:19px;font-weight:800;color:var(--ink);margin-bottom:3px}
-.dir .rl{display:block;font-size:13.5px;font-weight:700;color:var(--gold-dark);margin-bottom:12px}
-
-/* ── вопросы ── */
-.faq{padding:18px 0;border-top:1px solid var(--line)}
-.faq .q{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 4px;line-height:1.35}
-.faq p{margin:0}
-
-@media(max-width:560px){
-  .numrow{grid-template-columns:44px 1fr;gap:12px}
-  .psec{padding:34px 0 0}
-  .demo,.dirsec{padding:34px 0}
-}
-
-
-
-.circ2{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;margin-top:6px}
-@media(max-width:900px){.circ2{grid-template-columns:1fr}}
-.circ2 img{width:100%;height:auto;display:block}
-.circ2 p{font-size:16px;line-height:1.6;margin:0 0 10px}
-.circ2 ul{margin:0 0 12px;padding-left:20px;font-size:15px;line-height:1.6}
-.circ2 li{margin-bottom:6px}
-.circ2 .small{font-size:13.5px;color:var(--muted)}
-.dir+.dir{margin-top:18px}
-</style>
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"ERGP — Enterprise Resilience Governance Professional","description":"Онлайн-курс и сертификация по управлению устойчивостью бизнеса: 6 modules, 123 chapters, тесты with a pass threshold, итоговая работа reviewed by an expert и именной сертификат with a unique number.","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"},"offers":{"@type":"Offer","price":"19900","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}</script>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html" class="act">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="onlajn-kurs.html">RU</a><a href="en-onlajn-kurs.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero">
-  <div class="uw">
-    <div class="crumbs"><a href="index.html">Home</a> / ERGP Certification</div>
-    <div class="phero-eyebrow">Online course and certification · self-paced · start any day</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span>ERGP Certification</div>
+  <div class="rule"></div>
+    <div class="eyebrow">Online course and certification · self-paced · start any day</div>
     <h1>ERGP — Enterprise Resilience Governance Professional</h1>
-    <p class="phero-sub">Certification in business resilience governance for people who answer for continuity in Russia — from board-level risk appetite to the auditor's report. Written in English for international companies with Russian operations, and grounded in the standards their local entities are actually held to.</p>
-    <div class="facts">
-      <div class="fact"><b>6</b><span>modules</span></div>
-      <div class="fact"><b>123</b><span>chapters</span></div>
-      <div class="fact"><b>6 tests</b><span>with a pass threshold</span></div>
-      <div class="fact"><b>Final assignment</b><span>reviewed by an expert</span></div>
-      <div class="fact"><b>Personal certificate</b><span>with a unique number</span></div>
+    <p class="lead">Certification in business resilience governance for people who answer for continuity in Russia — from board-level risk appetite to the auditor's report. Written in English for international companies with Russian operations, and grounded in the standards their local entities are actually held to.</p>
+    <div class="tiles">
+      <div class="tile"><b>6</b><span>modules</span></div>
+      <div class="tile"><b>123</b><span>chapters</span></div>
+      <div class="tile"><b>6 tests</b><span>with a pass threshold</span></div>
+      <div class="tile"><b>Final assignment</b><span>reviewed by an expert</span></div>
+      <div class="tile"><b>Personal certificate</b><span>with a unique number</span></div>
     </div>
-    <div class="phero-cta">
-      <a class="pill pill-navy" href="#demo">Request a Zoom demo</a>
-      <a class="pill pill-gold" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Pay for the course and certification</a>
+    <div class="cta-row">
+      <a class="btn navy" href="#demo">Request a Zoom demo</a>
+      <a class="btn gold" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Pay for the course and certification</a>
     </div>
-<p class="phero-price"><b>19,900 RUB</b><span>one payment · six months of access to the materials</span></p>
-    <p class="phero-note"><b>After payment, your enrolment email arrives within 24 hours.</b> You enter the email on the payment page.</p>
-  </div>
-</div>
+<p class="price"><b>19,900 RUB</b><span>one payment · six months of access to the materials</span></p>
+    <p class="note"><b>After payment, your enrolment email arrives within 24 hours.</b> You enter the email on the payment page.</p>
+</div></div>
+<!--/TPL:HERO-->
 
-<section class="psec"><div class="uw">
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">On this page</div>
+  <nav>
+    <a href="#who-this-edition-is-for">Who this edition is for</a>
+    <a href="#the-ergp-programme-6-modules-123-chapter">The ERGP programme — 6 modules, 123 chapters</a>
+    <a href="#how-knowledge-is-tested">How knowledge is tested</a>
+    <a href="#certificate">A certificate that can be verified</a>
+    <a href="#shots">Real screenshots from the course</a>
+    <a href="#demo">See the course from the inside</a>
+    <a href="#price-and-what-is-included">Price and what is included</a>
+    <a href="#also-published-for-the-gulf">Also published for the Gulf</a>
+    <a href="#circle">What you join with the certificate: the ERGP Circle</a>
+    <a href="#programme-leadership">Programme leadership</a>
+    <a href="#faq">Frequently asked questions</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<section class="ps" id="who-this-edition-is-for">
   <h2>Who this edition is for</h2>
-  <ul>
-    <li><b>Risk manager, head of information security or IT</b> — who has been handed business continuity for the Russian entity.</li>
-    <li><b>Executive</b> — who answers for resilience before a board or a foreign parent company.</li>
-    <li><b>Consultant</b> — who needs a systematic framework and working templates in English.</li>
+  <ul class="ld">
+    <li><span><b>Risk manager, head of information security or IT</b> — who has been handed business continuity for the Russian entity.</span></li>
+    <li><span><b>Executive</b> — who answers for resilience before a board or a foreign parent company.</span></li>
+    <li><span><b>Consultant</b> — who needs a systematic framework and working templates in English.</span></li>
   </ul>
-</div></section>
+</section>
 
-<section class="psec"><div class="uw mods">
+<section class="ps" id="the-ergp-programme-6-modules-123-chapter">
   <h2>The ERGP programme — 6 modules, 123 chapters</h2>
   <p class="sub">Every module ends with a test and a working artefact that stays with you.</p>
-    <div class="numrow">
-      <div class="num">01</div>
+    <div class="nr">
+      <div class="nr-n">01</div>
       <div>
         <h3>Resilience governance and the board <span>· 23 chapters</span></h3>
         <p>How resilience is governed at the top of a company. Risk appetite for disruption and how a board approves it, committee architecture and delegation of authority. Separate chapters cover the three lines of defence and the role of the chief risk officer.</p>
         <div class="art"><b>Module artefact</b> · Resilience governance policy and a map of governing bodies</div>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">02</div>
+    <div class="nr">
+      <div class="nr-n">02</div>
       <div>
         <h3>From enterprise risk management to business resilience <span>· 20 chapters</span></h3>
         <p>Connecting enterprise risk management to business continuity: ISO 31000 and the risk register, key risk indicators and early warning, scenario analysis and stress tests. A separate block covers using AI for risk monitoring.</p>
         <div class="art"><b>Module artefact</b> · Resilience risk register with indicators</div>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">03</div>
+    <div class="nr">
+      <div class="nr-n">03</div>
       <div>
         <h3>Impact analysis and the economics of recovery <span>· 20 chapters</span></h3>
         <p>Translating resilience into money. Running a business impact analysis (BIA), setting recovery targets — maximum tolerable period of disruption, recovery time and recovery point objectives. Costing a day of downtime and building the investment case for each measure.</p>
         <div class="art"><b>Module artefact</b> · A BIA with defensible recovery targets</div>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">04</div>
+    <div class="nr">
+      <div class="nr-n">04</div>
       <div>
         <h3>Crisis management and decision-making <span>· 20 chapters</span></h3>
         <p>What to do once a risk has actually landed. The crisis team and escalation, communications under pressure, decision-making with incomplete information. A separate block covers the exercise programme and post-exercise reporting.</p>
         <div class="art"><b>Module artefact</b> · Crisis response plan and an exercise scenario</div>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">05</div>
+    <div class="nr">
+      <div class="nr-n">05</div>
       <div>
         <h3>Regulatory requirements: understanding and applying them <span>· 20 chapters</span></h3>
         <p>ISO 22301 in depth, including the Russian national profile GOST R ISO 22301 that local entities are audited against. The international layer covers DORA in the EU and the Bank of England operational resilience regime. The core skill of the module is closing several sets of requirements with one system.</p>
         <div class="art"><b>Module artefact</b> · Requirements compliance matrix</div>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">06</div>
+    <div class="nr">
+      <div class="nr-n">06</div>
       <div>
         <h3>Assurance, reporting and maturity <span>· 20 chapters</span></h3>
         <p>How to show management and the auditor that the system works. The resilience dashboard, the report for the board, audit readiness. The module closes with a maturity model.</p>
         <div class="art"><b>Module artefact</b> · Metrics dashboard and a management reporting template</div>
       </div>
     </div>
-  <p style="margin-top:22px"><b>The programme ends with a final assignment.</b> You write a 3-5 page resilience report on your own organisation and review it with an expert in a one-to-one online session.</p>
-</div></section>
+  <p><b>The programme ends with a final assignment.</b> You write a 3-5 page resilience report on your own organisation and review it with an expert in a one-to-one online session.</p>
+</section>
 
-<section class="psec"><div class="uw steps">
+<section class="ps" id="how-knowledge-is-tested">
   <h2>How knowledge is tested</h2>
-    <div class="numrow">
-      <div class="num">01</div>
-      <div><b>Self-check after every part</b><span class="t">a set of questions that unlocks the next step</span></div>
+<div class="steps">
+    <div class="nr">
+      <div class="nr-n">01</div>
+      <div><b>Self-check after every part</b><span>a set of questions that unlocks the next step</span></div>
     </div>
-    <div class="numrow">
-      <div class="num">02</div>
-      <div><b>A test after every module</b><span class="t">8 questions, pass mark 6; questions are shuffled on each attempt</span></div>
+    <div class="nr">
+      <div class="nr-n">02</div>
+      <div><b>A test after every module</b><span>8 questions, pass mark 6; questions are shuffled on each attempt</span></div>
     </div>
-    <div class="numrow">
-      <div class="num">03</div>
-      <div><b>Final assignment</b><span class="t">a 3-5 page resilience report on your own organisation, reviewed with an expert online</span></div>
+    <div class="nr">
+      <div class="nr-n">03</div>
+      <div><b>Final assignment</b><span>a 3-5 page resilience report on your own organisation, reviewed with an expert online</span></div>
     </div>
-    <div class="numrow">
-      <div class="num">04</div>
-      <div><b>Personal ERGP certificate</b><span class="t">with a unique number, issued on completion of the programme</span></div>
+    <div class="nr">
+      <div class="nr-n">04</div>
+      <div><b>Personal ERGP certificate</b><span>with a unique number, issued on completion of the programme</span></div>
     </div>
-</div></section>
+</div>
+</section>
 
-<section class="psec" id="certificate"><div class="uw">
+<section class="ps" id="certificate">
   <h2>A certificate that can be verified</h2>
   <p>The programme results in a personal, numbered ERGP certificate (Enterprise Resilience Governance Professional).</p>
-  <div class="duo">
+  <div class="g2">
     <div>
-      <img class="certimg" src="ergp-certificate-sample.jpg" alt="ERGP — sample certificate" width="1600" height="1131" loading="lazy">
-      <p class="certcap">Personal numbered ERGP certificate. Sample shown.</p>
+      <img class="fig" src="ergp-certificate-sample.jpg" alt="ERGP — sample certificate" width="1600" height="1131">
+      <p class="figcap">Personal numbered ERGP certificate. Sample shown.</p>
     </div>
     <div>
-      <ul>
-        <li><b>Personal, with a unique number.</b> Issued in the participant's name; every certificate carries its own number.</li>
-        <li><b>Issued for the whole programme.</b> After all six tests and the review of the final assignment.</li>
-        <li><b>Authenticity is checked by number.</b> An employer or a client can confirm the certificate was genuinely issued.</li>
+      <ul class="ld">
+        <li><span><b>Personal, with a unique number.</b> Issued in the participant's name; every certificate carries its own number.</span></li>
+        <li><span><b>Issued for the whole programme.</b> After all six tests and the review of the final assignment.</span></li>
+        <li><span><b>Authenticity is checked by number.</b> An employer or a client can confirm the certificate was genuinely issued.</span></li>
       </ul>
-      <div class="verify">
-        <div class="vtitle">Verify a certificate by number</div>
+      <div class="vbox">
+        <div class="k">Verify a certificate by number</div>
         <div class="vrow">
           <input type="text" class="fld" id="certNum" placeholder="Certificate number, e.g. RP-2026-0001">
-          <button type="button" class="pill pill-navy" id="certBtn">Verify</button>
+          <button type="button" class="btn navy" id="certBtn">Verify</button>
         </div>
         <p class="vans" id="certAns">The public registry opens with the first cohort. To verify a certificate today, write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — we reply the same day.</p>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="psec" id="shots"><div class="uw">
+<section class="ps" id="shots">
   <h2>Real screenshots from the course</h2>
   <p>These are not marketing mock-ups but actual chapters of the programme, exactly as a participant sees them: the author's text, diagrams and self-check questions.</p>
   <p class="note">The chapters shown are the English edition. The same programme is also published in Russian — the full text, the tests and the final assignment.</p>
   <div class="shots">
-    <img class="shot" id="csImg" src="assets/course-shots/shot1.jpg" alt="Real screenshot from the ERGP course" loading="lazy" onclick="csOpen()">
+    <img class="shot" id="csImg" src="assets/course-shots/shot1.jpg" alt="Real screenshot from the ERGP course" onclick="csOpen()">
     <div class="shotbar">
       <span class="cap" id="csCap">Core vocabulary: risk, continuity, crisis, resilience</span>
       <span class="shotnav">
@@ -364,23 +211,23 @@
         <button type="button" onclick="csGo(1)">Next ›</button>
       </span>
     </div>
-    <p class="note" style="margin:8px 0 0">Click a screenshot to enlarge.</p>
+    <p class="note">Click a screenshot to enlarge.</p>
   </div>
-</div></section>
+</section>
 
-<section class="demo" id="demo"><div class="uw">
-  <h2 style="margin-bottom:20px">See the course from the inside</h2>
-  <div class="duo">
+<section class="ps" id="demo"><div class="inset">
+  <h2>See the course from the inside</h2>
+  <div class="g2">
     <div>
       <p>The screenshots above are static. In 20 minutes on Zoom we will walk you through the ERGP programme live and answer your questions. On the demo you will see:</p>
-      <ul>
-        <li>chapters and self-check questions;</li>
-        <li>module tests and the pass threshold;</li>
-        <li>the personal ERGP certificate and verification by number.</li>
+      <ul class="ld">
+        <li><span>chapters and self-check questions;</span></li>
+        <li><span>module tests and the pass threshold;</span></li>
+        <li><span>the personal ERGP certificate and verification by number.</span></li>
       </ul>
     </div>
     <div>
-      <div class="dgrid">
+      <div class="fgrid">
         <input type="text" class="fld" id="dmName" placeholder="Your name">
         <input type="email" class="fld" id="dmEmail" placeholder="Work email">
         <input type="text" class="fld" id="dmOrg" placeholder="Organisation">
@@ -391,7 +238,7 @@
         <input type="checkbox" id="dmConsent">
         <span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy</a></span>
       </label>
-      <button type="button" class="pill pill-gold" id="dmSubmit">Request a demo</button>
+      <button type="button" class="btn gold" id="dmSubmit">Request a demo</button>
       <p class="msg-note" id="dmNote"></p>
       <p class="msg-ok" id="dmOk"></p>
       <p class="msg-err" id="dmErr"></p>
@@ -399,28 +246,59 @@
   </div>
 </div></section>
 
-<section class="psec"><div class="uw">
+<section class="ps" id="price-and-what-is-included">
   <h2>Price and what is included</h2>
-  <div class="duo">
+  <div class="g2">
     <div>
-      <div class="price">19,900 RUB</div>
-      <ul style="margin-bottom:22px">
+      <p class="price"><b>19,900 RUB</b></p>
+      <ul>
         <li>All 6 modules and 123 chapters, with programme updates — 6 months of access</li>
         <li>Six tests and the final assignment with an expert review online</li>
         <li>Personal ERGP certificate with a unique number</li>
       </ul>
-      <a class="pill pill-gold" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Pay for the course and certification</a>
-      <p class="note" style="margin:14px 0 0;max-width:56ch">After payment, your enrolment email arrives within 24 hours — you enter the email on the payment page.</p>
+      <a class="btn gold" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Pay for the course and certification</a>
+      <p class="note">After payment, your enrolment email arrives within 24 hours — you enter the email on the payment page.</p>
     </div>
-    <div>
-      <div class="orgt">For organisations</div>
-      <p style="max-width:56ch">Payment by invoice is available — write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> and we will issue an invoice for a legal entity.</p>
-      <p style="max-width:56ch">Team access is arranged separately; format and terms are agreed with you.</p>
+    <div class="card">
+      <div class="ct">For organisations</div>
+      <p>Payment by invoice is available — write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> and we will issue an invoice for a legal entity.</p>
+      <p>Team access is arranged separately; format and terms are agreed with you.</p>
     </div>
   </div>
+</section>
+
+
+<section class="ps" id="also-published-for-the-gulf">
+  <h2>Also published for the Gulf</h2>
+  <p>Working in the Gulf instead? The regional edition is built around NCEMA and central bank requirements there, and is published in English and Arabic. <a href="https://risk-place.org" target="_blank" rel="noopener">Gulf edition — risk-place.org</a>.</p>
+</section>
+
+<section class="ps" id="circle">
+  <h2>What you join with the certificate: the ERGP Circle</h2>
+  <div class="g2 mid">
+    <img src="assets/ergp-circle.svg" alt="The ERGP Circle: certified practitioners in the centre, two coordinators bridging them to companies" width="1060" height="520">
+    <div>
+      <p><b>The certificate is the entry.</b> Passing ERGP admits you to the Circle, a private community of certified practitioners coordinated by the founders. One Circle for the Russian, English and Arabic editions; small today, it grows with every certificate issued.</p>
+      <ul class="ld">
+        <li><span><b>Knowledge ahead of the market.</b> A quarterly Circle session on one real case; new modules and regulatory readings before publication.</span></li>
+        <li><span><b>People you can call.</b> A private member directory, access to the examiners.</span></li>
+        <li><span><b>Real work.</b> We assign Circle members to client engagements: audits, dashboards, continuity systems. Members with standing become examiners.</span></li>
+      </ul>
+      <p class="small">Curated by Erzhena Khilko; engagements coordinated by Evgeny Telenkov. <a href="en-o-podhode.html#circle">More about the Circle →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="ps" id="programme-leadership">
+  <h2>Programme leadership</h2>
+  <div class="g2 tight">
+<div class="card"><div class="person"><img src="exp-khilko.jpg" alt="Erzhena Khilko" width="460" height="460"><div><div class="nm">Erzhena Khilko</div><div class="rl">Director of Educational Programmes · ERGP, SAFE · Curator of the ERGP Circle</div></div></div><p>Chief Risk Officer of American Express Bank and its payment system operator, 2010–2024; chair of the Risk Committee. Built risk governance across twelve business units on the Three Lines of Defence model with zero audit findings; ran ICAAP under Basel III Pillar 2, RCSA across fifteen core processes and the continuity plan with annual test cycles. Earlier: head of risk at Bank of Cyprus Russia, corporate finance at Deloitte, audit at Ernst &amp; Young. She owns the learning design, the cohort schedule and the student experience across all our programmes and curates the ERGP Circle.</p></div>
+  <div class="card"><div class="person"><img src="exp-telenkov.jpg" alt="Evgeny Telenkov" width="460" height="460"><div><div class="nm">Evgeny Telenkov</div><div class="rl">PhD in Economics · Best Risk Manager of the Year 2020 (RusRisk)</div></div></div><p>Fifteen years leading risk functions in large companies. Built business continuity from zero at Nornickel — more than 20 continuity plans. Chief Risk Officer of a $20bn petrochemical megaproject (AGCC, SIBUR) with over 200 construction risk indicators. Risk consulting at Ernst &amp; Young, risk management at Beeline and Rosneft. Deputy chair of Technical Committee 010 "Risk Management" at Rosstandart. Has prepared more than 300 specialists.</p></div>
 </div></section>
 
-<section class="psec"><div class="uw">
+<div class="lbox" id="csBox" onclick="csClose(event)"><button class="x" onclick="csClose(event)" aria-label="Close">×</button><img id="csBig" alt=""></div>
+
+<section class="ps" id="faq">
   <h2>Frequently asked questions</h2>
     <div class="faq"><div class="q">What is ERGP?</div><p>ERGP stands for Enterprise Resilience Governance Professional — an online course and certification in business resilience governance. This edition is written in English for the Russian market; a separate edition for the Gulf lives at risk-place.org.</p></div>
     <div class="faq"><div class="q">How is this different from the risk-place.org edition?</div><p>Same discipline, different market. This edition is priced in roubles and built around the standards Russian entities are audited against, including GOST R ISO 22301. The <a href="https://risk-place.org/resilience-governance-certificate.html">risk-place.org edition</a> is built for the Gulf, around NCEMA and central bank requirements there.</p></div>
@@ -429,58 +307,17 @@
     <div class="faq"><div class="q">How is this different from webinars and one-day courses?</div><p>It is a systematic programme with assessment, not a recording of lectures: a self-check after each part, a test after each module, and a final assignment reviewed with an expert.</p></div>
     <div class="faq"><div class="q">Can we take it as a team?</div><p>Yes, team access is available. Write to us and we will agree the format and terms.</p></div>
     <div class="faq"><div class="q">How do we pay by invoice?</div><p>By invoice. Write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — and we will issue an invoice from the organisation.</p></div>
-</div></section>
-
-<section class="psec"><div class="uw">
-  <h2>Also published for the Gulf</h2>
-  <p>Working in the Gulf instead? The regional edition is built around NCEMA and central bank requirements there, and is published in English and Arabic. <a href="https://risk-place.org" target="_blank" rel="noopener">Gulf edition — risk-place.org</a>.</p>
-</div></section>
-
-<section class="psec" id="circle"><div class="uw">
-  <h2>What you join with the certificate: the ERGP Circle</h2>
-  <div class="circ2">
-    <img src="assets/ergp-circle.svg" alt="The ERGP Circle: certified practitioners in the centre, two coordinators bridging them to companies" width="1060" height="520" loading="lazy">
-    <div>
-      <p><b>The certificate is the entry.</b> Passing ERGP admits you to the Circle, a private community of certified practitioners coordinated by the founders. One Circle for the Russian, English and Arabic editions; small today, it grows with every certificate issued.</p>
-      <ul>
-        <li><b>Knowledge ahead of the market.</b> A quarterly Circle session on one real case; new modules and regulatory readings before publication.</li>
-        <li><b>People you can call.</b> A private member directory, access to the examiners.</li>
-        <li><b>Real work.</b> We assign Circle members to client engagements: audits, dashboards, continuity systems. Members with standing become examiners.</li>
-      </ul>
-      <p class="small">Curated by Erzhena Khilko; engagements coordinated by Evgeny Telenkov. <a href="en-o-podhode.html#circle">More about the Circle →</a></p>
-    </div>
-  </div>
-</div></section>
-
-<section class="dirsec"><div class="uw">
-  <h2 style="margin-bottom:20px">Programme leadership</h2>
-  <div class="dir">
-    <img src="exp-khilko.jpg" alt="Erzhena Khilko" width="460" height="460" loading="lazy">
-    <div class="body">
-      <span class="nm">Erzhena Khilko</span>
-      <span class="rl">Director of Educational Programmes · ERGP, SAFE · Curator of the ERGP Circle</span>
-      <p style="max-width:74ch;margin:0">Chief Risk Officer of American Express Bank and its payment system operator, 2010–2024; chair of the Risk Committee. Built risk governance across twelve business units on the Three Lines of Defence model with zero audit findings; ran ICAAP under Basel III Pillar 2, RCSA across fifteen core processes and the continuity plan with annual test cycles. Earlier: head of risk at Bank of Cyprus Russia, corporate finance at Deloitte, audit at Ernst &amp; Young. She owns the learning design, the cohort schedule and the student experience across all our programmes and curates the ERGP Circle.</p>
-    </div>
-  </div>
-  <div class="dir">
-    <img src="exp-telenkov.jpg" alt="Evgeny Telenkov" width="460" height="460" loading="lazy">
-    <div class="body">
-      <span class="nm">Evgeny Telenkov</span>
-      <span class="rl">PhD in Economics · Best Risk Manager of the Year 2020 (RusRisk)</span>
-      <p style="max-width:74ch;margin:0">Fifteen years leading risk functions in large companies. Built business continuity from zero at Nornickel — more than 20 continuity plans. Chief Risk Officer of a $20bn petrochemical megaproject (AGCC, SIBUR) with over 200 construction risk indicators. Risk consulting at Ernst &amp; Young, risk management at Beeline and Rosneft. Deputy chair of Technical Committee 010 "Risk Management" at Rosstandart. Has prepared more than 300 specialists.</p>
-    </div>
-  </div>
-</div></section>
-
-<div class="slbox" id="csBox" onclick="csClose(event)"><button class="x" onclick="csClose(event)" aria-label="Close">×</button><img id="csBig" alt=""></div>
+</section>
+</main>
+</div>
 
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
-<!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<!--/TPL:FOOTER-->
 <script>
 (function(){var b=document.getElementById('certBtn');if(!b)return;
   b.addEventListener('click',function(){var a=document.getElementById('certAns');if(a)a.style.display='block';
@@ -515,7 +352,7 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <script>
 /* карусель скриншотов: пять снимков, подпись и лайтбокс */
 var csI = 0, csN = 5, csCaps = [

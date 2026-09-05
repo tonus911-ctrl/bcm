@@ -15,74 +15,15 @@
 <meta name="description" content="Бесплатный справочник для руководителя «BCM без иллюзий»: практическая карта непрерывности бизнеса — оценка уязвимостей, BIA по ISO 22301, план BCP и действия в день, когда системы легли. Оставьте контакты — вышлем PDF на почту.">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/kniga.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-kniga.html">
 <link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/kniga.html">
 <link rel="canonical" href="https://bcm.risk-place.ru/kniga.html">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="site.css">
 <meta property="og:title" content="Книга «BCM без иллюзий» — как защитить денежный поток компании">
 <meta property="og:description" content="Практическая карта непрерывности бизнеса: оценка уязвимостей, BIA, план BCP и действия в день сбоя. Бесплатный PDF за короткую форму.">
 <meta property="og:type" content="website">
-<style>
-.lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
-.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#565A63;cursor:pointer;font-family:inherit}
-.lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.kn-hero{background:#F7F5F0;padding:56px 24px 64px}
-.kn-wrap{max-width:1080px;margin:0 auto}
-.kn-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:44px;align-items:start}
-.kn-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.kn-eyebrow span.line{width:30px;height:2px;background:#B79B52}
-.kn-eyebrow span.txt{font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7A5E17}
-.kn-title{font-family:'Manrope','Figtree',Arial,sans-serif;font-size:clamp(30px,4.4vw,46px);font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1E222B;margin:0 0 14px}
-.kn-title .accent{color:#7A5E17}
-.kn-sub{font-size:19px;line-height:1.5;color:#5E606A;margin:0 0 24px;max-width:520px}
-.kn-bul{display:flex;flex-direction:column;gap:12px;margin:0 0 26px}
-.kn-bul div{display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.45;color:#33353E}
-.kn-bul .ar{color:#7A5E17;font-weight:800}
-.kn-meta{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:#7A5E17}
-.kn-cover{flex:0 0 210px;width:210px;aspect-ratio:1106/1524;background:linear-gradient(150deg,#20253F 0%,#141830 70%);border-radius:9px;box-shadow:0 30px 54px -16px rgba(0,0,0,.6),inset 1px 0 0 rgba(255,255,255,.06);padding:26px 22px;display:flex;flex-direction:column;position:relative;margin-bottom:28px}
-.kn-cover .spine{position:absolute;left:0;top:18px;bottom:18px;width:4px;background:rgba(0,0,0,.35);border-radius:4px}
-.kn-cover .c1{font-size:12px;font-weight:700;letter-spacing:.16em;color:#C9A94E;margin-top:40px}
-.kn-cover .c2{font-size:34px;font-weight:800;color:#fff;line-height:1.02;margin-top:30px;letter-spacing:-.01em}
-.kn-cover .c3{font-size:34px;font-weight:800;color:#ECE3C0;line-height:1.02;letter-spacing:-.01em}
-.kn-cover .c4{font-size:15px;font-weight:500;color:#C9A94E;margin-top:18px;line-height:1.25}
-.kn-cover .cline{height:2px;background:#B79B52;margin-top:20px}
-.kn-cover .c5{margin-top:auto;font-size:12px;font-weight:700;color:#ECE7DA}
-.kn-form{background:#fff;border:1px solid #E7E4DC;border-radius:20px;padding:32px 30px;box-shadow:0 24px 60px -34px rgba(20,24,43,.35)}
-.kn-form h2{font-family:'Manrope','Figtree',Arial,sans-serif;font-size:22px;font-weight:800;color:#1E222B;margin:0 0 6px}
-.kn-form p.f-lead{font-size:15px;line-height:1.5;color:#565A63;margin:0 0 22px}
-.kn-field{margin-bottom:14px}
-.kn-field label{display:block;font-size:13px;font-weight:700;color:#33353E;margin-bottom:6px}
-.kn-field input{width:100%;border:1px solid #d8dae1;border-radius:11px;padding:13px 15px;font-size:15px;font-family:inherit;color:#1E222B;background:#fbfaf7}
-.kn-field input:focus{outline:none;border-color:#7A5E17;background:#fff}
-.kn-consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.45;color:#565A63;margin:6px 0 18px}
-.kn-consent input{margin-top:2px}
-.kn-submit{width:100%;background:#EFE04E;color:#1E222B;border:none;border-radius:999px;padding:16px 24px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 26px -10px rgba(239,224,78,.6)}
-.kn-submit:hover{filter:brightness(0.97)}
-.kn-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#565A63;margin-top:14px;justify-content:center}
-.kn-err{display:none;background:#fdecec;color:#a3272a;border-radius:10px;padding:10px 14px;font-size:13px;margin-top:12px}
-.kn-thanks{display:none;text-align:center;padding:14px 6px}
-.kn-thanks .tick{width:66px;height:66px;border-radius:50%;background:#e6f6ec;color:#1B6B4A;font-size:34px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.kn-thanks h2{font-size:22px;margin:0 0 10px}
-.kn-thanks p{font-size:15px;line-height:1.6;color:#3a3f48;margin:0}
-.kn-inside{padding:64px 24px;background:#fff}
-.kn-inside h2{font-family:'Manrope','Figtree',Arial,sans-serif;font-size:clamp(19px,2.1vw,24px);font-weight:800;color:#1E222B;margin:0 0 8px;text-align:center}
-.kn-inside .isub{font-size:16px;color:#565A63;text-align:center;margin:0 auto 36px;max-width:620px}
-.kn-parts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:960px;margin:0 auto}
-.kn-part{display:flex;gap:14px;align-items:flex-start;border:1px solid #ECEAE3;border-radius:14px;padding:18px 20px;background:#FBFAF6}
-.kn-part .num{flex:0 0 34px;width:34px;height:34px;border-radius:9px;background:#1E222B;color:#ECE3C0;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
-.kn-part .pt{font-size:15px;font-weight:700;color:#1E222B;line-height:1.32}
-.kn-part .pd{font-size:13px;color:#565A63;margin-top:3px;line-height:1.4}
-.kn-road{max-width:960px;margin:22px auto 0;border:1px dashed #C9A94E;border-radius:14px;padding:18px 22px;background:#FCFAF1;font-size:15px;color:#33353E;text-align:center}
-.kn-road b{color:#7A5E17}
-@media(max-width:860px){
-  .kn-grid{grid-template-columns:1fr;gap:32px}
-  .kn-parts{grid-template-columns:1fr}
-}
-</style>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -92,105 +33,99 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="kniga.html" class="act">RU</a><a href="en-kniga.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span>Книга</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Новая книга · бесплатно</div>
+  <h1>BCM без иллюзий</h1>
+  <p class="lead">Практическая карта непрерывности бизнеса: от оценки уязвимостей до работы в тот день, когда системы легли. Справочник для собственника и первого лица компании.</p>
+  <div class="cta-row"><a class="btn navy" href="#get">Получить книгу</a><span class="price"><span>PDF · 15 страниц · бесплатно</span></span></div>
+</div></div>
+<!--/TPL:HERO-->
 
-<section class="kn-hero">
-  <div class="kn-wrap">
-    <div class="kn-grid">
-
-      <!-- LEFT: pitch -->
-      <div>
-        <div class="kn-eyebrow"><span class="line"></span><span class="txt">Новая книга · бесплатно</span></div>
-        <h1 class="kn-title">BCM <span class="accent">без иллюзий</span></h1>
-        <p class="kn-sub">Практическая карта непрерывности бизнеса: от оценки уязвимостей до работы в тот день, когда системы легли. Справочник для собственника и первого лица компании.</p>
-
-        <div class="kn-cover">
-          <span class="spine"></span>
-          <div class="c1">СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ</div>
-          <div class="c2">BCM</div>
-          <div class="c3">без иллюзий</div>
-          <div class="c4">Как защитить денежный поток компании</div>
-          <div class="cline"></div>
-          <div class="c5">bcm.risk-place.ru</div>
-        </div>
-
-        <div class="kn-bul">
-          <div><span class="ar">→</span><span>Оценка уязвимостей и критичных процессов денежного потока</span></div>
-          <div><span class="ar">→</span><span>BIA по ISO 22301 и готовый план BCP</span></div>
-          <div><span class="ar">→</span><span>Действия в день, когда системы легли, и дорожная карта на 90 дней</span></div>
-        </div>
-        <div class="kn-meta">PDF · 15 страниц · бесплатно</div>
+<div class="pb one">
+<main class="pmain">
+<section class="ps" id="get">
+  <div class="g2">
+    <div>
+      <div class="cover lg">
+        <div class="c1">СПРАВОЧНИК ДЛЯ РУКОВОДИТЕЛЯ</div>
+        <div class="c2">BCM</div>
+        <div class="c3">без иллюзий</div>
+        <div class="c4">Как защитить денежный поток компании</div>
+        <div class="c5"></div>
+        <div class="c6">bcm.risk-place.ru</div>
       </div>
-
-      <!-- RIGHT: form -->
-      <div class="kn-form">
-        <div id="formBox">
-          <h2>Получить книгу</h2>
-          <p class="f-lead">Оставьте контакты — вышлем PDF на вашу почту в течение 24 часов.</p>
-          <form id="bookForm" novalidate>
-            <div class="kn-field">
-              <label for="kName">Имя</label>
-              <input type="text" id="kName" autocomplete="name" required>
-            </div>
-            <div class="kn-field">
-              <label for="kEmail">E-mail (куда прислать книгу)</label>
-              <input type="email" id="kEmail" autocomplete="email" required>
-            </div>
-            <div class="kn-field">
-              <label for="kPhone">Телефон (по желанию)</label>
-              <input type="tel" id="kPhone" autocomplete="tel">
-            </div>
-            <label class="kn-consent"><input type="checkbox" id="kConsent" required><span>Согласен на обработку персональных данных и получение книги на указанную почту.</span></label>
-            <button type="submit" class="kn-submit" id="kSubmit"><span>Получить книгу</span><span>→</span></button>
-            <div class="kn-err" id="kErr">Проверьте имя, корректный e-mail и согласие.</div>
-          </form>
-          <div class="kn-note"><span>🔒</span><span>Без спама. Контакты — только для отправки материалов.</span></div>
-        </div>
-        <div class="kn-thanks" id="thanksBox">
-          <div class="tick">✓</div>
-          <h2>Спасибо! Заявка принята</h2>
-          <p>Пришлем книгу «BCM без иллюзий» на вашу почту в течение 24 часов. Обычно быстрее. Проверьте папку «Спам», если письма нет.</p>
-        </div>
-      </div>
-
+      <ul class="la">
+        <li><span>Оценка уязвимостей и критичных процессов денежного потока</span></li>
+        <li><span>BIA по ISO 22301 и готовый план BCP</span></li>
+        <li><span>Действия в день, когда системы легли, и дорожная карта на 90 дней</span></li>
+      </ul>
+      <p class="small">PDF · 15 страниц · бесплатно</p>
+    </div>
+    <div class="cform sm" id="formBox">
+      <h2>Получить книгу</h2>
+      <p>Оставьте контакты — вышлем PDF на вашу почту в течение 24 часов.</p>
+      <form id="bookForm" novalidate>
+      <label class="flabel" for="kName">Имя</label>
+      <div class="fstack"><input class="fld" type="text" id="kName" autocomplete="name" required></div>
+      <label class="flabel" for="kEmail">E-mail (куда прислать книгу)</label>
+      <div class="fstack"><input class="fld" type="email" id="kEmail" autocomplete="email" required></div>
+      <label class="flabel" for="kPhone">Телефон (по желанию)</label>
+      <div class="fstack"><input class="fld" type="tel" id="kPhone" autocomplete="tel"></div>
+      <label class="consent"><input type="checkbox" id="kConsent" required><span>Согласен на обработку персональных данных и получение книги на указанную почту.</span></label>
+      <button type="submit" class="btn navy" id="kSubmit">Получить книгу →</button>
+      <p class="fmsg err" id="kErr" hidden>Проверьте имя, корректный e-mail и согласие.</p>
+      </form>
+      <p class="small">🔒 Без спама. Контакты — только для отправки материалов.</p>
+    </div>
+    <div class="cform sm" id="thanksBox" hidden>
+      <div class="okmark">✓</div>
+      <h2>Спасибо! Заявка принята</h2>
+      <p>Пришлем книгу «BCM без иллюзий» на вашу почту в течение 24 часов. Обычно быстрее. Проверьте папку «Спам», если письма нет.</p>
     </div>
   </div>
 </section>
 
-<section class="kn-inside">
+<section class="ps" id="inside">
   <h2>Что внутри</h2>
-  <p class="isub">Восемь коротких частей — по шагам, от «где вы сломаетесь» до работы в день сбоя. Без воды и без иллюзий.</p>
-  <div class="kn-parts">
-    <div class="kn-part"><div class="num">I</div><div><div class="pt">Почему денежный поток хрупок</div><div class="pd">Уязвимости, которых не видит собственник, и четыре угрозы, что чаще всего кладут бизнес.</div></div></div>
-    <div class="kn-part"><div class="num">II</div><div><div class="pt">Шаг 1. Оценка: где вы сломаетесь</div><div class="pd">Как устроен денежный поток, точки концентрации риска и критические уязвимости.</div></div></div>
-    <div class="kn-part"><div class="num">III</div><div><div class="pt">Шаг 2. BIA по ISO 22301</div><div class="pd">Анализ воздействия на бизнес простыми словами: на что смотреть и как считать.</div></div></div>
-    <div class="kn-part"><div class="num">IV</div><div><div class="pt">Шаг 3. Укрепление. IT-устойчивость</div><div class="pd">Резервирование и восстановление, облако, санкции и трехцветная модель.</div></div></div>
-    <div class="kn-part"><div class="num">V</div><div><div class="pt">Шаг 3. Укрепление. Люди</div><div class="pd">Что делает с людьми стресс, кто как ведет себя в кризисе и как готовить команду.</div></div></div>
-    <div class="kn-part"><div class="num">VI</div><div><div class="pt">GR: регуляторы и госорганы</div><div class="pd">Кому и о чем докладывать и как подготовиться к этому заранее.</div></div></div>
-    <div class="kn-part"><div class="num">VII</div><div><div class="pt">Требования регуляторов</div><div class="pd">Что требуют стандарты и регуляторы — и что из этого действительно важно.</div></div></div>
-    <div class="kn-part"><div class="num">VIII</div><div><div class="pt">Работа, когда все легло</div><div class="pd">Сценарий: завтра у вас не работают CRM и ERP. Что делать по часам.</div></div></div>
+  <p class="sub">Восемь коротких частей — по шагам, от «где вы сломаетесь» до работы в день сбоя. Без воды и без иллюзий.</p>
+  <div class="nrs">
+    <div class="nr"><div class="nr-n">I</div><div><h3>Почему денежный поток хрупок</h3><p>Уязвимости, которых не видит собственник, и четыре угрозы, что чаще всего кладут бизнес.</p></div></div>
+    <div class="nr"><div class="nr-n">II</div><div><h3>Шаг 1. Оценка: где вы сломаетесь</h3><p>Как устроен денежный поток, точки концентрации риска и критические уязвимости.</p></div></div>
+    <div class="nr"><div class="nr-n">III</div><div><h3>Шаг 2. BIA по ISO 22301</h3><p>Анализ воздействия на бизнес простыми словами: на что смотреть и как считать.</p></div></div>
+    <div class="nr"><div class="nr-n">IV</div><div><h3>Шаг 3. Укрепление. IT-устойчивость</h3><p>Резервирование и восстановление, облако, санкции и трехцветная модель.</p></div></div>
+    <div class="nr"><div class="nr-n">V</div><div><h3>Шаг 3. Укрепление. Люди</h3><p>Что делает с людьми стресс, кто как ведет себя в кризисе и как готовить команду.</p></div></div>
+    <div class="nr"><div class="nr-n">VI</div><div><h3>GR: регуляторы и госорганы</h3><p>Кому и о чем докладывать и как подготовиться к этому заранее.</p></div></div>
+    <div class="nr"><div class="nr-n">VII</div><div><h3>Требования регуляторов</h3><p>Что требуют стандарты и регуляторы — и что из этого действительно важно.</p></div></div>
+    <div class="nr"><div class="nr-n">VIII</div><div><h3>Работа, когда все легло</h3><p>Сценарий: завтра у вас не работают CRM и ERP. Что делать по часам.</p></div></div>
   </div>
-  <div class="kn-road">В конце — <b>дорожная карта на 90 дней</b>: с чего начать и что сделать первым, чтобы бизнес стал устойчивее.</div>
+  <div class="callout">В конце — <b>дорожная карта на 90 дней</b>: с чего начать и что сделать первым, чтобы бизнес стал устойчивее.</div>
 </section>
+</main>
+</div>
 
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 
 <script>
@@ -213,9 +148,9 @@ document.getElementById('bookForm').addEventListener('submit',async function(e){
   var phone=document.getElementById('kPhone').value.trim();
   var consent=document.getElementById('kConsent').checked;
   var err=document.getElementById('kErr');
-  if(!name||!validEmail(email)||!consent){err.style.display='block';return;}
-  err.style.display='none';
-  var btn=document.getElementById('kSubmit');btn.disabled=true;btn.style.opacity='0.6';
+  if(!name||!validEmail(email)||!consent){err.hidden=false;return;}
+  err.hidden=true;
+  var btn=document.getElementById('kSubmit');btn.disabled=true;
   try{ym(110579884,'reachGoal','book_lead');}catch(e){}
   var body={
     name:name,
@@ -226,8 +161,8 @@ document.getElementById('bookForm').addEventListener('submit',async function(e){
     language:'ru'.toUpperCase()
   };
   await postWorker(body);
-  document.getElementById('formBox').style.display='none';
-  document.getElementById('thanksBox').style.display='block';
+  document.getElementById('formBox').hidden=true;
+  document.getElementById('thanksBox').hidden=false;
 });
 </script>
 </body>

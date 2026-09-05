@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/bcm-bcp-drp-otlichie.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -184,35 +181,44 @@
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="bcm-bcp-drp-otlichie.html" class="act">RU</a><a href="en-bcm-bcp-drp-otlichie.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>BCM, BCP, DRP — отличия</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>BCM, BCP, DRP — отличия</div>
+  <div class="rule"></div>
   <div class="eyebrow">Основы BCM</div>
   <h1>BCP и DRP: в чем разница, расшифровка и как они связаны с BCM</h1>
   <p class="lead">BCM, BCP, DRP, BIA, RTO, RPO — аббревиатуры, которые постоянно путают, в том числе в договорах и техзаданиях. Разбираем каждую, показываем границу между планом непрерывности и планом аварийного восстановления, даем таблицу сравнения, распределение ответственности и разбор одного инцидента по минутам.</p>
-  <div class="meta-row">Обновлено: 21 августа 2026 г. · Автор: Евгений Теленков · ≈ 12 мин чтения</div>
+  <div class="meta">Обновлено: 21 августа 2026 г. · Автор: Евгений Теленков · ≈ 12 мин чтения</div>
 </div></div>
-<div class="container">
-  <img src="bcm-bcp-drp-otlichie.png" alt="BCP и DRP, в чем разница между планом непрерывности и планом аварийного восстановления" class="article-cover">
-  <nav class="toc"><div class="toc-title">Содержание</div><ol>
-    <li><a href="#rasshifrovka">Расшифровка аббревиатур</a></li>
-    <li><a href="#korotko">Как они связаны, вложенные уровни</a></li>
-    <li><a href="#tablica">Таблица сравнения</a></li>
-    <li><a href="#granica">BCP и DRP, где проходит граница</a></li>
-    <li><a href="#primer">Один инцидент, разложенный по ролям</a></li>
-    <li><a href="#metriki">RTO, RPO, MTPD и MBCO</a></li>
-    <li><a href="#kto">Кто за что отвечает</a></li>
-    <li><a href="#rossiya">Российские названия, ПОНиВД и план ОНиВД</a></li>
-    <li><a href="#oshibki">Пять частых ошибок</a></li>
-    <li><a href="#faq">Частые вопросы</a></li>
-  </ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#rasshifrovka">Расшифровка аббревиатур</a>
+    <a href="#korotko">Как они связаны, вложенные уровни</a>
+    <a href="#tablica">Таблица сравнения</a>
+    <a href="#granica">BCP и DRP, где проходит граница</a>
+    <a href="#primer">Один инцидент, разложенный по ролям</a>
+    <a href="#metriki">RTO, RPO, MTPD и MBCO</a>
+    <a href="#kto">Кто за что отвечает</a>
+    <a href="#rossiya">Российские названия, ПОНиВД и план ОНиВД</a>
+    <a href="#oshibki">Пять частых ошибок</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 
 <h2 id="rasshifrovka">Расшифровка аббревиатур</h2>
 <div class="table-wrap"><table>
@@ -312,15 +318,6 @@
 <p><b>Забыть про неинформационные сценарии.</b> Недоступность помещения, потеря ключевого сотрудника, отказ поставщика. Эти сценарии не имеют технического решения и требуют организационных договоренностей, подготовленных заранее.</p>
 <p><b>План без владельца.</b> Документ есть, но у него нет конкретного ответственного лица, поэтому он не обновляется и устаревает за год.</p>
 
-<div class="cta-band">
-  <h3>Проверим, что у вас есть на самом деле</h3>
-  <p>Разбираем действующие планы, находим разрывы между сроками бизнеса и возможностями техники, доводим документы до рабочего состояния и проводим тестирование.</p>
-  <div class="btn-row">
-    <a href="quiz.html" class="btn btn-yellow">Диагностика за 5 минут →</a>
-    <a href="bcm-pod-klyuch.html" class="btn btn-outline" style="color:#fff;border-color:#565A63">Непрерывность под ключ</a>
-    <a href="materialy.html#bia" class="btn btn-outline" style="color:#fff;border-color:#565A63">Структуры документов</a>
-  </div>
-</div>
 
 <h2 id="faq">Частые вопросы</h2>
 <p><b>BCP и DRP — это одно и то же?</b> Нет. BCP описывает, как компания продолжает работать в целом: процессы, люди, поставщики, коммуникации с клиентами. DRP описывает восстановление информационных систем и данных. DRP обычно входит в BCP как техническая часть.</p>
@@ -334,30 +331,43 @@
 <p><b>DRP это часть BCP?</b> Да, в большинстве методологий именно так. План восстановления решает техническую задачу внутри более широкой задачи непрерывности. Обратное неверно: восстановив серверы, компания еще не обязательно обслуживает клиентов.</p>
 <p><b>Что такое стресс-тест BCP?</b> Проверка плана в условиях, близких к предельным: одновременно отказывают несколько зависимостей, часть людей недоступна, время ограничено. Цель не пройти проверку, а найти место, где план ломается.</p>
 
+
+<div class="inset cta">
+  <h3>Проверим, что у вас есть на самом деле</h3>
+  <p>Разбираем действующие планы, находим разрывы между сроками бизнеса и возможностями техники, доводим документы до рабочего состояния и проводим тестирование.</p>
+  <div class="btns">
+    <a href="quiz.html" class="btn gold">Диагностика за 5 минут →</a>
+    <a href="bcm-pod-klyuch.html" class="btn line">Непрерывность под ключ</a>
+    <a href="materialy.html#bia" class="btn line">Структуры документов</a>
+  </div>
+</div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Евгений Теленков">
   <div>
-    <div class="name">Евгений Теленков</div>
-    <div class="role">Директор по рискам · к.э.н. · «Лучший риск-менеджер России 2020»</div>
+    <div class="nm">Евгений Теленков</div>
+    <div class="rl">Директор по рискам · к.э.н. · «Лучший риск-менеджер России 2020»</div>
     <div class="bio">20 лет в управлении рисками. Возглавлял риск-менеджмент в Билайн, Норникеле, Роснефти и EY. Разрабатывал планы непрерывности бизнеса для Норникеля, Ростеха, НРД и АСВ. Обучил 300+ специалистов по рискам и BCM.</div>
-    <div style="margin-top:8px;"><a href="https://risk-place.ru/page24" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:700;font-size:15px;text-decoration:none;">Все курсы и услуги — на risk-place.ru →</a></div>
+    <div><a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Все курсы и услуги — на risk-place.ru →</a></div>
   </div>
 </div>
-</article>
-<section class="sat-up">
-  <span class="sat-up-l">Раздел 01 · Основы непрерывности</span>
+</div>
+<div class="upbox">
+  <span class="k">Раздел 01 · Основы непрерывности</span>
   <a href="nepreryvnost-biznesa.html">Непрерывность бизнеса (BCM) →</a>
   <span class="sep">·</span>
   <a class="sec" href="materialy.html#osnovy">Все материалы раздела</a>
-</section>
-
-  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="onivd-ponivd.html" class="related-card"><div class="rc-t">ОНиВД и ПОНиВД →</div><div class="rc-d">Требования Банка России, структура плана, ответственность и сроки тестирования.</div></a><a href="plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">План непрерывности (BCP) →</div><div class="rc-d">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="bia-analiz-vozdeystviya.html" class="related-card"><div class="rc-t">Анализ воздействия на бизнес →</div><div class="rc-d">Как определить критичные процессы, RTO и стоимость простоя.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
 </div>
+
+  <div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="onivd-ponivd.html" class="rel-card"><div class="rt">ОНиВД и ПОНиВД →</div><div class="rd">Требования Банка России, структура плана, ответственность и сроки тестирования.</div></a><a href="plan-nepreryvnosti-biznesa.html" class="rel-card"><div class="rt">План непрерывности (BCP) →</div><div class="rd">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="bia-analiz-vozdeystviya.html" class="rel-card"><div class="rt">Анализ воздействия на бизнес →</div><div class="rd">Как определить критичные процессы, RTO и стоимость простоя.</div></a><a href="quiz.html" class="rel-card"><div class="rt">Диагностика за 5 минут →</div><div class="rd">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></div>
+</main>
+</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -369,6 +379,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

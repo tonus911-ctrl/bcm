@@ -15,22 +15,8 @@
 <title>Спасибо за покупку | risk-place.ru</title>
 <meta name="robots" content="noindex, follow">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
-<link rel="stylesheet" href="style.css">
-<style>
-.lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
-.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#565A63;cursor:pointer;font-family:inherit}
-.lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.ty{max-width:640px;margin:0 auto;padding:72px 20px 90px;text-align:center}
-.ty-badge{display:inline-flex;align-items:center;justify-content:center;width:74px;height:74px;border-radius:50%;background:#e6f6ec;color:#1B6B4A;font-size:38px;margin:0 0 22px}
-.ty h1{font-size:clamp(26px,4vw,36px);font-weight:800;color:var(--ink);margin:0 0 14px;line-height:1.2}
-.ty p{font-size:17px;line-height:1.65;color:#3a3f48;margin:0 0 16px}
-.ty .box{background:#fafbff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:24px 0;text-align:left}
-.ty .box b{color:var(--ink)}
-.ty .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:26px}
-</style>
+<link rel="stylesheet" href="site.css">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -40,39 +26,42 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo" id="hLogo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html" data-ru="Сертификация ERGP" data-en="ERGP certification">Сертификация ERGP</a><a href="kultura-bezopasnosti.html" data-ru="Программа SAFE" data-en="SAFE programme">Программа SAFE</a><a href="dlya-kompanij.html" data-ru="Для компаний" data-en="For companies">Для компаний</a><a href="materialy.html" data-ru="Методология" data-en="Methodology">Методология</a><a href="o-podhode.html" data-ru="О нас" data-en="About us">О нас</a><a href="index.html#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></nav>
-    <span class="uh-lang"><a id="btnRU" class="active" onclick="setLang('ru');return false" href="#">RU</a><a id="btnEN" onclick="setLang('en');return false" href="#">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <span class="uh-lang"><a id="btnRU" class="act" onclick="return setLang('ru')" href="#">RU</a><a id="btnEN" onclick="return setLang('en')" href="#">EN</a></span>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
 
-<section class="ty">
-  <div class="ty-badge">✓</div>
+<div class="pb one">
+<main class="pmain thanks">
+  <div class="okmark">✓</div>
   <h1 id="tyH1">Спасибо за покупку!</h1>
-  <p id="tyLead">Оплата получена. Мы уже готовим для вас свежий пакет материалов.</p>
-  <div class="box">
-    <p id="tyBox" style="margin:0;"><b>Материалы придут на ваш email в течение 24 часов.</b> Обычно быстрее. Проверьте, пожалуйста, папку «Спам», если письма нет. Если возникнут вопросы — напишите нам, мы на связи.</p>
+  <p class="lead" id="tyLead">Оплата получена. Мы уже готовим для вас свежий пакет материалов.</p>
+  <div class="callout">
+    <p id="tyBox"><b>Материалы придут на ваш email в течение 24 часов.</b> Обычно быстрее. Проверьте, пожалуйста, папку «Спам», если письма нет. Если возникнут вопросы — напишите нам, мы на связи.</p>
   </div>
-  <div class="actions">
-    <a href="index.html" class="btn btn-black" id="tyHome">На главную</a>
-    <a href="materialy.html" class="btn btn-outline" id="tyMat">Материалы по BCM</a>
+  <div class="btns">
+    <a href="index.html" class="btn navy" id="tyHome">На главную</a>
+    <a href="materialy.html" class="btn line" id="tyMat">Материалы по BCM</a>
   </div>
-</section>
+</main>
+</div>
 
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html" data-ru="Сертификация ERGP" data-en="ERGP certification">Сертификация ERGP</a><a href="kultura-bezopasnosti.html" data-ru="Программа SAFE" data-en="SAFE programme">Программа SAFE</a><a href="dlya-kompanij.html" data-ru="Для компаний" data-en="For companies">Для компаний</a><a href="materialy.html" data-ru="Методология" data-en="Methodology">Методология</a><a href="o-podhode.html" data-ru="О нас" data-en="About us">О нас</a><a href="index.html#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></div>
   <div class="row2"><span data-ru="© 2026 Risk-place" data-en="© 2026 Risk-place">© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate" data-ru="Проверить сертификат" data-en="Verify a certificate">Проверить сертификат</a><a href="privacy-policy.html" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a><a href="oferta.html" data-ru="Публичная оферта" data-en="Public offer">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/" data-ru="risk-place.org (EN, AR)" data-en="risk-place.org (EN, AR)">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 
 <script>
@@ -84,12 +73,11 @@ var LANG={
   "tyLead":{"ru":"Оплата получена. Мы уже готовим для вас свежий пакет материалов.","en":"Payment received. We are already preparing a fresh materials pack for you."},
   "tyBox":{"ru":"<b>Материалы придут на ваш email в течение 24 часов.</b> Обычно быстрее. Проверьте, пожалуйста, папку «Спам», если письма нет. Если возникнут вопросы — напишите нам, мы на связи.","en":"<b>The materials will arrive at your email within 24 hours.</b> Usually sooner. Please check your Spam folder if you don't see the email. If you have any questions, just message us — we're here."},
   "tyHome":{"ru":"На главную","en":"Home"},
-  "tyMat":{"ru":"Материалы по BCM","en":"BCM materials"},
-  "fCopy":{"ru":"© 2026 Евгений Теленков · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Непрерывность бизнеса и консалтинг по управлению рисками на risk-place.ru</a>","en":"© 2026 Evgeny Telenkov · BCM · <a href=\"https://risk-place.ru\" target=\"_blank\" rel=\"noopener\" style=\"color:#aaa;\">Risk management training and consulting at risk-place.ru</a>"}
+  "tyMat":{"ru":"Материалы по BCM","en":"BCM materials"}
 };
 var currentLang='ru';
 (function(){var ru=['ru','be','kk','ky','uk','uz','tg'];var list=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];var has=list.some(function(L){L=(L||'').toLowerCase();return ru.some(function(x){return L.indexOf(x)===0;});});currentLang=has?'ru':'en';})();
-function setLang(lang){currentLang=lang;document.documentElement.lang=lang;Object.keys(LANG).forEach(function(id){var el=document.getElementById(id);if(el&&LANG[id][lang]!==undefined)el.innerHTML=LANG[id][lang];});var a=document.getElementById('btnRU'),b=document.getElementById('btnEN');if(a)a.classList.toggle('active',lang==='ru');if(b)b.classList.toggle('active',lang==='en');}
+function setLang(lang){currentLang=lang;document.documentElement.lang=lang;Object.keys(LANG).forEach(function(id){var el=document.getElementById(id);if(el&&LANG[id][lang]!==undefined)el.innerHTML=LANG[id][lang];});var a=document.getElementById('btnRU'),b=document.getElementById('btnEN');if(a)a.classList.toggle('act',lang==='ru');if(b)b.classList.toggle('act',lang==='en');}
 setLang(currentLang);
 </script>
 </body>

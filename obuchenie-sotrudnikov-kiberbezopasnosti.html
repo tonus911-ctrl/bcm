@@ -30,11 +30,8 @@
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -76,23 +73,40 @@
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="obuchenie-sotrudnikov-kiberbezopasnosti.html" class="act">RU</a><a href="en-obuchenie-sotrudnikov-kiberbezopasnosti.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Обучение сотрудников кибербезопасности</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>Обучение сотрудников кибербезопасности</div>
+  <div class="rule"></div>
   <div class="eyebrow">Кибербезопасность и непрерывность</div>
   <h1>Обучение сотрудников кибербезопасности: что работает и чего в нем не хватает</h1>
   <p class="lead">Более 80% успешных атак начинаются с человека: письмо, ссылка, звонок «из банка». Поэтому компании учат персонал киберграмотности — и правильно делают. Разбираем, какие форматы работают, какие платформы есть на рынке и почему обучение сотрудников закрывает только половину риска.</p>
-  <div class="meta-row">Опубликовано: 24 июля 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
+  <div class="meta">Опубликовано: 24 июля 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
 </div></div>
-<div class="container">
-  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#zachem">Зачем учить сотрудников</a></li><li><a href="#chemu">Чему учить: программа-минимум</a></li><li><a href="#platformy">Платформы security awareness</a></li><li><a href="#malo">Почему этого мало</a></li><li><a href="#vtoroy">Второй уровень: управленческая команда</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#zachem">Зачем учить сотрудников</a>
+    <a href="#chemu">Чему учить: программа-минимум</a>
+    <a href="#platformy">Платформы security awareness: как это делается на практике</a>
+    <a href="#malo">Почему этого мало</a>
+    <a href="#vtoroy">Второй уровень: готовность управленческой команды</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 <h2 id="zachem">Зачем учить сотрудников</h2>
 <p>Техническая защита — антивирусы, фильтры, сегментация сети — отсекает массовые угрозы, но главный вектор атак остается прежним: человек. Фишинговое письмо бухгалтеру, «срочный» звонок сотруднику финансового отдела, зараженная флешка — все это обходит технику через доверие. По <a href="kiberataki-msb-rossiya.html">статистике кибератак на российский бизнес</a>, социальная инженерия стабильно лидирует среди первичных векторов. Обучение персонала снижает вероятность того, что атака вообще начнется, — это первый и обязательный уровень киберзащиты.</p>
 <h2 id="chemu">Чему учить: программа-минимум</h2>
@@ -115,44 +129,48 @@
 </ol>
 <div class="callout"><b>Практика:</b> для второго уровня у нас есть <a href="stress-test-nepreryvnosti.html">стресс-тест непрерывности за 2 дня</a> — диагностика и стратегическая сессия со стресс-симуляцией «шифровальщик» для руководящей команды, с заключением для генерального директора. Платформа awareness учит сотрудников не открывать дверь; стресс-тест готовит компанию к тому дню, когда дверь все же открыли.</div>
 
-<div class="cta-band">
-  <h3>Обучите управленческую команду киберустойчивости</h3>
-  <p>Корпоративный курс BCM/BCP: 6 модулей, 16 часов, 2 дня — очно или онлайн, с учениями и сертификатом. Включает модуль «Киберустойчивость: первые 24 часа после атаки».</p>
-  <div class="btn-row">
-    <a href="obuchenie-nepreryvnosti-biznesa.html" class="btn btn-yellow">Записаться на корпоративный курс →</a>
-    <a href="stress-test-nepreryvnosti.html" class="btn btn-outline" style="color:#fff;border-color:#565A63">Стресс-тест за 2 дня →</a>
-  </div>
-</div>
 
 <h2 id="faq">Частые вопросы</h2>
 <h3>С чего начать обучение сотрудников кибербезопасности?</h3><p>С базовых правил киберграмотности и регулярных фишинг-симуляций через платформу security awareness. Это закрывает самые массовые ошибки персонала.</p>
 <h3>Достаточно ли платформы security awareness для защиты бизнеса?</h3><p>Нет. Платформа снижает вероятность успешной атаки через персонал, но не готовит компанию к самой атаке. Управленческая команда должна знать, кто принимает решения, что говорить клиентам и как восстанавливаться.</p>
 <h3>Как проверить готовность компании к кибератаке?</h3><p>Провести тестирование готовности: кабинетные учения или стресс-симуляцию сценария «шифровальщик» с управленческой командой.</p>
 
+
+<div class="inset cta">
+  <h3>Обучите управленческую команду киберустойчивости</h3>
+  <p>Корпоративный курс BCM/BCP: 6 модулей, 16 часов, 2 дня — очно или онлайн, с учениями и сертификатом. Включает модуль «Киберустойчивость: первые 24 часа после атаки».</p>
+  <div class="btns">
+    <a href="obuchenie-nepreryvnosti-biznesa.html" class="btn gold">Записаться на корпоративный курс →</a>
+    <a href="stress-test-nepreryvnosti.html" class="btn line">Стресс-тест за 2 дня →</a>
+  </div>
+</div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Евгений Теленков">
   <div>
-    <div class="name">Евгений Теленков</div>
-    <div class="role">Директор по рискам · к.э.н. · «Лучший риск-менеджер России 2020»</div>
+    <div class="nm">Евгений Теленков</div>
+    <div class="rl">Директор по рискам · к.э.н. · «Лучший риск-менеджер России 2020»</div>
     <div class="bio">20 лет в управлении рисками. Возглавлял риск-менеджмент в Билайн, Норникеле, Роснефти и EY. Разрабатывал планы непрерывности бизнеса для Норникеля, Ростеха, НРД и АСВ. Обучил 300+ специалистов по рискам и BCM.</div>
-    <div style="margin-top:8px;"><a href="https://risk-place.ru/page24" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:700;font-size:15px;text-decoration:none;">Все курсы и услуги — на risk-place.ru →</a></div>
+    <div><a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Все курсы и услуги — на risk-place.ru →</a></div>
   </div>
 </div>
-  </article>
-<section class="sat-up">
-  <span class="sat-up-l">Раздел 04 · Кризис и киберугрозы</span>
+  </div>
+<div class="upbox">
+  <span class="k">Раздел 04 · Кризис и киберугрозы</span>
   <a href="plan-deystviy-pri-kiberatake.html">Действия при кибератаке →</a>
   <span class="sep">·</span>
   <a class="sec" href="materialy.html#krizis">Все материалы раздела</a>
-</section>
-
-  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="plan-deystviy-pri-kiberatake.html" class="related-card"><div class="rc-t">Действия при кибератаке →</div><div class="rc-d">Пошаговый план действий в первые часы после кибератаки или шифровальщика.</div></a><a href="7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 дней простоя: урок кибератаки →</div><div class="rc-d">Реальный кейс атаки шифровальщика на крупного страховщика.</div></a><a href="testirovanie-gotovnosti.html" class="related-card"><div class="rc-t">Тестирование готовности к кризису →</div><div class="rc-d">Методы проверки готовности компании: учения, симуляции, стресс-тест.</div></a></div></section>
 </div>
+
+  <div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="plan-deystviy-pri-kiberatake.html" class="rel-card"><div class="rt">Действия при кибератаке →</div><div class="rd">Пошаговый план действий в первые часы после кибератаки или шифровальщика.</div></a><a href="7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 дней простоя: урок кибератаки →</div><div class="rd">Реальный кейс атаки шифровальщика на крупного страховщика.</div></a><a href="testirovanie-gotovnosti.html" class="rel-card"><div class="rt">Тестирование готовности к кризису →</div><div class="rd">Методы проверки готовности компании: учения, симуляции, стресс-тест.</div></a></div></div>
+</main>
+</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -164,6 +182,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

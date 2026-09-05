@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -499,60 +496,35 @@
   ]
 }
 </script>
-<style>
-/* ── Словарь: стили только этой страницы ── */
-.container{max-width:1080px}
-.gl-hero{background:#F5F1E8;border-bottom:1px solid #E3D9C2;padding:26px 0 30px;margin-bottom:26px}
-.gl-hero .breadcrumb{padding:0 0 12px}
-.gl-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A5E17;margin-bottom:10px}
-.gl-h1{font-size:clamp(22px,2.6vw,30px);font-weight:700;line-height:1.22;color:#1E222B;margin:0 0 10px}
-.gl-lead{font-size:16px;line-height:1.6;color:#565A63;margin:0;max-width:720px}
-.gl-form{display:flex;gap:10px;margin-top:20px;max-width:620px;flex-wrap:wrap}
-.gl-form input{flex:1 1 260px;box-sizing:border-box;padding:13px 16px;border:1.5px solid #D8CFB8;border-radius:11px;font-size:16px;font-family:inherit;background:#fff;color:#1E222B}
-.gl-form input:focus{outline:none;border-color:#1B3A5C}
-.gl-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
-.gl-nav a{font-size:13.5px;font-weight:600;color:#1B3A5C;text-decoration:none;background:#F5F1E8;border:1px solid #E3D9C2;border-radius:20px;padding:6px 14px}
-.gl-nav a:hover{background:#E3D9C2}
-.gl-grp{scroll-margin-top:88px;margin:0 0 34px}
-.gl-gh{border-top:1px solid #E3D9C2;padding-top:16px;margin-bottom:14px}
-.gl-gt{font-size:clamp(19px,2vw,23px);font-weight:700;line-height:1.25;margin:5px 0 5px;color:#1E222B}
-.gl-gd{font-size:15px;line-height:1.6;color:#565A63;margin:0;max-width:720px}
-.gl-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px 26px}
-.gl-t{scroll-margin-top:88px;border-top:1px solid #EFEAE0;padding-top:12px}
-.gl-tt{font-size:16px;font-weight:700;color:#1E222B;line-height:1.3;margin:0 0 2px}
-.gl-en{font-size:12px;font-weight:600;color:#7A5E17;letter-spacing:.02em;margin:0 0 5px}
-.gl-d{font-size:15px;line-height:1.6;color:#565A63;margin:0}
-.gl-d a{color:#1B3A5C;font-weight:600}
-.gl-count{font-size:15px;color:#565A63;margin:0 0 18px;display:none}
-.gl-count b{color:#1E222B}
-.gl-empty{display:none;font-size:15px;color:#565A63;padding:16px 0 28px}
-@media(max-width:720px){.gl-list{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="slovar.html" class="act">RU</a><a href="slovar-en.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="gl-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Словарь</div>
-    <div class="gl-eyebrow">Словарь</div>
-    <h1 class="gl-h1">Словарь терминов непрерывности и рисков</h1>
-    <p class="gl-lead">69 терминов простыми словами, с английским оригиналом и ссылками на разборы. Без словарных определений ради определений — только то, что нужно понимать на практике.</p>
-    <form class="gl-form" onsubmit="return glGo(event)" role="search">
-      <input id="glq" type="search" placeholder="Например: RTO, риск-аппетит, эскалация" aria-label="Поиск по словарю">
-    </form>
-  </div>
-</div>
-<div class="container">
-<div class="gl-nav"><a href="#upravlenie">Управление и роли</a><a href="#nepreryvnost">Непрерывность и восстановление</a><a href="#op-resilience">Операционная устойчивость</a><a href="#riski">Риски</a><a href="#krizis">Кризис и учения</a><a href="#postavki">Поставщики и цепочки</a><a href="#regulirovanie">Регулирование, стандарты, проверка</a><a href="#rabochee-mesto">Безопасность на рабочем месте</a></div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>Словарь</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Словарь</div>
+  <h1>Словарь терминов непрерывности и рисков</h1>
+  <p class="lead">69 терминов простыми словами, с английским оригиналом и ссылками на разборы. Без словарных определений ради определений — только то, что нужно понимать на практике.</p>
+  <form class="search" onsubmit="return glGo(event)" role="search">
+    <input class="fld" id="glq" type="search" placeholder="Например: RTO, риск-аппетит, эскалация" aria-label="Поиск по словарю">
+    <button type="submit" class="btn navy">Найти</button>
+  </form>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb one">
+<main class="pmain wide">
+<nav class="tags lib-chips gl-nav"><a href="#upravlenie">Управление и роли</a><a href="#nepreryvnost">Непрерывность и восстановление</a><a href="#op-resilience">Операционная устойчивость</a><a href="#riski">Риски</a><a href="#krizis">Кризис и учения</a><a href="#postavki">Поставщики и цепочки</a><a href="#regulirovanie">Регулирование, стандарты, проверка</a><a href="#rabochee-mesto">Безопасность на рабочем месте</a></nav>
 <p class="gl-count" id="glCount"></p>
 <section class="gl-grp" id="upravlenie"><div class="gl-gh"><h2 class="gl-gt">Управление и роли</h2><p class="gl-gd">Кто за что отвечает и перед кем отчитывается.</p></div><div class="gl-list"><div class="gl-t" id="t-accountability"><p class="gl-tt">Подотчетность</p><p class="gl-en">Accountability</p><p class="gl-d">Обязанность отвечать за результат. Подотчетность лежит на одном человеке и не передается, в отличие от самой работы, которую делегировать можно.</p></div><div class="gl-t" id="t-responsibility"><p class="gl-tt">Ответственность</p><p class="gl-en">Responsibility</p><p class="gl-d">Обязанность выполнить работу. Ответственных за задачу может быть несколько, подотчетный за результат — всегда один.</p></div><div class="gl-t" id="t-board"><p class="gl-tt">Совет директоров</p><p class="gl-en">The Board</p><p class="gl-d">Орган, который утверждает стратегию и границы риска и спрашивает с менеджмента за результат. Непрерывностью не управляет, но задает требования к ней. См. <a href="bcm-dlya-soveta-direktorov.html">BCM для совета директоров</a>.</p></div><div class="gl-t" id="t-audit-committee"><p class="gl-tt">Комитет по аудиту</p><p class="gl-en">Audit Committee</p><p class="gl-d">Комитет совета, которому подчиняется внутренний аудит. Именно это подчинение обеспечивает независимость проверки от менеджмента.</p></div><div class="gl-t" id="t-ceo"><p class="gl-tt">Генеральный директор</p><p class="gl-en">CEO</p><p class="gl-d">Руководитель, отвечающий перед советом за деятельность компании целиком, включая устойчивость к сбоям.</p></div><div class="gl-t" id="t-cro"><p class="gl-tt">Директор по рискам</p><p class="gl-en">CRO</p><p class="gl-d">Руководитель функции управления рисками. Задает методологию и сводит картину, но не становится владельцем рисков вместо бизнеса.</p></div><div class="gl-t" id="t-management"><p class="gl-tt">Менеджмент</p><p class="gl-en">Management</p><p class="gl-d">Исполнительное руководство, которое принимает операционные решения в границах, утвержденных советом.</p></div><div class="gl-t" id="t-internal-audit"><p class="gl-tt">Внутренний аудит</p><p class="gl-en">Internal Audit</p><p class="gl-d">Независимая проверка того, работают ли первая и вторая линии. Подчиняется совету, а не менеджменту, работу которого оценивает.</p></div><div class="gl-t" id="t-three-lines"><p class="gl-tt">Три линии защиты</p><p class="gl-en">The Three Lines</p><p class="gl-d">Разделение ролей: первая линия создает риск и управляет им, вторая задает правила, третья независимо проверяет обе. Разбор — <a href="tri-linii-zashchity.html">три линии защиты</a>.</p></div><div class="gl-t" id="t-oversight"><p class="gl-tt">Надзор совета</p><p class="gl-en">Oversight</p><p class="gl-d">Контроль совета за тем, что менеджмент действует в утвержденных границах. Не управление, а проверка направления.</p></div><div class="gl-t" id="t-corporate-governance"><p class="gl-tt">Корпоративное управление</p><p class="gl-en">Corporate Governance</p><p class="gl-d">Система отношений между собственниками, советом и менеджментом, определяющая, кто какие решения принимает.</p></div><div class="gl-t" id="t-corporate-governance-code"><p class="gl-tt">Кодекс корпоративного управления</p><p class="gl-en">Corporate Governance Code</p><p class="gl-d">Свод рекомендаций по составу совета, комитетам и раскрытию информации. В России действует кодекс Банка России.</p></div><div class="gl-t" id="t-resilience-governance"><p class="gl-tt">Управление устойчивостью</p><p class="gl-en">Resilience Governance</p><p class="gl-d">Часть корпоративного управления, отвечающая за то, чтобы устойчивость к сбоям была предметом решений совета, а не только заботой исполнителей.</p></div><div class="gl-t" id="t-risk-owner"><p class="gl-tt">Владелец риска</p><p class="gl-en">Risk Owner</p><p class="gl-d">Руководитель, у которого есть полномочия изменить процесс и который отвечает за последствия риска. Всегда находится в первой линии.</p></div></div></section>
 <section class="gl-grp" id="nepreryvnost"><div class="gl-gh"><h2 class="gl-gt">Непрерывность и восстановление</h2><p class="gl-gd">Ядро методологии: что защищаем, за какое время возвращаем.</p></div><div class="gl-list"><div class="gl-t" id="t-business-continuity"><p class="gl-tt">Непрерывность бизнеса</p><p class="gl-en">Business Continuity</p><p class="gl-d">Способность компании продолжать работу при сбоях и восстанавливать деятельность в приемлемые сроки. См. <a href="nepreryvnost-biznesa.html">непрерывность бизнеса</a>.</p></div><div class="gl-t" id="t-bcm"><p class="gl-tt">Управление непрерывностью бизнеса</p><p class="gl-en">BCM</p><p class="gl-d">Управленческая дисциплина, которая определяет критичные процессы, задает сроки восстановления и проверяет готовность на учениях.</p></div><div class="gl-t" id="t-bcms"><p class="gl-tt">Система управления непрерывностью</p><p class="gl-en">BCMS</p><p class="gl-d">Совокупность политики, ролей, процедур и записей, через которые непрерывность управляется как система, а не как разовый проект.</p></div><div class="gl-t" id="t-bcp"><p class="gl-tt">План непрерывности бизнеса</p><p class="gl-en">BCP</p><p class="gl-d">Документ о действиях людей при нарушении: кто что делает, в каком порядке и по каким каналам связывается. См. <a href="plan-nepreryvnosti-biznesa.html">план непрерывности</a>.</p></div><div class="gl-t" id="t-drp"><p class="gl-tt">План аварийного восстановления</p><p class="gl-en">DRP</p><p class="gl-d">Документ о восстановлении систем и данных: последовательность, ответственные, целевые показатели. См. <a href="plan-avariynogo-vosstanovleniya.html">план восстановления</a>.</p></div><div class="gl-t" id="t-bia"><p class="gl-tt">Анализ воздействия на бизнес</p><p class="gl-en">BIA</p><p class="gl-d">Процедура, определяющая критичность процессов, стоимость их простоя и требуемые сроки восстановления. См. <a href="bia-analiz-vozdeystviya.html">анализ воздействия</a>.</p></div><div class="gl-t" id="t-critical-process"><p class="gl-tt">Критический процесс</p><p class="gl-en">Critical Process</p><p class="gl-d">Процесс, остановка которого быстро приводит к недопустимым последствиям. Определяется анализом воздействия, а не мнением. См. <a href="reestr-kriticheskih-processov.html">реестр процессов</a>.</p></div><div class="gl-t" id="t-rto"><p class="gl-tt">Целевое время восстановления</p><p class="gl-en">RTO</p><p class="gl-d">За какое время процесс должен вернуться в работу после нарушения. Назначает владелец процесса, утверждает руководство.</p></div><div class="gl-t" id="t-rpo"><p class="gl-tt">Целевая точка восстановления</p><p class="gl-en">RPO</p><p class="gl-d">Какой объем данных допустимо потерять, измеряется временем: за какой период до сбоя данные должны сохраниться.</p></div><div class="gl-t" id="t-mao"><p class="gl-tt">Максимально допустимый простой</p><p class="gl-en">MAO</p><p class="gl-d">Предельная продолжительность остановки процесса, после которой последствия становятся неприемлемыми. Целевое время восстановления всегда меньше.</p></div><div class="gl-t" id="t-mtpd"><p class="gl-tt">Максимально допустимый период нарушения</p><p class="gl-en">MTPD</p><p class="gl-d">То же ограничение, что и максимально допустимый простой, в терминологии международного стандарта.</p></div><div class="gl-t" id="t-mbco"><p class="gl-tt">Минимальный уровень непрерывности</p><p class="gl-en">MBCO</p><p class="gl-d">Минимальный объем деятельности, который компания обязана поддерживать во время нарушения, чтобы последствия оставались приемлемыми.</p></div><div class="gl-t" id="t-recovery"><p class="gl-tt">Восстановление</p><p class="gl-en">Recovery</p><p class="gl-d">Возврат процесса или системы к работе после нарушения. Не совпадает с устранением причины и обычно происходит раньше.</p></div><div class="gl-t" id="t-downtime"><p class="gl-tt">Простой</p><p class="gl-en">Downtime</p><p class="gl-d">Период, в течение которого процесс или услуга недоступны. Измеряется временем и деньгами.</p></div><div class="gl-t" id="t-cost-of-downtime"><p class="gl-tt">Стоимость дня простоя</p><p class="gl-en">Cost of Downtime</p><p class="gl-d">Денежная оценка потерь за сутки остановки: упущенная выручка, штрафы, сверхурочные, отток клиентов. См. <a href="stoimost-dnya-prostoya.html">стоимость простоя</a>.</p></div><div class="gl-t" id="t-disruption"><p class="gl-tt">Нарушение деятельности</p><p class="gl-en">Disruption</p><p class="gl-d">Событие, которое прерывает нормальную работу. Более широкое понятие, чем авария или инцидент.</p></div><div class="gl-t" id="t-resilience"><p class="gl-tt">Устойчивость</p><p class="gl-en">Resilience</p><p class="gl-d">Способность выдерживать удары и продолжать работу. Шире непрерывности: включает предупреждение, адаптацию и обучение на инцидентах.</p></div></div></section>
@@ -564,22 +536,23 @@
 <section class="gl-grp" id="rabochee-mesto"><div class="gl-gh"><h2 class="gl-gt">Безопасность на рабочем месте</h2><p class="gl-gd">Опасности вокруг человека, оценка риска и меры защиты.</p></div><div class="gl-t" id="t-hazard"><p class="gl-tt">Опасность</p><p class="gl-en">Hazard</p><p class="gl-d">Источник, способный причинить вред человеку. Опасность существует сама по себе, независимо от того, есть ли рядом люди. См. <a href="perechen-opasnostej-na-rabochem-meste.html">перечень опасностей</a>.</p></div><div class="gl-t" id="t-occup-risk"><p class="gl-tt">Профессиональный риск</p><p class="gl-en">Occupational Risk</p><p class="gl-d">Сочетание вероятности причинения вреда здоровью работника и тяжести этого вреда. Риск, в отличие от опасности, появляется там, где человек с опасностью встречается. См. <a href="ocenka-professionalnyh-riskov.html">оценка профессиональных рисков</a>.</p></div><div class="gl-t" id="t-risk-level"><p class="gl-tt">Уровень риска</p><p class="gl-en">Risk Level</p><p class="gl-d">Результат оценки: произведение вероятности на тяжесть. Каждому уровню соответствует свое решение и свой срок. См. <a href="urovni-professionalnogo-riska.html">уровни профессионального риска</a>.</p></div><div class="gl-t" id="t-hierarchy"><p class="gl-tt">Иерархия мер защиты</p><p class="gl-en">Hierarchy of Controls</p><p class="gl-d">Порядок выбора мер от надежных к слабым: устранение, замена, инженерная защита, организация работы, средства индивидуальной защиты. См. <a href="mery-upravleniya-riskom.html">меры управления риском</a>.</p></div><div class="gl-t" id="t-near-miss"><p class="gl-tt">Почти-происшествие</p><p class="gl-en">Near Miss</p><p class="gl-d">Событие, при котором никто не пострадал, но мог. Та же цепочка, что при травме, остановившаяся на шаг раньше, и потому бесплатное предупреждение. Как этому научить людей на смене — программа <a href="kultura-bezopasnosti.html">SAFE</a>.</p></div></section>
 
 <p class="gl-empty" id="glEmpty">Ничего не нашлось. Попробуйте другое слово или <a href="slovar.html">вернитесь к полному списку</a>.</p>
-<div class="cta-band">
+<div class="inset cta">
   <h3>Узнайте, насколько устойчив ваш бизнес</h3>
   <p>13 вопросов, 5 минут, бесплатно — результат сразу на экране и на почту.</p>
-  <div class="btn-row">
-    <a href="quiz.html" class="btn btn-yellow">Пройти диагностику бесплатно →</a>
-    <a href="index.html#contacts" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#565A63">Записаться на разбор</a>
-    <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#565A63">Курс по непрерывности →</a>
-  </div>
+  <div class="btns">
+    <a href="quiz.html" class="btn gold">Пройти диагностику бесплатно →</a>
+    <a href="index.html#contacts" target="_blank" rel="noopener" class="btn line">Записаться на разбор</a>
+    <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn line">Курс по непрерывности →</a>
+  </div></div>
+</main>
 </div>
-</div>
-</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -591,7 +564,7 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <script>
 (function(){
   function apply(q){

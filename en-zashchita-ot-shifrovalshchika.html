@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/zashchita-ot-shifrovalshchika.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -127,24 +124,40 @@
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="zashchita-ot-shifrovalshchika.html">RU</a><a href="en-zashchita-ot-shifrovalshchika.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Materials</a><span>/</span>Ransomware readiness</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Ransomware readiness</div>
+  <div class="rule"></div>
   <div class="eyebrow">Cyber resilience</div>
   <h1>Ransomware readiness: prepare the company, rehearse the recovery</h1>
   <p class="lead">The outcome of a ransomware attack is decided before it starts: do you have backups the malware cannot reach, does the team know the first-hours drill, and how many days would recovery really take. Preparation is what separates an incident from a catastrophe.</p>
-  <div class="meta-row">Published: July 18, 2026 · Author: Evgeny Telenkov · ≈ 7 min read</div>
+  <div class="meta">Published: July 18, 2026 · Author: Evgeny Telenkov · ≈ 7 min read</div>
 </div></div>
-<div class="container">
-  <img src="zashchita-ot-shifrovalshchika.png" alt="Ransomware readiness: prepare the company and rehearse recovery" class="article-cover">
-  <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#why">Why it is «when», not «if»</a></li><li><a href="#before">Six lines of defense to build in advance</a></li><li><a href="#backups">Backups that survive the attack</a></li><li><a href="#plan">Recovery plan: RTO in days, not in dreams</a></li><li><a href="#rehearsal">Rehearsal: the only honest test</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">On this page</div>
+  <nav>
+    <a href="#why">Why it is «when», not «if»</a>
+    <a href="#before">Six lines of defense to build in advance</a>
+    <a href="#backups">Backups that survive the attack</a>
+    <a href="#plan">Recovery plan: RTO in days, not in dreams</a>
+    <a href="#rehearsal">Rehearsal: the only honest test</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 <h2 id="why">Why it is «when», not «if»</h2>
 <p>Ransomware is the most expensive cyber scenario for a mid-sized business: it stops all systems at once, not one. Industry data keeps moving in the wrong direction — construction, manufacturing and trading companies have become primary targets, and average recovery of encrypted critical systems takes five to six days. A third of successful attacks start with stolen credentials or come through contractors — routes that bypass your perimeter entirely.</p>
 <h2 id="before">Six lines of defense to build in advance</h2>
@@ -166,14 +179,17 @@
 <p><b>Should we pay the ransom?</b> A bad option: payment guarantees nothing, marks you as a paying target and carries legal risk in many jurisdictions. The only reliable alternative is restoring from isolated backups.</p>
 <p><b>We have antivirus and a SOC — is that not enough?</b> That is the first half of defense: reducing probability. The second half — surviving the attack that gets through — is cheaper than the first, and almost always missing.</p>
 <p><b>Where to start from zero?</b> Inventory of critical systems plus one isolated copy of the main database. A week of work, minimal budget — and it cuts potential downtime several-fold.</p>
-</article>
-  <section class="related"><div class="related-title">Read next</div><div class="related-grid"><a href="en-plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">Business continuity plan (BCP) →</div><div class="rc-d">How to build a BCP in 7 steps: structure, roles, template.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Resilience dashboard →</div><div class="rc-d">A 0-100 resilience index, cost of downtime and traffic lights for the board. Live demo.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">5-minute maturity check →</div><div class="rc-d">Your resilience level, top three risks and first steps. Free.</div></a></div></section>
 </div>
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-plan-nepreryvnosti-biznesa.html" class="rel-card"><div class="rt">Business continuity plan (BCP) →</div><div class="rd">How to build a BCP in 7 steps: structure, roles, template.</div></a><a href="dashboard.html" class="rel-card"><div class="rt">Resilience dashboard →</div><div class="rd">A 0-100 resilience index, cost of downtime and traffic lights for the board. Live demo.</div></a><a href="quiz.html" class="rel-card"><div class="rt">5-minute maturity check →</div><div class="rd">Your resilience level, top three risks and first steps. Free.</div></a></div></div>
+</main>
+</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -185,6 +201,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

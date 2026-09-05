@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,113 +69,70 @@
 }
 </script>
 
-<style>
-/* ══ УНИВЕРСАЛЬНЫЙ ВНУТРЕННИЙ ШАБЛОН · палитра Б ══ */
-:root{--ink:#1E222B;--muted:#565A63;--panel:#F5F1E8;--line:#E3D9C2;--gold:#C9A94E;--gold-dark:#7A5E17;--navy:#1B3A5C;}
-body{background:#FFFFFF;color:var(--ink);}
-/* шапка */
-/* контент */
-/* герой страницы */
-.psearch{display:flex;gap:10px;margin-top:20px;max-width:620px;}
-.psearch input{flex:1;box-sizing:border-box;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink);}
-.psearch input:focus{outline:none;border-color:var(--navy);}
-/* чипы-якоря */
-.chips{display:flex;flex-wrap:wrap;gap:9px;padding:22px 0 6px;}
-.chips a{font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 15px;}
-.chips a:hover{border-color:var(--gold);}
-.chips .chip-num{color:var(--gold-dark);font-weight:700;margin-right:5px;}
-/* секция раздела */
-.sec{scroll-margin-top:84px;border-top:1px solid var(--line);padding:30px 0 26px;}
-.sec:first-of-type{border-top:none;}
-.sec-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:start;}
-.sec-num{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-dark);}
-.sec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;line-height:1.25;margin:6px 0 8px;color:var(--ink);font-family:'Manrope','Figtree',Arial,sans-serif;}
-.sec-d{font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 14px;}
-.ql{list-style:none;padding:0;margin:0;columns:2;column-gap:34px;}
-.ql li{font-size:15px;line-height:1.95;break-inside:avoid;}
-.ql a{color:var(--ink);text-decoration:none;}
-.ql a:hover{color:var(--navy);text-decoration:underline;}
-.sec-img{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
-.sec-img img{width:100%;height:auto;display:block;}
-@media(max-width:860px){.sec-grid{grid-template-columns:1fr;}.sec-img{order:-1;max-width:520px;}.ql{columns:1;}}
-/* словарь и CTA */
-.gl-band{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:30px 0;}
-.gl-band-t{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:5px;font-family:'Manrope','Figtree',Arial,sans-serif;}
-.gl-band-d{font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 10px;max-width:700px;}
-.gl-band-a{font-size:15px;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--line);padding-bottom:1px;}
-.gl-band-a:hover{border-color:var(--navy);}
-/* футер */
-.hidden{display:none!important;}
-.count{font-size:15px;color:var(--muted);margin:18px 0 0;display:none;}
-.count b{color:var(--ink);}
-</style>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="materialy.html">RU</a><a href="materialy-en.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero">
-  <div class="uw">
-    <div class="crumbs"><a href="index.html">Home</a> / Methodology</div>
-    <div class="phero-eyebrow">Methodology</div>
-    <h1>Business continuity methodology</h1>
-    <p class="phero-lead">A 90-term glossary and 48 guides in seven sections — from what a word means to industry practice. Pick a section or search.</p>
-    <form class="psearch" onsubmit="return libGo(event)" role="search">
-      <input id="libq" type="search" placeholder="Try: BIA, ransomware, ISO 22301" aria-label="Поиск по материалам">
-    </form>
-  </div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span>Methodology</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Methodology</div>
+  <h1>Business continuity methodology</h1>
+  <p class="lead">A 90-term glossary and 48 guides in seven sections — from what a word means to industry practice. Pick a section or search.</p>
+  <form class="search" onsubmit="return libGo(event)" role="search">
+    <input class="fld" id="libq" type="search" placeholder="Try: BIA, ransomware, ISO 22301" aria-label="Поиск по материалам">
+    <button type="submit" class="btn navy">Search</button>
+  </form>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb one">
+<main class="pmain wide">
+<nav class="tags lib-chips" id="chips"><a href="#slovar"><b>01</b> Glossary</a><a href="#osnovy"><b>02</b> Business continuity basics</a><a href="#bia"><b>03</b> Impact analysis and recovery</a><a href="#riski"><b>04</b> Risk management</a><a href="#krizis"><b>05</b> Crisis and cyber threats</a><a href="#vnedrenie"><b>06</b> Implementation and standards</a><a href="#otrasli"><b>07</b> Industry practice</a></nav>
+  <p class="lib-count" id="libCount" hidden></p>
+<section class="ps lsec" id="slovar"><div class="lsec-grid"><div><div class="k">01 · Section</div><h2>Glossary</h2><p>Ninety continuity and risk terms in plain words: what each one means, why it matters and how it reads in Russian. A good place to start if the topic is new to you.</p><p><a href="slovar-en.html" class="more">Open the glossary →</a></p><ul class="ql"><li><a href="slovar-en.html#t-rto">Recovery time objective (RTO)</a></li><li><a href="slovar-en.html#t-rpo">Recovery point objective (RPO)</a></li><li><a href="slovar-en.html#t-bia">Business impact analysis (BIA)</a></li><li><a href="slovar-en.html#t-mtpd">Maximum tolerable period of disruption</a></li><li><a href="slovar-en.html#t-risk-appetite">Risk appetite</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/slovar.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="osnovy"><div class="lsec-grid"><div><div class="k">02 · Section</div><h2>Business continuity basics</h2><p>What business continuity is, how it differs from IT and information security, who owns it and where companies start.</p><p><a href="en-nepreryvnost-biznesa.html" class="more">Open the section <span>→</span></a></p><ul class="ql"><li><a href="en-nepreryvnost-deyatelnosti.html">Continuity vs going concern</a></li><li><a href="en-bcm-bcp-drp-otlichie.html">BCM, BCP, DRP — the difference</a></li><li><a href="en-it-otdel-ne-zaschita-biznesa.html">An IT team does not protect the business</a></li><li><a href="en-bcm-dlya-soveta-direktorov.html">BCM for the board</a></li><li><a href="en-operacionnaya-ustojchivost.html">Operational resilience: what it is and how it differs from continuity</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/osnovy.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="bia"><div class="lsec-grid"><div><div class="k">03 · Section</div><h2>Impact analysis and recovery</h2><p>Which processes are critical, what a day of downtime costs, how fast you must recover and what has to be ready in advance.</p><p><a href="en-bia-analiz-vozdeystviya.html" class="more">Open the section <span>→</span></a></p><ul class="ql"><li><a href="en-reestr-kriticheskih-processov.html">Critical process register</a></li><li><a href="en-stoimost-dnya-prostoya.html">Cost of a day of downtime</a></li><li><a href="en-edinaya-tochka-otkaza.html">Single points of failure</a></li><li><a href="en-kak-izmerit-ustojchivost-biznesa.html">How to measure resilience</a></li><li><a href="en-plan-avariynogo-vosstanovleniya.html">Disaster recovery plan (DRP)</a></li><li><a href="en-plan-nepreryvnosti-biznesa.html">Business continuity plan (BCP)</a></li><li><a href="en-rezervnyy-plan-biznesa.html">Business backup plan</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/bia.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="riski"><div class="lsec-grid"><div><div class="k">04 · Section</div><h2>Risk management</h2><p>How to build a risk system people actually use, put risk into money, and prepare for losing a supplier or a key person.</p><p><a href="en-sistema-upravleniya-riskami.html" class="more">Open the section <span>→</span></a></p><ul class="ql"><li><a href="en-matrica-riskov.html">Risk matrix</a></li><li><a href="en-kak-prinimat-slozhnye-resheniya.html">The three-scenario method</a></li><li><a href="en-poterya-klyuchevogo-sotrudnika.html">Loss of a key employee</a></li><li><a href="en-poterya-postavshchika.html">Loss of a supplier</a></li><li><a href="en-geopoliticheskie-riski-i-nepreryvnost.html">Geopolitical risks (Hormuz)</a></li><li><a href="en-upravlenie-riskami-v-krupnom-banke.html">Risk management in a large bank</a></li><li><a href="en-bcm-i-strahovanie.html">BCM and insurance</a></li><li><a href="en-strahovanie-pereryvov-premiya.html">Lower your BI premium</a></li><li><a href="en-riski-sberezheniy.html">Savings risks</a></li><li><a href="en-tri-linii-zashchity.html">Three lines of defence: who owns risk in a company</a></li><li><a href="en-risk-appetit.html">Risk appetite: how to set it and why it matters</a></li><li><a href="en-kri-i-kpi.html">KRI vs KPI: risk indicators and performance indicators</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/riski.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="krizis"><div class="lsec-grid"><div><div class="k">05 · Section</div><h2>Crisis and cyber threats</h2><p>What to do in the first hours of an incident, how to prepare for ransomware, and what to tell staff, clients and the press.</p><p><a href="en-plan-deystviy-pri-kiberatake.html" class="more">Open the section <span>→</span></a></p><ul class="ql"><li><a href="en-zashchita-ot-shifrovalshchika.html">Ransomware readiness</a></li><li><a href="en-zashchita-ot-kiberatak.html">Cyberattack protection</a></li><li><a href="en-7-dney-prostoya-kiberataka.html">7 days of downtime: a cyberattack lesson</a></li><li><a href="en-kiberataki-msb-rossiya.html">Cyberattacks on SMB: statistics</a></li><li><a href="en-pochemu-kompanii-skryvayut-kiberataki.html">Why companies hide cyberattacks</a></li><li><a href="en-bcm-i-zashchita-dannyh.html">BCM and data protection</a></li><li><a href="en-kiberucheniya.html">Tabletop ransomware exercise</a></li><li><a href="en-krizisnye-kommunikacii.html">Crisis communications</a></li><li><a href="en-obuchenie-sotrudnikov-kiberbezopasnosti.html">Employee cybersecurity training: what works and what is missing</a></li><li><a href="en-antikrizisnyy-plan-kompanii.html">Company crisis plan</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/krizis.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="vnedrenie"><div class="lsec-grid"><div><div class="k">06 · Section</div><h2>Implementation and standards</h2><p>ISO 22301 and regulatory requirements, exercises and testing, training the team and the order of rollout.</p><p><a href="en-iso-22301.html" class="more">Open the section <span>→</span></a></p><ul class="ql"><li><a href="en-onivd-ponivd.html">Regulatory continuity map</a></li><li><a href="en-ucheniya-po-nepreryvnosti.html">Continuity drills</a></li><li><a href="en-chek-list-gotovnosti-k-krizisu.html">Crisis readiness checklist</a></li><li><a href="en-obuchenie-nepreryvnosti-biznesa.html">Corporate BCM/BCP course</a></li><li><a href="en-stress-test-nepreryvnosti.html">Business continuity stress test: a verdict and a plan in 2 days</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/vnedrenie.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="otrasli"><div class="lsec-grid"><div><div class="k">07 · Section</div><h2>Industry practice</h2><p>Risk profiles in IT, oil and gas, metals and construction — what actually stops the business in each sector.</p><p><a href="en-riski-v-it.html" class="more">Open the section <span>→</span></a></p><ul class="ql"><li><a href="en-riski-neftegazovoy-otrasli.html">Oil & gas risks</a></li><li><a href="en-riski-v-metallurgii.html">Mining & metals risks</a></li><li><a href="en-bcm-dlya-sro-stroitelstvo.html">BCM for construction and SRO</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/otrasli.svg" width="640" height="330" alt=""></figure></div></section>
+  <div class="inset"><h3>Glossary</h3><p>69 terms in plain language — RTO, RPO, business impact analysis, risk appetite, escalation.</p><a class="more" href="slovar-en.html">Open the glossary →</a></div>
+  <div class="inset cta"><h3>Find out how resilient your business is</h3><p>13 questions, 5 minutes, free — the result on screen and by email.</p><div class="btns"><a class="btn navy" href="quiz.html">Take the assessment →</a></div></div>
+</main>
 </div>
-<div class="uw">
-  <nav class="chips" id="chips"><a href="#slovar"><span class="chip-num">01</span>Glossary</a><a href="#osnovy"><span class="chip-num">02</span>Business continuity basics</a><a href="#bia"><span class="chip-num">03</span>Impact analysis and recovery</a><a href="#riski"><span class="chip-num">04</span>Risk management</a><a href="#krizis"><span class="chip-num">05</span>Crisis and cyber threats</a><a href="#vnedrenie"><span class="chip-num">06</span>Implementation and standards</a><a href="#otrasli"><span class="chip-num">07</span>Industry practice</a></nav>
-  <p class="count" id="libCount"></p>
-<section class="sec" id="slovar"><div class="sec-grid"><div><div class="sec-num">01 · Section</div><h2>Glossary</h2><p class="sec-d">Ninety continuity and risk terms in plain words: what each one means, why it matters and how it reads in Russian. A good place to start if the topic is new to you.</p><p style="margin:0 0 14px;"><a href="slovar-en.html" class="sec-go">Open the glossary <span style="font-size:16px;">&rarr;</span></a></p><ul class="ql"><li><a href="slovar-en.html#t-rto">Recovery time objective (RTO)</a></li><li><a href="slovar-en.html#t-rpo">Recovery point objective (RPO)</a></li><li><a href="slovar-en.html#t-bia">Business impact analysis (BIA)</a></li><li><a href="slovar-en.html#t-mtpd">Maximum tolerable period of disruption</a></li><li><a href="slovar-en.html#t-risk-appetite">Risk appetite</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/slovar.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="osnovy"><div class="sec-grid"><div><div class="sec-num">02 · Section</div><h2>Business continuity basics</h2><p class="sec-d">What business continuity is, how it differs from IT and information security, who owns it and where companies start.</p><p style="margin:0 0 14px;"><a href="en-nepreryvnost-biznesa.html" class="sec-go">Open the section <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="en-nepreryvnost-deyatelnosti.html">Continuity vs going concern</a></li><li><a href="en-bcm-bcp-drp-otlichie.html">BCM, BCP, DRP — the difference</a></li><li><a href="en-it-otdel-ne-zaschita-biznesa.html">An IT team does not protect the business</a></li><li><a href="en-bcm-dlya-soveta-direktorov.html">BCM for the board</a></li><li><a href="en-operacionnaya-ustojchivost.html">Operational resilience: what it is and how it differs from continuity</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/osnovy.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="bia"><div class="sec-grid"><div><div class="sec-num">03 · Section</div><h2>Impact analysis and recovery</h2><p class="sec-d">Which processes are critical, what a day of downtime costs, how fast you must recover and what has to be ready in advance.</p><p style="margin:0 0 14px;"><a href="en-bia-analiz-vozdeystviya.html" class="sec-go">Open the section <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="en-reestr-kriticheskih-processov.html">Critical process register</a></li><li><a href="en-stoimost-dnya-prostoya.html">Cost of a day of downtime</a></li><li><a href="en-edinaya-tochka-otkaza.html">Single points of failure</a></li><li><a href="en-kak-izmerit-ustojchivost-biznesa.html">How to measure resilience</a></li><li><a href="en-plan-avariynogo-vosstanovleniya.html">Disaster recovery plan (DRP)</a></li><li><a href="en-plan-nepreryvnosti-biznesa.html">Business continuity plan (BCP)</a></li><li><a href="en-rezervnyy-plan-biznesa.html">Business backup plan</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/bia.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="riski"><div class="sec-grid"><div><div class="sec-num">04 · Section</div><h2>Risk management</h2><p class="sec-d">How to build a risk system people actually use, put risk into money, and prepare for losing a supplier or a key person.</p><p style="margin:0 0 14px;"><a href="en-sistema-upravleniya-riskami.html" class="sec-go">Open the section <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="en-matrica-riskov.html">Risk matrix</a></li><li><a href="en-kak-prinimat-slozhnye-resheniya.html">The three-scenario method</a></li><li><a href="en-poterya-klyuchevogo-sotrudnika.html">Loss of a key employee</a></li><li><a href="en-poterya-postavshchika.html">Loss of a supplier</a></li><li><a href="en-geopoliticheskie-riski-i-nepreryvnost.html">Geopolitical risks (Hormuz)</a></li><li><a href="en-upravlenie-riskami-v-krupnom-banke.html">Risk management in a large bank</a></li><li><a href="en-bcm-i-strahovanie.html">BCM and insurance</a></li><li><a href="en-strahovanie-pereryvov-premiya.html">Lower your BI premium</a></li><li><a href="en-riski-sberezheniy.html">Savings risks</a></li><li><a href="en-tri-linii-zashchity.html">Three lines of defence: who owns risk in a company</a></li><li><a href="en-risk-appetit.html">Risk appetite: how to set it and why it matters</a></li><li><a href="en-kri-i-kpi.html">KRI vs KPI: risk indicators and performance indicators</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/riski.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="krizis"><div class="sec-grid"><div><div class="sec-num">05 · Section</div><h2>Crisis and cyber threats</h2><p class="sec-d">What to do in the first hours of an incident, how to prepare for ransomware, and what to tell staff, clients and the press.</p><p style="margin:0 0 14px;"><a href="en-plan-deystviy-pri-kiberatake.html" class="sec-go">Open the section <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="en-zashchita-ot-shifrovalshchika.html">Ransomware readiness</a></li><li><a href="en-zashchita-ot-kiberatak.html">Cyberattack protection</a></li><li><a href="en-7-dney-prostoya-kiberataka.html">7 days of downtime: a cyberattack lesson</a></li><li><a href="en-kiberataki-msb-rossiya.html">Cyberattacks on SMB: statistics</a></li><li><a href="en-pochemu-kompanii-skryvayut-kiberataki.html">Why companies hide cyberattacks</a></li><li><a href="en-bcm-i-zashchita-dannyh.html">BCM and data protection</a></li><li><a href="en-kiberucheniya.html">Tabletop ransomware exercise</a></li><li><a href="en-krizisnye-kommunikacii.html">Crisis communications</a></li><li><a href="en-obuchenie-sotrudnikov-kiberbezopasnosti.html">Employee cybersecurity training: what works and what is missing</a></li><li><a href="en-antikrizisnyy-plan-kompanii.html">Company crisis plan</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/krizis.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="vnedrenie"><div class="sec-grid"><div><div class="sec-num">06 · Section</div><h2>Implementation and standards</h2><p class="sec-d">ISO 22301 and regulatory requirements, exercises and testing, training the team and the order of rollout.</p><p style="margin:0 0 14px;"><a href="en-iso-22301.html" class="sec-go">Open the section <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="en-onivd-ponivd.html">Regulatory continuity map</a></li><li><a href="en-ucheniya-po-nepreryvnosti.html">Continuity drills</a></li><li><a href="en-chek-list-gotovnosti-k-krizisu.html">Crisis readiness checklist</a></li><li><a href="en-obuchenie-nepreryvnosti-biznesa.html">Corporate BCM/BCP course</a></li><li><a href="en-stress-test-nepreryvnosti.html">Business continuity stress test: a verdict and a plan in 2 days</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/vnedrenie.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="otrasli"><div class="sec-grid"><div><div class="sec-num">07 · Section</div><h2>Industry practice</h2><p class="sec-d">Risk profiles in IT, oil and gas, metals and construction — what actually stops the business in each sector.</p><p style="margin:0 0 14px;"><a href="en-riski-v-it.html" class="sec-go">Open the section <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="en-riski-neftegazovoy-otrasli.html">Oil & gas risks</a></li><li><a href="en-riski-v-metallurgii.html">Mining & metals risks</a></li><li><a href="en-bcm-dlya-sro-stroitelstvo.html">BCM for construction and SRO</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/otrasli.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-  <section class="gl-band">
-    <div class="gl-band-t">Glossary</div>
-    <p class="gl-band-d">69 terms in plain language — RTO, RPO, business impact analysis, risk appetite, escalation.</p>
-    <a class="gl-band-a" href="slovar-en.html">Open the glossary →</a>
-  </section>
-  <section class="pcta">
-    <h3>Find out how resilient your business is</h3>
-    <p>13 questions, 5 minutes, free — the result on screen and by email.</p>
-    <a href="quiz.html">Take the assessment →</a>
-  </section>
-</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>
 (function(){
-  var b=document.getElementById('uhBurger'),n=document.getElementById('uhNav');
-  if(b&&n)b.addEventListener('click',function(){n.classList.toggle('open');});
   function apply(q){
     q=(q||'').toLowerCase().trim(); var n2=0;
     document.querySelectorAll('.ql li').forEach(function(li){
       var hit=!q||li.textContent.toLowerCase().indexOf(q)>-1;
       li.style.display=hit?'':'none'; if(hit&&q)n2++;
     });
-    document.querySelectorAll('.sec').forEach(function(s){
+    document.querySelectorAll('.lsec').forEach(function(s){
       var any=Array.prototype.some.call(s.querySelectorAll('.ql li'),function(li){return li.style.display!=='none';});
       s.style.display=any?'':'none';
     });
     var c=document.getElementById('libCount'), ch=document.getElementById('chips');
-    if(ch)ch.style.display=q?'none':'';
-    if(c){c.style.display=q?'':'none';
+    if(ch)ch.hidden=!!q;
+    if(c){c.hidden=!q;
       if(q)c.innerHTML='For <b>'+q.replace(/[<>&]/g,'')+'</b> found: <b>'+n2+'</b>. <a href="materialy-en.html">Show all</a>';}
   }
   window.libGo=function(e){
@@ -205,7 +159,7 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <!-- rebuild 2026-08-18 18:51 -->
 </body>
 </html>

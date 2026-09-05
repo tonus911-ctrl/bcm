@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,112 +69,72 @@
 }
 </script>
 
-<style>
-/* ══ УНИВЕРСАЛЬНЫЙ ВНУТРЕННИЙ ШАБЛОН · палитра Б ══ */
-:root{--ink:#1E222B;--muted:#565A63;--panel:#F5F1E8;--line:#E3D9C2;--gold:#C9A94E;--gold-dark:#7A5E17;--navy:#1B3A5C;}
-body{background:#FFFFFF;color:var(--ink);}
-/* шапка */
-/* контент */
-/* герой страницы */
-.psearch{display:flex;gap:10px;margin-top:20px;max-width:620px;}
-.psearch input{flex:1;box-sizing:border-box;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink);}
-.psearch input:focus{outline:none;border-color:var(--navy);}
-/* чипы-якоря */
-.chips{display:flex;flex-wrap:wrap;gap:9px;padding:22px 0 6px;}
-.chips a{font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 15px;}
-.chips a:hover{border-color:var(--gold);}
-.chips .chip-num{color:var(--gold-dark);font-weight:700;margin-right:5px;}
-/* секция раздела */
-.sec{scroll-margin-top:84px;border-top:1px solid var(--line);padding:30px 0 26px;}
-.sec:first-of-type{border-top:none;}
-.sec-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:start;}
-.sec-num{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-dark);}
-.sec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;line-height:1.25;margin:6px 0 8px;color:var(--ink);font-family:'Manrope','Figtree',Arial,sans-serif;}
-.sec-d{font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 14px;}
-.ql{list-style:none;padding:0;margin:0;columns:2;column-gap:34px;}
-.ql li{font-size:15px;line-height:1.95;break-inside:avoid;}
-.ql a{color:var(--ink);text-decoration:none;}
-.ql a:hover{color:var(--navy);text-decoration:underline;}
-.sec-img{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
-.sec-img img{width:100%;height:auto;display:block;}
-@media(max-width:860px){.sec-grid{grid-template-columns:1fr;}.sec-img{order:-1;max-width:520px;}.ql{columns:1;}}
-/* словарь и CTA */
-.gl-band{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:30px 0;}
-.gl-band-t{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:5px;font-family:'Manrope','Figtree',Arial,sans-serif;}
-.gl-band-d{font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 10px;max-width:700px;}
-.gl-band-a{font-size:15px;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--line);padding-bottom:1px;}
-.gl-band-a:hover{border-color:var(--navy);}
-/* футер */
-.hidden{display:none!important;}
-.count{font-size:15px;color:var(--muted);margin:18px 0 0;display:none;}
-.count b{color:var(--ink);}
-</style>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="materialy.html" class="act">RU</a><a href="materialy-en.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero">
-  <div class="uw">
-    <div class="crumbs"><a href="index.html">Главная</a> / Методология</div>
-    <div class="phero-eyebrow">Методология</div>
-    <h1>Методология непрерывности бизнеса</h1>
-    <p class="phero-lead">Словарь на 90 терминов и 48 материалов в семи разделах — от значения слова до отраслевой практики. Выберите раздел или найдите нужное поиском.</p>
-    <form class="psearch" onsubmit="return libGo(event)" role="search">
-      <input id="libq" type="search" placeholder="Например: BIA, шифровальщик, ИСО 22301" aria-label="Поиск по материалам">
-    </form>
-  </div>
-</div>
-<div class="uw">
-  <nav class="chips" id="chips"><a href="#slovar"><span class="chip-num">01</span>Словарь терминов</a><a href="#osnovy"><span class="chip-num">02</span>Основы непрерывности</a><a href="#bia"><span class="chip-num">03</span>Анализ воздействия и восстановление</a><a href="#riski"><span class="chip-num">04</span>Управление рисками</a><a href="#krizis"><span class="chip-num">05</span>Кризис и киберугрозы</a><a href="#vnedrenie"><span class="chip-num">06</span>Внедрение и стандарты</a><a href="#otrasli"><span class="chip-num">07</span>Отраслевая практика</a></nav>
-  <p class="count" id="libCount"></p>
-<section class="sec" id="slovar"><div class="sec-grid"><div><div class="sec-num">01 · Раздел</div><h2>Словарь терминов</h2><p class="sec-d">Девяносто терминов непрерывности и рисков простыми словами: что означает, зачем нужно и как звучит по-английски. С этого раздела удобно начинать, если вы впервые столкнулись с темой.</p><p style="margin:0 0 14px;"><a href="slovar.html" class="sec-go">Перейти в словарь <span style="font-size:16px;">&rarr;</span></a></p><ul class="ql"><li><a href="slovar.html#t-rto">Целевое время восстановления (RTO)</a></li><li><a href="slovar.html#t-rpo">Целевая точка восстановления (RPO)</a></li><li><a href="slovar.html#t-bia">Анализ воздействия на бизнес (BIA)</a></li><li><a href="slovar.html#t-mtpd">Максимально допустимый простой</a></li><li><a href="slovar.html#t-risk-appetite">Аппетит к риску</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/slovar.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="osnovy"><div class="sec-grid"><div><div class="sec-num">02 · Раздел</div><h2>Основы непрерывности</h2><p class="sec-d">Что такое непрерывность бизнеса, чем она отличается от ИТ и информационной безопасности, кто за нее отвечает и с чего начинают.</p><p style="margin:0 0 14px;"><a href="nepreryvnost-biznesa.html" class="sec-go">Перейти в раздел <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="nepreryvnost-deyatelnosti.html">Непрерывность деятельности</a></li><li><a href="bcm-bcp-drp-otlichie.html">BCP и DRP — в чем разница</a></li><li><a href="it-otdel-ne-zaschita-biznesa.html">ИТ-отдел не защищает бизнес</a></li><li><a href="bcm-dlya-soveta-direktorov.html">BCM для совета директоров</a></li><li><a href="operacionnaya-ustojchivost.html">Операционная устойчивость: что это и чем отличается от непрерывности</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/osnovy.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="bia"><div class="sec-grid"><div><div class="sec-num">03 · Раздел</div><h2>Анализ воздействия и восстановление</h2><p class="sec-d">Какие процессы критичны, сколько стоит день простоя, за какое время надо восстановиться и что готовят заранее.</p><p style="margin:0 0 14px;"><a href="bia-analiz-vozdeystviya.html" class="sec-go">Перейти в раздел <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="reestr-kriticheskih-processov.html">Реестр критических процессов</a></li><li><a href="stoimost-dnya-prostoya.html">Стоимость дня простоя</a></li><li><a href="edinaya-tochka-otkaza.html">Единая точка отказа</a></li><li><a href="kak-izmerit-ustojchivost-biznesa.html">Как измерить устойчивость</a></li><li><a href="plan-avariynogo-vosstanovleniya.html">План аварийного восстановления (DRP)</a></li><li><a href="plan-nepreryvnosti-biznesa.html">План непрерывности бизнеса (BCP)</a></li><li><a href="rezervnyy-plan-biznesa.html">Резервный план бизнеса</a></li><li><a href="ocenka-riskov-nepreryvnosti.html">Оценка рисков непрерывности бизнеса</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/bia.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="riski"><div class="sec-grid"><div><div class="sec-num">04 · Раздел</div><h2>Управление рисками</h2><p class="sec-d">Как собрать работающую систему управления рисками, оценить риск в деньгах и подготовиться к потере поставщика или человека.</p><p style="margin:0 0 14px;"><a href="sistema-upravleniya-riskami.html" class="sec-go">Перейти в раздел <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="matrica-riskov.html">Матрица рисков</a></li><li><a href="kak-prinimat-slozhnye-resheniya.html">Метод трех сценариев</a></li><li><a href="poterya-klyuchevogo-sotrudnika.html">Потеря ключевого сотрудника</a></li><li><a href="poterya-postavshchika.html">Потеря поставщика</a></li><li><a href="geopoliticheskie-riski-i-nepreryvnost.html">Геополитические риски (Ормуз)</a></li><li><a href="upravlenie-riskami-v-krupnom-banke.html">Управление рисками в крупном банке</a></li><li><a href="bcm-i-strahovanie.html">BCM и страхование</a></li><li><a href="strahovanie-pereryvov-premiya.html">Снизить премию BI-страхования</a></li><li><a href="riski-sberezheniy.html">Риски сбережений</a></li><li><a href="tri-linii-zashchity.html">Три линии защиты: кто отвечает за риски в компании</a></li><li><a href="risk-appetit.html">Риск-аппетит: как сформулировать и зачем он нужен</a></li><li><a href="kri-i-kpi.html">KRI и KPI: чем отличаются показатели риска и результата</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/riski.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="krizis"><div class="sec-grid"><div><div class="sec-num">05 · Раздел</div><h2>Кризис и киберугрозы</h2><p class="sec-d">Что делать в первые часы инцидента, как готовиться к атаке шифровальщика и что говорить сотрудникам, клиентам и СМИ.</p><p style="margin:0 0 14px;"><a href="plan-deystviy-pri-kiberatake.html" class="sec-go">Перейти в раздел <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="zashchita-ot-shifrovalshchika.html">Защита от шифровальщика</a></li><li><a href="zashchita-ot-kiberatak.html">Защита от кибератак</a></li><li><a href="7-dney-prostoya-kiberataka.html">7 дней простоя: урок кибератаки</a></li><li><a href="kiberataki-msb-rossiya.html">Кибератаки на МСБ: статистика</a></li><li><a href="pochemu-kompanii-skryvayut-kiberataki.html">Почему скрывают кибератаки</a></li><li><a href="bcm-i-zashchita-dannyh.html">BCM и защита данных</a></li><li><a href="kiberucheniya.html">Киберучения</a></li><li><a href="krizisnye-kommunikacii.html">Кризисные коммуникации</a></li><li><a href="obuchenie-sotrudnikov-kiberbezopasnosti.html">Обучение сотрудников кибербезопасности: что работает и чего в нем не хватает</a></li><li><a href="antikrizisnyy-plan-kompanii.html">Антикризисный план</a></li><li><a href="bcm-i-informacionnaya-bezopasnost.html">BCM и информационная безопасность: кто за что отвечает</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/krizis.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="vnedrenie"><div class="sec-grid"><div><div class="sec-num">06 · Раздел</div><h2>Внедрение и стандарты</h2><p class="sec-d">Требования ИСО 22301 и Банка России, учения и тестирование, обучение команды и порядок внедрения.</p><p style="margin:0 0 14px;"><a href="iso-22301.html" class="sec-go">Перейти в раздел <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="onivd-ponivd.html">ОНиВД и ПОНиВД (850-П, структура плана, сроки)</a></li><li><a href="ucheniya-po-nepreryvnosti.html">Учения по непрерывности</a></li><li><a href="chek-list-gotovnosti-k-krizisu.html">Чек-лист готовности к кризису</a></li><li><a href="obuchenie-nepreryvnosti-biznesa.html">Корпоративный тренинг по непрерывности</a></li><li><a href="stress-test-nepreryvnosti.html">Стресс-тест непрерывности: как проверить компанию за два дня</a></li><li><a href="testirovanie-gotovnosti.html">Проверка готовности к кризису: методы и чек-лист</a></li><li><a href="specialist-po-nepreryvnosti.html">Специалист по непрерывности деятельности</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/vnedrenie.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="sec" id="otrasli"><div class="sec-grid"><div><div class="sec-num">07 · Раздел</div><h2>Отраслевая практика</h2><p class="sec-d">Профиль рисков в ИТ, нефтегазе, металлургии и строительстве — что именно останавливает бизнес в каждой отрасли.</p><p style="margin:0 0 14px;"><a href="riski-v-it.html" class="sec-go">Перейти в раздел <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="riski-neftegazovoy-otrasli.html">Риски нефтегазовой отрасли</a></li><li><a href="riski-v-metallurgii.html">Риски в металлургии</a></li><li><a href="bcm-dlya-sro-stroitelstvo.html">BCM для строительства и СРО</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/otrasli.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span>Методология</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Методология</div>
+  <h1>Методология непрерывности бизнеса</h1>
+  <p class="lead">Словарь на 90 терминов и 48 материалов в семи разделах — от значения слова до отраслевой практики. Выберите раздел или найдите нужное поиском.</p>
+  <form class="search" onsubmit="return libGo(event)" role="search">
+    <input class="fld" id="libq" type="search" placeholder="Например: BIA, шифровальщик, ИСО 22301" aria-label="Поиск по материалам">
+    <button type="submit" class="btn navy">Найти</button>
+  </form>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb one">
+<main class="pmain wide">
+<nav class="tags lib-chips" id="chips"><a href="#slovar"><b>01</b> Словарь терминов</a><a href="#osnovy"><b>02</b> Основы непрерывности</a><a href="#bia"><b>03</b> Анализ воздействия и восстановление</a><a href="#riski"><b>04</b> Управление рисками</a><a href="#krizis"><b>05</b> Кризис и киберугрозы</a><a href="#vnedrenie"><b>06</b> Внедрение и стандарты</a><a href="#otrasli"><b>07</b> Отраслевая практика</a></nav>
+  <p class="lib-count" id="libCount" hidden></p>
+<section class="ps lsec" id="slovar"><div class="lsec-grid"><div><div class="k">01 · Раздел</div><h2>Словарь терминов</h2><p>Девяносто терминов непрерывности и рисков простыми словами: что означает, зачем нужно и как звучит по-английски. С этого раздела удобно начинать, если вы впервые столкнулись с темой.</p><p><a href="slovar.html" class="more">Перейти в словарь →</a></p><ul class="ql"><li><a href="slovar.html#t-rto">Целевое время восстановления (RTO)</a></li><li><a href="slovar.html#t-rpo">Целевая точка восстановления (RPO)</a></li><li><a href="slovar.html#t-bia">Анализ воздействия на бизнес (BIA)</a></li><li><a href="slovar.html#t-mtpd">Максимально допустимый простой</a></li><li><a href="slovar.html#t-risk-appetite">Аппетит к риску</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/slovar.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="osnovy"><div class="lsec-grid"><div><div class="k">02 · Раздел</div><h2>Основы непрерывности</h2><p>Что такое непрерывность бизнеса, чем она отличается от ИТ и информационной безопасности, кто за нее отвечает и с чего начинают.</p><p><a href="nepreryvnost-biznesa.html" class="more">Перейти в раздел <span>→</span></a></p><ul class="ql"><li><a href="nepreryvnost-deyatelnosti.html">Непрерывность деятельности</a></li><li><a href="bcm-bcp-drp-otlichie.html">BCP и DRP — в чем разница</a></li><li><a href="it-otdel-ne-zaschita-biznesa.html">ИТ-отдел не защищает бизнес</a></li><li><a href="bcm-dlya-soveta-direktorov.html">BCM для совета директоров</a></li><li><a href="operacionnaya-ustojchivost.html">Операционная устойчивость: что это и чем отличается от непрерывности</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/osnovy.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="bia"><div class="lsec-grid"><div><div class="k">03 · Раздел</div><h2>Анализ воздействия и восстановление</h2><p>Какие процессы критичны, сколько стоит день простоя, за какое время надо восстановиться и что готовят заранее.</p><p><a href="bia-analiz-vozdeystviya.html" class="more">Перейти в раздел <span>→</span></a></p><ul class="ql"><li><a href="reestr-kriticheskih-processov.html">Реестр критических процессов</a></li><li><a href="stoimost-dnya-prostoya.html">Стоимость дня простоя</a></li><li><a href="edinaya-tochka-otkaza.html">Единая точка отказа</a></li><li><a href="kak-izmerit-ustojchivost-biznesa.html">Как измерить устойчивость</a></li><li><a href="plan-avariynogo-vosstanovleniya.html">План аварийного восстановления (DRP)</a></li><li><a href="plan-nepreryvnosti-biznesa.html">План непрерывности бизнеса (BCP)</a></li><li><a href="rezervnyy-plan-biznesa.html">Резервный план бизнеса</a></li><li><a href="ocenka-riskov-nepreryvnosti.html">Оценка рисков непрерывности бизнеса</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/bia.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="riski"><div class="lsec-grid"><div><div class="k">04 · Раздел</div><h2>Управление рисками</h2><p>Как собрать работающую систему управления рисками, оценить риск в деньгах и подготовиться к потере поставщика или человека.</p><p><a href="sistema-upravleniya-riskami.html" class="more">Перейти в раздел <span>→</span></a></p><ul class="ql"><li><a href="matrica-riskov.html">Матрица рисков</a></li><li><a href="kak-prinimat-slozhnye-resheniya.html">Метод трех сценариев</a></li><li><a href="poterya-klyuchevogo-sotrudnika.html">Потеря ключевого сотрудника</a></li><li><a href="poterya-postavshchika.html">Потеря поставщика</a></li><li><a href="geopoliticheskie-riski-i-nepreryvnost.html">Геополитические риски (Ормуз)</a></li><li><a href="upravlenie-riskami-v-krupnom-banke.html">Управление рисками в крупном банке</a></li><li><a href="bcm-i-strahovanie.html">BCM и страхование</a></li><li><a href="strahovanie-pereryvov-premiya.html">Снизить премию BI-страхования</a></li><li><a href="riski-sberezheniy.html">Риски сбережений</a></li><li><a href="tri-linii-zashchity.html">Три линии защиты: кто отвечает за риски в компании</a></li><li><a href="risk-appetit.html">Риск-аппетит: как сформулировать и зачем он нужен</a></li><li><a href="kri-i-kpi.html">KRI и KPI: чем отличаются показатели риска и результата</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/riski.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="krizis"><div class="lsec-grid"><div><div class="k">05 · Раздел</div><h2>Кризис и киберугрозы</h2><p>Что делать в первые часы инцидента, как готовиться к атаке шифровальщика и что говорить сотрудникам, клиентам и СМИ.</p><p><a href="plan-deystviy-pri-kiberatake.html" class="more">Перейти в раздел <span>→</span></a></p><ul class="ql"><li><a href="zashchita-ot-shifrovalshchika.html">Защита от шифровальщика</a></li><li><a href="zashchita-ot-kiberatak.html">Защита от кибератак</a></li><li><a href="7-dney-prostoya-kiberataka.html">7 дней простоя: урок кибератаки</a></li><li><a href="kiberataki-msb-rossiya.html">Кибератаки на МСБ: статистика</a></li><li><a href="pochemu-kompanii-skryvayut-kiberataki.html">Почему скрывают кибератаки</a></li><li><a href="bcm-i-zashchita-dannyh.html">BCM и защита данных</a></li><li><a href="kiberucheniya.html">Киберучения</a></li><li><a href="krizisnye-kommunikacii.html">Кризисные коммуникации</a></li><li><a href="obuchenie-sotrudnikov-kiberbezopasnosti.html">Обучение сотрудников кибербезопасности: что работает и чего в нем не хватает</a></li><li><a href="antikrizisnyy-plan-kompanii.html">Антикризисный план</a></li><li><a href="bcm-i-informacionnaya-bezopasnost.html">BCM и информационная безопасность: кто за что отвечает</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/krizis.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="vnedrenie"><div class="lsec-grid"><div><div class="k">06 · Раздел</div><h2>Внедрение и стандарты</h2><p>Требования ИСО 22301 и Банка России, учения и тестирование, обучение команды и порядок внедрения.</p><p><a href="iso-22301.html" class="more">Перейти в раздел <span>→</span></a></p><ul class="ql"><li><a href="onivd-ponivd.html">ОНиВД и ПОНиВД (850-П, структура плана, сроки)</a></li><li><a href="ucheniya-po-nepreryvnosti.html">Учения по непрерывности</a></li><li><a href="chek-list-gotovnosti-k-krizisu.html">Чек-лист готовности к кризису</a></li><li><a href="obuchenie-nepreryvnosti-biznesa.html">Корпоративный тренинг по непрерывности</a></li><li><a href="stress-test-nepreryvnosti.html">Стресс-тест непрерывности: как проверить компанию за два дня</a></li><li><a href="testirovanie-gotovnosti.html">Проверка готовности к кризису: методы и чек-лист</a></li><li><a href="specialist-po-nepreryvnosti.html">Специалист по непрерывности деятельности</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/vnedrenie.svg" width="640" height="330" alt=""></figure></div></section>
+<section class="ps lsec" id="otrasli"><div class="lsec-grid"><div><div class="k">07 · Раздел</div><h2>Отраслевая практика</h2><p>Профиль рисков в ИТ, нефтегазе, металлургии и строительстве — что именно останавливает бизнес в каждой отрасли.</p><p><a href="riski-v-it.html" class="more">Перейти в раздел <span>→</span></a></p><ul class="ql"><li><a href="riski-neftegazovoy-otrasli.html">Риски нефтегазовой отрасли</a></li><li><a href="riski-v-metallurgii.html">Риски в металлургии</a></li><li><a href="bcm-dlya-sro-stroitelstvo.html">BCM для строительства и СРО</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/otrasli.svg" width="640" height="330" alt=""></figure></div></section>
 
   
-  <section class="sec" id="ot"><div class="sec-grid"><div><div class="sec-num">08 · Раздел</div><h2>Безопасность и риски на рабочем месте</h2><p class="sec-d">Оценка профессиональных рисков, опасности вокруг человека, барьеры защиты и поведение на смене. Самый массовый пласт запросов по слову «риск» в России и самая недооцененная часть устойчивости компании.</p><p style="margin:0 0 14px;"><a href="ocenka-professionalnyh-riskov.html" class="sec-go">Перейти в раздел <span style="font-size:16px;">→</span></a></p><ul class="ql"><li><a href="urovni-professionalnogo-riska.html">Уровни профессионального риска</a></li><li><a href="metody-ocenki-profriskov.html">Методы оценки профрисков</a></li><li><a href="karta-ocenki-riskov-rabochego-mesta.html">Карта оценки рисков рабочего места</a></li><li><a href="mery-upravleniya-riskom.html">Меры управления риском</a></li><li><a href="meropriyatiya-po-upravleniyu-profriskami.html">Мероприятия по управлению профрисками</a></li><li><a href="sistema-upravleniya-profriskami.html">Система управления профессиональными рисками в компании</a></li><li><a href="perechen-opasnostej-na-rabochem-meste.html">Перечень опасностей на рабочем месте</a></li><li><a href="profriski-i-sout.html">Профриски и СОУТ</a></li><li><a href="kto-provodit-ocenku-profriskov.html">Кто проводит оценку профрисков</a></li><li><a href="periodichnost-ocenki-profriskov.html">Периодичность оценки профрисков</a></li><li><a href="dokumenty-po-profriskam.html">Документы по профрискам</a></li><li><a href="osmotr-rabochego-mesta-chek-list.html">Осмотр рабочего места за пять минут</a></li><li><a href="objazatelnoe-obuchenie-i-podgotovka.html">Обязательная подготовка по охране труда и понимание рисков</a></li></ul></div><figure class="sec-img" style="margin:0;"><img src="assets/lib/ot.svg" width="640" height="330" alt="" loading="lazy"></figure></div></section>
-<section class="pcta">
-    <h3>Узнайте, насколько устойчив ваш бизнес</h3>
-    <p>13 вопросов, 5 минут, бесплатно — результат сразу на экране и на почту.</p>
-    <a href="quiz.html">Пройти диагностику →</a>
-  </section>
-
+  <section class="ps lsec" id="ot"><div class="lsec-grid"><div><div class="k">08 · Раздел</div><h2>Безопасность и риски на рабочем месте</h2><p>Оценка профессиональных рисков, опасности вокруг человека, барьеры защиты и поведение на смене. Самый массовый пласт запросов по слову «риск» в России и самая недооцененная часть устойчивости компании.</p><p><a href="ocenka-professionalnyh-riskov.html" class="more">Перейти в раздел <span>→</span></a></p><ul class="ql"><li><a href="urovni-professionalnogo-riska.html">Уровни профессионального риска</a></li><li><a href="metody-ocenki-profriskov.html">Методы оценки профрисков</a></li><li><a href="karta-ocenki-riskov-rabochego-mesta.html">Карта оценки рисков рабочего места</a></li><li><a href="mery-upravleniya-riskom.html">Меры управления риском</a></li><li><a href="meropriyatiya-po-upravleniyu-profriskami.html">Мероприятия по управлению профрисками</a></li><li><a href="sistema-upravleniya-profriskami.html">Система управления профессиональными рисками в компании</a></li><li><a href="perechen-opasnostej-na-rabochem-meste.html">Перечень опасностей на рабочем месте</a></li><li><a href="profriski-i-sout.html">Профриски и СОУТ</a></li><li><a href="kto-provodit-ocenku-profriskov.html">Кто проводит оценку профрисков</a></li><li><a href="periodichnost-ocenki-profriskov.html">Периодичность оценки профрисков</a></li><li><a href="dokumenty-po-profriskam.html">Документы по профрискам</a></li><li><a href="osmotr-rabochego-mesta-chek-list.html">Осмотр рабочего места за пять минут</a></li><li><a href="objazatelnoe-obuchenie-i-podgotovka.html">Обязательная подготовка по охране труда и понимание рисков</a></li></ul></div><figure class="lsec-img"><img class="fig" src="assets/lib/ot.svg" width="640" height="330" alt=""></figure></div></section>
+<div class="inset cta"><h3>Узнайте, насколько устойчив ваш бизнес</h3><p>13 вопросов, 5 минут, бесплатно — результат сразу на экране и на почту.</p><div class="btns"><a class="btn navy" href="quiz.html">Пройти диагностику →</a></div></div>
+</main>
 </div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>
 (function(){
-  var b=document.getElementById('uhBurger'),n=document.getElementById('uhNav');
-  if(b&&n)b.addEventListener('click',function(){n.classList.toggle('open');});
   function apply(q){
     q=(q||'').toLowerCase().trim(); var n2=0;
     document.querySelectorAll('.ql li').forEach(function(li){
       var hit=!q||li.textContent.toLowerCase().indexOf(q)>-1;
       li.style.display=hit?'':'none'; if(hit&&q)n2++;
     });
-    document.querySelectorAll('.sec').forEach(function(s){
+    document.querySelectorAll('.lsec').forEach(function(s){
       var any=Array.prototype.some.call(s.querySelectorAll('.ql li'),function(li){return li.style.display!=='none';});
       s.style.display=any?'':'none';
     });
     var c=document.getElementById('libCount'), ch=document.getElementById('chips');
-    if(ch)ch.style.display=q?'none':'';
-    if(c){c.style.display=q?'':'none';
+    if(ch)ch.hidden=!!q;
+    if(c){c.hidden=!q;
       if(q)c.innerHTML='По запросу <b>'+q.replace(/[<>&]/g,'')+'</b> найдено: <b>'+n2+'</b>. <a href="materialy.html">Показать все</a>';}
   }
   window.libGo=function(e){
@@ -204,7 +161,7 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <!-- rebuild 2026-08-18 18:51 -->
 </body>
 </html>

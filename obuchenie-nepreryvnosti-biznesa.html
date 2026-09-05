@@ -28,332 +28,174 @@
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* ТОЛЬКО контентные блоки этой страницы. Шапка, ширина, подвал — из style.css.
-   Оформление по макету от 27.08.2026: без карточек и рамок, разделение
-   тонкими линиями, нумерация в отдельной колонке, две заливки на всю
-   страницу — блок демонстрации и врезка о директоре программы. */
-
-/* Абзацы с классом внутри .uw пишем как «.uw p.класс». Правило «.uw p»
-   весит класс плюс тег и перебивает одиночный класс, из-за чего кегль и
-   отступы такого абзаца молча обнуляются. Проверено 27.08.2026 на подписи
-   под кнопками: она прилипала к ним, сколько бы пикселей ей ни задавали. */
-
-/* ── шапка страницы ──
-   Правила .phero, .phero h1, .phero-eyebrow, .crumbs и .crumbs a живут в
-   общем style.css и здесь намеренно не повторяются: два одинаковых правила
-   в двух местах рано или поздно расходятся, и потом непонятно, какое из них
-   победило. Сторож стилей следит, чтобы дубли не вернулись. */
-.uw p.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
-.phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.uw p.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
-.uw p.phero-note b{color:var(--ink);font-weight:700}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
-.fact{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
-.fact b{display:block;font-size:19px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
-.fact span{font-size:13.5px;color:var(--muted);line-height:1.45}
-
-/* ── общее для разделов ── */
-.psec{padding:46px 0 0}
-.psec:last-of-type{padding-bottom:64px}
-/* ── текст и списки: правила висят на контейнере .uw, а не на классе
-   раздела. Иначе блоки со своим классом (демонстрация, врезка о директоре)
-   выпадают из правил и попадают под глобальный сброс отступов. ── */
-.uw h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 16px}
-.uw p{font-size:16px;line-height:1.65;color:#26263a;margin:0 0 14px;max-width:76ch;text-wrap:pretty}
-.uw p:last-child{margin-bottom:0}
-.uw p.sub{color:var(--muted)}
-.uw p.note{font-size:13.5px;line-height:1.55;color:var(--muted)}
-
-/* Маркер всегда заходит под текст абзаца сверху, а не встает с ним на одну
-   линию. Отступ содержимого 28px, маркер живет внутри этого поля. */
-.uw ul,.uw ol{margin:0 0 14px;padding-left:28px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
-.uw ul:last-child,.uw ol:last-child{margin-bottom:0}
-.uw li{margin-bottom:10px}
-.uw li:last-child{margin-bottom:0}
-.uw li b{font-weight:700;color:var(--ink)}
-
-/* Стык абзаца и списка: полстроки воздуха, чтобы перечисление не слипалось
-   со строкой, которая его вводит. Полстроки при кегле 16 и интерлиньяже
-   1.65 — это 13px, задаем в долях строки, чтобы держалось при любом кегле. */
-.uw p + ul,.uw p + ol{margin-top:.5lh}
-.uw ul + p,.uw ol + p{margin-top:.5lh}
-@supports not (margin-top: 1lh){
-  .uw p + ul,.uw p + ol,.uw ul + p,.uw ol + p{margin-top:13px}
-}
-
-/* Общее правило раздела: два смысловых куска внутри блока никогда не стоят
-   вплотную, между ними минимум полстроки. Сетка тарифов, колонки, плитки
-   фактов и подписи под ними подчиняются тому же закону, что абзац и список.
-   Селекторы с тегом p подняты по весу, иначе их перебивает .uw p. */
-.uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:.5lh}
-.uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
-.uw p.tnote,.uw p.note,.uw p.certcap{margin-top:.5lh}
-@supports not (margin-top: 1lh){
-  .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:11px}
-  .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
-  .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:11px}
-}
-
-/* ── строки с номером: модули программы и ступени проверки знаний ── */
-.numrow{display:grid;grid-template-columns:72px 1fr;gap:20px;align-items:baseline}
-.numrow .num{font-size:19px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
-.mods .numrow{padding:22px 0;border-top:1px solid var(--line)}
-.mods h3{font-size:17px;font-weight:700;color:var(--ink);margin:0 0 6px;line-height:1.35}
-.mods h3 span{font-weight:400;color:var(--muted)}
-.mods p{font-size:16px;line-height:1.6;margin:0;max-width:74ch}
-.art{font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:8px}
-.art b{font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark)}
-.steps .numrow{padding:0 0 18px}
-.steps .numrow:last-child{padding:0}
-.steps b{display:block;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:2px}
-.steps .t{font-size:15px;line-height:1.6;color:var(--muted)}
-
-/* ── две колонки, схлопываются сами по ширине ── */
-.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;align-items:start}
-
-/* ── кнопки ── */
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;
-  border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;font-family:inherit}
-.pill-navy{background:var(--navy);color:#fff}
-.pill-gold{background:var(--gold);color:var(--ink)}
-.pill:hover{opacity:.9}
-.pill-navy:hover,.pill-gold:hover{color:inherit}
-.pill-navy:hover{color:#fff}
-
-/* ── поля ввода ── */
-.fld{border:1.5px solid #D8CFB8;border-radius:10px;padding:12px 14px;font-size:15px;
-  background:#fff;color:var(--ink);font-family:inherit;width:100%}
-.fld:focus{outline:none;border-color:var(--gold)}
-
-/* ── сертификат ── */
-.certimg{display:block;width:100%;height:auto;border:1px solid var(--line)}
-.uw p.certcap{font-size:13.5px;line-height:1.5;color:var(--muted);margin:10px 0 0}
-.verify{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
-.vtitle{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
-.vrow{display:flex;gap:10px;flex-wrap:wrap}
-.vrow .fld{flex:1 1 240px;width:auto}
-.uw p.vans{display:none;font-size:13.5px;line-height:1.55;color:#26263a;margin:12px 0 0}
-.uw p.vans a{color:var(--navy);font-weight:600}
-
-/* ── скриншоты курса ── */
-.shots{max-width:980px}
-.shot{display:block;width:100%;height:auto;border:1px solid var(--line);cursor:zoom-in}
-.shotbar{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;padding:14px 0 0}
-.shotbar .cap{font-size:15px;line-height:1.5;color:#26263a}
-.shotnav{display:flex;align-items:baseline;gap:16px;white-space:nowrap}
-.shotnav button{background:none;border:none;padding:0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);font-family:inherit}
-.shotnav .n{font-size:13.5px;color:var(--muted)}
-.slbox{display:none;position:fixed;inset:0;background:rgba(30,34,43,.93);z-index:200;overflow:auto;padding:30px 16px;text-align:center}
-.slbox.open{display:block}
-.slbox img{max-width:min(96vw,1700px);width:100%;height:auto;cursor:zoom-out}
-.slbox .x{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:34px;
-  cursor:pointer;line-height:1;padding:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
-
-/* ── демонстрация: полоса с заливкой на всю ширину ── */
-.demo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin:46px 0 0}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-/* Форма: шаг между рядами полей и до поля сообщения одинаковый. Сетка
-   полей намеренно исключена из общего правила «полстроки»: иначе шаг
-   по вертикали выходит на пиксель больше, чем зазор между колонками,
-   и глаз читает разрыв как ошибку. */
-.uw .dgrid{margin-bottom:0}
-.uw textarea.fld{margin-top:10px;resize:vertical}
-.consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 16px;cursor:pointer}
-.consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
-.consent a{color:var(--navy);font-weight:600}
-.demo .pill{width:100%}
-.uw p.msg-ok{display:none;font-size:15px;font-weight:600;color:#1B6B4A;margin:12px 0 0;text-align:center}
-.uw p.msg-err{display:none;font-size:13.5px;color:#A3351A;margin:12px 0 0;text-align:center}
-.uw p.msg-note{display:none;font-size:13.5px;color:var(--muted);margin:12px 0 0;text-align:center}
-
-/* ── стоимость ── */
-.price{font-size:30px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
-.orgt{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
-
-/* ── директор программы: врезка с заливкой ── */
-.dirsec{background:var(--panel);border-top:1px solid var(--line);padding:46px 0 52px;margin:46px 0 0}
-.dir{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
-.dir img{flex:0 0 112px;width:112px;height:112px;border-radius:50%;object-fit:cover;display:block}
-.dir .body{flex:1 1 420px}
-.dir .nm{display:block;font-size:19px;font-weight:800;color:var(--ink);margin-bottom:3px}
-.dir .rl{display:block;font-size:13.5px;font-weight:700;color:var(--gold-dark);margin-bottom:12px}
-
-/* ── вопросы ── */
-.faq{padding:18px 0;border-top:1px solid var(--line)}
-.faq .q{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 4px;line-height:1.35}
-.faq p{margin:0}
-
-@media(max-width:560px){
-  .numrow{grid-template-columns:44px 1fr;gap:12px}
-  .psec{padding:34px 0 0}
-  .demo,.dirsec{padding:34px 0}
-}
-
-.tariffs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:6px 0 0}
-.tariff{border-top:2px solid var(--line);padding:18px 0 0}
-.tariff.pick{border-top-color:var(--gold)}
-.tariff .who{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:8px}
-.tariff .sum{font-size:30px;font-weight:800;color:var(--navy);line-height:1.15}
-.tariff .per{font-size:13.5px;color:var(--muted);margin:2px 0 10px}
-.uw .tariff p.ex{font-size:15px;line-height:1.55;color:#26263a}
-/* подпись под тарифами идет на всю ширину блока, а не по колонке прозы */
-.uw p.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:none}
-</style>
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Корпоративный тренинг по непрерывности бизнеса","description":"Два дня с командой на материале вашей компании: разбор процессов, черновики планов и кабинетное учение.","provider":{"@type":"Organization","name":"risk-place.ru","sameAs":"https://bcm.risk-place.ru"}}</script>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="obuchenie-nepreryvnosti-biznesa.html" class="act">RU</a><a href="en-obuchenie-nepreryvnosti-biznesa.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero">
-  <div class="uw">
-    <div class="crumbs"><a href="index.html">Главная</a> / Корпоративный тренинг</div>
-    <div class="phero-eyebrow">Очно у вас или по видеосвязи · два дня · до восьми участников</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span>Корпоративный тренинг</div>
+  <div class="rule"></div>
+    <div class="eyebrow">Очно у вас или по видеосвязи · два дня · до восьми участников</div>
     <h1>Корпоративный тренинг по непрерывности бизнеса</h1>
-    <p class="phero-sub">Два дня с вашей командой на материале вашей компании. Разбираем реальные процессы, пишем черновики планов и проигрываем кризисный сценарий, а не слушаем лекцию.</p>
-    <div class="facts">
-      <div class="fact"><b>2 дня</b><span>шесть модулей</span></div>
-      <div class="fact"><b>До 8</b><span>участников в группе</span></div>
-      <div class="fact"><b>Ваши кейсы</b><span>материал вашей отрасли</span></div>
-      <div class="fact"><b>Учение</b><span>кабинетный сценарий в конце</span></div>
-      <div class="fact"><b>Сертификат</b><span>именной, по итогам</span></div>
+    <p class="lead">Два дня с вашей командой на материале вашей компании. Разбираем реальные процессы, пишем черновики планов и проигрываем кризисный сценарий, а не слушаем лекцию.</p>
+    <div class="tiles">
+      <div class="tile"><b>2 дня</b><span>шесть модулей</span></div>
+      <div class="tile"><b>До 8</b><span>участников в группе</span></div>
+      <div class="tile"><b>Ваши кейсы</b><span>материал вашей отрасли</span></div>
+      <div class="tile"><b>Учение</b><span>кабинетный сценарий в конце</span></div>
+      <div class="tile"><b>Сертификат</b><span>именной, по итогам</span></div>
     </div>
-    <div class="phero-cta">
-      <a class="pill pill-gold" href="#demo">Запросить программу и счет</a>
-      <a class="pill pill-navy" href="onlajn-kurs.html">Сравнить с онлайн-программой</a>
+    <div class="cta-row">
+      <a class="btn gold" href="#demo">Запросить программу и счет</a>
+      <a class="btn navy" href="onlajn-kurs.html">Сравнить с онлайн-программой</a>
     </div>
-    <p class="phero-note"><b>От 20 000 ₽ за человека при группе от трех участников.</b> Оплата по счету от организации.</p>
-  </div>
-</div>
+    <p class="note"><b>От 20 000 ₽ за человека при группе от трех участников.</b> Оплата по счету от организации.</p>
+</div></div>
+<!--/TPL:HERO-->
 
-<section class="psec"><div class="uw">
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#dlya-kogo">Для кого</a>
+    <a href="#programma-shest-modulej-za-dva-dnya">Программа — шесть модулей за два дня</a>
+    <a href="#chto-ostaetsya-u-komandy">Что остается у команды</a>
+    <a href="#price">Стоимость</a>
+    <a href="#demo">Обсудить тренинг</a>
+    <a href="#vedet-programmu">Ведет программу</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<section class="ps" id="dlya-kogo">
   <h2>Для кого</h2>
-  <ul>
-    <li><b>Руководители и собственники</b> — которым нужно понимать, чем компания рискует и что будет в плохой день.</li>
-    <li><b>Риск-менеджеры и внутренние аудиторы</b> — которым поручили непрерывность и нужна рабочая рамка.</li>
-    <li><b>Руководители информационных технологий и безопасности</b> — которым нужно связать восстановление систем с работой бизнеса.</li>
-    <li><b>Ответственные за ОНиВД</b> в банках и финансовых организациях — с разбором требований регулятора.</li>
+  <ul class="ld">
+    <li><span><b>Руководители и собственники</b> — которым нужно понимать, чем компания рискует и что будет в плохой день.</span></li>
+    <li><span><b>Риск-менеджеры и внутренние аудиторы</b> — которым поручили непрерывность и нужна рабочая рамка.</span></li>
+    <li><span><b>Руководители информационных технологий и безопасности</b> — которым нужно связать восстановление систем с работой бизнеса.</span></li>
+    <li><span><b>Ответственные за ОНиВД</b> в банках и финансовых организациях — с разбором требований регулятора.</span></li>
   </ul>
   <p class="sub">Формат подходит и тем, кто строит систему с нуля, и тем, у кого документы есть, но ими никто не пользуется.</p>
-</div></section>
+</section>
 
-<section class="psec"><div class="uw mods">
+<section class="ps" id="programma-shest-modulej-za-dva-dnya">
   <h2>Программа — шесть модулей за два дня</h2>
   <p class="sub">Каждый модуль заканчивается работой руками на материале вашей компании.</p>
-    <div class="numrow">
-      <div class="num">01</div>
+    <div class="nr">
+      <div class="nr-n">01</div>
       <div>
         <h3>Основы управления непрерывностью <span>· модуль 1</span></h3>
         <p>Что такое непрерывность бизнеса и непрерывность деятельности, стандарты ИСО 22301 и ГОСТ Р ИСО 22301, требования регуляторов, включая ОНиВД и ПОНиВД для финансовых организаций. Роли, ответственность и место непрерывности в системе управления рисками.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">02</div>
+    <div class="nr">
+      <div class="nr-n">02</div>
       <div>
         <h3>Анализ воздействия и оценка рисков <span>· модуль 2</span></h3>
         <p>Реестр критических процессов, целевое время и точка восстановления, расчет стоимости часа и дня простоя. Поиск единых точек отказа в информационных системах, людях, поставщиках и площадках. Что защищаем в первую очередь.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">03</div>
+    <div class="nr">
+      <div class="nr-n">03</div>
       <div>
         <h3>План непрерывности и план восстановления <span>· модуль 3</span></h3>
         <p>Структура плана, которым реально пользуются. Стратегии восстановления и резервирования, обходные ручные процессы для критичных операций, резервное копирование и требования к восстановлению систем.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">04</div>
+    <div class="nr">
+      <div class="nr-n">04</div>
       <div>
         <h3>Кризисное управление <span>· модуль 4</span></h3>
         <p>Кризисный штаб, полномочия и порядок активации. Чек-листы первых суток, коммуникации в кризис — что говорить сотрудникам, клиентам и прессе. Типичные ошибки на разборе реальных случаев.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">05</div>
+    <div class="nr">
+      <div class="nr-n">05</div>
       <div>
         <h3>Киберустойчивость <span>· модуль 5</span></h3>
         <p>Сценарий атаки шифровальщика и первые часы реагирования. Резервные копии по правилу три-два-один, восстановление после атаки, связка информационной безопасности и непрерывности.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">06</div>
+    <div class="nr">
+      <div class="nr-n">06</div>
       <div>
         <h3>Учения, метрики и поддержание системы <span>· модуль 6</span></h3>
         <p>Виды учений, включая кабинетные киберучения. Ключевые метрики устойчивости и панель показателей для руководства, аудит системы, как удержать ее живой, а не бумажной.</p>
       </div>
     </div>
-</div></section>
+</section>
 
-<section class="demo"><div class="uw">
-  <h2 style="margin-bottom:20px">Что остается у команды</h2>
-  <div class="duo">
+<section class="ps" id="chto-ostaetsya-u-komandy"><div class="inset">
+  <h2>Что остается у команды</h2>
+  <div class="g2">
     <div>
-      <ul>
-        <li><b>Черновики рабочих документов.</b> Реестр критических процессов, расчет стоимости дня простоя и каркас плана непрерывности — начатые на тренинге, на ваших данных.</li>
-        <li><b>Готовые инструменты.</b> Шаблоны документов, чек-лист первых суток, структура кризисных коммуникаций.</li>
+      <ul class="ld">
+        <li><span><b>Черновики рабочих документов.</b> Реестр критических процессов, расчет стоимости дня простоя и каркас плана непрерывности — начатые на тренинге, на ваших данных.</span></li>
+        <li><span><b>Готовые инструменты.</b> Шаблоны документов, чек-лист первых суток, структура кризисных коммуникаций.</span></li>
       </ul>
     </div>
     <div>
-      <ul>
-        <li><b>Общий язык в команде.</b> После двух дней все понимают одинаково, что такое целевое время восстановления и кто объявляет кризис.</li>
-        <li><b>Проверка знаний и сертификат.</b> Именной, по итогам программы, с уникальным номером.</li>
+      <ul class="ld">
+        <li><span><b>Общий язык в команде.</b> После двух дней все понимают одинаково, что такое целевое время восстановления и кто объявляет кризис.</span></li>
+        <li><span><b>Проверка знаний и сертификат.</b> Именной, по итогам программы, с уникальным номером.</span></li>
       </ul>
     </div>
   </div>
 </div></section>
 
-<section class="psec" id="price"><div class="uw">
+<section class="ps" id="price">
   <h2>Стоимость</h2>
   <p class="sub">Цена за одного участника, без учета налогов. Формат очный или по видеосвязи, на цену не влияет.</p>
-  <div class="tariffs">
-      <div class="tariff">
-        <div class="who">Один участник</div>
+  <div class="g3">
+      <div class="card">
+        <div class="k">Один участник</div>
         <div class="sum">28 000 ₽</div>
         <div class="per">за человека</div>
-        <p class="ex">Очно на вашей площадке или по видеосвязи.</p>
+        <p>Очно на вашей площадке или по видеосвязи.</p>
       </div>
-      <div class="tariff">
-        <div class="who">Два участника</div>
+      <div class="card">
+        <div class="k">Два участника</div>
         <div class="sum">25 000 ₽</div>
         <div class="per">за человека</div>
-        <p class="ex">Цена за каждого. Разбор кейсов уже парный.</p>
+        <p>Цена за каждого. Разбор кейсов уже парный.</p>
       </div>
-      <div class="tariff pick">
-        <div class="who">Трое и больше</div>
+      <div class="card gold">
+        <div class="k">Трое и больше</div>
         <div class="sum">20 000 ₽</div>
         <div class="per">за человека</div>
-        <p class="ex">Рабочий формат для команды. От пяти человек условия обсуждаем отдельно.</p>
+        <p>Рабочий формат для команды. От пяти человек условия обсуждаем отдельно.</p>
       </div>
   </div>
-  <p class="tnote">Адаптация под компанию входит в стоимость: кейсы, учения и акценты перестраиваем под вашу отрасль, требования регуляторов и устройство информационных систем. Выезд на площадку за пределами Москвы обсуждаем отдельно.</p>
-  <div class="phero-cta" style="margin-top:22px">
-    <a class="pill pill-gold" href="#demo">Запросить программу и счет</a>
+  <p class="note">Адаптация под компанию входит в стоимость: кейсы, учения и акценты перестраиваем под вашу отрасль, требования регуляторов и устройство информационных систем. Выезд на площадку за пределами Москвы обсуждаем отдельно.</p>
+  <div class="btns">
+    <a class="btn gold" href="#demo">Запросить программу и счет</a>
   </div>
-</div></section>
+</section>
 
-<section class="psec" id="demo"><div class="uw">
+<section class="ps" id="demo">
   <h2>Обсудить тренинг</h2>
-  <div class="duo">
+  <div class="g2">
     <div>
       <p>Напишите, сколько человек планируете и в какой отрасли работаете. Пришлем развернутую программу под вашу задачу, счет и договор.</p>
       <p class="note">Или напишите напрямую на <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — ответим в тот же день.</p>
       <p class="note">Хотите сначала оценить текущий уровень — пройдите <a href="quiz.html">бесплатную диагностику за 10 минут</a>, результат станет отправной точкой первого дня.</p>
     </div>
     <div>
-      <div class="dgrid">
+      <div class="fgrid">
         <input type="text" class="fld" id="dmName" placeholder="Ваше имя">
         <input type="email" class="fld" id="dmEmail" placeholder="Рабочая почта">
         <input type="text" class="fld" id="dmOrg" placeholder="Организация">
@@ -364,15 +206,21 @@
         <input type="checkbox" id="dmConsent">
         <span>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span>
       </label>
-      <button type="button" class="pill pill-gold" id="dmSubmit">Отправить запрос</button>
+      <button type="button" class="btn gold" id="dmSubmit">Отправить запрос</button>
       <p class="msg-note" id="dmNote"></p>
       <p class="msg-ok" id="dmOk"></p>
       <p class="msg-err" id="dmErr"></p>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="psec"><div class="uw">
+
+<section class="ps" id="vedet-programmu">
+  <h2>Ведет программу</h2>
+  <div class="card"><div class="person"><img src="exp-telenkov.jpg" alt="Евгений Теленков" width="460" height="460"><div><div class="nm">Евгений Теленков</div><div class="rl">Кандидат экономических наук · «Лучший риск-менеджер России 2020» (РусРиск)</div></div></div><p>Пятнадцать лет во главе риск-функций крупных компаний. В «Норникеле» построил непрерывность бизнеса с нуля — более 20 планов непрерывности. Директор по рискам нефтехимического мегапроекта стоимостью 20 млрд долларов. Заместитель председателя технического комитета 010 «Менеджмент риска» Росстандарта. Подготовил более 300 специалистов.</p></div>
+</section>
+
+<section class="ps" id="faq">
   <h2>Частые вопросы</h2>
     <div class="faq"><div class="q">Сколько длится и в каком формате?</div><p>Два дня, шесть модулей. Очно на площадке вашей компании или по видеосвязи в живом формате — удобно для распределенных команд.</p></div>
     <div class="faq"><div class="q">Сколько человек в группе?</div><p>До восьми участников. Для больших групп перестраиваем кейсы, чтобы каждый успел поработать руками.</p></div>
@@ -380,27 +228,17 @@
     <div class="faq"><div class="q">Можно ли адаптировать программу под нашу отрасль?</div><p>Да. Кейсы, учения и акценты перестраиваются под вашу отрасль, требования регуляторов и устройство информационных систем.</p></div>
     <div class="faq"><div class="q">Что получают участники по итогам?</div><p>Проверку знаний и именной сертификат о прохождении программы, а также рабочие материалы: шаблоны, чек-листы первых суток и структуру кризисных коммуникаций.</p></div>
     <div class="faq"><div class="q">Как оплатить?</div><p>По счету от организации. Напишите на <a href="mailto:info@risk-place.ru">info@risk-place.ru</a>, пришлем программу, счет и договор.</p></div>
-</div></section>
-
-<section class="dirsec"><div class="uw">
-  <h2 style="margin-bottom:20px">Ведет программу</h2>
-  <div class="dir">
-    <img src="exp-telenkov.jpg" alt="Евгений Теленков" width="460" height="460" loading="lazy">
-    <div class="body">
-      <span class="nm">Евгений Теленков</span>
-      <span class="rl">Кандидат экономических наук · «Лучший риск-менеджер России 2020» (РусРиск)</span>
-      <p style="max-width:74ch;margin:0">Пятнадцать лет во главе риск-функций крупных компаний. В «Норникеле» построил непрерывность бизнеса с нуля — более 20 планов непрерывности. Директор по рискам нефтехимического мегапроекта стоимостью 20 млрд долларов. Заместитель председателя технического комитета 010 «Менеджмент риска» Росстандарта. Подготовил более 300 специалистов.</p>
-    </div>
-  </div>
-</div></section>
+</section>
+</main>
+</div>
 
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
-<!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<!--/TPL:FOOTER-->
 <script>
 (function(){var btn=document.getElementById('dmSubmit');if(!btn)return;
   function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
@@ -431,6 +269,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

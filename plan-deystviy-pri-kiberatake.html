@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/plan-deystviy-pri-kiberatake.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -122,32 +119,45 @@
   ]
 }
 </script>
-<style>
-@media(max-width:640px){.pillar-nav{padding:20px 18px;border-radius:12px}}
-</style>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="plan-deystviy-pri-kiberatake.html" class="act">RU</a><a href="en-plan-deystviy-pri-kiberatake.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Действия при кибератаке</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>Действия при кибератаке</div>
+  <div class="rule"></div>
   <div class="eyebrow">Кибербезопасность и непрерывность</div>
   <h1>Вирус-шифровальщик и кибератака: что делать в первые часы</h1>
   <p class="lead">Первые часы после атаки решают, потеряете вы день или неделю. Разбираем пошаговый план реагирования и то, что нужно подготовить заранее, чтобы команда не теряла время.</p>
-  <div class="meta-row">Обновлено: 28 июня 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
+  <div class="meta">Обновлено: 28 июня 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
 </div></div>
-<div class="container">
-  <img src="plan-deystviy-pri-kiberatake.png" alt="Что делать в первые часы после кибератаки: план действий" class="article-cover">
-  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#pervye-chasy">Первые часы: пошагово</a></li><li><a href="#zaranee">Что подготовить заранее</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#pervye-chasy">Первые часы: пошагово</a>
+    <a href="#zaranee">Что подготовить заранее</a>
+    <a href="#pervye-60">Первые 60 минут: что делают и чего не делают</a>
+    <a href="#kto-govorit">Кто говорит наружу</a>
+    <a href="#do-ataki">Что решают до атаки, а не во время</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 <h2 id="pervye-chasy">Первые часы: пошагово</h2>
 <ol>
   <li><strong>Изолируйте.</strong> Отключите зараженные системы от сети, чтобы остановить распространение. Не выключайте технику бездумно — это может уничтожить улики.</li>
@@ -158,7 +168,7 @@
   <li><strong>Восстановление.</strong> Поднимайте системы из изолированных резервных копий по приоритету (см. <a href="plan-avariynogo-vosstanovleniya.html">DRP</a>).</li>
   <li><strong>Разбор после инцидента.</strong> Причины, уроки, исправления — чтобы не повторилось.</li>
 </ol>
-<div class="callout"><b>Чего не делать:</b> не платить вымогателям на эмоциях (нет гарантий, поощряет атаки), не «заметать» инцидент без разбора причин и не молчать там, где уведомление обязательно. Почему сокрытие дорого — в статье «<a href="pochemu-kompanii-skryvayut-kiberataki.html">Почему компании скрывают кибератаки</a>».</p></div>
+<div class="callout"><b>Чего не делать:</b> не платить вымогателям на эмоциях (нет гарантий, поощряет атаки), не «заметать» инцидент без разбора причин и не молчать там, где уведомление обязательно. Почему сокрытие дорого — в статье «<a href="pochemu-kompanii-skryvayut-kiberataki.html">Почему компании скрывают кибератаки</a>».</div>
 
 <h2 id="zaranee">Что подготовить заранее</h2>
 <ul>
@@ -168,15 +178,6 @@
   <li>Учения по сценарию шифровальщика (см. <a href="ucheniya-po-nepreryvnosti.html">учения</a> — появится в материалах).</li>
 </ul>
 
-<div class="cta-band">
-  <h3>Узнайте, насколько устойчив ваш бизнес</h3>
-  <p>13 вопросов, 5 минут, бесплатно — результат сразу на экране и на почту.</p>
-  <div class="btn-row">
-    <a href="quiz.html" class="btn btn-yellow">Пройти диагностику бесплатно →</a>
-    <a href="index.html#contacts" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#565A63">Записаться на разбор</a>
-    <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#565A63">Курс по непрерывности →</a>
-  </div>
-</div>
 
 <h2 id="pervye-60">Первые 60 минут: что делают и чего не делают</h2>
 <p>Первый час определяет, сколько продлится остановка. В это время решают четыре задачи, и порядок между ними имеет значение.</p>
@@ -202,31 +203,44 @@
 <h3>Платить ли вымогателям за расшифровку?</h3><p>Как правило, нет: оплата не гарантирует восстановление и поощряет новые атаки. Опирайтесь на изолированные резервные копии и план восстановления.</p>
 <h3>Нужно ли сообщать об атаке?</h3><p>Для ряда организаций и данных уведомление регулятора обязательно по закону. Даже когда формально можно молчать, разбор причин важнее сокрытия.</p>
 
+
+<div class="inset cta">
+  <h3>Узнайте, насколько устойчив ваш бизнес</h3>
+  <p>13 вопросов, 5 минут, бесплатно — результат сразу на экране и на почту.</p>
+  <div class="btns">
+    <a href="quiz.html" class="btn gold">Пройти диагностику бесплатно →</a>
+    <a href="index.html#contacts" target="_blank" rel="noopener" class="btn line">Записаться на разбор</a>
+    <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn line">Курс по непрерывности →</a>
+  </div>
+</div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Евгений Теленков">
   <div>
-    <div class="name">Евгений Теленков</div>
-    <div class="role">Директор по рискам · к.э.н. · «Лучший риск-менеджер России 2020»</div>
+    <div class="nm">Евгений Теленков</div>
+    <div class="rl">Директор по рискам · к.э.н. · «Лучший риск-менеджер России 2020»</div>
     <div class="bio">20 лет в управлении рисками. Возглавлял риск-менеджмент в Билайн, Норникеле, Роснефти и EY. Разрабатывал планы непрерывности бизнеса для Норникеля, Ростеха, НРД и АСВ. Обучил 300+ специалистов по рискам и BCM.</div>
-    <div style="margin-top:8px;"><a href="https://risk-place.ru/page24" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:700;font-size:15px;text-decoration:none;">Все курсы и услуги — на risk-place.ru →</a></div>
+    <div><a href="https://risk-place.ru/page24" target="_blank" rel="noopener">Все курсы и услуги — на risk-place.ru →</a></div>
   </div>
 </div>
-  </article>
-<section class="pillar-nav" aria-labelledby="pn-t">
-  <div class="pn-head"><span class="pn-num">Раздел 04 · Кризис</span>
-    <h2 class="pn-t" id="pn-t">Кризис и киберугрозы</h2>
-    <p class="pn-d">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p></div>
-  <ul class="pn-list"><li><a href="zashchita-ot-shifrovalshchika.html">Защита от шифровальщика</a><span>Изолированные копии, план восстановления, репетиция</span></li><li><a href="zashchita-ot-kiberatak.html">Защита от кибератак</a><span>Снизить вероятность атаки и пережить ту, что прошла</span></li><li><a href="7-dney-prostoya-kiberataka.html">7 дней простоя: урок кибератаки</a><span>Реальный кейс: неделя простоя у крупного страховщика</span></li><li><a href="kiberataki-msb-rossiya.html">Кибератаки на МСБ: статистика</a><span>Свежая статистика атак на российский бизнес</span></li><li><a href="pochemu-kompanii-skryvayut-kiberataki.html">Почему скрывают кибератаки</a><span>Почему инциденты прячут за «плановыми работами»</span></li><li><a href="bcm-i-zashchita-dannyh.html">BCM и защита данных</a><span>152-ФЗ, утечки и оборотные штрафы</span></li><li><a href="kiberucheniya.html">Киберучения</a><span>Настольная репетиция атаки: сценарий 72 часа, роли, метрики</span></li><li><a href="krizisnye-kommunikacii.html">Кризисные коммуникации</a><span>Что говорить сотрудникам, клиентам и СМИ в первые часы</span></li><li><a href="obuchenie-sotrudnikov-kiberbezopasnosti.html">Обучение сотрудников кибербезопасности: что работает и чего в нем не хватает</a><span>Фишинг-симуляции и чему на самом деле стоит учить</span></li><li><a href="antikrizisnyy-plan-kompanii.html">Антикризисный план</a><span>Штаб, первые сутки, коммуникации и тренировки за семь шагов</span></li><li><a href="bcm-i-informacionnaya-bezopasnost.html">BCM и информационная безопасность</a><span>Граница ролей, зона пересечения и три типичных перекоса</span></li></ul>
-  <a class="pn-all" href="materialy.html#krizis">Все материалы раздела в библиотеке →</a>
-</section>
-
-  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="7-dney-prostoya-kiberataka.html" class="related-card"><div class="rc-t">7 дней простоя: урок кибератаки →</div><div class="rc-d">Реальный кейс атаки шифровальщика на крупного страховщика: 7 дней простоя, неработающие сайт и приложение. Как</div></a><a href="bcm-bcp-drp-otlichie.html" class="related-card"><div class="rc-t">BCM, BCP, DRP — отличия →</div><div class="rc-d">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и п</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a><a href="bcm-i-zashchita-dannyh.html" class="related-card"><div class="rc-t">BCM и защита данных →</div><div class="rc-d">Как непрерывность бизнеса связана с защитой данных: резервные копии, RPO, восстановление после атак.</div></a></div></section>
+  </div>
+<div class="pn">
+  <div><span class="k">Раздел 04 · Кризис</span>
+    <h2 class="pt" id="pn-t">Кризис и киберугрозы</h2>
+    <p class="pd">Эта страница — опорная в разделе. Ниже остальные материалы раздела, они раскрывают отдельные части темы.</p></div>
+  <ul><li><a href="zashchita-ot-shifrovalshchika.html">Защита от шифровальщика</a><span>Изолированные копии, план восстановления, репетиция</span></li><li><a href="zashchita-ot-kiberatak.html">Защита от кибератак</a><span>Снизить вероятность атаки и пережить ту, что прошла</span></li><li><a href="7-dney-prostoya-kiberataka.html">7 дней простоя: урок кибератаки</a><span>Реальный кейс: неделя простоя у крупного страховщика</span></li><li><a href="kiberataki-msb-rossiya.html">Кибератаки на МСБ: статистика</a><span>Свежая статистика атак на российский бизнес</span></li><li><a href="pochemu-kompanii-skryvayut-kiberataki.html">Почему скрывают кибератаки</a><span>Почему инциденты прячут за «плановыми работами»</span></li><li><a href="bcm-i-zashchita-dannyh.html">BCM и защита данных</a><span>152-ФЗ, утечки и оборотные штрафы</span></li><li><a href="kiberucheniya.html">Киберучения</a><span>Настольная репетиция атаки: сценарий 72 часа, роли, метрики</span></li><li><a href="krizisnye-kommunikacii.html">Кризисные коммуникации</a><span>Что говорить сотрудникам, клиентам и СМИ в первые часы</span></li><li><a href="obuchenie-sotrudnikov-kiberbezopasnosti.html">Обучение сотрудников кибербезопасности: что работает и чего в нем не хватает</a><span>Фишинг-симуляции и чему на самом деле стоит учить</span></li><li><a href="antikrizisnyy-plan-kompanii.html">Антикризисный план</a><span>Штаб, первые сутки, коммуникации и тренировки за семь шагов</span></li><li><a href="bcm-i-informacionnaya-bezopasnost.html">BCM и информационная безопасность</a><span>Граница ролей, зона пересечения и три типичных перекоса</span></li></ul>
+  <a class="more" href="materialy.html#krizis">Все материалы раздела в библиотеке →</a>
 </div>
+
+  <div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 дней простоя: урок кибератаки →</div><div class="rd">Реальный кейс атаки шифровальщика на крупного страховщика: 7 дней простоя, неработающие сайт и приложение. Как</div></a><a href="bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP, DRP — отличия →</div><div class="rd">Чем отличаются BCM, BCP, DRP и риск-менеджмент простыми словами. Понятная схема уровней, таблица сравнения и п</div></a><a href="quiz.html" class="rel-card"><div class="rt">Диагностика за 5 минут →</div><div class="rd">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a><a href="bcm-i-zashchita-dannyh.html" class="rel-card"><div class="rt">BCM и защита данных →</div><div class="rd">Как непрерывность бизнеса связана с защитой данных: резервные копии, RPO, восстановление после атак.</div></a></div></div>
+</main>
+</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -238,6 +252,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

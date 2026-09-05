@@ -25,34 +25,46 @@
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <meta property="og:locale" content="en_GB">
 <link rel="icon" type="image/png" href="favicon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="testirovanie-gotovnosti.html">RU</a><a href="en-testirovanie-gotovnosti.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-<div class="crumbs"><a href="index.html">Home</a> / Readiness testing</div>
-  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Library</a><span>/</span>Readiness testing</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span>Readiness testing</div>
+  <div class="rule"></div>
   <div class="eyebrow">Implementing BCM</div>
   <h1>Testing crisis readiness: methods and a checklist</h1>
   <p class="lead">A plan on paper and real readiness are different things. The only way to know whether a business would survive a serious disruption is to test it before the disruption happens. Here are the methods, from tabletop exercises to a full stress test.</p>
-  <div class="meta-row">Published: 24 July 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
+  <div class="meta">Published: 24 July 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
 </div></div>
-<div class="container">
-  <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#why">Why test readiness</a></li><li><a href="#methods">Methods of testing</a></li><li><a href="#measure">What to measure</a></li><li><a href="#checklist">Checklist of first steps</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">On this page</div>
+  <nav>
+    <a href="#why">Why test readiness</a>
+    <a href="#methods">Methods of testing: from simple to deep</a>
+    <a href="#measure">What to measure</a>
+    <a href="#checklist">Checklist of first steps</a>
+    <a href="#faq">Frequently asked questions</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 <h2 id="why">Why test readiness</h2>
 <p>In our experience most continuity plans do not survive first contact with reality: contacts are out of date, the named owner has left, the backup will not restore, and decisions in the first hours are taken by someone without the authority to take them. Testing surfaces all of this early, while fixing it is still cheap. For companies working to <a href="en-iso-22301.html">ISO 22301</a>, regular testing is a direct requirement of the standard.</p>
 <h2 id="methods">Methods of testing: from simple to deep</h2>
@@ -80,36 +92,40 @@
   <li>Repeat in six to twelve months — readiness fades without repetition.</li>
 </ol>
 
-<div class="cta-band">
-  <h3>Start with the free assessment</h3>
-  <p>13 questions, 5 minutes — your resilience level, the main risks and first steps.</p>
-  <div class="btn-row">
-    <a href="quiz.html" class="btn btn-yellow">Take the free assessment →</a>
-    <a href="en-stress-test-nepreryvnosti.html" class="btn btn-outline" style="color:#fff;border-color:#565A63">Two-day stress test →</a>
-  </div>
-</div>
 
 <h2 id="faq">Frequently asked questions</h2>
 <h3>Where do we start with readiness testing?</h3><p>With a tabletop session on a single scenario with the management team: ransomware or the loss of a key supplier. It takes 3-4 hours and exposes the main gaps.</p>
 <h3>How often should readiness be tested?</h3><p>At least once a year on one scenario, and more often for critical IT systems. After any significant change, run an unscheduled check.</p>
 <h3>What should be measured during a test?</h3><p>Actual recovery time against the target RTO, tolerable data loss (RPO) and the cost of a day of downtime in money. Plus the quality of decisions and communications.</p>
 
+
+<div class="inset cta">
+  <h3>Start with the free assessment</h3>
+  <p>13 questions, 5 minutes — your resilience level, the main risks and first steps.</p>
+  <div class="btns">
+    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
+    <a href="en-stress-test-nepreryvnosti.html" class="btn line">Two-day stress test →</a>
+  </div>
+</div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
   <div>
-    <div class="name">Evgeny Telenkov</div>
-    <div class="role">Chief risk officer · PhD in Economics · Risk Manager of the Year in Russia 2020</div>
+    <div class="nm">Evgeny Telenkov</div>
+    <div class="rl">Chief risk officer · PhD in Economics · Risk Manager of the Year in Russia 2020</div>
     <div class="bio">20 years in risk management. Led risk functions at Beeline, Nornickel, Rosneft and EY. Built business continuity plans for Nornickel, Rostec, NSD and DIA. Trained 300+ specialists in risk management and BCM.</div>
   </div>
 </div>
-  </article>
-  <section class="related"><div class="related-title">Read next</div><div class="related-grid"><a href="en-bcm-pod-klyuch.html" class="related-card"><div class="rc-t">Turnkey BCM: audit and raise your survival metrics →</div><div class="rc-d">A readiness audit against ransomware and fire — and the fixes that raise the metrics.</div></a><a href="en-stress-test-nepreryvnosti.html" class="related-card"><div class="rc-t">Two-day continuity stress test →</div><div class="rc-d">Diagnostic, ransomware stress simulation and a CEO report with damage in money terms.</div></a><a href="en-ucheniya-po-nepreryvnosti.html" class="related-card"><div class="rc-t">Continuity exercises →</div><div class="rc-d">Types of exercises and how to run them: tabletop, simulation, technical tests.</div></a></div></section>
+  </div>
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-bcm-pod-klyuch.html" class="rel-card"><div class="rt">Turnkey BCM: audit and raise your survival metrics →</div><div class="rd">A readiness audit against ransomware and fire — and the fixes that raise the metrics.</div></a><a href="en-stress-test-nepreryvnosti.html" class="rel-card"><div class="rt">Two-day continuity stress test →</div><div class="rd">Diagnostic, ransomware stress simulation and a CEO report with damage in money terms.</div></a><a href="en-ucheniya-po-nepreryvnosti.html" class="rel-card"><div class="rt">Continuity exercises →</div><div class="rd">Types of exercises and how to run them: tabletop, simulation, technical tests.</div></a></div></div>
+</main>
 </div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
@@ -122,6 +138,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

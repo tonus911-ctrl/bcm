@@ -27,158 +27,133 @@
 <meta property="og:site_name" content="risk-place.ru">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-.lang-toggle{display:inline-flex;gap:4px;margin-left:4px}
-.lang-btn{background:none;border:1px solid #d3d6df;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700;color:#565A63;cursor:pointer;font-family:inherit}
-.lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
-.phero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
-.phero-price{font-size:22px;font-weight:800;color:var(--navy)}
-.psec{padding:34px 0}
-.psec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);margin:0 0 16px;line-height:1.25}
-.psec h3{font-size:19px;font-weight:700;color:var(--ink);margin:22px 0 8px}
-.psec p{font-size:17px;color:#26263a;line-height:1.65;margin:0 0 14px}
-.psec ul,.psec ol{margin:0 0 16px 22px;font-size:17px;color:#26263a}
-.psec li{margin-bottom:8px}
-.steps{counter-reset:st;list-style:none;margin:0;padding:0}
-.steps li{position:relative;padding:0 0 18px 52px;margin:0}
-.steps li::before{counter-increment:st;content:"0" counter(st);position:absolute;left:0;top:0;font-size:19px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
-.steps li b{display:block;font-size:17px;color:var(--ink);margin-bottom:2px}
-.steps li span{font-size:15px;color:var(--muted)}
-.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:8px 0}
-.pcard{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fcfcfd}
-.pcard b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
-.pcard span{font-size:15px;color:var(--muted);line-height:1.5}
-.faq-q{font-size:17px;font-weight:700;color:var(--ink);margin:18px 0 6px}
-.faq-a{font-size:16px;color:#26263a;line-height:1.6;margin:0}
-.modal-ov{display:none;position:fixed;inset:0;background:rgba(20,30,45,.55);z-index:9999;align-items:center;justify-content:center;padding:18px}
-.modal-bx{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative;max-height:92vh;overflow:auto}
-.modal-bx input,.modal-bx textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;font-family:inherit}
-.consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#1E222B;margin:2px 0 16px;cursor:pointer;background:#F5F1E8;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
-.consent input{width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:var(--navy)}
-
-.phero-terms{font-size:13.5px;color:var(--muted)}
-</style>
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Дашборд непрерывности и рисков", "description": "Панель мониторинга устойчивости бизнеса: индекс устойчивости, статус процессов, RTO/RPO, единые точки отказа, статус планов и учений.", "brand": {"@type": "Brand", "name": "risk-place.ru"}, "potentialAction": {"@type": "ScheduleAction", "name": "Заказать демонстрацию дашборда"}}</script>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html" class="act">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="dashboard.html" class="act">RU</a><a href="en-dashboard.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<section class="phero"><div class="uw">
-<div class="crumbs"><a href="index.html">Главная</a> / <a href="dlya-kompanij.html">Для компаний</a> / Дашборд непрерывности</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="dlya-kompanij.html">Для компаний</a><span class="sep">/</span>Дашборд непрерывности</div>
+  <div class="rule"></div>
 
   <div class="eyebrow">Инструмент · BCM</div>
   <h1>Переживет ли ваш бизнес завтрашний сбой?</h1>
-  <p class="phero-sub">Теперь это видно на одном экране. Дашборд непрерывности показывает индекс устойчивости, критичные процессы, точки отказа и цену дня простоя — руководителю, совету директоров, аудиту.</p>
-  <div class="phero-cta"><span class="phero-price">По объему работ</span> <span class="phero-terms">расчет за два рабочих дня · работает внутри вашего периметра</span></div>
-  <div class="phero-cta" style="margin-top:18px;"><button class="btn btn-yellow np-form" data-prod="Демонстрация дашборда" data-label-ru="Демонстрация дашборда" data-label-en="Dashboard demo" data-mode="apply">Заказать демонстрацию</button></div>
+  <p class="lead">Теперь это видно на одном экране. Дашборд непрерывности показывает индекс устойчивости, критичные процессы, точки отказа и цену дня простоя — руководителю, совету директоров, аудиту.</p>
+  <div class="cta-row"><span class="pb-price">По объему работ</span> <span class="pb-terms">расчет за два рабочих дня · работает внутри вашего периметра</span></div>
+  <div class="cta-row"><a class="btn navy" href="#demo">Заказать демонстрацию</a></div>
+</div></div>
+<!--/TPL:HERO-->
 
-
-</div></section>
-
-<section class="psec"><div class="container-wide">
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#znakomaya-situaciya">Знакомая ситуация?</a>
+    <a href="#skolko-stoit-ne-videt">Сколько стоит не видеть</a>
+    <a href="#kak-vyglyadit-dashbord">Как выглядит дашборд</a>
+    <a href="#chto-vy-uvidite-na-dashborde">Что вы увидите на дашборде</a>
+    <a href="#komu-i-kogda-on-nuzhen">Кому и когда он нужен</a>
+    <a href="#start-za-dni-a-ne-mesyacy">Старт за дни, а не месяцы</a>
+    <a href="#urovni-produkta">Уровни продукта</a>
+    <a href="#arch">Как устроен дашборд</a>
+    <a href="#pochemu-eto-ne-esche-odin-bi-otchet">Почему это не «еще один BI-отчет»</a>
+    <a href="#pokazhem-dashbord-na-primere-vashej-otra">Покажем дашборд на примере вашей отрасли</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<section class="ps" id="znakomaya-situaciya">
 
 <h2>Знакомая ситуация?</h2>
-<div class="pcards">
-<div class="pcard"><b>«Мы готовы к серьезному сбою?»</b><span>Совет директоров задает вопрос — а ответить нечем: есть папка планов, но нет цифр.</span></div>
-<div class="pcard"><b>Проект BCM закончился — система умерла</b><span>Через квартал после внедрения планы устарели, учения не проводятся, никто не заметил.</span></div>
-<div class="pcard"><b>О проблемах узнаете из инцидентов</b><span>Деградацию защиты видно только когда что-то уже сломалось и стоит денег.</span></div>
+<div class="g3">
+<div class="card"><div class="ct">«Мы готовы к серьезному сбою?»</div><p>Совет директоров задает вопрос — а ответить нечем: есть папка планов, но нет цифр.</p></div>
+<div class="card"><div class="ct">Проект BCM закончился — система умерла</div><p>Через квартал после внедрения планы устарели, учения не проводятся, никто не заметил.</p></div>
+<div class="card"><div class="ct">О проблемах узнаете из инцидентов</div><p>Деградацию защиты видно только когда что-то уже сломалось и стоит денег.</p></div>
 </div>
+</section>
 
-
-</div></section>
-
-<section class="psec" style="padding-top:0;"><div class="container-wide">
+<section class="ps" id="skolko-stoit-ne-videt">
 
 <h2>Сколько стоит не видеть</h2>
-<div class="pcards">
-<div class="pcard"><b>₽1,8 млн в сутки</b><span>Типичная стоимость дня простоя для среднего бизнеса — большинство компаний не считали свою.</span></div>
-<div class="pcard"><b>40% не открываются снова</b><span>Доля малых компаний, не возобновивших работу после серьезного сбоя (FEMA).</span></div>
-<div class="pcard"><b>26 часов вместо 4</b><span>Реальное время восстановления часто в разы больше целевого — но об этом узнают во время аварии.</span></div>
+<div class="g3">
+<div class="card"><div class="ct">₽1,8 млн в сутки</div><p>Типичная стоимость дня простоя для среднего бизнеса — большинство компаний не считали свою.</p></div>
+<div class="card"><div class="ct">40% не открываются снова</div><p>Доля малых компаний, не возобновивших работу после серьезного сбоя (FEMA).</p></div>
+<div class="card"><div class="ct">26 часов вместо 4</div><p>Реальное время восстановления часто в разы больше целевого — но об этом узнают во время аварии.</p></div>
 </div>
-<p style="margin-top:14px;">Слепота не лечится еще одним толстым отчетом. Нужен прибор, который показывает состояние постоянно.</p>
-
-
-</div></section>
+<p>Слепота не лечится еще одним толстым отчетом. Нужен прибор, который показывает состояние постоянно.</p>
+</section>
 
 
 
-<section class="psec"><div class="uw">
+<section class="ps" id="kak-vyglyadit-dashbord">
 <h2>Как выглядит дашборд</h2>
 <p class="sub">Это верхняя часть рабочего экрана — интегральный индекс устойчивости и бизнес-параметры. Визуализация для понимания, а не весь дашборд: ниже идут критичные процессы со светофорами, единые точки отказа, состояние планов и динамика по кварталам.</p>
-<figure class="dashshot"><img src="dashboard-preview.jpg" alt="Фрагмент дашборда непрерывности: интегральный индекс устойчивости и бизнес-параметры" loading="lazy"><figcaption>Данные вымышленной компании ABC.</figcaption></figure>
-</div></section>
-<section class="psec"><div class="container-wide">
+<figure><img class="fig" src="dashboard-preview.jpg" alt="Фрагмент дашборда непрерывности: интегральный индекс устойчивости и бизнес-параметры"><figcaption>Данные вымышленной компании ABC.</figcaption></figure>
+</section>
+<section class="ps" id="chto-vy-uvidite-na-dashborde">
 
 <h2>Что вы увидите на дашборде</h2>
-<div class="pcards">
-<div class="pcard"><b>Насколько мы защищены</b><span>Индекс устойчивости 0-100 и его динамика: одна цифра для разговора с советом.</span></div>
-<div class="pcard"><b>Что упадет первым</b><span>Критичные процессы со светофорами: готовность, RTO/RPO, ответственные.</span></div>
-<div class="pcard"><b>Где тонкие нити</b><span>Единые точки отказа: один человек, один поставщик, один сервер, один ИИ-сервис.</span></div>
-<div class="pcard"><b>Сколько стоит час простоя</b><span>Финансовая экспозиция: цена простоя и подушка на восстановление.</span></div>
-<div class="pcard"><b>Живы ли планы</b><span>Покрытие BCP/DRP, дата пересмотра, когда были учения и что они показали.</span></div>
-<div class="pcard"><b>Что изменилось</b><span>Тренды по кварталам: где стало лучше, где началась деградация.</span></div>
+<div class="g3">
+<div class="card"><div class="ct">Насколько мы защищены</div><p>Индекс устойчивости 0-100 и его динамика: одна цифра для разговора с советом.</p></div>
+<div class="card"><div class="ct">Что упадет первым</div><p>Критичные процессы со светофорами: готовность, RTO/RPO, ответственные.</p></div>
+<div class="card"><div class="ct">Где тонкие нити</div><p>Единые точки отказа: один человек, один поставщик, один сервер, один ИИ-сервис.</p></div>
+<div class="card"><div class="ct">Сколько стоит час простоя</div><p>Финансовая экспозиция: цена простоя и подушка на восстановление.</p></div>
+<div class="card"><div class="ct">Живы ли планы</div><p>Покрытие BCP/DRP, дата пересмотра, когда были учения и что они показали.</p></div>
+<div class="card"><div class="ct">Что изменилось</div><p>Тренды по кварталам: где стало лучше, где началась деградация.</p></div>
 </div>
+</section>
 
-
-</div></section>
-
-<section class="psec" style="padding-top:0;"><div class="container-wide">
+<section class="ps" id="komu-i-kogda-on-nuzhen">
 
 <h2>Кому и когда он нужен</h2>
-<div class="pcards">
-<div class="pcard"><b>Генеральному директору</b><span>Видеть устойчивость бизнеса так же, как выручку — без чтения планов.</span></div>
-<div class="pcard"><b>Совету директоров</b><span>Один экран вместо квартального отчета «у нас все нормально».</span></div>
-<div class="pcard"><b>Риск-менеджеру и БКМ-владельцу</b><span>Единая картина вместо десятка таблиц; аргументы для бюджета.</span></div>
-<div class="pcard"><b>Аудиту и контрагентам</b><span>Показать зрелость банку, бирже, тендеру, страховщику — цифрами.</span></div>
+<div class="g3">
+<div class="card"><div class="ct">Генеральному директору</div><p>Видеть устойчивость бизнеса так же, как выручку — без чтения планов.</p></div>
+<div class="card"><div class="ct">Совету директоров</div><p>Один экран вместо квартального отчета «у нас все нормально».</p></div>
+<div class="card"><div class="ct">Риск-менеджеру и БКМ-владельцу</div><p>Единая картина вместо десятка таблиц; аргументы для бюджета.</p></div>
+<div class="card"><div class="ct">Аудиту и контрагентам</div><p>Показать зрелость банку, бирже, тендеру, страховщику — цифрами.</p></div>
 </div>
-<p style="margin-top:14px;"><b>Особенно вовремя,</b> если впереди тендер или проверка регулятора, недавно случился инцидент, страховщик задает вопросы — или вы только что вложились в BCM и хотите, чтобы система жила.</p>
+<p><b>Особенно вовремя,</b> если впереди тендер или проверка регулятора, недавно случился инцидент, страховщик задает вопросы — или вы только что вложились в BCM и хотите, чтобы система жила.</p>
+</section>
 
-
-</div></section>
-
-<section class="psec"><div class="container-wide">
+<section class="ps" id="start-za-dni-a-ne-mesyacy">
 
 <h2>Старт за дни, а не месяцы</h2>
-<ol class="steps">
-<li><b>Получаете Excel-книгу с методологией внутри</b><span>На одном листе — форма с предвыбранными метриками, на втором — инструкция: что, откуда и как часто. Не нужно месяцами решать, «что мерить».</span></li>
-<li><b>Координатор заполняет форму</b><span>Обычный сотрудник, 1-2 часа. Если данных пока нет — поможем собрать базовые на экспресс-диагностике.</span></li>
-<li><b>Первый дашборд у вас на столе</b><span>Движок собирает HTML-файл: открывается в любом браузере, работает без интернета. Дальше — обновление по расписанию.</span></li>
-</ol>
+<div class="steps w">
+  <div class="nr"><div class="nr-n">01</div><div><b>Получаете Excel-книгу с методологией внутри</b><span>На одном листе — форма с предвыбранными метриками, на втором — инструкция: что, откуда и как часто. Не нужно месяцами решать, «что мерить».</span></div></div>
+  <div class="nr"><div class="nr-n">02</div><div><b>Координатор заполняет форму</b><span>Обычный сотрудник, 1-2 часа. Если данных пока нет — поможем собрать базовые на экспресс-диагностике.</span></div></div>
+  <div class="nr"><div class="nr-n">03</div><div><b>Первый дашборд у вас на столе</b><span>Движок собирает HTML-файл: открывается в любом браузере, работает без интернета. Дальше — обновление по расписанию.</span></div></div>
+</div>
 <p>Когда появится аппетит — подключим ваши системы напрямую (уровень «Интеграция»), и цифры будут обновляться без ручного ввода.</p>
+</section>
 
-
-</div></section>
-
-<section class="psec" style="background:#F5F1E8;"><div class="container-wide">
+<section class="ps" id="urovni-produkta">
 
 <h2>Уровни продукта</h2>
-<div class="pcards">
-<div class="pcard"><b>Старт</b><span>Excel-книга с методологией, движок, настройка под вашу структуру, обучение координатора, первый дашборд. Запуск за 2 недели.</span></div>
-<div class="pcard"><b>Интеграция</b><span>Подключение к вашей витрине данных или системам (BI, ERP, ITSM): проектирование состава, маппинг, правила качества. Реализуется вместе с вашей ИТ-командой.</span></div>
-<div class="pcard"><b>Ежемесячный сервис · опция</b><span>Мы сами собираем обновления, пересобираем дашборд и присылаем короткий комментарий эксперта: что изменилось и на что смотреть.</span></div>
+<div class="g3">
+<div class="card"><div class="ct">Старт</div><p>Excel-книга с методологией, движок, настройка под вашу структуру, обучение координатора, первый дашборд. Запуск за 2 недели.</p></div>
+<div class="card"><div class="ct">Интеграция</div><p>Подключение к вашей витрине данных или системам (BI, ERP, ITSM): проектирование состава, маппинг, правила качества. Реализуется вместе с вашей ИТ-командой.</p></div>
+<div class="card"><div class="ct">Ежемесячный сервис · опция</div><p>Мы сами собираем обновления, пересобираем дашборд и присылаем короткий комментарий эксперта: что изменилось и на что смотреть.</p></div>
 </div>
-<p style="margin-top:14px;color:#8a8f97;font-size:15px;">Стоимость зависит от масштаба и уровня — обсудим на демонстрации, когда примерим продукт на ваш бизнес.</p><div style="margin-top:16px;"><button class="btn btn-yellow np-form" data-prod="Демонстрация дашборда" data-label-ru="Демонстрация дашборда" data-label-en="Dashboard demo" data-mode="apply">Заказать демонстрацию</button></div>
+<p>Стоимость зависит от масштаба и уровня — обсудим на демонстрации, когда примерим продукт на ваш бизнес.</p><div><a class="btn navy" href="#demo">Заказать демонстрацию</a></div>
+</section>
 
-
-</div></section>
-
-<section class="psec" id="arch"><div class="container-wide">
+<section class="ps" id="arch">
 
 <h2>Как устроен дашборд</h2>
 <p>Никакой сложной ИТ-системы: дашборд — это один HTML-файл, который собирает небольшой движок на Python. Движок работает целиком внутри вашего контура — на ноутбуке координатора, корпоративном сервере или в частном облаке. Данные не покидают компанию: наружу не уходит ни одной цифры.</p>
-<svg xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid #eadfbf" viewBox="0 0 680 552" font-family="'Work Sans','Segoe UI',Arial,sans-serif">
+<svg class="fig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 552" font-family="'Work Sans','Segoe UI',Arial,sans-serif">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
 <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <rect width="680" height="552" fill="#FFFFFF"/>
@@ -230,57 +205,82 @@
 <p><b>Уровень интеграции — когда появится аппетит.</b> Если у компании есть витрина данных или системы-источники (BI, ERP, ITSM), движок подключается к ним и забирает показатели автоматически. Чаще всего новые данные создавать не нужно — мы помогаем переиспользовать те, что уже есть: проектируем состав витрины, маппинг и правила качества данных, а подключение выполняет ваша ИТ-команда.</p>
 <p><b>История и тренды.</b> При каждой пересборке движок сохраняет датированный снимок в легкую встроенную базу (SQLite) рядом с собой. Поэтому дашборд показывает не только текущее состояние, но и динамику: что улучшилось за квартал, где началась деградация.</p>
 <p><b>Сопровождение — по желанию.</b> Можно вести дашборд полностью самостоятельно, а можно подключить ежемесячный сервис: мы сами собираем обновления, пересобираем дашборд и присылаем короткий комментарий к изменениям.</p>
-
-
-</div></section>
+</section>
 
 
 
-<section class="psec" style="padding-top:0;"><div class="container-wide">
+<section class="ps" id="pochemu-eto-ne-esche-odin-bi-otchet">
 
 <h2>Почему это не «еще один BI-отчет»</h2>
-<ul>
-<li><b>Методология внутри.</b> BI-команда полгода выясняет, что мерить. Здесь метрики непрерывности уже выбраны, определены и увязаны — заполняйте с первого дня.</li>
-<li><b>Не нужен ИТ-проект.</b> Старт — без интеграций, серверов и закупок: Excel плюс легкий движок в вашем контуре.</li>
-<li><b>История и тренды из коробки.</b> Каждая пересборка сохраняет снимок: видно динамику, а не только текущий срез.</li>
-<li><b>Живет после внедрения.</b> Регулярное обновление и светофоры не дают системе непрерывности тихо умереть.</li>
+<ul class="ld">
+<li><span><b>Методология внутри.</b> BI-команда полгода выясняет, что мерить. Здесь метрики непрерывности уже выбраны, определены и увязаны — заполняйте с первого дня.</span></li>
+<li><span><b>Не нужен ИТ-проект.</b> Старт — без интеграций, серверов и закупок: Excel плюс легкий движок в вашем контуре.</span></li>
+<li><span><b>История и тренды из коробки.</b> Каждая пересборка сохраняет снимок: видно динамику, а не только текущий срез.</span></li>
+<li><span><b>Живет после внедрения.</b> Регулярное обновление и светофоры не дают системе непрерывности тихо умереть.</span></li>
 </ul>
+</section>
+
+
+<section class="ps" id="pokazhem-dashbord-na-primere-vashej-otra"><div class="inset cta">
+
+<h2>Покажем дашборд на примере вашей отрасли</h2>
+<p>30 минут онлайн, без обязательств: пройдем по живому дашборду, примерим метрики на ваш бизнес и честно скажем, взлетит ли это у вас. Нужны только имя и контакт.</p>
+<a class="btn navy" href="#demo">Заказать демонстрацию</a>
+<p>Уже готовы обсуждать проект? Напишите об этом в комментарии к заявке — начнем с деталей.</p>
 
 
 </div></section>
 
-<section class="psec"><div class="container-wide">
+<section class="ps" id="faq">
 
 <h2>Частые вопросы</h2>
-<div class="faq-q">Данные уйдут наружу?</div>
-<p class="faq-a">Нет. Движок и данные работают целиком внутри вашего контура — на вашем компьютере, сервере или в частном облаке. Наружу не уходит ни одной цифры.</p>
-<div class="faq-q">У нас нет данных для дашборда. С чего начать?</div>
-<p class="faq-a">С Excel-книги: методология внутри подскажет, что собрать. Если базовых данных нет совсем — соберем их вместе на экспресс-диагностике, это часть уровня «Старт».</p>
-<div class="faq-q">Кто будет обновлять данные?</div>
-<p class="faq-a">Ваш координатор — это 1-2 часа в месяц по инструкции. Или подключите ежемесячный сервис, и обновлением займемся мы.</p>
-<div class="faq-q">Сколько времени до первого дашборда?</div>
-<p class="faq-a">Обычно 2 недели от старта: настройка, заполнение формы, первая сборка и разбор результатов.</p>
-<div class="faq-q">Это сертифицированная система мониторинга?</div>
-<p class="faq-a">Нет. Это управленческий инструмент и методика — честно, без лишних обещаний.</p>
+<div class="faq"><div class="q">Данные уйдут наружу?</div><p>Нет. Движок и данные работают целиком внутри вашего контура — на вашем компьютере, сервере или в частном облаке. Наружу не уходит ни одной цифры.</p></div>
+<div class="faq"><div class="q">У нас нет данных для дашборда. С чего начать?</div><p>С Excel-книги: методология внутри подскажет, что собрать. Если базовых данных нет совсем — соберем их вместе на экспресс-диагностике, это часть уровня «Старт».</p></div>
+<div class="faq"><div class="q">Кто будет обновлять данные?</div><p>Ваш координатор — это 1-2 часа в месяц по инструкции. Или подключите ежемесячный сервис, и обновлением займемся мы.</p></div>
+<div class="faq"><div class="q">Сколько времени до первого дашборда?</div><p>Обычно 2 недели от старта: настройка, заполнение формы, первая сборка и разбор результатов.</p></div>
+<div class="faq"><div class="q">Это сертифицированная система мониторинга?</div><p>Нет. Это управленческий инструмент и методика — честно, без лишних обещаний.</p></div>
+</section>
 
-
-</div></section>
-
-<section class="psec" style="background:#1B3A5C;"><div class="container-wide" style="text-align:center;">
-
-<h2 style="color:#fff;">Покажем дашборд на примере вашей отрасли</h2>
-<p style="color:#c9d4e2;max-width:560px;margin:0 auto 18px;">30 минут онлайн, без обязательств: пройдем по живому дашборду, примерим метрики на ваш бизнес и честно скажем, взлетит ли это у вас. Нужны только имя и контакт.</p>
-<button class="btn btn-yellow np-form" data-prod="Демонстрация дашборда" data-label-ru="Демонстрация дашборда" data-label-en="Dashboard demo" data-mode="apply">Заказать демонстрацию</button>
-<p style="color:#8fa3bd;font-size:13.5px;margin-top:14px;">Уже готовы обсуждать проект? Напишите об этом в комментарии к заявке — начнем с деталей.</p>
-
-
-</div></section>
+<section class="ps" id="demo">
+  <div class="inset">
+    <h2>Запросить демонстрацию или расчет</h2>
+    <p>Оставьте имя и рабочую почту. Ответим в течение рабочего дня и предложим следующий шаг.</p>
+    <div class="fgrid w">
+      <input type="text" class="fld" id="dmName" placeholder="Ваше имя">
+      <input type="email" class="fld" id="dmEmail" placeholder="Рабочая почта">
+      <input type="text" class="fld" id="dmOrg" placeholder="Компания">
+      <input type="text" class="fld" id="dmRole" placeholder="Должность">
+    </div>
+    <textarea class="fld" id="dmMsg" rows="3" placeholder="Комментарий (необязательно)"></textarea>
+    <label class="consent"><input type="checkbox" id="dmConsent"><span>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span></label>
+    <button type="button" class="btn navy" id="dmSubmit">Отправить запрос</button>
+    <p class="fmsg" id="dmMsgOut"></p>
+    <p class="small">Предпочитаете переписку — <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Телеграм</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
+  </div>
+</section>
+<script>
+(function(){var btn=document.getElementById("dmSubmit");if(!btn)return;
+  function v(id){var el=document.getElementById(id);return el?el.value.trim():"";}
+  var out=document.getElementById("dmMsgOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
+  btn.addEventListener("click",async function(){var name=v("dmName"),email=v("dmEmail");
+    if(!name||email.indexOf("@")<0){say("err","Заполните имя и рабочую почту.");return;}
+    if(!document.getElementById("dmConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}
+    this.disabled=true;say("note","Отправляем…");
+    var body={type:"demo",product:"dashboard",source:"ru",name:name,email:email,org:v("dmOrg"),role:v("dmRole"),message:v("dmMsg"),lang:"ru",page:"dashboard"};
+    try{var res=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(!res.ok)throw new Error("fail");say("ok","Спасибо! Ответим в течение рабочего дня.");
+      try{ym(110579884,"reachGoal","dashboard_lead_submit");}catch(e){}try{gtag("event","dashboard_lead_submit");}catch(e){}
+    }catch(e){say("err","Не получилось отправить. Напишите нам: info@risk-place.ru");this.disabled=false;}});})();
+</script>
+</main>
+</div>
 
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <!-- Yandex.Metrika -->
 <script type="text/javascript">
@@ -291,34 +291,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
-<!-- ФОРМА -->
-<div class="modal-ov" id="wlOverlay">
-  <div class="modal-bx" role="dialog" aria-modal="true">
-    <button id="wlClose" aria-label="Закрыть" style="position:absolute;top:14px;right:16px;border:none;background:none;font-size:26px;color:#B9A985;cursor:pointer;">&times;</button>
-    <div id="wlHead" style="font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:6px;">Заявка на демонстрацию</div>
-    <h3 id="wlProduct" style="font-size:19px;line-height:1.25;margin:0 0 6px;color:var(--navy);">Продукт</h3>
-    <p id="wlSub" style="font-size:15px;color:#565A63;margin:0 0 18px;">Оставьте контакты — свяжемся и расскажем детали.</p>
-    <input id="wlName" type="text" placeholder="Ваше имя">
-    <input id="wlContact" type="text" placeholder="Email или телефон / Telegram">
-    <textarea id="wlComment" rows="2" placeholder="Комментарий (необязательно)"></textarea>
-    <label class="consent" for="wlConsent"><input type="checkbox" id="wlConsent"><span id="wlConsentText">Я согласен с <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">политикой конфиденциальности</a> и на обработку персональных данных</span></label>
-    <button id="wlSubmit" class="btn btn-yellow" style="width:100%;justify-content:center;">Отправить заявку</button>
-    <div id="wlNote" style="display:none;font-size:15px;color:#565A63;margin-top:12px;text-align:center;">Отправляем…</div>
-    <div id="wlOk" style="display:none;font-size:15px;color:#1B6B4A;margin-top:12px;text-align:center;font-weight:600;">Готово! Мы свяжемся с вами.</div>
-    <div id="wlErr" style="display:none;font-size:15px;color:#A3351A;margin-top:12px;text-align:center;"></div>
-  </div>
-</div>
-<script>
-var FORM_I18N={ru:{headApply:'Заявка на демонстрацию',headWait:'Лист ожидания',subApply:'Только имя и контакт — предложим 2-3 слота на этой неделе.',subWait:'Оставьте контакты — сообщим о старте первыми.',name:'Ваше имя',contact:'Email или телефон / Telegram',comment:'Компания и удобное время (необязательно)',consent:'Я согласен с <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">политикой конфиденциальности</a> и на обработку персональных данных',submitApply:'Заказать демонстрацию',submitWait:'Записаться в лист ожидания',sending:'Отправляем…',ok:'Готово! Мы свяжемся с вами.',err:'Не удалось отправить. Попробуйте еще раз или напишите в Telegram.',need:'Заполните имя и контакт',needConsent:'Подтвердите согласие с политикой'},en:{headApply:'Demo request',headWait:'Waitlist',subApply:'Just a name and a contact — we will offer 2-3 slots this week.',subWait:'Leave your contact — we will tell you about the launch first.',name:'Your name',contact:'Email or phone / Telegram',comment:'Company and preferred time (optional)',consent:'I agree to the <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">privacy policy</a> and to the processing of personal data',submitApply:'Book a demo',submitWait:'Join the waitlist',sending:'Sending…',ok:'Done! We will get in touch.',err:'Could not send. Please try again or message us on Telegram.',need:'Please fill in name and contact',needConsent:'Please confirm consent to the policy'}};
-function fLang(){return 'ru';}
-var wlProd='',wlMode='apply';
-function openForm(prod,label,mode){var t=FORM_I18N[fLang()];wlProd=prod;wlMode=mode||'apply';document.getElementById('wlHead').textContent=(wlMode==='wait')?t.headWait:t.headApply;document.getElementById('wlProduct').textContent=label||prod;document.getElementById('wlSub').textContent=(wlMode==='wait')?t.subWait:t.subApply;document.getElementById('wlName').placeholder=t.name;document.getElementById('wlContact').placeholder=t.contact;document.getElementById('wlComment').placeholder=t.comment;document.getElementById('wlConsentText').innerHTML=t.consent;document.getElementById('wlSubmit').textContent=(wlMode==='wait')?t.submitWait:t.submitApply;document.getElementById('wlName').value='';document.getElementById('wlContact').value='';document.getElementById('wlComment').value='';document.getElementById('wlConsent').checked=false;document.getElementById('wlNote').style.display='none';document.getElementById('wlOk').style.display='none';document.getElementById('wlErr').style.display='none';document.getElementById('wlSubmit').disabled=false;document.getElementById('wlOverlay').style.display='flex';document.body.style.overflow='hidden';}
-function closeForm(){document.getElementById('wlOverlay').style.display='none';document.body.style.overflow='';}
-document.getElementById('wlClose').addEventListener('click',closeForm);
-document.getElementById('wlOverlay').addEventListener('click',function(e){if(e.target===this)closeForm();});
-document.querySelectorAll('.np-form').forEach(function(b){b.addEventListener('click',function(){var lb=this.getAttribute('data-label-'+fLang())||this.getAttribute('data-label')||this.getAttribute('data-prod');openForm(this.getAttribute('data-prod'),lb,this.getAttribute('data-mode'));});});
-document.getElementById('wlSubmit').addEventListener('click',async function(){var t=FORM_I18N[fLang()];var name=document.getElementById('wlName').value.trim();var contact=document.getElementById('wlContact').value.trim();var comment=document.getElementById('wlComment').value.trim();var consent=document.getElementById('wlConsent').checked;var note=document.getElementById('wlNote'),ok=document.getElementById('wlOk'),err=document.getElementById('wlErr');if(!name||!contact){err.textContent=t.need;err.style.display='block';return;}if(!consent){err.textContent=t.needConsent;err.style.display='block';return;}err.style.display='none';this.disabled=true;note.textContent=t.sending;note.style.display='block';var isEmail=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(contact);var body={formTitle:(wlMode==='wait')?'Заявка в лист ожидания (новый продукт)':'Заявка на демонстрацию',name:name,company:contact,email:isEmail?contact:'—',phone:isEmail?'':contact,product:wlProd,comment:comment||'—',description:((wlMode==='wait')?'Лист ожидания: ':'Демонстрация: ')+wlProd,language:fLang().toUpperCase()};try{var res=await fetch('https://ergp.risk-place.org/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});var r=await res.json();if(!res.ok||!(r.success||r.ok))throw new Error('fail');note.style.display='none';ok.textContent=t.ok;ok.style.display='block';setTimeout(closeForm,1600);}catch(e){note.style.display='none';err.textContent=t.err;err.style.display='block';this.disabled=false;}});
-</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

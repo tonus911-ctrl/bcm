@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -499,60 +496,35 @@
   ]
 }
 </script>
-<style>
-/* ── Словарь: стили только этой страницы ── */
-.container{max-width:1080px}
-.gl-hero{background:#F5F1E8;border-bottom:1px solid #E3D9C2;padding:26px 0 30px;margin-bottom:26px}
-.gl-hero .breadcrumb{padding:0 0 12px}
-.gl-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A5E17;margin-bottom:10px}
-.gl-h1{font-size:clamp(22px,2.6vw,30px);font-weight:700;line-height:1.22;color:#1E222B;margin:0 0 10px}
-.gl-lead{font-size:16px;line-height:1.6;color:#565A63;margin:0;max-width:720px}
-.gl-form{display:flex;gap:10px;margin-top:20px;max-width:620px;flex-wrap:wrap}
-.gl-form input{flex:1 1 260px;box-sizing:border-box;padding:13px 16px;border:1.5px solid #D8CFB8;border-radius:11px;font-size:16px;font-family:inherit;background:#fff;color:#1E222B}
-.gl-form input:focus{outline:none;border-color:#1B3A5C}
-.gl-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
-.gl-nav a{font-size:13.5px;font-weight:600;color:#1B3A5C;text-decoration:none;background:#F5F1E8;border:1px solid #E3D9C2;border-radius:20px;padding:6px 14px}
-.gl-nav a:hover{background:#E3D9C2}
-.gl-grp{scroll-margin-top:88px;margin:0 0 34px}
-.gl-gh{border-top:1px solid #E3D9C2;padding-top:16px;margin-bottom:14px}
-.gl-gt{font-size:clamp(19px,2vw,23px);font-weight:700;line-height:1.25;margin:5px 0 5px;color:#1E222B}
-.gl-gd{font-size:15px;line-height:1.6;color:#565A63;margin:0;max-width:720px}
-.gl-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px 26px}
-.gl-t{scroll-margin-top:88px;border-top:1px solid #EFEAE0;padding-top:12px}
-.gl-tt{font-size:16px;font-weight:700;color:#1E222B;line-height:1.3;margin:0 0 2px}
-.gl-en{font-size:12px;font-weight:600;color:#7A5E17;letter-spacing:.02em;margin:0 0 5px}
-.gl-d{font-size:15px;line-height:1.6;color:#565A63;margin:0}
-.gl-d a{color:#1B3A5C;font-weight:600}
-.gl-count{font-size:15px;color:#565A63;margin:0 0 18px;display:none}
-.gl-count b{color:#1E222B}
-.gl-empty{display:none;font-size:15px;color:#565A63;padding:16px 0 28px}
-@media(max-width:720px){.gl-list{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="slovar.html">RU</a><a href="slovar-en.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="gl-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="materialy-en.html">Materials</a><span>/</span>Glossary</div>
-    <div class="gl-eyebrow">Glossary</div>
-    <h1 class="gl-h1">Business continuity and risk glossary</h1>
-    <p class="gl-lead">69 terms in plain language with links to the guides that unpack them. Definitions written to be used, not recited.</p>
-    <form class="gl-form" onsubmit="return glGo(event)" role="search">
-      <input id="glq" type="search" placeholder="Try: RTO, risk appetite, escalation" aria-label="Search the glossary">
-    </form>
-  </div>
-</div>
-<div class="container">
-<div class="gl-nav"><a href="#upravlenie">Governance and roles</a><a href="#nepreryvnost">Continuity and recovery</a><a href="#op-resilience">Operational resilience</a><a href="#riski">Risk</a><a href="#krizis">Crisis and exercises</a><a href="#postavki">Suppliers and supply chains</a><a href="#regulirovanie">Regulation, standards, assurance</a></div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Glossary</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Glossary</div>
+  <h1>Business continuity and risk glossary</h1>
+  <p class="lead">69 terms in plain language with links to the guides that unpack them. Definitions written to be used, not recited.</p>
+  <form class="search" onsubmit="return glGo(event)" role="search">
+    <input class="fld" id="glq" type="search" placeholder="Try: RTO, risk appetite, escalation" aria-label="Search the glossary">
+    <button type="submit" class="btn navy">Search</button>
+  </form>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb one">
+<main class="pmain wide">
+<nav class="tags lib-chips gl-nav"><a href="#upravlenie">Governance and roles</a><a href="#nepreryvnost">Continuity and recovery</a><a href="#op-resilience">Operational resilience</a><a href="#riski">Risk</a><a href="#krizis">Crisis and exercises</a><a href="#postavki">Suppliers and supply chains</a><a href="#regulirovanie">Regulation, standards, assurance</a></nav>
 <p class="gl-count" id="glCount"></p>
 <section class="gl-grp" id="upravlenie"><div class="gl-gh"><h2 class="gl-gt">Governance and roles</h2><p class="gl-gd">Who is accountable for what, and to whom.</p></div><div class="gl-list"><div class="gl-t" id="t-accountability"><p class="gl-tt">Accountability</p><p class="gl-d">The obligation to answer for an outcome. Accountability sits with one person and cannot be delegated, unlike the work itself.</p></div><div class="gl-t" id="t-responsibility"><p class="gl-tt">Responsibility</p><p class="gl-d">The duty to carry out the work. Responsibility can be delegated and shared; accountability for the result cannot.</p></div><div class="gl-t" id="t-board"><p class="gl-tt">The Board</p><p class="gl-d">The governing body that carries ultimate accountability for the organisation, including its resilience. The board sets appetite, oversees management and answers to shareholders and regulators. See <a href="en-bcm-dlya-soveta-direktorov.html">BCM for the board</a>.</p></div><div class="gl-t" id="t-audit-committee"><p class="gl-tt">Audit Committee</p><p class="gl-d">The board committee that oversees financial reporting, internal control and audit. Resilience assurance reports often land here.</p></div><div class="gl-t" id="t-ceo"><p class="gl-tt">CEO · Chief Executive Officer</p><p class="gl-d">The most senior executive, accountable to the board for running the organisation, including the resilience capability that protects it.</p></div><div class="gl-t" id="t-cro"><p class="gl-tt">CRO · Chief Risk Officer</p><p class="gl-d">The executive who leads the risk function: frameworks, appetite proposals, reporting and challenge. In many groups the CRO also carries operational resilience.</p></div><div class="gl-t" id="t-management"><p class="gl-tt">Management</p><p class="gl-d">The executives who run the organisation day to day and implement the direction the board sets. The contrast between oversight and management is the foundation of governance.</p></div><div class="gl-t" id="t-internal-audit"><p class="gl-tt">Internal Audit</p><p class="gl-d">The independent function that assures the board that risk management and controls actually work. The third line of the three lines model.</p></div><div class="gl-t" id="t-three-lines"><p class="gl-tt">The Three Lines</p><p class="gl-d">The IIA model that separates roles: management owns and manages risk, the risk and compliance functions support and challenge, and internal audit gives independent assurance. See <a href="en-tri-linii-zashchity.html">three lines of defence</a>.</p></div><div class="gl-t" id="t-oversight"><p class="gl-tt">Oversight</p><p class="gl-d">The board&#x27;s work of directing, questioning and verifying what management does, without doing it. Distinct from supervision, which is what a regulator does.</p></div><div class="gl-t" id="t-corporate-governance"><p class="gl-tt">Corporate Governance</p><p class="gl-d">The system of rules and relationships by which a company is directed and controlled: the board, shareholders, management and their accountabilities.</p></div><div class="gl-t" id="t-corporate-governance-code"><p class="gl-tt">Corporate Governance Code</p><p class="gl-d">A published set of governance principles that listed companies apply or explain against. Many codes now expect the board to oversee resilience explicitly.</p></div><div class="gl-t" id="t-resilience-governance"><p class="gl-tt">Resilience Governance</p><p class="gl-d">The board-level direction and oversight of resilience: appetite, accountability, reporting and assurance. Governance means oversight by the board, not day-to-day management.</p></div><div class="gl-t" id="t-risk-owner"><p class="gl-tt">Risk Owner</p><p class="gl-d">The named manager accountable for a specific risk and for the controls that treat it. Every risk on the register needs one owner, not a committee.</p></div></div></section>
 <section class="gl-grp" id="nepreryvnost"><div class="gl-gh"><h2 class="gl-gt">Continuity and recovery</h2><p class="gl-gd">The core of the method: what we protect and how fast it comes back.</p></div><div class="gl-list"><div class="gl-t" id="t-business-continuity"><p class="gl-tt">Business Continuity</p><p class="gl-d">The capability of an organisation to keep delivering its products and services at acceptable levels through a disruption. It is the outcome that plans, teams and exercises exist to protect. See <a href="en-nepreryvnost-biznesa.html">business continuity</a>.</p></div><div class="gl-t" id="t-bcm"><p class="gl-tt">Business Continuity Management (BCM)</p><p class="gl-d">The management discipline that identifies threats to critical activities and builds the capability to keep them running. It covers analysis, planning, exercising and continual improvement.</p></div><div class="gl-t" id="t-bcms"><p class="gl-tt">Business Continuity Management System (BCMS)</p><p class="gl-d">The formal system of policies, roles, processes and records through which an organisation runs business continuity, as defined by ISO 22301. Certification against the standard assesses this system.</p></div><div class="gl-t" id="t-bcp"><p class="gl-tt">BCP · Business Continuity Plan</p><p class="gl-d">The documented procedures that guide the organisation through a disruption: who acts, in what order, with what resources, toward which targets. See <a href="en-plan-nepreryvnosti-biznesa.html">the continuity plan</a>.</p></div><div class="gl-t" id="t-drp"><p class="gl-tt">DRP · Disaster Recovery Plan</p><p class="gl-d">The technical plan for restoring IT systems and data after a disruption, built to meet the RTO and RPO of the services they support. See <a href="en-plan-avariynogo-vosstanovleniya.html">the recovery plan</a>.</p></div><div class="gl-t" id="t-bia"><p class="gl-tt">Business Impact Analysis (BIA)</p><p class="gl-d">The analysis that identifies critical processes, measures the impact of their interruption over time, and produces recovery targets such as MAO, RTO and RPO. See <a href="en-bia-analiz-vozdeystviya.html">business impact analysis</a>.</p></div><div class="gl-t" id="t-critical-process"><p class="gl-tt">Critical Process</p><p class="gl-d">A process whose interruption quickly threatens the organisation&#x27;s objectives, obligations or revenue. Critical processes get recovery targets and priority in continuity plans. See <a href="en-reestr-kriticheskih-processov.html">the process register</a>.</p></div><div class="gl-t" id="t-rto"><p class="gl-tt">Recovery Time Objective (RTO)</p><p class="gl-d">The target time for restoring a process or service after a disruption. The RTO must be shorter than the MAO, with margin.</p></div><div class="gl-t" id="t-rpo"><p class="gl-tt">Recovery Point Objective (RPO)</p><p class="gl-d">The maximum acceptable data loss measured in time: how far back the last usable copy may be. The RPO drives backup frequency.</p></div><div class="gl-t" id="t-mao"><p class="gl-tt">Maximum Acceptable Outage (MAO)</p><p class="gl-d">The longest period a process can be interrupted before the harm becomes unacceptable. Recovery targets must fit inside the MAO.</p></div><div class="gl-t" id="t-mtpd"><p class="gl-tt">Maximum Tolerable Period of Disruption (MTPD)</p><p class="gl-d">The ISO 22301 term for the time after which the impact of a disruption becomes unacceptable. In practice it names the same limit as MAO.</p></div><div class="gl-t" id="t-mbco"><p class="gl-tt">Minimum Business Continuity Objective (MBCO)</p><p class="gl-d">The minimum level of products or services the organisation commits to deliver during a disruption, agreed in advance.</p></div><div class="gl-t" id="t-recovery"><p class="gl-tt">Recovery</p><p class="gl-d">The return of processes and services to agreed levels after a disruption, through the recovery targets and in the order the BIA established.</p></div><div class="gl-t" id="t-downtime"><p class="gl-tt">Downtime</p><p class="gl-d">The period during which a service or process is unavailable. Downtime describes time only; the harm it causes is measured separately.</p></div><div class="gl-t" id="t-cost-of-downtime"><p class="gl-tt">Cost of One Day of Downtime</p><p class="gl-d">The calculated loss the organisation suffers for each day a process stands still. The number that turns continuity from a policy debate into an investment case. See <a href="en-stoimost-dnya-prostoya.html">the cost of downtime</a>.</p></div><div class="gl-t" id="t-disruption"><p class="gl-tt">Disruption</p><p class="gl-d">Any event that interrupts the normal delivery of products, services or operations, whatever its cause. The single term the profession uses for outages, incidents and interruptions of every kind.</p></div><div class="gl-t" id="t-resilience"><p class="gl-tt">Resilience</p><p class="gl-d">The ability of an organisation to absorb shocks, adapt and keep pursuing its objectives in a changing environment. It is broader than continuity: it covers strategy, culture and governance as well as plans.</p></div></div></section>
@@ -562,21 +534,23 @@
 <section class="gl-grp" id="postavki"><div class="gl-gh"><h2 class="gl-gt">Suppliers and supply chains</h2><p class="gl-gd">Dependencies the company does not control directly.</p></div><div class="gl-list"><div class="gl-t" id="t-supplier"><p class="gl-tt">Supplier</p><p class="gl-d">An external party that provides goods or services the organisation depends on. Critical suppliers are assessed, contracted and exercised for continuity. See <a href="en-poterya-postavshchika.html">losing a supplier</a>.</p></div><div class="gl-t" id="t-supply-chain"><p class="gl-tt">Supply Chain</p><p class="gl-d">The network of suppliers, logistics and services the organisation depends on to deliver. Continuity extends to this chain, not just to the organisation&#x27;s own walls.</p></div></div></section>
 <section class="gl-grp" id="regulirovanie"><div class="gl-gh"><h2 class="gl-gt">Regulation, standards, assurance</h2><p class="gl-gd">Requirements, evidence and maturity.</p></div><div class="gl-list"><div class="gl-t" id="t-regulator"><p class="gl-tt">Regulator</p><p class="gl-d">The public authority that sets binding requirements for a sector and holds firms to them, such as CBUAE, the FCA or NCEMA.</p></div><div class="gl-t" id="t-supervisor"><p class="gl-tt">Supervisor</p><p class="gl-d">The authority that monitors regulated firms day to day: reviews, inspections, findings. The word describes the regulator&#x27;s watch, never the board&#x27;s.</p></div><div class="gl-t" id="t-regulatory-requirement"><p class="gl-tt">Regulatory Requirement</p><p class="gl-d">A binding obligation issued by a regulator. Requirements define the minimum; appetite and strategy decide how far beyond it the firm goes. See <a href="en-onivd-ponivd.html">regulatory continuity requirements</a>.</p></div><div class="gl-t" id="t-mandatory-regime"><p class="gl-tt">Mandatory Regime</p><p class="gl-d">A set of rules firms must follow by law or licence, with sanctions for failure. NCEMA 7000 is mandatory for UAE government entities and critical infrastructure.</p></div><div class="gl-t" id="t-voluntary-standard"><p class="gl-tt">Voluntary Standard</p><p class="gl-d">A standard an organisation adopts by choice, such as ISO 22301, often to prove capability to clients and partners through certification. See <a href="en-iso-22301.html">ISO 22301</a>.</p></div><div class="gl-t" id="t-compliance"><p class="gl-tt">Compliance</p><p class="gl-d">Conformity with the requirements that apply to the organisation, demonstrated with evidence. Compliance proves the minimum; resilience is the goal beyond it.</p></div><div class="gl-t" id="t-certification"><p class="gl-tt">Certification</p><p class="gl-d">Independent confirmation that a management system conforms to a standard, issued after audit by an accredited body.</p></div><div class="gl-t" id="t-certificate"><p class="gl-tt">Certificate</p><p class="gl-d">The document that records a person has completed a programme and passed its assessment. In ERGP it carries a unique number and public verification.</p></div><div class="gl-t" id="t-assurance"><p class="gl-tt">Assurance</p><p class="gl-d">Independent confirmation to the board that resilience actually works: evidence, testing and audit rather than management&#x27;s own word.</p></div><div class="gl-t" id="t-reporting"><p class="gl-tt">Reporting</p><p class="gl-d">The regular flow of structured information to management, the board and regulators: indicators, incidents, exercises and progress against appetite.</p></div><div class="gl-t" id="t-maturity"><p class="gl-tt">Maturity</p><p class="gl-d">The degree to which a capability is established, repeatable and improving, measured against a defined model rather than by impression.</p></div><div class="gl-t" id="t-maturity-level"><p class="gl-tt">Maturity Level</p><p class="gl-d">A defined step on a maturity scale, from initial to optimised. Levels let the board set a target and track movement toward it. See <a href="en-kak-izmerit-ustojchivost-biznesa.html">measuring resilience</a>.</p></div></div></section>
 <p class="gl-empty" id="glEmpty">Nothing found. Try another word or <a href="slovar-en.html">see the full list</a>.</p>
-<div class="cta-band">
+<div class="inset cta">
   <h3>Узнайте, насколько устойчив ваш бизнес</h3>
   <p>13 вопросов, 5 минут, бесплатно — результат сразу на экране и на почту.</p>
-  <div class="btn-row">
-    <a href="quiz.html" class="btn btn-yellow">Пройти диагностику бесплатно →</a>
-    <a href="index.html#contacts" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#565A63">Записаться на разбор</a>
-    <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff;border-color:#565A63">Курс по непрерывности →</a>
-  </div>
+  <div class="btns">
+    <a href="quiz.html" class="btn gold">Пройти диагностику бесплатно →</a>
+    <a href="index.html#contacts" target="_blank" rel="noopener" class="btn line">Записаться на разбор</a>
+    <a href="https://risk-place.ru/page11" target="_blank" rel="noopener" class="btn line">Курс по непрерывности →</a>
+  </div></div>
+</main>
 </div>
-</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -588,7 +562,7 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <script>
 (function(){
   function apply(q){

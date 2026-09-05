@@ -28,331 +28,152 @@
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* ТОЛЬКО контентные блоки этой страницы. Шапка, ширина, подвал — из style.css.
-   Оформление по макету от 27.08.2026: без карточек и рамок, разделение
-   тонкими линиями, нумерация в отдельной колонке, две заливки на всю
-   страницу — блок демонстрации и врезка о директоре программы. */
-
-/* Абзацы с классом внутри .uw пишем как «.uw p.класс». Правило «.uw p»
-   весит класс плюс тег и перебивает одиночный класс, из-за чего кегль и
-   отступы такого абзаца молча обнуляются. Проверено 27.08.2026 на подписи
-   под кнопками: она прилипала к ним, сколько бы пикселей ей ни задавали. */
-
-/* ── шапка страницы ──
-   Правила .phero, .phero h1, .phero-eyebrow, .crumbs и .crumbs a живут в
-   общем style.css и здесь намеренно не повторяются: два одинаковых правила
-   в двух местах рано или поздно расходятся, и потом непонятно, какое из них
-   победило. Сторож стилей следит, чтобы дубли не вернулись. */
-.uw p.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
-.phero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.uw p.phero-note{font-size:13px;line-height:1.6;color:var(--muted);margin:24px 0 0;max-width:760px}
-.uw p.phero-note b{color:var(--ink);font-weight:700}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0 0}
-.fact{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
-.fact b{display:block;font-size:19px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
-.fact span{font-size:13.5px;color:var(--muted);line-height:1.45}
-
-/* ── общее для разделов ── */
-.psec{padding:46px 0 0}
-.psec:last-of-type{padding-bottom:64px}
-/* ── текст и списки: правила висят на контейнере .uw, а не на классе
-   раздела. Иначе блоки со своим классом (демонстрация, врезка о директоре)
-   выпадают из правил и попадают под глобальный сброс отступов. ── */
-.uw h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 16px}
-.uw p{font-size:16px;line-height:1.65;color:#26263a;margin:0 0 14px;max-width:76ch;text-wrap:pretty}
-.uw p:last-child{margin-bottom:0}
-.uw p.sub{color:var(--muted)}
-.uw p.note{font-size:13.5px;line-height:1.55;color:var(--muted)}
-
-/* Маркер всегда заходит под текст абзаца сверху, а не встает с ним на одну
-   линию. Отступ содержимого 28px, маркер живет внутри этого поля. */
-.uw ul,.uw ol{margin:0 0 14px;padding-left:28px;font-size:16px;line-height:1.65;color:#26263a;max-width:76ch}
-.uw ul:last-child,.uw ol:last-child{margin-bottom:0}
-.uw li{margin-bottom:10px}
-.uw li:last-child{margin-bottom:0}
-.uw li b{font-weight:700;color:var(--ink)}
-
-/* Стык абзаца и списка: полстроки воздуха, чтобы перечисление не слипалось
-   со строкой, которая его вводит. Полстроки при кегле 16 и интерлиньяже
-   1.65 — это 13px, задаем в долях строки, чтобы держалось при любом кегле. */
-.uw p + ul,.uw p + ol{margin-top:.5lh}
-.uw ul + p,.uw ol + p{margin-top:.5lh}
-@supports not (margin-top: 1lh){
-  .uw p + ul,.uw p + ol,.uw ul + p,.uw ol + p{margin-top:13px}
-}
-
-/* Общее правило раздела: два смысловых куска внутри блока никогда не стоят
-   вплотную, между ними минимум полстроки. Сетка тарифов, колонки, плитки
-   фактов и подписи под ними подчиняются тому же закону, что абзац и список.
-   Селекторы с тегом p подняты по весу, иначе их перебивает .uw p. */
-.uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:.5lh}
-.uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
-.uw p.tnote,.uw p.note,.uw p.certcap{margin-top:.5lh}
-@supports not (margin-top: 1lh){
-  .uw .tariffs,.uw .duo,.uw .facts,.uw .shots,.uw .verify{margin-bottom:11px}
-  .uw .tariffs + p,.uw .duo + p,.uw .facts + p,.uw .shots + p,
-  .uw p.tnote,.uw p.note,.uw p.certcap{margin-top:11px}
-}
-
-/* ── строки с номером: модули программы и ступени проверки знаний ── */
-.numrow{display:grid;grid-template-columns:72px 1fr;gap:20px;align-items:baseline}
-.numrow .num{font-size:19px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
-.mods .numrow{padding:22px 0;border-top:1px solid var(--line)}
-.mods h3{font-size:17px;font-weight:700;color:var(--ink);margin:0 0 6px;line-height:1.35}
-.mods h3 span{font-weight:400;color:var(--muted)}
-.mods p{font-size:16px;line-height:1.6;margin:0;max-width:74ch}
-.art{font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:8px}
-.art b{font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark)}
-.steps .numrow{padding:0 0 18px}
-.steps .numrow:last-child{padding:0}
-.steps b{display:block;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:2px}
-.steps .t{font-size:15px;line-height:1.6;color:var(--muted)}
-
-/* ── две колонки, схлопываются сами по ширине ── */
-.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;align-items:start}
-
-/* ── кнопки ── */
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;
-  border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;font-family:inherit}
-.pill-navy{background:var(--navy);color:#fff}
-.pill-gold{background:var(--gold);color:var(--ink)}
-.pill:hover{opacity:.9}
-.pill-navy:hover,.pill-gold:hover{color:inherit}
-.pill-navy:hover{color:#fff}
-
-/* ── поля ввода ── */
-.fld{border:1.5px solid #D8CFB8;border-radius:10px;padding:12px 14px;font-size:15px;
-  background:#fff;color:var(--ink);font-family:inherit;width:100%}
-.fld:focus{outline:none;border-color:var(--gold)}
-
-/* ── сертификат ── */
-.certimg{display:block;width:100%;height:auto;border:1px solid var(--line)}
-.uw p.certcap{font-size:13.5px;line-height:1.5;color:var(--muted);margin:10px 0 0}
-.verify{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
-.vtitle{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
-.vrow{display:flex;gap:10px;flex-wrap:wrap}
-.vrow .fld{flex:1 1 240px;width:auto}
-.uw p.vans{display:none;font-size:13.5px;line-height:1.55;color:#26263a;margin:12px 0 0}
-.uw p.vans a{color:var(--navy);font-weight:600}
-
-/* ── скриншоты курса ── */
-.shots{max-width:980px}
-.shot{display:block;width:100%;height:auto;border:1px solid var(--line);cursor:zoom-in}
-.shotbar{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;padding:14px 0 0}
-.shotbar .cap{font-size:15px;line-height:1.5;color:#26263a}
-.shotnav{display:flex;align-items:baseline;gap:16px;white-space:nowrap}
-.shotnav button{background:none;border:none;padding:0;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);font-family:inherit}
-.shotnav .n{font-size:13.5px;color:var(--muted)}
-.slbox{display:none;position:fixed;inset:0;background:rgba(30,34,43,.93);z-index:200;overflow:auto;padding:30px 16px;text-align:center}
-.slbox.open{display:block}
-.slbox img{max-width:min(96vw,1700px);width:100%;height:auto;cursor:zoom-out}
-.slbox .x{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:34px;
-  cursor:pointer;line-height:1;padding:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
-
-/* ── демонстрация: полоса с заливкой на всю ширину ── */
-.demo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin:46px 0 0}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-/* Форма: шаг между рядами полей и до поля сообщения одинаковый. Сетка
-   полей намеренно исключена из общего правила «полстроки»: иначе шаг
-   по вертикали выходит на пиксель больше, чем зазор между колонками,
-   и глаз читает разрыв как ошибку. */
-.uw .dgrid{margin-bottom:0}
-.uw textarea.fld{margin-top:10px;resize:vertical}
-.consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 16px;cursor:pointer}
-.consent input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;cursor:pointer;accent-color:var(--navy)}
-.consent a{color:var(--navy);font-weight:600}
-.demo .pill{width:100%}
-.uw p.msg-ok{display:none;font-size:15px;font-weight:600;color:#1B6B4A;margin:12px 0 0;text-align:center}
-.uw p.msg-err{display:none;font-size:13.5px;color:#A3351A;margin:12px 0 0;text-align:center}
-.uw p.msg-note{display:none;font-size:13.5px;color:var(--muted);margin:12px 0 0;text-align:center}
-
-/* ── стоимость ── */
-.price{font-size:30px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
-.orgt{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
-
-/* ── директор программы: врезка с заливкой ── */
-.dirsec{background:var(--panel);border-top:1px solid var(--line);padding:46px 0 52px;margin:46px 0 0}
-.dir{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
-.dir img{flex:0 0 112px;width:112px;height:112px;border-radius:50%;object-fit:cover;display:block}
-.dir .body{flex:1 1 420px}
-.dir .nm{display:block;font-size:19px;font-weight:800;color:var(--ink);margin-bottom:3px}
-.dir .rl{display:block;font-size:13.5px;font-weight:700;color:var(--gold-dark);margin-bottom:12px}
-
-/* ── вопросы ── */
-.faq{padding:18px 0;border-top:1px solid var(--line)}
-.faq .q{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 4px;line-height:1.35}
-.faq p{margin:0}
-
-@media(max-width:560px){
-  .numrow{grid-template-columns:44px 1fr;gap:12px}
-  .psec{padding:34px 0 0}
-  .demo,.dirsec{padding:34px 0}
-}
-
-/* ── третья кнопка героя: текстовая, чтобы не спорить с двумя основными ── */
-.pill-link{display:inline-flex;align-items:center;font-size:15px;font-weight:700;
-  color:var(--navy);text-decoration:none;padding:14px 4px}
-.pill-link:hover{text-decoration:underline;color:var(--navy)}
-
-/* ── блок «одному участнику»: та же заливка, что у демонстрации ── */
-.solo{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:44px 0;margin:46px 0 0}
-.solo .price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 6px}
-.solo .price-sum{font-size:24px;font-weight:700;color:var(--navy);line-height:1.25}
-.solo .price-per{font-size:15px;color:var(--muted)}
-.solo-buy{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px}
-.solo-buy ol{margin:0;padding-left:22px;font-size:15px;line-height:1.6;color:#26263a}
-.solo-buy li{margin-bottom:8px}
-.solo-buy li:last-child{margin-bottom:0}
-/* ── тарифы: три ступени по числу участников ── */
-.tariffs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:6px 0 0}
-.tariff{border-top:2px solid var(--line);padding:18px 0 0}
-.tariff.pick{border-top-color:var(--gold)}
-.tariff .who{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:8px}
-.tariff .sum{font-size:24px;font-weight:700;color:var(--navy);line-height:1.25}
-.tariff .per{font-size:13.5px;color:var(--muted);margin:2px 0 10px}
-.uw .tariff p.ex{font-size:15px;line-height:1.55;color:#26263a}
-.uw .tariff p.ex b{font-weight:700;color:var(--ink)}
-/* подпись под тарифами идет на всю ширину блока, а не по колонке прозы */
-.uw p.tnote{font-size:13.5px;line-height:1.55;color:var(--muted);margin:20px 0 0;max-width:none}
-
-
-.circ2{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;margin-top:6px}
-@media(max-width:900px){.circ2{grid-template-columns:1fr}}
-.circ2 img{width:100%;height:auto;display:block}
-.circ2 p{font-size:16px;line-height:1.6;margin:0 0 10px}
-.circ2 ul{margin:0 0 12px;padding-left:20px;font-size:15px;line-height:1.6}
-.circ2 li{margin-bottom:6px}
-.circ2 .small{font-size:13.5px;color:var(--muted)}
-.dir+.dir{margin-top:18px}
-</style>
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html" class="act">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="kultura-bezopasnosti.html">RU</a><a href="en-kultura-bezopasnosti.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero">
-  <div class="uw">
-    <div class="crumbs"><a href="index.html">Home</a> / SAFE Certification</div>
-    <div class="phero-eyebrow">Corporate programme · for every employee · works on a phone</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span>SAFE Certification</div>
+  <div class="rule"></div>
+    <div class="eyebrow">Corporate programme · for every employee · works on a phone</div>
     <h1>SAFE — safety culture and workplace risk assessment</h1>
-    <p class="phero-sub">A programme for the entire workforce: people learn to see the hazards around them and manage them. Not about paperwork and inspections, but about what to do during a shift.</p>
-    <div class="facts">
-      <div class="fact"><b>5</b><span>modules</span></div>
-      <div class="fact"><b>30</b><span>chapters with examples</span></div>
-      <div class="fact"><b>36 diagrams</b><span>instead of solid text</span></div>
+    <p class="lead">A programme for the entire workforce: people learn to see the hazards around them and manage them. Not about paperwork and inspections, but about what to do during a shift.</p>
+    <div class="tiles">
+      <div class="tile"><b>5</b><span>modules</span></div>
+      <div class="tile"><b>30</b><span>chapters with examples</span></div>
+      <div class="tile"><b>36 diagrams</b><span>instead of solid text</span></div>
       
-      <div class="fact"><b>Certificate</b><span>personal, with a number</span></div>
+      <div class="tile"><b>Certificate</b><span>personal, with a number</span></div>
     </div>
-    <div class="phero-cta">
-      <a class="pill pill-gold" href="#price">Pricing for a company</a>
-      <a class="pill pill-navy" href="#odin">Take it alone</a>
-      <a class="pill-link" href="#demo" data-want="demo">Look inside the programme →</a>
+    <div class="cta-row">
+      <a class="btn gold" href="#price">Pricing for a company</a>
+      <a class="btn navy" href="#odin">Take it alone</a>
+      <a class="more" href="#demo" data-want="demo">Look inside the programme →</a>
     </div>
-    <p class="phero-price"><b>from 5,000 ₽</b><span>per person in a group of 50 or more · 9,900 ₽ for a single participant</span></p>
-<p class="phero-note">Companies pay by invoice. Access to the materials runs for six months from the day it is issued.</p>
-  </div>
-</div>
+    <p class="price"><b>from 5,000 ₽</b><span>per person in a group of 50 or more · 9,900 ₽ for a single participant</span></p>
+<p class="note">Companies pay by invoice. Access to the materials runs for six months from the day it is issued.</p>
+</div></div>
+<!--/TPL:HERO-->
 
-<section class="psec"><div class="uw">
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">On this page</div>
+  <nav>
+    <a href="#who-it-is-for">Who it is for</a>
+    <a href="#the-programme-5-modules-30-chapters">The programme — 5 modules, 30 chapters</a>
+    <a href="#how-knowledge-is-checked">How knowledge is checked</a>
+    <a href="#what-the-company-gets">What the company gets</a>
+    <a href="#shots">What the programme looks like inside</a>
+    <a href="#cert">Personal certificate</a>
+    <a href="#odin">Take the programme on your own</a>
+    <a href="#price">Pricing for a company</a>
+    <a href="#demo">Request form</a>
+    <a href="#frequent-questions">Frequent questions</a>
+    <a href="#programme-leadership">Programme leadership</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<section class="ps" id="who-it-is-for">
   <h2>Who it is for</h2>
-  <ul>
-    <li><b>Operators, foremen, drivers, warehouse staff</b> — everyone who spends the day next to real hazards.</li>
-    <li><b>The occupational safety specialist</b> — who needs to reach hundreds of people and see who genuinely went through the material.</li>
-    <li><b>The site manager</b> — who is accountable for people going home in one piece, and has to prove it.</li>
+  <ul class="ld">
+    <li><span><b>Operators, foremen, drivers, warehouse staff</b> — everyone who spends the day next to real hazards.</span></li>
+    <li><span><b>The occupational safety specialist</b> — who needs to reach hundreds of people and see who genuinely went through the material.</span></li>
+    <li><span><b>The site manager</b> — who is accountable for people going home in one piece, and has to prove it.</span></li>
   </ul>
   <p class="sub">The language is built for a mass audience: short sentences, real examples, paired «how it happens» and «how it should be».</p>
-</div></section>
+</section>
 
-<section class="psec"><div class="uw mods">
+<section class="ps" id="the-programme-5-modules-30-chapters">
   <h2>The programme — 5 modules, 30 chapters</h2>
   <p class="sub">Each chapter is about four minutes of reading, with one or two diagrams and a workplace situation to think through.</p>
-    <div class="numrow">
-      <div class="num">01</div>
+    <div class="nr">
+      <div class="nr-n">01</div>
       <div>
         <h3>What everyone needs to know: your role, rights and duties <span>· 6 chapters</span></h3>
         <p>Where personal safety at work begins. Who is responsible for what, what the employer must provide before work starts, what depends on you alone, and how the right to stop unsafe work actually works.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">02</div>
+    <div class="nr">
+      <div class="nr-n">02</div>
       <div>
         <h3>Hazards and risks: how to see and assess them <span>· 7 chapters</span></h3>
         <p>The difference between a hazard and a risk, in plain examples. A one-minute risk assessment, working at height and with electricity, machinery and vehicles, slow-acting harm, a five-minute workplace check and the hierarchy of controls.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">03</div>
+    <div class="nr">
+      <div class="nr-n">03</div>
       <div>
         <h3>Safety culture: prevention instead of reaction <span>· 6 chapters</span></h3>
         <p>Why small things matter more than after-the-fact reviews. The incident pyramid, how to report a hazard so that it is heard, the stop card, a blame-free case review, and what to do when a hazard is not removed.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">04</div>
+    <div class="nr">
+      <div class="nr-n">04</div>
       <div>
         <h3>Responding to an incident: the first hour <span>· 6 chapters</span></h3>
         <p>The sequence that saves two people. The first minute, what must never be done, the limits of first aid, what happens after an accident, fire and near-miss events, and your rights during an investigation.</p>
       </div>
     </div>
-    <div class="numrow">
-      <div class="num">05</div>
+    <div class="nr">
+      <div class="nr-n">05</div>
       <div>
         <h3>Industry specifics <span>· 5 chapters</span></h3>
         <p>Where irreversible harm happens most often, three severe scenarios and the barriers against them, high-risk work and permits, contractors working alongside you, and a personal shift checklist. Released in industry editions.</p>
       </div>
     </div>
-</div></section>
+</section>
 
-<section class="psec"><div class="uw steps">
+<section class="ps" id="how-knowledge-is-checked">
   <h2>How knowledge is checked</h2>
   <p class="sub">Four levels, from a question inside a chapter to the final check across the whole programme.</p>
-    <div class="numrow">
-      <div class="num">01</div>
-      <div><b>Self-check inside each module</b><span class="t">questions along the way; without them the next step stays closed</span></div>
+<div class="steps">
+    <div class="nr">
+      <div class="nr-n">01</div>
+      <div><b>Self-check inside each module</b><span>questions along the way; without them the next step stays closed</span></div>
     </div>
-    <div class="numrow">
-      <div class="num">02</div>
-      <div><b>Test after every module</b><span class="t">three questions, two correct to pass; questions are reshuffled on every attempt</span></div>
+    <div class="nr">
+      <div class="nr-n">02</div>
+      <div><b>Test after every module</b><span>three questions, two correct to pass; questions are reshuffled on every attempt</span></div>
     </div>
-    <div class="numrow">
-      <div class="num">03</div>
-      <div><b>Final knowledge check</b><span class="t">fifteen questions across all modules, twelve to pass, part of them short workplace situations</span></div>
+    <div class="nr">
+      <div class="nr-n">03</div>
+      <div><b>Final knowledge check</b><span>fifteen questions across all modules, twelve to pass, part of them short workplace situations</span></div>
     </div>
-    <div class="numrow">
-      <div class="num">04</div>
-      <div><b>Personal certificate</b><span class="t">with a unique number, issued for the programme as a whole</span></div>
+    <div class="nr">
+      <div class="nr-n">04</div>
+      <div><b>Personal certificate</b><span>with a unique number, issued for the programme as a whole</span></div>
     </div>
-</div></section>
+</div>
+</section>
 
-<section class="psec"><div class="uw">
+<section class="ps" id="what-the-company-gets">
   <h2>What the company gets</h2>
-  <ul>
-    <li><b>Personal links.</b> No accounts, no passwords, no software to install — a link opens the programme in any browser.</li>
-    <li><b>Visible progress.</b> For every participant: chapters read, module tests, final check.</li>
-    <li><b>Completion notice.</b> You are notified the moment someone finishes, along with their result.</li>
-    <li><b>Personal certificate.</b> With a unique number, prepared for the programme as a whole and sent to the participant.</li>
+  <ul class="ld">
+    <li><span><b>Personal links.</b> No accounts, no passwords, no software to install — a link opens the programme in any browser.</span></li>
+    <li><span><b>Visible progress.</b> For every participant: chapters read, module tests, final check.</span></li>
+    <li><span><b>Completion notice.</b> You are notified the moment someone finishes, along with their result.</span></li>
+    <li><span><b>Personal certificate.</b> With a unique number, prepared for the programme as a whole and sent to the participant.</span></li>
   </ul>
-</div></section>
+</section>
 
-<section class="psec" id="shots"><div class="uw">
+<section class="ps" id="shots">
   <h2>What the programme looks like inside</h2>
   <p class="sub">Real screens from the programme. The module contents and completion marks sit on the left, the chapter with its diagram on the right. The programme is delivered in Russian; other languages on request.</p>
   <div class="shots">
-    <img class="shot" id="csImg" src="assets/safe-shots/shot1.jpg" alt="A screen from the SAFE programme" loading="lazy" onclick="csOpen()">
+    <img class="shot" id="csImg" src="assets/safe-shots/shot1.jpg" alt="A screen from the SAFE programme" onclick="csOpen()">
     <div class="shotbar">
       <span class="cap" id="csCap">How an incident builds up, and where a person stops it</span>
       <span class="shotnav">
@@ -361,110 +182,110 @@
         <button type="button" onclick="csGo(1)">Next ›</button>
       </span>
     </div>
-    <p class="note" style="margin:8px 0 0">Click the screenshot to enlarge.</p>
+    <p class="note">Click the screenshot to enlarge.</p>
   </div>
-</div></section>
+</section>
 
-<section class="psec" id="cert"><div class="uw">
+<section class="ps" id="cert">
   <h2>Personal certificate</h2>
-  <div class="duo">
+  <div class="g2">
     <div>
-      <img class="certimg" src="en-safe-certificate-sample.jpg" alt="SAFE — sample of the personal certificate" width="1600" height="1131" loading="lazy">
-      <p class="certcap">A sample. The real certificate carries the participant's name, a number and a date.</p>
+      <img class="fig" src="en-safe-certificate-sample.jpg" alt="SAFE — sample of the personal certificate" width="1600" height="1131">
+      <p class="figcap">A sample. The real certificate carries the participant's name, a number and a date.</p>
     </div>
     <div>
       <p>The certificate is sent to the participant once the whole programme is done: after the module tests and the final check of fifteen questions.</p>
       <p>It is named after the programme and speaks about a person's preparation, not about a state accreditation. It does not replace the documents a company issues under occupational safety rules.</p>
       <p>What it confirms is the point of the programme: the employee can notice hazards, assess them and act during an incident. Every number can be verified.</p>
-      <div class="verify">
-        <div class="vtitle">Verify a certificate</div>
+      <div class="vbox">
+        <div class="k">Verify a certificate</div>
         <div class="vrow">
           <input type="text" class="fld" id="certNum" placeholder="Certificate number, e.g. SAFE-2026-0001">
-          <button type="button" class="pill pill-navy" id="certBtn">Verify</button>
+          <button type="button" class="btn navy" id="certBtn">Verify</button>
         </div>
         <p class="vans" id="certAns">The public register opens with the first group of participants. To verify a certificate today, write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — we answer the same day.</p>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="solo" id="odin"><div class="uw">
+<section class="ps" id="odin">
   <h2>Take the programme on your own</h2>
-  <div class="duo">
+  <div class="g2">
     <div>
-      <div class="price-row"><span class="price-sum">9,900 ₽</span><span class="price-per">for one participant, six months of access</span></div>
+      <p class="price"><b>9,900 ₽</b><span>for one participant, six months of access</span></p>
       <p>For those who need the programme personally rather than for a crew: an occupational safety specialist, a foreman, the head of a small site, a self-employed contractor. The content is exactly the same as in the corporate version — five modules, thirty chapters, tests and the final knowledge check.</p>
-      <ul>
-        <li>A personal link arrives by email, no password needed.</li>
-        <li>Your own pace, from a phone or a computer, return to any chapter.</li>
-        <li>A personal certificate with a number after the knowledge check.</li>
-        <li>Access to the material stays open for six months from the date it is issued.</li>
+      <ul class="ld">
+        <li><span>A personal link arrives by email, no password needed.</span></li>
+        <li><span>Your own pace, from a phone or a computer, return to any chapter.</span></li>
+        <li><span>A personal certificate with a number after the knowledge check.</span></li>
+        <li><span>Access to the material stays open for six months from the date it is issued.</span></li>
       </ul>
       <p class="note">Need it for a group — see the <a href="#price">company pricing</a>, the price per person is lower there.</p>
     </div>
     <div>
-      <div class="solo-buy">
-        <div class="vtitle">How to get access</div>
+      <div class="card">
+        <div class="k">How to get access</div>
         <ol>
           <li>You send a request — an invoice or a payment link comes to your email.</li>
           <li>After payment the personal link arrives within one working day.</li>
           <li>You go at your own pace; the certificate follows the knowledge check.</li>
         </ol>
-        <div class="phero-cta" style="margin-top:18px">
-          <a class="pill pill-gold" id="soloBuy" href="#demo" data-want="single">Get access for 9,900 ₽</a>
+        <div class="btns">
+          <a class="btn gold" id="soloBuy" href="#demo" data-want="single">Get access for 9,900 ₽</a>
         </div>
         <p class="note">Card payment is being connected; for now access is issued on request within a working day.</p>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="psec" id="price"><div class="uw">
+<section class="ps" id="price">
   <h2>Pricing for a company</h2>
   <p class="sub">The price per participant depends on the size of the group: the larger the group, the lower the price per person. Access to the material stays open for six months from the date it is issued.</p>
-  <div class="tariffs">
-      <div class="tariff">
-        <div class="who">Up to 19 participants</div>
+  <div class="g3">
+      <div class="card">
+        <div class="k">Up to 19 participants</div>
         <div class="sum">7,900 ₽</div>
         <div class="per">per person</div>
-        <p class="ex">A single site or one crew. Access is issued the same day.</p>
+        <p>A single site or one crew. Access is issued the same day.</p>
       </div>
-      <div class="tariff">
-        <div class="who">From 20 to 49</div>
+      <div class="card">
+        <div class="k">From 20 to 49</div>
         <div class="sum">6,400 ₽</div>
         <div class="per">per person</div>
-        <p class="ex">A shop floor, warehouse or branch. Completion report for the whole group.</p>
+        <p>A shop floor, warehouse or branch. Completion report for the whole group.</p>
       </div>
-      <div class="tariff pick">
-        <div class="who">From 50 participants</div>
+      <div class="card gold">
+        <div class="k">From 50 participants</div>
         <div class="sum">5,000 ₽</div>
         <div class="per">per person</div>
-        <p class="ex">The lowest price in the range. Industry edition of module five for your sector.</p>
+        <p>The lowest price in the range. Industry edition of module five for your sector.</p>
       </div>
   </div>
-  <p class="tnote">The price covers all five modules, the tests, the final knowledge check, the personal certificate and the management view with group progress. Five thousand roubles per person is the floor of the range. Groups above three hundred participants and multi-site rollouts are discussed separately: access delivery and reporting are set up to fit you.</p>
-  <div class="phero-cta" style="margin-top:22px">
-    <a class="pill pill-gold" href="#demo" data-want="quote">Request pricing and an invoice</a>
+  <p class="note">The price covers all five modules, the tests, the final knowledge check, the personal certificate and the management view with group progress. Five thousand roubles per person is the floor of the range. Groups above three hundred participants and multi-site rollouts are discussed separately: access delivery and reporting are set up to fit you.</p>
+  <div class="btns">
+    <a class="btn gold" href="#demo" data-want="quote">Request pricing and an invoice</a>
   </div>
-</div></section>
+</section>
 
-<section class="psec psec-grey" id="demo"><div class="uw">
+<section class="ps" id="demo"><div class="inset">
   <h2>Request form</h2>
 <p class="sub">One form for everything: a walkthrough of the programme, a quote and invoice for a company, or access for a single participant. We reply the same working day.</p>
-  <div class="duo">
+  <div class="g2">
     <div>
       <p>In twenty minutes over a video call we show the programme through the eyes of a participant and through the eyes of the person accountable for safety. You will see:</p>
-      <ul>
-        <li>chapters, diagrams and self-check questions;</li>
-        <li>module tests and the final knowledge check;</li>
-        <li>the management view: issuing access, group progress, notifications;</li>
-        <li>the participant's personal certificate.</li>
+      <ul class="ld">
+        <li><span>chapters, diagrams and self-check questions;</span></li>
+        <li><span>module tests and the final knowledge check;</span></li>
+        <li><span>the management view: issuing access, group progress, notifications;</span></li>
+        <li><span>the participant's personal certificate.</span></li>
       </ul>
       <p class="note">Or write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> — we answer the same day.</p>
     </div>
     <div>
-      <select class="fld" id="dmWant" style="margin-bottom:10px"><option value="quote">A quote and invoice for a company</option><option value="single">Access for a single participant</option><option value="demo">A walkthrough of the programme</option></select>
-<div class="dgrid">
+      <select class="fld" id="dmWant"><option value="quote">A quote and invoice for a company</option><option value="single">Access for a single participant</option><option value="demo">A walkthrough of the programme</option></select>
+<div class="fgrid">
         <input type="text" class="fld" id="dmName" placeholder="Your name">
         <input type="email" class="fld" id="dmEmail" placeholder="Work email">
         <input type="text" class="fld" id="dmOrg" placeholder="Company">
@@ -475,7 +296,7 @@
         <input type="checkbox" id="dmConsent">
         <span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">privacy policy</a></span>
       </label>
-      <button type="button" class="pill pill-gold" id="dmSubmit">Send request</button>
+      <button type="button" class="btn gold" id="dmSubmit">Send request</button>
       <p class="msg-note" id="dmNote"></p>
       <p class="msg-ok" id="dmOk"></p>
       <p class="msg-err" id="dmErr"></p>
@@ -483,7 +304,7 @@
   </div>
 </div></section>
 
-<section class="psec"><div class="uw">
+<section class="ps" id="frequent-questions">
   <h2>Frequent questions</h2>
     <div class="faq"><div class="q">How long does the programme take?</div><p>About two hours of reading. Participants go at their own pace, from a phone or a computer, and can return to any chapter.</p></div>
     <div class="faq"><div class="q">Does anything need to be installed?</div><p>No. Each participant gets a personal link and opens the programme in a browser. No password is needed, progress is saved automatically.</p></div>
@@ -492,37 +313,26 @@
     <div class="faq"><div class="q">Can the content be adapted to our industry?</div><p>Yes. Module five is released in industry editions — metals, oil and gas, warehousing and logistics, office. The other modules are common to all.</p></div>
     <div class="faq"><div class="q">Can one person take the programme without a company?</div><p>Yes. Individual access costs 9,900 ₽ and the content is identical. See the section <a href="#odin">take the programme on your own</a>.</p></div>
     <div class="faq"><div class="q">How do we pay?</div><p>By invoice from your company. Write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a> and we will send an invoice and a contract.</p></div>
-</div></section>
+</section>
 
-<div class="slbox" id="csBox" onclick="csClose(event)"><button class="x" onclick="csClose(event)" aria-label="Close">×</button><img id="csBig" alt=""></div>
+<div class="lbox" id="csBox" onclick="csClose(event)"><button class="x" onclick="csClose(event)" aria-label="Close">×</button><img id="csBig" alt=""></div>
 
-<section class="dirsec"><div class="uw">
-  <h2 style="margin-bottom:20px">Programme leadership</h2>
-  <div class="dir">
-    <img src="exp-khilko.jpg" alt="Erzhena Khilko" width="460" height="460" loading="lazy">
-    <div class="body">
-      <span class="nm">Erzhena Khilko</span>
-      <span class="rl">Director of Educational Programmes · ERGP, SAFE · Curator of the ERGP Circle</span>
-      <p style="max-width:74ch;margin:0">Chief Risk Officer of American Express Bank and its payment system operator, 2010–2024; chair of the Risk Committee. Built risk governance across twelve business units on the Three Lines of Defence model with zero audit findings; ran ICAAP under Basel III Pillar 2, RCSA across fifteen core processes and the continuity plan with annual test cycles. Earlier: head of risk at Bank of Cyprus Russia, corporate finance at Deloitte, audit at Ernst &amp; Young. She owns the learning design, the cohort schedule and the student experience across all our programmes and curates the ERGP Circle.</p>
-    </div>
-  </div>
-  <div class="dir">
-    <img src="exp-telenkov.jpg" alt="Evgeny Telenkov" width="460" height="460" loading="lazy">
-    <div class="body">
-      <span class="nm">Evgeny Telenkov</span>
-      <span class="rl">PhD in Economics · «Best Risk Manager of Russia 2020» (RusRisk)</span>
-      <p style="max-width:74ch;margin:0">Fifteen years leading risk functions at large companies. Built business continuity from scratch at Nornickel. Chief risk officer of a 20 billion dollar petrochemical megaproject with more than 200 construction risk indicators. Deputy chair of technical committee 010 «Risk management» at Rosstandart. Has prepared more than 300 specialists.</p>
-    </div>
-  </div>
+<section class="ps" id="programme-leadership">
+  <h2>Programme leadership</h2>
+  <div class="g2 tight">
+<div class="card"><div class="person"><img src="exp-khilko.jpg" alt="Erzhena Khilko" width="460" height="460"><div><div class="nm">Erzhena Khilko</div><div class="rl">Director of Educational Programmes · ERGP, SAFE · Curator of the ERGP Circle</div></div></div><p>Chief Risk Officer of American Express Bank and its payment system operator, 2010–2024; chair of the Risk Committee. Built risk governance across twelve business units on the Three Lines of Defence model with zero audit findings; ran ICAAP under Basel III Pillar 2, RCSA across fifteen core processes and the continuity plan with annual test cycles. Earlier: head of risk at Bank of Cyprus Russia, corporate finance at Deloitte, audit at Ernst &amp; Young. She owns the learning design, the cohort schedule and the student experience across all our programmes and curates the ERGP Circle.</p></div>
+  <div class="card"><div class="person"><img src="exp-telenkov.jpg" alt="Evgeny Telenkov" width="460" height="460"><div><div class="nm">Evgeny Telenkov</div><div class="rl">PhD in Economics · «Best Risk Manager of Russia 2020» (RusRisk)</div></div></div><p>Fifteen years leading risk functions at large companies. Built business continuity from scratch at Nornickel. Chief risk officer of a 20 billion dollar petrochemical megaproject with more than 200 construction risk indicators. Deputy chair of technical committee 010 «Risk management» at Rosstandart. Has prepared more than 300 specialists.</p></div>
 </div></section>
+</main>
+</div>
 
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
-<!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<!--/TPL:FOOTER-->
 <script>
 (function(){var b=document.getElementById('certBtn');if(!b)return;
   b.addEventListener('click',function(){var a=document.getElementById('certAns');if(a)a.style.display='block';
@@ -557,7 +367,7 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 <script>
 /* карусель скриншотов: пять снимков, подпись и лайтбокс */
 var csI = 0, csN = 4, csCaps = [

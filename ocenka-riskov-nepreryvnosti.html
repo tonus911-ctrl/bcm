@@ -31,11 +31,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,23 +137,40 @@
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Оценка рисков непрерывности</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>Оценка рисков непрерывности</div>
+  <div class="rule"></div>
   <div class="eyebrow">Анализ воздействия и восстановление</div>
   <h1>Оценка рисков непрерывности бизнеса: метод, шкалы и шаблон</h1>
   <p class="lead">Оценка рисков непрерывности отвечает на один вопрос — что способно остановить критический процесс и насколько мы к этому готовы. Ниже порядок из пяти шагов, рабочие шкалы и таблица, которую можно забрать целиком.</p>
-  <div class="meta-row">Обновлено: 4 сентября 2026 г. · Автор: Евгений Теленков · ≈ 6 мин чтения</div>
+  <div class="meta">Обновлено: 4 сентября 2026 г. · Автор: Евгений Теленков · ≈ 6 мин чтения</div>
 </div></div>
-<div class="container">
-  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#mesto">Место оценки в общей картине</a></li><li><a href="#poryadok">Порядок из пяти шагов</a></li><li><a href="#shkaly">Шкалы вероятности и последствий</a></li><li><a href="#shablon">Шаблон таблицы оценки</a></li><li><a href="#oshibki">Три ошибки, которые делают оценку бумагой</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#mesto">Место оценки в общей картине</a>
+    <a href="#poryadok">Порядок из пяти шагов</a>
+    <a href="#shkaly">Шкалы вероятности и последствий</a>
+    <a href="#shablon">Шаблон таблицы оценки</a>
+    <a href="#oshibki">Три ошибки, которые делают оценку бумагой</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 <p>Компании часто оценивают риски вообще — валютные, кредитные, репутационные, проектные. Оценка рисков непрерывности решает более узкую задачу. Она берет уже известный перечень критических процессов и спрашивает по каждому, что способно его остановить, насколько это вероятно и сколько мы продержимся.</p>
 
 <h2 id="mesto">Место оценки в общей картине</h2>
@@ -213,20 +227,23 @@
 </ul>
 <h2 id="faq">Частые вопросы</h2>
 <p><b>Чем оценка рисков непрерывности отличается от общей оценки рисков?</b> Периметром и измерителем. Общая оценка охватывает все риски компании, включая финансовые и стратегические. Оценка непрерывности берет только критические процессы и сверяет результат с допустимым временем простоя.</p><p><b>Что оценивают раньше, риски или воздействие на бизнес?</b> Сначала анализ воздействия, потом риски. Иначе команда оценивает угрозы для процессов, критичность которых еще не подтверждена, и тратит силы на второстепенное.</p><p><b>Какие шкалы использовать для оценки?</b> Пятибалльные шкалы вероятности и последствий, утвержденные одним документом для всей компании. Формулировки стоит привязать к частоте событий и к деньгам, тогда оценки разных подразделений сопоставимы.</p><p><b>Как часто пересматривать оценку рисков непрерывности?</b> Не реже раза в год и обязательно после существенных изменений, таких как переезд, смена ключевого поставщика, внедрение или вывод из эксплуатации крупной системы.</p><p><b>Кто проводит оценку рисков непрерывности?</b> Ведет ее служба непрерывности или риск-менеджмент, а оценки дают владельцы процессов и руководители обеспечивающих функций. Оценка, сделанная одним специалистом за всех, обычно расходится с реальностью.</p>
-  </article>
-<section class="sat-up">
-  <span class="sat-up-l">Раздел 03 · Анализ воздействия и восстановление</span>
+  </div>
+<div class="upbox">
+  <span class="k">Раздел 03 · Анализ воздействия и восстановление</span>
   <a href="bia-analiz-vozdeystviya.html">Анализ воздействия на бизнес →</a>
   <span class="sep">·</span>
   <a class="sec" href="materialy.html#bia">Все материалы раздела</a>
-</section>
-  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="bia-analiz-vozdeystviya.html" class="related-card"><div class="rc-t">Анализ воздействия на бизнес →</div><div class="rc-d">Первый такт работы: какие процессы критичны и сколько стоит их остановка.</div></a><a href="reestr-kriticheskih-processov.html" class="related-card"><div class="rc-t">Реестр критических процессов →</div><div class="rc-d">Вход для оценки: как собрать перечень и не раздуть его до сотни строк.</div></a><a href="matrica-riskov.html" class="related-card"><div class="rc-t">Матрица рисков →</div><div class="rc-d">Как из вероятности и последствий получается приоритет и что делать дальше.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
 </div>
+  <div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="bia-analiz-vozdeystviya.html" class="rel-card"><div class="rt">Анализ воздействия на бизнес →</div><div class="rd">Первый такт работы: какие процессы критичны и сколько стоит их остановка.</div></a><a href="reestr-kriticheskih-processov.html" class="rel-card"><div class="rt">Реестр критических процессов →</div><div class="rd">Вход для оценки: как собрать перечень и не раздуть его до сотни строк.</div></a><a href="matrica-riskov.html" class="rel-card"><div class="rt">Матрица рисков →</div><div class="rd">Как из вероятности и последствий получается приоритет и что делать дальше.</div></a><a href="quiz.html" class="rel-card"><div class="rt">Диагностика за 5 минут →</div><div class="rd">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></div>
+</main>
+</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -238,6 +255,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

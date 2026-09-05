@@ -33,28 +33,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-.hub{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0 8px}
-@media(max-width:760px){.hub{grid-template-columns:1fr}}
-.hc{background:#fff;border:1px solid var(--line,#E3D9C2);border-radius:16px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:10px}
-.hc .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark,#7A5E17);font-weight:700}
-.hc h2{font-size:22px;line-height:1.25;margin:0}
-.hc p{font-size:15px;line-height:1.55;color:var(--muted,#565A63);margin:0}
-.hc ul{margin:0;padding-left:20px;font-size:14.5px;line-height:1.55;color:var(--muted,#565A63)}
-.hc li{margin-bottom:5px}
-.hc .pr{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line,#E3D9C2);font-size:14px;color:var(--muted,#565A63)}
-.hc .pr b{display:block;font-size:17px;color:var(--ink,#1E222B);margin-bottom:2px}
-.hc .go{display:inline-block;margin-top:4px;background:var(--ink,#1E222B);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:11px 22px;font-size:14.5px;align-self:flex-start}
-.hub2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0 8px}
-@media(max-width:760px){.hub2{grid-template-columns:1fr}}
-.hc.soft{background:var(--panel,#F5F1E8)}
-.hc .lk{color:var(--gold-dark,#7A5E17);text-decoration:none;font-weight:700;font-size:15px}
-</style>
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -96,38 +76,46 @@
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html" class="act">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="dlya-kompanij.html">RU</a><a href="en-dlya-kompanij.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>For companies</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span>For companies</div>
+  <div class="rule"></div>
   <div class="eyebrow">For companies</div>
   <h1>For companies</h1>
   <p class="lead">Two services where we deliver the result with our own hands. The dashboard gives leadership a live picture of resilience; the turnkey system leaves you with working plans, trained people and risk in money.</p>
 </div></div>
-<div class="container">
-  <div class="hub">
-    <div class="hc"><span class="k">For leadership</span><h2>Continuity and risk dashboard</h2><p>One live picture of resilience for the CEO, the board and audit: a resilience index, the cost of a downtime day, recovery targets against reality. Runs inside your perimeter; data never leaves the company.</p><ul><li>Resilience index and the status of critical processes</li><li>Cost of a downtime day in your own numbers</li><li>Refreshed on your data, at your cadence</li></ul><div class="pr"><b>Priced by scope</b>quote within two working days</div><a class="go" href="en-dashboard.html">About the dashboard →</a></div>
-    <div class="hc"><span class="k">With an expert</span><h2>Turnkey continuity system</h2><p>From an audit of what exists to a working system: plans that work, trained people, risk in money and measurable recovery metrics. The scope is assembled for your task.</p><ul><li>Readiness audit and business impact analysis</li><li>Two-day continuity stress-test</li><li>Resilience strategy session for leadership</li><li>Risk survey of sites and suppliers</li></ul><div class="pr"><b>Priced by scope</b>quote within two working days</div><a class="go" href="en-bcm-pod-klyuch.html">Details and request a quote →</a></div>
+<!--/TPL:HERO-->
+
+<div class="pb one">
+<main class="pmain">
+  <div class="g2 tight">
+    <div class="card gold"><div class="k">For leadership</div><h3>Continuity and risk dashboard</h3><p>One live picture of resilience for the CEO, the board and audit: a resilience index, the cost of a downtime day, recovery targets against reality. Runs inside your perimeter; data never leaves the company.</p><ul class="ld"><li><span>Resilience index and the status of critical processes</span></li><li><span>Cost of a downtime day in your own numbers</span></li><li><span>Refreshed on your data, at your cadence</span></li></ul><p class="price"><b>Priced by scope</b><span>quote within two working days</span></p><a class="btn navy" href="en-dashboard.html">About the dashboard →</a></div>
+    <div class="card gold"><div class="k">With an expert</div><h3>Turnkey continuity system</h3><p>From an audit of what exists to a working system: plans that work, trained people, risk in money and measurable recovery metrics. The scope is assembled for your task.</p><ul class="ld"><li><span>Readiness audit and business impact analysis</span></li><li><span>Two-day continuity stress-test</span></li><li><span>Resilience strategy session for leadership</span></li><li><span>Risk survey of sites and suppliers</span></li></ul><p class="price"><b>Priced by scope</b><span>quote within two working days</span></p><a class="btn navy" href="en-bcm-pod-klyuch.html">Details and request a quote →</a></div>
   </div>
-  <div class="hub2">
-    <div class="hc soft"><span class="k">In person, for the team</span><h2>Corporate continuity training</h2><p>Two days with your management team, on your own processes, with a crisis exercise at the end. Up to eight participants, on site or by video.</p><a class="lk" href="en-obuchenie-nepreryvnosti-biznesa.html">Programme and terms →</a></div>
-    <div class="hc soft"><span class="k">Free · 10 minutes</span><h2>Resilience diagnostic</h2><p>Thirteen questions, instant result: readiness level and three main risk zones. A good first step before a conversation about the dashboard or the system.</p><a class="lk" href="quiz.html">Take the diagnostic →</a></div>
+  <div class="g2 tight">
+    <div class="card"><div class="k">In person, for the team</div><h3>Corporate continuity training</h3><p>Two days with your management team, on your own processes, with a crisis exercise at the end. Up to eight participants, on site or by video.</p><a class="more" href="en-obuchenie-nepreryvnosti-biznesa.html">Programme and terms →</a></div>
+    <div class="card"><div class="k">Free · 10 minutes</div><h3>Resilience diagnostic</h3><p>Thirteen questions, instant result: readiness level and three main risk zones. A good first step before a conversation about the dashboard or the system.</p><a class="more" href="quiz.html">Take the diagnostic →</a></div>
   </div>
-  <article class="article" style="margin-top:26px">
+  <div class="article">
     <p>Want to grow a continuity lead inside the company? <a href="en-onlajn-kurs.html">ERGP certification</a> prepares your own specialist, and a group of employees takes the programme on one order with a single progress view for the sponsor.</p>
     <p>Pick the service in the <a href="index.html#contacts">form on the home page</a> or write to <a href="mailto:info@risk-place.ru">info@risk-place.ru</a>; we reply within a working day.</p>
-  </article>
+  </div>
+</main>
 </div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -138,6 +126,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

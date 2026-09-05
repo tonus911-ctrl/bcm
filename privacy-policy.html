@@ -16,7 +16,7 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://bcm.risk-place.ru/privacy-policy.html">
 <link rel="icon" type="image/png" href="favicon.png">
-<meta name="theme-color" content="#1E222B">
+<meta name="theme-color" content="#14181F">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bcm.risk-place.ru/privacy-policy.html">
 <meta property="og:title" content="Политика обработки персональных данных — risk-place.ru">
@@ -25,59 +25,29 @@
 <meta property="og:site_name" content="risk-place.ru">
 <meta property="og:locale" content="ru_RU">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#1E222B;--muted:#565A63;--panel:#F5F1E8;--line:#E3D9C2;--gold:#C9A94E;--gold-dark:#7A5E17;--navy:#1B3A5C;}
-body{font-family:'Manrope','Figtree',Arial,sans-serif;background:#f5f5f5;color:var(--black);line-height:1.65}
-.header{background:#1E222B;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
-.logo{color:#fff;font-size:16px;font-weight:700;text-decoration:none}
-.logo span{color:var(--yellow)}
-.lang-toggle{display:flex;align-items:center;background:#2a2a3a;border-radius:50px;padding:4px;gap:3px}
-.lang-btn{padding:6px 14px;border-radius:50px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:none;background:transparent;color:#565A63;transition:background .15s,color .15s}
-.lang-btn.active{background:var(--yellow);color:#1E222B}
-.lang-btn:hover:not(.active){color:#fff}
-.container{max-width:720px;margin:0 auto;padding:40px 20px 80px}
-h1{font-size:24px;font-weight:700;margin-bottom:8px}
-.updated{font-size:13px;color:var(--gray);margin-bottom:24px}
-.note-trans{font-size:12px;color:var(--gray);font-style:italic;margin-bottom:28px}
-h2{font-size:17px;font-weight:700;margin-top:28px;margin-bottom:10px}
-p{font-size:15px;margin-bottom:12px;color:#1E222B}
-ul{margin:0 0 12px 20px;font-size:15px;color:#1E222B}
-li{margin-bottom:6px}
-.box{background:var(--cream);border-radius:12px;padding:16px 18px;font-size:15px;margin:20px 0}
-a{color:#1B3A5C}
-.lang-block{display:none}
-.lang-block.show{display:block}
-</style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
-    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
-    
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html" data-ru="Сертификация ERGP" data-en="ERGP certification">Сертификация ERGP</a><a href="kultura-bezopasnosti.html" data-ru="Программа SAFE" data-en="SAFE programme">Программа SAFE</a><a href="dlya-kompanij.html" data-ru="Для компаний" data-en="For companies">Для компаний</a><a href="materialy.html" data-ru="Методология" data-en="Methodology">Методология</a><a href="o-podhode.html" data-ru="О нас" data-en="About us">О нас</a><a href="index.html#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></nav>
+    <span class="uh-lang"><a id="btnRU" class="act" onclick="return setLang('ru')" href="#">RU</a><a id="btnEN" onclick="return setLang('en')" href="#">EN</a></span>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-
-<div class="header">
-  <a href="https://bcm.risk-place.ru/" class="logo">risk<span>-</span>place.ru</a>
-  <div class="lang-toggle">
-    <button class="lang-btn active" id="btnRU" onclick="setLang('ru')">RU</button>
-    <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
-  </div>
-</div>
-
-<!-- RU -->
-<div class="container lang-block show" id="block-ru">
-<h1>Политика обработки персональных данных</h1>
-<p class="updated">Редакция от 25 июня 2026 г.</p>
-
+<div class="lang-block" id="block-ru">
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span>Политика</div>
+  <div class="rule"></div>
+  <h1>Политика обработки персональных данных</h1>
+  <div class="meta">Редакция от 25 июня 2026 г.</div>
+</div></div>
+<!--/TPL:HERO-->
+<div class="pb one"><main class="pmain"><div class="article">
 <p>Настоящая Политика определяет порядок обработки персональных данных пользователей сайта risk-place.ru (далее — «Сайт») и подтверждает обязательства Оператора по соблюдению требований Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
 
 <h2>1. Оператор персональных данных</h2>
@@ -104,7 +74,7 @@ a{color:#1B3A5C}
 <p>Обработка осуществляется на основании добровольного согласия пользователя, предоставляемого путем проставления отметки в соответствующем поле формы на Сайте (п. 1 ч. 1 ст. 6, ст. 9 Закона № 152-ФЗ).</p>
 
 <h2>5. Передача данных третьим лицам</h2>
-<div class="box">Оператор не передает персональные данные третьим лицам, за исключением случаев, прямо предусмотренных законодательством Российской Федерации.</div>
+<div class="callout">Оператор не передает персональные данные третьим лицам, за исключением случаев, прямо предусмотренных законодательством Российской Федерации.</div>
 <p>Для технической передачи данных формы Оператору может использоваться промежуточный сервис маршрутизации сообщений (без постоянного хранения данных на стороне такого сервиса).</p>
 
 <h2>6. Срок обработки и хранения</h2>
@@ -118,13 +88,19 @@ a{color:#1B3A5C}
 
 <h2>9. Изменения Политики</h2>
 <p>Оператор вправе вносить изменения в настоящую Политику. Действующая редакция всегда доступна по адресу данной страницы.</p>
+</div></main></div>
 </div>
-
-<!-- EN -->
-<div class="container lang-block" id="block-en">
-<h2>Personal Data Processing Policy</h2>
-<p class="updated">Edition of 25 June 2026</p>
-<p class="note-trans">This is a courtesy translation. In case of any discrepancy, the Russian version of this Policy prevails.</p>
+<div class="lang-block" id="block-en" hidden>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span>Policy</div>
+  <div class="rule"></div>
+  <h1>Personal Data Processing Policy</h1>
+  <div class="meta">Edition of 25 June 2026</div>
+</div></div>
+<!--/TPL:HERO-->
+<div class="pb one"><main class="pmain"><div class="article">
+<p class="small">This is a courtesy translation. In case of any discrepancy, the Russian version of this Policy prevails.</p>
 
 <p>This Policy sets out how the personal data of users of the risk-place.ru website (the &ldquo;Site&rdquo;) is processed and confirms the Operator&rsquo;s commitment to comply with Russian Federal Law No. 152-FZ of 27 July 2006 &ldquo;On Personal Data&rdquo;.</p>
 
@@ -152,7 +128,7 @@ a{color:#1B3A5C}
 <p>Processing is carried out on the basis of the user&rsquo;s voluntary consent, given by ticking the relevant checkbox in the form on the Site (clause 1, part 1, art. 6 and art. 9 of Law No. 152-FZ).</p>
 
 <h2>5. Transfer of data to third parties</h2>
-<div class="box">The Operator does not transfer personal data to third parties, except in cases expressly provided for by the legislation of the Russian Federation.</div>
+<div class="callout">The Operator does not transfer personal data to third parties, except in cases expressly provided for by the legislation of the Russian Federation.</div>
 <p>An intermediary message-routing service may be used for the technical delivery of form data to the Operator (without permanent storage of data on the side of such service).</p>
 
 <h2>6. Processing and storage period</h2>
@@ -166,15 +142,16 @@ a{color:#1B3A5C}
 
 <h2>9. Changes to the Policy</h2>
 <p>The Operator may amend this Policy. The current version is always available at the address of this page.</p>
+</div></main></div>
 </div>
 
 <script>
 function setLang(l){
   document.documentElement.lang=l;
-  document.getElementById('block-ru').classList.toggle('show',l==='ru');
-  document.getElementById('block-en').classList.toggle('show',l==='en');
-  document.getElementById('btnRU').classList.toggle('active',l==='ru');
-  document.getElementById('btnEN').classList.toggle('active',l==='en');
+  document.getElementById('block-ru').hidden=(l!=='ru');
+  document.getElementById('block-en').hidden=(l!=='en');
+  document.getElementById('btnRU').classList.toggle('act',l==='ru');
+  document.getElementById('btnEN').classList.toggle('act',l==='en');
 }
 (function(){
   var p=(location.search.match(/[?&]lang=(ru|en)/)||[])[1];
@@ -185,21 +162,12 @@ function setLang(l){
   setLang(l);
 })();
 </script>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-m[i].l=1*new Date();
-for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
-k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
-ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
-  <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
-  <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
+  <div class="row1"><a href="onlajn-kurs.html" data-ru="Сертификация ERGP" data-en="ERGP certification">Сертификация ERGP</a><a href="kultura-bezopasnosti.html" data-ru="Программа SAFE" data-en="SAFE programme">Программа SAFE</a><a href="dlya-kompanij.html" data-ru="Для компаний" data-en="For companies">Для компаний</a><a href="materialy.html" data-ru="Методология" data-en="Methodology">Методология</a><a href="o-podhode.html" data-ru="О нас" data-en="About us">О нас</a><a href="index.html#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></div>
+  <div class="row2"><span data-ru="© 2026 Risk-place" data-en="© 2026 Risk-place">© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate" data-ru="Проверить сертификат" data-en="Verify a certificate">Проверить сертификат</a><a href="privacy-policy.html" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a><a href="oferta.html" data-ru="Публичная оферта" data-en="Public offer">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/" data-ru="risk-place.org (EN, AR)" data-en="risk-place.org (EN, AR)">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 </body>
 </html>

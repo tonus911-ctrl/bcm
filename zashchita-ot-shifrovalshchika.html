@@ -34,11 +34,8 @@
 <meta name="twitter:image" content="https://bcm.risk-place.ru/zashchita-ot-shifrovalshchika.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1E222B">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -127,24 +124,40 @@
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
     <span class="uh-lang"><a href="zashchita-ot-shifrovalshchika.html" class="act">RU</a><a href="en-zashchita-ot-shifrovalshchika.html">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<div class="phero"><div class="uw">
-  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="materialy.html">Материалы</a><span>/</span>Защита от шифровальщика</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>Защита от шифровальщика</div>
+  <div class="rule"></div>
   <div class="eyebrow">Киберустойчивость</div>
   <h1>Защита от вируса-шифровальщика: как подготовить компанию</h1>
   <p class="lead">Исход атаки шифровальщика решается до ее начала: есть ли у вас изолированные резервные копии, знает ли команда порядок действий и за сколько дней бизнес реально встанет на ноги. Разбираем подготовку, которая отличает неприятность от катастрофы.</p>
-  <div class="meta-row">Опубликовано: 18 июля 2026 г. · Автор: Евгений Теленков · ≈ 8 мин чтения</div>
+  <div class="meta">Опубликовано: 18 июля 2026 г. · Автор: Евгений Теленков · ≈ 8 мин чтения</div>
 </div></div>
-<div class="container">
-  <img src="zashchita-ot-shifrovalshchika.png" alt="Защита компании от вируса-шифровальщика: подготовка и восстановление" class="article-cover">
-  <nav class="toc"><div class="toc-title">Содержание</div><ol><li><a href="#pochemu">Почему шифровальщик — вопрос «когда», а не «если»</a></li><li><a href="#do">Подготовка до атаки: 6 линий обороны</a></li><li><a href="#kopii">Резервные копии, которые переживут атаку</a></li><li><a href="#plan">План восстановления: RTO в днях, а не в мечтах</a></li><li><a href="#repeticiya">Репетиция: единственный честный тест</a></li><li><a href="#faq">Частые вопросы</a></li></ol></nav>
-  <article class="article">
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#pochemu">Почему шифровальщик — вопрос «когда», а не «если»</a>
+    <a href="#do">Подготовка до атаки: 6 линий обороны</a>
+    <a href="#kopii">Резервные копии, которые переживут атаку</a>
+    <a href="#plan">План восстановления: RTO в днях, а не в мечтах</a>
+    <a href="#repeticiya">Репетиция: единственный честный тест</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
 <h2 id="pochemu">Почему шифровальщик — вопрос «когда», а не «если»</h2>
 <p>Шифровальщик — самый дорогой сценарий кибератаки для среднего бизнеса: останавливаются сразу все системы, а не одна. Отрасль это уже почувствовала: строительные, производственные и торговые компании стали для вымогателей целью номер один, среднее время восстановления после шифрования критичных систем измеряется не часами, а сутками — по отраслевым данным, 5-6 суток.</p>
 <p>Антивирус и файрвол снижают вероятность, но не отменяют ее: треть успешных атак начинается с украденных учетных данных и приходит через подрядчиков — то есть мимо вашего периметра. Поэтому зрелая позиция звучит так: «мы считаем, что атака случится, и готовим восстановление заранее».</p>
@@ -167,21 +180,24 @@
 <p><b>Платить ли выкуп?</b> Плохая опция: оплата не гарантирует расшифровку, помечает вас как платящую цель и в ряде юрисдикций несет юридические риски. Единственная надежная альтернатива — восстановление из изолированных копий.</p>
 <p><b>У нас есть антивирус и SOC — этого мало?</b> Это первая половина защиты: снизить вероятность. Вторая половина — пережить атаку, которая все же прошла. Она стоит дешевле первой, но почти всегда отсутствует.</p>
 <p><b>С чего начать, если нет ничего?</b> С инвентаризации критичных систем и одной изолированной копии главной базы. Это неделя работы и минимальный бюджет — а сокращает потенциальный простой в разы.</p>
-</article>
-<section class="sat-up">
-  <span class="sat-up-l">Раздел 04 · Кризис и киберугрозы</span>
+</div>
+<div class="upbox">
+  <span class="k">Раздел 04 · Кризис и киберугрозы</span>
   <a href="plan-deystviy-pri-kiberatake.html">Действия при кибератаке →</a>
   <span class="sep">·</span>
   <a class="sec" href="materialy.html#krizis">Все материалы раздела</a>
-</section>
-
-  <section class="related"><div class="related-title">Читайте также</div><div class="related-grid"><a href="plan-nepreryvnosti-biznesa.html" class="related-card"><div class="rc-t">План непрерывности (BCP) →</div><div class="rc-d">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="dashboard.html" class="related-card"><div class="rc-t">Дашборд непрерывности →</div><div class="rc-d">Индекс устойчивости 0-100, стоимость дня простоя и светофоры для руководства. Живое демо.</div></a><a href="quiz.html" class="related-card"><div class="rc-t">Диагностика за 5 минут →</div><div class="rc-d">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></section>
 </div>
+
+  <div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="plan-nepreryvnosti-biznesa.html" class="rel-card"><div class="rt">План непрерывности (BCP) →</div><div class="rd">Как составить план непрерывности бизнеса за 7 шагов: структура, роли, шаблон.</div></a><a href="dashboard.html" class="rel-card"><div class="rt">Дашборд непрерывности →</div><div class="rd">Индекс устойчивости 0-100, стоимость дня простоя и светофоры для руководства. Живое демо.</div></a><a href="quiz.html" class="rel-card"><div class="rt">Диагностика за 5 минут →</div><div class="rd">Уровень устойчивости, три главных риска и первые шаги. Бесплатно.</div></a></div></div>
+</main>
+</div>
+
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <!--/TPL:FOOTER-->
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
@@ -193,6 +209,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

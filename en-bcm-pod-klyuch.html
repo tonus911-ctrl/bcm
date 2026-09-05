@@ -27,260 +27,226 @@
 <meta property="og:locale" content="en_GB">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* только контентные блоки этой страницы; шапка/герой/футер — из style.css */
-.phero-sub{font-size:16px;color:var(--muted);line-height:1.6;margin:6px 0 0;max-width:760px}
-.phero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
-.phero-price{font-size:22px;font-weight:800;color:var(--navy)}
-.phero-terms{font-size:13.5px;color:var(--muted)}
-.phero-alt{font-size:15px;color:var(--navy);text-decoration:none;font-weight:600}
-.phero-alt:hover{text-decoration:underline}
-.psec{padding:34px 0 8px}
-.psec h2{font-size:clamp(19px,2.1vw,24px);font-weight:800;color:var(--ink);margin:0 0 6px;line-height:1.25}
-.psec .sub{font-size:15px;color:var(--muted);margin:0 0 20px;max-width:760px;line-height:1.6}
-.psec p{font-size:17px;color:#26263a;line-height:1.65;margin:0 0 14px;max-width:900px}
-/* ценность в цифрах */
-.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:8px 0 6px}
-.val{border:1px solid var(--line);border-radius:14px;padding:20px 18px;background:#fff}
-.val b{display:block;font-size:26px;font-weight:800;color:var(--navy);margin-bottom:6px;line-height:1.1}
-.val span{font-size:13.5px;color:var(--muted);line-height:1.5}
-/* артефакты */
-.arts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0}
-.art{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
-.art .mk{background:var(--panel);border-bottom:1px solid var(--line);padding:16px 18px;min-height:118px}
-.art .cap{padding:14px 18px 16px}
-.art .cap b{display:block;font-size:16px;color:var(--ink);margin-bottom:4px}
-.art .cap span{font-size:13.5px;color:var(--muted);line-height:1.5}
-.mk .mk-t{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:9px}
-.mk-score{display:flex;align-items:baseline;gap:6px}
-.mk-score b{font-size:34px;font-weight:800;color:var(--navy)}
-.mk-score i{font-style:normal;font-size:15px;color:var(--muted)}
-.mk-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#26263a;padding:5px 0;border-top:1px dashed var(--line)}
-.mk-row:first-of-type{border-top:none}
-.mk-row .n{font-weight:700;color:var(--navy)}
-.mk-row .r{font-weight:700;color:#A3351A}
-.mk-row .g{font-weight:700;color:#1B6B4A}
-.mk-tags{display:flex;flex-wrap:wrap;gap:6px}
-.mk-tags span{font-size:12px;padding:4px 9px;border-radius:7px;background:#fff;border:1px solid var(--line);color:#26263a}
-.mk-tags span.hot{background:var(--navy);border-color:var(--navy);color:#fff}
-.mk-axis{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:8px}
-.mk-flow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#26263a}
-.mk-flow b{background:var(--navy);color:#fff;border-radius:7px;padding:5px 9px;font-size:12px;font-weight:700}
-.mk-flow s{text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 9px}
-.mk-flow em{font-style:normal;color:var(--gold-dark);font-weight:800}
-.mk-note{font-size:12px;color:var(--muted);margin-top:8px}
-@media(max-width:960px){.vals{grid-template-columns:repeat(2,1fr)}.arts{grid-template-columns:1fr}}
-@media(max-width:520px){.vals{grid-template-columns:1fr}}
-/* шаги */
-.steps{counter-reset:st;list-style:none;margin:0;padding:0}
-.steps li{position:relative;padding:0 0 20px 52px;margin:0}
-.steps li::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:0;top:0;font-size:19px;font-weight:800;color:var(--gold-dark);letter-spacing:.04em;line-height:1.35}
-.steps li b{display:block;font-size:17px;color:var(--ink);margin-bottom:3px}
-.steps li span{font-size:15px;color:var(--muted);line-height:1.6}
-/* пример */
-.exbox{border-left:4px solid var(--gold);background:var(--bg-soft);border-radius:0 12px 12px 0;padding:18px 22px;margin:6px 0 10px}
-.exbox b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
-.exbox p{font-size:15px;margin:0;color:#26263a;line-height:1.65}
-/* faq */
-.faq-q{font-size:17px;font-weight:700;color:var(--ink);margin:18px 0 6px}
-.faq-a{font-size:16px;color:#26263a;line-height:1.6;margin:0}
-/* финал */
-.final{background:var(--navy);border-radius:18px;padding:38px 34px;margin:36px 0 46px;text-align:center}
-.final h2{font-size:clamp(20px,2.4vw,27px);font-weight:800;color:#fff;margin:0 0 10px;line-height:1.3}
-.final p{font-size:15px;color:#C9D4E2;margin:0 0 22px}
-.final .btn{font-size:16px;border:none;cursor:pointer}
-.final .alt{display:block;margin-top:14px;font-size:15px;color:#C9D4E2}
-.final .alt a{color:#fff;font-weight:600}
-/* модалка заявки */
-.modal-ov{display:none;position:fixed;inset:0;background:rgba(20,30,45,.55);z-index:9999;align-items:center;justify-content:center;padding:18px}
-.modal-bx{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative;max-height:92vh;overflow:auto}
-.modal-bx input,.modal-bx textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8dadf;border-radius:12px;font-size:15px;margin-bottom:10px;font-family:inherit}
-.consent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#1E222B;margin:2px 0 16px;cursor:pointer;background:#F5F1E8;border:1px solid #e2e4e8;border-radius:12px;padding:12px 14px}
-.consent input{width:22px;height:22px;flex:0 0 22px;margin:0;cursor:pointer;accent-color:var(--navy)}
-
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 6px}
-@media(max-width:760px){.opts{grid-template-columns:1fr}}
-.opt{background:#fff;border:1px solid var(--line,#E3D9C2);border-radius:14px;padding:20px 22px}
-.opt .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark,#7A5E17);font-weight:700;display:block;margin-bottom:6px}
-.opt b{display:block;font-size:17px;margin-bottom:6px}
-.opt p{font-size:14.5px;line-height:1.55;color:var(--muted,#565A63);margin:0}
-.opt a{color:var(--gold-dark,#7A5E17);font-weight:700;text-decoration:none}
-.optnote{font-size:14px;color:var(--muted,#565A63);margin-top:10px}
-</style>
+<link rel="stylesheet" href="site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Turnkey BCM", "serviceType": "Business continuity implementation", "description": "Readiness audit against two critical scenarios and an uplift of survival metrics: BCM and DR plans, stress test, register of single points of failure, 90-day action plan.", "areaServed": "RU", "inLanguage": "en", "provider": {"@type": "Organization", "name": "risk-place.ru"}, "offers": {"@type": "Offer", "price": "300000", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "300000", "priceCurrency": "RUB"}}}</script>
 </head>
 <body>
 <!--TPL:HEADER-->
 <header class="uh">
   <div class="uh-bar">
-    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="26" height="26"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="23" height="23"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html" class="act">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="bcm-pod-klyuch.html">RU</a><a href="en-bcm-pod-klyuch.html" class="act">EN</a></span>
-    <button class="uh-burger" onclick="document.getElementById('uhNav').classList.toggle('open')" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
-<section class="phero"><div class="uw">
-  <div class="crumbs"><a href="index.html">Home</a> / <a href="en-dlya-kompanij.html">For companies</a> / Turnkey BCM</div>
-  <div class="phero-eyebrow">Product · audit and implementation · 1-2 months</div>
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="en-dlya-kompanij.html">For companies</a><span class="sep">/</span>Turnkey BCM</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Product · audit and implementation · 1-2 months</div>
   <h1>Turnkey BCM: audit and raise your survival metrics</h1>
-  <p class="phero-sub">We test how ready your company is for two critical scenarios — a ransomware attack and a fire that closes a site — and then raise your survival metrics. The audit is one third of the work. Two thirds is fixing: new plans, new arrangements, measurable recovery. Delivered in Russia, in English, for teams that report to a foreign parent, an insurer or a group auditor.</p>
-  <div class="phero-cta">
-    <span class="phero-price">Priced by scope</span>
-    <span class="phero-terms">quote within two working days · 1-2 months · free fixes included</span>
+  <p class="lead">We test how ready your company is for two critical scenarios — a ransomware attack and a fire that closes a site — and then raise your survival metrics. The audit is one third of the work. Two thirds is fixing: new plans, new arrangements, measurable recovery. Delivered in Russia, in English, for teams that report to a foreign parent, an insurer or a group auditor.</p>
+  <div class="cta-row">
+    <span class="pb-price">Priced by scope</span>
+    <span class="pb-terms">quote within two working days · 1-2 months · free fixes included</span>
   </div>
-  <div class="phero-cta">
-    <button class="btn btn-yellow np-form" data-prod="Turnkey BCM (audit and implementation)" data-mode="apply">Send a request</button>
-    <a class="phero-alt" href="quiz.html">Take the free assessment first →</a>
+  <div class="cta-row">
+    <a class="btn navy" href="#demo">Send a request</a>
+    <a class="more" href="quiz.html">Take the free assessment first →</a>
   </div>
-</div></section>
+</div></div>
+<!--/TPL:HERO-->
 
-<section class="psec"><div class="container">
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">On this page</div>
+  <nav>
+    <a href="#the-value-in-numbers">The value, in numbers</a>
+    <a href="#what-you-receive-the-artefacts">What you receive — the artefacts</a>
+    <a href="#how-we-get-there">How we get there</a>
+    <a href="#options">The scope is assembled for your task</a>
+    <a href="#two-months-from-now-your-survival-metric">Two months from now, your survival metrics can be different numbers.</a>
+    <a href="#faq">Frequently asked questions</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<section class="ps" id="the-value-in-numbers">
   <h2>The value, in numbers</h2>
-  <div class="vals">
-    <div class="val"><b>7 days → 2</b><span>typical downtime after ransomware, cut by tested recovery — based on industry loss statistics</span></div>
-    <div class="val"><b>6 months → 1</b><span>business interruption after a fire — from our experience running continuity in heavy industry</span></div>
-    <div class="val"><b>from 300,000 RUB</b><span>the programme — against months of protected revenue; we prove the risk economics to your CFO in your own numbers</span></div>
-    <div class="val"><b>2/3</b><span>of the work is fixing and raising metrics, not writing a report</span></div>
+  <div class="tiles">
+    <div class="tile"><b>7 days → 2</b><span>typical downtime after ransomware, cut by tested recovery — based on industry loss statistics</span></div>
+    <div class="tile"><b>6 months → 1</b><span>business interruption after a fire — from our experience running continuity in heavy industry</span></div>
+    <div class="tile"><b>from 300,000 RUB</b><span>the programme — against months of protected revenue; we prove the risk economics to your CFO in your own numbers</span></div>
+    <div class="tile"><b>2/3</b><span>of the work is fixing and raising metrics, not writing a report</span></div>
   </div>
-</div></section>
+</section>
 
-<section class="psec"><div class="container">
+<section class="ps" id="what-you-receive-the-artefacts">
   <h2>What you receive — the artefacts</h2>
   <p class="sub">Every element below is a working document you keep. This is what you are paying for — and what your board, your insurer and your auditors will see.</p>
-  <div class="arts">
-    <div class="art">
+  <div class="g2 tight">
+    <div class="mock">
       <div class="mk"><div class="mk-t">Readiness score</div>
         <div class="mk-score"><b>46</b><i>/100</i></div>
         <div class="mk-row"><span>Ransomware track</span><span class="n">52</span></div>
         <div class="mk-row"><span>Fire track</span><span class="n">41</span></div>
       </div>
-      <div class="cap"><b>Readiness audit report</b><span>Your position against both scenarios — honest, scored, with the three loudest gaps on top</span></div>
+      <div class="mcap"><b>Readiness audit report</b><span>Your position against both scenarios — honest, scored, with the three loudest gaps on top</span></div>
     </div>
-    <div class="art">
+    <div class="mock">
       <div class="mk"><div class="mk-t">Process × impact</div>
         <div class="mk-tags"><span>HR</span><span>Logistics</span><span class="hot">Sales</span><span>Finance</span><span>Legal</span><span class="hot">ERP</span><span>Procurement</span><span>Admin</span><span class="hot">Warehouse</span></div>
         <div class="mk-axis"><span>← low impact</span><span>critical →</span></div>
       </div>
-      <div class="cap"><b>Risk map of key processes</b><span>Which process carries which scenario risk, and what one lost day costs — per process</span></div>
+      <div class="mcap"><b>Risk map of key processes</b><span>Which process carries which scenario risk, and what one lost day costs — per process</span></div>
     </div>
-    <div class="art">
+    <div class="mock">
       <div class="mk"><div class="mk-t">Single points of failure</div>
         <div class="mk-row"><span>1 supplier · key raw material</span><span class="r">6M RUB/day</span></div>
         <div class="mk-row"><span>1 system · ERP</span><span class="r">4M RUB/day</span></div>
         <div class="mk-row"><span>1 person · chief engineer</span><span class="n">risk</span></div>
         <div class="mk-row"><span>1 route · site access</span><span class="n">risk</span></div>
       </div>
-      <div class="cap"><b>Register of single points of failure</b><span>One supplier, one system, one person, one site — found, priced, with the fix decision recorded</span></div>
+      <div class="mcap"><b>Register of single points of failure</b><span>One supplier, one system, one person, one site — found, priced, with the fix decision recorded</span></div>
     </div>
-    <div class="art">
+    <div class="mock">
       <div class="mk"><div class="mk-t">Revenue → EBITDA</div>
         <div class="mk-flow"><b>Revenue 100</b><s>− COGS</s><s>− opex</s><b>EBITDA 38</b></div>
         <div class="mk-note">where a lost day actually bites</div>
       </div>
-      <div class="cap"><b>Revenue → EBITDA resilience model</b><span>How your revenue is actually made, what costs create it, and where a disruption cuts into profit</span></div>
+      <div class="mcap"><b>Revenue → EBITDA resilience model</b><span>How your revenue is actually made, what costs create it, and where a disruption cuts into profit</span></div>
     </div>
-    <div class="art">
+    <div class="mock">
       <div class="mk"><div class="mk-t">Stress-test day · log</div>
         <div class="mk-row"><span>T+0 · ERP goes dark</span><span class="n">start</span></div>
         <div class="mk-row"><span>T+40m · manual mode on</span><span class="g">ok</span></div>
         <div class="mk-row"><span>T+2h · orders resume</span><span class="g">ok</span></div>
         <div class="mk-row"><span>Findings logged</span><span class="n">7</span></div>
       </div>
-      <div class="cap"><b>Stress-test protocol</b><span>The tabletop day, documented: what broke when CRM and ERP went dark and the site closed — with timings</span></div>
+      <div class="mcap"><b>Stress-test protocol</b><span>The tabletop day, documented: what broke when CRM and ERP went dark and the site closed — with timings</span></div>
     </div>
-    <div class="art">
+    <div class="mock">
       <div class="mk"><div class="mk-t">BCM plan · DRP</div>
         <div class="mk-row"><span>1 · Activation and triggers</span><span class="n">p. 1</span></div>
         <div class="mk-row"><span>2 · Roles and authority</span><span class="n">p. 3</span></div>
         <div class="mk-row"><span>3 · First hours checklist</span><span class="n">p. 5</span></div>
         <div class="mk-row"><span>4 · IT recovery (DRP)</span><span class="n">p. 9</span></div>
       </div>
-      <div class="cap"><b>Business continuity plan + IT disaster recovery plan</b><span>Short, executable, written for your worst day — not for a shelf</span></div>
+      <div class="mcap"><b>Business continuity plan + IT disaster recovery plan</b><span>Short, executable, written for your worst day — not for a shelf</span></div>
     </div>
-    <div class="art">
+    <div class="mock">
       <div class="mk"><div class="mk-t">Recovery scheme</div>
         <div class="mk-flow"><b>declare</b><em>→</em><s>workaround</s><em>→</em><b>restore</b></div>
-        <div class="mk-row" style="margin-top:9px"><span>Target: back to normal</span><span class="n">72h</span></div>
+        <div class="mk-row"><span>Target: back to normal</span><span class="n">72h</span></div>
         <div class="mk-row"><span>Owner per step</span><span class="g">named</span></div>
       </div>
-      <div class="cap"><b>Recovery scheme</b><span>Who does what, in which hour, with which authority — from disruption back to normal operations</span></div>
+      <div class="mcap"><b>Recovery scheme</b><span>Who does what, in which hour, with which authority — from disruption back to normal operations</span></div>
     </div>
-    <div class="art">
+    <div class="mock">
       <div class="mk"><div class="mk-t">Survival metrics · 90 days</div>
         <div class="mk-row"><span>Recovery time objective (RTO)</span><span class="n">2 days</span></div>
         <div class="mk-row"><span>Fire: business interruption</span><span class="n">1 month</span></div>
         <div class="mk-row"><span>Weeks 1-2 · free fixes</span><span class="g">done</span></div>
         <div class="mk-row"><span>Weeks 3-12 · investment plan</span><span class="n">business case</span></div>
       </div>
-      <div class="cap"><b>Survival metrics + 90-day action plan</b><span>Dashboard-ready metrics and the plan that raises them — free fixes done, paid ones proven by risk economics</span></div>
+      <div class="mcap"><b>Survival metrics + 90-day action plan</b><span>Dashboard-ready metrics and the plan that raises them — free fixes done, paid ones proven by risk economics</span></div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="psec"><div class="container">
+<section class="ps" id="how-we-get-there">
   <h2>How we get there</h2>
-  <ol class="steps">
-    <li><b>Two scenarios, chosen with you</b><span>By default: a ransomware attack and a fire that closes a site. Depending on your industry we swap in what threatens you most — loss of a key supplier, departure of key executives, failure of a cornerstone contract.</span></li>
-    <li><b>Facts and economics</b><span>How much the company earns and from where; financing sources; concentration of clients, suppliers and contractors; technology and raw-material dependence; single points of failure and bottlenecks.</span></li>
-    <li><b>Business model deep-dive</b><span>How revenue is formed, which costs create it, how it becomes EBITDA and net profit. Continuity planning that skips this step protects the wrong things.</span></li>
-    <li><b>Interviews with the people who make the money</b><span>We find who is actually key, how they generate revenue, and by which principles they work today.</span></li>
-    <li><b>Then we break those principles — on paper</b><span>A desk-based stress test: CRM or ERP goes dark, the warehouse or production block is closed by fire. Nothing is switched off in reality — but the company lives the day in the room, and we watch what it is capable of, in detail.</span></li>
-    <li><b>Recovery, designed together</b><span>We build the recovery scheme with your team, not for them. People execute plans they helped write.</span></li>
-    <li><b>Metrics — and the uplift</b><span>We implement survival metrics, then raise them: new plans, new contract clauses, offline backups, fallback registers and channels. Everything fixable for free we fix together immediately; what needs investment we prove through risk economics — and leave you with a working plan.</span></li>
-  </ol>
-</div></section>
+  <div class="steps w">
+  <div class="nr"><div class="nr-n">01</div><div><b>Two scenarios, chosen with you</b><span>By default: a ransomware attack and a fire that closes a site. Depending on your industry we swap in what threatens you most — loss of a key supplier, departure of key executives, failure of a cornerstone contract.</span></div></div>
+  <div class="nr"><div class="nr-n">02</div><div><b>Facts and economics</b><span>How much the company earns and from where; financing sources; concentration of clients, suppliers and contractors; technology and raw-material dependence; single points of failure and bottlenecks.</span></div></div>
+  <div class="nr"><div class="nr-n">03</div><div><b>Business model deep-dive</b><span>How revenue is formed, which costs create it, how it becomes EBITDA and net profit. Continuity planning that skips this step protects the wrong things.</span></div></div>
+  <div class="nr"><div class="nr-n">04</div><div><b>Interviews with the people who make the money</b><span>We find who is actually key, how they generate revenue, and by which principles they work today.</span></div></div>
+  <div class="nr"><div class="nr-n">05</div><div><b>Then we break those principles — on paper</b><span>A desk-based stress test: CRM or ERP goes dark, the warehouse or production block is closed by fire. Nothing is switched off in reality — but the company lives the day in the room, and we watch what it is capable of, in detail.</span></div></div>
+  <div class="nr"><div class="nr-n">06</div><div><b>Recovery, designed together</b><span>We build the recovery scheme with your team, not for them. People execute plans they helped write.</span></div></div>
+  <div class="nr"><div class="nr-n">07</div><div><b>Metrics — and the uplift</b><span>We implement survival metrics, then raise them: new plans, new contract clauses, offline backups, fallback registers and channels. Everything fixable for free we fix together immediately; what needs investment we prove through risk economics — and leave you with a working plan.</span></div></div>
+</div>
+</section>
 
-<section class="psec"><div class="container">
-  <div class="exbox">
-    <b>A small example from the programme</b>
+<section class="ps">
+  <div class="callout"><div class="ct">A small example from the programme</div>
     <p>Your client registry lives in the CRM — which is exactly what ransomware encrypts. So during the programme we export it to a simple offline file, stored away from the office, and agree a fallback channel: a Telegram contact for every key client, collected in advance, with message templates ready. Cost: zero. Effect on day X: sales keep talking to clients while IT recovers. The programme is full of fixes like this.</p>
   </div>
-</div></section>
+</section>
 
-<section class="psec" id="options"><div class="container">
+<section class="ps" id="options">
   <h2>The scope is assembled for your task</h2>
   <p>The core is the same for every company: a readiness audit, a business impact analysis, plans and people who know their roles. On top of it we add what your company needs. Every option is part of one quote; none is sold separately.</p>
-  <div class="opts">
-    <div class="opt"><span class="k">Core</span><b>Readiness audit and business impact analysis</b><p>What exists today, which processes are critical, what a downtime day costs and where the gap is between tolerable and actual recovery time.</p></div>
-    <div class="opt"><span class="k">Option</span><b>Two-day continuity stress-test</b><p>A desk-based test on a live scenario: systems fail, a site is lost, a supplier leaves. We find where the plan breaks before a crisis finds it. <a href="en-stress-test-nepreryvnosti.html">How it runs →</a></p></div>
-    <div class="opt"><span class="k">Option</span><b>Resilience strategy session</b><p>Half a day with leadership: risk appetite, critical processes, the decisions the board must take. The outcome frames the whole programme.</p></div>
-    <div class="opt"><span class="k">Option</span><b>Risk survey of sites and suppliers</b><p>A site visit and a walk through the supply chain: single points of failure, concentration on one counterparty, fallback channels. The result lands in the risk register with owners and deadlines.</p></div>
+  <div class="g2 tight">
+    <div class="card"><div class="k">Core</div><div class="ct">Readiness audit and business impact analysis</div><p>What exists today, which processes are critical, what a downtime day costs and where the gap is between tolerable and actual recovery time.</p></div>
+    <div class="card"><div class="k">Option</div><div class="ct">Two-day continuity stress-test</div><p>A desk-based test on a live scenario: systems fail, a site is lost, a supplier leaves. We find where the plan breaks before a crisis finds it. <a href="en-stress-test-nepreryvnosti.html">How it runs →</a></p></div>
+    <div class="card"><div class="k">Option</div><div class="ct">Resilience strategy session</div><p>Half a day with leadership: risk appetite, critical processes, the decisions the board must take. The outcome frames the whole programme.</p></div>
+    <div class="card"><div class="k">Option</div><div class="ct">Risk survey of sites and suppliers</div><p>A site visit and a walk through the supply chain: single points of failure, concentration on one counterparty, fallback channels. The result lands in the risk register with owners and deadlines.</p></div>
   </div>
-  <p class="optnote">Need to train the management team? <a href="en-obuchenie-nepreryvnosti-biznesa.html">Corporate continuity training</a> is a separate two-day programme; take it with the system build or on its own.</p>
-</div></section>
+  <p class="note">Need to train the management team? <a href="en-obuchenie-nepreryvnosti-biznesa.html">Corporate continuity training</a> is a separate two-day programme; take it with the system build or on its own.</p>
+</section>
 
-<section class="psec"><div class="container">
-  <h2>Frequently asked questions</h2>
-  <div class="faq-q">Does the price include the fixes?</div>
-  <p class="faq-a">Everything fixable without capital spend is fixed together during the programme — plans, registers, fallback channels, contract wording, drills. Measures that need investment come with a risk-economics case proving they pay back; the decision stays yours.</p>
-  <div class="faq-q">Will you really switch off our systems?</div>
-  <p class="faq-a">No. The stress test is desk-based: we simulate the loss of CRM and ERP or the closure of a site in a structured exercise. Production is never touched — but the decisions, gaps and timings the day produces are real.</p>
-  <div class="faq-q">Our biggest risk is neither ransomware nor fire. Does the programme fit?</div>
-  <p class="faq-a">Yes. The two default scenarios are a starting point. For a trading house it may be the failure of a cornerstone contract; for a family business, the departure of key executives; for a manufacturer, a key supplier. We agree the two scenarios that genuinely threaten you at the start.</p>
-  <div class="faq-q">How is this different from the risk-place.org programme?</div>
-  <p class="faq-a">Same method, different market. This edition is delivered in Russia and priced in roubles, and the scenarios and regulatory context are local. The <a href="https://risk-place.org/gap-assessment.html" target="_blank" rel="noopener">risk-place.org edition</a> is built for the Gulf.</p>
-</div></section>
 
-<section><div class="container">
-  <div class="final">
+<section class="ps" id="two-months-from-now-your-survival-metric">
+  <div class="inset cta">
     <h2>Two months from now, your survival metrics can be different numbers.</h2>
     <p>Fixed scope, 1-2 months, free fixes included.</p>
-    <button class="btn btn-yellow np-form" data-prod="Turnkey BCM (audit and implementation)" data-mode="apply">Send a request</button>
-    <span class="alt">or <a href="quiz.html">take the free assessment first →</a></span>
+    <a class="btn navy" href="#demo">Send a request</a>
+    <p class="small">or <a href="quiz.html">take the free assessment first →</a></p>
   </div>
-</div></section>
+</section>
+
+<section class="ps" id="faq">
+  <h2>Frequently asked questions</h2>
+  <div class="faq"><div class="q">Does the price include the fixes?</div><p>Everything fixable without capital spend is fixed together during the programme — plans, registers, fallback channels, contract wording, drills. Measures that need investment come with a risk-economics case proving they pay back; the decision stays yours.</p></div>
+  <div class="faq"><div class="q">Will you really switch off our systems?</div><p>No. The stress test is desk-based: we simulate the loss of CRM and ERP or the closure of a site in a structured exercise. Production is never touched — but the decisions, gaps and timings the day produces are real.</p></div>
+  <div class="faq"><div class="q">Our biggest risk is neither ransomware nor fire. Does the programme fit?</div><p>Yes. The two default scenarios are a starting point. For a trading house it may be the failure of a cornerstone contract; for a family business, the departure of key executives; for a manufacturer, a key supplier. We agree the two scenarios that genuinely threaten you at the start.</p></div>
+  <div class="faq"><div class="q">How is this different from the risk-place.org programme?</div><p>Same method, different market. This edition is delivered in Russia and priced in roubles, and the scenarios and regulatory context are local. The <a href="https://risk-place.org/gap-assessment.html" target="_blank" rel="noopener">risk-place.org edition</a> is built for the Gulf.</p></div>
+</section>
+
+<section class="ps" id="demo">
+  <div class="inset">
+    <h2>Request a demo or a quote</h2>
+    <p>Leave your name and work email. We reply within one business day and propose the next step.</p>
+    <div class="fgrid w">
+      <input type="text" class="fld" id="dmName" placeholder="Your name">
+      <input type="email" class="fld" id="dmEmail" placeholder="Work email">
+      <input type="text" class="fld" id="dmOrg" placeholder="Company">
+      <input type="text" class="fld" id="dmRole" placeholder="Role">
+    </div>
+    <textarea class="fld" id="dmMsg" rows="3" placeholder="Comment (optional)"></textarea>
+    <label class="consent"><input type="checkbox" id="dmConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy</a></span></label>
+    <button type="button" class="btn navy" id="dmSubmit">Send the request</button>
+    <p class="fmsg" id="dmMsgOut"></p>
+    <p class="small">Prefer messaging? <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
+  </div>
+</section>
+<script>
+(function(){var btn=document.getElementById("dmSubmit");if(!btn)return;
+  function v(id){var el=document.getElementById(id);return el?el.value.trim():"";}
+  var out=document.getElementById("dmMsgOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
+  btn.addEventListener("click",async function(){var name=v("dmName"),email=v("dmEmail");
+    if(!name||email.indexOf("@")<0){say("err","Please fill in your name and work email.");return;}
+    if(!document.getElementById("dmConsent").checked){say("err","Please tick the consent box.");return;}
+    this.disabled=true;say("note","Sending…");
+    var body={type:"demo",product:"podklyuch",source:"ru",name:name,email:email,org:v("dmOrg"),role:v("dmRole"),message:v("dmMsg"),lang:"en",page:"en-bcm-pod-klyuch"};
+    try{var res=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(!res.ok)throw new Error("fail");say("ok","Thank you! We reply within one business day.");
+      try{ym(110579884,"reachGoal","podklyuch_lead_submit");}catch(e){}try{gtag("event","podklyuch_lead_submit");}catch(e){}
+    }catch(e){say("err","Could not send. Please email info@risk-place.ru");this.disabled=false;}});})();
+</script>
+</main>
+</div>
 
 <!--TPL:FOOTER-->
 <footer class="uf"><div class="in">
   <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
   <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
 </div></footer>
-<!--/TPL:FOOTER-->
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<!--/TPL:FOOTER-->
 <!-- Yandex.Metrika -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -290,33 +256,6 @@ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNo
 (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
 ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110579884" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
-<!-- ФОРМА -->
-<div class="modal-ov" id="wlOverlay">
-  <div class="modal-bx" role="dialog" aria-modal="true">
-    <button id="wlClose" aria-label="Close" style="position:absolute;top:14px;right:16px;border:none;background:none;font-size:26px;color:#B9A985;cursor:pointer;">&times;</button>
-    <div id="wlHead" style="font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:6px;">Request</div>
-    <h3 id="wlProduct" style="font-size:19px;line-height:1.25;margin:0 0 6px;color:var(--navy);">Product</h3>
-    <p id="wlSub" style="font-size:15px;color:#565A63;margin:0 0 18px;">Leave your contact — we will reach out with the details.</p>
-    <input id="wlName" type="text" placeholder="Your name">
-    <input id="wlContact" type="text" placeholder="Email or phone / Telegram">
-    <textarea id="wlComment" rows="2" placeholder="Comment (optional)"></textarea>
-    <label class="consent" for="wlConsent"><input type="checkbox" id="wlConsent"><span id="wlConsentText">I agree to the <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">privacy policy</a> and to the processing of my personal data</span></label>
-    <button id="wlSubmit" class="btn btn-yellow" style="width:100%;justify-content:center;">Send request</button>
-    <div id="wlNote" style="display:none;font-size:15px;color:#565A63;margin-top:12px;text-align:center;">Sending…</div>
-    <div id="wlOk" style="display:none;font-size:15px;color:#1B6B4A;margin-top:12px;text-align:center;font-weight:600;">Done! We will get in touch.</div>
-    <div id="wlErr" style="display:none;font-size:15px;color:#A3351A;margin-top:12px;text-align:center;"></div>
-  </div>
-</div>
-<script>
-var FORM_I18N={ru:{headApply:'Product request',subApply:'Leave your contact — we will reach out with the details.',name:'Your name',contact:'Email or phone / Telegram',comment:'Comment (optional)',consent:'Я согласен с <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:600;">privacy policy</a> and to the processing of my personal data',submitApply:'Send request',sending:'Sending…',ok:'Done! We will get in touch.',err:'Could not send. Please try again or message us on Telegram.',need:'Please fill in name and contact',needConsent:'Please confirm consent to the policy'}};
-var wlProd='';
-function openForm(prod,label){var t=FORM_I18N.ru;wlProd=prod;document.getElementById('wlHead').textContent=t.headApply;document.getElementById('wlProduct').textContent=label||prod;document.getElementById('wlSub').textContent=t.subApply;document.getElementById('wlName').value='';document.getElementById('wlContact').value='';document.getElementById('wlComment').value='';document.getElementById('wlConsent').checked=false;document.getElementById('wlNote').style.display='none';document.getElementById('wlOk').style.display='none';document.getElementById('wlErr').style.display='none';document.getElementById('wlSubmit').disabled=false;document.getElementById('wlOverlay').style.display='flex';document.body.style.overflow='hidden';}
-function closeForm(){document.getElementById('wlOverlay').style.display='none';document.body.style.overflow='';}
-document.getElementById('wlClose').addEventListener('click',closeForm);
-document.getElementById('wlOverlay').addEventListener('click',function(e){if(e.target===this)closeForm();});
-document.querySelectorAll('.np-form').forEach(function(b){b.addEventListener('click',function(){openForm(this.getAttribute('data-prod'),this.getAttribute('data-label')||this.getAttribute('data-prod'));});});
-document.getElementById('wlSubmit').addEventListener('click',async function(){var t=FORM_I18N.ru;var name=document.getElementById('wlName').value.trim();var contact=document.getElementById('wlContact').value.trim();var comment=document.getElementById('wlComment').value.trim();var consent=document.getElementById('wlConsent').checked;var note=document.getElementById('wlNote'),ok=document.getElementById('wlOk'),err=document.getElementById('wlErr');if(!name||!contact){err.textContent=t.need;err.style.display='block';return;}if(!consent){err.textContent=t.needConsent;err.style.display='block';return;}err.style.display='none';this.disabled=true;note.textContent=t.sending;note.style.display='block';var body={formTitle:'Product request',name:name,company:contact,email:'—',product:wlProd,comment:comment||'—',description:'Request: '+wlProd,language:'EN'};try{var res=await fetch('https://ergp.risk-place.org/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});var r=await res.json();if(!res.ok||!(r.success||r.ok))throw new Error('fail');note.style.display='none';ok.textContent=t.ok;ok.style.display='block';try{ym(110579884,"reachGoal","bcm_pod_klyuch_lead");}catch(x){}try{gtag("event","bcm_pod_klyuch_lead",{});}catch(x){}setTimeout(closeForm,1600);}catch(e){note.style.display='none';err.textContent=t.err;err.style.display='block';this.disabled=false;}});
-</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
 </body>
 </html>

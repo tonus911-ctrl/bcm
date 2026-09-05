@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 560" width="1060" height="560" role="img" aria-label="Turnkey continuity system">
+<rect width="1060" height="560" rx="18" fill="#FFFFFF"/>
+<text x="40" y="52" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="24" font-weight="700" fill="#1E222B" text-anchor="start">Turnkey continuity system</text>
+<text x="40" y="80" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="15" font-weight="500" fill="#7A5E17" text-anchor="start">1–2 months · four steps · the system stays in the company</text>
+<line x1="40" y1="180" x2="1024" y2="180" stroke="#E3D9C2" stroke-width="2"/>
+<rect x="40" y="128" width="228" height="104" rx="14" fill="#F5F1E8" stroke="#E3D9C2"/>
+<circle cx="70" cy="162" r="16" fill="#C9A94E"/>
+<text x="70" y="167" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="13" font-weight="800" fill="#1E222B" text-anchor="middle">01</text>
+<text x="96" y="168" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="20" font-weight="800" fill="#1B3A5C" text-anchor="start">Audit</text>
+<text x="96" y="192" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="500" fill="#565A63" text-anchor="start">what exists today</text>
+<text x="56" y="284" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">critical process list and the</text>
+<text x="56" y="304" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">cost of a downtime day</text>
+<path d="M272,180 L288,180" stroke="#C9A94E" stroke-width="2.5"/>
+<path d="M283,174 L289,180 L283,186" fill="none" stroke="#C9A94E" stroke-width="2.5"/>
+<rect x="292" y="128" width="228" height="104" rx="14" fill="#F5F1E8" stroke="#E3D9C2"/>
+<circle cx="322" cy="162" r="16" fill="#C9A94E"/>
+<text x="322" y="167" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="13" font-weight="800" fill="#1E222B" text-anchor="middle">02</text>
+<text x="348" y="168" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="20" font-weight="800" fill="#1B3A5C" text-anchor="start">Plans</text>
+<text x="348" y="192" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="500" fill="#565A63" text-anchor="start">short, for the worst day</text>
+<text x="308" y="284" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">continuity and recovery plans</text>
+<text x="308" y="304" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">people actually read</text>
+<path d="M524,180 L540,180" stroke="#C9A94E" stroke-width="2.5"/>
+<path d="M535,174 L541,180 L535,186" fill="none" stroke="#C9A94E" stroke-width="2.5"/>
+<rect x="544" y="128" width="228" height="104" rx="14" fill="#F5F1E8" stroke="#E3D9C2"/>
+<circle cx="574" cy="162" r="16" fill="#C9A94E"/>
+<text x="574" y="167" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="13" font-weight="800" fill="#1E222B" text-anchor="middle">03</text>
+<text x="600" y="168" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="20" font-weight="800" fill="#1B3A5C" text-anchor="start">People</text>
+<text x="600" y="192" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="500" fill="#565A63" text-anchor="start">know their roles</text>
+<text x="560" y="284" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">an exercise with the team,</text>
+<text x="560" y="304" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">roles and deputies agreed</text>
+<path d="M776,180 L792,180" stroke="#C9A94E" stroke-width="2.5"/>
+<path d="M787,174 L793,180 L787,186" fill="none" stroke="#C9A94E" stroke-width="2.5"/>
+<rect x="796" y="128" width="228" height="104" rx="14" fill="#F5F1E8" stroke="#E3D9C2"/>
+<circle cx="826" cy="162" r="16" fill="#C9A94E"/>
+<text x="826" y="167" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="13" font-weight="800" fill="#1E222B" text-anchor="middle">04</text>
+<text x="852" y="168" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="20" font-weight="800" fill="#1B3A5C" text-anchor="start">Metrics</text>
+<text x="852" y="192" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="500" fill="#565A63" text-anchor="start">in money</text>
+<text x="812" y="284" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">risk in money, recovery</text>
+<text x="812" y="304" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14.5" font-weight="400" fill="#1E222B" text-anchor="start">targets against reality</text>
+<text x="40" y="260" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="13" font-weight="700" fill="#7A5E17" text-anchor="start">What stays in the company</text>
+<rect x="40" y="356" width="980" height="150" rx="16" fill="#1B3A5C"/>
+<text x="68" y="398" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="15" font-weight="700" fill="#C9A94E" text-anchor="start">What stays</text>
+<text x="68" y="434" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">working plans · trained people · risk in money · measurable recovery</text>
+<text x="68" y="484" font-family="'Manrope','Figtree',Arial,sans-serif" font-size="14" font-weight="400" fill="#C7CDD6" text-anchor="start">Stress-test, strategy session and risk survey are added by task and priced in one quote</text>
+</svg>

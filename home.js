@@ -37,8 +37,8 @@
 
   function ready() {
     apply(initial());
-    var b = document.querySelector('.uh-burger');
-    if (b) b.addEventListener('click', function () { document.getElementById('uhNav').classList.toggle('open'); });
+    /* кнопка ≡: обработчик приходит с подвалом (sync_template v3), здесь его нет,
+       иначе два обработчика гасят друг друга (урок 05.09.2026) */
 
     /* поиск по библиотеке */
     var sf = document.getElementById('mform');

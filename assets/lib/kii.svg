@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" width="640" height="330" role="img" aria-label="Переход КИИ на российские ПАК без остановки бизнеса">
+<rect width="640" height="330" fill="#FFFFFF"/>
+<rect x="34" y="40" width="572" height="250" rx="14" fill="none" stroke="#1B3A5C" stroke-width="2.5"/>
+<text x="58" y="76" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#1B3A5C">Переход КИИ на российские ПАК</text>
+<text x="58" y="100" font-family="Inter, Arial, sans-serif" font-size="15" fill="#565A63">сроки · риски · план с откатом · учения</text>
+<rect x="58" y="122" width="150" height="72" rx="9" fill="#F5F1E8" stroke="#C9A94E" stroke-width="2"/>
+<text x="133" y="152" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#7A5E17" text-anchor="middle">Старая система</text>
+<text x="133" y="174" font-family="Inter, Arial, sans-serif" font-size="14" fill="#565A63" text-anchor="middle">работает до окна</text>
+<path d="M216 158 L242 158" stroke="#1B3A5C" stroke-width="2.4"/><path d="M252 158 L240 152 L240 164 Z" fill="#1B3A5C"/>
+<rect x="260" y="122" width="150" height="72" rx="9" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="2"/>
+<text x="335" y="152" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#1B3A5C" text-anchor="middle">Окно переезда</text>
+<text x="335" y="174" font-family="Inter, Arial, sans-serif" font-size="14" fill="#565A63" text-anchor="middle">не дольше RTO</text>
+<path d="M418 158 L444 158" stroke="#1B3A5C" stroke-width="2.4"/><path d="M454 158 L442 152 L442 164 Z" fill="#1B3A5C"/>
+<rect x="462" y="122" width="120" height="72" rx="9" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="2"/>
+<text x="522" y="152" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#1B3A5C" text-anchor="middle">Новая</text>
+<text x="522" y="174" font-family="Inter, Arial, sans-serif" font-size="14" fill="#565A63" text-anchor="middle">или откат</text>
+<rect x="58" y="212" width="524" height="52" rx="9" fill="#1B3A5C"/>
+<text x="320" y="244" font-family="Inter, Arial, sans-serif" font-size="15" fill="#F5F1E8" text-anchor="middle">Переезд удался, если бизнес этого не заметил</text>
+</svg>

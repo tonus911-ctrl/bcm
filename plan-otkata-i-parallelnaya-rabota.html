@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>План отката и параллельная работа при миграции на ПО</title>
+<meta name="description" content="Как страховать переезд на российское ПО: критерии «переезд не удался», порядок возврата на старую систему, режим двух систем и сверка данных, кто принимает решение.">
+<meta name="keywords" content="план отката, параллельная эксплуатация, миграция на российское по, план миграции, откат системы, кии">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/plan-otkata-i-parallelnaya-rabota.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/plan-otkata-i-parallelnaya-rabota.html">
+<meta property="og:title" content="План отката и параллельная эксплуатация при миграции">
+<meta property="og:description" content="Как страховать переезд на российское ПО: критерии «переезд не удался», порядок возврата на старую систему, режим двух систем и сверка данных, кто принимает решение.">
+<meta property="og:image" content="https://bcm.risk-place.ru/bia-analiz-vozdeystviya.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="План отката и параллельная эксплуатация при миграции">
+<meta name="twitter:description" content="Как страховать переезд на российское ПО: критерии «переезд не удался», порядок возврата на старую систему, режим двух систем и сверка данных, кто принимает решение.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/bia-analiz-vozdeystviya.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<!--TPL:HEADER-->
+<header class="uh">
+  <div class="uh-bar">
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
+    
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+  </div>
+</header>
+<!--/TPL:HEADER-->
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Методология</a><span class="sep">/</span>План отката и параллельная эксплуатация при…</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Переход КИИ на российские ПАК</div>
+  <h1>План отката и параллельная эксплуатация при миграции</h1>
+  <p class="lead">Откат это не признак провала, а часть плана. Переезд без записанных критериев неудачи и порядка возврата превращается в ночь, когда система «почти работает», простой растет, а решение никто не принимает. Разбираем, как записать откат заранее и как жить на двух системах, пока новая не доказала, что справляется.</p>
+  <div class="meta">Обновлено: 8 сентября 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#kriterii">Критерии «переезд не удался»</a>
+    <a href="#poryadok">Порядок возврата</a>
+    <a href="#parallel">Параллельная эксплуатация: правила</a>
+    <a href="#dannye">Данные: что хранить и как сверять</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
+
+<h2 id="kriterii">Критерии «переезд не удался»</h2>
+<p>Самая дорогая ошибка переезда не техническая. Она в том, что в три часа ночи новая система работает наполовину, команда верит, что «еще час и поднимем», и никто не вправе сказать «откатываемся». К утру окно кончилось, процесс стоит, а откатываться уже некуда, потому что в новую систему начали вводить данные.</p>
+<p>Лечится заранее записанными порогами. Их три вида, и все три должны быть в плане до окна:</p>
+<ul>
+  <li><strong>Порог времени.</strong> Из допустимого простоя процесса вычитается время, нужное на откат. Если окно восемь часов, а откат занимает два, решение принимается не позже шестого часа, что бы ни происходило.</li>
+  <li><strong>Порог операций.</strong> Список ключевых операций, которые должны пройти на новой системе до конца окна: проводка, отгрузка, пуск линии, выдача наряда. Не прошла хотя бы одна из списка «обязательных», значит откат.</li>
+  <li><strong>Порог ошибок.</strong> Число и тяжесть ошибок, после которых система считается неработающей, даже если формально запущена. Например, расхождение остатков более чем на заданную долю или недоступность рабочих мест в одном из цехов.</li>
+</ul>
+<p>Пороги согласуются с владельцем процесса до окна и записываются в план. В окне их не обсуждают, по ним действуют. Решение об откате принимает один названный человек, обычно руководитель проекта или ответственный за переход; у команды внедрения права отложить откат нет, потому что она всегда будет верить, что «еще час».</p>
+
+<figure><svg viewBox="0 0 800 232" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Где принимается решение об откате"><text x="400" y="32" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1E222B">Где принимается решение об откате</text><rect x="16" y="50" width="142" height="92" rx="10" fill="#F5F1E8" stroke="#7A5E17" stroke-width="2"/><text x="87.0" y="84" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#7A5E17">Старт окна</text><text x="87.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">старая</text><text x="87.0" y="129" text-anchor="middle" font-size="13.5" fill="#26263a">остановлена,</text><text x="87.0" y="148" text-anchor="middle" font-size="13.5" fill="#26263a">снимок данных</text><path d="M160 96.0 L170 96.0" stroke="#7A5E17" stroke-width="2"/><path d="M166 91.0 L173 96.0 L166 101.0" fill="#7A5E17"/><rect x="172" y="50" width="142" height="92" rx="10" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="1.5"/><text x="243.0" y="84" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#7A5E17">Контроль 1</text><text x="243.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">система</text><text x="243.0" y="129" text-anchor="middle" font-size="13.5" fill="#26263a">поднялась? иначе</text><text x="243.0" y="148" text-anchor="middle" font-size="13.5" fill="#26263a">откат</text><path d="M316 96.0 L326 96.0" stroke="#7A5E17" stroke-width="2"/><path d="M322 91.0 L329 96.0 L322 101.0" fill="#7A5E17"/><rect x="328" y="50" width="142" height="92" rx="10" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="1.5"/><text x="399.0" y="84" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#7A5E17">Контроль 2</text><text x="399.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">ключевые операции</text><text x="399.0" y="129" text-anchor="middle" font-size="13.5" fill="#26263a">прошли?</text><path d="M472 96.0 L482 96.0" stroke="#7A5E17" stroke-width="2"/><path d="M478 91.0 L485 96.0 L478 101.0" fill="#7A5E17"/><rect x="484" y="50" width="142" height="92" rx="10" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="1.5"/><text x="555.0" y="84" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#7A5E17">Порог времени</text><text x="555.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">осталось на</text><text x="555.0" y="129" text-anchor="middle" font-size="13.5" fill="#26263a">откат: решаем</text><path d="M628 96.0 L638 96.0" stroke="#7A5E17" stroke-width="2"/><path d="M634 91.0 L641 96.0 L634 101.0" fill="#7A5E17"/><rect x="640" y="50" width="142" height="92" rx="10" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="1.5"/><text x="711.0" y="84" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#7A5E17">Наблюдение</text><text x="711.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">две системы,</text><text x="711.0" y="129" text-anchor="middle" font-size="13.5" fill="#26263a">сверка</text><rect x="16" y="158" width="768" height="58" rx="10" fill="#FFFFFF" stroke="#1B6B4A" stroke-width="2"/><text x="400" y="181.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B6B4A">Решение об откате принимает названный человек по записанным порогам, а не по</text><text x="400" y="202.0" text-anchor="middle" font-size="14" fill="#26263a">ощущению</text></svg><figcaption>Рис. 1. Точки решения в окне переезда</figcaption></figure>
+<h2 id="poryadok">Порядок возврата</h2>
+<p>Откат это отдельная процедура со своим временем, и она тоже репетируется. Минимальный состав:</p>
+<ol>
+  <li><strong>Снимок перед стартом.</strong> До остановки старой системы делается полная копия данных и конфигурации, проверяется, что она читается. Без этого шага откатываться некуда.</li>
+  <li><strong>Заморозка ввода.</strong> С момента решения об откате ввод в новую систему прекращается. Все, что введено в нее после старта окна, выгружается отдельно для последующего переноса в старую.</li>
+  <li><strong>Возврат старой системы.</strong> Запуск из снимка, проверка ключевых операций по тому же списку, что и для новой. Только после этого процесс объявляется восстановленным.</li>
+  <li><strong>Перенос накопленного.</strong> Данные, введенные в новую систему в окне, переносятся в старую по регламенту, чаще вручную. Объем должен быть известен заранее: если в окне ожидается тысяча операций, ручной перенос займет день, и это надо учесть в допустимом простое.</li>
+  <li><strong>Разбор.</strong> В течение недели фиксируется, что пошло не так, и назначается новое окно. Откат без разбора повторяется.</li>
+</ol>
+<p>Время отката измеряется на стенде до переезда, а не оценивается. Если стенда нет, время отката закладывается с двукратным запасом.</p>
+
+<h2 id="parallel">Параллельная эксплуатация: правила</h2>
+<p>После удачного переезда старую систему не выключают сразу. Несколько недель обе работают: новая ведет процесс, старая доступна для сверки и возврата. Это режим параллельной эксплуатации, и у него есть правила, без которых он порождает больше проблем, чем решает.</p>
+<ul>
+  <li><strong>Одна система ведущая.</strong> Ввод идет только в одну систему. Двойной ввод «для надежности» гарантированно дает расхождение через неделю, и потом никто не знает, где правда.</li>
+  <li><strong>Срок ограничен.</strong> Параллельная работа заканчивается в записанную дату, обычно после закрытия первого отчетного периода на новой системе. Бессрочная параллель это не страховка, а два процесса вместо одного.</li>
+  <li><strong>Сверка ежедневная.</strong> Контрольные суммы, остатки, ключевые показатели сверяются каждый день, расхождения разбираются в тот же день.</li>
+  <li><strong>Выход из параллели по критериям.</strong> Старая система отключается, когда прошел период, сверка сходится и ключевые операции на новой системе выполнены хотя бы один полный цикл.</li>
+</ul>
+<p>Отдельный случай промышленных объектов, где параллельная работа двух систем управления физически невозможна: там ее заменяет оконный переезд по участкам, о нем на странице <a href="zamena-asu-tp-bez-ostanovki.html">замена АСУ ТП без остановки производства</a>.</p>
+<div class="callout">
+  <div class="ct">Кто в компании должен держать план отката?</div>
+  <p>Тот же, кто держит план восстановления после сбоя: откат это восстановление с известной датой. Если план восстановления есть, откат становится его сценарием. Если планов нет, переход хороший повод собрать систему непрерывности целиком, а не писать документ на один переезд.</p>
+  <p><a href="bcm-pod-klyuch.html">Система непрерывности под ключ, включая проект перехода на российские ПАК →</a></p>
+</div>
+
+<h2 id="dannye">Данные: что хранить и как сверять</h2>
+<p>Регулятор про данные при переходе ничего не говорит, а именно они чаще всего становятся причиной отката. Три правила:</p>
+<p>Исходные данные хранятся неизменными до закрытия периода наблюдения, а лучше до конца отчетного года: возможность вернуться к снимку это единственный способ доказать, что перенос был верным.</p>
+<p>Сверка делается по контрольным суммам и по выборкам: суммы ловят потерю записей, выборки ловят искажение содержимого. Одна из двух проверок пропускает половину ошибок.</p>
+<p>Целевая точка восстановления (RPO) для окна переезда назначается отдельно и обычно жестче обычной: терять данные, введенные в окне, нельзя, потому что их некому восстановить по памяти. Как это связано с допустимым простоем: <a href="kategorirovanie-kii-i-vremya-prostoya.html">категорирование и допустимое время простоя</a>.</p>
+
+<h2 id="faq">Частые вопросы</h2>
+<div class="faq"><div class="q">Если откатились, надо ли сообщать регулятору?</div><p>Сам по себе откат не инцидент и не нарушение: план перехода допускает этапы и повторные окна. Сообщать нужно, если откат вызван компьютерным инцидентом или атакой, тогда действуют обычные сроки уведомления НКЦКИ. В остальных случаях откат отражается в отчете о ходе выполнения плана.</p></div>
+<div class="faq"><div class="q">Сколько должна длиться параллельная работа?</div><p>Один полный цикл процесса плюс закрытие периода: для расчетных систем месяц, для производственных несколько смен и одна плановая остановка, для диспетчерских сутки-двое с максимальной нагрузкой. Больше трех месяцев параллель вредна: люди перестают доверять новой системе.</p></div>
+<div class="faq"><div class="q">Кто платит за откат?</div><p>Откат стоит времени простоя и ручного переноса, и эта цена должна быть посчитана до окна. Если она известна и утверждена, решение об откате принимается легко. Если нет, его откладывают, и простой растет. Считать цену простоя помогает страница о стоимости дня простоя в разделе анализа воздействия.</p></div>
+</div>
+<div class="upbox">
+  <span class="k">Опорные страницы раздела</span>
+  <a href="kii-perehod-na-rossijskie-pak.html">Переход КИИ на российские ПАК</a><span class="sep">·</span><a class="sec" href="bia-analiz-vozdeystviya.html">BIA: анализ воздействия на бизнес</a>
+</div>
+<div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="plan-perehoda-na-rossijskoe-po.html" class="rel-card"><div class="rt">План перехода на российское ПО →</div><div class="rd">Обязательные разделы плана перехода субъекта КИИ по проекту Минцифры и разделы непрерывности, без которых план</div></a><a href="plan-avariynogo-vosstanovleniya.html" class="rel-card"><div class="rt">План аварийного восстановления (DRP) →</div><div class="rd">Что такое план аварийного восстановления (DRP), чем он отличается от BCP, что в него входит (RTO/RPO, резервны</div></a><a href="stoimost-dnya-prostoya.html" class="rel-card"><div class="rt">Стоимость простоя →</div><div class="rd">Как посчитать стоимость одного дня простоя бизнеса на примере реального кейса логистической компании и что сде</div></a><a href="bcm-pod-klyuch.html" class="rel-card"><div class="rt">Система непрерывности под ключ →</div><div class="rd">Анализ воздействия, планы, учения и отчет совету. Переход на российские ПАК встраивается как один из сценариев, а не отдельный проект.</div></a></div></div>
+</main>
+</div>
+
+<!--TPL:FOOTER-->
+<footer class="uf"><div class="in">
+  <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
+  <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
+</div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<!--/TPL:FOOTER-->
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
+</body>
+</html>

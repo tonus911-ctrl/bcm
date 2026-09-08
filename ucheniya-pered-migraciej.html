@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Учения перед миграцией: отказ новой системы в первый час</title>
+<meta name="description" content="Как за один день проиграть сценарии «новая система не поднялась», «данные разошлись», «атака в момент переключения»: роли, оповещение, решение об откате, что фиксировать.">
+<meta name="keywords" content="учения непрерывности, киберучения, отказ системы, миграция на российское по, план отката, первый час">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bcm.risk-place.ru/ucheniya-pered-migraciej.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/ucheniya-pered-migraciej.html">
+<meta property="og:title" content="Учения перед переездом: отказ новой системы в первый час">
+<meta property="og:description" content="Как за один день проиграть сценарии «новая система не поднялась», «данные разошлись», «атака в момент переключения»: роли, оповещение, решение об откате, что фиксировать.">
+<meta property="og:image" content="https://bcm.risk-place.ru/bia-analiz-vozdeystviya.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Учения перед переездом: отказ новой системы в первый час">
+<meta name="twitter:description" content="Как за один день проиграть сценарии «новая система не поднялась», «данные разошлись», «атака в момент переключения»: роли, оповещение, решение об откате, что фиксировать.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/bia-analiz-vozdeystviya.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<!--TPL:HEADER-->
+<header class="uh">
+  <div class="uh-bar">
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
+    
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+  </div>
+</header>
+<!--/TPL:HEADER-->
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Методология</a><span class="sep">/</span>Учения перед переездом: отказ новой системы…</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Переход КИИ на российские ПАК</div>
+  <h1>Учения перед переездом: отказ новой системы в первый час</h1>
+  <p class="lead">План перехода на бумаге всегда выглядит убедительно. Учения за месяц до окна показывают, что телефон ответственного не отвечает ночью, у дежурного нет прав на откат, а бумажные журналы лежат в закрытом кабинете. Найти это на учениях стоит день, найти в окне стоит окно.</p>
+  <div class="meta">Обновлено: 8 сентября 2026 г. · Автор: Евгений Теленков · ≈ 7 мин чтения</div>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#zachem">Зачем учения, если есть план</a>
+    <a href="#scenarii">Три сценария для одного дня</a>
+    <a href="#kak-provesti">Как провести за день</a>
+    <a href="#chto-fiksirovat">Что фиксировать и что менять в плане</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
+
+<h2 id="zachem">Зачем учения, если есть план</h2>
+<p>План отвечает на вопрос «что делать». Учения отвечают на вопрос «сможем ли». Разница в деталях, которые не видны на бумаге: доступы, которых нет у ночного дежурного; телефон, который не берут; порог отката, который все помнят по-разному; бумажная схема, которую никто не может найти. По опыту учений перед переездами, половина находок относится не к технике, а к правам, связи и полномочиям.</p>
+<p>Учения перед переездом это учения непрерывности с одним отличием: дата инцидента известна заранее. Поэтому они проще обычных: сценарий уже написан в плане отката, остается его проиграть. Если в компании учения по непрерывности уже проводятся, переезд просто добавляет сценарий. Если нет, это удобный первый опыт: цель и дата понятны всем.</p>
+
+<figure><svg viewBox="0 0 800 332" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Что проигрывается за один день"><text x="400" y="34" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1E222B">Что проигрывается за один день</text><rect x="20" y="52" width="242" height="192" rx="10" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="1.5"/><text x="141.0" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E222B">Система не поднялась</text><text x="141.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">окно идет, ключевые операции</text><text x="141.0" y="130" text-anchor="middle" font-size="13.5" fill="#26263a">не проходят</text><text x="141.0" y="152" text-anchor="middle" font-size="13.5" fill="#26263a">кто фиксирует порог времени</text><text x="141.0" y="174" text-anchor="middle" font-size="13.5" fill="#26263a">кто говорит «откат» и кому</text><rect x="278" y="52" width="242" height="192" rx="10" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="1.5"/><text x="399.0" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E222B">Данные разошлись</text><text x="399.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">сверка после переноса не</text><text x="399.0" y="130" text-anchor="middle" font-size="13.5" fill="#26263a">сходится</text><text x="399.0" y="152" text-anchor="middle" font-size="13.5" fill="#26263a">кто ищет причину, кто</text><text x="399.0" y="172" text-anchor="middle" font-size="13.5" fill="#26263a">останавливает ввод</text><text x="399.0" y="194" text-anchor="middle" font-size="13.5" fill="#26263a">заморозка и ручной перенос</text><rect x="536" y="52" width="242" height="192" rx="10" fill="#FFFFFF" stroke="#E3D9C2" stroke-width="1.5"/><text x="657.0" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E222B">Атака в окне</text><text x="657.0" y="110" text-anchor="middle" font-size="13.5" fill="#26263a">часть защиты снята на время</text><text x="657.0" y="130" text-anchor="middle" font-size="13.5" fill="#26263a">работ</text><text x="657.0" y="152" text-anchor="middle" font-size="13.5" fill="#26263a">сигнал от мониторинга или</text><text x="657.0" y="172" text-anchor="middle" font-size="13.5" fill="#26263a">НКЦКИ</text><text x="657.0" y="194" text-anchor="middle" font-size="13.5" fill="#26263a">продолжать, откатывать или</text><text x="657.0" y="214" text-anchor="middle" font-size="13.5" fill="#26263a">изолировать</text><rect x="20" y="258" width="760" height="56" rx="10" fill="#FFFFFF" stroke="#1B6B4A" stroke-width="2"/><text x="400" y="280.0" text-anchor="middle" font-size="14.5" fill="#26263a">Сценарий считается пройденным, когда каждый шаг сделал названный человек в</text><text x="400" y="300.0" text-anchor="middle" font-size="14.5" fill="#26263a">записанное время</text></svg><figcaption>Рис. 1. Три сценария учений перед переездом</figcaption></figure>
+<h2 id="scenarii">Три сценария для одного дня</h2>
+<p><strong>Сценарий 1. Новая система не поднялась.</strong> Окно идет, ключевые операции из списка не проходят. Проверяется: кто следит за порогом времени, кто и как сообщает о непрохождении операций, кто принимает решение об откате и как оно доводится до всех, сколько реально занимает откат по шагам. Самая частая находка: решение об откате принимает не тот, кто записан, а тот, кто громче.</p>
+<p><strong>Сценарий 2. Данные разошлись.</strong> Переезд формально прошел, но утренняя сверка не сходится. Проверяется: кто замечает, кто останавливает ввод, как ищется причина, как делается ручной перенос и кто его сверяет. Находка: ввод продолжают «пока разбираются», и расхождение растет.</p>
+<p><strong>Сценарий 3. Атака в момент переключения.</strong> На время работ отключена часть средств защиты или открыт удаленный доступ подрядчику, и в это время приходит сигнал об атаке. Проверяется: кто получает сигнал, продолжать ли окно, как изолировать, когда и как сообщить в НКЦКИ, что важнее в этот момент, переезд или защита. Находка: за время работ никто не отвечает за защиту, потому что «все заняты переездом».</p>
+<p>Для промышленных объектов добавляется четвертый сценарий: отказ системы управления в первую смену, с участием самой смены. О нем на странице <a href="zamena-asu-tp-bez-ostanovki.html">замена АСУ ТП без остановки</a>.</p>
+
+<h2 id="kak-provesti">Как провести за день</h2>
+<ol>
+  <li><strong>За неделю.</strong> Ведущий пишет три сценария с вводными по времени, список участников по ролям из плана отката, лист наблюдателя. Участникам сообщается дата, но не сценарии.</li>
+  <li><strong>Утро, час.</strong> Сценарий 1 за столом: вводные подаются по времени, участники говорят, что делают, наблюдатель фиксирует, кто, что и когда. Никаких «мы бы позвонили»: звонок делается, доступ проверяется.</li>
+  <li><strong>День, два часа.</strong> Сценарии 2 и 3 тем же порядком. В сценарии 3 участвует служба информационной безопасности и, если есть, дежурный по взаимодействию с НКЦКИ.</li>
+  <li><strong>Вечер, час.</strong> Разбор: что сделали, что не смогли, что сделали не по плану и почему. Список изменений в план с ответственными и сроком до окна.</li>
+</ol>
+<p>Стенд для учений не обязателен: ценность в людях и решениях, а не в технике. Если стенд есть, сценарий 1 можно проиграть на нем и измерить время отката по-настоящему.</p>
+<div class="callout">
+  <div class="ct">Кто в компании умеет проводить такие учения?</div>
+  <p>Тот, кто умеет проводить учения по непрерывности вообще: сценарий, роли, хронометраж, разбор. Это ремесло, и оно ставится за несколько прогонов. В программе ERGP сценарий учений участник пишет и проводит на своей компании, а не разбирает чужой.</p>
+  <p><a href="onlajn-kurs.html">Сертификация ERGP: система непрерывности на своем случае за шесть модулей →</a></p>
+</div>
+
+<h2 id="chto-fiksirovat">Что фиксировать и что менять в плане</h2>
+<p>Лист наблюдателя простой: время вводной, время реакции, кто среагировал, что сделал, совпало ли с планом. Из него после разбора выходят три списка. Что поправить в плане: пороги, роли, контакты. Что поправить в доступах и технике: права дежурного, резервные каналы связи, место хранения бумажных схем. Что поправить в людях: кто не знал свою роль, кому нужна тренировка до окна.</p>
+<p>Учения без изменений в плане не имели смысла. Учения, после которых план не изменился, означают одно из двух: план идеален или наблюдатель ничего не записал. Второе встречается чаще.</p>
+<p>Результат учений входит в отчет совету перед окном вместе с реестром рисков: это доказательство того, что переезд управляем. Как оформить отчет: <a href="ukaz-604-vremennoe-upravlenie.html">указ 604 и что показать совету</a>.</p>
+
+<h2 id="faq">Частые вопросы</h2>
+<div class="faq"><div class="q">Можно ли совместить учения по переезду с киберучениями?</div><p>Да, сценарий 3 и есть киберучения с одной вводной. Если в компании киберучения уже проводятся, переезд добавляет в них два сценария, а не создает отдельное мероприятие. Разбор общих принципов на странице о киберучениях в разделе про кризис.</p></div>
+<div class="faq"><div class="q">Кто должен участвовать: только ИТ?</div><p>Нет. Владелец процесса, который решает по порогам, руководитель производства или операций, безопасность, юрист по договору с подрядчиком, представитель подрядчика, дежурные смены. ИТ без владельца процесса проиграет сценарий технически верно и пропустит главное решение.</p></div>
+<div class="faq"><div class="q">За сколько до окна проводить?</div><p>За три-четыре недели: чтобы успеть внести изменения в план и, если нужно, повторить один сценарий. Учения накануне окна находят проблемы, которые уже не исправить.</p></div>
+</div>
+<div class="upbox">
+  <span class="k">Опорные страницы раздела</span>
+  <a href="kii-perehod-na-rossijskie-pak.html">Переход КИИ на российские ПАК</a><span class="sep">·</span><a class="sec" href="bia-analiz-vozdeystviya.html">BIA: анализ воздействия на бизнес</a>
+</div>
+<div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="kii-perehod-na-rossijskie-pak.html" class="rel-card"><div class="rt">Переход КИИ на российские ПАК →</div><div class="rd">Что обязаны субъекты КИИ и к какому сроку, почему переход на российские ПАК это проект непрерывности и шесть ш</div></a><a href="kiberucheniya.html" class="rel-card"><div class="rt">Киберучения →</div><div class="rd">Киберучения для бизнеса: как провести настольную репетицию атаки шифровальщика — сценарий, роли, тайминг, метр</div></a><a href="plan-deystviy-pri-kiberatake.html" class="rel-card"><div class="rt">Вирус-шифровальщик и кибератака →</div><div class="rd">Пошаговый план действий в первые часы после кибератаки или шифровальщика: изоляция, оценка, коммуникации, восс</div></a><a href="onlajn-kurs.html" class="rel-card"><div class="rt">Сертификация ERGP →</div><div class="rd">Анализ воздействия, реестр рисков, план с откатом и сценарий учений делаются на своем случае за шесть модулей. Именной сертификат в открытом реестре.</div></a></div></div>
+</main>
+</div>
+
+<!--TPL:FOOTER-->
+<footer class="uf"><div class="in">
+  <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
+  <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
+</div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<!--/TPL:FOOTER-->
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
+</body>
+</html>

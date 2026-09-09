@@ -198,6 +198,10 @@ h1,h2,h3,h4{color:var(--ink);text-wrap:pretty}
 .steps span{font-size:14.5px;line-height:1.5;color:var(--muted)}
 .steps.w{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .steps.w .nr{grid-template-columns:52px 1fr}
+.steps.two{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 40px;margin-top:20px}
+.steps.two .nr{grid-template-columns:52px 1fr}
+.steps+.note,.steps+p{margin-top:24px}
+@media(max-width:640px){.steps.two{grid-template-columns:1fr}}
 
 /* Сетки и карточки.
    Правило Евгения (05.09.2026): два-три однотипных блока в одной строке
@@ -366,6 +370,8 @@ textarea.fld{resize:vertical}
 .article ol{margin:0 0 14px 22px;font-size:16px;line-height:1.65;color:#2B323C}
 .article li{margin-bottom:7px}
 .article a{text-decoration:underline;text-underline-offset:2px}
+.article .no{text-decoration:line-through;text-decoration-color:var(--red);color:var(--muted)}
+.article svg{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff;margin:18px 0}
 .article blockquote{border-left:3px solid var(--gold);background:var(--panel);border-radius:0 6px 6px 0;padding:14px 20px;margin:20px 0;font-family:var(--serif);font-size:18px;color:var(--ink)}
 .article img{border:1px solid var(--line);border-radius:6px;margin:16px 0;display:block}
 .callout{background:var(--panel-2);border:1px solid var(--line-4);border-left:3px solid var(--gold);border-radius:6px;padding:16px 20px;margin:20px 0;font-size:15.5px;color:var(--ink)}

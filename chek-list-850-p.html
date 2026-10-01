@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чек-лист 850-П (бывшее 787-П): операционная надежность банка</title>
+<meta name="description" content="Чек-лист самопроверки требований Положения Банка России 850-П, заменившего 787-П: процессы, целевые показатели, критичная архитектура, инциденты, план ОНиВД, тестирование, поставщики. 22 пункта, xlsx.">
+<meta name="keywords" content="Чек-лист 850-П">
+<meta name="author" content="Евгений Теленков">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/chek-list-850-p.html">
+<link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-chek-list-850-p.html">
+<link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/chek-list-850-p.html">
+<link rel="canonical" href="https://bcm.risk-place.ru/chek-list-850-p.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/chek-list-850-p.html">
+<meta property="og:title" content="Чек-лист 850-П (бывшее 787-П): операционная надежность банка">
+<meta property="og:description" content="Чек-лист самопроверки требований Положения Банка России 850-П, заменившего 787-П: процессы, целевые показатели, критичная архитектура, инциденты, план ОНиВД, тестирование, поставщики. 22 пункта, xlsx.">
+<meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Чек-лист 850-П (бывшее 787-П): операционная надежность банка">
+<meta name="twitter:description" content="Чек-лист самопроверки требований Положения Банка России 850-П, заменившего 787-П: процессы, целевые показатели, критичная архитектура, инциденты, план ОНиВД, тестирование, поставщики. 22 пункта, xlsx.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/chek-list-850-p.html#article",
+      "headline": "Чек-лист 850-П (бывшее 787-П): операционная надежность банка",
+      "description": "Чек-лист самопроверки требований Положения Банка России 850-П, заменившего 787-П: процессы, целевые показатели, критичная архитектура, инциденты, план ОНиВД, тестирование, поставщики. 22 пункта, xlsx.",
+      "image": "https://bcm.risk-place.ru/og-bcm-site.png",
+      "datePublished": "2026-10-01",
+      "dateModified": "2026-10-01",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Person",
+        "name": "Евгений Теленков",
+        "url": "https://bcm.risk-place.ru/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/chek-list-850-p.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Материалы",
+          "item": "https://bcm.risk-place.ru/materialy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Чек-лист 850-П",
+          "item": "https://bcm.risk-place.ru/chek-list-850-p.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "787-П отменено или действует?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Положение Банка России № 787-П от 12.01.2022 утратило силу 3 мая 2025 года. Его заменило Положение № 850-П от 13.01.2025, отдельные нормы которого вступили в силу с 1 октября 2025 года. Внутренние документы со ссылкой на 787-П нужно пересмотреть."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "На кого распространяется 850-П?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "На кредитные организации, включая небанковские, и филиалы иностранных банков в России. Для некредитных финансовых организаций действует Положение 779-П."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что проверяет Банк России по операционной надежности?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Наличие перечня технологических процессов с допустимым временем простоя, целевых показателей с сигнальными и контрольными значениями, описания критичной архитектуры, плана ОНиВД, программы и протоколов тестирования, порядка управления инцидентами и информирования регулятора, требований к поставщикам."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как связаны 850-П и 716-П?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "716-П задает систему управления операционным риском, базу событий и контрольные показатели уровня операционного риска; 850-П опирается на них при установлении и пересмотре целевых показателей операционной надежности. Требование к плану ОНиВД содержится в 716-П."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!--TPL:HEADER-->
+<header class="uh">
+  <div class="uh-bar">
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <nav class="uh-nav" id="uhNav"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html" class="act">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></nav>
+    <span class="uh-lang"><a href="kri-i-kpi.html" class="act">RU</a><a href="en-kri-i-kpi.html">EN</a></span>
+    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+  </div>
+</header>
+<!--/TPL:HEADER-->
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Главная</a><span class="sep">/</span><a href="materialy.html">Материалы</a><span class="sep">/</span>Чек-лист 850-П</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Управление рисками</div>
+  <h1>Чек-лист требований 850-П к операционной надежности</h1>
+  <p class="lead">Положение 787-П утратило силу 3 мая 2025 года, его заменило 850-П, а внутренние документы многих банков до сих пор ссылаются на старый номер. Чек-лист ниже собирает требования по содержанию 850-П во взаимосвязи с 716-П и 851-П в 22 пункта с указанием, какой документ предъявить по каждому. Файл xlsx со статусами и сводкой скачивается без регистрации. Нормативная база целиком разобрана на странице <a href="onivd-ponivd.html">про ОНиВД</a>.</p>
+  <div class="meta">Обновлено: 17 августа 2026 г. · Автор: Евгений Теленков · ≈ 4 мин чтения</div>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">На странице</div>
+  <nav>
+    <a href="#s1">Что изменилось с 787-П</a>
+    <a href="#s2">Восемь областей проверки</a>
+    <a href="#s3">Как пользоваться</a>
+    <a href="#s4">Скачать чек-лист</a>
+    <a href="#s5">Где чаще всего пробел</a>
+    <a href="#faq">Частые вопросы</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
+<h2 id="s1">Что изменилось при переходе с 787-П на 850-П</h2>
+<p>Для самопроверки важны четыре вещи. Первая: номер и дата, все внутренние документы со ссылкой на 787-П подлежат пересмотру. Вторая: связка с 851-П по защите информации вместо 683-П в части критичной архитектуры. Третья: сохранена и уточнена логика целевых показателей, сигнальных и контрольных значений, с пересмотром не реже раза в год во взаимосвязи с контрольными показателями операционного риска по 716-П. Четвертая: отдельные нормы вступили в силу с 1 октября 2025 года, поэтому проверка на 2026 год ведется по полной редакции.</p><p class="note">Состав приведен по состоянию на сентябрь 2026 года. Перед проверкой сверьте действующую редакцию на сайте Банка России: регулирование в этой области обновляется каждые два-три года.</p>
+<h2 id="s2">Восемь областей и 22 пункта</h2>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Область</th><th>Пунктов</th><th>Главный документ-доказательство</th></tr></thead><tbody><tr><td>Нормативная база</td><td>1</td><td>Перечень внутренних документов с актуальными ссылками</td></tr><tr><td>Технологические процессы</td><td>2</td><td>Утвержденный перечень с владельцами и допустимым временем простоя</td></tr><tr><td>Целевые показатели операционной надежности</td><td>3</td><td>Методика расчета, квартальный отчет, протокол пересмотра</td></tr><tr><td>Критичная архитектура и изменения</td><td>3</td><td>Схема, реестр единых точек отказа, регламент изменений</td></tr><tr><td>Инциденты</td><td>3</td><td>База событий, регламент уведомления Банка России, разборы</td></tr><tr><td>План ОНиВД и тестирование</td><td>4</td><td>План, программа тестирования, протоколы</td></tr><tr><td>Поставщики и персонал</td><td>3</td><td>Реестр поставщиков с договорными требованиями, матрица замещения</td></tr><tr><td>Отчетность, контроль, защита информации</td><td>3</td><td>Протоколы правления и совета, отчет аудита, оценка по 851-П</td></tr></tbody></table></div>
+<h2 id="s3">Как пользоваться чек-листом</h2>
+<ol><li>По каждому пункту поставить статус: выполнено, частично, нет. Лист «Сводка» считает итоги сам.</li><li>В столбце «что проверить» перечислены документы; если документа нет физически, статус «нет», даже когда «все и так делается».</li><li>Для статусов «частично» и «нет» назначить ответственного и срок. Это и есть план приведения в соответствие.</li><li>Повторять ежеквартально вместе с расчетом показателей; заполненный чек-лист с историей статусов показывать внутреннему аудиту и при проверке.</li></ol>
+<h2 id="s4">Скачать чек-лист</h2>
+<div class="inset"><p><b>Скачать шаблон.</b> Лист «Чек-лист 850-П»: 22 требования по восьми областям, столбцы «что проверить», статус, ответственный, срок. Лист «Сводка» с формулами. Формат xlsx.</p><div class="btns"><a class="btn navy" href="files/chek-list-850-p.xlsx" download>Скачать xlsx (chek-list-850-p.xlsx)</a></div><p class="note">Чек-лист составлен по содержанию положения и служит инструментом самопроверки; номера пунктов сверяйте с действующей редакцией. Файл отдается без регистрации и форм. Если шаблон нужно адаптировать под вашу организацию или пройти с ним проверку, напишите: <a href="dlya-kompanij.html">как мы это делаем и сколько занимает</a>.</p></div>
+<h2 id="s5">Где чаще всего пробел</h2>
+<ul><li><b>Поставщики.</b> Договоры с критичными поставщиками подписаны до 2022 года и требований к непрерывности, уведомлению об инцидентах и праву проверки в них нет.</li><li><b>Единые точки отказа.</b> Выявлены, но по ним нет решения: ни резерва, ни принятого риска с подписью.</li><li><b>Целевые показатели.</b> Утверждены один раз при внедрении 787-П и с тех пор не пересматривались, статистика инцидентов в пересмотре не использована.</li><li><b>Тестирование.</b> Программа есть, протоколы формальные, план устранения недостатков без отметок о выполнении.</li><li><b>Ссылки на 787-П и 683-П</b> в плане ОНиВД, политике и регламентах.</li></ul><p>Структура плана, который закрывает большую часть пунктов, лежит на странице <a href="plan-onivd-obrazec.html">«План ОНиВД: образец»</a>; порядок тестирования на странице <a href="testirovanie-plana-onivd.html">«Тестирование плана ОНиВД»</a>.</p>
+<h2 id="faq">Частые вопросы</h2>
+<div class="faq"><div class="q">787-П отменено или действует</div><p>Положение Банка России № 787-П от 12.01.2022 утратило силу 3 мая 2025 года. Его заменило Положение № 850-П от 13.01.2025, отдельные нормы которого вступили в силу с 1 октября 2025 года. Внутренние документы со ссылкой на 787-П нужно пересмотреть.</p></div><div class="faq"><div class="q">На кого распространяется 850-П</div><p>На кредитные организации, включая небанковские, и филиалы иностранных банков в России. Для некредитных финансовых организаций действует Положение 779-П.</p></div><div class="faq"><div class="q">Что проверяет Банк России по операционной надежности</div><p>Наличие перечня технологических процессов с допустимым временем простоя, целевых показателей с сигнальными и контрольными значениями, описания критичной архитектуры, плана ОНиВД, программы и протоколов тестирования, порядка управления инцидентами и информирования регулятора, требований к поставщикам.</p></div><div class="faq"><div class="q">Как связаны 850-П и 716-П</div><p>716-П задает систему управления операционным риском, базу событий и контрольные показатели уровня операционного риска; 850-П опирается на них при установлении и пересмотре целевых показателей операционной надежности. Требование к плану ОНиВД содержится в 716-П.</p></div><div class="upbox">
+  <span class="k">Раздел 03 · Управление рисками</span>
+  <a href="sistema-upravleniya-riskami.html">СУР без бюрократии →</a>
+  <span class="sep">·</span>
+  <a class="sec" href="materialy.html#riski">Все материалы раздела</a>
+</div>
+  <div class="inset cta">
+  <h3>От реестра рисков к решениям руководства</h3>
+  <p>Проверьте, доходят ли ваши риски до тех, кто принимает решения. Дашборд показывает состояние одним экраном, система под ключ доводит его до рабочего.</p>
+  <div class="btns">
+    <a href="quiz.html" class="btn gold">Пройти диагностику бесплатно →</a>
+    <a href="dashboard.html" class="btn line">Дашборд непрерывности →</a>
+    <a href="bcm-pod-klyuch.html" class="btn line">Система под ключ →</a>
+  </div>
+</div>
+<div class="rel"><div class="k">Читайте также</div><div class="rel-grid"><a href="onivd-ponivd.html" class="rel-card"><div class="rt">ОНиВД и ПОНиВД →</div><div class="rd">Нормативная база 2026 года и требования</div></a><a href="plan-onivd-obrazec.html" class="rel-card"><div class="rt">План ОНиВД: образец →</div><div class="rd">Структура из 11 разделов и шаблон</div></a><a href="edinaya-tochka-otkaza.html" class="rel-card"><div class="rt">Единая точка отказа →</div><div class="rd">Как найти и устранить</div></a></div></div>
+</main>
+</div>
+
+<!--TPL:FOOTER-->
+<footer class="uf"><div class="in">
+  <div class="row1"><a href="onlajn-kurs.html">Сертификация ERGP</a><a href="kultura-bezopasnosti.html">Программа SAFE</a><a href="dlya-kompanij.html">Для компаний</a><a href="materialy.html">Методология</a><a href="o-podhode.html">О нас</a><a href="index.html#contacts">Контакты</a></div>
+  <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Проверить сертификат</a><a href="privacy-policy.html">Политика конфиденциальности</a><a href="oferta.html">Публичная оферта</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
+</div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<!--/TPL:FOOTER-->
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
+</body>
+</html>

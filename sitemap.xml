@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/materialy.html</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -55,7 +55,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/bia-analiz-vozdeystviya.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -127,7 +127,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/plan-nepreryvnosti-biznesa.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -151,7 +151,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/reestr-kriticheskih-processov.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -613,4 +613,9 @@
 <url><loc>https://bcm.risk-place.ru/ukaz-604-vremennoe-upravlenie.html</loc><lastmod>2026-09-08</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/podryadchiki-pri-perehode-kii.html</loc><lastmod>2026-09-08</lastmod></url>
   <url><loc>https://bcm.risk-place.ru/cro-direktor-po-riskam.html</loc><lastmod>2026-09-28</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/plan-onivd-obrazec.html</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/testirovanie-plana-onivd.html</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/politika-operacionnoj-ustojchivosti.html</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/matrica-rto-rpo.html</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/chek-list-850-p.html</loc><lastmod>2026-10-01</lastmod></url>
 </urlset>

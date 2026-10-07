@@ -345,7 +345,7 @@ ru:[
    desc:"Осознание рисков есть, отдельные элементы защиты работают. Но нет регулярного тестирования, часть процессов не охвачена, команда не тренирована. Риск снижен, но не управляем.",
    risks:"Пробелы обнаруживаются только в реальном кризисе. Команда знает теоретически, но не практически.",
    stepsSmall:"Зафиксируем письменно все ключевые договоренности: кто за что отвечает, как связаться в кризис, где хранятся данные. Посчитаем день простоя в деньгах и определим финансовую подушку — сколько нужно держать в резерве. Проведем простую проверку: что случится, если одновременно уйдет ключевой сотрудник и упадет основной инструмент работы.",
-   stepsBig:"Стресс-тест на 3–5 ключевых сценариев: что происходит с выручкой при каждом? Закроем критические пробелы в плане. Обучение команды — не лекция, а практика: как действовать в первые часы кризиса. Определим допустимое время восстановления для каждого процесса и заложим резервные мощности."},
+   stepsBig:"Проверим план на учениях по 3–5 ключевым сценариям: что происходит с выручкой при каждом? Закроем критические пробелы в плане. Обучение команды строится на практике: как действовать в первые часы кризиса. Определим допустимое время восстановления для каждого процесса и заложим резервные мощности."},
   {n:4,name:"Управляемый",theme:"t4",tc:"t4-c",
    sub:"Система работает, есть точки роста",
    desc:"Работающая система защиты. Критичные процессы задокументированы, планы восстановления есть, команда обучена. Зоны роста — смежные риски и нестандартные сценарии.",
@@ -377,7 +377,7 @@ en:[
    desc:"Risk awareness exists and individual protective elements work. But no regular testing, some processes uncovered, team not trained.",
    risks:"Gaps only discovered during a real crisis. Team knows theoretically but not practically.",
    stepsSmall:"Document all key arrangements in writing: who is responsible for what, how to reach people in a crisis, where data is stored. Calculate one day of downtime in monetary terms and determine a financial cushion. Run a simple check: what happens if a key person leaves at the same time your main tool goes down.",
-   stepsBig:"Stress-test across 3–5 key scenarios: what happens to revenue in each? Close critical gaps. Team training — not a lecture, but practical exercises. Define recovery time targets for each process."},
+   stepsBig:"Test the plan in drills across 3–5 key scenarios: what happens to revenue in each? Close critical gaps. Team training is built on practical exercises. Define recovery time targets for each process."},
   {n:4,name:"Managed",theme:"t4",tc:"t4-c",
    sub:"System works — growth areas remain",
    desc:"A working protection system. Critical processes documented, recovery plans exist, team trained. Growth areas: adjacent risks and non-standard scenarios.",
@@ -587,39 +587,20 @@ var SIZE_LABEL={sm:'до 50 сотрудников',md:'50–250 сотрудн�
 var SIZE_MAP=['sm','sm','md','lg']; // ответ на вопрос 1 (2–7 / 8–30 / 31–200 / >200) → размер
 var SIZE_TEXT=['2–7 человек','8–30 человек','31–200 человек','более 200 человек']; // для лида в Telegram — как ответил
 var PRODUCTS={
- templates:{ru:'Пакет шаблонов «BCM-старт»',en:'Template pack “BCM Start”',url:'shablony.html',mode:'buy'},
- course:{ru:'Онлайн-курс «Непрерывность и ISO 22301»',en:'Online course “Continuity & ISO 22301”',url:'onlajn-kurs.html',mode:'buy'},
- game:{ru:'Стресс-тест непрерывности бизнеса',en:'Business continuity stress test',url:'stress-test-nepreryvnosti.html',mode:'apply'},
- dashboard:{ru:'Дашборд непрерывности и рисков',en:'Continuity & Risk Dashboard',url:'dashboard.html',mode:'apply'},
  turnkey:{ru:'BCM под ключ',en:'BCM audit and development',url:'bcm-pod-klyuch.html',mode:'apply'},
- audit:{ru:'BCM под ключ — независимый аудит',en:'BCM — independent audit',url:'bcm-pod-klyuch.html',mode:'apply'},
- cert:{ru:'Сертификация «Специалист по непрерывности»',en:'Certification “Continuity Specialist”',url:'index.html#products',mode:'wait'},
+ dashboard:{ru:'Дашборд непрерывности и рисков',en:'Continuity & Risk Dashboard',url:'dashboard.html',mode:'apply'},
+ ergp:{ru:'Обучение: сертификация ERGP',en:'Training: ERGP certification',url:'onlajn-kurs.html',mode:'buy'},
  review:{ru:'Личный разбор с экспертом',en:'Personal review with an expert',url:'',mode:'apply'}
 };
-var MATRIX={
- sm:{
-  1:{p:'templates',a:'course',why:{ru:'Системы пока нет — заложите фундамент готовыми шаблонами: быстро и недорого.',en:'No system yet — lay the foundation with ready templates: fast and inexpensive.'}},
-  2:{p:'course',a:'templates',why:{ru:'Реакция есть, системы нет — курс превратит тушение пожаров в понятный план.',en:'You react but have no system — the course turns firefighting into a clear plan.'}},
-  3:{p:'course',a:'review',why:{ru:'База есть — доведите ее до системы: пройдите курс и закрепите практики.',en:'You have a base — turn it into a system: take the course and lock in the practices.'}},
-  4:{p:'review',a:'cert',why:{ru:'Сильно для вашего размера — разберем результат с экспертом и наметим тонкую настройку.',en:'Strong for your size — let us review the result with an expert and fine-tune.'}},
-  5:{p:'cert',a:'review',why:{ru:'Вы в топе — подтвердите статус сертификацией и держите планку.',en:'You are at the top — confirm your status with certification and keep the bar high.'}}
- },
- md:{
-  1:{p:'turnkey',a:'review',why:{ru:'На вашем масштабе один сбой стоит дорого — нужна система: аудит, план, учения. Не уверены в объеме — начните с личного разбора.',en:'At your scale one failure is costly — you need a system: audit, plan, drills. Unsure of scope — start with a personal review.'}},
-  2:{p:'turnkey',a:'game',why:{ru:'Пора от реакции к системе — внедрим BCM под ключ; проверить готовность можно на двухдневном стресс-тесте.',en:'Time to move from reaction to a system — we implement BCM end-to-end; test readiness in the two-day stress test.'}},
-  3:{p:'game',a:'dashboard',why:{ru:'База есть — проверьте план под давлением на стресс-тесте непрерывности и найдите слабые места на практике.',en:'You have a base — stress-test the plan in a live readiness test and find weak spots in practice.'}},
-  4:{p:'dashboard',a:'game',why:{ru:'Система работает — сделайте устойчивость видимой на дашборде и держите ее под контролем.',en:'The system works — make resilience visible on a dashboard and keep it under control.'}},
-  5:{p:'audit',a:'cert',why:{ru:'Сильная система — проверьте независимым взглядом то, что не видно изнутри.',en:'Strong system — validate independently what is invisible from the inside.'}}
- },
- lg:{
-  1:{p:'turnkey',a:'review',why:{ru:'Для компании вашего масштаба отсутствие BCM — критический риск. Нужен полноценный проект внедрения.',en:'For a company your size, the absence of BCM is a critical risk. A full implementation project is needed.'}},
-  2:{p:'turnkey',a:'dashboard',why:{ru:'Реактивный режим на таком масштабе опасен — внедрим систему непрерывности под ключ.',en:'Reactive mode at this scale is dangerous — we implement a continuity system end-to-end.'}},
-  3:{p:'dashboard',a:'game',why:{ru:'Держите устойчивость на одном экране — для совета директоров и управленческих решений.',en:'Keep resilience on one screen — for the board and management decisions.'}},
-  4:{p:'audit',a:'dashboard',why:{ru:'Сильная система — независимый аудит выявит уязвимости, невидимые изнутри.',en:'Strong system — an independent audit surfaces vulnerabilities invisible from the inside.'}},
-  5:{p:'audit',a:'dashboard',why:{ru:'Вы в топе — закрепите результат независимым аудитом и мониторингом на дашборде.',en:'You are at the top — lock in the result with an independent audit and dashboard monitoring.'}}
- }
+// 07.10.2026: уровни 4-5 получают дашборд, уровни 1-3 BCM под ключ, обучение ERGP рекомендуется всем.
+var REC={
+ 1:{p:'turnkey',a:'ergp',why:{ru:'Системы пока нет, и первый серьезный сбой остановит выручку. Внедрим BCM под ключ: карта критических процессов, план, учения. Ответственный за непрерывность пройдет сертификацию ERGP и будет вести систему после проекта.',en:'There is no system yet, and the first serious disruption will stop revenue. We implement BCM end-to-end: critical process map, plan, drills. The person in charge completes ERGP certification and runs the system after the project.'}},
+ 2:{p:'turnkey',a:'ergp',why:{ru:'Пора перейти от реакции к системе: внедрим BCM под ключ с планом, ролями и учениями. Сертификация ERGP научит ответственного держать систему в рабочем состоянии.',en:'Time to move from reaction to a system: we implement BCM end-to-end with a plan, roles and drills. ERGP certification teaches the person in charge to keep it working.'}},
+ 3:{p:'turnkey',a:'ergp',why:{ru:'База есть, пробелы найдутся в первом реальном кризисе. Доведем ее до системы под ключ и проверим план на учениях. Сертификация ERGP закрепит практику у команды.',en:'You have a base, and the gaps will show in the first real crisis. We turn it into a full system and test the plan in drills. ERGP certification locks the practice in the team.'}},
+ 4:{p:'dashboard',a:'ergp',why:{ru:'Система работает. Сделайте устойчивость видимой для руководства на одном экране: индекс, стоимость дня простоя, цели восстановления против факта. Сертификация ERGP поможет команде удерживать уровень.',en:'The system works. Make resilience visible to management on one screen: index, cost of a downtime day, recovery targets against reality. ERGP certification helps the team hold the level.'}},
+ 5:{p:'dashboard',a:'ergp',why:{ru:'Сильная система. Держите ее под контролем на дашборде для правления и совета директоров. Сертификация ERGP подтвердит квалификацию команды.',en:'A strong system. Keep it under control on a dashboard for the board and management. ERGP certification confirms the team\'s qualification.'}}
 };
-function recCell(){ return (MATRIX[finalSize]||MATRIX.md)[finalLevel.n]; }
+function recCell(){ return REC[finalLevel.n] || REC[1]; }
 function ctaLabel(mode){ var t=T[lang]; return mode==='buy'?t.ctaBuy:(mode==='wait'?t.ctaWait:t.ctaApply); }
 function actFor(key){ var p=PRODUCTS[key]; return function(){ try { ym(110579884, 'reachGoal', 'product_click'); } catch (e) {} if(p.mode==='buy'&&p.url){ window.location.href=p.url; } else { showLeadForm(key); } }; }
 function renderRecommendation(){

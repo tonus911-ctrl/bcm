@@ -195,7 +195,7 @@ ru:{
   introTitle:"Насколько устойчив ваш бизнес к серьезному сбою?",
   introDesc:"13 вопросов — результат вы увидите сразу на экране. Никакого жаргона, только практические вопросы.",
   introHl:"Кибератака, уход ключевого сотрудника, пандемия, сбой поставщика — один инцидент может остановить бизнес на недели. Узнайте, готовы ли вы.",
-  meta:["5–7 минут","13 вопросов","Бесплатно"],
+  meta:["около 5 минут","13 вопросов","Бесплатно"],
   startBtn:"Начать диагностику →",
   qBack:"← Назад",qNext:"Далее →",qFinish:"Получить результат →",
   whatLabel:"Что это значит",risksLabel:"Ключевые риски",stepsLabel:"Что мы сделаем вместе",
@@ -750,7 +750,7 @@ function showResults() {
   document.getElementById("resDesc").textContent = lv.desc;
   document.getElementById("resRisks").innerHTML =
     lv.risks.split(". ").filter(Boolean)
-      .map(s=>`<p>— ${s.trim()}.</p>`).join("");
+      .map(s=>`<p>— ${s.trim().replace(/[.]$/,'')}.</p>`).join("");
 
   const stepsLines = finalSteps.split("\n").filter(Boolean);
   document.getElementById("resSteps").innerHTML =

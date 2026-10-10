@@ -790,3 +790,27 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
   .pk .road .n{width:32px;height:32px;font-size:12px}
   .pk .ps .inset,.pk .ps .callout{padding-right:18px}
 }
+
+/* ═══ ХАБ «ДЛЯ КОМПАНИЙ» (.pk.hub): четыре продукта одной формы ═══
+   Каждый продукт: метка, название, одна фраза, три строки «что получаете»,
+   одинаковая строка «формат · срок · стоимость», одна ссылка. Без рамок:
+   верхняя золотая линейка, равная высота в ряду, ссылка прижата к низу. */
+.pk.hub{--pk-g:0px}
+.pk.hub .ps>*{padding-left:0}
+.pk .prod{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px 48px;align-items:stretch}
+.pk .prod>div{border-top:2px solid var(--gold);padding-top:18px;display:flex;flex-direction:column;min-width:0}
+.pk .prod .k{margin-bottom:10px}
+.pk .prod h3{font-size:18px;line-height:1.3;margin:0 0 10px;letter-spacing:-.005em}
+.pk .prod p{font-size:15.5px;line-height:1.55;color:var(--muted);margin:0 0 14px;max-width:none}
+.pk .prod ul{list-style:none;margin:0 0 16px;padding:0}
+.pk .prod li{position:relative;padding-left:18px;font-size:15px;line-height:1.5;color:var(--muted);margin-bottom:6px}
+.pk .prod li::before{content:'';position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--gold)}
+.pk .prod .meta{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pk .prod .meta span{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:2px}
+.pk .prod .meta b{display:block;font-size:14px;font-weight:700;line-height:1.35;color:var(--ink)}
+.pk .prod .more{display:inline-block;margin-top:16px;font-size:15px}
+.pk .pick{list-style:none;margin:0;padding:0;max-width:72ch}
+.pk .pick li{display:grid;grid-template-columns:minmax(200px,1fr) auto;gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--line-2);font-size:15.5px;line-height:1.5;color:var(--muted)}
+.pk .pick li:first-child{border-top:0;padding-top:0}
+.pk .pick a{font-weight:700;color:var(--navy);white-space:nowrap}
+@media(max-width:560px){.pk .prod{gap:28px}.pk .prod .meta{grid-template-columns:1fr 1fr}.pk .pick li{grid-template-columns:1fr}}

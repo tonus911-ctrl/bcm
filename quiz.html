@@ -834,12 +834,12 @@ function renderBookMagnet(){
   var ru=(lang==='ru'); var t=T[lang];
   var m={
     'qb-eyebrow':['Подарок за прохождение','A gift for completing'],
-    'qb-title':['Заберите книгу «BCM без иллюзий» — бесплатно','Get the book «BCM without illusions» — free'],
+    'qb-title':['Заберите книгу «BCM без иллюзий» — бесплатно','Get the book “BCM without illusions” — free'],
     'qb-desc':['15 страниц практики: как защитить денежный поток — оценка, план BCP, действия в день сбоя.','15 pages of practice: how to protect cash flow — assessment, a BCP plan, actions on the day of an outage.'],
     'qb-btn':['Забрать книгу бесплатно →','Get the book for free →'],
     'qb-note':['Пришлем PDF на вашу почту в течение 24 часов.','We will email the PDF within 24 hours.'],
     'qb-ok-title':['Спасибо! Книга уже в пути','Thank you! The book is on its way'],
-    'qb-ok-desc':['Пришлем «BCM без иллюзий» на почту в течение 24 часов. Проверьте папку «Спам».','We will email «BCM without illusions» within 24 hours. Please check your Spam folder.']
+    'qb-ok-desc':['Пришлем «BCM без иллюзий» на почту в течение 24 часов. Проверьте папку «Спам».','We will email “BCM without illusions” within 24 hours. Please check your Spam folder.']
   };
   for(var k in m){var e=document.getElementById(k);if(e)e.textContent=ru?m[k][0]:m[k][1];}
   var cs=document.getElementById('qb-consent'); if(cs)cs.innerHTML=t.consentText;

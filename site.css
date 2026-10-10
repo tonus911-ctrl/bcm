@@ -720,7 +720,7 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 .hub2 .pr{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px 72px;padding:56px 0;border-top:1px solid var(--line)}
 .hub2 .pr:first-of-type{border-top:0;padding-top:16px}
 .hub2 .pr .k{font-size:12px;letter-spacing:.14em;margin-bottom:16px}
-.hub2 .pr h3{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.3vw,30px);line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin:0 0 18px}
+.hub2 .pr h3{font-family:var(--serif);font-weight:600;font-size:clamp(20px,1.75vw,23px);line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin:0 0 18px}
 .hub2 .pr p{font-size:17px;line-height:1.6;color:var(--text);margin:0 0 28px;max-width:52ch}
 .hub2 .pr .btn{align-self:flex-start}
 .hub2 .pr ul{list-style:none;margin:0;padding:0;padding-top:46px}
@@ -728,7 +728,7 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 .hub2 .pr li::before{content:'';position:absolute;left:0;top:.8em;width:12px;height:1px;background:var(--gold)}
 .hub2 .pr li:last-child{margin-bottom:0}
 .hub2 .pick2{padding:56px 0 24px;border-top:1px solid var(--line)}
-.hub2 .pick2 h2{font-size:clamp(20px,1.9vw,24px);margin:0 0 28px}
+.hub2 .pick2 h2{font-family:var(--serif);font-weight:600;font-size:clamp(20px,1.75vw,23px);margin:0 0 28px}
 .hub2 .pick2 ul{list-style:none;margin:0;padding:0;max-width:60ch}
 .hub2 .pick2 li{font-size:17px;line-height:1.6;color:var(--text);padding:14px 0;border-top:1px solid var(--line-2)}
 .hub2 .pick2 li:first-child{border-top:0;padding-top:0}
@@ -746,7 +746,7 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
    справа содержание (строки, шаги, вопросы). Без бокового меню, без рамок. */
 .hub2 .sec{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px 72px;padding:56px 0;border-top:1px solid var(--line)}
 .hub2 .sec:first-of-type{border-top:0;padding-top:16px}
-.hub2 .sec h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.3vw,30px);line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin:0 0 18px}
+.hub2 .sec h2{font-family:var(--serif);font-weight:600;font-size:clamp(20px,1.75vw,23px);line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin:0 0 18px}
 .hub2 .sec>div>p{font-size:17px;line-height:1.6;color:var(--text);margin:0 0 24px;max-width:44ch}
 .hub2 .sec>div>p:last-child{margin-bottom:0}
 .hub2 .sec .btn{margin-top:4px}
@@ -776,11 +776,17 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 .hub2 .road b{display:block;font-size:16.5px;line-height:1.4;color:var(--ink);margin:0 0 4px}
 .hub2 .road span{display:block;font-size:15.5px;line-height:1.55;color:var(--text)}
 /* вопросы */
-.hub2 .sec .faq{padding:0 0 22px;border:0;margin-bottom:22px;border-bottom:1px solid var(--line-2)}
-.hub2 .sec .faq:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
-.hub2 .sec .faq .q{font-size:16.5px;margin-bottom:6px}
-.hub2 .sec .faq p{font-size:15.5px;line-height:1.55;color:var(--text);margin:0}
-/* форма */
+/* вопросы: второстепенный блок, раскрываются по клику */
+.hub2 .sec.light{padding:40px 0 48px}
+.hub2 .sec.light h2{font-size:17px;font-family:var(--sans);font-weight:700;color:var(--text)}
+.hub2 .fq{border-top:1px solid var(--line-2)}
+.hub2 .fq:last-child{border-bottom:1px solid var(--line-2)}
+.hub2 .fq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;font-size:15px;font-weight:600;color:var(--text)}
+.hub2 .fq summary::-webkit-details-marker{display:none}
+.hub2 .fq summary::after{content:'+';flex:0 0 auto;font-size:18px;font-weight:400;color:var(--gold-dark);line-height:1}
+.hub2 .fq[open] summary::after{content:'−'}
+.hub2 .fq summary:hover{color:var(--ink)}
+.hub2 .fq p{font-size:14.5px;line-height:1.55;color:var(--muted);margin:0 0 14px;max-width:70ch}
 .hub2 .sec .fgrid{margin-bottom:12px}
 .hub2 .sec .consent{margin:14px 0}
 .hub2 .sec .small{font-size:14px;color:var(--text);margin:16px 0 0}

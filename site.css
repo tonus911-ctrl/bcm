@@ -776,17 +776,19 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 .hub2 .road b{display:block;font-size:16.5px;line-height:1.4;color:var(--ink);margin:0 0 4px}
 .hub2 .road span{display:block;font-size:15.5px;line-height:1.55;color:var(--text)}
 /* вопросы */
-/* вопросы: второстепенный блок, раскрываются по клику */
-.hub2 .sec.light{padding:40px 0 48px}
-.hub2 .sec.light h2{font-size:17px;font-family:var(--sans);font-weight:700;color:var(--text)}
-.hub2 .fq{border-top:1px solid var(--line-2)}
-.hub2 .fq:last-child{border-bottom:1px solid var(--line-2)}
-.hub2 .fq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;font-size:15px;font-weight:600;color:var(--text)}
+/* вопросы: второстепенный блок после формы, раскрываются по плюсу.
+   Заголовок как у всех разделов; плюс висит на месте маркера, вопрос и ответ
+   стоят на линии текста остальных списков (26px), между вопросами воздух. */
+.hub2 .sec.light{padding-bottom:0}
+.hub2 .fq{border-top:1px solid var(--line-2);padding:16px 0}
+.hub2 .fq:first-child{border-top:0;padding-top:0}
+.hub2 .fq:last-child{padding-bottom:0}
+.hub2 .fq summary{list-style:none;cursor:pointer;position:relative;padding-left:26px;font-size:16px;font-weight:600;line-height:1.5;color:var(--ink)}
 .hub2 .fq summary::-webkit-details-marker{display:none}
-.hub2 .fq summary::after{content:'+';flex:0 0 auto;font-size:18px;font-weight:400;color:var(--gold-dark);line-height:1}
-.hub2 .fq[open] summary::after{content:'−'}
-.hub2 .fq summary:hover{color:var(--ink)}
-.hub2 .fq p{font-size:14.5px;line-height:1.55;color:var(--muted);margin:0 0 14px;max-width:70ch}
+.hub2 .fq summary::before{content:'+';position:absolute;left:0;top:0;width:14px;text-align:center;font-size:18px;font-weight:400;line-height:1.35;color:var(--gold-dark)}
+.hub2 .fq[open] summary::before{content:'\2212'}
+.hub2 .fq summary:hover{color:var(--navy)}
+.hub2 .fq p{font-size:15px;line-height:1.6;color:var(--text);margin:12px 0 4px 26px;max-width:66ch}
 .hub2 .sec .fgrid{margin-bottom:12px}
 .hub2 .sec .consent{margin:14px 0}
 .hub2 .sec .small{font-size:14px;color:var(--text);margin:16px 0 0}

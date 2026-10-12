@@ -881,3 +881,12 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 .hub2 .sec .shots{min-width:0}
 @media(max-width:980px){.hub2 .brief .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.hub2 .buy{flex-direction:column;align-items:flex-start}}
+
+/* служебная строка в конце продуктовой страницы (дата, автор) — 12.10.2026 */
+.hub2 .pmeta{font-size:13px;line-height:1.5;color:var(--dim);margin:32px 0 0;max-width:none}
+
+/* поиск каталога и служебные кнопки документов — первой строкой тела, а не в герое (12.10.2026) */
+.pmain>form.search{max-width:620px;margin:0 0 24px}
+.pmain .doc-top{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;margin:0 0 28px;padding-bottom:20px;border-bottom:1px solid var(--line-2)}
+.pmain .doc-top .small{margin:0}
+.pmain .doc-top .btns{display:flex;gap:12px;flex-wrap:wrap;margin:0}

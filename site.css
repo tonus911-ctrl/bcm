@@ -856,3 +856,28 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
    абзацев по-прежнему ограничивает .pmain p (74ch). Квиз и страница «Спасибо» остаются
    центрированными экранами. */
 .pb.one .pmain:not(.quiz):not(.thanks){max-width:none;margin:0}
+
+/* ═══ Блок «Коротко» после героя и общие детали продуктовых страниц (.hub2), 12.10.2026 ═══
+   Плитки, цена и кнопки переезжают из героя в первый блок тела: герой у всех страниц
+   одинаковый (крошки, метка, H1, лид), а факты о продукте стоят крупно и на одной линии. */
+.hub2 .sec.brief{padding-top:8px;gap:28px}
+.hub2 .brief .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0;max-width:none}
+.hub2 .brief .tile{padding:18px 20px 16px;border-radius:8px}
+.hub2 .brief .tile b{font-size:19px;margin-bottom:4px}
+.hub2 .brief .tile span{font-size:14px;line-height:1.45;color:var(--text)}
+.hub2 .buy{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap}
+.hub2 .buy .sum{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--navy);line-height:1.2}
+.hub2 .buy .sum span{display:block;font-family:var(--sans);font-size:14px;font-weight:400;color:var(--text);margin-top:4px}
+.hub2 .buy .btns{display:flex;gap:12px;flex-wrap:wrap;margin:0}
+.hub2 .price-big{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--navy);line-height:1.2;margin:0 0 20px}
+.hub2 .price-big span{display:block;font-family:var(--sans);font-size:14px;font-weight:400;color:var(--text);margin-top:4px}
+.hub2 .sec>div>p.after-btn{font-size:14.5px;line-height:1.55;margin:16px 0 0}
+.hub2 .sec .fig{display:block;width:100%;height:auto}
+.hub2 .sec .lines.after-fig{margin-top:28px}
+.hub2 .sec .vbox{margin-top:8px;max-width:44ch}
+.hub2 .road .art{display:block;font-size:13.5px;line-height:1.45;color:var(--gold-dark);margin-top:6px}
+.hub2 .ppl>div+div{margin-top:32px;padding-top:28px;border-top:1px solid var(--line-2)}
+.hub2 .ppl p{font-size:15.5px;line-height:1.6;color:var(--text);margin:0;max-width:72ch}
+.hub2 .sec .shots{min-width:0}
+@media(max-width:980px){.hub2 .brief .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.hub2 .buy{flex-direction:column;align-items:flex-start}}

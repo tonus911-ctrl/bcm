@@ -801,3 +801,51 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
    в герое только крошки, метка, H1 и лид; минимальная высота держит страницы вровень */
 .ph .in{min-height:196px}
 @media(max-width:760px){.ph .in{min-height:0}}
+
+/* ═══ ПРИМЕРЫ РЕЗУЛЬТАТОВ: макеты документов, как на risk-place.org/gap-assessment (12.10.2026) ═══
+   Раздел во всю ширину (.sec.wide): заголовок сверху, под ним 4 карточки в ряд.
+   Палитра bcm: navy — главный акцент, золото — средний, кремовый — фон строк; красный только для денег.
+   Все правила внутри .hub2 .acards, чтобы не задеть старые классы .mock/.mk-* на других страницах. */
+.hub2 .sec.wide{grid-template-columns:1fr;gap:28px}
+.hub2 .sec.wide>div>p{max-width:62ch}
+.hub2 .acards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 24px}
+.hub2 .acard{min-width:0;display:flex;flex-direction:column}
+.hub2 .acard>b{font-size:16px;font-weight:700;line-height:1.35;color:var(--ink);margin:18px 0 6px}
+.hub2 .acard>p{font-size:14.5px;line-height:1.55;color:var(--text);margin:0}
+.hub2 .acards .mock{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 13px;height:184px;display:flex;flex-direction:column;gap:7px;box-shadow:0 8px 22px rgba(20,24,31,.06);overflow:hidden}
+.hub2 .acards .mk-head{display:flex;align-items:center;gap:6px}
+.hub2 .acards .mk-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.hub2 .acards .mk-line{display:block;height:7px;width:60%;border-radius:4px;background:var(--line-2)}
+.hub2 .acards .mk-title{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dark)}
+.hub2 .acards .mk-kv{display:flex;justify-content:space-between;align-items:center;gap:6px;background:var(--panel);border-radius:5px;padding:4px 8px}
+.hub2 .acards .mk-kv span{font-size:10.5px;color:var(--text);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hub2 .acards .mk-kv b{font-size:10.5px;font-weight:700;color:var(--ink);flex-shrink:0}
+.hub2 .acards .mk-kv b.hot{color:var(--navy)}
+.hub2 .acards .mk-kv b.loss{color:var(--red)}
+.hub2 .acards .mk-gwrap{display:flex;align-items:center;gap:14px;justify-content:center;padding:2px 0}
+.hub2 .acards .mk-gauge{width:68px;height:34px;border-radius:68px 68px 0 0;background:conic-gradient(from 270deg at 50% 100%,var(--navy) 0 60deg,var(--gold) 60deg 110deg,var(--line-2) 110deg 180deg);position:relative}
+.hub2 .acards .mk-needle{position:absolute;left:50%;bottom:0;width:2px;height:26px;background:var(--ink);transform:rotate(28deg);transform-origin:bottom}
+.hub2 .acards .mk-gnum{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy)}
+.hub2 .acards .mk-gnum small{font-family:var(--sans);font-size:11px;color:var(--dim);font-weight:400}
+.hub2 .acards .mk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;flex:1}
+.hub2 .acards .mk-grid i{border-radius:4px;font-style:normal;font-size:9.5px;display:flex;align-items:center;justify-content:center;color:var(--ink);padding:1px}
+.hub2 .acards .mk-grid .g1{background:var(--line-2)}
+.hub2 .acards .mk-grid .g2{background:var(--gold-2)}
+.hub2 .acards .mk-grid .g3{background:var(--navy);color:#fff}
+.hub2 .acards .mk-axis{display:flex;justify-content:space-between;font-size:9px;color:var(--dim);margin:0}
+.hub2 .acards .mk-bars{display:flex;align-items:flex-end;gap:8px;flex:1;padding:0 2px}
+.hub2 .acards .mk-bar{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
+.hub2 .acards .mk-bar i{width:100%;background:var(--line);border-radius:3px 3px 0 0;display:block}
+.hub2 .acards .mk-bar i.hot{background:var(--navy)}
+.hub2 .acards .mk-bar i.h40{height:44px}.hub2 .acards .mk-bar i.h26{height:30px}.hub2 .acards .mk-bar i.h18{height:20px}.hub2 .acards .mk-bar i.h14{height:16px}
+.hub2 .acards .mk-bar em{font-style:normal;font-size:8.5px;color:var(--text);white-space:nowrap}
+.hub2 .acards .mk-note{font-size:9.5px;color:var(--dim);font-style:italic;text-align:center;margin:0}
+.hub2 .acards .mk-flow{display:flex;align-items:center;gap:4px;flex-wrap:nowrap;font-size:inherit}
+.hub2 .acards .mk-flow i{flex:1;height:28px;border-radius:6px;background:var(--line-2);font-style:normal;font-size:9.5px;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.hub2 .acards .mk-flow i.hot{background:var(--navy);color:#fff}
+.hub2 .acards .mk-flow em{color:var(--gold-dark);font-style:normal;font-size:11px;font-weight:700}
+.hub2 .acards .mk-kpis{display:flex;gap:5px}
+.hub2 .acards .mk-kpis b{flex:1;background:var(--panel);border:1px solid var(--line-2);border-radius:6px;text-align:center;font-size:10.5px;line-height:1.3;padding:6px 0;color:var(--ink);font-weight:700}
+.hub2 .acards .mk-kpis b.hot{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:980px){.hub2 .acards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.hub2 .acards{grid-template-columns:1fr;gap:32px}}

@@ -849,3 +849,7 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 .hub2 .acards .mk-kpis b.hot{background:var(--navy);color:#fff;border-color:var(--navy)}
 @media(max-width:980px){.hub2 .acards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.hub2 .acards{grid-template-columns:1fr;gap:32px}}
+
+/* Каталог и словарь (.pmain.wide на странице без бокового меню): текст начинается
+   на той же линии, что заголовок в герое (решение Евгения 12.10.2026). */
+.pb.one .pmain.wide{margin-left:0;margin-right:auto}

@@ -850,6 +850,9 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 @media(max-width:980px){.hub2 .acards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.hub2 .acards{grid-template-columns:1fr;gap:32px}}
 
-/* Каталог и словарь (.pmain.wide на странице без бокового меню): текст начинается
-   на той же линии, что заголовок в герое (решение Евгения 12.10.2026). */
-.pb.one .pmain.wide{margin-left:0;margin-right:auto}
+/* Единая ширина тела на всех страницах (решение Евгения 12.10.2026): на страницах без
+   бокового меню основной блок занимает всю ширину контейнера, от линии заголовка героя
+   до правого края, как статьи с оглавлением и продуктовые страницы. Длину строки
+   абзацев по-прежнему ограничивает .pmain p (74ch). Квиз и страница «Спасибо» остаются
+   центрированными экранами. */
+.pb.one .pmain:not(.quiz):not(.thanks){max-width:none;margin:0}

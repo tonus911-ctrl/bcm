@@ -65,7 +65,7 @@
     <div class="buy">
       <div class="sum">Priced by scope<span>quote within two working days · excluding taxes</span></div>
       <div class="btns">
-        <a class="btn gold" href="#demo">Discuss on Zoom</a>
+        <a class="btn gold" href="#demo" data-topic="zoom">Discuss on Zoom</a>
         <a class="btn line" href="#primery-rezultatov">What the results look like</a>
       </div>
     </div>
@@ -77,7 +77,7 @@
   </div>
 
   <div class="sec" id="rezultat">
-    <div><h2>What you get in 1‑2 months</h2><p>Four things the company uses every day and that are visible from outside: to the board of directors, the insurer and the auditor.</p><a class="btn navy" href="#demo">Discuss on Zoom</a></div>
+    <div><h2>What you get in 1‑2 months</h2><p>Four things the company uses every day and that are visible from outside: to the board of directors, the insurer and the auditor.</p><a class="btn navy" href="#demo" data-topic="zoom">Discuss on Zoom</a></div>
     <ul class="lines">
       <li><b>A working system.</b><span>Continuity and recovery plans in the hands of the duty shift, a procedure for declaring a crisis and workaround modes of operation.</span></li>
       <li><b>Risks in money.</b><span>What one day of downtime costs for each process, where the single points of failure are and where to invest first.</span></li>
@@ -144,7 +144,7 @@
   <div class="sec" id="cena">
     <div><h2>Pricing</h2><p>The price depends on the size of the company and the number of sites. We will send a cost estimate within two working days after the Zoom call.</p>
       <div class="price-big">Priced by scope<span>quote within two working days · excluding taxes</span></div>
-      <a class="btn gold" href="#demo">Discuss on Zoom</a>
+      <a class="btn gold" href="#demo" data-topic="zoom">Discuss on Zoom</a>
       <p class="after-btn">Have you started with a scenario readiness check (<a href="en-proverka-gotovnosti-ataka-bpla.html">drone strike</a> or <a href="en-proverka-gotovnosti-shifrovalshchik.html">ransomware</a>)? Half of its cost is credited if you order the programme within six months.</p>
     </div>
     <div>
@@ -170,40 +170,43 @@
   </div>
 
   <div class="sec wide form" id="demo">
-    <div><h2>Get a cost estimate or discuss on Zoom</h2><p>Leave your name and work email. We will reply within one working day and send a cost estimate or a link to a Zoom call. If needed, we sign an NDA before the call.</p></div>
+    <div><h2>Discuss your task</h2><p>Leave your contacts. We reply within one working day and arrange a call or a Zoom meeting. If needed, we sign an NDA before the conversation.</p></div>
     <div class="fbox">
-      <div class="want" role="radiogroup" aria-label="What you need"><label><input type="radio" name="want" value="estimate" checked><span>Cost estimate</span></label><label><input type="radio" name="want" value="zoom"><span>Zoom call, 30 minutes</span></label></div>
+      <label class="flabel" for="lfTopic">Topic</label>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="call">Request a call</option><option value="zoom">Zoom meeting</option><option value="estimate">Cost estimate</option><option value="demo">Product demo</option><option value="corporate">Corporate access and invoice</option></select>
       <div class="fgrid w4">
-        <input type="text" class="fld" id="dmName" placeholder="Your name">
-        <input type="email" class="fld" id="dmEmail" placeholder="Work email">
-        <input type="text" class="fld" id="dmOrg" placeholder="Company">
-        <input type="text" class="fld" id="dmRole" placeholder="Job title">
+        <input type="text" class="fld" id="lfName" placeholder="Name" autocomplete="name">
+        <input type="text" class="fld" id="lfOrg" placeholder="Company" autocomplete="organization">
+        <input type="email" class="fld" id="lfEmail" placeholder="Work email" autocomplete="email">
+        <input type="tel" class="fld" id="lfPhone" placeholder="Phone (optional)" autocomplete="tel">
       </div>
-      <textarea class="fld" id="dmMsg" rows="3" placeholder="Comment (optional)"></textarea>
       <div class="fend">
-        <label class="consent"><input type="checkbox" id="dmConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy (in Russian)</a></span></label>
-        <button type="button" class="btn navy lg" id="dmSubmit">Send request</button>
+        <label class="consent"><input type="checkbox" id="lfConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy (in Russian)</a></span></label>
+        <button type="button" class="btn navy lg" id="lfSubmit">Send request</button>
       </div>
-      <p class="fmsg" id="dmMsgOut"></p>
-      <p class="small">Or <a href="quiz.html?lang=en">take the free assessment first →</a></p>
+      <p class="fmsg" id="lfOut"></p>
       <p class="small">Prefer messaging? <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
     </div>
   </div>
-</div>
 <script>
-(function(){var btn=document.getElementById("dmSubmit");if(!btn)return;
-  function v(id){var el=document.getElementById(id);return el?el.value.trim():"";}
-  var out=document.getElementById("dmMsgOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
-  btn.addEventListener("click",async function(){var name=v("dmName"),email=v("dmEmail");
-    if(!name||email.indexOf("@")<0){say("err","Please fill in your name and work email.");return;}
-    if(!document.getElementById("dmConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}
+(function(){var b=document.getElementById("lfSubmit");if(!b)return;
+  function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+  var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
+  var sel=document.getElementById("lfTopic");
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
+    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    if(!name||!org||email.indexOf("@")<1){say("err","Please fill in your name, company and work email.");return;}
+    if(phone&&phone.replace(/\D/g,"").length<7){say("err","Please check the phone number.");return;}
+    if(!document.getElementById("lfConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}
     this.disabled=true;say("note","Sending…");
-    var body={type:"demo",product:"podklyuch",source:"ru",name:name,email:email,org:v("dmOrg"),role:v("dmRole"),message:(function(){var w=document.querySelector('input[name="want"]:checked');return (w?"["+w.nextElementSibling.textContent+"] ":"")+v("dmMsg");})(),lang:"en",page:"en-bcm-pod-klyuch"};
-    try{var res=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-      if(!res.ok)throw new Error("fail");say("ok","Thank you! We will reply within one working day.");
+    var body={type:"demo",product:"podklyuch",source:"ru",name:name,email:email,org:org,phone:phone,role:"",formTitle:topic,message:"["+topic+"]"+(phone?" · "+"Phone"+": "+phone:""),lang:"en",page:"en-bcm-pod-klyuch"};
+    try{var r=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(!r.ok)throw new Error("fail");say("ok","Thank you! We will reply within one working day.");
       try{ym(110579884,"reachGoal","podklyuch_lead_submit");}catch(e){}try{gtag("event","podklyuch_lead_submit");}catch(e){}
     }catch(e){say("err","Could not send. Write to us: info@risk-place.ru");this.disabled=false;}});})();
 </script>
+</div>
 </main>
 </div>
 <!--TPL:FOOTER-->

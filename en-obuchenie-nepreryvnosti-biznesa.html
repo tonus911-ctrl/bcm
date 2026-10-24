@@ -67,7 +67,7 @@
     <div class="buy">
       <div class="sum">from RUB 20,000<span>per person for a group of three or more</span></div>
       <div class="btns">
-        <a class="btn gold" href="#demo">Request the programme and an invoice</a>
+        <a class="btn gold" href="#demo" data-topic="estimate">Request the programme and an invoice</a>
         <a class="btn line" href="#programma">See the programme</a>
       </div>
     </div>
@@ -108,7 +108,7 @@
   <div class="sec" id="price">
     <div><h2>Pricing</h2><p>The price per participant depends on the group size. The format, on site or by video, does not affect the price.</p>
       <div class="price-big">from RUB 20,000<span>per person for a group of three or more</span></div>
-      <a class="btn gold" href="#demo">Request the programme and an invoice</a>
+      <a class="btn gold" href="#demo" data-topic="estimate">Request the programme and an invoice</a>
       <p class="after-btn">Prices exclude taxes. Payment by invoice to your organisation: we will send the programme, an invoice and a contract.</p>
     </div>
     <div>
@@ -136,24 +136,43 @@
     </div>
   </div>
 
-  <div class="sec" id="demo">
-    <div><h2>Discuss the training</h2><p>Tell us how many people you plan to include and which industry you work in. We will send a detailed programme for your task, an invoice and a contract, and reply the same day.</p><p>Prefer messaging? <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p></div>
-    <div>
-      <div class="fgrid w">
-        <input type="text" class="fld" id="dmName" placeholder="Your name">
-        <input type="email" class="fld" id="dmEmail" placeholder="Work email">
-        <input type="text" class="fld" id="dmOrg" placeholder="Organisation">
-        <input type="text" class="fld" id="dmRole" placeholder="Job title">
+  <div class="sec wide form" id="demo">
+    <div><h2>Discuss your task</h2><p>Leave your contacts. We reply within one working day and arrange a call or a Zoom meeting. If needed, we sign an NDA before the conversation.</p></div>
+    <div class="fbox">
+      <label class="flabel" for="lfTopic">Topic</label>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="call">Request a call</option><option value="zoom">Zoom meeting</option><option value="estimate">Cost estimate</option><option value="demo">Product demo</option><option value="corporate">Corporate access and invoice</option></select>
+      <div class="fgrid w4">
+        <input type="text" class="fld" id="lfName" placeholder="Name" autocomplete="name">
+        <input type="text" class="fld" id="lfOrg" placeholder="Company" autocomplete="organization">
+        <input type="email" class="fld" id="lfEmail" placeholder="Work email" autocomplete="email">
+        <input type="tel" class="fld" id="lfPhone" placeholder="Phone (optional)" autocomplete="tel">
       </div>
-      <textarea class="fld" id="dmMsg" rows="3" placeholder="How many people and which industry"></textarea>
-      <label class="consent"><input type="checkbox" id="dmConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy (in Russian)</a></span></label>
-      <button type="button" class="btn navy" id="dmSubmit">Send request</button>
-      <p class="msg-note" id="dmNote"></p>
-      <p class="msg-ok" id="dmOk"></p>
-      <p class="msg-err" id="dmErr"></p>
-      <p class="small">Want to assess your current level first? Take the <a href="quiz.html?lang=en">free 5-minute assessment</a>; the result becomes the starting point of day one.</p>
+      <div class="fend">
+        <label class="consent"><input type="checkbox" id="lfConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy (in Russian)</a></span></label>
+        <button type="button" class="btn navy lg" id="lfSubmit">Send request</button>
+      </div>
+      <p class="fmsg" id="lfOut"></p>
+      <p class="small">Prefer messaging? <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
     </div>
   </div>
+<script>
+(function(){var b=document.getElementById("lfSubmit");if(!b)return;
+  function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+  var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
+  var sel=document.getElementById("lfTopic");
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
+    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    if(!name||!org||email.indexOf("@")<1){say("err","Please fill in your name, company and work email.");return;}
+    if(phone&&phone.replace(/\D/g,"").length<7){say("err","Please check the phone number.");return;}
+    if(!document.getElementById("lfConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}
+    this.disabled=true;say("note","Sending…");
+    var body={type:"demo",product:"training",source:"ru",name:name,email:email,org:org,phone:phone,role:"",formTitle:topic,message:"["+topic+"]"+(phone?" · "+"Phone"+": "+phone:""),lang:"en",page:"en-training"};
+    try{var r=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(!r.ok)throw new Error("fail");say("ok","Thank you! We will reply within one working day.");
+      try{ym(110579884,"reachGoal","training_request");}catch(e){}try{gtag("event","training_request");}catch(e){}
+    }catch(e){say("err","Could not send. Write to us: info@risk-place.ru");this.disabled=false;}});})();
+</script>
 
   <div class="sec light" id="faq">
     <div><h2>Frequently asked questions</h2></div>

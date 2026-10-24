@@ -69,7 +69,7 @@
       <div class="sum">RUB 19,900<span>one payment · 6 months of access · start any day</span></div>
       <div class="btns">
         <a class="btn gold" rel="noopener" href="https://link.payform.ru/?paymentLinkId=2c400799-9e3d-4b70-a957-0a158cbdecc3">Pay for the programme and certification</a>
-        <a class="btn line" href="#demo">Request a Zoom demo</a>
+        <a class="btn line" href="#demo" data-topic="demo">Request a Zoom demo</a>
       </div>
     </div>
   </div>
@@ -217,24 +217,42 @@
   </div>
 
   <div class="sec wide form" id="demo">
-    <div><h2>See the course from the inside</h2><p>In 20 minutes on Zoom we will show you the ERGP programme live and answer your questions: chapters and self-check questions, module tests, the personal certificate and verification by number.</p></div>
+    <div><h2>Discuss your task</h2><p>Leave your contacts. We reply within one working day and arrange a call or a Zoom meeting. If needed, we sign an NDA before the conversation.</p></div>
     <div class="fbox">
-      <div class="want" role="radiogroup" aria-label="What you need"><label><input type="radio" name="want" value="zoom" checked><span>Zoom demo, 20 minutes</span></label><label><input type="radio" name="want" value="invoice"><span>Invoice for an organisation or group access</span></label></div>
+      <label class="flabel" for="lfTopic">Topic</label>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="call">Request a call</option><option value="zoom">Zoom meeting</option><option value="estimate">Cost estimate</option><option value="demo">Product demo</option><option value="corporate">Corporate access and invoice</option></select>
       <div class="fgrid w4">
-        <input type="text" class="fld" id="dmName" placeholder="Your name">
-        <input type="email" class="fld" id="dmEmail" placeholder="Work email">
-        <input type="text" class="fld" id="dmOrg" placeholder="Organisation">
-        <input type="text" class="fld" id="dmRole" placeholder="Job title">
+        <input type="text" class="fld" id="lfName" placeholder="Name" autocomplete="name">
+        <input type="text" class="fld" id="lfOrg" placeholder="Company" autocomplete="organization">
+        <input type="email" class="fld" id="lfEmail" placeholder="Work email" autocomplete="email">
+        <input type="tel" class="fld" id="lfPhone" placeholder="Phone (optional)" autocomplete="tel">
       </div>
-      <textarea class="fld" id="dmMsg" rows="3" placeholder="Comment (optional)"></textarea>
       <div class="fend">
-        <label class="consent"><input type="checkbox" id="dmConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy (in Russian)</a></span></label>
-        <button type="button" class="btn navy lg" id="dmSubmit">Request a demo</button>
+        <label class="consent"><input type="checkbox" id="lfConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy (in Russian)</a></span></label>
+        <button type="button" class="btn navy lg" id="lfSubmit">Send request</button>
       </div>
-      <p class="fmsg" id="dmMsgOut"></p>
+      <p class="fmsg" id="lfOut"></p>
       <p class="small">Prefer messaging? <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
     </div>
   </div>
+<script>
+(function(){var b=document.getElementById("lfSubmit");if(!b)return;
+  function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+  var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
+  var sel=document.getElementById("lfTopic");
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
+    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    if(!name||!org||email.indexOf("@")<1){say("err","Please fill in your name, company and work email.");return;}
+    if(phone&&phone.replace(/\D/g,"").length<7){say("err","Please check the phone number.");return;}
+    if(!document.getElementById("lfConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}
+    this.disabled=true;say("note","Sending…");
+    var body={type:"demo",product:"ergp",source:"ru",name:name,email:email,org:org,phone:phone,role:"",formTitle:topic,message:"["+topic+"]"+(phone?" · "+"Phone"+": "+phone:""),lang:"en",page:"en-course"};
+    try{var r=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(!r.ok)throw new Error("fail");say("ok","Thank you! We will reply within one working day.");
+      try{ym(110579884,"reachGoal","ergp_demo_request");}catch(e){}try{gtag("event","ergp_demo_request");}catch(e){}
+    }catch(e){say("err","Could not send. Write to us: info@risk-place.ru");this.disabled=false;}});})();
+</script>
 </div>
 </main>
 </div>

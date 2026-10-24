@@ -991,3 +991,8 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 @media(max-width:700px){.hub2 .tl{grid-template-columns:1fr}.hub2 .tl li{padding:0 0 0 74px;min-height:56px}.hub2 .ba .row{grid-template-columns:1fr auto}.hub2 .ba .l{grid-column:1/-1}.hub2 .ba .facts{grid-template-columns:1fr}.hub2 .ppl2{grid-template-columns:1fr}}
 @media(max-width:520px){.hub2 .sec.form .fgrid.w4{grid-template-columns:1fr}}
 /*/PRODUCT-V2*/
+
+/*LEADFORM 24.10.2026: единая форма запроса (leadform.py)*/
+.hub2 .sec.form .flabel{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dark);margin:0 0 8px}
+.hub2 .sec.form select.ftopic{max-width:460px;margin:0 0 14px;cursor:pointer;background-color:#fff}
+/*/LEADFORM*/

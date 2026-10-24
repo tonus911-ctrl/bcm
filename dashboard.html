@@ -65,14 +65,14 @@
     <div class="buy">
       <div class="sum">По объему работ<span>расчет за два рабочих дня · без учета налогов</span></div>
       <div class="btns">
-        <a class="btn gold" href="#demo">Обсудить в Zoom</a>
+        <a class="btn gold" href="#demo" data-topic="zoom">Обсудить в Zoom</a>
         <a class="btn line" href="#kak-vyglyadit-dashbord">Посмотреть пример экрана</a>
       </div>
     </div>
   </div>
 
   <div class="sec" id="chto-daet">
-    <div><h2>Что это дает вам</h2><p>Пять вопросов руководителя и ответ, который дает дашборд.</p><a class="btn navy" href="#demo">Обсудить в Zoom</a></div>
+    <div><h2>Что это дает вам</h2><p>Пять вопросов руководителя и ответ, который дает дашборд.</p><a class="btn navy" href="#demo" data-topic="zoom">Обсудить в Zoom</a></div>
     <ul class="lines quotes"><li><b>«Мы готовы к серьезному сбою?»</b><span>Индекс устойчивости 0–100 и его динамика: одна цифра для разговора с советом директоров.</span></li><li><b>«Что упадет первым?»</b><span>Критичные процессы со светофорами: готовность, целевое время восстановления, ответственные.</span></li><li><b>«Сколько стоит час простоя?»</b><span>Цена простоя и подушка на восстановление в рублях.</span></li><li><b>«Живы ли планы после внедрения?»</b><span>Покрытие планов, дата пересмотра, когда были учения и что они показали. Деградацию видно до инцидента.</span></li><li><b>«Что показать банку, страховщику, тендеру?»</b><span>Зрелость системы в цифрах, понятных проверяющему.</span></li></ul>
   </div>
 
@@ -179,7 +179,7 @@
   <div class="sec" id="urovni-produkta">
     <div><h2>Уровни продукта и стоимость</h2>
       <div class="price-big">По объему работ<span>расчет за два рабочих дня · без учета налогов</span></div>
-      <a class="btn navy" href="#demo">Заказать демонстрацию</a>
+      <a class="btn navy" href="#demo" data-topic="demo">Заказать демонстрацию</a>
       <p class="after-btn">Стоимость зависит от масштаба и уровня — обсудим на демонстрации, когда примерим продукт на ваш бизнес.</p>
     </div>
     <ol class="road">
@@ -206,39 +206,43 @@
   </div>
 
   <div class="sec wide form" id="demo">
-    <div><h2 id="pokazhem-dashbord-na-primere-vashej-otra">Покажем дашборд на примере вашей отрасли</h2><p>30 минут онлайн, без обязательств: пройдем по живому дашборду, примерим метрики на ваш бизнес и честно скажем, взлетит ли это у вас. Оставьте имя и рабочую почту, ответим в течение рабочего дня.</p><p>Уже готовы обсуждать проект? Напишите об этом в комментарии к заявке — начнем с деталей.</p></div>
+    <div><h2>Обсудить вашу задачу</h2><p>Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора.</p></div>
     <div class="fbox">
-      <div class="want" role="radiogroup" aria-label="Что нужно"><label><input type="radio" name="want" value="zoom" checked><span>Демонстрация в Zoom, 30 минут</span></label><label><input type="radio" name="want" value="estimate"><span>Расчет стоимости</span></label></div>
+      <label class="flabel" for="lfTopic">Тема</label>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="call">Заказать звонок</option><option value="zoom">Встреча в Zoom</option><option value="estimate">Расчет стоимости</option><option value="demo">Демонстрация продукта</option><option value="corporate">Корпоративный доступ и счет для организации</option></select>
       <div class="fgrid w4">
-        <input type="text" class="fld" id="dmName" placeholder="Ваше имя">
-        <input type="email" class="fld" id="dmEmail" placeholder="Рабочая почта">
-        <input type="text" class="fld" id="dmOrg" placeholder="Компания">
-        <input type="text" class="fld" id="dmRole" placeholder="Должность">
+        <input type="text" class="fld" id="lfName" placeholder="Имя" autocomplete="name">
+        <input type="text" class="fld" id="lfOrg" placeholder="Компания" autocomplete="organization">
+        <input type="email" class="fld" id="lfEmail" placeholder="Рабочая почта" autocomplete="email">
+        <input type="tel" class="fld" id="lfPhone" placeholder="Телефон (необязательно)" autocomplete="tel">
       </div>
-      <textarea class="fld" id="dmMsg" rows="3" placeholder="Комментарий (необязательно)"></textarea>
       <div class="fend">
-        <label class="consent"><input type="checkbox" id="dmConsent"><span>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span></label>
-        <button type="button" class="btn navy lg" id="dmSubmit">Отправить запрос</button>
+        <label class="consent"><input type="checkbox" id="lfConsent"><span>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span></label>
+        <button type="button" class="btn navy lg" id="lfSubmit">Отправить запрос</button>
       </div>
-      <p class="fmsg" id="dmMsgOut"></p>
+      <p class="fmsg" id="lfOut"></p>
       <p class="small">Предпочитаете переписку — <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Телеграм</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
     </div>
   </div>
-</div>
 <script>
-(function(){var btn=document.getElementById("dmSubmit");if(!btn)return;
-  function v(id){var el=document.getElementById(id);return el?el.value.trim():"";}
-  var out=document.getElementById("dmMsgOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
-  btn.addEventListener("click",async function(){var name=v("dmName"),email=v("dmEmail");
-    if(!name||email.indexOf("@")<0){say("err","Заполните имя и рабочую почту.");return;}
-    if(!document.getElementById("dmConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}
+(function(){var b=document.getElementById("lfSubmit");if(!b)return;
+  function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+  var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
+  var sel=document.getElementById("lfTopic");
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
+    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    if(!name||!org||email.indexOf("@")<1){say("err","Заполните имя, компанию и рабочую почту.");return;}
+    if(phone&&phone.replace(/\D/g,"").length<7){say("err","Проверьте номер телефона.");return;}
+    if(!document.getElementById("lfConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}
     this.disabled=true;say("note","Отправляем…");
-    var body={type:"demo",product:"dashboard",source:"ru",name:name,email:email,org:v("dmOrg"),role:v("dmRole"),message:(function(){var w=document.querySelector('input[name="want"]:checked');return (w?"["+w.nextElementSibling.textContent+"] ":"")+v("dmMsg");})(),lang:"ru",page:"dashboard"};
-    try{var res=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-      if(!res.ok)throw new Error("fail");say("ok","Спасибо! Ответим в течение рабочего дня.");
+    var body={type:"demo",product:"dashboard",source:"ru",name:name,email:email,org:org,phone:phone,role:"",formTitle:topic,message:"["+topic+"]"+(phone?" · "+"Телефон"+": "+phone:""),lang:"ru",page:"dashboard"};
+    try{var r=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(!r.ok)throw new Error("fail");say("ok","Спасибо! Ответим в течение рабочего дня.");
       try{ym(110579884,"reachGoal","dashboard_lead_submit");}catch(e){}try{gtag("event","dashboard_lead_submit");}catch(e){}
     }catch(e){say("err","Не получилось отправить. Напишите нам: info@risk-place.ru");this.disabled=false;}});})();
 </script>
+</div>
 </main>
 </div>
 

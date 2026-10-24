@@ -156,7 +156,7 @@
   <div class="sec" id="price">
     <div><h2>Стоимость для компании</h2><p>Цена за одного участника зависит от размера группы: чем больше людей, тем ниже цена за человека.</p>
       <div class="price-big">от 5 000 ₽<span>за человека в группе от 50</span></div>
-      <a class="btn gold" href="#demo" data-want="quote">Запросить расчет и счет</a>
+      <a class="btn gold" href="#demo" data-topic="estimate">Запросить расчет и счет</a>
       <p class="after-btn">Компаниям — оплата по счету от организации. Доступ к материалам открыт полгода с даты выдачи.</p>
     </div>
     <div>
@@ -177,7 +177,7 @@
   <div class="sec" id="odin">
     <div><h2>Пройти программу одному</h2><p>Вариант для тех, кому программа нужна лично: специалиста по охране труда, мастера участка, руководителя небольшой площадки, самозанятого подрядчика.</p>
       <div class="price-big">9 900 ₽<span>за одного участника, доступ на полгода</span></div>
-      <a class="btn gold" id="soloBuy" href="#demo" data-want="single">Получить доступ за 9 900 ₽</a>
+      <a class="btn gold" id="soloBuy" href="#demo" data-topic="single">Получить доступ за 9 900 ₽</a>
       <p class="after-btn">Онлайн-оплата картой подключается, пока доступ выдается по заявке в течение рабочего дня.</p>
     </div>
     <div>
@@ -212,27 +212,43 @@
     </div>
   </div>
 
-  <div class="sec" id="demo">
-    <div><h2>Заявка по программе</h2><p>Одна форма на все: демонстрация программы, расчет и счет для компании, доступ для одного участника. Отвечаем в тот же рабочий день.</p><p>На демонстрации за 20 минут по видеосвязи покажем программу глазами участника и ответственного за охрану труда: главы и схемы, тесты и итоговую проверку знаний, личный кабинет с прогрессом группы, именной сертификат.</p><p>Предпочитаете переписку — <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Телеграм</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p></div>
-    <div>
-      <select class="fld" id="dmWant"><option value="quote">Нужен расчет и счет для компании</option><option value="single">Нужен доступ для одного участника</option><option value="demo">Хочу посмотреть программу изнутри</option></select>
-      <div class="fgrid">
-        <input type="text" class="fld" id="dmName" placeholder="Ваше имя">
-        <input type="email" class="fld" id="dmEmail" placeholder="Рабочая почта">
-        <input type="text" class="fld" id="dmOrg" placeholder="Организация">
-        <input type="text" class="fld" id="dmRole" placeholder="Должность">
+  <div class="sec wide form" id="demo">
+    <div><h2>Обсудить вашу задачу</h2><p>Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора.</p></div>
+    <div class="fbox">
+      <label class="flabel" for="lfTopic">Тема</label>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="call">Заказать звонок</option><option value="zoom">Встреча в Zoom</option><option value="estimate">Расчет стоимости</option><option value="demo">Демонстрация продукта</option><option value="corporate">Корпоративный доступ и счет для организации</option><option value="single">Доступ для одного участника</option></select>
+      <div class="fgrid w4">
+        <input type="text" class="fld" id="lfName" placeholder="Имя" autocomplete="name">
+        <input type="text" class="fld" id="lfOrg" placeholder="Компания" autocomplete="organization">
+        <input type="email" class="fld" id="lfEmail" placeholder="Рабочая почта" autocomplete="email">
+        <input type="tel" class="fld" id="lfPhone" placeholder="Телефон (необязательно)" autocomplete="tel">
       </div>
-      <textarea class="fld" id="dmMsg" rows="2" placeholder="Сколько человек планируете и в какой отрасли"></textarea>
-      <label class="consent">
-        <input type="checkbox" id="dmConsent">
-        <span>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span>
-      </label>
-      <button type="button" class="btn gold" id="dmSubmit">Отправить запрос</button>
-      <p class="msg-note" id="dmNote"></p>
-      <p class="msg-ok" id="dmOk"></p>
-      <p class="msg-err" id="dmErr"></p>
+      <div class="fend">
+        <label class="consent"><input type="checkbox" id="lfConsent"><span>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span></label>
+        <button type="button" class="btn navy lg" id="lfSubmit">Отправить запрос</button>
+      </div>
+      <p class="fmsg" id="lfOut"></p>
+      <p class="small">Предпочитаете переписку — <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Телеграм</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p>
     </div>
   </div>
+<script>
+(function(){var b=document.getElementById("lfSubmit");if(!b)return;
+  function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+  var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
+  var sel=document.getElementById("lfTopic");
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
+    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    if(!name||!org||email.indexOf("@")<1){say("err","Заполните имя, компанию и рабочую почту.");return;}
+    if(phone&&phone.replace(/\D/g,"").length<7){say("err","Проверьте номер телефона.");return;}
+    if(!document.getElementById("lfConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}
+    this.disabled=true;say("note","Отправляем…");
+    var body={type:"demo",product:"safe",source:"ru",name:name,email:email,org:org,phone:phone,role:"",formTitle:topic,message:"["+topic+"]"+(phone?" · "+"Телефон"+": "+phone:""),lang:"ru",page:"ru-safe"};
+    try{var r=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(!r.ok)throw new Error("fail");say("ok","Спасибо! Ответим в течение рабочего дня.");
+      try{ym(110579884,"reachGoal","safe_request");}catch(e){}try{gtag("event","safe_request");}catch(e){}
+    }catch(e){say("err","Не получилось отправить. Напишите нам: info@risk-place.ru");this.disabled=false;}});})();
+</script>
 
   <div class="sec light" id="faq">
     <div><h2>Частые вопросы</h2></div>

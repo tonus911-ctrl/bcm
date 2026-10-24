@@ -11,22 +11,110 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testing crisis readiness: methods and a checklist</title>
-<meta name="description" content="How to test whether your company is ready for a crisis: tabletop exercises, stress simulations, technical recovery tests and a full stress test. What to measure and a checklist of first steps.">
+<title>Testing your company's crisis readiness</title>
+<meta name="description" content="How to test crisis readiness: tabletop exercises, stress simulations, technical tests. What to measure (RTO, RPO, cost of downtime) and a first-steps checklist.">
+<meta name="keywords" content="readiness testing, crisis readiness check, business continuity plan testing, company stress test, emergency preparedness, company resilience check">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/testirovanie-gotovnosti.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html">
 <link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/testirovanie-gotovnosti.html">
 <link rel="canonical" href="https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html">
-<meta property="og:title" content="Testing crisis readiness: methods and a checklist">
-<meta property="og:description" content="A plan on paper and real readiness are different things. Here is how to find out before the disruption does it for you.">
+<meta property="og:title" content="Testing your company's crisis readiness: methods and a checklist">
+<meta property="og:description" content="How to test whether your company is ready for a crisis: tabletop exercises, stress simulations, technical tests. What to measure and where to start, with a checklist.">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
-<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="en_US">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#14181F">
 <link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html#article",
+      "headline": "Testing your company's crisis readiness: methods and a checklist",
+      "description": "How to test whether your company is ready for a crisis: tabletop exercises, stress simulations, technical tests. What to measure and where to start, with a checklist.",
+      "image": "https://bcm.risk-place.ru/stress-test-nepreryvnosti.png",
+      "datePublished": "2026-07-24",
+      "dateModified": "2026-07-24",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Evgeny Telenkov",
+        "url": "https://risk-place.ru/telenkov/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Materials",
+          "item": "https://bcm.risk-place.ru/materialy-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Readiness testing",
+          "item": "https://bcm.risk-place.ru/en-testirovanie-gotovnosti.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where do you start readiness testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With a tabletop review of one scenario with the management team: ransomware or the loss of a key supplier. It takes 3–4 hours and exposes the main gaps: who decides, where time is lost, what the plan is missing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should readiness be tested?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At least once a year with one scenario; for critical IT systems, technical recovery tests more often. After significant changes (a new system, a reorganisation), an unscheduled check."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should you measure in testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three main metrics: actual recovery time against the target RTO, acceptable data loss (RPO) and the cost of one day of downtime in money. Plus qualitative observations: speed of decisions, gaps in authority, quality of communications."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <!--TPL:HEADER-->
@@ -35,17 +123,17 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="testirovanie-gotovnosti.html">RU</a><a href="en-testirovanie-gotovnosti.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <!--TPL:HERO-->
 <div class="ph"><div class="in">
-  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span>Readiness testing</div>
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Readiness testing</div>
   <div class="rule"></div>
-  <div class="eyebrow">Implementing BCM</div>
-  <h1>Testing crisis readiness: methods and a checklist</h1>
-  <p class="lead">A plan on paper and real readiness are different things. The only way to know whether a business would survive a serious disruption is to test it before the disruption happens. Here are the methods, from tabletop exercises to a full stress test.</p>
+  <div class="eyebrow">BCM implementation</div>
+  <h1>Testing your company's crisis readiness: methods and a checklist</h1>
+  <p class="lead">A plan on paper and real readiness are different things. The only way to know whether the business will survive a serious disruption is to test it before the disruption happens. We look at readiness testing methods, from tabletop exercises to a full stress test.</p>
   <div class="meta">Published: 24 July 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
 </div></div>
 <!--/TPL:HERO-->
@@ -55,70 +143,70 @@
 <aside class="ptoc">
   <div class="t">On this page</div>
   <nav>
-    <a href="#why">Why test readiness</a>
-    <a href="#methods">Methods of testing: from simple to deep</a>
-    <a href="#measure">What to measure</a>
-    <a href="#checklist">Checklist of first steps</a>
+    <a href="#zachem">Why test readiness</a>
+    <a href="#metody">Testing methods: from simple to in-depth</a>
+    <a href="#chto">What to measure</a>
+    <a href="#cheklist">Checklist of first steps</a>
     <a href="#faq">Frequently asked questions</a>
   </nav>
 </aside>
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
-<h2 id="why">Why test readiness</h2>
-<p>In our experience most continuity plans do not survive first contact with reality: contacts are out of date, the named owner has left, the backup will not restore, and decisions in the first hours are taken by someone without the authority to take them. Testing surfaces all of this early, while fixing it is still cheap. For companies working to <a href="en-iso-22301.html">ISO 22301</a>, regular testing is a direct requirement of the standard.</p>
-<h2 id="methods">Methods of testing: from simple to deep</h2>
+<h2 id="zachem">Why test readiness</h2>
+<p>In our experience, most business continuity plans do not survive first contact with reality: contacts are out of date, the responsible person has left, the backup will not restore, and decisions in the first hours are made by someone without the authority to make them. Readiness testing reveals this in advance, when fixing it is cheap. For companies that work to <a href="en-iso-22301.html">ISO 22301</a>, regular testing is a direct requirement of the standard.</p>
+<h2 id="metody">Testing methods: from simple to in-depth</h2>
 <ul>
-  <li><strong>Tabletop exercises.</strong> The management team works through a scenario around a table: who finds out first, who decides, what we tell clients. Takes 3-4 hours and exposes most organisational gaps. More in the article on <a href="en-ucheniya-po-nepreryvnosti.html">continuity exercises</a>.</li>
-  <li><strong>Stress simulation.</strong> The team lives through a realistic scenario — most often a ransomware attack — with timed injects: decisions, communications, recovery. This is the format of our <a href="en-stress-test-nepreryvnosti.html">continuity stress test</a>, run with an external facilitator.</li>
-  <li><strong>Technical tests.</strong> Actually restoring systems from backups with the clock running — part of the <a href="en-plan-avariynogo-vosstanovleniya.html">IT disaster recovery plan</a>.</li>
-  <li><strong>Full stress test.</strong> A diagnostic of the continuity system plus a simulation plus the economics of downtime — the most complete snapshot of readiness in a short time.</li>
+  <li><strong>Tabletop exercises.</strong> The management team works through a scenario “at the table”: who finds out first, who decides, what we tell clients. It takes 3–4 hours and reveals most organisational gaps. More in the article on <a href="en-ucheniya-po-nepreryvnosti.html">business continuity exercises</a>.</li>
+  <li><strong>Stress simulation.</strong> The team goes through a realistic scenario (most often a ransomware attack) with timed inputs: decisions, communications, recovery. This is the <a href="en-stress-test-nepreryvnosti.html">continuity stress test</a> format with an external facilitator.</li>
+  <li><strong>Technical tests.</strong> Actual restoration of systems from backups, with the time measured. This is part of the <a href="en-plan-avariynogo-vosstanovleniya.html">disaster recovery plan (DRP)</a>.</li>
+  <li><strong>Full stress test.</strong> A diagnostic review of the continuity system, plus a simulation, plus a calculation of downtime economics. It gives the fullest “snapshot” of readiness in a short time.</li>
 </ul>
-<h2 id="measure">What to measure</h2>
+<h2 id="chto">What to measure</h2>
 <ol>
-  <li><strong>Recovery time.</strong> How long recovery actually takes, against the target RTO.</li>
-  <li><strong>Data loss (RPO).</strong> How much data is lost when you roll back to the last backup.</li>
-  <li><strong>Money.</strong> The <a href="en-stoimost-dnya-prostoya.html">cost of a day of downtime</a> and the share of revenue at risk — the language leadership actually responds to.</li>
-  <li><strong>Quality of decisions.</strong> Speed, gaps in authority, readiness of communications — recorded by an observer.</li>
+  <li><strong>Recovery time.</strong> How long recovery will actually take, compared with the target RTO.</li>
+  <li><strong>Data loss (RPO).</strong> How much data will be lost when you roll back to the last backup.</li>
+  <li><strong>Money.</strong> The <a href="en-stoimost-dnya-prostoya.html">cost of one day of downtime</a> and the share of revenue at risk: the main language for talking to senior management.</li>
+  <li><strong>Quality of decisions.</strong> Speed, gaps in authority, readiness of communications, as recorded by an observer.</li>
 </ol>
-<div class="callout"><b>In practice:</b> our <a href="en-stress-test-nepreryvnosti.html">two-day continuity stress test</a> combines every level: a diagnostic day (100+ questions), a ransomware stress simulation with the leadership team, and a report for the CEO — damage in money terms, weak points and a 90-day plan.</div>
-<h2 id="checklist">Checklist of first steps</h2>
+<div class="callout"><b>In practice:</b> our <a href="en-stress-test-nepreryvnosti.html">2-day continuity stress test</a> combines all the levels: a day of diagnostics (100+ questions), a day of ransomware stress simulation with the leadership team, and a report for the CEO with the damage in money, the weak points and a 90-day plan.</div>
+<h2 id="cheklist">Checklist of first steps</h2>
 <ol>
-  <li>Pick one scenario — the most painful for your industry (ransomware fits almost everyone).</li>
-  <li>Gather the management team and the owners of key functions — 6 to 12 people.</li>
-  <li>Run a tabletop session: 3-4 hours on the scenario, with an observer recording the gaps.</li>
-  <li>Cost a day of downtime — roughly is fine, based on revenue.</li>
-  <li>Write down the findings and assign owners and deadlines for the fixes.</li>
-  <li>Repeat in six to twelve months — readiness fades without repetition.</li>
+  <li>Choose one scenario, the most painful one for your industry (ransomware suits almost everyone).</li>
+  <li>Bring together the management team and the owners of key functions: 6–12 people.</li>
+  <li>Run a tabletop review: 3–4 hours on the scenario, with an observer recording the gaps.</li>
+  <li>Calculate the cost of one day of downtime, even roughly, based on revenue.</li>
+  <li>Record the findings and assign owners for the fixes, with deadlines.</li>
+  <li>Repeat in six months to a year: without regular practice, readiness fades.</li>
 </ol>
 
 
 <h2 id="faq">Frequently asked questions</h2>
-<h3>Where do we start with readiness testing?</h3><p>With a tabletop session on a single scenario with the management team: ransomware or the loss of a key supplier. It takes 3-4 hours and exposes the main gaps.</p>
-<h3>How often should readiness be tested?</h3><p>At least once a year on one scenario, and more often for critical IT systems. After any significant change, run an unscheduled check.</p>
-<h3>What should be measured during a test?</h3><p>Actual recovery time against the target RTO, tolerable data loss (RPO) and the cost of a day of downtime in money. Plus the quality of decisions and communications.</p>
+<h3>Where do you start readiness testing?</h3><p>With a tabletop review of one scenario with the management team: ransomware or the loss of a key supplier. It takes 3–4 hours and exposes the main gaps.</p>
+<h3>How often should readiness be tested?</h3><p>At least once a year with one scenario; for critical IT systems, more often. After significant changes, an unscheduled check.</p>
+<h3>What should you measure in testing?</h3><p>Actual recovery time against the target RTO, acceptable data loss (RPO) and the cost of one day of downtime in money. Plus the quality of decisions and communications.</p>
 
 
 <div class="inset cta">
-  <h3>From standard requirements to a working system</h3>
-  <p>The assessment shows the gap between documents and reality. The system is then built by your people in the programme or by ours turnkey.</p>
+  <h3>From the requirements of the standard to a working system</h3>
+  <p>The assessment shows the gap between your documents and reality. Then the system is built either by your own team in the programme or by us as a turnkey project.</p>
   <div class="btns">
-    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
-    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey BCM →</a>
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
     <a href="en-onlajn-kurs.html" class="btn line">ERGP certification →</a>
   </div>
 </div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
   <div>
-    <div class="nm">Evgeny Telenkov</div>
-    <div class="rl">Director, business continuity practice · PhD in Economics · Academic Director &amp; Chief Examiner</div>
-    <div class="bio">Risk Manager of the Year in Russia 2020 (RusRisk). Built business continuity from scratch at Nornickel, more than 20 plans; led risk functions at Beeline, Rosneft and EY. Chief risk officer of a $20 billion petrochemical megaproject. Deputy chair of Rosstandart technical committee 010 “Risk management”, co-author of six national standards. Author of the ERGP and SAFE programmes.</div>
-    <div><a href="en-o-podhode.html">About the team and the practice →</a></div>
+    <div class="nm"><a href="https://risk-place.ru/telenkov/">Evgeny Telenkov</a></div>
+    <div class="rl">Director, Business Continuity Practice · PhD in Economics · Academic Director and Chief Examiner</div>
+    <div class="bio">Best Risk Manager of Russia 2020 (RusRisk). Built business continuity at Nornickel from scratch, with more than 20 plans. Worked in the risk functions of Beeline, Rosneft and EY. Chief Risk Officer of a USD 20 billion petrochemical megaproject. Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards. Author of the ERGP and SAFE programmes.</div>
+    <div><a href="en-o-podhode.html">About the authors and the risk-place practice →</a></div>
   </div>
 </div>
   </div>
-  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-bcm-pod-klyuch.html" class="rel-card"><div class="rt">Turnkey BCM: audit and raise your survival metrics →</div><div class="rd">A readiness audit against ransomware and fire — and the fixes that raise the metrics.</div></a><a href="en-stress-test-nepreryvnosti.html" class="rel-card"><div class="rt">Two-day continuity stress test →</div><div class="rd">Diagnostic, ransomware stress simulation and a CEO report with damage in money terms.</div></a><a href="en-ucheniya-po-nepreryvnosti.html" class="rel-card"><div class="rt">Continuity exercises →</div><div class="rd">Types of exercises and how to run them: tabletop, simulation, technical tests.</div></a></div></div>
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-bcm-pod-klyuch.html" class="rel-card"><div class="rt">Turnkey BCM: audit and better survival metrics →</div><div class="rd">An audit of readiness for ransomware and fire, and the fixes that raise the metrics.</div></a><a href="en-stress-test-nepreryvnosti.html" class="rel-card"><div class="rt">2-day continuity stress test →</div><div class="rd">Diagnostics, a ransomware stress simulation and a report for the CEO with the damage calculated in money.</div></a><a href="en-ucheniya-po-nepreryvnosti.html" class="rel-card"><div class="rt">Business continuity exercises →</div><div class="rd">Types of exercises and how to run them: tabletop exercises, simulations, technical tests.</div></a></div></div>
 </main>
 </div>
 
@@ -130,7 +218,6 @@
 <script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
 <script>/*dl-goal-v2*/document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var f=a.getAttribute("href")||"";if(!/(^|\/)files\/[^?#]+\.(docx|xlsx|pdf|pptx|zip)([?#]|$)/i.test(f))return;try{ym(110579884,"reachGoal","download",{file:f});ym(110579884,"params",{download:f});}catch(x){}try{gtag("event","download",{file:f});}catch(x){}});</script>
 <!--/TPL:FOOTER-->
-
 <script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">

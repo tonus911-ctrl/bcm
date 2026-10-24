@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Regulatory business continuity requirements</title>
-<meta name="description" content="How regulators mandate business continuity: Bank of Russia (ONiVD), UAE (NCEMA 7000, CBUAE) and Saudi Arabia (SAMA BCM framework). What is required and how to comply.">
-<meta name="keywords" content="business continuity regulation, NCEMA 7000, SAMA business continuity, central bank continuity requirements, operational resilience">
-<meta name="author" content="Евгений Теленков">
+<title>ONiVD plan: meaning, Bank of Russia 850-P requirements, structure</title>
+<meta name="description" content="ONiVD and the ONiVD plan explained: meaning, rules after 787-P was repealed, plan logic, 11 sections, sample wording, bank roles, update and testing cycles.">
+<meta name="keywords" content="ONiVD, ONiVD meaning, PONiVD, bank ONiVD plan, who activates the ONiVD plan, ONiVD plan module, 850-P, 787-P repealed, bank operational reliability, operational continuity and recovery plan">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/onivd-ponivd.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-onivd-ponivd.html">
@@ -23,14 +23,14 @@
 <meta name="yandex-verification" content="6b8108f8673d1707">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://bcm.risk-place.ru/en-onivd-ponivd.html">
-<meta property="og:title" content="Regulatory business continuity requirements: Russia, UAE, KSA">
-<meta property="og:description" content="How regulators mandate business continuity: Bank of Russia (ONiVD), UAE (NCEMA 7000, CBUAE) and Saudi Arabia (SAMA BCM framework). What is required and how to comply.">
+<meta property="og:title" content="ONiVD plan: meaning, Bank of Russia 850-P requirements, structure">
+<meta property="og:description" content="ONiVD and the ONiVD plan explained: meaning, rules after 787-P was repealed, plan logic, 11 sections, sample wording, bank roles, update and testing cycles.">
 <meta property="og:image" content="https://bcm.risk-place.ru/onivd-ponivd.png">
 <meta property="og:site_name" content="risk-place.ru">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Regulatory business continuity requirements: Russia, UAE, KSA">
-<meta name="twitter:description" content="How regulators mandate business continuity: Bank of Russia (ONiVD), UAE (NCEMA 7000, CBUAE) and Saudi Arabia (SAMA BCM framework). What is required and how to comply.">
+<meta name="twitter:title" content="ONiVD plan: meaning, Bank of Russia 850-P requirements, structure">
+<meta name="twitter:description" content="ONiVD and the ONiVD plan explained: meaning, rules after 787-P was repealed, plan logic, 11 sections, sample wording, bank roles, update and testing cycles.">
 <meta name="twitter:image" content="https://bcm.risk-place.ru/onivd-ponivd.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -43,16 +43,16 @@
     {
       "@type": "Article",
       "@id": "https://bcm.risk-place.ru/en-onivd-ponivd.html#article",
-      "headline": "Regulatory business continuity requirements: Russia, UAE, KSA",
-      "description": "How regulators mandate business continuity: Bank of Russia (ONiVD), UAE (NCEMA 7000, CBUAE) and Saudi Arabia (SAMA BCM framework). What is required and how to comply.",
+      "headline": "ONiVD plan: meaning, Bank of Russia 850-P requirements, structure",
+      "description": "ONiVD and the ONiVD plan explained: meaning, rules after 787-P was repealed, plan logic, 11 sections, sample wording, bank roles, update and testing cycles.",
       "image": "https://bcm.risk-place.ru/onivd-ponivd.png",
       "datePublished": "2026-06-28",
-      "dateModified": "2026-06-28",
-      "inLanguage": "en-US",
+      "dateModified": "2026-08-21",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
         "name": "Evgeny Telenkov",
-        "url": "https://bcm.risk-place.ru/"
+        "url": "https://risk-place.ru/telenkov/"
       },
       "publisher": {
         "@type": "Organization",
@@ -82,7 +82,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Regulatory continuity map",
+          "name": "ONiVD and the ONiVD plan",
           "item": "https://bcm.risk-place.ru/en-onivd-ponivd.html"
         }
       ]
@@ -92,26 +92,106 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "We are ISO 22301 certified — are we compliant everywhere?",
+          "name": "Who activates the ONiVD plan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ISO 22301 is the common backbone, and NCEMA 7000 is closely aligned with it. But each regulator adds specifics: reporting duties, test cadence, sector requirements. A gap assessment against the local framework is usually one to two weeks of work."
+            "text": "The person named in an internal document. This is usually the technological process owner or the duty shift manager, once the set triggers are reached. The ONiVD executive owner is notified at once. The activation procedure and the arrangements for deputies must also work outside working hours."
           }
         },
         {
           "@type": "Question",
-          "name": "We are a supplier, not a bank — does this affect us?",
+          "name": "How does the ONiVD plan differ from a BCP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Increasingly yes: regulated organizations push continuity requirements down their supply chain through contracts and prequalification."
+            "text": "In content, hardly at all. It is a continuity plan in Bank of Russia terms. The differences are the mandatory set of sections, the link to technological processes with set threshold values, and supervisory reporting."
           }
         },
         {
           "@type": "Question",
-          "name": "Where to start?",
+          "name": "Which situations fall within the scope of ONiVD?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "With measurement: list critical processes, set recovery objectives, price one day of downtime. Every framework above starts from the same three steps."
+            "text": "Failure of information systems and communication channels, loss of access to an office or site, loss of a significant part of the staff, failure of a key supplier or counterparty, a cyberattack, and events that affect the continuity of payments. The list is set out in the plan and reviewed every year."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does ONiVD stand for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ONiVD means ensuring operational continuity and/or recovery. PONiVD, the ONiVD plan, is the plan for ensuring operational continuity and/or recovery. A bank must have this document under Bank of Russia requirements. The first is a system, the second is its main document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a bank's ONiVD plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A document that describes how the bank will keep critical operations running and restore them after a disruption: the list of critical processes, recovery times, responsible persons, the activation procedure, backup sites and systems, and the notification procedure. The eleven-section structure is covered above."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an ONiVD plan module?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A part of the plan that describes actions for one type of event or for one process: a module for a data centre failure, a module for loss of office access, a module for a cyberattack. A modular structure lets you activate only the part of the plan you need and update modules independently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does activating an ONiVD module mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A decision by an authorised person to switch from normal operations to the mode described in the plan module. The activation is recorded in writing, with the time, the grounds and who made the decision. From that moment the roles and deadlines in the plan apply instead of the usual procedures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who carries out an ONiVD plan module at each stage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At the notification stage: the duty service and the manager who decides on activation. At the recovery stage: the response team, the owners of critical processes and IT. At the return to normal operations: the same process owners and the unit responsible for the plan, which records the results and lessons learned."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the ONiVD plan tested every year?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The bank sets the frequency itself in its internal documents. In practice, the whole plan is tested at least once a year and individual modules more often. Test results are documented and reviewed by management. This is a direct checkpoint during an inspection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do non-credit financial institutions need an ONiVD plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Continuity requirements for non-credit financial institutions are set by separate Bank of Russia acts for each type of activity: for insurers, professional market participants, non-state pension funds and infrastructure organisations. The direct requirement of 850-P is addressed to banks, but the approach to the plan is the same, and the supervisor expects significant non-credit financial institutions to have one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does an incident become an ONiVD event in a bank?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An operational reliability incident is recorded when the degradation share stays above its signal value for more than five minutes. The plan activation threshold is written into the plan itself. Without it, every activation decision turns into an argument."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the ONiVD plan and the disaster recovery plan the same thing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The disaster recovery plan (DRP) covers IT systems and data and is one of the modules of the ONiVD plan. The ONiVD plan is wider. It covers how business operations continue, people, premises and counterparties. The difference is explained in the article BCP and DRP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who handles ONiVD in a bank?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ONiVD executive owner, at deputy chair of the management board level, is responsible for the system as a whole. The management board approves the plan. The board of directors approves the approach and the acceptable level of risk. The risk management function runs the methodology, reporting and coordination of tests. Technological process owners, IT and information security write and carry out the recovery procedures. Internal audit checks that the system works. A detailed table of roles is in the section “Responsibility within the bank”."
           }
         }
       ]
@@ -127,18 +207,18 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="onivd-ponivd.html">RU</a><a href="en-onivd-ponivd.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <!--TPL:HERO-->
 <div class="ph"><div class="in">
-  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Regulatory continuity map</div>
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>ONiVD and the ONiVD plan</div>
   <div class="rule"></div>
   <div class="eyebrow">Regulatory requirements</div>
-  <h1>Regulatory business continuity requirements: Russia, UAE, KSA</h1>
-  <p class="lead">Business continuity stopped being voluntary years ago: central banks and national regulators now audit continuity plans, tests and recovery times. A practical map of what is required in Russia, the United Arab Emirates and Saudi Arabia.</p>
-  <div class="meta">Published: July 18, 2026 · Author: Evgeny Telenkov · ≈ 7 min read</div>
+  <h1>ONiVD and the ONiVD plan: Bank of Russia requirements and how to draft the plan</h1>
+  <p class="lead">What the abbreviation ONiVD means, which Bank of Russia regulations apply now that 787-P has been repealed, what the plan consists of, who in the bank is responsible for it, and how often it is updated and tested. With examples of wording that passes an inspection and wording that does not.</p>
+  <div class="meta">Updated: 21 August 2026 · Author: Evgeny Telenkov · ≈ 16 min read</div>
 </div></div>
 <!--/TPL:HERO-->
 
@@ -147,49 +227,207 @@
 <aside class="ptoc">
   <div class="t">On this page</div>
   <nav>
-    <a href="#why">Why regulators care</a>
-    <a href="#russia">Russia: ONiVD and the Bank of Russia</a>
-    <a href="#uae">UAE: NCEMA 7000, CBUAE, DIFC/ADGM</a>
-    <a href="#ksa">Saudi Arabia: SAMA framework</a>
-    <a href="#common">What all frameworks share</a>
-    <a href="#faq">FAQ</a>
+    <a href="#chto">What ONiVD and the ONiVD plan are: the abbreviations explained</a>
+    <a href="#dokumenty">Template and test report</a>
+    <a href="#normativka">Regulatory framework for 2026</a>
+    <a href="#komu">Who must comply</a>
+    <a href="#logika">How the plan is built</a>
+    <a href="#struktura">ONiVD plan structure: eleven sections</a>
+    <a href="#formulirovki">Sample wording: good and bad</a>
+    <a href="#otvetstvennost">Responsibility within the bank</a>
+    <a href="#kalendar">How often to update and test</a>
+    <a href="#praktika">Good and bad practice in plan development</a>
+    <a href="#oshibki">Where organisations stumble in inspections</a>
+    <a href="#faq">Frequently asked questions</a>
   </nav>
 </aside>
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
-<h2 id="why">Why regulators care</h2>
-<p>A failed bank payment day or a halted critical service is no longer a private problem of one company — it is a systemic event. That is why financial and national regulators across jurisdictions have converged on the same idea: organizations must prove, with documents and test results, that they can survive disruption. The frameworks differ in names, but not in substance.</p>
-<h2 id="russia">Russia: ONiVD and the Bank of Russia</h2>
-<p>The Bank of Russia requires supervised financial organizations to maintain a continuity and recovery framework known as ONiVD, with a core document — the continuity and recovery plan (PONiVD). Key expectations: named accountability at executive level, analysis of critical processes with recovery time objectives, a documented plan covering scenarios and communications, regular testing with recorded results, and incident reporting to the regulator.</p>
-<h2 id="uae">UAE: NCEMA 7000, CBUAE, DIFC/ADGM</h2>
-<p>The UAE runs a national business continuity standard — AE/SCNS/NCEMA 7000 (2021 edition), aligned with ISO 22301 and mandatory for government entities and critical infrastructure, de facto expected from their suppliers. The Central Bank of the UAE requires banks to maintain board-approved disaster recovery and business continuity plans, review them annually, run independent reviews and promptly notify the regulator of disruptive events. Firms in the DIFC and ADGM financial free zones face additional operational resilience rules from DFSA and FSRA, including notification when a BCP is activated. A new consolidated central bank law issued in 2025 gives financial institutions a one-year window to align — a deadline worth checking against your continuity framework.</p>
-<h2 id="ksa">Saudi Arabia: SAMA framework</h2>
-<p>The Saudi Central Bank (SAMA) maintains a dedicated Business Continuity Management framework, mandatory for banks and financial institutions: governance, BIA, plans, exercises and reporting, with maturity assessed during supervisory reviews. For companies planning to serve the Saudi financial sector, SAMA-grade BCM documentation is effectively an entry ticket.</p>
-<h2 id="common">What all frameworks share</h2>
-<ul>
-<li>Accountability assigned to a named executive, not a department.</li>
-<li>Knowing your critical processes, their recovery time objectives and the cost of their downtime.</li>
-<li>A living, tested plan — regulators read test records first, because they expose paper plans instantly.</li>
-<li>Communication procedures: staff, clients, the regulator itself.</li>
-<li>Measurability as the direction of travel: boards and supervisors increasingly ask for metrics, not folders.</li>
-</ul>
-<p>That last point is where we work: a <a href="dashboard.html">resilience dashboard</a> that turns continuity into numbers — a 0-100 index, cost of one day down, and traffic lights per critical area. It satisfies the regulator because the system behind it actually runs.</p>
-<h2 id="faq">FAQ</h2>
-<p><b>We are ISO 22301 certified — are we compliant everywhere?</b> ISO 22301 is the common backbone, and NCEMA 7000 is closely aligned with it. But each regulator adds specifics: reporting duties, test cadence, sector requirements. A gap assessment against the local framework is usually one to two weeks of work.</p>
-<p><b>We are a supplier, not a bank — does this affect us?</b> Increasingly yes: regulated organizations push continuity requirements down their supply chain through contracts and prequalification.</p>
-<p><b>Where to start?</b> With measurement: list critical processes, set recovery objectives, price one day of downtime. Every framework above starts from the same three steps.</p>
-</div>
-  <div class="inset cta">
-  <h3>From standard requirements to a working system</h3>
-  <p>The assessment shows the gap between documents and reality. The system is then built by your people in the programme or by ours turnkey.</p>
+
+<h2 id="chto">What ONiVD and the ONiVD plan are: the abbreviations explained</h2>
+<p><b>ONiVD</b> means ensuring operational continuity and/or recovery. It is the Bank of Russia term for what international practice calls business continuity management. <b>PONiVD</b>, the ONiVD plan, is the plan for ensuring operational continuity and/or recovery, the main document of this system.</p>
+<p>The abbreviations look clumsy, but the idea behind them is simple. The regulator wants the bank to know the answers to three questions in advance. Which processes must not stop. How long the organisation can survive without them. What exactly people do, and in what order, when a process does stop.</p>
+<p>The ONiVD plan differs from an “ordinary” continuity plan in status. Their content is similar. For supervised organisations it is a mandatory supervisory requirement with parameters that can be checked. The regulator looks at whether the document exists, and also at the dates it was updated, test results, recorded incidents and actual recovery times.</p>
+<div class="callout"><b>In short.</b> ONiVD is a system. The ONiVD plan is a document within it. Having the document without the system does not pass an inspection.</div>
+
+<h2 id="dokumenty">ONiVD plan template and test report</h2>
+<p>Two working documents for this page. The plan template follows the eleven sections of the structure below, from scope to the update procedure, with recovery procedure modules. The test report records the test programme, timings, results and the gaps found, with a plan to fix them.</p><div class="inset"><p><b>Download.</b> ONiVD plan template and plan test report. Format: docx.</p><div class="btns"><a class="btn navy" href="files/plan-onivd-shablon.docx" download>Download plan template (docx, in Russian)</a> <a class="btn navy" href="files/protokol-testirovaniya-onivd.docx" download>Download test report (docx, in Russian)</a></div><p class="note">Notes on each section: <a href="plan-onivd-obrazec.html">ONiVD plan template (in Russian)</a> and <a href="testirovanie-plana-onivd.html">testing the plan and a module (in Russian)</a>. No registration, no forms. If you need to build the whole ONiVD system: <a href="en-bcm-pod-klyuch.html">Turnkey BCM</a>.</p></div>
+<h2 id="normativka">Regulatory framework for 2026</h2>
+<p>This is where the most common mistake happens. Most articles and many current internal bank documents still refer to Regulation 787-P. <b>Bank of Russia Regulation No. 787-P of 12 January 2022 was repealed on 3 May 2025.</b> It was replaced by Regulation No. 850-P. If an organisation's internal document refers to 787-P, the document needs to be revised.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Document</th><th>What it covers</th><th>Who it applies to</th></tr></thead>
+<tbody>
+<tr><td><b>Regulation No. 850-P</b> of 13 January 2025</td><td>Operational reliability requirements to ensure the continuity of banking services. In force since 3 May 2025, some provisions since 1 October 2025. Replaced 787-P</td><td>Credit institutions, including non-bank credit institutions, and branches of foreign banks in Russia</td></tr>
+<tr><td><b>Regulation No. 779-P</b> of 15 November 2021</td><td>Operational reliability requirements for non-credit financial institutions</td><td>Non-credit financial institutions, insurers, professional securities market participants</td></tr>
+<tr><td><b>Regulation No. 716-P</b> of 8 April 2020</td><td>Operational risk management system, operational risk event database, operational risk control indicators. It also contains the requirement for the ONiVD plan</td><td>Credit institutions and banking groups</td></tr>
+<tr><td><b>Regulation No. 851-P</b></td><td>Information protection in banking activities. Replaced 683-P. 850-P refers to it on critical architecture</td><td>Credit institutions</td></tr>
+<tr><td><b>GOST R 57580.3 and 57580.4</b></td><td>Specific measures that implement the requirements for operational reliability and information security risk management</td><td>Used as a way to meet the requirements of the regulations</td></tr>
+<tr><td><b>Directive No. 3439-U</b></td><td>Procedure for recognising an organisation as significant in the payment services market. Stricter requirements depend on this status</td><td>Money transfer operators</td></tr>
+</tbody>
+</table></div>
+<p><i>The regulatory framework is listed as of 21 August 2026. Before drafting internal documents, check the current version on the Bank of Russia website. Regulation in this area changes roughly every two to three years.</i></p>
+
+<h2 id="komu">Who must comply</h2>
+<p>The requirements apply, to different extents, to credit institutions, branches of foreign banks in Russia, non-credit financial institutions, insurance companies, professional securities market participants, payment system operators and significant payment service providers.</p>
+<p>The scope of the requirements depends on two things. The first is the size of the organisation. For banks with assets over RUB 500 billion, the threshold values are stricter. The second is recognition as significant in the payment services market. Such an organisation has six months from the date of recognition to set signal and control values. Its requirements for payment technological processes become the same as those for the largest banks.</p>
+<p>Contractors deserve a separate note. If your company serves a supervised organisation, for example provides an IT service, processes data or provides communications, continuity requirements will reach you through the contract. The bank must manage its dependence on suppliers. So it will ask you for a recovery time objective, an incident notification procedure and participation in tests.</p>
+
+<h2 id="logika">How the plan is built</h2>
+<p>The ONiVD plan starts from processes. The sections come later. The sequence is as follows.</p>
+<h3>Step 1. Identify technological processes</h3>
+<p>The regulator works with technological processes. Departments and systems are not its unit of analysis. Technological processes are end-to-end chains that deliver a service to the client: accepting and processing a payment, cash withdrawal, remote banking, lending, account servicing. The list of processes and their threshold values are set in the annexes to 850-P. The organisation does not make up this list itself.</p>
+<h3>Step 2. Set the tolerable downtime</h3>
+<p>Each technological process has a threshold for tolerable downtime. This is the upper limit. Beyond it, a breach begins. Within this limit the organisation sets its own targets, usually stricter ones. If the target sits right at the regulatory limit, the very first disruption becomes a breach.</p>
+<h3>Step 3. Set the tolerable degradation share</h3>
+<p>This is the second indicator, and it matters more than it seems. The degradation share is the ratio of the number of operations performed or not performed during an incident to the planned number of operations in normal mode. In other words, a process may formally work but serve thirty per cent of clients instead of a hundred. For this indicator, signal and control values are set in line with the operational risk control indicators.</p>
+<h3>Step 4. Set the incident recording threshold</h3>
+<p>An operational reliability incident is recorded when the degradation share stays above its signal value for <b>more than five minutes</b>. Short spikes do not count as incidents. This detail matters for setting up monitoring. If the alert system fires on every deviation, the team drowns in false alarms. If it reacts more slowly than five minutes, the organisation misses an incident it must record.</p>
+<h3>Step 5. Link to the operational risk event database</h3>
+<p>All incidents that caused losses are registered in the operational risk event database under 716-P. The record includes the actual downtime, the degradation share during the incident, the total downtime and the results of restoring operations. The data for reporting and for reviewing targets also come from here.</p>
+<h3>Step 6. Describe scenarios and actions</h3>
+<p>Only at this step does the actual text of the plan appear. Scenarios are written for processes and threshold values that are already known. The reverse order does not work. This is why plans that start from a template of sections almost always fail in practice. They contain neat procedures but do not say how many minutes you have and how to tell that you have run out of time.</p>
+<div class="callout"><b>Practical guide.</b> The operating time of technological processes, including planned downtime, is calculated every quarter. If you have no quarterly calculation, you have no data to justify your targets.</div>
+
+<h2 id="struktura">ONiVD plan structure: eleven sections</h2>
+<p>A working structure that meets the requirements and can be used in a real crisis as well as for an inspection.</p>
+<ol>
+<li><b>Scope and list of technological processes.</b> Which processes the plan covers, their owners, the threshold tolerable downtime and the targets for each.</li>
+<li><b>Operational reliability targets.</b> Tolerable downtime, signal and control values of the degradation share, and how they are reviewed.</li>
+<li><b>Critical architecture.</b> Information infrastructure objects that support the processes, the dependencies between them, single points of failure.</li>
+<li><b>Disruption scenarios.</b> Information system failure, loss of access to premises, loss of key staff, supplier failure, cyberattack, communication channel failure, power failure.</li>
+<li><b>Plan activation procedure.</b> Who declares disruption mode, on what triggers and within what time; who stands in for this person in their absence; how the moment of activation is recorded.</li>
+<li><b>Recovery procedures.</b> Step-by-step actions for each scenario, with the people responsible, the deadlines and the point at which the decision to switch to the backup arrangement is made.</li>
+<li><b>Communications.</b> Alerting staff, informing clients, notifying the Bank of Russia, dealing with the media, message templates.</li>
+<li><b>Backup resources.</b> Backup sites, communication channels, backups, the switchover procedure and time, who has the right to start the switchover.</li>
+<li><b>Dependence on suppliers and key staff.</b> List of critical external dependencies, the requirements for them in contracts, how to work if an employee with unique skills is lost, including periods of remote work.</li>
+<li><b>Testing procedure.</b> Types of tests, frequency, the test programme, success criteria, how results are documented.</li>
+<li><b>Update procedure.</b> Regular review and the events that trigger an unscheduled review of the plan.</li>
+</ol>
+<div class="callout"><b>Plan template.</b> A framework of these eleven sections in docx format, with tables and notes on what to put in each: <a href="plan-onivd-obrazec.html">ONiVD plan template (in Russian)</a>. Download without registration.</div>
+<h2 id="formulirovki">Sample wording: good and bad</h2>
+<p>The difference between a plan that passes an inspection and one that fails is usually visible in individual phrases. The inspector looks for things that can be verified: a deadline, a responsible person, a sign that the event has occurred. Below are pairs of wordings from real practice, anonymised.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Avoid this</th><th>Do this</th></tr></thead>
+<tbody>
+<tr>
+<td>“In the event of an emergency, the unit takes the necessary measures to restore operations as soon as possible.”</td>
+<td>“If the payment acceptance process is unavailable for more than 5 minutes, the on-duty administrator moves the load to the backup environment within 10 minutes and notifies the head of the operational risk function. Recovery time objective: 30 minutes.”</td>
+</tr>
+<tr>
+<td>“The IT department is responsible for operational continuity.”</td>
+<td>“The deputy chair of the management board in charge of operations is responsible for ONiVD. The owner of technological process TP-4 is the head of the settlements department, who decides on activating the plan for this process.”</td>
+</tr>
+<tr>
+<td>“The plan is subject to regular review.”</td>
+<td>“The plan is reviewed at least once a year by 1 March, and also within 20 working days after each of these events: a change in the list of technological processes, a change in the critical architecture, an incident that exceeds the control value, a change in regulatory requirements.”</td>
+</tr>
+<tr>
+<td>“Backups are made on a regular basis.”</td>
+<td>“A full backup of the core banking system database runs daily at 02:00. Copies are kept for 30 days. Every quarter a test restore from a copy is carried out and recorded in a report.”</td>
+</tr>
+<tr>
+<td>“Staff are alerted by available means of communication.”</td>
+<td>“Alerts follow a call tree. The first round is the 12 members of the crisis team. Confirmations must be collected within 20 minutes. Contact details are kept in two places, including a printed copy in the duty shift safe.”</td>
+</tr>
+<tr>
+<td>“The plan is tested periodically.”</td>
+<td>“Every year there is at least one live switchover to the backup site and at least two tabletop scenario walkthroughs. Results are recorded in a report listing the gaps found and the deadlines to fix them.”</td>
+</tr>
+<tr>
+<td>“Interaction with suppliers is carried out under the contracts concluded.”</td>
+<td>“For critical suppliers, the contract sets a response time of 30 minutes, a recovery time of 4 hours and an obligation to take part in annual testing. The list of such suppliers is in Annex 3 and is reviewed every year.”</td>
+</tr>
+<tr>
+<td>“Information on incidents is reported to management.”</td>
+<td>“An operational reliability incident is registered in the operational risk event database within one working day. If the degradation share exceeds the control value, the chair of the management board is informed immediately, and the board of directors as part of quarterly reporting.”</td>
+</tr>
+</tbody>
+</table></div>
+<p>The general rule is simple. If a phrase does not tell you exactly who acts, by when and on what trigger, the phrase does not work, even if it is well written.</p>
+
+<h2 id="otvetstvennost">Responsibility within the bank</h2>
+<p>The second most common question after what the term means: who is responsible for ONiVD and who activates the plan. The document must answer this with named individuals. Naming departments is not enough.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Role</th><th>What it covers</th></tr></thead>
+<tbody>
+<tr><td>Board of directors</td><td>Approves the approach to operational risk management and the acceptable level of risk, reviews reports on continuity disruptions, assesses whether the measures taken are sufficient</td></tr>
+<tr><td>Management board</td><td>Approves the ONiVD plan and targets, provides resources, answers to the board of directors and the regulator for the actual state of the system</td></tr>
+<tr><td>ONiVD executive owner, deputy chair of the management board level</td><td>Single point of accountability for the system as a whole. This person is named in documents as the responsible person. A deputy is appointed by order</td></tr>
+<tr><td>Risk management function</td><td>Methodology, continuity risk register, operational risk event database, calculation of indicators, reporting, coordination of tests</td></tr>
+<tr><td>Technological process owner</td><td>Knows the tolerable downtime of their process, decides on activating the plan for that process, keeps recovery procedures up to date</td></tr>
+<tr><td>IT</td><td>Redundancy, recovery of systems and data, switchover to the backup environment, the technical part of tests</td></tr>
+<tr><td>Information security</td><td>Cyberattack scenarios, alignment with 851-P and GOST R 57580, response to information security incidents</td></tr>
+<tr><td>Internal audit function</td><td>Independent check that the system really works and does not just exist on paper. Looks at the actual tests and does not rely on the reports alone</td></tr>
+<tr><td>Crisis team</td><td>Operational management during a disruption. Members, deputies and the assembly procedure are set out in the plan</td></tr>
+</tbody>
+</table></div>
+<p>A practical check of who is responsible takes five minutes. Open the plan and find who declares disruption mode at 3 a.m. on a weekend if the main responsible person cannot be reached. If there is no answer, the roles exist only on paper.</p>
+
+<h2 id="kalendar">How often to update and test</h2>
+<p>The regulations set frequency through a set of requirements for different elements of the system. There is no single figure. We bring them together into a calendar that is easy to live by.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>What</th><th>How often</th><th>Basis and purpose</th></tr></thead>
+<tbody>
+<tr><td>Calculation of the operating time of technological processes, including planned downtime</td><td>Quarterly</td><td>Data to monitor compliance with threshold values and to justify targets</td></tr>
+<tr><td>Review of operational reliability target values</td><td>At least once a year</td><td>Takes the operational risk control indicators into account. The basis for review is the accumulated incident statistics</td></tr>
+<tr><td>Assessment and review within the operational risk management system</td><td>At least once a year</td><td>716-P, keeping the system up to date</td></tr>
+<tr><td>Operational reliability testing</td><td>According to the set programme and the frequency fixed in internal documents</td><td>Scenario analysis plus a qualitative assessment of the operational risk level. The organisation sets the frequency itself, but it must be defined and followed</td></tr>
+<tr><td>Review of the ONiVD plan</td><td>At least once a year, plus unscheduled reviews</td><td>Unscheduled: when the list of processes, the critical architecture, the organisational structure or the set of critical suppliers changes, after a significant incident and when requirements change</td></tr>
+<tr><td>Updating contact details and alert schemes</td><td>Quarterly</td><td>Not a separate formal requirement, but this is the part of the plan that goes out of date fastest</td></tr>
+<tr><td>Setting signal and control values when an organisation is recognised as significant in the payment services market</td><td>No later than 6 months from the date of recognition</td><td>Directive 3439-U read together with 850-P</td></tr>
+</tbody>
+</table></div>
+<p>A separate note on types of tests. A tabletop walkthrough of a scenario by the crisis team shows whether people are ready. It says nothing about whether the technology is ready. A live switchover to the backup site answers the technical question, but it is rarely done because of the risk to production. A workable combination for a mid-sized bank is several tabletop walkthroughs and one live switchover a year, always with a report and a plan to fix the gaps found. The annual test programme, a tabletop scenario and a report template are covered in the article <a href="testirovanie-plana-onivd.html">testing the ONiVD plan (in Russian)</a>.</p>
+
+<h2 id="praktika">Good and bad practice in plan development</h2>
+<h3>What works</h3>
+<p><b>Start with processes. The table of contents comes later.</b> First the list of technological processes, their owners and threshold values. The text of the plan is written last and takes less time than it seems.</p>
+<p><b>Have process owners write the plan.</b> A consultant provides the structure and the requirements and facilitates the work. The recovery procedure is written by the person who will carry it out. At the very first incident, a plan written entirely by an outside contractor turns out to be unclear to the people who have to use it.</p>
+<p><b>Keep the plan short.</b> Nobody will open two hundred pages during an emergency. A workable format is a compact main document plus annexes with one-page action cards for each scenario. They can be printed and kept with the duty shift.</p>
+<p><b>Count the money.</b> The cost of one hour of downtime for each critical process turns a debate about the redundancy budget into a calculation. Without this figure, any request for a backup site looks like a department's whim.</p>
+<p><b>Test the plan against real incidents.</b> After each disruption, even a minor one, it is useful to check whether the actual actions matched the written ones. This teaches more than a scheduled exercise.</p>
+<h3>What does not work</h3>
+<p><b>A template without implementation.</b> A bought or downloaded template speeds up the start. But an inspection assesses the system, and a document alone does not pass. Signs of implementation are recent dates, named roles, test reports and recorded incidents.</p>
+<p><b>The plan as an IT department project.</b> If only IT develops the plan, it will cover systems and leave out processes, clients and communications. The regulator looks at whether services continue. Server availability alone does not answer that.</p>
+<p><b>Targets set right at the regulatory limit.</b> If an organisation sets itself exactly the threshold time, any deviation immediately becomes a breach. An internal target needs a margin.</p>
+<p><b>Testing without conclusions.</b> If an exercise does not end with a list of gaps and deadlines, it was only for show.</p>
+<p><b>References to repealed documents.</b> Checking internal documents for current regulatory references takes an hour. A reference to 787-P found in the plan makes the whole document worthless in the inspector's eyes.</p>
+
+<h2 id="oshibki">Where organisations stumble in inspections</h2>
+<p><b>A plan exists, a system does not.</b> The document was written three years ago, the phone numbers are out of date, and some of the named staff have left. Formally the requirement is met. In practice the plan is useless in an incident, and an inspection sees this from the update dates and the lack of test reports.</p>
+<p><b>Tests on paper.</b> Exercise reports are written without the exercises taking place. The risk is double, both supervisory and real: the first real disruption becomes the first test.</p>
+<p><b>Indicators are not calculated.</b> Target values are written in the document, but actual values are not measured, because monitoring is not set up for the five-minute threshold and the degradation share. As a result, incidents are not recorded, the event database is empty and reporting is a formality.</p>
+<p><b>No link to money.</b> The plan does not say what one hour of downtime costs for each critical process. So there is no sound basis for choosing what to restore first.</p>
+<p><b>Supplier dependence is not described.</b> The organisation knows its own systems but does not know what will happen if external processing or the only telecom operator's channel is unavailable.</p>
+
+
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq"><div class="q">What does ONiVD stand for?</div><p>ONiVD means ensuring operational continuity and/or recovery. PONiVD, the ONiVD plan, is the plan for ensuring operational continuity and/or recovery. A bank must have this document under Bank of Russia requirements. The first is a system, the second is its main document.</p></div><div class="faq"><div class="q">What is a bank's ONiVD plan?</div><p>A document that describes how the bank will keep critical operations running and restore them after a disruption: the list of critical processes, recovery times, responsible persons, the activation procedure, backup sites and systems, and the notification procedure. The eleven-section structure is covered above.</p></div><div class="faq"><div class="q">What is an ONiVD plan module?</div><p>A part of the plan that describes actions for one type of event or for one process: a module for a data centre failure, a module for loss of office access, a module for a cyberattack. A modular structure lets you activate only the part of the plan you need and update modules independently.</p></div><div class="faq"><div class="q">What does activating an ONiVD module mean?</div><p>A decision by an authorised person to switch from normal operations to the mode described in the plan module. The activation is recorded in writing, with the time, the grounds and who made the decision. From that moment the roles and deadlines in the plan apply instead of the usual procedures.</p></div><div class="faq"><div class="q">Who carries out an ONiVD plan module at each stage?</div><p>At the notification stage: the duty service and the manager who decides on activation. At the recovery stage: the response team, the owners of critical processes and IT. At the return to normal operations: the same process owners and the unit responsible for the plan, which records the results and lessons learned.</p></div><div class="faq"><div class="q">Is the ONiVD plan tested every year?</div><p>The bank sets the frequency itself in its internal documents. In practice, the whole plan is tested at least once a year and individual modules more often. Test results are documented and reviewed by management. This is a direct checkpoint during an inspection.</p></div><div class="faq"><div class="q">Do non-credit financial institutions need an ONiVD plan?</div><p>Continuity requirements for non-credit financial institutions are set by separate Bank of Russia acts for each type of activity: for insurers, professional market participants, non-state pension funds and infrastructure organisations. The direct requirement of 850-P is addressed to banks, but the approach to the plan is the same, and the supervisor expects significant non-credit financial institutions to have one.</p></div><div class="faq"><div class="q">When does an incident become an ONiVD event in a bank?</div><p>An operational reliability incident is recorded when the degradation share stays above its signal value for more than five minutes. The plan activation threshold is written into the plan itself. Without it, every activation decision turns into an argument.</p></div><div class="faq"><div class="q">Are the ONiVD plan and the disaster recovery plan the same thing?</div><p>No. The disaster recovery plan (DRP) covers IT systems and data and is one of the modules of the ONiVD plan. The ONiVD plan is wider. It covers how business operations continue, people, premises and counterparties. The difference is explained in the article <a href="en-bcm-bcp-drp-otlichie.html">BCP and DRP</a>.</p></div><div class="faq"><div class="q">Who handles ONiVD in a bank?</div><p>The ONiVD executive owner, at deputy chair of the management board level, is responsible for the system as a whole. The management board approves the plan. The board of directors approves the approach and the acceptable level of risk. The risk management function runs the methodology, reporting and coordination of tests. Technological process owners, IT and information security write and carry out the recovery procedures. Internal audit checks that the system works. A detailed table of roles is in the section <a href="#otvetstvennost">“Responsibility within the bank”</a>.</p></div><p><b>How does the ONiVD plan differ from a BCP?</b> In content, hardly at all. It is a continuity plan in Bank of Russia terms. The differences are the mandatory set of sections, the link to technological processes with set threshold values, and supervisory reporting. An existing BCP is usually extended to meet the requirements. It is rarely rewritten from scratch. More on the differences between plans in the review <a href="en-bcm-bcp-drp-otlichie.html">BCM, BCP and DRP</a>.</p>
+<p><b>Is 787-P still in force?</b> No. Regulation 787-P was repealed on 3 May 2025. Regulation 850-P of 13 January 2025 is now in force. For non-credit financial institutions, 779-P remains in force.</p>
+<p><b>Who activates the ONiVD plan?</b> The person named in an internal document. This is usually the technological process owner or the duty shift manager, once the set triggers are reached, with immediate notice to the ONiVD executive owner. The key requirement is that the activation procedure and the arrangements for deputies are written down and work outside working hours.</p>
+<p><b>How long does development take?</b> For a mid-sized organisation, six to ten weeks to a working first version: description of technological processes, targets, the plan, the first test. Bringing an existing plan in line with current regulations usually takes three to four weeks.</p>
+<p><b>Which situations fall within the scope of ONiVD?</b> Failure of information systems and communication channels, loss of access to an office or site, loss of a significant part of the staff, failure of a key supplier or counterparty, a cyberattack, and events that affect the continuity of payments. The list is set out in the plan and reviewed every year.</p>
+
+
+<div class="inset cta">
+  <h3>From the requirements of the standard to a working system</h3>
+  <p>The assessment shows the gap between your documents and reality. Then the system is built either by your own team in the programme or by us as a turnkey project.</p>
   <div class="btns">
-    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
-    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey BCM →</a>
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
     <a href="en-onlajn-kurs.html" class="btn line">ERGP certification →</a>
   </div>
 </div>
-<div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-plan-nepreryvnosti-biznesa.html" class="rel-card"><div class="rt">Business continuity plan (BCP) →</div><div class="rd">How to build a BCP in 7 steps: structure, roles, template.</div></a><a href="dashboard.html" class="rel-card"><div class="rt">Resilience dashboard →</div><div class="rd">A 0-100 resilience index, cost of downtime and traffic lights for the board. Live demo.</div></a><a href="quiz.html" class="rel-card"><div class="rt">5-minute maturity check →</div><div class="rd">Your resilience level, top three risks and first steps. Free.</div></a></div></div>
+</div>
+<div class="upbox">
+  <span class="k">Section 06 · Implementation and standards</span>
+  <a href="en-iso-22301.html">ISO 22301 →</a>
+  <span class="sep">·</span>
+  <a class="sec" href="materialy-en.html#vnedrenie">All materials in this section</a>
+</div>
+
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP and DRP: what is the difference →</div><div class="rd">Three terms that are often confused. A comparison table and who is responsible for what.</div></a><a href="en-plan-nepreryvnosti-biznesa.html" class="rel-card"><div class="rt">Business continuity plan (BCP) →</div><div class="rd">How to build a business continuity plan in 7 steps: structure, roles, template.</div></a><a href="en-bia-analiz-vozdeystviya.html" class="rel-card"><div class="rt">Business impact analysis →</div><div class="rd">How to identify critical processes and tolerable downtime.</div></a><a href="quiz.html?lang=en" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free of charge.</div></a></div></div>
 </main>
 </div>
 

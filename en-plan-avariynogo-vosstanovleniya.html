@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disaster recovery plan: what it is and how it differs</title>
+<title>Disaster recovery plan</title>
 <meta name="description" content="What a disaster recovery plan (DRP) is, how it differs from a BCP, what it includes (RTO/RPO, backups, scenarios) and how to build it. In plain language.">
-<meta name="keywords" content="disaster recovery plan, DRP, IT recovery, backups, RTO RPO">
-<meta name="author" content="Евгений Теленков">
+<meta name="keywords" content="disaster recovery plan, DRP, disaster recovery, IT recovery, backup, RTO RPO">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/plan-avariynogo-vosstanovleniya.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-plan-avariynogo-vosstanovleniya.html">
@@ -45,14 +45,14 @@
       "@id": "https://bcm.risk-place.ru/en-plan-avariynogo-vosstanovleniya.html#article",
       "headline": "Disaster recovery plan (DRP): what it is and how it differs from a BCP",
       "description": "What a disaster recovery plan (DRP) is, how it differs from a BCP, what it includes (RTO/RPO, backups, scenarios) and how to build it. In plain language.",
-      "image": "https://bcm.risk-place.ru/en-plan-avariynogo-vosstanovleniya.png",
+      "image": "https://bcm.risk-place.ru/plan-avariynogo-vosstanovleniya.png",
       "datePublished": "2026-06-28",
       "dateModified": "2026-06-28",
-      "inLanguage": "en-US",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
         "name": "Evgeny Telenkov",
-        "url": "https://bcm.risk-place.ru/"
+        "url": "https://risk-place.ru/telenkov/"
       },
       "publisher": {
         "@type": "Organization",
@@ -95,7 +95,7 @@
           "name": "Are a DRP and a BCP the same thing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. A DRP is about restoring IT systems and data; a BCP is about whole-business continuity (processes, people, suppliers, communications). A DRP is usually the IT part of a BCP."
+            "text": "No. A DRP is about restoring IT systems and data. A BCP is about the continuity of the whole business (processes, people, suppliers, communications). The DRP is usually the IT part of the BCP."
           }
         },
         {
@@ -103,15 +103,15 @@
           "name": "How often should a DRP be tested?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "At least once a year, and more often for critical systems. The test must include an actual restore from backup, not just confirming the backup exists."
+            "text": "At least once a year, and more often for critical systems. The test must include an actual restore from a backup. Checking that the backup exists is not enough."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I protect backups from ransomware?",
+          "name": "How do you protect backups from ransomware?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Keep isolated (offline or immutable) copies separated from the main network, and verify their recovery regularly."
+            "text": "Keep isolated (offline or immutable) copies separated from the main network, and test restoring from them regularly."
           }
         }
       ]
@@ -127,7 +127,7 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="plan-avariynogo-vosstanovleniya.html">RU</a><a href="en-plan-avariynogo-vosstanovleniya.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
@@ -135,10 +135,10 @@
 <div class="ph"><div class="in">
   <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Disaster recovery plan (DRP)</div>
   <div class="rule"></div>
-  <div class="eyebrow">Implementing BCM</div>
+  <div class="eyebrow">BCM implementation</div>
   <h1>Disaster recovery plan (DRP): what it is and how it differs from a BCP</h1>
-  <p class="lead">A DRP is the IT part of continuity: how to restore systems and data after an outage or attack. We break down what a disaster recovery plan contains and how it differs from a BCP.</p>
-  <div class="meta">Updated: June 28, 2026 · Author: Evgeny Telenkov · ≈ 7 min read</div>
+  <p class="lead">A DRP is the IT part of continuity: how to restore systems and data after a failure or an attack. We look at what a disaster recovery plan includes and how it differs from a BCP.</p>
+  <div class="meta">Updated: 28 June 2026 · Author: Evgeny Telenkov · ≈ 7 min read</div>
 </div></div>
 <!--/TPL:HERO-->
 
@@ -148,68 +148,75 @@
   <div class="t">On this page</div>
   <nav>
     <a href="#chto">What a DRP is</a>
-    <a href="#otlichie">DRP vs BCP: the difference</a>
+    <a href="#otlichie">DRP and BCP: the difference</a>
     <a href="#vhodit">What a DRP includes</a>
-    <a href="#faq">FAQ</a>
+    <a href="#faq">Frequently asked questions</a>
   </nav>
 </aside>
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
 <h2 id="chto">What a DRP is</h2>
-<p>A <strong>Disaster Recovery Plan (DRP)</strong> is a document on how to restore IT infrastructure, systems and data after an outage, disaster or cyberattack. The DRP answers "how to bring back the technology and data," whereas a <a href="en-plan-nepreryvnosti-biznesa.html">BCP</a> answers "how to keep the whole business going."</p>
+<p>A <strong>disaster recovery plan (DRP)</strong> is a document on how to restore IT infrastructure, systems and data after a failure, an accident or a cyberattack. A DRP answers the question “how do we get the technology and data back?”, while a <a href="en-plan-nepreryvnosti-biznesa.html">BCP</a> answers “how do we keep the whole business going?”</p>
 
-<h2 id="otlichie">DRP vs BCP: the difference</h2>
+<h2 id="otlichie">DRP and BCP: the difference</h2>
 <div class="table-wrap">
 <table>
   <thead><tr><th></th><th>BCP</th><th>DRP</th></tr></thead>
   <tbody>
     <tr><td>What it restores</td><td>Whole business processes</td><td>IT systems and data</td></tr>
-    <tr><td>Who owns it</td><td>Business + management</td><td>IT / InfoSec</td></tr>
-    <tr><td>Example</td><td>How to replace a missing supplier</td><td>How to bring servers back from backup</td></tr>
+    <tr><td>Who is responsible</td><td>Business + management</td><td>IT / information security</td></tr>
+    <tr><td>Example</td><td>How to replace a supplier that has dropped out</td><td>How to bring servers back up from a backup</td></tr>
   </tbody>
 </table>
 </div>
-<p>The DRP is usually part of the BCP as its technical component. More on the levels — in "<a href="en-bcm-bcp-drp-otlichie.html">BCM, BCP, DRP: the difference</a>".</p>
+<p>A DRP is usually the technical part of a BCP. More about the levels in the article “<a href="en-bcm-bcp-drp-otlichie.html">BCM, BCP, DRP: the difference</a>”.</p>
 
 <h2 id="vhodit">What a DRP includes</h2>
 <ul>
   <li><strong>A list of critical systems</strong> and their recovery priorities.</li>
   <li><strong>RTO and RPO</strong> for each system.</li>
-  <li><strong>Backups:</strong> what, where, how often, isolated (offline) copies against ransomware.</li>
+  <li><strong>Backup:</strong> what, where and how often, plus isolated (offline) copies against ransomware.</li>
   <li><strong>Backup infrastructure:</strong> spare capacity, cloud, sites.</li>
-  <li><strong>Step-by-step recovery procedures</strong> and owners.</li>
-  <li><strong>Recovery testing</strong> from backups — regularly, not "when it hits".</li>
+  <li><strong>Step-by-step recovery procedures</strong> and the people responsible.</li>
+  <li><strong>Testing</strong> of recovery from backups on a regular basis. Do not wait until “disaster strikes”.</li>
 </ul>
-<div class="callout"><b>Important:</b> a backup you have never restored is not a backup, it is a hope. Test recovery on a schedule. ICT readiness approaches are described by ISO/IEC 27031.</div>
+<div class="callout"><b>Important:</b> a backup that has never been restored is only a hope. Test restores on a schedule. The ISO/IEC 27031 standard describes approaches to IT readiness.</div>
 
 
-<h2 id="faq">FAQ</h2>
-<h3>Are a DRP and a BCP the same thing?</h3><p>No. A DRP is about restoring IT systems and data; a BCP is about whole-business continuity (processes, people, suppliers, communications). A DRP is usually the IT part of a BCP.</p>
-<h3>How often should a DRP be tested?</h3><p>At least once a year, and more often for critical systems. The test must include an actual restore from backup, not just confirming the backup exists.</p>
-<h3>How do I protect backups from ransomware?</h3><p>Keep isolated (offline or immutable) copies separated from the main network, and verify their recovery regularly.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Are a DRP and a BCP the same thing?</h3><p>No. A DRP is about restoring IT systems and data. A BCP is about the continuity of the whole business (processes, people, suppliers, communications). The DRP is usually the IT part of the BCP.</p>
+<h3>How often should a DRP be tested?</h3><p>At least once a year, and more often for critical systems. The test must include an actual restore from a backup. Checking that the backup exists is not enough.</p>
+<h3>How do you protect backups from ransomware?</h3><p>Keep isolated (offline or immutable) copies separated from the main network, and test restoring from them regularly.</p>
 
 
 <div class="inset cta">
   <h3>Check your recovery numbers</h3>
-  <p>The assessment shows where business deadlines diverge from what technology can deliver. Those numbers are then produced either by your specialist or by us.</p>
+  <p>The assessment shows where the recovery times the business needs do not match what the technology can deliver. After that, either your specialist calculates these numbers, or we do.</p>
   <div class="btns">
-    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
     <a href="en-onlajn-kurs.html" class="btn line">ERGP certification →</a>
-    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey BCM →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
   </div>
 </div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
   <div>
-    <div class="nm">Evgeny Telenkov</div>
-    <div class="rl">Director, business continuity practice · PhD in Economics · Academic Director &amp; Chief Examiner</div>
-    <div class="bio">Risk Manager of the Year in Russia 2020 (RusRisk). Built business continuity from scratch at Nornickel, more than 20 plans; led risk functions at Beeline, Rosneft and EY. Chief risk officer of a $20 billion petrochemical megaproject. Deputy chair of Rosstandart technical committee 010 “Risk management”, co-author of six national standards. Author of the ERGP and SAFE programmes.</div>
-    <div><a href="en-o-podhode.html">About the team and the practice →</a></div>
+    <div class="nm"><a href="https://risk-place.ru/telenkov/">Evgeny Telenkov</a></div>
+    <div class="rl">Director, Business Continuity Practice · PhD in Economics · Academic Director and Chief Examiner</div>
+    <div class="bio">Best Risk Manager of Russia 2020 (RusRisk). Built business continuity at Nornickel from scratch, with more than 20 plans. Worked in the risk functions of Beeline, Rosneft and EY. Chief Risk Officer of a USD 20 billion petrochemical megaproject. Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards. Author of the ERGP and SAFE programmes.</div>
+    <div><a href="en-o-podhode.html">About the authors and the risk-place practice →</a></div>
   </div>
 </div>
   </div>
-  <div class="rel"><div class="k">Read also</div><div class="rel-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 days of downtime: a cyberattack lesson →</div><div class="rd">A real ransomware case at a major insurer: 7 days of downtime, website and app offline.</div></a><a href="en-bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP, DRP — the difference →</div><div class="rd">How BCM, BCP, DRP and risk management differ in plain language.</div></a><a href="quiz.html" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free.</div></a></div></div>
+<div class="upbox">
+  <span class="k">Section 03 · Impact analysis and recovery</span>
+  <a href="en-bia-analiz-vozdeystviya.html">Business impact analysis (BIA) →</a>
+  <span class="sep">·</span>
+  <a class="sec" href="materialy-en.html#bia">All materials in this section</a>
+</div>
+
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 days of downtime: lessons from a cyberattack →</div><div class="rd">A real case of a ransomware attack on a large insurer: 7 days of downtime, with the website and the app out of service.</div></a><a href="en-bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP, DRP: the differences →</div><div class="rd">How BCM, BCP, DRP and risk management differ, in plain language.</div></a><a href="quiz.html?lang=en" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free of charge.</div></a></div></div>
 </main>
 </div>
 

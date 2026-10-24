@@ -11,8 +11,9 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Turnkey BCM in Russia: audit and raise your survival metrics</title>
-<meta name="description" content="We build a business continuity system in 1-2 months: from a readiness audit to plans people use, trained people, risks in money and measured recovery time, with a plan check in a stress test. Delivered in Russia, in English.">
+<title>Building a turnkey business continuity system</title>
+<meta name="description" content="We build a business continuity system, from an audit of where you are today to working plans, trained people and measurable recovery metrics. The result stays with the company.">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/bcm-pod-klyuch.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-bcm-pod-klyuch.html">
@@ -20,15 +21,14 @@
 <link rel="canonical" href="https://bcm.risk-place.ru/en-bcm-pod-klyuch.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bcm.risk-place.ru/en-bcm-pod-klyuch.html">
-<meta property="og:title" content="Turnkey BCM in Russia: audit and raise your survival metrics">
-<meta property="og:description" content="From a readiness audit to a working system in seven steps: plans people use, trained people, risks in money and measured recovery time.">
+<meta property="og:title" content="Building a turnkey business continuity system">
+<meta property="og:description" content="From a readiness audit to a working system: plans, trained people, an understanding of risks in money and measurable recovery metrics.">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <meta property="og:site_name" content="risk-place.ru">
-<meta property="og:locale" content="en_GB">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Turnkey BCM","serviceType":"Business continuity implementation","description":"Readiness audit against two critical scenarios, a plan check in a stress test, BCP and DRP, a register of single points of failure, recovery metrics and a 90-day plan.","areaServed":"RU","inLanguage":"en","provider":{"@type":"Organization","name":"risk-place.ru"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"We are a critical infrastructure operator moving to Russian hardware and software. Is this a separate project?","acceptedAnswer":{"@type":"Answer","text":"No. It is one of the continuity scenarios, and it fits into the same tools: the impact analysis gives the migration window, the risk register gains the migration risks, the plan gets a rollback section, and exercises rehearse a failure of the new system. Security tools and categorisation stay with specialist integrators and your own commission."}},{"@type":"Question","name":"Does the price include the fixes?","acceptedAnswer":{"@type":"Answer","text":"Everything fixable without capital spend is fixed together during the programme: plans, registers, fallback channels, contract wording, drills. Measures that need investment come with a risk-economics case proving they pay back; the decision stays yours."}},{"@type":"Question","name":"Will you really switch off our systems?","acceptedAnswer":{"@type":"Answer","text":"No. The stress test is a tabletop exercise: we simulate the loss of CRM and ERP or the closure of a site in a structured session. Production runs as usual, and the decisions, gaps and timings the day produces are real."}},{"@type":"Question","name":"Our biggest risk is neither ransomware nor fire. Does the programme fit?","acceptedAnswer":{"@type":"Answer","text":"Yes. The two default scenarios are a starting point. For a trading house it may be the failure of a cornerstone contract, for a family business the departure of key executives, for a manufacturer the loss of a key supplier. We agree the two scenarios that genuinely threaten you at the start."}},{"@type":"Question","name":"Do you work with small businesses?","acceptedAnswer":{"@type":"Answer","text":"Yes, the scope adapts to the size of the company and its budget."}},{"@type":"Question","name":"How is this different from the risk-place.org programme?","acceptedAnswer":{"@type":"Answer","text":"Same method, different market. This edition is delivered in Russia and priced in roubles, and the scenarios and regulatory context are local. The risk-place.org edition is built for the Gulf."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Turnkey BCM","serviceType":"Business continuity implementation","description":"Readiness audit against two critical scenarios and improved survival metrics: a BCM plan and DRP, a stress test, a register of points of failure, a 90-day plan.","provider":{"@type":"Organization","name":"risk-place.ru"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"We are a critical information infrastructure (CII) entity moving to Russian-made hardware and software. Is this a separate project?","acceptedAnswer":{"@type":"Answer","text":"No. It is one of the scenarios of the continuity system, and it fits into the same tools: the impact analysis gives the migration window, the risk register gains the migration risks, the plan gets a rollback section, and exercises play out a failure of the new system. Security tools and categorisation stay with specialist integrators and your categorisation commission. How it works: migrating CII to Russian-made hardware and software without stopping the business (in Russian)."}},{"@type":"Question","name":"Does the price include the fixes?","acceptedAnswer":{"@type":"Answer","text":"Everything that can be fixed without capital expenditure we fix together during the programme: plans, registers, backup channels, contract wording, drills. Measures that need investment get a risk-economics case that proves they pay back; the decision stays with you."}},{"@type":"Question","name":"Will you really switch off our systems?","acceptedAnswer":{"@type":"Answer","text":"No. The stress test is a tabletop exercise: we model the loss of CRM and ERP or the closure of a site in a structured exercise. Production runs as usual, and the decisions, gaps and timings of that day are real."}},{"@type":"Question","name":"Our main risk is neither ransomware nor fire. Will the programme work for us?","acceptedAnswer":{"@type":"Answer","text":"Yes. The two default scenarios are a starting point. For a trading house it may be the failure of a cornerstone contract, for a family business the departure of key executives, for a manufacturer the loss of a key supplier. We agree on the two scenarios that genuinely threaten you at the start."}},{"@type":"Question","name":"Do you work with small businesses?","acceptedAnswer":{"@type":"Answer","text":"Yes, the scope is adapted to the size of the company and its budget."}}]}]}</script>
 </head>
 <body>
 <!--TPL:HEADER-->
@@ -37,123 +37,123 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html" class="act">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="bcm-pod-klyuch.html">RU</a><a href="en-bcm-pod-klyuch.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <!--TPL:HERO-->
 <div class="ph"><div class="in">
-  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="en-dlya-kompanij.html">For companies</a><span class="sep">/</span>Turnkey BCM</div>
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="en-dlya-kompanij.html">For companies</a><span class="sep">/</span>Building a continuity system</div>
   <div class="rule"></div>
   <div class="eyebrow">Work with your company · 1-2 months · seven steps</div>
-  <h1>Turnkey business continuity system</h1>
-  <p class="lead">We start with an honest audit of what exists and within 1-2 months bring it to a working system: plans, trained people, risks in money and recovery time.</p>
+  <h1>Building a turnkey business continuity system</h1>
+  <p class="lead">We start with an honest audit of what you already have and within 1-2 months bring it to a working system: plans, trained people, risks in money and recovery time.</p>
 </div></div>
 <!--/TPL:HERO-->
 
 <div class="pb one hubw">
+
 <main class="pmain">
 <div class="hub2">
-  <div class="sec" id="why-companies-come">
-    <div><h2>Questions companies come to us with</h2><p>Four questions leaders usually start the conversation with.</p><p>Delivered in Russia, in English, for teams that report to a foreign parent, an insurer or a group auditor.</p></div>
-    <ul class="lines quotes"><li><b>“What does a day of downtime cost us?”</b><span>We count it for every critical process: lost revenue, penalties, recovery costs. The result is a figure in roubles you can show the board and the insurer.</span></li><li><b>“Are we ready for a serious disruption?”</b><span>We test it on two scenarios that are real for you, such as a ransomware attack and a fire, and show where the plan breaks and how many days recovery would take.</span></li><li><b>“How do we measure the company’s resilience?”</b><span>We set the metrics: recovery time objective by process, acceptable data loss, a readiness index. You can track them on a dashboard quarter by quarter.</span></li><li><b>“How do we raise the company’s chances of survival?”</b><span>We close the gaps we find: free fixes are made right away during the work; for measures that need a budget we calculate the payback and leave you a 90-day plan.</span></li></ul>
+  <div class="sec" id="s-chem-prihodyat">
+    <div><h2>Questions companies come to us with</h2><p>Four questions that leaders usually start the conversation with.</p></div>
+    <ul class="lines quotes"><li><b>“What does one day of downtime cost us?”</b><span>We calculate it for every critical process: lost revenue, penalties, recovery costs. The result is a figure in roubles that you can show to the board of directors and the insurer.</span></li><li><b>“Are we ready for a serious disruption?”</b><span>We test it on two scenarios that are real for you, for example a ransomware attack and a fire, and show where the plan will break and how many days recovery will take.</span></li><li><b>“How do we measure the company’s resilience?”</b><span>We set the metrics: recovery time objective by process, acceptable data loss, a readiness index. You can track them on a dashboard and compare them quarter by quarter.</span></li><li><b>“How do we improve the company’s chances of survival?”</b><span>We close the gaps we find: free fixes are made right away during the work; for measures that need a budget we calculate the payback and leave you a 90-day plan.</span></li></ul>
   </div>
 
-  <div class="sec" id="result">
-    <div><h2>What you get in 1&#8209;2 months</h2><p>Four things the company uses every day and that are visible from outside: to the board, the insurer and the auditor.</p><a class="btn navy" href="#demo">Request a quote</a></div>
+  <div class="sec" id="rezultat">
+    <div><h2>What you get in 1‑2 months</h2><p>Four things the company uses every day and that are visible from outside: to the board of directors, the insurer and the auditor.</p><a class="btn navy" href="#demo">Request a quote</a></div>
     <ul class="lines">
       <li><b>A working system.</b><span>Continuity and recovery plans in the hands of the duty shift, a procedure for declaring a crisis and workaround modes of operation.</span></li>
-      <li><b>Risks in money.</b><span>What a day of downtime costs for each process, where the single points of failure are and where to invest first.</span></li>
-      <li><b>Trained people.</b><span>Roles are worked through on a tabletop scenario: everyone knows what to do in the first hour and with which authority.</span></li>
-      <li><b>Recovery metrics.</b><span>Recovery time and recovery point objectives for key processes, confirmed by a test. You can show them to the board and track them on a dashboard.</span></li>
+      <li><b>Risks in money.</b><span>What one day of downtime costs for each process, where the single points of failure are and where to invest first.</span></li>
+      <li><b>Trained people.</b><span>Roles are worked through and rehearsed on a tabletop scenario: everyone knows what to do in the first hour and with what authority.</span></li>
+      <li><b>Recovery metrics.</b><span>Recovery time and recovery point objectives for key processes, confirmed by testing. You can show them to the board and track them on a dashboard.</span></li>
     </ul>
   </div>
 
-  <div class="sec" id="how-it-works">
-    <div><h2>How the work runs: seven steps</h2><p>Three stages: understand, test, fix. Every step ends with a document you keep. The whole programme takes 1-2 months; the quote is ready within two working days.</p></div>
+  <div class="sec" id="kak-idet-rabota">
+    <div><h2>How the work runs: seven steps</h2><p>Three stages: understand, test, fix. Every step ends with a document that stays with you. The whole engagement takes 1-2 months; the quote is ready within two working days.</p></div>
     <ol class="road">
-      <li><span class="n">01</span><span class="stage">Understand</span><b>We choose with you two scenarios that genuinely threaten the company</b><span>By default, a ransomware attack and a fire that closes a site. For a trading house it may be the failure of a cornerstone contract, for a family business the departure of key executives, for a manufacturer the loss of a supplier.</span></li>
-      <li><span class="n">02</span><b>We count the company’s economics</b><span>How much the company earns and from what, where the financing comes from, where clients, suppliers and contractors are concentrated, which single points of failure and bottlenecks exist.</span></li>
-      <li><span class="n">03</span><b>We take apart the business model: how revenue is made and what would stop it</b><span>How revenue turns into EBITDA and net profit, and at which link a disruption cuts into profit. Without this step a plan protects the wrong processes.</span></li>
-      <li><span class="n">04</span><b>We talk to the people who make the money</b><span>Interviews with key employees: who actually holds the process, how revenue is created and by which rules the company works today.</span></li>
-      <li class="key"><span class="n">05</span><span class="stage">Test</span><b>We test the plan in a stress test: two days in the meeting room</b><span>A tabletop “day X” scenario: CRM or ERP goes dark, a warehouse or a workshop is closed. Systems keep running as usual, while the decisions, gaps and timings of the day are real. <a href="en-stress-test-nepreryvnosti.html">How the check runs →</a></span></li>
-      <li><span class="n">06</span><span class="stage">Fix</span><b>We build the recovery scheme together with your team</b><span>Who does what, in which hour and with which authority. People carry out plans they helped write.</span></li>
-      <li><span class="n">07</span><b>We put metrics in place and close the gaps we found</b><span>Everything fixable without investment we fix together right away: plans, fallback registers and channels, contract wording, offline copies. What needs a budget gets a risk-economics case, and you keep a 90-day plan.</span></li>
+      <li><span class="n">01</span><span class="stage">Understand</span><b>Together with you, we choose two scenarios that genuinely threaten the company</b><span>By default, a ransomware attack and a fire with the loss of a site. For a trading house it may be the failure of a cornerstone contract, for a family business the departure of key executives, for a manufacturer the loss of a supplier.</span></li>
+      <li><span class="n">02</span><b>We work out the company’s economics</b><span>How much the company earns and from what, where its financing comes from, where clients, suppliers and contractors are concentrated, and what single points of failure and bottlenecks exist.</span></li>
+      <li><span class="n">03</span><b>We analyse the business model: how revenue is made and what would stop it</b><span>How revenue turns into EBITDA and net profit, and at which link a disruption cuts into profit. Without this step the plan protects the wrong processes.</span></li>
+      <li><span class="n">04</span><b>We talk to the people who make the money</b><span>Interviews with key employees: who actually holds the process together, how revenue is created and by what rules the company works today.</span></li>
+      <li class="key"><span class="n">05</span><span class="stage">Test</span><b>We test the plan in a stress test: two days in the meeting room</b><span>A tabletop “day X” scenario: CRM or ERP goes dark, a warehouse or a workshop is closed. Systems keep running as usual, while the decisions, gaps and timings of that day are real. <a href="en-stress-test-nepreryvnosti.html">How the check runs →</a></span></li>
+      <li><span class="n">06</span><span class="stage">Fix</span><b>We build the recovery scheme together with your team</b><span>Who does what, at what hour and with what authority. People carry out plans they helped to write.</span></li>
+      <li><span class="n">07</span><b>We put metrics in place and close the gaps we found</b><span>Everything that can be fixed without investment we fix together right away: plans, backup registers and communication channels, contract wording, offline copies. For what needs a budget we build a risk-economics case and leave you a 90-day plan.</span></li>
     </ol>
   </div>
 
-  <div class="sec" id="example">
-    <div><h2>One fix as an example</h2><p>The programme is made of fixes like this: most of them cost nothing and are closed during the work.</p></div>
+  <div class="sec" id="primer">
+    <div><h2>An example of one fix</h2><p>The programme is made up of fixes like this one: most of them cost nothing and are closed during the work.</p></div>
     <ul class="lines">
-      <li><b>The problem.</b><span>The client register lives in the CRM, and that is exactly what ransomware encrypts first.</span></li>
-      <li><b>The fix.</b><span>During the programme we export the register to a simple offline file kept away from the office and set up a fallback channel: a Telegram contact for every key client, with message templates ready.</span></li>
+      <li><b>The problem.</b><span>The client register lives in the CRM, and that is exactly what ransomware will encrypt first.</span></li>
+      <li><b>The fix.</b><span>During the programme we export the register to a simple offline file kept outside the office and set up a backup channel: a Telegram contact for every key client, with ready-made message templates.</span></li>
       <li><b>Cost: zero.</b><span>The effect on day X: sales keep talking to clients while IT recovers.</span></li>
     </ul>
   </div>
 
-  <div class="sec" id="documents">
+  <div class="sec" id="dokumenty">
     <div><h2>What you keep</h2><p>Eight working documents, and each one has a reader who needs it.</p></div>
     <ul class="lines docs">
-      <li><b>Readiness audit report</b><span>The company’s position against both scenarios, scored, with the three loudest gaps on top.</span><span class="who">board, insurer</span></li>
+      <li><b>Readiness audit report</b><span>The company’s position on both scenarios, scored, with the three most serious gaps at the top.</span><span class="who">board of directors, insurer</span></li>
       <li><b>Risk map of key processes</b><span>Which scenario would stop which process, and what one lost day costs.</span><span class="who">management, process owners</span></li>
-      <li><b>Register of single points of failure</b><span>One supplier, one system, one person, one site: found, priced, with the decision on each recorded.</span><span class="who">management, procurement, IT</span></li>
-      <li><b>Revenue → EBITDA resilience model</b><span>How revenue is made, which costs create it and where a disruption cuts into profit.</span><span class="who">CFO, board</span></li>
-      <li><b>Stress-test protocol</b><span>The tabletop day minute by minute: what broke when systems went dark and the site closed, and how long recovery took.</span><span class="who">management, auditor</span></li>
-      <li><b>Business continuity plan (BCP) and IT disaster recovery plan (DRP)</b><span>Short and executable: activation and triggers, roles and authority, a first-hours checklist, system recovery.</span><span class="who">duty shift, IT</span></li>
-      <li><b>Recovery scheme</b><span>Who does what and in which hour, from disruption back to normal operations; every step has a named owner.</span><span class="who">crisis team</span></li>
-      <li><b>Recovery metrics and a 90-day plan</b><span>Recovery time and recovery point by process, ready for a dashboard; free fixes already done, paid ones backed by risk economics.</span><span class="who">board, dashboard</span></li>
+      <li><b>Register of single points of failure</b><span>One supplier, one system, one person, one site: found, valued in money, with a recorded decision on each.</span><span class="who">management, procurement, IT</span></li>
+      <li><b>“Revenue → EBITDA” resilience model</b><span>How revenue is made, which costs create it and where a disruption cuts into profit.</span><span class="who">CFO, board of directors</span></li>
+      <li><b>Stress-test record</b><span>The tabletop day minute by minute: what broke when the systems went dark and the site closed, and how long recovery took.</span><span class="who">management, auditor</span></li>
+      <li><b>Business continuity plan (BCP) and IT disaster recovery plan (DRP)</b><span>Short and actionable: activation and triggers, roles and authority, a first-hours checklist, system recovery.</span><span class="who">duty shift, IT</span></li>
+      <li><b>Recovery scheme</b><span>Who does what and at what hour, from the disruption back to normal operations; every step has an assigned owner.</span><span class="who">crisis team</span></li>
+      <li><b>Recovery metrics and a 90-day plan</b><span>Recovery time and recovery point objectives by process, ready for a dashboard; free fixes already made, paid ones backed by risk economics.</span><span class="who">board of directors, dashboard</span></li>
     </ul>
   </div>
 
-  <div class="sec" id="scope">
-    <div><h2>What the programme includes</h2><p>The core is the same for every company. Two options are added when you need them; each is part of one quote and none is sold separately.</p></div>
+  <div class="sec" id="sostav">
+    <div><h2>What the programme includes</h2><p>The core is the same for every company. We add two options when you specifically need them; each is part of one quote and is not sold separately.</p></div>
     <div>
       <div class="sub">Always</div>
       <ul class="lines">
-        <li><b>Readiness audit and business impact analysis.</b><span>What exists today, which processes are critical, what a day of downtime costs.</span></li>
+        <li><b>Readiness audit and business impact analysis.</b><span>What exists today, which processes are critical, what one day of downtime costs. <a href="ocenka-riskov-nepreryvnosti.html">How we calculate it (in Russian) →</a></span></li>
         <li><b>Plan check in a stress test,</b> step 05.<span><a href="en-stress-test-nepreryvnosti.html">How the check runs →</a></span></li>
         <li><b>Plans, roles and metrics,</b> steps 06 and 07.</li>
       </ul>
       <div class="sub">When needed</div>
       <ul class="lines">
-        <li><b>Resilience strategy session.</b><span>One to two days with leadership: risk appetite, critical processes, the decisions needed from the board.</span></li>
-        <li><b>Risk survey of sites and suppliers.</b><span>A site visit and a walk through the supply chain: single points of failure, concentration on one counterparty, fallback channels.</span></li>
-        <li><b>Training for the person who runs the system.</b><span><a href="en-onlajn-kurs.html">ERGP certification →</a></span></li>
+        <li><b>Resilience strategy session.</b><span>1-2 days with senior management: risk appetite, critical processes, the decisions needed from the board. <a href="strategicheskaya-sessiya.html">How we run it (in Russian) →</a></span></li>
+        <li><b>Risk survey of sites and suppliers.</b><span>A site visit and a review of the supply chain: single points of failure, concentration on one counterparty, backup channels.</span></li>
+        <li><b>Preparing the person responsible for the system.</b><span><a href="en-onlajn-kurs.html">ERGP certification →</a></span></li>
       </ul>
     </div>
   </div>
 
-  <div class="sec wide" id="results">
-    <div><h2>What the results look like</h2><p>These are the documents you keep after the programme. Figures in the examples are illustrative.</p></div>
-    <div class="acards"><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Readiness score</div><div class="mk-gwrap"><div class="mk-gauge"><div class="mk-needle"></div></div><div class="mk-gnum">46<small>/100</small></div></div><div class="mk-kv"><span>Ransomware track</span><b>52</b></div><div class="mk-kv"><span>Fire track</span><b class="hot">41</b></div></div><b>Readiness audit report</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Process × impact</div><div class="mk-grid"><i class="g1">HR</i><i class="g2">Logistics</i><i class="g3">Sales</i><i class="g2">Finance</i><i class="g1">Legal</i><i class="g3">ERP</i><i class="g2">Procure</i><i class="g1">Admin</i><i class="g2">Warehouse</i></div><div class="mk-axis"><span>← low impact</span><span>critical →</span></div></div><b>Risk map of key processes</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Single points of failure</div><div class="mk-kv"><span>1 supplier · raw material</span><b class="loss">6M RUB/day</b></div><div class="mk-kv"><span>1 system · ERP</span><b class="loss">4M RUB/day</b></div><div class="mk-kv"><span>1 person · chief engineer</span><b>risk</b></div><div class="mk-kv"><span>1 route · site access</span><b>risk</b></div></div><b>Register of single points of failure</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Revenue → EBITDA</div><div class="mk-bars"><div class="mk-bar"><i class="h40"></i><em>Rev 100</em></div><div class="mk-bar"><i class="h26"></i><em>−COGS</em></div><div class="mk-bar"><i class="h18"></i><em>−Opex</em></div><div class="mk-bar"><i class="hot h14"></i><em>EBITDA 38</em></div></div><div class="mk-note">where a lost day bites</div></div><b>Revenue → EBITDA model</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Stress-test day · log</div><div class="mk-kv"><span>T+0 · ERP goes dark</span><b class="hot">start</b></div><div class="mk-kv"><span>T+40m · manual mode on</span><b>ok</b></div><div class="mk-kv"><span>T+2h · orders resume</span><b>ok</b></div><div class="mk-kv"><span>Findings logged</span><b class="hot">7</b></div></div><b>Stress-test protocol</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">BCP · DRP</div><div class="mk-kv"><span>1 · Activation and triggers</span><b>p. 1</b></div><div class="mk-kv"><span>2 · Roles and authority</span><b>p. 3</b></div><div class="mk-kv"><span>3 · First hours checklist</span><b>p. 5</b></div><div class="mk-kv"><span>4 · IT recovery</span><b>p. 9</b></div></div><b>Continuity plan and IT recovery plan</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Recovery scheme</div><div class="mk-flow"><i>declare</i><em>→</em><i>workaround</i><em>→</em><i class="hot">restore</i></div><div class="mk-kv"><span>Target: back to normal</span><b class="hot">72h</b></div><div class="mk-kv"><span>Owner per step</span><b>named</b></div></div><b>Recovery scheme</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Metrics · 90 days</div><div class="mk-kpis"><b>RTO<br>2 days</b><b>Fire<br>1 mo</b><b class="hot">Index<br>68</b></div><div class="mk-kv"><span>Weeks 1-2 · fixes</span><b>done</b></div><div class="mk-kv"><span>Weeks 3-12 · investment</span><b class="hot">case</b></div></div><b>Metrics and a 90-day plan</b></div></div>
+  <div class="sec wide" id="primery-rezultatov">
+    <div><h2>What the results look like</h2><p>This is what the documents you keep after the programme look like. The figures in the examples are illustrative.</p></div>
+    <div class="acards"><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Readiness score</div><div class="mk-gwrap"><div class="mk-gauge"><div class="mk-needle"></div></div><div class="mk-gnum">46<small>/100</small></div></div><div class="mk-kv"><span>“Ransomware” track</span><b>52</b></div><div class="mk-kv"><span>“Fire” track</span><b class="hot">41</b></div></div><b>Readiness audit report</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Process × impact</div><div class="mk-grid"><i class="g1">HR</i><i class="g2">Logistics</i><i class="g3">Sales</i><i class="g2">Finance</i><i class="g1">Legal</i><i class="g3">ERP</i><i class="g2">Purchasing</i><i class="g1">Admin</i><i class="g2">Warehouse</i></div><div class="mk-axis"><span>← low impact</span><span>critical →</span></div></div><b>Risk map of key processes</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Single points of failure</div><div class="mk-kv"><span>1 supplier · raw materials</span><b class="loss">RUB 6M/day</b></div><div class="mk-kv"><span>1 system · ERP</span><b class="loss">RUB 4M/day</b></div><div class="mk-kv"><span>1 person · chief engineer</span><b>risk</b></div><div class="mk-kv"><span>1 route · access road</span><b>risk</b></div></div><b>Register of single points of failure</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Revenue → EBITDA</div><div class="mk-bars"><div class="mk-bar"><i class="h40"></i><em>Revenue 100</em></div><div class="mk-bar"><i class="h26"></i><em>−COGS</em></div><div class="mk-bar"><i class="h18"></i><em>−expenses</em></div><div class="mk-bar"><i class="hot h14"></i><em>EBITDA 38</em></div></div><div class="mk-note">where a lost day cuts into profit</div></div><b>“Revenue → EBITDA” model</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Stress-test day · log</div><div class="mk-kv"><span>T+0 · ERP goes dark</span><b class="hot">start</b></div><div class="mk-kv"><span>T+40 min · manual mode</span><b>ok</b></div><div class="mk-kv"><span>T+2 h · orders flowing again</span><b>ok</b></div><div class="mk-kv"><span>Findings in the log</span><b class="hot">7</b></div></div><b>Stress-test record</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">BCP · DRP</div><div class="mk-kv"><span>1 · Activation and triggers</span><b>p. 1</b></div><div class="mk-kv"><span>2 · Roles and authority</span><b>p. 3</b></div><div class="mk-kv"><span>3 · First-hours checklist</span><b>p. 5</b></div><div class="mk-kv"><span>4 · IT recovery</span><b>p. 9</b></div></div><b>Continuity plan and IT recovery plan</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Recovery scheme</div><div class="mk-flow"><i>declare</i><em>→</em><i>workaround</i><em>→</em><i class="hot">restore</i></div><div class="mk-kv"><span>Target: back to normal</span><b class="hot">72 h</b></div><div class="mk-kv"><span>Owner of each step</span><b>assigned</b></div></div><b>Recovery scheme</b></div><div class="acard"><div class="mock" aria-hidden="true"><div class="mk-head"><span class="mk-dot"></span><span class="mk-line"></span></div><div class="mk-title">Metrics · 90 days</div><div class="mk-kpis"><b>RTO<br>2 days</b><b>Fire<br>1 month</b><b class="hot">Index<br>68</b></div><div class="mk-kv"><span>Weeks 1-2 · fixes</span><b>done</b></div><div class="mk-kv"><span>Weeks 3-12 · investment</span><b class="hot">estimate</b></div></div><b>Metrics and a 90-day plan</b></div></div>
   </div>
 
   <div class="sec" id="demo">
-    <div><h2>Request a quote</h2><p>Leave your name and work email. We reply within one business day and propose the next step.</p><p>Prefer messaging? <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p></div>
+    <div><h2>Request a quote</h2><p>Leave your name and work email. We will reply within one working day and suggest the next step.</p><p>Prefer messaging? <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@risk-place.ru">info@risk-place.ru</a></p></div>
     <div>
       <div class="fgrid w">
         <input type="text" class="fld" id="dmName" placeholder="Your name">
         <input type="email" class="fld" id="dmEmail" placeholder="Work email">
         <input type="text" class="fld" id="dmOrg" placeholder="Company">
-        <input type="text" class="fld" id="dmRole" placeholder="Role">
+        <input type="text" class="fld" id="dmRole" placeholder="Job title">
       </div>
       <textarea class="fld" id="dmMsg" rows="3" placeholder="Comment (optional)"></textarea>
-      <label class="consent"><input type="checkbox" id="dmConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy</a></span></label>
-      <button type="button" class="btn navy" id="dmSubmit">Send the request</button>
+      <label class="consent"><input type="checkbox" id="dmConsent"><span>I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy (in Russian)</a></span></label>
+      <button type="button" class="btn navy" id="dmSubmit">Send request</button>
       <p class="fmsg" id="dmMsgOut"></p>
-      <p class="small">Or <a href="quiz.html">take the free assessment first →</a></p>
+      <p class="small">Or <a href="quiz.html?lang=en">take the free assessment first →</a></p>
     </div>
   </div>
 
-  <div class="sec light" id="faq">
+<div class="sec light" id="faq">
     <div><h2>Frequently asked questions</h2></div>
     <div>
-      <details class="fq"><summary>We are a critical infrastructure operator moving to Russian hardware and software. Is this a separate project?</summary><p>No. It is one of the continuity scenarios, and it fits into the same tools: the impact analysis gives the migration window, the risk register gains the migration risks, the plan gets a rollback section, and exercises rehearse a failure of the new system. Security tools and categorisation stay with specialist integrators and your own commission.</p></details>
-      <details class="fq"><summary>Does the price include the fixes?</summary><p>Everything fixable without capital spend is fixed together during the programme: plans, registers, fallback channels, contract wording, drills. Measures that need investment come with a risk-economics case proving they pay back; the decision stays yours.</p></details>
-      <details class="fq"><summary>Will you really switch off our systems?</summary><p>No. The stress test is a tabletop exercise: we simulate the loss of CRM and ERP or the closure of a site in a structured session. Production runs as usual, and the decisions, gaps and timings the day produces are real.</p></details>
-      <details class="fq"><summary>Our biggest risk is neither ransomware nor fire. Does the programme fit?</summary><p>Yes. The two default scenarios are a starting point. For a trading house it may be the failure of a cornerstone contract, for a family business the departure of key executives, for a manufacturer the loss of a key supplier. We agree the two scenarios that genuinely threaten you at the start.</p></details>
-      <details class="fq"><summary>Do you work with small businesses?</summary><p>Yes, the scope adapts to the size of the company and its budget.</p></details>
-      <details class="fq"><summary>How is this different from the risk-place.org programme?</summary><p>Same method, different market. This edition is delivered in Russia and priced in roubles, and the scenarios and regulatory context are local. The <a href="https://risk-place.org/gap-assessment.html">risk-place.org edition</a> is built for the Gulf.</p></details>
+      <details class="fq"><summary>We are a critical information infrastructure (CII) entity moving to Russian-made hardware and software. Is this a separate project?</summary><p>No. It is one of the scenarios of the continuity system, and it fits into the same tools: the impact analysis gives the migration window, the risk register gains the migration risks, the plan gets a rollback section, and exercises play out a failure of the new system. Security tools and categorisation stay with specialist integrators and your categorisation commission. How it works: <a href="kii-perehod-na-rossijskie-pak.html">migrating CII to Russian-made hardware and software without stopping the business (in Russian)</a>.</p></details>
+      <details class="fq"><summary>Does the price include the fixes?</summary><p>Everything that can be fixed without capital expenditure we fix together during the programme: plans, registers, backup channels, contract wording, drills. Measures that need investment get a risk-economics case that proves they pay back; the decision stays with you.</p></details>
+      <details class="fq"><summary>Will you really switch off our systems?</summary><p>No. The stress test is a tabletop exercise: we model the loss of CRM and ERP or the closure of a site in a structured exercise. Production runs as usual, and the decisions, gaps and timings of that day are real.</p></details>
+      <details class="fq"><summary>Our main risk is neither ransomware nor fire. Will the programme work for us?</summary><p>Yes. The two default scenarios are a starting point. For a trading house it may be the failure of a cornerstone contract, for a family business the departure of key executives, for a manufacturer the loss of a key supplier. We agree on the two scenarios that genuinely threaten you at the start.</p></details>
+      <details class="fq"><summary>Do you work with small businesses?</summary><p>Yes, the scope is adapted to the size of the company and its budget.</p></details>
     </div>
   </div>
 </div>
@@ -163,13 +163,13 @@
   var out=document.getElementById("dmMsgOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   btn.addEventListener("click",async function(){var name=v("dmName"),email=v("dmEmail");
     if(!name||email.indexOf("@")<0){say("err","Please fill in your name and work email.");return;}
-    if(!document.getElementById("dmConsent").checked){say("err","Please tick the consent box.");return;}
+    if(!document.getElementById("dmConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}
     this.disabled=true;say("note","Sending…");
     var body={type:"demo",product:"podklyuch",source:"ru",name:name,email:email,org:v("dmOrg"),role:v("dmRole"),message:v("dmMsg"),lang:"en",page:"en-bcm-pod-klyuch"};
     try{var res=await fetch("https://ergp.risk-place.org/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-      if(!res.ok)throw new Error("fail");say("ok","Thank you! We reply within one business day.");
+      if(!res.ok)throw new Error("fail");say("ok","Thank you! We will reply within one working day.");
       try{ym(110579884,"reachGoal","podklyuch_lead_submit");}catch(e){}try{gtag("event","podklyuch_lead_submit");}catch(e){}
-    }catch(e){say("err","Could not send. Please email info@risk-place.ru");this.disabled=false;}});})();
+    }catch(e){say("err","Could not send. Write to us: info@risk-place.ru");this.disabled=false;}});})();
 </script>
 </main>
 </div>

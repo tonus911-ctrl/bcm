@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Operational resilience: what it is and how it differs from</title>
-<meta name="description" content="What operational resilience means, how it differs from business continuity management, what it consists of in practice and where to start. Important services and impact tolerance.">
-<meta name="keywords" content="operational resilience, important business services, impact tolerance, business continuity, ISO 22301">
-<meta name="author" content="Евгений Теленков">
+<title>Operational resilience and continuity: what is the difference</title>
+<meta name="description" content="What operational resilience is, how it differs from business continuity management, what it consists of in practice and how it relates to requirements in Russia.">
+<meta name="keywords" content="operational resilience, important business services, impact tolerance, business continuity">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/operacionnaya-ustojchivost.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-operacionnaya-ustojchivost.html">
@@ -24,13 +24,13 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://bcm.risk-place.ru/en-operacionnaya-ustojchivost.html">
 <meta property="og:title" content="Operational resilience in plain language">
-<meta property="og:description" content="What operational resilience means, how it differs from business continuity management, what it consists of in practice and where to start. Important services and impact tolerance.">
+<meta property="og:description" content="What operational resilience is, how it differs from business continuity management, what it consists of in practice and how it relates to requirements in Russia.">
 <meta property="og:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <meta property="og:site_name" content="risk-place.ru">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Operational resilience in plain language">
-<meta name="twitter:description" content="What operational resilience means, how it differs from business continuity management, what it consists of in practice and where to start. Important services and impact tolerance.">
+<meta name="twitter:description" content="What operational resilience is, how it differs from business continuity management, what it consists of in practice and how it relates to requirements in Russia.">
 <meta name="twitter:image" content="https://bcm.risk-place.ru/og-bcm-site.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -44,15 +44,15 @@
       "@type": "Article",
       "@id": "https://bcm.risk-place.ru/en-operacionnaya-ustojchivost.html#article",
       "headline": "Operational resilience in plain language",
-      "description": "What operational resilience means, how it differs from business continuity management, what it consists of in practice and where to start. Important services and impact tolerance.",
+      "description": "What operational resilience is, how it differs from business continuity management, what it consists of in practice and how it relates to requirements in Russia.",
       "image": "https://bcm.risk-place.ru/og-bcm-site.png",
       "datePublished": "2026-08-17",
       "dateModified": "2026-08-17",
-      "inLanguage": "en-US",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
         "name": "Evgeny Telenkov",
-        "url": "https://bcm.risk-place.ru/"
+        "url": "https://risk-place.ru/telenkov/"
       },
       "publisher": {
         "@type": "Organization",
@@ -92,26 +92,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is operational resilience the same as business continuity?",
+          "name": "Are operational resilience and business continuity the same thing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Continuity answers how to recover after a stoppage. Resilience requires the service not to be interrupted beyond a tolerable point and plans from the assumption that disruption will occur."
+            "text": "No. Continuity answers how to recover after a stoppage. Resilience requires that a service is not disrupted for longer than is tolerable, and it plans on the assumption that a disruption will definitely happen."
           }
         },
         {
           "@type": "Question",
-          "name": "Is it mandatory?",
+          "name": "Is it mandatory in Russia?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "As a standalone regime it applies mainly to regulated financial firms. The underlying logic is useful to any company."
+            "text": "Not as a separate requirement. Organisations supervised by the Bank of Russia must meet a minimum for operational continuity, and the logic itself is useful for any company."
           }
         },
         {
           "@type": "Question",
-          "name": "Where do we start?",
+          "name": "Where do you start?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "List the services that matter to clients and state a maximum tolerable disruption for each. Then map what those services depend on."
+            "text": "List the most important services for customers and, for each one, set the maximum tolerable duration of disruption. Then check what the service depends on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Operational resilience: definition?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Operational resilience is a company's ability to keep delivering critical services through any disruption, including unforeseen ones, and within a tolerable level of disruption set in advance. The term comes from banking regulation and is broader than continuity: it covers adaptation as well as recovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Operational resilience and operational continuity: differences and similarities?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Similarities: both are about the ability to operate during a disruption, and both rely on critical processes and recovery time. Differences: continuity responds to known scenarios with plans, while resilience must also withstand unknown ones. Continuity is measured by recovery time; resilience is measured by the tolerable level of service disruption for the customer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are operational resilience plans and operational continuity plans the same thing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, but the second is part of the first. A continuity plan describes how to restore a process. An operational resilience system adds a map of critical customer services, tolerable disruption thresholds for each one, scenario testing including extreme scenarios, and reporting to the board."
           }
         }
       ]
@@ -127,7 +151,7 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="operacionnaya-ustojchivost.html">RU</a><a href="en-operacionnaya-ustojchivost.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
@@ -135,9 +159,9 @@
 <div class="ph"><div class="in">
   <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Operational resilience</div>
   <div class="rule"></div>
-  <div class="eyebrow">Business continuity basics</div>
+  <div class="eyebrow">Continuity basics</div>
   <h1>Operational resilience: what it is and how it differs from continuity</h1>
-  <p class="lead">Keeping critical services running during disruption, not merely recovering afterwards. What sits behind the term and what to do about it.</p>
+  <p class="lead">The ability to keep delivering critical services during disruptions, and not only to recover after them. What lies behind it and what a Russian company should do.</p>
   <div class="meta">Updated: 17 August 2026 · Author: Evgeny Telenkov · ≈ 5 min read</div>
 </div></div>
 <!--/TPL:HERO-->
@@ -147,49 +171,53 @@
 <aside class="ptoc">
   <div class="t">On this page</div>
   <nav>
-    <a href="#difference">How it differs from business continuity</a>
-    <a href="#components">What it consists of in practice</a>
-    <a href="#where-to-start">Where to start</a>
-    <a href="#faq">FAQ</a>
+    <a href="#otlichie">How it differs from business continuity</a>
+    <a href="#kak-stroitsya">What it consists of in practice</a>
+    <a href="#rossiya">How it relates to Russian requirements</a>
+    <a href="#faq">Frequently asked questions</a>
   </nav>
 </aside>
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
-<p>Operational resilience is the ability to keep delivering critical services during disruption, not only to recover after it. The term came from financial regulators and is spreading into other sectors.</p>
-<h2 id="difference">How it differs from business continuity</h2>
-<p>Continuity management answers how the company returns to work after a stoppage. Operational resilience puts the question more sharply: how do we ensure the service is not interrupted beyond a tolerable point at all, even when part of the system has failed.</p>
-<p>Three practical differences follow. The unit of analysis is the service as the client sees it, not an internal process. Planning starts from the assumption that disruption will happen rather than from preventing it. And a maximum tolerable level of disruption is declared — the point beyond which harm to clients and the market is unacceptable.</p>
-<p>The underlying concepts are covered in <a href="en-nepreryvnost-biznesa.html">business continuity</a> and the difference between management layers in <a href="en-bcm-bcp-drp-otlichie.html">BCM, BCP and DRP</a>.</p>
-<h2 id="components">What it consists of in practice</h2>
+<p>Operational resilience is a company's ability to keep delivering critical services during disruptions, and not only to recover after them. The term came from the requirements of financial regulators and is gradually spreading to other industries.</p>
+
+<h2 id="otlichie">How it differs from business continuity</h2>
+<p>Continuity management answers the question of how a company gets back to work after a stoppage. Operational resilience asks a harder question: how to make sure a service is never disrupted for longer than is tolerable, even when part of the system has failed.</p>
+<p>This leads to three practical differences. First, the starting point is the service as the customer sees it, not a company process. Second, planning starts from the assumption that a disruption will definitely happen, not from an attempt to prevent it. Third, an impact tolerance is set: the limit beyond which harm to customers and the market is considered unacceptable.</p>
+<p>The basic concepts of continuity are covered in <a href="en-nepreryvnost-biznesa.html">business continuity</a>, and the difference between management levels in <a href="en-bcm-bcp-drp-otlichie.html">BCM, BCP and DRP</a>.</p>
+
+<h2 id="kak-stroitsya">What it consists of in practice</h2>
 <ul>
-<li><strong>A list of important business services.</strong> Services delivered outward, not internal processes. Usually between five and fifteen.</li>
-<li><strong>A map of what each service depends on.</strong> People, systems, sites, suppliers, data — an extension of <a href="en-reestr-kriticheskih-processov.html">the register of critical processes</a>.</li>
-<li><strong>An impact tolerance.</strong> The maximum duration and scale of disruption the company deems acceptable for the client.</li>
-<li><strong>Severe but plausible scenarios.</strong> Not "could this happen" but "assume it has" — see <a href="en-stress-test-nepreryvnosti.html">the continuity stress test</a>.</li>
-<li><strong>Third-party dependencies.</strong> The weakest part for most companies, covered in <a href="en-poterya-postavshchika.html">losing a supplier</a>.</li>
+<li><strong>A list of important services.</strong> These are the services the company delivers to the outside world, not its processes. There are usually only a few, from five to fifteen.</li>
+<li><strong>A map of what the service depends on.</strong> People, systems, sites, suppliers, data. This extends the <a href="en-reestr-kriticheskih-processov.html">critical process register</a>.</li>
+<li><strong>Impact tolerance.</strong> The maximum duration and scale of disruption that the company considers tolerable for the customer.</li>
+<li><strong>Scenario testing.</strong> Start from “we assume it has happened” instead of “could this happen”. See the <a href="en-stress-test-nepreryvnosti.html">continuity stress test</a>.</li>
+<li><strong>Third-party dependencies.</strong> The weakest part for most companies. See <a href="en-poterya-postavshchika.html">loss of a supplier</a>.</li>
 </ul>
-<h2 id="where-to-start">Where to start</h2>
-<p>You do not need a separate programme for a new term. Add two things to the work you already do: the client's view of the service, and a declared impact tolerance for each important service. The management frame is provided by <a href="en-iso-22301.html">ISO 22301</a>, and regulatory minimums by the requirements covered in <a href="en-onivd-ponivd.html">regulatory continuity requirements</a>.</p>
-<h2 id="faq">FAQ</h2>
-<p><b>Is operational resilience the same as business continuity?</b> No. Continuity answers how to recover after a stoppage. Resilience requires the service not to be interrupted beyond a tolerable point and plans from the assumption that disruption will occur.</p><p><b>Is it mandatory?</b> As a standalone regime it applies mainly to regulated financial firms. The underlying logic is useful to any company.</p><p><b>Where do we start?</b> List the services that matter to clients and state a maximum tolerable disruption for each. Then map what those services depend on.</p>
+
+<h2 id="rossiya">How it relates to Russian requirements</h2>
+<p>Russian regulation has no direct equivalent of the term, but the logic is there. The Bank of Russia's requirements for operational continuity and recovery (ONiVD) set a mandatory minimum for recovery times and notification procedures. See <a href="en-onivd-ponivd.html">ONiVD and the ONiVD plan</a>. The <a href="en-iso-22301.html">ISO 22301 standard</a> provides the management framework.</p>
+<p>For a company outside the financial sector, the practical conclusion is simple. There is no need to build a separate system for a new term. It is enough to add the customer's view to your existing work and set an impact tolerance for each important service.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq"><div class="q">Operational resilience: definition</div><p>Operational resilience is a company's ability to keep delivering critical services through any disruption, including unforeseen ones, and within a tolerable level of disruption set in advance. The term comes from banking regulation and is broader than continuity: it covers adaptation as well as recovery.</p></div><div class="faq"><div class="q">Operational resilience and operational continuity: differences and similarities</div><p>Similarities: both are about the ability to operate during a disruption, and both rely on critical processes and recovery time. Differences: continuity responds to known scenarios with plans, while resilience must also withstand unknown ones. Continuity is measured by recovery time; resilience is measured by the tolerable level of service disruption for the customer.</p></div><div class="faq"><div class="q">Are operational resilience plans and operational continuity plans the same thing</div><p>No, but the second is part of the first. A continuity plan describes how to restore a process. An operational resilience system adds a map of critical customer services, tolerable disruption thresholds for each one, scenario testing including extreme scenarios, and reporting to the board.</p></div><p><b>Are operational resilience and business continuity the same thing?</b> No. Continuity answers how to recover after a stoppage. Resilience requires that a service is not disrupted for longer than is tolerable, and it plans on the assumption that a disruption will definitely happen.</p><p><b>Is it mandatory in Russia?</b> Not as a separate requirement. Organisations supervised by the Bank of Russia must meet a minimum for operational continuity, and the logic itself is useful for any company.</p><p><b>Where do you start?</b> List the most important services for customers and, for each one, set the maximum tolerable duration of disruption. Then check what the service depends on.</p>
   </div>
 <div class="upbox">
-  <span class="k">Section 02 · Business continuity basics</span>
+  <span class="k">Section 02 · Continuity basics</span>
   <a href="en-nepreryvnost-biznesa.html">Business continuity (BCM) →</a>
   <span class="sep">·</span>
-  <a class="sec" href="materialy-en.html#osnovy">All guides in this section</a>
+  <a class="sec" href="materialy-en.html#osnovy">All materials in this section</a>
 </div>
   <div class="inset cta">
   <h3>Where to start with business continuity</h3>
-  <p>Thirteen questions and five minutes show your readiness level. From there, two paths: learn to do it in the programme, or build the system with us.</p>
+  <p>13 questions and 5 minutes will show your readiness level. Then there are two paths: work it out yourself through the programme, or build the system with us.</p>
   <div class="btns">
-    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
     <a href="en-onlajn-kurs.html" class="btn line">ERGP certification →</a>
-    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey BCM →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
   </div>
 </div>
-<div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-nepreryvnost-biznesa.html" class="rel-card"><div class="rt">Business continuity (BCM) →</div><div class="rd">What business continuity is in plain language and why an owner should care.</div></a><a href="en-bia-analiz-vozdeystviya.html" class="rel-card"><div class="rt">Business impact analysis →</div><div class="rd">Critical processes, RTO and RPO, the cost of downtime.</div></a><a href="quiz.html" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main gaps and first steps. Free.</div></a></div></div>
+<div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-nepreryvnost-biznesa.html" class="rel-card"><div class="rt">Business continuity (BCM) →</div><div class="rd">What business continuity is, in plain language, and why an owner needs it.</div></a><a href="en-bia-analiz-vozdeystviya.html" class="rel-card"><div class="rt">Business impact analysis (BIA) →</div><div class="rd">Critical processes, RTO and RPO, the cost of downtime. The method in plain language.</div></a><a href="quiz.html?lang=en" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free of charge.</div></a></div></div>
 </main>
 </div>
 

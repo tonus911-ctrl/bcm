@@ -13,8 +13,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Business impact analysis: method, how to run it, template</title>
 <meta name="description" content="What a BIA (business impact analysis) is, why you need it and how to run it: critical processes, RTO and RPO, downtime cost. Method and template in plain language.">
-<meta name="keywords" content="business impact analysis, BIA, RTO, RPO, critical processes, downtime cost">
-<meta name="author" content="Евгений Теленков">
+<meta name="keywords" content="business impact analysis, BIA, RTO, RPO, critical processes, cost of downtime">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/bia-analiz-vozdeystviya.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-bia-analiz-vozdeystviya.html">
@@ -45,14 +45,14 @@
       "@id": "https://bcm.risk-place.ru/en-bia-analiz-vozdeystviya.html#article",
       "headline": "Business impact analysis (BIA): how to run it",
       "description": "What a BIA (business impact analysis) is, why you need it and how to run it: critical processes, RTO and RPO, downtime cost. Method and template in plain language.",
-      "image": "https://bcm.risk-place.ru/en-bia-analiz-vozdeystviya.png",
+      "image": "https://bcm.risk-place.ru/bia-analiz-vozdeystviya.png",
       "datePublished": "2026-06-28",
       "dateModified": "2026-06-28",
-      "inLanguage": "en-US",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
         "name": "Evgeny Telenkov",
-        "url": "https://bcm.risk-place.ru/"
+        "url": "https://risk-place.ru/telenkov/"
       },
       "publisher": {
         "@type": "Organization",
@@ -92,18 +92,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How is a BIA different from a risk assessment?",
+          "name": "How does a BIA differ from a risk assessment?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A risk assessment answers \"what can happen and how likely.\" A BIA answers \"how painful it is if a process stops and how fast it must come back.\" In BCM they are used together."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are RTO and RPO in plain language?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "RTO is how fast to restore a process. RPO is how much data can be lost. The first is about time, the second about the data rollback point."
+            "text": "A risk assessment answers “what can happen and how likely is it?” A BIA answers “how much will it hurt if the process stops, and how quickly must it be restored?” In BCM the two are used together."
           }
         },
         {
@@ -111,7 +103,23 @@
           "name": "Can a small company run a BIA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in a single working day."
+            "text": "Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in one working day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a rapid BIA",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A shortened impact analysis, done in one or two working days for ten to fifteen key processes instead of the full list. It is enough to see which processes are critical and where to start the plan. The full BIA comes later, based on the results of the rapid assessment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Business impact analysis and critical processes: how they are linked",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Critical processes are the output of the impact analysis. A BIA assesses what happens when each process stops, and this assessment splits processes into critical, important and other. Without a BIA, the list of critical processes is drawn up by gut feeling. Such a list contains the processes people notice, and these are not always the ones that cost the most."
           }
         }
       ]
@@ -127,7 +135,7 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="bia-analiz-vozdeystviya.html">RU</a><a href="en-bia-analiz-vozdeystviya.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
@@ -137,8 +145,8 @@
   <div class="rule"></div>
   <div class="eyebrow">Risk assessment and BIA</div>
   <h1>Business impact analysis (BIA): how to run it</h1>
-  <p class="lead">The BIA is the foundation of all continuity: it shows which processes are critical, what their downtime costs and how fast they must be restored. We break down the method and give a practical procedure.</p>
-  <div class="meta">Updated: June 28, 2026 · Author: Evgeny Telenkov · ≈ 8 min read</div>
+  <p class="lead">BIA is the foundation of all business continuity work. We cover the method, who sets the target times and which mistakes make the analysis worthless, and we give you a form to fill in.</p>
+  <div class="meta">Updated: 28 June 2026 · Author: Evgeny Telenkov · ≈ 8 min read</div>
 </div></div>
 <!--/TPL:HERO-->
 
@@ -148,65 +156,92 @@
   <div class="t">On this page</div>
   <nav>
     <a href="#chto">What a BIA is and why you need it</a>
-    <a href="#pokazateli">Key metrics: RTO and RPO</a>
-    <a href="#kak">How to run a BIA: the procedure</a>
-    <a href="#dalshe">What comes next</a>
-    <a href="#faq">FAQ</a>
+    <a href="#pokazateli">Key metrics: MTPD, RTO and RPO</a>
+    <a href="#kak">How to run a BIA: step by step</a>
+    <a href="#kto-nazyvaet">Who sets the RTO and why IT should not</a>
+    <a href="#oshibki-bia">Five mistakes that make the analysis worthless</a>
+    <a href="#chto-poluchaetsya">What you get at the end</a>
+    <a href="#shablon">BIA form: Excel template</a>
+    <a href="#faq">Frequently asked questions</a>
   </nav>
 </aside>
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
 <h2 id="chto">What a BIA is and why you need it</h2>
-<p>A <strong>Business Impact Analysis (BIA)</strong> assesses how the stoppage of each process hits the company over time and in money. The BIA answers three questions: which processes are critical, what their downtime costs and how quickly they must be restored. Without a BIA, a continuity plan is built by guesswork.</p>
+<p><strong>Business impact analysis (BIA)</strong> is an assessment of how the stoppage of each process hits the company over time and in money. A BIA answers three questions: which processes are critical, what their downtime costs and how quickly they must be restored. Without a BIA, a business continuity plan is built blindly.</p>
 
-<h2 id="pokazateli">Key metrics: RTO and RPO</h2>
+<h2 id="pokazateli">Key metrics: MTPD, RTO and RPO</h2>
 <ul>
-  <li><strong>RTO (Recovery Time Objective)</strong> — the maximum acceptable time to restore a process. "How fast the function must be back for losses to stay acceptable."</li>
-  <li><strong>RPO (Recovery Point Objective)</strong> — the acceptable amount of data loss. "How much recent data can be lost without critical consequences."</li>
-  <li><strong>MTPD</strong> — the maximum tolerable period of disruption, after which damage becomes irreversible.</li>
+  <li><strong>MTPD</strong> is the maximum tolerable period of disruption, after which the damage becomes unacceptable.</li>
+  <li><strong>RTO (Recovery Time Objective)</strong> is the target time to restore a process, always shorter than the MTPD: “how quickly the function must be back so that losses stay acceptable”.</li>
+  <li><strong>RPO (Recovery Point Objective)</strong> is the acceptable amount of data loss: “for what period can data be lost without critical consequences”.</li>
 </ul>
 
-<h2 id="kak">How to run a BIA: the procedure</h2>
+<h2 id="kak">How to run a BIA: step by step</h2>
 <ol>
-  <li><strong>List the processes</strong> (see the <a href="en-reestr-kriticheskih-processov.html">critical process register</a>).</li>
-  <li><strong>Assess the impact of downtime</strong> for each process over time: after 1 hour, 1 day, a week — what is lost (revenue, fines, customers, reputation).</li>
+  <li><strong>Make a list of processes</strong> (see the <a href="en-reestr-kriticheskih-processov.html">critical process register</a>).</li>
+  <li><strong>Assess the impact of downtime</strong> for each process over time: after 1 hour, 1 day, a week. What do you lose (revenue, penalties, customers, reputation)?</li>
   <li><strong>Rank the processes</strong> by criticality.</li>
-  <li><strong>Set RTO and RPO</strong> for the critical processes.</li>
+  <li><strong>Set RTO and RPO</strong> for critical processes.</li>
   <li><strong>Identify recovery resources:</strong> people, IT, suppliers, sites.</li>
 </ol>
-<div class="callout"><b>Counting downtime in money:</b> per ITIC (2024), an hour of downtime costs 90%+ of mid-sized and large companies more than 300,000 USD. A concrete figure for your process is the main argument for investing in protection. How to calculate it — in "<a href="en-stoimost-dnya-prostoya.html">What a day of downtime costs</a>".</div>
+<div class="callout"><b>Downtime in money terms:</b> according to ITIC (2024), for over 90% of medium and large companies one hour of downtime costs more than USD 300,000. A specific figure for your process is the main argument for investing in protection. How to calculate it is explained in the article “<a href="en-stoimost-dnya-prostoya.html">What a day of downtime costs</a>”.</div>
 
-<h2 id="dalshe">What comes next</h2>
-<p>BIA results feed the <a href="en-plan-nepreryvnosti-biznesa.html">business continuity plan (BCP)</a> and are a mandatory element of the <a href="en-iso-22301.html">ISO 22301</a> standard. Without a BIA you cannot set recovery priorities.</p>
+<h2 id="kto-nazyvaet">Who sets the RTO and why IT should not</h2>
+<p>The target recovery time must be set by the process owner: the manager who is responsible for the result and understands the consequences of a stoppage. If the IT department sets the figure, you get a description of what the equipment can do today. That is different from a business requirement. The difference is fundamental: the first tells you what you have, the second tells you what you need.</p>
+<p>The process owner's first answer is almost always “we need it immediately”. That is normal. Then you ask a second question, and it is sobering: how much is the company willing to pay for recovery to take an hour instead of a day? Once the acceptable time is linked to the budget for redundancy, the figures become realistic.</p>
+<p>The result is approved by the sponsor, a member of the management board or the owner. The analyst and the coordinator do not approve it. A signature under the RTO table records a commitment the company has accepted. It does more than confirm that a document has been filled in. How this logic is explained to the board of directors is covered in <a href="en-bcm-dlya-soveta-direktorov.html">BCM for the board of directors</a>.</p>
 
+<h2 id="oshibki-bia">Five mistakes that make the analysis worthless</h2>
+<ul>
+<li><strong>Surveying everyone.</strong> A questionnaire across the whole company produces a hundred processes, and each one turns out to be “critical”. Interview only the owners of key business areas.</li>
+<li><strong>Scoring in points instead of money.</strong> A scale from one to five is convenient for the analyst and useless to the CFO. Calculate losses in roubles per hour and per day: see <a href="en-stoimost-dnya-prostoya.html">the cost of one day of downtime</a>.</li>
+<li><strong>Forgetting dependencies.</strong> A process may not be critical in itself but may feed three critical ones. These links show up in the <a href="en-reestr-kriticheskih-processov.html">critical process register</a>, and points of concentration show up when you look for a <a href="en-edinaya-tochka-otkaza.html">single point of failure</a>.</li>
+<li><strong>Ignoring seasonality.</strong> A day of downtime at the end of a quarter and a day in mid-July cost different amounts. For processes with peaks, use the worst period.</li>
+<li><strong>Shelving it.</strong> An analysis without a next step is just a report. The result must turn into redundancy requirements and a <a href="en-plan-nepreryvnosti-biznesa.html">business continuity plan</a>.</li>
+</ul>
 
-<h2 id="faq">FAQ</h2>
-<h3>How is a BIA different from a risk assessment?</h3><p>A risk assessment answers "what can happen and how likely." A BIA answers "how painful it is if a process stops and how fast it must come back." In BCM they are used together.</p>
-<h3>What are RTO and RPO in plain language?</h3><p>RTO is how fast to restore a process. RPO is how much data can be lost. The first is about time, the second about the data rollback point.</p>
-<h3>Can a small company run a BIA?</h3><p>Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in a single working day.</p>
+<h2 id="chto-poluchaetsya">What you get at the end</h2>
+<p>A properly run analysis produces more than a document. It gives you four decisions. First, the list of processes to restore first and the order among them. Second, figures for acceptable downtime and acceptable data loss for each process, confirmed by the business. Third, a justified budget: you can see where redundancy is really needed and where the company overpays for excess reliability. Fourth, the gap between what is required and what the infrastructure delivers today.</p>
+<p>The last point usually turns out to be the most useful. The gap between the declared RTO and the real ability to recover can only be checked in practice, through <a href="en-ucheniya-po-nepreryvnosti.html">exercises</a> and a <a href="en-stress-test-nepreryvnosti.html">stress test</a>. What to do with the results next is covered in the articles on <a href="en-kak-izmerit-ustojchivost-biznesa.html">how to measure business resilience</a> and <a href="en-rezervnyy-plan-biznesa.html">the business backup plan</a>.</p>
+<p>BIA results are the input for the <a href="en-plan-nepreryvnosti-biznesa.html">business continuity plan (BCP)</a> and a mandatory element of the <a href="en-iso-22301.html">ISO 22301</a> standard. Without a BIA you cannot set recovery priorities.</p>
+
+<h2 id="shablon">BIA form: Excel template</h2>
+<p>The form follows the steps from the section “How to run a BIA”, in more detail: five time horizons (from 4 hours to a month), five types of impact, MTPD, RTO, RPO, minimum level, dependencies and workaround mode.</p>
+<div class="inset"><p><b>Download the template.</b> A “BIA” sheet with 22 columns and an example, a “Scale” sheet with 1–5 assessment criteria, and a “Summary” sheet for approval by the management board. xlsx format.</p><div class="btns"><a class="btn navy" href="files/bia-forma.xlsx" download>Download xlsx (bia-forma.xlsx, in Russian)</a></div><p class="note">The process owner fills it in during an interview of about one hour. The results go into the <a href="matrica-rto-rpo.html">RTO and RPO matrix (in Russian)</a>. No registration, no forms. If you need the template adapted to your organisation, or want to run a review with it, write to us: <a href="en-dlya-kompanij.html">how we do it and how long it takes</a>.</p></div>
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq"><div class="q">What is a rapid BIA</div><p>A shortened impact analysis, done in one or two working days for ten to fifteen key processes instead of the full list. It is enough to see which processes are critical and where to start the plan. The full BIA comes later, based on the results of the rapid assessment.</p></div><div class="faq"><div class="q">Business impact analysis and critical processes: how they are linked</div><p>Critical processes are the output of the impact analysis. A BIA assesses what happens when each process stops, and this assessment splits processes into critical, important and other. Without a BIA, the list of critical processes is drawn up by gut feeling. Such a list contains the processes people notice, and these are not always the ones that cost the most.</p></div><h3>How does a BIA differ from a risk assessment?</h3><p>A risk assessment answers “what can happen and how likely is it?” A BIA answers “how much will it hurt if the process stops, and how quickly must it be restored?” In BCM the two are used together.</p>
+<h3>Can a small company run a BIA?</h3><p>Yes. Take 3–5 key processes, assess the impact of their downtime over time and set target recovery times. This can be done in one working day.</p>
 
 
 <div class="inset cta">
   <h3>Check your recovery numbers</h3>
-  <p>The assessment shows where business deadlines diverge from what technology can deliver. Those numbers are then produced either by your specialist or by us.</p>
+  <p>The assessment shows where the recovery times the business needs do not match what the technology can deliver. After that, either your specialist calculates these numbers, or we do.</p>
   <div class="btns">
-    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
     <a href="en-onlajn-kurs.html" class="btn line">ERGP certification →</a>
-    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey BCM →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
   </div>
 </div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
   <div>
-    <div class="nm">Evgeny Telenkov</div>
-    <div class="rl">Director, business continuity practice · PhD in Economics · Academic Director &amp; Chief Examiner</div>
-    <div class="bio">Risk Manager of the Year in Russia 2020 (RusRisk). Built business continuity from scratch at Nornickel, more than 20 plans; led risk functions at Beeline, Rosneft and EY. Chief risk officer of a $20 billion petrochemical megaproject. Deputy chair of Rosstandart technical committee 010 “Risk management”, co-author of six national standards. Author of the ERGP and SAFE programmes.</div>
-    <div><a href="en-o-podhode.html">About the team and the practice →</a></div>
+    <div class="nm"><a href="https://risk-place.ru/telenkov/">Evgeny Telenkov</a></div>
+    <div class="rl">Director, Business Continuity Practice · PhD in Economics · Academic Director and Chief Examiner</div>
+    <div class="bio">Best Risk Manager of Russia 2020 (RusRisk). Built business continuity at Nornickel from scratch, with more than 20 plans. Worked in the risk functions of Beeline, Rosneft and EY. Chief Risk Officer of a USD 20 billion petrochemical megaproject. Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards. Author of the ERGP and SAFE programmes.</div>
+    <div><a href="en-o-podhode.html">About the authors and the risk-place practice →</a></div>
   </div>
 </div>
   </div>
-  <div class="rel"><div class="k">Read also</div><div class="rel-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 days of downtime: a cyberattack lesson →</div><div class="rd">A real ransomware case at a major insurer: 7 days of downtime, website and app offline.</div></a><a href="en-bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP, DRP — the difference →</div><div class="rd">How BCM, BCP, DRP and risk management differ in plain language.</div></a><a href="quiz.html" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free.</div></a></div></div>
+  <div class="pn">
+    <div><span class="k">Section 03 · Impact analysis and recovery</span>
+      <h2 class="pt" id="pn-t">Impact analysis and recovery</h2>
+      <p class="pd">This is the core page of the section. Below are the other materials in the section. They cover specific parts of the topic.</p></div>
+    <ul><li><a href="en-reestr-kriticheskih-processov.html">Critical process register</a><span>Which processes are critical and how to build a register in one day</span></li><li><a href="en-stoimost-dnya-prostoya.html">Cost of one day of downtime</a><span>How to calculate losses per hour and per day, using a real case</span></li><li><a href="en-edinaya-tochka-otkaza.html">Single point of failure</a><span>How to find irreplaceable elements and remove them without a budget</span></li><li><a href="en-kak-izmerit-ustojchivost-biznesa.html">How to measure resilience</a><span>BIA, RTO and RPO in plain language, and testing in exercises</span></li><li><a href="en-plan-avariynogo-vosstanovleniya.html">Disaster recovery plan (DRP)</a><span>Recovery of systems and data, and how a DRP differs from a business continuity plan</span></li><li><a href="en-plan-nepreryvnosti-biznesa.html">Business continuity plan (BCP)</a><span>Plan structure and a working document in seven steps</span></li><li><a href="en-rezervnyy-plan-biznesa.html">Business backup plan</a><span>What must be ready in advance to survive a disruption</span></li><li><a href="ocenka-riskov-nepreryvnosti.html">Business continuity risk assessment (in Russian)</a><span>Five steps of the method, likelihood and impact scales, table template</span></li><li><a href="matrica-rto-rpo.html">RTO and RPO matrix: template (in Russian)</a><span>Target recovery time and recovery point by process, gaps between target and actual</span></li></ul>
+    <a class="more" href="materialy-en.html#bia">All materials in this section of the library →</a>
+  </div>
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 days of downtime: lessons from a cyberattack →</div><div class="rd">A real case of a ransomware attack on a large insurer: 7 days of downtime, with the website and the app out of service.</div></a><a href="en-bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP, DRP: the differences →</div><div class="rd">How BCM, BCP, DRP and risk management differ, in plain language.</div></a><a href="quiz.html?lang=en" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free of charge.</div></a><a href="en-kniga.html" class="rel-card"><div class="rt">The book “BCM without illusions” →</div><div class="rd">A guide for executives: from assessing vulnerabilities to what to do on the day the systems go down. PDF, free.</div></a></div></div>
 </main>
 </div>
 

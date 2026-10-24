@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BCM, BCP, DRP and risk management: the difference explained</title>
-<meta name="description" content="How BCM, BCP, DRP and risk management differ in plain language. A clear levels diagram, comparison table and examples — so you stop confusing the terms.">
-<meta name="keywords" content="bcm bcp drp difference, bcp vs drp, what is bcm, risk management and continuity, continuity terms">
-<meta name="author" content="Евгений Теленков">
+<title>BCP and DRP explained: the difference and how they link to BCM</title>
+<meta name="description" content="BCP and DRP meaning and difference in plain language: a BCP is a business continuity plan, a DRP an IT disaster recovery plan. Comparison table, boundary, BCM and ONiVD.">
+<meta name="keywords" content="bcp and drp, difference between bcp and drp, bcp drp, bcp meaning, drp meaning, dr plan, what is bcm, continuity plan and recovery plan, rto rpo, onivd plan">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/bcm-bcp-drp-otlichie.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.html">
@@ -23,14 +23,14 @@
 <meta name="yandex-verification" content="6b8108f8673d1707">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.html">
-<meta property="og:title" content="BCM, BCP, DRP and risk management: the difference">
-<meta property="og:description" content="How BCM, BCP, DRP and risk management differ in plain language. A clear levels diagram, comparison table and examples — so you stop confusing the terms.">
+<meta property="og:title" content="BCP and DRP explained: the difference and how they link to BCM">
+<meta property="og:description" content="BCP and DRP meaning and difference in plain language: a BCP is a business continuity plan, a DRP an IT disaster recovery plan. Comparison table, boundary, BCM and ONiVD.">
 <meta property="og:image" content="https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.png">
 <meta property="og:site_name" content="risk-place.ru">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BCM, BCP, DRP and risk management: the difference">
-<meta name="twitter:description" content="How BCM, BCP, DRP and risk management differ in plain language. A clear levels diagram, comparison table and examples — so you stop confusing the terms.">
+<meta name="twitter:title" content="BCP and DRP explained: the difference and how they link to BCM">
+<meta name="twitter:description" content="BCP and DRP meaning and difference in plain language: a BCP is a business continuity plan, a DRP an IT disaster recovery plan. Comparison table, boundary, BCM and ONiVD.">
 <meta name="twitter:image" content="https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -43,16 +43,16 @@
     {
       "@type": "Article",
       "@id": "https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.html#article",
-      "headline": "BCM, BCP, DRP and risk management: the difference",
-      "description": "How BCM, BCP, DRP and risk management differ in plain language. A clear levels diagram, comparison table and examples — so you stop confusing the terms.",
-      "image": "https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.png",
+      "headline": "BCP and DRP explained: the difference and how they link to BCM",
+      "description": "BCP and DRP meaning and difference in plain language: a BCP is a business continuity plan, a DRP an IT disaster recovery plan. Comparison table, boundary, BCM and ONiVD.",
+      "image": "https://bcm.risk-place.ru/bcm-bcp-drp-otlichie.png",
       "datePublished": "2026-06-28",
-      "dateModified": "2026-06-28",
-      "inLanguage": "en-US",
+      "dateModified": "2026-08-21",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
         "name": "Evgeny Telenkov",
-        "url": "https://bcm.risk-place.ru/"
+        "url": "https://risk-place.ru/telenkov/"
       },
       "publisher": {
         "@type": "Organization",
@@ -82,7 +82,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "BCM, BCP, DRP — the difference",
+          "name": "BCM, BCP, DRP: the differences",
           "item": "https://bcm.risk-place.ru/en-bcm-bcp-drp-otlichie.html"
         }
       ]
@@ -92,18 +92,66 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Are BCP and DRP the same thing?",
+          "name": "What is BCM in plain language?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. A BCP is about the whole business (processes, people, suppliers, communications), a DRP is about restoring IT systems and data. A DRP is usually part of a BCP."
+            "text": "Business continuity management. A system that decides in advance which processes must not stop, how long the company can survive without them and what exactly people do when a process stops."
           }
         },
         {
           "@type": "Question",
-          "name": "Is BCM part of risk management?",
+          "name": "Which comes first, the BCP or the DRP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Risk management handles all risks, and BCM is a specialised part of it responsible for keeping operations going during disruptions."
+            "text": "First a business impact analysis, which shows the critical processes and the acceptable time frames. Then the BCP, which sets the requirements. The DRP is written to requirements that are already known."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a BCP stress test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A test of the plan under near-extreme conditions: several dependencies fail at once, some people are unavailable and time is short. The aim is to find the point where the plan breaks; passing the test is not the goal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does DRP stand for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DRP stands for disaster recovery plan. It describes how to restore IT systems and data after a failure: in what order, how fast and with how much data loss. It is part of a wider business continuity plan, the BCP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "The difference between BC and DR plans",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The business continuity plan, BCP, answers how the company will keep working until the systems are restored: people, premises, manual procedures, counterparties. The disaster recovery plan, DRP, answers how to bring the systems back. The first is wider, and the second sits inside it; the full comparison table is above."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "BCP/DRP: does a company need both plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if the company has at least one critical IT system. Without a DRP, the business does not know when the systems will be back; without a BCP, it does not know what to do until then. For a small company, both plans can be sections of one document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it a question for the DRP or the DRS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A DRP is a disaster recovery plan, a document. A DRS, a disaster recovery site or disaster recovery system, is the backup site or system you switch to under this plan. The question “how fast will we recover” is for the plan; the question “where and on what” is for the site."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who sets the RPO and how is it linked to the DRP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The process owner sets the RPO in the BCP, and the RPO determines how often backups are made under the DRP."
           }
         }
       ]
@@ -119,18 +167,18 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="bcm-bcp-drp-otlichie.html">RU</a><a href="en-bcm-bcp-drp-otlichie.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
 <!--TPL:HERO-->
 <div class="ph"><div class="in">
-  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>BCM, BCP, DRP — the difference</div>
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>BCM, BCP, DRP: the differences</div>
   <div class="rule"></div>
   <div class="eyebrow">BCM basics</div>
-  <h1>BCM, BCP, DRP and risk management: the difference</h1>
-  <p class="lead">BCM, BCP, DRP, risk management — the terms are often confused. Let us sort them out in plain language: what is broader, what sits inside what, and where the line is.</p>
-  <div class="meta">Updated: June 28, 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
+  <h1>BCP and DRP: the difference and how to link them</h1>
+  <p class="lead">BCM, BCP, DRP, BIA, RTO, RPO are abbreviations that people mix up all the time, including in contracts and technical specifications. We explain each one and show the boundary between the business continuity plan and the disaster recovery plan. We also give a comparison table, a split of responsibilities and a minute-by-minute walk-through of one incident.</p>
+  <div class="meta">Updated: 21 August 2026 · Author: Evgeny Telenkov · ≈ 12 min read</div>
 </div></div>
 <!--/TPL:HERO-->
 
@@ -139,66 +187,157 @@
 <aside class="ptoc">
   <div class="t">On this page</div>
   <nav>
-    <a href="#korotko">In short: how they relate</a>
+    <a href="#rasshifrovka">What the abbreviations stand for</a>
+    <a href="#korotko">How they are linked: nested levels</a>
     <a href="#tablica">Comparison table</a>
-    <a href="#primer">A plain example</a>
-    <a href="#faq">FAQ</a>
+    <a href="#granica">BCP and DRP: where the boundary lies</a>
+    <a href="#primer">One incident, broken down by role</a>
+    <a href="#metriki">RTO, RPO, MTPD and MBCO</a>
+    <a href="#kto">Who is responsible for what</a>
+    <a href="#rossiya">Russian terms: ONiVD and the ONiVD plan</a>
+    <a href="#oshibki">Five common mistakes</a>
+    <a href="#faq">Frequently asked questions</a>
   </nav>
 </aside>
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
-<h2 id="korotko">In short: how they relate</h2>
-<p>These are nested levels, not competitors:</p>
+
+<h2 id="rasshifrovka">What the abbreviations stand for</h2>
+<p data-def="1">BCP stands for Business Continuity Plan. It sets out who acts and in what order so that critical processes continue during a disruption. DRP stands for Disaster Recovery Plan, the plan for recovering IT systems and data after a failure. The BCP covers business processes and people, the DRP covers infrastructure; both are part of the business continuity management system (BCM).</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Abbreviation</th><th>Full name</th><th>What it means in practice</th></tr></thead>
+<tbody>
+<tr><td><b>BCM</b></td><td>Business Continuity Management</td><td>A management system, wider than any single document. Processes, roles, plans, tests and reporting that together keep the business working during disruptions</td></tr>
+<tr><td><b>BCP</b></td><td>Business Continuity Plan</td><td>A document that describes how the company keeps serving clients while something is not working</td></tr>
+<tr><td><b>DRP</b></td><td>Disaster Recovery Plan</td><td>A document that describes how the technical team restores information systems and data</td></tr>
+<tr><td><b>BIA</b></td><td>Business Impact Analysis</td><td>A calculation that shows which processes are critical and what their downtime costs. All target time frames come from it</td></tr>
+<tr><td><b>RTO</b></td><td>Recovery Time Objective</td><td>How quickly a process or system must be back in operation</td></tr>
+<tr><td><b>RPO</b></td><td>Recovery Point Objective</td><td>How much data it is acceptable to lose, measured in time</td></tr>
+<tr><td><b>ONiVD plan</b></td><td>Operational continuity and recovery plan</td><td>The Bank of Russia name for a BCP at supervised organisations</td></tr>
+</tbody>
+</table></div>
+
+<h2 id="korotko">How they are linked: nested levels</h2>
+<p>These approaches do not compete. They are circles nested inside one another. Each circle is narrower than the one around it and solves a narrower task.</p>
 <ul>
-  <li><strong>Risk management</strong> — the broadest loop: we identify and reduce any risks (financial, operational, market…).</li>
-  <li><strong>BCM (business continuity management)</strong> — the part of risk management about keeping operations going during disruptions.</li>
-  <li><strong>BCP (business continuity plan)</strong> — a concrete plan document within BCM.</li>
-  <li><strong>DRP (disaster recovery plan)</strong> — the IT part of the BCP: restoring systems and data.</li>
+  <li><b>Risk management</b> is the widest circle. It identifies and reduces all kinds of risk the company faces, from currency risk to reputational risk.</li>
+  <li><b>BCM</b> is the part of risk management that answers one question: how to keep working when something has already happened.</li>
+  <li><b>BCP</b> is the main document within BCM. It covers the business as a whole: processes, people, suppliers, clients and communications.</li>
+  <li><b>DRP</b> is the technical part, most often issued as an annex to the BCP. It covers servers, communication links, databases and backups.</li>
 </ul>
+<div class="callout"><b>In one sentence.</b> The BCP answers the question “how will the company keep working”, and the DRP answers the question “how will we bring the systems back up”. The first question is wider and is asked earlier.</div>
 
 <h2 id="tablica">Comparison table</h2>
-<div class="table-wrap">
-<table>
-  <thead><tr><th>Term</th><th>About</th><th>Scope</th></tr></thead>
-  <tbody>
-    <tr><td>Risk management</td><td>Managing any company risk</td><td>Broadest</td></tr>
-    <tr><td><a href="en-nepreryvnost-biznesa.html">BCM</a></td><td>The ability to keep operating in a crisis</td><td>A subset of risks</td></tr>
-    <tr><td><a href="en-plan-nepreryvnosti-biznesa.html">BCP</a></td><td>Continuity plan (processes, people, suppliers)</td><td>A document within BCM</td></tr>
-    <tr><td><a href="en-plan-avariynogo-vosstanovleniya.html">DRP</a></td><td>IT and data recovery</td><td>The IT part of the BCP</td></tr>
-  </tbody>
-</table>
-</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Parameter</th><th>BCP, business continuity plan</th><th>DRP, disaster recovery plan</th></tr></thead>
+<tbody>
+<tr><td>Scope</td><td>Business processes and obligations to clients</td><td>Information systems, infrastructure and data</td></tr>
+<tr><td>Main question</td><td>How to keep providing services while recovery is under way</td><td>How to get the systems working again</td></tr>
+<tr><td>Owner</td><td>The business: a management board member or the chief operating officer</td><td>IT department</td></tr>
+<tr><td>Who carries it out</td><td>All departments involved in critical processes</td><td>System, network and database administrators, contractors</td></tr>
+<tr><td>Key metrics</td><td>Process RTO, MTPD, MBCO, cost of one hour of downtime</td><td>System RTO and RPO, time to switch to the backup site</td></tr>
+<tr><td>What it includes</td><td>Scenarios, workarounds, communications, backup sites, activation procedure, crisis team roles</td><td>Recovery procedures, switchover procedure, backups, data integrity checks</td></tr>
+<tr><td>Typical size</td><td>A main document plus action cards for each scenario</td><td>Technical procedures for each critical system</td></tr>
+<tr><td>What happens without it</td><td>The systems are back up, but nobody knows how to serve clients or what to tell them</td><td>A decision has been made, but technically there is nothing to recover with and nothing to recover from</td></tr>
+<tr><td>How it is tested</td><td>Tabletop scenario walk-throughs, crisis team exercises</td><td>Live switchover to the backup site, test restore from a backup</td></tr>
+</tbody>
+</table></div>
 
-<h2 id="primer">A plain example</h2>
-<p>A ransomware cyberattack hits. <strong>Risk management</strong> assessed the likelihood in advance and invested in protection. <strong>BCM</strong> defined what is critical and how fast to recover. <strong>BCP</strong> says how to keep selling and serving customers while IT is down. <strong>DRP</strong> describes how to bring servers back from backups.</p>
+<h2 id="granica">BCP and DRP: where the boundary lies</h2>
+<p>The boundary lies where technology ends and obligations to the client begin. The easiest way to see it is with three test questions.</p>
+<p><b>Question one. What does the company do in the hours while the systems are being restored?</b> If there is no answer, you have a DRP and no BCP. Even in the most optimistic scenario, recovery takes hours, and all that time the business has to keep working somehow: take orders on paper, serve clients in a backup environment, shift the workload to another office.</p>
+<p><b>Question two. Who says what to clients, staff and the regulator?</b> Crisis communications sit entirely in the BCP. No technical procedure covers them, and this is where the second, reputational, damage most often happens.</p>
+<p><b>Question three. What if IT has nothing to do with it?</b> A fire at the warehouse, no access to the office, the departure of a key employee, the failure of a sole supplier, blocked payments to a counterparty. By definition, a DRP does not cover such scenarios, yet they account for a significant share of real continuity disruptions.</p>
+<p>The opposite case is rarer, but it happens too: a company writes a polished BCP with processes and communications, and it contains no technical targets at all. During an incident it turns out that the business expects recovery within two hours, while backups run once a day and physically cannot meet that target. That is why both documents are prepared together, and their target time frames must match.</p>
+<div class="callout"><b>Where to start linking them.</b> The BCP structure and a docx template are covered on the <a href="en-plan-nepreryvnosti-biznesa.html">business continuity plan</a> page, and the IT recovery procedure on the <a href="en-plan-avariynogo-vosstanovleniya.html">disaster recovery plan (DRP)</a> page. The target time frames in both documents come from one <a href="matrica-rto-rpo.html">RTO and RPO matrix (in Russian)</a>.</div>
+<h2 id="primer">One incident, broken down by role</h2>
+<p>Friday, 19:40. Ransomware hits the company's file servers and some of its business applications. Let us see which document is in play at each moment.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Time</th><th>What happens</th><th>Which document applies</th></tr></thead>
+<tbody>
+<tr><td>19:40</td><td>Monitoring detects an anomaly; the duty administrator sees that systems are unavailable</td><td>Monitoring procedure, then the DRP</td></tr>
+<tr><td>19:55</td><td>Encryption is confirmed. The decision is made to isolate network segments</td><td>DRP and the information security incident response plan</td></tr>
+<tr><td>20:10</td><td>The business continuity plan is activated, the crisis team meets, a response lead is appointed</td><td>BCP, activation procedure section</td></tr>
+<tr><td>20:30</td><td>Critical processes move to workarounds: orders taken by phone and on paper forms, manual reconciliation</td><td>BCP, scenario action cards</td></tr>
+<tr><td>21:00</td><td>The first message goes out to clients and partners, a media statement is prepared, the regulator is notified</td><td>BCP, communications section</td></tr>
+<tr><td>Night</td><td>Systems are restored from backups, data integrity is checked, the extent of data loss is assessed</td><td>DRP</td></tr>
+<tr><td>Saturday</td><td>Processes return to normal operation step by step; data entered in workaround mode is reconciled</td><td>BCP, return to normal operations section</td></tr>
+<tr><td>Monday</td><td>Incident review, record of actual downtime and losses, update of both plans</td><td>BCM as a system</td></tr>
+</tbody>
+</table></div>
+<p>Note that the DRP works first and last, while the BCP carries the whole middle part, when the company is actually operating without its systems. This middle part is usually missing in companies where only the IT department deals with continuity.</p>
 
+<h2 id="metriki">RTO, RPO, MTPD and MBCO</h2>
+<p>Four metrics where business expectations and technical capabilities most often diverge.</p>
+<p><b>RTO, recovery time objective.</b> How quickly a process or system must be back in operation. The business sets it on the basis of calculation; it should not be left to technical staff to set as an afterthought.</p>
+<p><b>RPO, recovery point objective.</b> How much data it is acceptable to lose. It is measured in time: an RPO of four hours means that in an outage the company is ready to lose the data from the last four hours of work. This metric directly determines how often backups are made and what the solution costs.</p>
+<p><b>MTPD (maximum tolerable period of disruption).</b> This is the period after which the damage from a stopped process becomes unacceptable for the company: it loses its licence, a key client or the ability to recover. The RTO must always be shorter than the MTPD, otherwise the plan is meaningless.</p>
+<p><b>MBCO, minimum acceptable level of service.</b> It sets how much service the company commits to keep up in crisis mode, which goes beyond a simple “working or not”. For example, handling at least 40% of the normal payment flow. This metric turns the plan from a yes-or-no switch into something you can manage.</p>
+<div class="callout"><b>Consistency check.</b> Take any critical process and compare two figures: the RTO set by the business and the actual switchover time that the technical side delivers. If the second is longer than the first, the plan does not work, however many pages it has.</div>
 
-<h2 id="faq">FAQ</h2>
-<h3>Are BCP and DRP the same thing?</h3><p>No. A BCP is about the whole business (processes, people, suppliers, communications), a DRP is about restoring IT systems and data. A DRP is usually part of a BCP.</p>
-<h3>Is BCM part of risk management?</h3><p>Yes. Risk management handles all risks, and BCM is a specialised part of it responsible for keeping operations going during disruptions.</p>
+<h2 id="kto">Who is responsible for what</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Role</th><th>BCP</th><th>DRP</th></tr></thead>
+<tbody>
+<tr><td>Management board, board of directors</td><td>Approves the plan and the acceptable level of risk, allocates resources</td><td>Approves the budget for redundancy</td></tr>
+<tr><td>Process owner</td><td>Sets the RTO and MBCO, describes workarounds, decides on activation</td><td>Sets the requirements for systems</td></tr>
+<tr><td>Continuity or risk management function</td><td>Methodology, coordination, BIA, testing, reporting</td><td>Checks that technical time frames match business ones</td></tr>
+<tr><td>IT</td><td>Takes part in carrying it out</td><td>Full owner of the document and the recovery procedures</td></tr>
+<tr><td>Information security</td><td>Attack scenarios, requirements for isolation and recovery</td><td>Checks data integrity and that there is no reinfection</td></tr>
+<tr><td>Communications and public relations</td><td>Message templates, work with the media and clients</td><td>Not involved</td></tr>
+<tr><td>Internal audit</td><td>Checks that the plan is tested and updated</td><td>Checks actual restores from backups</td></tr>
+</tbody>
+</table></div>
+
+<h2 id="rossiya">Russian terms: ONiVD and the ONiVD plan</h2>
+<p>In Russian regulatory practice, the same documents have other names. The Bank of Russia uses the term operational continuity and recovery (ONiVD), and the main document is called the ONiVD plan. In substance it is the same BCP, but with a mandatory set of sections, ties to technological processes with defined threshold values, and supervisory reporting.</p>
+<p>The practical result is simple. If a company is supervised by the Bank of Russia, its current BCP is usually extended to meet the requirements of the regulation; there is no need to rewrite it from scratch. You add a list of technological processes, operational reliability targets, an incident recording procedure and a testing programme. A detailed review of the requirements and structure is in the article <a href="en-onivd-ponivd.html">ONiVD and the ONiVD plan: Bank of Russia requirements</a>, and a ready-made eleven-section plan framework in docx format is in the <a href="plan-onivd-obrazec.html">ONiVD plan sample (in Russian)</a>.</p>
+<p>The reverse confusion also happens: a bank's contractors find a requirement to “provide an ONiVD plan” in their contract and do not understand what is wanted, although they already have a working business continuity plan under a different name.</p>
+
+<h2 id="oshibki">Five common mistakes</h2>
+<p><b>Treating the DRP as enough.</b> The most common mistake. The company orders a disaster recovery plan, ticks the “we have a plan” box and finds the gap only during a real incident.</p>
+<p><b>Setting the RTO without calculation.</b> The figure comes from general considerations instead of a business impact analysis. As a result, the company either overpays for redundancy of processes whose downtime is tolerable, or fails to provide redundancy for what is truly critical.</p>
+<p><b>Different time frames in the BCP and DRP.</b> The business wrote down two hours, the technical side delivers eight. The gap shows up at the very first test, if testing is done at all.</p>
+<p><b>Forgetting non-IT scenarios.</b> Loss of access to premises, loss of a key employee, supplier failure. These scenarios have no technical solution and need organisational arrangements made in advance.</p>
+<p><b>A plan without an owner.</b> The document exists, but no specific person is responsible for it, so it is not updated and goes out of date within a year.</p>
+<p>Both abbreviations live inside one system. What this system is and how it works as a whole: <a href="en-nepreryvnost-biznesa.html">business continuity: what it is and where to start</a>.</p>
+
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq"><div class="q">What does DRP stand for?</div><p>DRP stands for disaster recovery plan. It describes how to restore IT systems and data after a failure: in what order, how fast and with how much data loss. It is part of a wider business continuity plan, the BCP.</p></div><div class="faq"><div class="q">The difference between BC and DR plans</div><p>The business continuity plan, BCP, answers how the company will keep working until the systems are restored: people, premises, manual procedures, counterparties. The disaster recovery plan, DRP, answers how to bring the systems back. The first is wider, and the second sits inside it; the full comparison table is above.</p></div><div class="faq"><div class="q">BCP/DRP: does a company need both plans?</div><p>Yes, if the company has at least one critical IT system. Without a DRP, the business does not know when the systems will be back; without a BCP, it does not know what to do until then. For a small company, both plans can be sections of one document.</p></div><div class="faq"><div class="q">Is it a question for the DRP or the DRS?</div><p>A DRP is a disaster recovery plan, a document. A DRS, a disaster recovery site or disaster recovery system, is the backup site or system you switch to under this plan. The question “how fast will we recover” is for the plan; the question “where and on what” is for the site.</p></div><div class="faq"><div class="q">Who sets the RPO and how is it linked to the DRP?</div><p>The process owner sets the RPO in the BCP, and the RPO determines how often backups are made under the DRP.</p></div><p><b>What is BCM in plain language?</b> Business continuity management. It is a system that decides in advance which processes must not stop, how long the company can survive without them and what exactly people do when a process stops.</p>
+<p><b>Which comes first, the BCP or the DRP?</b> First a business impact analysis, which shows the critical processes and the acceptable time frames. Then the BCP, which sets the requirements. The DRP is written to requirements that are already known; otherwise the technical time frames are pulled out of thin air.</p>
+<p><b>How is BCM linked to information security?</b> Information security prevents and detects an attack; BCM keeps the company working if the attack succeeds. These are neighbouring functions with shared scenarios. More in the article <a href="en-bcm-i-zashchita-dannyh.html">BCM and data protection</a>.</p>
+<p><b>Does a small company need a BCP?</b> Yes, but only a few pages long. A small business has few critical processes, and a plan for them takes one working day to write. Having no plan costs more.</p>
+<p><b>What is a BCP stress test?</b> A test of the plan under near-extreme conditions: several dependencies fail at once, some people are unavailable and time is short. The aim is to find the point where the plan breaks; passing the test is not the goal.</p>
 
 
 <div class="inset cta">
   <h3>Where to start with business continuity</h3>
-  <p>Thirteen questions and five minutes show your readiness level. From there, two paths: learn to do it in the programme, or build the system with us.</p>
+  <p>13 questions and 5 minutes will show your readiness level. Then there are two paths: work it out yourself through the programme, or build the system with us.</p>
   <div class="btns">
-    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
     <a href="en-onlajn-kurs.html" class="btn line">ERGP certification →</a>
-    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey BCM →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
   </div>
 </div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
   <div>
-    <div class="nm">Evgeny Telenkov</div>
-    <div class="rl">Director, business continuity practice · PhD in Economics · Academic Director &amp; Chief Examiner</div>
-    <div class="bio">Risk Manager of the Year in Russia 2020 (RusRisk). Built business continuity from scratch at Nornickel, more than 20 plans; led risk functions at Beeline, Rosneft and EY. Chief risk officer of a $20 billion petrochemical megaproject. Deputy chair of Rosstandart technical committee 010 “Risk management”, co-author of six national standards. Author of the ERGP and SAFE programmes.</div>
-    <div><a href="en-o-podhode.html">About the team and the practice →</a></div>
+    <div class="nm"><a href="https://risk-place.ru/telenkov/">Evgeny Telenkov</a></div>
+    <div class="rl">Director, Business Continuity Practice · PhD in Economics · Academic Director and Chief Examiner</div>
+    <div class="bio">Best Risk Manager of Russia 2020 (RusRisk). Built business continuity at Nornickel from scratch, with more than 20 plans. Worked in the risk functions of Beeline, Rosneft and EY. Chief Risk Officer of a USD 20 billion petrochemical megaproject. Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards. Author of the ERGP and SAFE programmes.</div>
+    <div><a href="en-o-podhode.html">About the authors and the risk-place practice →</a></div>
   </div>
 </div>
-  </div>
-  <div class="rel"><div class="k">Read also</div><div class="rel-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 days of downtime: a cyberattack lesson →</div><div class="rd">A real ransomware case at a major insurer: 7 days of downtime, website and app offline.</div></a><a href="en-bcm-dlya-soveta-direktorov.html" class="rel-card"><div class="rt">BCM for the board →</div><div class="rd">How to justify investment in business continuity to the board and owners.</div></a><a href="quiz.html" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free.</div></a></div></div>
+</div>
+<div class="upbox">
+  <span class="k">Section 02 · Continuity basics</span>
+  <a href="en-nepreryvnost-biznesa.html">Business continuity (BCM) →</a>
+  <span class="sep">·</span>
+  <a class="sec" href="materialy-en.html#osnovy">All materials in this section</a>
+</div>
+
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-onivd-ponivd.html" class="rel-card"><div class="rt">ONiVD and the ONiVD plan →</div><div class="rd">Bank of Russia requirements, plan structure, responsibility and testing time frames.</div></a><a href="en-plan-nepreryvnosti-biznesa.html" class="rel-card"><div class="rt">Business continuity plan (BCP) →</div><div class="rd">How to build a business continuity plan in 7 steps: structure, roles, template.</div></a><a href="en-bia-analiz-vozdeystviya.html" class="rel-card"><div class="rt">Business impact analysis →</div><div class="rd">How to identify critical processes, the RTO and the cost of downtime.</div></a><a href="quiz.html?lang=en" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free of charge.</div></a></div></div>
 </main>
 </div>
 

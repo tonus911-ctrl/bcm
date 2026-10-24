@@ -13,8 +13,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Business backup plan: what to prepare in advance</title>
 <meta name="description" content="What should be ready in advance to survive a disruption: backups, suppliers, communication channels, financial cushion, roles. A backup plan checklist.">
-<meta name="keywords" content="business backup plan, what to prepare for a crisis, backups, financial cushion, business continuity">
-<meta name="author" content="Евгений Теленков">
+<meta name="keywords" content="business backup plan, how to prepare for a crisis, backups, financial cushion, business continuity">
+<meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
 <link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/rezervnyy-plan-biznesa.html">
 <link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-rezervnyy-plan-biznesa.html">
@@ -45,14 +45,14 @@
       "@id": "https://bcm.risk-place.ru/en-rezervnyy-plan-biznesa.html#article",
       "headline": "Business backup plan: what to prepare in advance",
       "description": "What should be ready in advance to survive a disruption: backups, suppliers, communication channels, financial cushion, roles. A backup plan checklist.",
-      "image": "https://bcm.risk-place.ru/en-rezervnyy-plan-biznesa.png",
+      "image": "https://bcm.risk-place.ru/rezervnyy-plan-biznesa.png",
       "datePublished": "2026-06-28",
       "dateModified": "2026-06-28",
-      "inLanguage": "en-US",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
         "name": "Evgeny Telenkov",
-        "url": "https://bcm.risk-place.ru/"
+        "url": "https://risk-place.ru/telenkov/"
       },
       "publisher": {
         "@type": "Organization",
@@ -92,18 +92,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How is a backup plan different from a continuity plan (BCP)?",
+          "name": "How big should the financial cushion be?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A BCP is the full scenario of actions in a crisis. The backup plan is its \"material\" part: the specific fallback resources (copies, suppliers, channels, cushion) the BCP draws on."
+            "text": "A guide figure is the cost of several days of downtime of a key process plus a reserve for recovery. The exact amount is calculated from the BIA results."
           }
         },
         {
           "@type": "Question",
-          "name": "How big should the financial cushion be?",
+          "name": "How a backup plan differs from a business continuity plan",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A rule of thumb — the cost of several days of downtime of a key process plus a margin for recovery. The exact amount is calculated from the BIA."
+            "text": "A backup plan usually covers one resource or one process: what to do if this particular thing fails. A business continuity plan covers the whole company: which processes are critical, in what order to restore them, who makes decisions. Backup plans for individual resources go into it as appendices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where a small company should start its backup plan",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With five questions: where is the data and when was the last copy made; who will replace the only supplier; how to reach customers if the main channel is down; who will replace a key employee; how many weeks the money will last without revenue. The answers to these five questions are the first version of your backup plan."
           }
         }
       ]
@@ -119,7 +127,7 @@
     <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
     <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
     <span class="uh-lang"><a href="rezervnyy-plan-biznesa.html">RU</a><a href="en-rezervnyy-plan-biznesa.html" class="act">EN</a></span>
-    <button class="uh-burger" aria-label="Меню">&#9776;</button>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 <!--/TPL:HEADER-->
@@ -127,10 +135,10 @@
 <div class="ph"><div class="in">
   <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Business backup plan</div>
   <div class="rule"></div>
-  <div class="eyebrow">Implementing BCM</div>
+  <div class="eyebrow">BCM implementation</div>
   <h1>Business backup plan: what to prepare in advance</h1>
-  <p class="lead">A backup plan is a set of pre-prepared "fallback options" that kick in during a disruption. We break down what should be ready before a crisis, not during it.</p>
-  <div class="meta">Updated: June 28, 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
+  <p class="lead">It is too late to arrange a spare warehouse or supplier during a crisis. We look at what to prepare in advance and where a business has weak links that need a plan B.</p>
+  <div class="meta">Updated: 28 June 2026 · Author: Evgeny Telenkov · ≈ 6 min read</div>
 </div></div>
 <!--/TPL:HERO-->
 
@@ -141,53 +149,68 @@
   <nav>
     <a href="#chto">What a backup plan is</a>
     <a href="#chto-gotovit">What to prepare in advance</a>
-    <a href="#faq">FAQ</a>
+    <a href="#niti-i-plan-b">Weak links in a business and plan B</a>
+    <a href="#faq">Frequently asked questions</a>
   </nav>
 </aside>
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
 <h2 id="chto">What a backup plan is</h2>
-<p>A backup plan is the practical part of continuity: the specific fallback resources and arrangements that kick in when the main option has failed. These are the business's "safety cushions", prepared in advance.</p>
+<p data-def="1">A business backup plan is a set of spare resources and arrangements prepared in advance (a second site, a backup supplier, data copies, stand-in staff) that are switched on when the main way of working fails. The backup plan is the practical part of the business continuity plan: it answers “what do we replace it with”, while the continuity plan answers “who acts and in what order”.</p>
 
 <h2 id="chto-gotovit">What to prepare in advance</h2>
 <ul>
-  <li><strong>Data backups</strong> — including isolated (offline) copies against ransomware; with tested recovery.</li>
-  <li><strong>Backup suppliers</strong> for critical items (see "<a href="en-poterya-postavshchika.html">loss of a supplier</a>").</li>
+  <li><strong>Data backups</strong>, including isolated (offline) copies in case of ransomware, with tested recovery.</li>
+  <li><strong>Backup suppliers</strong> for critical items (see “<a href="en-poterya-postavshchika.html">loss of a supplier</a>”).</li>
   <li><strong>Backup communication channels</strong> with customers and the team.</li>
-  <li><strong>Duplicated critical competencies</strong> (see "<a href="en-poterya-klyuchevogo-sotrudnika.html">loss of a key employee</a>").</li>
-  <li><strong>A financial cushion</strong> for a downtime period.</li>
-  <li><strong>Roles and contacts</strong> for an incident — available offline.</li>
+  <li><strong>Cross-training for critical skills</strong> (see “<a href="en-poterya-klyuchevogo-sotrudnika.html">loss of a key employee</a>”).</li>
+  <li><strong>A financial cushion</strong> for the period of downtime.</li>
+  <li><strong>Roles and contacts</strong> for an incident, available offline.</li>
 </ul>
-<div class="callout"><b>Rule:</b> a reserve you have not tested is not a reserve. Test backup recovery and the switchover procedure at least once a year.</div>
-<p>The backup plan is built into the <a href="en-plan-nepreryvnosti-biznesa.html">BCP</a> and verified in <a href="en-ucheniya-po-nepreryvnosti.html">drills</a>.</p>
+<div class="callout"><b>Rule:</b> a backup that has never been tested is not a backup. Test restoring from backups and the switchover procedure at least once a year.</div>
+<p>The backup plan is built into the <a href="en-plan-nepreryvnosti-biznesa.html">business continuity plan (BCP)</a> and tested in <a href="en-ucheniya-po-nepreryvnosti.html">exercises</a>. The plan structure and a ready docx template, where backups are recorded for each critical process, are covered on the business continuity plan page.</p>
 
 
-<h2 id="faq">FAQ</h2>
-<h3>How is a backup plan different from a continuity plan (BCP)?</h3><p>A BCP is the full scenario of actions in a crisis. The backup plan is its "material" part: the specific fallback resources (copies, suppliers, channels, cushion) the BCP draws on.</p>
-<h3>How big should the financial cushion be?</h3><p>A rule of thumb — the cost of several days of downtime of a key process plus a margin for recovery. The exact amount is calculated from the BIA.</p>
+<h2 id="niti-i-plan-b">Weak links in a business and plan B</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Point of failure</th><th>Typical scenario</th><th>Plan B</th></tr></thead>
+<tbody><tr><td>A single supplier</td><td>Market exit, sanctions, supply disruption</td><td>A second qualified supplier (<a href="en-poterya-postavshchika.html">case review</a>)</td></tr><tr><td>A key employee</td><td>Resignation, illness, unavailability</td><td>A stand-in and documented processes (<a href="en-poterya-klyuchevogo-sotrudnika.html">how to protect yourself</a>)</td></tr><tr><td>A single IT system</td><td>Failure, cyberattack, data loss</td><td>Backups, test restores, RTO</td></tr><tr><td>A single sales channel</td><td>Platform blocking, rule changes</td><td>A second channel, your own customer base</td></tr><tr><td>A shared AI service</td><td>Provider outage lasting several hours, usage limits</td><td>A fallback model, a local alternative, a human</td></tr><tr><td>A single office or site</td><td>Fire, power cut, unavailability</td><td>Remote work, backup site</td></tr></tbody>
+</table>
+</div>
+
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq"><div class="q">How a backup plan differs from a business continuity plan</div><p>A backup plan usually covers one resource or one process: what to do if this particular thing fails. A business continuity plan covers the whole company: which processes are critical, in what order to restore them, who makes decisions. Backup plans for individual resources go into it as appendices.</p></div><div class="faq"><div class="q">Where a small company should start its backup plan</div><p>With five questions: where is the data and when was the last copy made; who will replace the only supplier; how to reach customers if the main channel is down; who will replace a key employee; how many weeks the money will last without revenue. The answers to these five questions are the first version of your backup plan.</p></div><h3>How big should the financial cushion be?</h3><p>A guide figure is the cost of several days of downtime of a key process plus a reserve for recovery. The exact amount is calculated from the BIA results.</p>
 
 
 <div class="inset cta">
   <h3>Check your recovery numbers</h3>
-  <p>The assessment shows where business deadlines diverge from what technology can deliver. Those numbers are then produced either by your specialist or by us.</p>
+  <p>The assessment shows where the recovery times the business needs do not match what the technology can deliver. After that, either your specialist calculates these numbers, or we do.</p>
   <div class="btns">
-    <a href="quiz.html" class="btn gold">Take the free assessment →</a>
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
     <a href="en-onlajn-kurs.html" class="btn line">ERGP certification →</a>
-    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey BCM →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
   </div>
 </div>
 <div class="expert">
   <img src="IMG_4329_sm.jpg" alt="Evgeny Telenkov">
   <div>
-    <div class="nm">Evgeny Telenkov</div>
-    <div class="rl">Director, business continuity practice · PhD in Economics · Academic Director &amp; Chief Examiner</div>
-    <div class="bio">Risk Manager of the Year in Russia 2020 (RusRisk). Built business continuity from scratch at Nornickel, more than 20 plans; led risk functions at Beeline, Rosneft and EY. Chief risk officer of a $20 billion petrochemical megaproject. Deputy chair of Rosstandart technical committee 010 “Risk management”, co-author of six national standards. Author of the ERGP and SAFE programmes.</div>
-    <div><a href="en-o-podhode.html">About the team and the practice →</a></div>
+    <div class="nm"><a href="https://risk-place.ru/telenkov/">Evgeny Telenkov</a></div>
+    <div class="rl">Director, Business Continuity Practice · PhD in Economics · Academic Director and Chief Examiner</div>
+    <div class="bio">Best Risk Manager of Russia 2020 (RusRisk). Built business continuity at Nornickel from scratch, with more than 20 plans. Worked in the risk functions of Beeline, Rosneft and EY. Chief Risk Officer of a USD 20 billion petrochemical megaproject. Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards. Author of the ERGP and SAFE programmes.</div>
+    <div><a href="en-o-podhode.html">About the authors and the risk-place practice →</a></div>
   </div>
 </div>
   </div>
-  <div class="rel"><div class="k">Read also</div><div class="rel-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 days of downtime: a cyberattack lesson →</div><div class="rd">A real ransomware case at a major insurer: 7 days of downtime, website and app offline.</div></a><a href="en-bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP, DRP — the difference →</div><div class="rd">How BCM, BCP, DRP and risk management differ in plain language.</div></a><a href="quiz.html" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free.</div></a></div></div>
+<div class="upbox">
+  <span class="k">Section 03 · Impact analysis and recovery</span>
+  <a href="en-bia-analiz-vozdeystviya.html">Business impact analysis (BIA) →</a>
+  <span class="sep">·</span>
+  <a class="sec" href="materialy-en.html#bia">All materials in this section</a>
+</div>
+
+  <div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-7-dney-prostoya-kiberataka.html" class="rel-card"><div class="rt">7 days of downtime: lessons from a cyberattack →</div><div class="rd">A real case of a ransomware attack on a large insurer: 7 days of downtime, with the website and the app out of service.</div></a><a href="en-bcm-bcp-drp-otlichie.html" class="rel-card"><div class="rt">BCM, BCP, DRP: the differences →</div><div class="rd">How BCM, BCP, DRP and risk management differ, in plain language.</div></a><a href="quiz.html?lang=en" class="rel-card"><div class="rt">5-minute assessment →</div><div class="rd">Your resilience level, three main risks and first steps. Free of charge.</div></a></div></div>
 </main>
 </div>
 

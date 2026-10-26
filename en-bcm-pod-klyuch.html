@@ -65,7 +65,7 @@
     <div class="buy">
       <div class="sum">Priced by scope<span>quote within two working days · excluding taxes</span></div>
       <div class="btns">
-        <a class="btn gold" href="#demo" data-topic="zoom">Discuss on Zoom</a>
+        <a class="btn gold" href="#demo">Discuss on Zoom</a>
         <a class="btn line" href="#primery-rezultatov">What the results look like</a>
       </div>
     </div>
@@ -77,7 +77,7 @@
   </div>
 
   <div class="sec" id="rezultat">
-    <div><h2>What you get in 1‑2 months</h2><p>Four things the company uses every day and that are visible from outside: to the board of directors, the insurer and the auditor.</p><a class="btn navy" href="#demo" data-topic="zoom">Discuss on Zoom</a></div>
+    <div><h2>What you get in 1‑2 months</h2><p>Four things the company uses every day and that are visible from outside: to the board of directors, the insurer and the auditor.</p><a class="btn navy" href="#demo">Discuss on Zoom</a></div>
     <ul class="lines">
       <li><b>A working system.</b><span>Continuity and recovery plans in the hands of the duty shift, a procedure for declaring a crisis and workaround modes of operation.</span></li>
       <li><b>Risks in money.</b><span>What one day of downtime costs for each process, where the single points of failure are and where to invest first.</span></li>
@@ -138,13 +138,13 @@
 
   <div class="sec" id="doverie">
     <div><h2>Why clients trust us</h2><p>We see the company’s processes, contracts and weak spots. So we agree the rules for handling information before we start.</p></div>
-    <ul class="lines"><li><b>NDA before the first working meeting.</b><span>We sign your non-disclosure agreement or offer ours.</span></li><li><b>Documents stay with you.</b><span>We work with your data on your side and hand the final documents over to you. On our website and in talks we use only anonymised examples.</span></li><li><b>Experience.</b><span>Evgeny Telenkov: more than 20 continuity plans for the sites of a large mining and metals company, Chief Risk Officer of a USD 20 billion petrochemical megaproject, Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards.</span></li><li><b>Industries.</b><span>Mining and metallurgy, oil, gas and petrochemicals, telecoms, industrial manufacturing.</span></li><li><b>A clear limit to our work.</b><span>Security tools, CII categorisation and calculations under the methods of the Russian Ministry of Emergency Situations stay with specialists in those fields. We are responsible for continuity and the economics of the consequences.</span></li></ul>
+    <ul class="lines"><li><b>NDA before the first working meeting.</b><span>We sign your non-disclosure agreement or offer ours.</span></li><li><b>Documents stay with you.</b><span>We work with your data on your side and hand the final documents over to you. On our website and in talks we use only anonymised examples.</span></li><li><b>Experience.</b><span>Evgeny Telenkov: more than 30 continuity plans, including for the sites of a large mining and metals company, Chief Risk Officer of a USD 20 billion petrochemical megaproject, Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards.</span></li><li><b>Industries.</b><span>Mining and metallurgy, oil, gas and petrochemicals, telecoms, industrial manufacturing.</span></li><li><b>A clear limit to our work.</b><span>Security tools, CII categorisation and calculations under the methods of the Russian Ministry of Emergency Situations stay with specialists in those fields. We are responsible for continuity and the economics of the consequences.</span></li></ul>
   </div>
 
   <div class="sec" id="cena">
     <div><h2>Pricing</h2><p>The price depends on the size of the company and the number of sites. We will send a cost estimate within two working days after the Zoom call.</p>
       <div class="price-big">Priced by scope<span>quote within two working days · excluding taxes</span></div>
-      <a class="btn gold" href="#demo" data-topic="zoom">Discuss on Zoom</a>
+      <a class="btn gold" href="#demo">Discuss on Zoom</a>
       <p class="after-btn">Have you started with a scenario readiness check (<a href="en-proverka-gotovnosti-ataka-bpla.html">drone strike</a> or <a href="en-proverka-gotovnosti-shifrovalshchik.html">ransomware</a>)? Half of its cost is credited if you order the programme within six months.</p>
     </div>
     <div>
@@ -173,7 +173,7 @@
     <div><h2>Discuss your task</h2><p>Leave your contacts. We reply within one working day and arrange a call or a Zoom meeting. If needed, we sign an NDA before the conversation.</p></div>
     <div class="fbox">
       <label class="flabel" for="lfTopic">Topic</label>
-      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="call">Request a call</option><option value="zoom">Zoom meeting</option><option value="estimate">Cost estimate</option><option value="demo">Product demo</option><option value="corporate">Corporate access and invoice</option></select>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="demo">See the product</option><option value="team">Programme for your staff</option><option value="compliance">Regulator or client requirement</option><option value="partner">Partnership</option></select>
       <div class="fgrid w4">
         <input type="text" class="fld" id="lfName" placeholder="Name" autocomplete="name">
         <input type="text" class="fld" id="lfOrg" placeholder="Company" autocomplete="organization">
@@ -193,9 +193,9 @@
   function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
   var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   var sel=document.getElementById("lfTopic");
-  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel){sel.value=a.getAttribute("data-topic");if(sel.selectedIndex<0)sel.selectedIndex=0;}});});
   b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
-    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    var topic=sel&&sel.selectedIndex>=0?sel.options[sel.selectedIndex].text:"";
     if(!name||!org||email.indexOf("@")<1){say("err","Please fill in your name, company and work email.");return;}
     if(phone&&phone.replace(/\D/g,"").length<7){say("err","Please check the phone number.");return;}
     if(!document.getElementById("lfConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}

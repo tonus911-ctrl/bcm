@@ -67,7 +67,7 @@
     <div class="buy">
       <div class="sum">from RUB 20,000<span>per person for a group of three or more</span></div>
       <div class="btns">
-        <a class="btn gold" href="#demo" data-topic="estimate">Request the programme and an invoice</a>
+        <a class="btn gold" href="#demo">Request the programme and an invoice</a>
         <a class="btn line" href="#programma">See the programme</a>
       </div>
     </div>
@@ -108,7 +108,7 @@
   <div class="sec" id="price">
     <div><h2>Pricing</h2><p>The price per participant depends on the group size. The format, on site or by video, does not affect the price.</p>
       <div class="price-big">from RUB 20,000<span>per person for a group of three or more</span></div>
-      <a class="btn gold" href="#demo" data-topic="estimate">Request the programme and an invoice</a>
+      <a class="btn gold" href="#demo">Request the programme and an invoice</a>
       <p class="after-btn">Prices exclude taxes. Payment by invoice to your organisation: we will send the programme, an invoice and a contract.</p>
     </div>
     <div>
@@ -131,7 +131,7 @@
     <div class="ppl">
       <div>
         <div class="person"><img src="exp-telenkov.jpg" alt="Evgeny Telenkov" width="460" height="460"><div><div class="nm">Evgeny Telenkov</div><div class="rl">PhD in Economics · Best Risk Manager of Russia 2020 (RusRisk)</div></div></div>
-        <p>Fifteen years leading risk functions at large companies. Built business continuity from scratch at Nornickel, with more than 20 continuity plans. Chief Risk Officer of a USD 20 billion petrochemical megaproject. Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”. Has trained more than 300 specialists.</p>
+        <p>Fifteen years leading risk functions at large companies. Built business continuity from scratch at Nornickel. Author of more than 30 continuity plans. Chief Risk Officer of a USD 20 billion petrochemical megaproject. Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”. Has prepared more than 800 specialists.</p>
       </div>
     </div>
   </div>
@@ -140,7 +140,7 @@
     <div><h2>Discuss your task</h2><p>Leave your contacts. We reply within one working day and arrange a call or a Zoom meeting. If needed, we sign an NDA before the conversation.</p></div>
     <div class="fbox">
       <label class="flabel" for="lfTopic">Topic</label>
-      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="call">Request a call</option><option value="zoom">Zoom meeting</option><option value="estimate">Cost estimate</option><option value="demo">Product demo</option><option value="corporate">Corporate access and invoice</option></select>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="demo">See the product</option><option value="team">Programme for your staff</option><option value="compliance">Regulator or client requirement</option><option value="partner">Partnership</option></select>
       <div class="fgrid w4">
         <input type="text" class="fld" id="lfName" placeholder="Name" autocomplete="name">
         <input type="text" class="fld" id="lfOrg" placeholder="Company" autocomplete="organization">
@@ -160,9 +160,9 @@
   function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
   var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   var sel=document.getElementById("lfTopic");
-  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel){sel.value=a.getAttribute("data-topic");if(sel.selectedIndex<0)sel.selectedIndex=0;}});});
   b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
-    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    var topic=sel&&sel.selectedIndex>=0?sel.options[sel.selectedIndex].text:"";
     if(!name||!org||email.indexOf("@")<1){say("err","Please fill in your name, company and work email.");return;}
     if(phone&&phone.replace(/\D/g,"").length<7){say("err","Please check the phone number.");return;}
     if(!document.getElementById("lfConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}

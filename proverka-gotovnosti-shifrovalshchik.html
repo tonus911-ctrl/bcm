@@ -59,7 +59,7 @@
     <div class="buy">
       <div class="sum">990 000 ₽<span>одна компания или площадка · без учета налогов</span></div>
       <div class="btns">
-        <a class="btn gold" href="#zayavka" data-topic="zoom">Обсудить в Zoom</a>
+        <a class="btn gold" href="#zayavka" data-topic="discuss">Обсудить в Zoom</a>
         <a class="btn line" href="#rezultat">Как выглядит результат</a>
       </div>
     </div>
@@ -112,13 +112,13 @@
 
   <div class="sec" id="doverie">
     <div><h2>Почему нам доверяют</h2><p>Мы видим процессы, договоры и слабые места компании. Поэтому правила работы со сведениями и доступами фиксируем до начала.</p></div>
-    <ul class="lines"><li><b>NDA до первой рабочей встречи.</b><span>Подписываем ваше соглашение о неразглашении или предлагаем свое.</span></li><li><b>Доступ к системам только у вашего ИТ.</b><span>Мы не просим административных прав. Восстановление из копии выполняет ваш ИТ на тестовом стенде или в согласованное окно, рабочие системы не останавливаем.</span></li><li><b>Сведения остаются у вас.</b><span>Отчет передаем вам. На сайте и в выступлениях только обезличенные примеры.</span></li><li><b>Опыт.</b><span>Евгений Теленков: больше 20 планов непрерывности для площадок крупной горно-металлургической компании, директор по рискам нефтехимического мегапроекта на 20 млрд долларов, зампред технического комитета 010 «Менеджмент риска» Росстандарта, соавтор шести ГОСТ Р.</span></li><li><b>Отрасли.</b><span>Горная добыча и металлургия, нефтегаз и нефтехимия, телеком, промышленное производство.</span></li><li><b>Проверка защиты извне — по запросу.</b><span>Пентест и учебную атаку проводит профильный партнер по информационной безопасности по отдельному договору и NDA с вами.</span></li></ul>
+    <ul class="lines"><li><b>NDA до первой рабочей встречи.</b><span>Подписываем ваше соглашение о неразглашении или предлагаем свое.</span></li><li><b>Доступ к системам только у вашего ИТ.</b><span>Мы не просим административных прав. Восстановление из копии выполняет ваш ИТ на тестовом стенде или в согласованное окно, рабочие системы не останавливаем.</span></li><li><b>Сведения остаются у вас.</b><span>Отчет передаем вам. На сайте и в выступлениях только обезличенные примеры.</span></li><li><b>Опыт.</b><span>Евгений Теленков: больше 30 планов непрерывности, в том числе для площадок крупной горно-металлургической компании, директор по рискам нефтехимического мегапроекта на 20 млрд долларов, зампред технического комитета 010 «Менеджмент риска» Росстандарта, соавтор шести ГОСТ Р.</span></li><li><b>Отрасли.</b><span>Горная добыча и металлургия, нефтегаз и нефтехимия, телеком, промышленное производство.</span></li><li><b>Проверка защиты извне — по запросу.</b><span>Пентест и учебную атаку проводит профильный партнер по информационной безопасности по отдельному договору и NDA с вами.</span></li></ul>
   </div>
 
   <div class="sec" id="cena">
     <div><h2>Стоимость</h2><p>Цена за одну компанию или площадку с общим ИТ-контуром. Расчет для группы компаний пришлем за два рабочих дня.</p>
       <div class="price-big">990 000 ₽<span>одна компания или площадка, 5 недель, без учета налогов</span></div>
-      <a class="btn gold" href="#zayavka" data-topic="zoom">Обсудить в Zoom</a>
+      <a class="btn gold" href="#zayavka" data-topic="discuss">Обсудить в Zoom</a>
       <p class="after-btn">Если в течение шести месяцев вы заказываете <a href="bcm-pod-klyuch.html">BCM под ключ</a>, половина стоимости проверки засчитывается.</p>
     </div>
     <div>
@@ -143,7 +143,7 @@
     <div><h2>Обсудить вашу задачу</h2><p>Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора.</p></div>
     <div class="fbox">
       <label class="flabel" for="lfTopic">Тема</label>
-      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="call">Заказать звонок</option><option value="zoom">Встреча в Zoom</option><option value="estimate">Расчет стоимости</option><option value="demo">Демонстрация продукта</option><option value="corporate">Корпоративный доступ и счет для организации</option></select>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="demo">Посмотреть продукт</option><option value="team">Программа для сотрудников</option><option value="compliance">Требование регулятора или заказчика</option><option value="partner">Сотрудничество</option></select>
       <div class="fgrid w4">
         <input type="text" class="fld" id="lfName" placeholder="Имя" autocomplete="name">
         <input type="text" class="fld" id="lfOrg" placeholder="Компания" autocomplete="organization">
@@ -163,9 +163,9 @@
   function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
   var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   var sel=document.getElementById("lfTopic");
-  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel){sel.value=a.getAttribute("data-topic");if(sel.selectedIndex<0)sel.selectedIndex=0;}});});
   b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
-    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    var topic=sel&&sel.selectedIndex>=0?sel.options[sel.selectedIndex].text:"";
     if(!name||!org||email.indexOf("@")<1){say("err","Заполните имя, компанию и рабочую почту.");return;}
     if(phone&&phone.replace(/\D/g,"").length<7){say("err","Проверьте номер телефона.");return;}
     if(!document.getElementById("lfConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}

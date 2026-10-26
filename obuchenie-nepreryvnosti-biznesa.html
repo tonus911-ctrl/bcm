@@ -67,7 +67,7 @@
     <div class="buy">
       <div class="sum">от 20 000 ₽<span>за человека при группе от трех участников</span></div>
       <div class="btns">
-        <a class="btn gold" href="#demo" data-topic="estimate">Запросить программу и счет</a>
+        <a class="btn gold" href="#demo" data-topic="discuss">Запросить программу и счет</a>
         <a class="btn line" href="#programma">Посмотреть программу</a>
       </div>
     </div>
@@ -108,7 +108,7 @@
   <div class="sec" id="price">
     <div><h2>Стоимость</h2><p>Цена за одного участника зависит от размера группы. Формат очный или по видеосвязи, на цену не влияет.</p>
       <div class="price-big">от 20 000 ₽<span>за человека при группе от трех участников</span></div>
-      <a class="btn gold" href="#demo" data-topic="estimate">Запросить программу и счет</a>
+      <a class="btn gold" href="#demo" data-topic="discuss">Запросить программу и счет</a>
       <p class="after-btn">Цены указаны без учета налогов. Оплата по счету от организации: пришлем программу, счет и договор.</p>
     </div>
     <div>
@@ -131,7 +131,7 @@
     <div class="ppl">
       <div>
         <div class="person"><img src="exp-telenkov.jpg" alt="Евгений Теленков" width="460" height="460"><div><div class="nm">Евгений Теленков</div><div class="rl">Кандидат экономических наук · «Лучший риск-менеджер России 2020» (РусРиск)</div></div></div>
-        <p>Пятнадцать лет во главе риск-функций крупных компаний. В «Норникеле» построил непрерывность бизнеса с нуля — более 20 планов непрерывности. Директор по рискам нефтехимического мегапроекта стоимостью 20 млрд долларов. Заместитель председателя технического комитета 010 «Менеджмент риска» Росстандарта. Подготовил более 300 специалистов.</p>
+        <p>Пятнадцать лет во главе риск-функций крупных компаний. В «Норникеле» построил непрерывность бизнеса с нуля. Автор более 30 планов непрерывности. Директор по рискам нефтехимического мегапроекта стоимостью 20 млрд долларов. Заместитель председателя технического комитета 010 «Менеджмент риска» Росстандарта. Подготовил более 800 специалистов.</p>
       </div>
     </div>
   </div>
@@ -140,7 +140,7 @@
     <div><h2>Обсудить вашу задачу</h2><p>Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора.</p></div>
     <div class="fbox">
       <label class="flabel" for="lfTopic">Тема</label>
-      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="call">Заказать звонок</option><option value="zoom">Встреча в Zoom</option><option value="estimate">Расчет стоимости</option><option value="demo">Демонстрация продукта</option><option value="corporate">Корпоративный доступ и счет для организации</option></select>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="demo">Посмотреть продукт</option><option value="team">Программа для сотрудников</option><option value="compliance">Требование регулятора или заказчика</option><option value="partner">Сотрудничество</option></select>
       <div class="fgrid w4">
         <input type="text" class="fld" id="lfName" placeholder="Имя" autocomplete="name">
         <input type="text" class="fld" id="lfOrg" placeholder="Компания" autocomplete="organization">
@@ -160,9 +160,9 @@
   function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
   var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   var sel=document.getElementById("lfTopic");
-  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel){sel.value=a.getAttribute("data-topic");if(sel.selectedIndex<0)sel.selectedIndex=0;}});});
   b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
-    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    var topic=sel&&sel.selectedIndex>=0?sel.options[sel.selectedIndex].text:"";
     if(!name||!org||email.indexOf("@")<1){say("err","Заполните имя, компанию и рабочую почту.");return;}
     if(phone&&phone.replace(/\D/g,"").length<7){say("err","Проверьте номер телефона.");return;}
     if(!document.getElementById("lfConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}

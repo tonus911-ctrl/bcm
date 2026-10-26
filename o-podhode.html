@@ -69,10 +69,10 @@
     <div class="ppl">
       <div>
         <div class="person"><img src="exp-telenkov.jpg" alt="Евгений Теленков" width="460" height="460"><div><div class="nm">Евгений Теленков</div><div class="rl">Директор практики непрерывности бизнеса · к.э.н. · Академический директор и главный экзаменатор</div></div></div>
-        <p>«Лучший риск-менеджер России 2020» (РусРиск). В «Норникеле» построил непрерывность бизнеса с нуля, более 20 планов; риск-функции в «Билайне», «Роснефти», EY. Директор по рискам нефтехимического мегапроекта на 20 млрд долларов (АГХК, СИБУР), более 200 индикаторов строительных рисков. Внедрил более 15 программ непрерывности, подготовил более 300 специалистов; автор ERGP, SAFE и русско-английской библиотеки. Заместитель председателя ТК-010 «Менеджмент риска» Росстандарта; экспертиза: BCM и BCP, операционные и ИТ-риски, киберустойчивость, ИСО 22301. В сообществе возглавляет экзаменационную комиссию, задает методологию и подбирает членов сообщества под проекты компаний.</p>
+        <p>«Лучший риск-менеджер России 2020» (РусРиск). В «Норникеле» построил непрерывность бизнеса с нуля; автор более 30 планов непрерывности; риск-функции в «Билайне», «Роснефти», EY. Директор по рискам нефтехимического мегапроекта на 20 млрд долларов (АГХК, СИБУР), более 200 индикаторов строительных рисков. Внедрил более 15 программ непрерывности, подготовил более 800 специалистов; автор ERGP, SAFE и русско-английской библиотеки. Заместитель председателя ТК-010 «Менеджмент риска» Росстандарта; экспертиза: BCM и BCP, операционные и ИТ-риски, киберустойчивость, ИСО 22301. В сообществе возглавляет экзаменационную комиссию, задает методологию и подбирает членов сообщества под проекты компаний.</p>
       </div>
       <div>
-        <div class="person"><img src="exp-khilko.jpg" alt="Эржена Хилько" width="460" height="460"><div><div class="nm">Эржена Хилько</div><div class="rl">Директор образовательных программ · ERGP, SAFE · Куратор профессионального сообщества ERGP</div></div></div>
+        <div class="person"><img src="exp-khilko.jpg" alt="Эржена Хилько" width="460" height="460"><div><div class="nm">Эржена Хилько</div><div class="rl">Директор программ · ERGP, SAFE · Куратор профессионального сообщества ERGP</div></div></div>
         <p>Директор по рискам American Express Bank и оператора его платежной системы в 2010–2024 годах; председатель комитета по рискам, член КУАП и кредитного комитета. Построила систему управления рисками в 12 бизнес-подразделениях по модели трех линий защиты без замечаний аудита, вела ВПОДК по Базелю III. Самооценка рисков и контролей по 15+ ключевым процессам, мониторинг KRI, стресс-тестирование, план непрерывности с ежегодными учениями; проверки регулятора без замечаний. Ранее руководитель рисков Bank of Cyprus Russia, корпоративные финансы в Deloitte, аудит в Ernst &amp; Young; международные команды в Скандинавии, Центральной Европе и EMEA. Отвечает за устройство программ, расписание потоков и опыт участника; сертифицированный бизнес-психолог. В сообществе курирует сообщество, ведет ежеквартальные сессии, приглашает экзаменаторов и хранит каталог членов.</p>
       </div>
     </div>
@@ -113,7 +113,7 @@
     <div><h2>Обсудить вашу задачу</h2><p>Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора.</p></div>
     <div class="fbox">
       <label class="flabel" for="lfTopic">Тема</label>
-      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="call">Заказать звонок</option><option value="zoom">Встреча в Zoom</option><option value="estimate">Расчет стоимости</option><option value="demo">Демонстрация продукта</option><option value="corporate">Корпоративный доступ и счет для организации</option></select>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="demo">Посмотреть продукт</option><option value="team">Программа для сотрудников</option><option value="compliance">Требование регулятора или заказчика</option><option value="partner">Сотрудничество</option></select>
       <div class="fgrid w4">
         <input type="text" class="fld" id="lfName" placeholder="Имя" autocomplete="name">
         <input type="text" class="fld" id="lfOrg" placeholder="Компания" autocomplete="organization">
@@ -133,9 +133,9 @@
   function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
   var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   var sel=document.getElementById("lfTopic");
-  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel){sel.value=a.getAttribute("data-topic");if(sel.selectedIndex<0)sel.selectedIndex=0;}});});
   b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
-    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    var topic=sel&&sel.selectedIndex>=0?sel.options[sel.selectedIndex].text:"";
     if(!name||!org||email.indexOf("@")<1){say("err","Заполните имя, компанию и рабочую почту.");return;}
     if(phone&&phone.replace(/\D/g,"").length<7){say("err","Проверьте номер телефона.");return;}
     if(!document.getElementById("lfConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}

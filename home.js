@@ -49,28 +49,31 @@
       location.href = 'materialy.html' + (q ? ('?q=' + encodeURIComponent(q)) : '');
     });
 
-    /* форма заявки */
-    var btn = document.getElementById('cf-send');
-    if (btn) btn.addEventListener('click', function (e) {
+    /* форма заявки: единая форма трех сайтов (leadform.py, 26.10.2026) */
+    var lfb = document.getElementById("lfSubmit"), lfs = document.getElementById("lfTopic");
+    document.querySelectorAll("[data-topic]").forEach(function (a) { a.addEventListener("click", function () { if (lfs) { lfs.value = a.getAttribute("data-topic"); if (lfs.selectedIndex < 0) lfs.selectedIndex = 0; } }); });
+    if (lfb) lfb.addEventListener("click", function (e) {
       e.preventDefault();
-      var l = lang(), note = document.getElementById('cf-note');
-      function say(kind, ru, en) { note.className = 'fmsg ' + kind; note.textContent = l === 'en' ? en : ru; }
-      var name = document.getElementById('cf-name').value.trim();
-      var email = document.getElementById('cf-email').value.trim();
-      if (!name || email.indexOf('@') < 0) { say('err', 'Заполните имя и рабочую почту.', 'Please fill in your name and work email.'); return; }
-      var cons = document.getElementById('cf-consent');
-      if (cons && !cons.checked) { say('err', 'Отметьте согласие на обработку персональных данных.', 'Please tick the consent box.'); return; }
-      var body = { type: 'demo', product: document.getElementById('cf-product').value, source: 'ru', name: name, email: email,
-        org: document.getElementById('cf-org').value.trim(), role: '', message: document.getElementById('cf-msg').value.trim(), lang: l, page: 'ru-home' };
-      say('note', 'Отправляем…', 'Sending…');
-      fetch('https://ergp.risk-place.org/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      var l = lang(), out = document.getElementById("lfOut");
+      function say(kind, ru, en) { out.className = "fmsg " + kind; out.textContent = l === "en" ? en : ru; }
+      function v(id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; }
+      var name = v("lfName"), org = v("lfOrg"), email = v("lfEmail"), phone = v("lfPhone");
+      var topic = lfs && lfs.selectedIndex >= 0 ? lfs.options[lfs.selectedIndex].text : "";
+      if (!name || !org || email.indexOf("@") < 1) { say("err", "Заполните имя, компанию и рабочую почту.", "Please fill in your name, company and work email."); return; }
+      if (phone && phone.replace(/\D/g, "").length < 7) { say("err", "Проверьте номер телефона.", "Please check the phone number."); return; }
+      if (!document.getElementById("lfConsent").checked) { say("err", "Отметьте согласие на обработку персональных данных.", "Please tick the consent to the processing of personal data."); return; }
+      lfb.disabled = true;
+      say("note", "Отправляем…", "Sending…");
+      var body = { type: "demo", product: "home", source: "ru", name: name, email: email, org: org, phone: phone, role: "", formTitle: topic,
+        message: "[" + topic + "]" + (phone ? " · " + (l === "en" ? "Phone" : "Телефон") + ": " + phone : ""), lang: l, page: l === "en" ? "en-home" : "ru-home" };
+      fetch("https://ergp.risk-place.org/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
         .then(function (r) {
           if (!r.ok) throw 0;
-          say('ok', 'Спасибо! Ответим в течение рабочего дня и предложим следующий шаг.', 'Thank you! We reply within one business day with a proposed next step.');
-          try { ym(110579884, 'reachGoal', 'ru_home_lead_submit'); } catch (x) {}
-          try { gtag('event', 'ru_home_lead_submit', { product: body.product }); } catch (x) {}
+          say("ok", "Спасибо! Ответим в течение рабочего дня.", "Thank you! We will reply within one working day.");
+          try { ym(110579884, "reachGoal", "ru_home_lead_submit"); } catch (x) {}
+          try { gtag("event", "ru_home_lead_submit"); } catch (x) {}
         })
-        .catch(function () { say('err', 'Не получилось отправить. Напишите нам: info@risk-place.ru', 'Could not send. Please email info@risk-place.ru'); });
+        .catch(function () { say("err", "Не получилось отправить. Напишите нам: info@risk-place.ru", "Could not send. Please write to us: info@risk-place.ru"); lfb.disabled = false; });
     });
 
     /* cookie */

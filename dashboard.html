@@ -65,14 +65,14 @@
     <div class="buy">
       <div class="sum">По объему работ<span>расчет за два рабочих дня · без учета налогов</span></div>
       <div class="btns">
-        <a class="btn gold" href="#demo" data-topic="zoom">Обсудить в Zoom</a>
+        <a class="btn gold" href="#demo" data-topic="discuss">Обсудить в Zoom</a>
         <a class="btn line" href="#kak-vyglyadit-dashbord">Посмотреть пример экрана</a>
       </div>
     </div>
   </div>
 
   <div class="sec" id="chto-daet">
-    <div><h2>Что это дает вам</h2><p>Пять вопросов руководителя и ответ, который дает дашборд.</p><a class="btn navy" href="#demo" data-topic="zoom">Обсудить в Zoom</a></div>
+    <div><h2>Что это дает вам</h2><p>Пять вопросов руководителя и ответ, который дает дашборд.</p><a class="btn navy" href="#demo" data-topic="discuss">Обсудить в Zoom</a></div>
     <ul class="lines quotes"><li><b>«Мы готовы к серьезному сбою?»</b><span>Индекс устойчивости 0–100 и его динамика: одна цифра для разговора с советом директоров.</span></li><li><b>«Что упадет первым?»</b><span>Критичные процессы со светофорами: готовность, целевое время восстановления, ответственные.</span></li><li><b>«Сколько стоит час простоя?»</b><span>Цена простоя и подушка на восстановление в рублях.</span></li><li><b>«Живы ли планы после внедрения?»</b><span>Покрытие планов, дата пересмотра, когда были учения и что они показали. Деградацию видно до инцидента.</span></li><li><b>«Что показать банку, страховщику, тендеру?»</b><span>Зрелость системы в цифрах, понятных проверяющему.</span></li></ul>
   </div>
 
@@ -173,7 +173,7 @@
 
   <div class="sec" id="doverie">
     <div><h2>Почему нам доверяют</h2><p>Дашборд показывает слабые места компании, поэтому правила работы с данными фиксируем до начала.</p></div>
-    <ul class="lines"><li><b>Данные не покидают компанию.</b><span>Движок и данные целиком внутри вашего контура: на вашем компьютере, сервере или в частном облаке.</span></li><li><b>NDA до первой рабочей встречи.</b><span>Подписываем ваше соглашение о неразглашении или предлагаем свое.</span></li><li><b>Опыт.</b><span>Евгений Теленков: больше 20 планов непрерывности для площадок крупной горно-металлургической компании, директор по рискам нефтехимического мегапроекта на 20 млрд долларов, зампред технического комитета 010 «Менеджмент риска» Росстандарта, соавтор шести ГОСТ Р.</span></li><li><b>Отрасли.</b><span>Горная добыча и металлургия, нефтегаз и нефтехимия, телеком, промышленное производство.</span></li></ul>
+    <ul class="lines"><li><b>Данные не покидают компанию.</b><span>Движок и данные целиком внутри вашего контура: на вашем компьютере, сервере или в частном облаке.</span></li><li><b>NDA до первой рабочей встречи.</b><span>Подписываем ваше соглашение о неразглашении или предлагаем свое.</span></li><li><b>Опыт.</b><span>Евгений Теленков: больше 30 планов непрерывности, в том числе для площадок крупной горно-металлургической компании, директор по рискам нефтехимического мегапроекта на 20 млрд долларов, зампред технического комитета 010 «Менеджмент риска» Росстандарта, соавтор шести ГОСТ Р.</span></li><li><b>Отрасли.</b><span>Горная добыча и металлургия, нефтегаз и нефтехимия, телеком, промышленное производство.</span></li></ul>
   </div>
 
   <div class="sec" id="urovni-produkta">
@@ -209,7 +209,7 @@
     <div><h2>Обсудить вашу задачу</h2><p>Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора.</p></div>
     <div class="fbox">
       <label class="flabel" for="lfTopic">Тема</label>
-      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="call">Заказать звонок</option><option value="zoom">Встреча в Zoom</option><option value="estimate">Расчет стоимости</option><option value="demo">Демонстрация продукта</option><option value="corporate">Корпоративный доступ и счет для организации</option></select>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Обсудить вашу задачу</option><option value="demo">Посмотреть продукт</option><option value="team">Программа для сотрудников</option><option value="compliance">Требование регулятора или заказчика</option><option value="partner">Сотрудничество</option></select>
       <div class="fgrid w4">
         <input type="text" class="fld" id="lfName" placeholder="Имя" autocomplete="name">
         <input type="text" class="fld" id="lfOrg" placeholder="Компания" autocomplete="organization">
@@ -229,9 +229,9 @@
   function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
   var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   var sel=document.getElementById("lfTopic");
-  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel){sel.value=a.getAttribute("data-topic");if(sel.selectedIndex<0)sel.selectedIndex=0;}});});
   b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
-    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    var topic=sel&&sel.selectedIndex>=0?sel.options[sel.selectedIndex].text:"";
     if(!name||!org||email.indexOf("@")<1){say("err","Заполните имя, компанию и рабочую почту.");return;}
     if(phone&&phone.replace(/\D/g,"").length<7){say("err","Проверьте номер телефона.");return;}
     if(!document.getElementById("lfConsent").checked){say("err","Отметьте согласие на обработку персональных данных.");return;}

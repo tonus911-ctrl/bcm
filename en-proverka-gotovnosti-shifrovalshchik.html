@@ -59,7 +59,7 @@
     <div class="buy">
       <div class="sum">RUB 990,000<span>one company or site · excluding taxes</span></div>
       <div class="btns">
-        <a class="btn gold" href="#zayavka" data-topic="zoom">Discuss on Zoom</a>
+        <a class="btn gold" href="#zayavka">Discuss on Zoom</a>
         <a class="btn line" href="#rezultat">What the result looks like</a>
       </div>
     </div>
@@ -112,13 +112,13 @@
 
   <div class="sec" id="doverie">
     <div><h2>Why clients trust us</h2><p>We see the company’s processes, contracts and weak spots. So we agree the rules for handling information and access before we start.</p></div>
-    <ul class="lines"><li><b>NDA before the first working meeting.</b><span>We sign your non-disclosure agreement or offer ours.</span></li><li><b>Only your IT team has access to the systems.</b><span>We do not ask for administrator rights. Your IT team restores from a backup on a test environment or in an agreed window, and we do not stop live systems.</span></li><li><b>Your information stays with you.</b><span>We hand the report over to you. On our website and in talks we use only anonymised examples.</span></li><li><b>Experience.</b><span>Evgeny Telenkov: more than 20 continuity plans for the sites of a large mining and metals company, Chief Risk Officer of a USD 20 billion petrochemical megaproject, Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards.</span></li><li><b>Industries.</b><span>Mining and metallurgy, oil, gas and petrochemicals, telecoms, industrial manufacturing.</span></li><li><b>External security testing — on request.</b><span>A specialist information security partner runs the penetration test and the simulated attack under a separate contract and NDA with you.</span></li></ul>
+    <ul class="lines"><li><b>NDA before the first working meeting.</b><span>We sign your non-disclosure agreement or offer ours.</span></li><li><b>Only your IT team has access to the systems.</b><span>We do not ask for administrator rights. Your IT team restores from a backup on a test environment or in an agreed window, and we do not stop live systems.</span></li><li><b>Your information stays with you.</b><span>We hand the report over to you. On our website and in talks we use only anonymised examples.</span></li><li><b>Experience.</b><span>Evgeny Telenkov: more than 30 continuity plans, including for the sites of a large mining and metals company, Chief Risk Officer of a USD 20 billion petrochemical megaproject, Deputy Chair of Rosstandart Technical Committee 010 “Risk Management”, co-author of six GOST R standards.</span></li><li><b>Industries.</b><span>Mining and metallurgy, oil, gas and petrochemicals, telecoms, industrial manufacturing.</span></li><li><b>External security testing — on request.</b><span>A specialist information security partner runs the penetration test and the simulated attack under a separate contract and NDA with you.</span></li></ul>
   </div>
 
   <div class="sec" id="cena">
     <div><h2>Pricing</h2><p>The price is for one company or one site with a shared IT landscape. We will send a cost estimate for a group of companies within two working days.</p>
       <div class="price-big">RUB 990,000<span>one company or site, 5 weeks, excluding taxes</span></div>
-      <a class="btn gold" href="#zayavka" data-topic="zoom">Discuss on Zoom</a>
+      <a class="btn gold" href="#zayavka">Discuss on Zoom</a>
       <p class="after-btn">If you order <a href="en-bcm-pod-klyuch.html">Turnkey BCM</a> within six months, half the cost of the check is credited.</p>
     </div>
     <div>
@@ -143,7 +143,7 @@
     <div><h2>Discuss your task</h2><p>Leave your contacts. We reply within one working day and arrange a call or a Zoom meeting. If needed, we sign an NDA before the conversation.</p></div>
     <div class="fbox">
       <label class="flabel" for="lfTopic">Topic</label>
-      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="call">Request a call</option><option value="zoom">Zoom meeting</option><option value="estimate">Cost estimate</option><option value="demo">Product demo</option><option value="corporate">Corporate access and invoice</option></select>
+      <select class="fld ftopic" id="lfTopic"><option value="discuss" selected>Discuss your task</option><option value="demo">See the product</option><option value="team">Programme for your staff</option><option value="compliance">Regulator or client requirement</option><option value="partner">Partnership</option></select>
       <div class="fgrid w4">
         <input type="text" class="fld" id="lfName" placeholder="Name" autocomplete="name">
         <input type="text" class="fld" id="lfOrg" placeholder="Company" autocomplete="organization">
@@ -163,9 +163,9 @@
   function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
   var out=document.getElementById("lfOut");function say(k,t){out.className="fmsg "+k;out.textContent=t;}
   var sel=document.getElementById("lfTopic");
-  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel)sel.value=a.getAttribute("data-topic");});});
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){if(sel){sel.value=a.getAttribute("data-topic");if(sel.selectedIndex<0)sel.selectedIndex=0;}});});
   b.addEventListener("click",async function(){var name=v("lfName"),org=v("lfOrg"),email=v("lfEmail"),phone=v("lfPhone");
-    var topic=sel?sel.options[sel.selectedIndex].text:"";
+    var topic=sel&&sel.selectedIndex>=0?sel.options[sel.selectedIndex].text:"";
     if(!name||!org||email.indexOf("@")<1){say("err","Please fill in your name, company and work email.");return;}
     if(phone&&phone.replace(/\D/g,"").length<7){say("err","Please check the phone number.");return;}
     if(!document.getElementById("lfConsent").checked){say("err","Please tick the box to consent to the processing of personal data.");return;}

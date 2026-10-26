@@ -294,7 +294,7 @@
   <div class="lead2">
     <div class="col">
       <div class="card"><div class="person lg"><img src="exp-telenkov.jpg" alt="Евгений Теленков"><div><div class="nm" data-ru="Евгений Теленков" data-en="Evgeny Telenkov">Евгений Теленков</div><div class="rl" data-ru="Директор практики непрерывности · к.э.н. · главный экзаменатор ERGP" data-en="Director, continuity practice · PhD · Chief Examiner, ERGP">Директор практики непрерывности · к.э.н. · главный экзаменатор ERGP</div></div></div></div>
-      <div class="card"><div class="person lg"><img src="exp-khilko.jpg" alt="Эржена Хилько"><div><div class="nm" data-ru="Эржена Хилько" data-en="Erzhena Khilko">Эржена Хилько</div><div class="rl" data-ru="Директор образовательных программ · куратор профессионального сообщества ERGP" data-en="Director of Educational Programmes · Curator of the ERGP Circle">Директор образовательных программ · куратор профессионального сообщества ERGP</div></div></div></div>
+      <div class="card"><div class="person lg"><img src="exp-khilko.jpg" alt="Эржена Хилько"><div><div class="nm" data-ru="Эржена Хилько" data-en="Erzhena Khilko">Эржена Хилько</div><div class="rl" data-ru="Директор программ · куратор профессионального сообщества ERGP" data-en="Director of Programmes · Curator of the ERGP Circle">Директор программ · куратор профессионального сообщества ERGP</div></div></div></div>
       <a href="o-podhode.html#experts" class="more" data-ru="О нас и о профессиональном сообществе ERGP →" data-en="About us and the ERGP Circle →">О нас и о профессиональном сообществе ERGP →</a>
     </div>
     <div class="side">
@@ -310,39 +310,30 @@
 <section class="sec alt" id="contacts"><div class="in contact">
   <div class="txt">
     <div class="rule"></div>
-    <h2 data-ru="Запросите демонстрацию продукта или расчет внедрения" data-en="Request a product demo or an implementation estimate">Запросите демонстрацию продукта или расчет внедрения</h2>
-    <p data-ru="Выберите, что вас интересует, — ответим в течение рабочего дня и предложим следующий шаг." data-en="Pick what you are interested in — we reply within one business day with a proposed next step.">Выберите, что вас интересует, — ответим в течение рабочего дня и предложим следующий шаг.</p>
+    <h2 data-ru="Обсудить вашу задачу" data-en="Discuss your task">Обсудить вашу задачу</h2>
+    <p data-ru="Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора." data-en="Leave your contacts. We reply within one working day and arrange a call or a Zoom meeting. If needed, we sign an NDA before the conversation.">Оставьте контакты. Ответим в течение рабочего дня и договоримся о звонке или встрече в Zoom. Если нужно, подпишем NDA до разговора.</p>
     <div class="clinks">
       <a href="https://t.me/JhonsonTel" target="_blank" rel="noopener"><span data-ru="Telegram · быстрый ответ" data-en="Telegram · quick reply">Telegram · быстрый ответ</span><span>→</span></a>
       <a href="mailto:info@risk-place.ru"><span>info@risk-place.ru</span><span>→</span></a>
     </div>
   </div>
   <div class="cform">
-    <label class="flabel" for="cf-product" data-ru="Что вас интересует?" data-en="What are you interested in?">Что вас интересует?</label>
+    <label class="flabel" for="lfTopic" data-ru="Тема" data-en="Topic">Тема</label>
     <div class="fstack">
-      <select class="fld" id="cf-product">
-        <option value="dashboard" data-ru="Дашборд непрерывности и рисков — демонстрация" data-en="Continuity and risk dashboard — demo">Дашборд непрерывности и рисков — демонстрация</option>
-        <option value="podklyuch" data-ru="Построение системы непрерывности под ключ — расчет" data-en="Turnkey continuity system — estimate">Построение системы непрерывности под ключ — расчет</option>
-        <option value="ergp" data-ru="Программа ERGP — демонстрация" data-en="ERGP programme — demo">Программа ERGP — демонстрация</option>
-        <option value="safe" data-ru="Программа SAFE — расчет для группы" data-en="SAFE programme — group estimate">Программа SAFE — расчет для группы</option>
-        <option value="trening" data-ru="Корпоративный тренинг — программа и счет" data-en="Corporate training — programme and invoice">Корпоративный тренинг — программа и счет</option>
-        <option value="other" data-ru="Другой вопрос" data-en="Another question">Другой вопрос</option>
-      </select>
+      <select class="fld" id="lfTopic"><option value="discuss" selected data-ru="Обсудить вашу задачу" data-en="Discuss your task">Обсудить вашу задачу</option><option value="demo" data-ru="Посмотреть продукт" data-en="See the product">Посмотреть продукт</option><option value="team" data-ru="Программа для сотрудников" data-en="Programme for your staff">Программа для сотрудников</option><option value="compliance" data-ru="Требование регулятора или заказчика" data-en="Regulator or client requirement">Требование регулятора или заказчика</option><option value="partner" data-ru="Сотрудничество" data-en="Partnership">Сотрудничество</option></select>
     </div>
     <div class="fgrid">
-      <input class="fld" id="cf-name" data-phru="Имя" data-phen="Name" placeholder="Имя" required>
-      <input class="fld" id="cf-email" type="email" data-phru="Рабочая почта" data-phen="Work email" placeholder="Рабочая почта" required>
-    </div>
-    <div class="fstack">
-      <input class="fld" id="cf-org" data-phru="Компания" data-phen="Company" placeholder="Компания">
-      <textarea class="fld" id="cf-msg" rows="4" data-phru="Сообщение (необязательно)" data-phen="Message (optional)" placeholder="Сообщение (необязательно)"></textarea>
+      <input class="fld" id="lfName" autocomplete="name" data-phru="Имя" data-phen="Name" placeholder="Имя">
+      <input class="fld" id="lfOrg" autocomplete="organization" data-phru="Компания" data-phen="Company" placeholder="Компания">
+      <input class="fld" id="lfEmail" type="email" autocomplete="email" data-phru="Рабочая почта" data-phen="Work email" placeholder="Рабочая почта">
+      <input class="fld" id="lfPhone" type="tel" autocomplete="tel" data-phru="Телефон (необязательно)" data-phen="Phone (optional)" placeholder="Телефон (необязательно)">
     </div>
     <label class="consent">
-      <input type="checkbox" id="cf-consent">
-      <span data-ru='Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a>' data-en='I consent to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">personal data policy</a>'>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span>
+      <input type="checkbox" id="lfConsent">
+      <span data-ru='Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a>' data-en='I agree to the processing of my personal data under the <a href="privacy-policy.html" target="_blank" rel="noopener">privacy policy</a>'>Даю согласие на обработку моих персональных данных на условиях <a href="privacy-policy.html" target="_blank" rel="noopener">политики обработки персональных данных</a></span>
     </label>
-    <button class="btn navy xl" id="cf-send" data-ru="Отправить запрос" data-en="Send the request">Отправить запрос</button>
-    <p class="fmsg" id="cf-note"></p>
+    <button class="btn navy xl" id="lfSubmit" data-ru="Отправить запрос" data-en="Send request">Отправить запрос</button>
+    <p class="fmsg" id="lfOut"></p>
   </div>
 </div></section>
 

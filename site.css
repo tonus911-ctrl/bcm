@@ -998,5 +998,5 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 /*/LEADFORM*/
 
 /*HERO-LIGHTHOUSE 29.10.2026: маяк целиком и по центру по вертикали*/
-.hero{background-size:cover,auto 140%;background-position:center,right top}
+.hero{background-size:cover,auto max(140%,59.4vw);background-position:center,right 0 top 16%}
 /*/HERO-LIGHTHOUSE*/

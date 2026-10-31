@@ -105,6 +105,14 @@
             "@type": "Answer",
             "text": "A KRI, or key risk indicator, is a number that shows that the probability of an unwanted event is rising before the event happens. For example, the share of overdue customer payments or the number of days since the last backup. The indicator has a threshold, and when it is crossed, everyone knows in advance who does what."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between KRI and KPI, in one line",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A KRI warns about a risk before the event, a KPI measures the result already achieved. A KRI is tied to a risk in the register and to its owner, a KPI to a target for the period and to the manager accountable for it. Crossing a KRI threshold means prevent, crossing a KPI threshold means explain and correct."
+          }
         }
       ]
     }
@@ -140,6 +148,7 @@
   <div class="t">On this page</div>
   <nav>
     <a href="#raznica">The difference, by example</a>
+    <a href="#tablica">KRI and KPI in a table</a>
     <a href="#priznaki">What a working KRI should look like</a>
     <a href="#porogi">How thresholds are set</a>
     <a href="#napisanie">How it is written: KRI and its Russian forms</a>
@@ -156,6 +165,8 @@
 <p>Take an IT department. KPI: service availability for the month was 99.2 per cent. This is a fact. It has already happened, and nothing can change it. KRI: the share of servers whose software has not been updated for more than ninety days has risen to 18 per cent. This is not an incident yet, but the probability of one has grown, and there is still time to respond.</p>
 <p>The same principle applies in procurement. KPI: three deliveries failed in the quarter. KRI: 40 per cent of critical items have only one supplier. The second indicator warns of the risk covered in the article <a href="en-poterya-postavshchika.html">loss of a supplier</a>.</p>
 <div class="callout"><b>Continuity KRIs on one screen.</b> Critical processes with traffic lights, single points of failure, the resilience index and the cost of downtime are brought together on the <a href="en-dashboard.html">continuity and risk dashboard</a>. A manager sees a threshold breach without reading reports.</div>
+<h2 id="tablica">KRI and KPI in one table</h2>
+<p>The full names: KRI is key risk indicator, KPI is key performance indicator. They are confused because both look like a number with a threshold in the same report. What separates them is not the form but the moment in time at which the number tells you something.</p><div class="table-wrap"><table class="cmp"><thead><tr><th>What we compare</th><th>KRI, key risk indicator</th><th>KPI, key performance indicator</th></tr></thead><tbody><tr><td>Moment</td><td>Before the event: it warns</td><td>After the event: it states the fact</td></tr><tr><td>Question</td><td>What could happen</td><td>What the result was</td></tr><tr><td>Source</td><td>The risk register: the indicator is tied to a specific risk</td><td>Targets for the period: the measure is tied to the plan</td></tr><tr><td>Response to the threshold</td><td>Remove the cause while there is still no event</td><td>Explain the result and fix the plan</td></tr><tr><td>Owner</td><td>The risk owner, with the signal going to the second line</td><td>The manager accountable for the result</td></tr><tr><td>Example in IT</td><td>Share of servers not patched for more than ninety days</td><td>Service availability over the month</td></tr><tr><td>Example in procurement</td><td>Share of critical items with a single supplier</td><td>Number of failed deliveries in the quarter</td></tr></tbody></table></div><p>A one-sentence test: if the measure cannot be improved before the event arrives, it is a KPI, whatever the policy calls it. Hence the common mistake of declaring the number of incidents per month a KRI: the incidents have already happened, there is nothing left to warn about.</p><p>The two are best kept side by side: the KPI shows where the company is now, the KRI shows where it is heading. One without the other gives you either a report about the past or an alarm with no link to the result.</p>
 <h2 id="priznaki">What a working KRI should look like</h2>
 <ul>
 <li><strong>Leading.</strong> It changes before the event, not at the same time. The number of incidents per month is a KPI, whatever you call it.</li>
@@ -172,7 +183,7 @@
 <h2 id="napisanie">How it is written: KRI, its Cyrillic form and the full Russian term</h2>
 <p>The term appears in three spellings, and all three mean the same thing: KRI, the English abbreviation of key risk indicator; the same abbreviation typed in Cyrillic letters on a Russian keyboard layout; and the full Russian phrase for “key risk indicator”. In company documents it is better to choose one spelling and stick to it. Otherwise, searches across the register and reports stop finding half of the rows.</p>
 <h2 id="faq">Frequently asked questions</h2>
-<div class="faq"><div class="q">KRI: what it is in plain language</div><p>A KRI, or key risk indicator, is a number that shows that the probability of an unwanted event is rising before the event happens. For example, the share of overdue customer payments or the number of days since the last backup. The indicator has a threshold, and when it is crossed, everyone knows in advance who does what.</p></div><p><b>Where does the data come from?</b> From systems that already run: accounting, service desk, HR. The data export is set up once; after that the indicator updates without manual collection.</p>
+<div class="faq"><div class="q">KRI: what it is in plain language</div><p>A KRI, or key risk indicator, is a number that shows that the probability of an unwanted event is rising before the event happens. For example, the share of overdue customer payments or the number of days since the last backup. The indicator has a threshold, and when it is crossed, everyone knows in advance who does what.</p></div><div class="faq"><div class="q">What is the difference between KRI and KPI, in one line</div><p>A KRI warns about a risk before the event, a KPI measures the result already achieved. A KRI is tied to a risk in the register and to its owner, a KPI to a target for the period and to the manager accountable for it. Crossing a KRI threshold means prevent, crossing a KPI threshold means explain and correct.</p></div><p><b>Where does the data come from?</b> From systems that already run: accounting, service desk, HR. The data export is set up once; after that the indicator updates without manual collection.</p>
   </div>
 <div class="upbox">
   <span class="k">Section 04 · Risk management</span>

@@ -108,7 +108,7 @@
         },
         {
           "@type": "Question",
-          "name": "What risk appetite means in plain language",
+          "name": "What risk appetite means in plain words",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "It is a boundary drawn in advance between “allowed” and “needs a separate decision”. For example: a loss of up to 5% of annual profit from a single event is acceptable; anything more requires a board decision. While the risk stays inside the boundary, local managers make the decisions. Beyond the boundary, the matter goes higher."
@@ -136,6 +136,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "In banks, risk appetite is a document approved by the supervisory board, with indicators for each type of risk: capital adequacy, credit and market risk limits, liquidity, operational losses. It is part of the Bank of Russia's requirements for banks' risk and capital management systems. For an industrial company the approach is the same, with fewer indicators: usually five to ten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate risk appetite",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You do not calculate it with a formula, you set it and then stress it. A workable sequence: take annual profit or capital, name the share the company is willing to put at risk over a year, split that sum across three to five risk types, and compare it with the loss history of the past three years. If actual losses from previous years fall outside the stated boundary, the boundary is unrealistic: either it is raised, or the processes change."
           }
         }
       ]
@@ -172,6 +180,7 @@
   <div class="t">On this page</div>
   <nav>
     <a href="#pochemu-chislo">Why the statement must be measurable</a>
+    <a href="#tolerantnost">Appetite, tolerance, limit</a>
     <a href="#kto-utverzhdaet">Who approves it and what happens next</a>
     <a href="#kak-sformulirovat">How to set it in one meeting</a>
     <a href="#faq">Frequently asked questions</a>
@@ -180,12 +189,15 @@
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
-<p data-def="1">Risk appetite is the amount of loss, named in advance, that a company is willing to accept for a specific type of risk over a period without changing its strategy. The key word is amount: a number or a clear boundary, so that compliance can be checked.</p>
+<p data-def="1">Risk appetite is the amount of loss, named in advance, that a company is ready to accept for a specific type of risk over a period without changing its strategy. The key word is amount: a number or a clear boundary, so that compliance can be checked.</p>
 
+<p>In plain words, risk appetite answers one question: how much money are you willing to lose on this in advance, without changing your plans. While losses stay inside the stated sum, the manager on the spot decides and asks nobody. As soon as more is at stake, the question goes up. Everything else in this subject is about how to agree on that sum and how to make sure it is respected.</p>
 <h2 id="pochemu-chislo">Why the statement must be measurable</h2>
 <p>The phrase “we accept a moderate level of operational risk” is useless: any decision and any consequence of it fits under it. There is no way to check compliance with such an appetite, which means it influences nothing.</p>
 <p>A working statement sounds different. Total losses from downtime do not exceed RUB 40 million a year. Loss of client operational data is unacceptable under any circumstances. For internal management reporting, a loss of up to one day of data is acceptable. Recovery requirements follow directly from such boundaries: the target recovery time and the acceptable data loss, which a <a href="en-bia-analiz-vozdeystviya.html">business impact analysis</a> determines.</p>
 
+<h2 id="tolerantnost">Risk appetite, tolerance and limit: three different words</h2>
+<p>In documents these three words often appear in a row and mean different things. The confusion is expensive in practice: a company declares an appetite but sets no limits, and the boundary influences nothing.</p><div class="table-wrap"><table class="cmp"><thead><tr><th>Term</th><th>What it means</th><th>Example</th></tr></thead><tbody><tr><td>Risk appetite</td><td>How much the company is willing to accept for a risk type over a period, decided by the board</td><td>Total losses from downtime of no more than forty million roubles a year</td></tr><tr><td>Risk tolerance</td><td>The maximum deviation beyond which intervention is required</td><td>Downtime of a single process longer than eight hours requires a decision by the executive board</td></tr><tr><td>Limit</td><td>An operational constraint for a unit, derived from the appetite</td><td>The Kazan site: no more than three days of downtime a year</td></tr></tbody></table></div><p>The order is always the same: first the appetite, from it the tolerance, from that the limits. The reverse order produces a set of constraints nobody can explain. The easiest way to check whether a company lives inside its own appetite is to look back: take the largest incident of the past three years and see whether it fits within the stated boundary.</p>
 <h2 id="kto-utverzhdaet">Who approves it and what happens next</h2>
 <p>Risk appetite is approved by the board of directors or the owner, because it is a decision about what the company is willing to risk for the sake of returns. Management carries it out but does not set it for itself.</p>
 <p>Next, the appetite is broken down into limits for business units. This is called cascading. The overall loss boundary turns into specific limits by business line, site and type of operation. If breaching a limit obliges no one to do anything, the company has no risk appetite, only a text in a folder.</p>
@@ -199,7 +211,7 @@
 </ul>
 <p>How to hold this conversation with the board of directors is covered in <a href="en-bcm-dlya-soveta-direktorov.html">BCM for the board of directors</a>. A way to assess an individual decision is described in <a href="en-kak-prinimat-slozhnye-resheniya.html">the three-scenario method</a>.</p>
 <h2 id="faq">Frequently asked questions</h2>
-<div class="faq"><div class="q">What risk appetite means in plain language</div><p>It is a boundary drawn in advance between “allowed” and “needs a separate decision”. For example: a loss of up to 5% of annual profit from a single event is acceptable; anything more requires a board decision. While the risk stays inside the boundary, local managers make the decisions. Beyond the boundary, the matter goes higher.</p></div><div class="faq"><div class="q">What a moderate or low risk appetite means</div><p>These are qualitative labels for where the boundary lies. A low appetite means narrow limits and approval for almost every deviation; a moderate one means wider limits. The words alone do not work: appetite becomes a tool only when there is a number or a rule behind the word.</p></div><div class="faq"><div class="q">How often risk appetite is reviewed</div><p>A scheduled review once a year, together with the strategy and the budget. An unscheduled review when conditions change significantly: a new strategy, a major deal, a change in regulation, a serious incident. Reviewing it more often than once a quarter is not worth it: boundaries that move every month stop being boundaries.</p></div><div class="faq"><div class="q">Risk appetite at Sberbank and other banks: how it works</div><p>In banks, risk appetite is a document approved by the supervisory board, with indicators for each type of risk: capital adequacy, credit and market risk limits, liquidity, operational losses. It is part of the Bank of Russia's requirements for banks' risk and capital management systems. For an industrial company the approach is the same, with fewer indicators: usually five to ten.</p></div><p><b>How is risk appetite different from risk tolerance?</b> Appetite is the desired level of risk that the company consciously accepts. Tolerance is the maximum acceptable deviation from it for a specific indicator, beyond which action is required.</p><p><b>Can you do without numbers?</b> For prohibitions, yes: the wording “unacceptable” works. For everything else you need a number, otherwise there is no way to check compliance with the appetite.</p>  </div>
+<div class="faq"><div class="q">What risk appetite means in plain words</div><p>It is a boundary drawn in advance between “allowed” and “needs a separate decision”. For example: a loss of up to 5% of annual profit from a single event is acceptable; anything more requires a board decision. While the risk stays inside the boundary, local managers make the decisions. Beyond the boundary, the matter goes higher.</p></div><div class="faq"><div class="q">What a moderate or low risk appetite means</div><p>These are qualitative labels for where the boundary lies. A low appetite means narrow limits and approval for almost every deviation; a moderate one means wider limits. The words alone do not work: appetite becomes a tool only when there is a number or a rule behind the word.</p></div><div class="faq"><div class="q">How often risk appetite is reviewed</div><p>A scheduled review once a year, together with the strategy and the budget. An unscheduled review when conditions change significantly: a new strategy, a major deal, a change in regulation, a serious incident. Reviewing it more often than once a quarter is not worth it: boundaries that move every month stop being boundaries.</p></div><div class="faq"><div class="q">Risk appetite at Sberbank and other banks: how it works</div><p>In banks, risk appetite is a document approved by the supervisory board, with indicators for each type of risk: capital adequacy, credit and market risk limits, liquidity, operational losses. It is part of the Bank of Russia's requirements for banks' risk and capital management systems. For an industrial company the approach is the same, with fewer indicators: usually five to ten.</p></div><div class="faq"><div class="q">How do you calculate risk appetite</div><p>You do not calculate it with a formula, you set it and then stress it. A workable sequence: take annual profit or capital, name the share the company is willing to put at risk over a year, split that sum across three to five risk types, and compare it with the loss history of the past three years. If actual losses from previous years fall outside the stated boundary, the boundary is unrealistic: either it is raised, or the processes change.</p></div><p><b>How is risk appetite different from risk tolerance?</b> Appetite is the desired level of risk that the company consciously accepts. Tolerance is the maximum acceptable deviation from it for a specific indicator, beyond which action is required.</p><p><b>Can you do without numbers?</b> For prohibitions, yes: the wording “unacceptable” works. For everything else you need a number, otherwise there is no way to check compliance with the appetite.</p>  </div>
 <div class="upbox">
   <span class="k">Section 04 · Risk management</span>
   <a href="en-sistema-upravleniya-riskami.html">Enterprise risk management without bureaucracy →</a>

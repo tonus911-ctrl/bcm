@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4RMNS821T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4RMNS821T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single point of failure on a site: what to replace tomorrow and what to duplicate</title>
+<meta name="description" content="How to find the site node that wipes out a day of output or shipping, separate what the market can cover tomorrow from what is unique, and decide what to duplicate and separate.">
+<meta name="keywords" content="Site failure points">
+<meta name="author" content="Evgeny Telenkov">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="ru" href="https://bcm.risk-place.ru/edinaya-tochka-otkaza-ploschadka.html">
+<link rel="alternate" hreflang="en-RU" href="https://bcm.risk-place.ru/en-edinaya-tochka-otkaza-ploschadka.html">
+<link rel="alternate" hreflang="x-default" href="https://bcm.risk-place.ru/edinaya-tochka-otkaza-ploschadka.html">
+<link rel="canonical" href="https://bcm.risk-place.ru/en-edinaya-tochka-otkaza-ploschadka.html">
+<meta name="yandex-verification" content="6b8108f8673d1707">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bcm.risk-place.ru/en-edinaya-tochka-otkaza-ploschadka.html">
+<meta property="og:title" content="Single point of failure on a site: what to replace tomorrow and what to duplicate">
+<meta property="og:description" content="How to find the site node that wipes out a day of output or shipping, separate what the market can cover tomorrow from what is unique, and decide what to duplicate and separate.">
+<meta property="og:image" content="https://bcm.risk-place.ru/edinaya-tochka-otkaza-ploschadka-en.png">
+<meta property="og:site_name" content="risk-place.ru">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Single point of failure on a site: what to replace tomorrow and what to duplicate">
+<meta name="twitter:description" content="How to find the site node that wipes out a day of output or shipping, separate what the market can cover tomorrow from what is unique, and decide what to duplicate and separate.">
+<meta name="twitter:image" content="https://bcm.risk-place.ru/edinaya-tochka-otkaza-ploschadka-en.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14181F">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bcm.risk-place.ru/en-edinaya-tochka-otkaza-ploschadka.html#article",
+      "headline": "Single point of failure on a site: what to replace tomorrow and what to duplicate",
+      "description": "How to find the site node that wipes out a day of output or shipping, separate what the market can cover tomorrow from what is unique, and decide what to duplicate and separate.",
+      "image": "https://bcm.risk-place.ru/edinaya-tochka-otkaza-ploschadka-ru.png",
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Evgeny Telenkov",
+        "url": "https://risk-place.ru/telenkov/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "risk-place.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bcm.risk-place.ru/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": "https://bcm.risk-place.ru/en-edinaya-tochka-otkaza-ploschadka.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bcm.risk-place.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Materials",
+          "item": "https://bcm.risk-place.ru/materialy-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Site failure points",
+          "item": "https://bcm.risk-place.ru/en-edinaya-tochka-otkaza-ploschadka.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where to start the node map",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With the three flows the company cannot live a day without: output, shipping, raw material in. Each flow gets one question: what exactly stops it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How duplication differs from a reserve",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A reserve is a quantity that sits nearby and runs out. Duplication is a second way to do the same work when the first way is unavailable, better in another place."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a single site still need the map",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is when it is needed. One site means the gate, the line and the store coincide in one point. The map shows which of the three to separate first."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!--TPL:HEADER-->
+<header class="uh">
+  <div class="uh-bar">
+    <a href="index.html" class="uh-logo"><span class="uh-mark"><img src="mayak.png" alt="" width="27" height="27"></span><span class="uh-txt">bcm.risk-<span class="lp">place</span>.ru</span></a>
+    <nav class="uh-nav" id="uhNav"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html" class="act">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></nav>
+    <span class="uh-lang"><a href="edinaya-tochka-otkaza-ploschadka.html">RU</a><a href="en-edinaya-tochka-otkaza-ploschadka.html" class="act">EN</a></span>
+    <button class="uh-burger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+<!--/TPL:HEADER-->
+<!--TPL:HERO-->
+<div class="ph"><div class="in">
+  <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="materialy-en.html">Materials</a><span class="sep">/</span>Site failure points</div>
+  <div class="rule"></div>
+  <div class="eyebrow">Crisis and cyber threats</div>
+  <h1>Single point of failure on a site: what to replace tomorrow and what to duplicate</h1>
+  <p class="lead">A strike on the site stops the business at one node. Below is the map: what to buy on the market the next day and what to duplicate in advance, with the day-cost of that node.</p>
+  <div class="meta">Updated: 31 October 2026 · Author: Evgeny Telenkov</div>
+</div></div>
+<!--/TPL:HERO-->
+
+<div class="pb">
+<!--TPL:TOC-->
+<aside class="ptoc">
+  <div class="t">On this page</div>
+  <nav>
+    <a href="#uzly">The four nodes a day stands on</a>
+    <a href="#rynok">What the market covers the next day</a>
+    <a href="#proverka">What the readiness check calculates</a>
+    <a href="#faq">Frequently asked questions</a>
+  </nav>
+</aside>
+<!--/TPL:TOC-->
+<main class="pmain">
+<div class="article">
+<p>A single point of failure on a site is the node that wipes out a day of output or shipping: the line, the finished-goods store, the flow of raw material, or the only gate. A market replacement the next day and duplication with spatial separation solve different nodes.</p>
+<figure><img src="edinaya-tochka-otkaza-ploschadka-en.png" alt="Four site nodes: what to duplicate and what the market can cover" width="1200" height="680"><figcaption>The line and the finished-goods store hold the day. Commodity raw material and a second gate are easier for the market to cover.</figcaption></figure>
+<h2 id="uzly">The four nodes a day stands on</h2>
+<p>The owner starts from a map of the site. The map asks four questions: what the line produces, where finished goods wait to ship, where raw material comes from, and which gate the site lives through.</p>
+<p>Each node has a day-cost: shipments not made, people and rent that continue, a penalty under the supply contract, and the cost of returning to the previous output. The method is already set out in <a href="en-stoimost-dnya-prostoya.html">the cost of a day of downtime</a>. Here the same sum is tied to a site node.</p>
+<div class="table-wrap"><table class="cmp"><thead><tr><th>Node</th><th>If it stops</th><th>What the owner does</th></tr></thead><tbody><tr><td>Line</td><td>A day of output</td><td>Duplicates the route or the shift</td></tr><tr><td>Finished-goods store</td><td>A day of shipping</td><td>Keeps a reserve on a second site</td></tr><tr><td>Commodity raw material</td><td>The restart after a pause</td><td>Buys it on the market</td></tr><tr><td>The only gate</td><td>The whole site</td><td>Prepares a second intake</td></tr></tbody></table></div>
+<h2 id="rynok">What the market covers the next day</h2>
+<p>Commodity raw material, standard packaging, a neighbouring warehouse for rent and a hired shift exist on the market in quantity. Losing them hurts for hours, and a reserve or a cover contract brings the flow back.</p>
+<p>What is unique is the recipe, the tooling, the only line with a long changeover, the customer store tied to one contract, and the person without whose signature a shipment does not leave. Those are the candidates for duplication, separation or a written deputy.</p>
+<ul>
+<li>Market: raw material, packaging, a warehouse for rent, a shift.</li>
+<li>Unique: tooling, the recipe, the only line, the authority to release a shipment.</li>
+<li>Test: if a node cannot be bought in a day, it has a pair somewhere else.</li>
+<li>The sum: the day-cost of that node is written before the event.</li>
+</ul>
+<h2 id="proverka">What the readiness check calculates</h2>
+<p>The check splits the site into these nodes, names the single points of failure, prices the day of downtime and the cost of restoring output, and assigns who stops the shift and who writes to the supplier. That is the work of the <a href="en-proverka-gotovnosti-ataka-bpla.html">drone strike readiness check</a>.</p>
+<div class="callout"><p>A net and a canopy over the yard cover the first physical step. The second step belongs to the owner: the node map, the day-cost and the decision of what to duplicate.</p></div>
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq"><div class="q">Where to start the node map</div><p>With the three flows the company cannot live a day without: output, shipping, raw material in. Each flow gets one question: what exactly stops it.</p></div><div class="faq"><div class="q">How duplication differs from a reserve</div><p>A reserve is a quantity that sits nearby and runs out. Duplication is a second way to do the same work when the first way is unavailable, better in another place.</p></div><div class="faq"><div class="q">Does a single site still need the map</div><p>That is when it is needed. One site means the gate, the line and the store coincide in one point. The map shows which of the three to separate first.</p></div><div class="upbox">
+  <span class="k">Section 05 · Crisis and cyber threats</span>
+  <a href="en-plan-deystviy-pri-kiberatake.html">What to do in a cyberattack →</a>
+  <span class="sep">·</span>
+  <a class="sec" href="materialy-en.html#krizis">All materials in this section</a>
+</div>
+<div class="inset cta">
+  <h3>Is your team ready for the first hour of a crisis?</h3>
+  <p>You test a plan by running a scenario. Reading it is not enough. The assessment shows the gaps, and the corporate format works through them with your team on your own processes.</p>
+  <div class="btns">
+    <a href="quiz.html?lang=en" class="btn gold">Take the free assessment →</a>
+    <a href="en-obuchenie-nepreryvnosti-biznesa.html" class="btn line">Corporate training →</a>
+    <a href="en-bcm-pod-klyuch.html" class="btn line">Turnkey system →</a>
+  </div>
+</div>
+<div class="rel"><div class="k">Read next</div><div class="rel-grid"><a href="en-den-posle-udara-bpla.html" class="rel-card"><div class="rt">The day after a strike →</div><div class="rd">Roles, letters to suppliers and the public account.</div></a><a href="en-strahovanie-prostoya-posle-bpla.html" class="rel-card"><div class="rt">Downtime insurance →</div><div class="rd">What the policy covers and what the owner calculates.</div></a><a href="en-proverka-gotovnosti-ataka-bpla.html" class="rel-card"><div class="rt">Drone strike readiness check →</div><div class="rd">The node map and the day-cost of your site.</div></a></div></div>
+</main>
+</div>
+
+<!--TPL:FOOTER-->
+<footer class="uf"><div class="in">
+  <div class="row1"><a href="en-onlajn-kurs.html">ERGP certification</a><a href="en-kultura-bezopasnosti.html">SAFE programme</a><a href="en-dlya-kompanij.html">For companies</a><a href="materialy-en.html">Methodology</a><a href="en-o-podhode.html">About us</a><a href="index.html#contacts">Contacts</a></div>
+  <div class="row2"><span>© 2026 Risk-place</span><a href="onlajn-kurs.html#certificate">Verify a certificate</a><a href="privacy-policy.html">Privacy policy</a><a href="oferta.html">Public offer</a><a href="mailto:info@risk-place.ru">info@risk-place.ru</a><a href="https://t.me/JhonsonTel" target="_blank" rel="noopener">Telegram</a><a href="https://risk-place.org/">risk-place.org (EN, AR)</a></div>
+</div></footer>
+<script>(function(){var b=document.querySelector('.uh-burger');if(b)b.addEventListener('click',function(){document.getElementById('uhNav').classList.toggle('open');});})();</script>
+<script>/*dl-goal-v2*/document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var f=a.getAttribute("href")||"";if(!/(^|\/)files\/[^?#]+\.(docx|xlsx|pdf|pptx|zip)([?#]|$)/i.test(f))return;try{ym(110579884,"reachGoal","download",{file:f});ym(110579884,"params",{download:f});}catch(x){}try{gtag("event","download",{file:f});}catch(x){}});</script>
+<!--/TPL:FOOTER-->
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open');});})();</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(110579884,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110579884" alt=""/></div></noscript>
+</body>
+</html>

@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/materialy.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -205,7 +205,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/materialy-en.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -616,4 +616,10 @@
   <url><loc>https://bcm.risk-place.ru/en-proverka-gotovnosti-ataka-bpla.html</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://bcm.risk-place.ru/proverka-gotovnosti-shifrovalshchik.html</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://bcm.risk-place.ru/en-proverka-gotovnosti-shifrovalshchik.html</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/edinaya-tochka-otkaza-ploschadka.html</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/den-posle-udara-bpla.html</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/strahovanie-prostoya-posle-bpla.html</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/erp-crm-odna-sistema-na-den.html</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/dublirovanie-pri-shifrovalshchike.html</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/den-bez-uchetnoy-sistemy.html</loc><lastmod>2026-10-31</lastmod></url>
 </urlset>

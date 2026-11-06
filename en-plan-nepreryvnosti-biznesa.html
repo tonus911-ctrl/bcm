@@ -150,6 +150,7 @@
     <a href="#chto">What a BCP is, in plain language</a>
     <a href="#struktura">What a working BCP consists of</a>
     <a href="#shagi">How to build a BCP in 7 steps</a>
+    <a href="#dlya-sistemy">A BCP for a single IT system: what changes</a>
     <a href="#oshibki">Common mistakes</a>
     <a href="#struktura-plana">Structure of a continuity plan</a>
     <a href="#shablon">Continuity plan template: docx</a>
@@ -185,6 +186,16 @@
 </ol>
 <div class="callout"><b>Why it matters in money terms:</b> according to ITIC (2024), for over 90% of medium and large companies one hour of downtime costs more than USD 300,000. A prepared BCP cuts downtime from weeks to days. That difference is the economic case for the plan.</div>
 
+<h2 id="dlya-sistemy">A BCP for a single IT system: what changes</h2>
+<p>Sometimes the plan is needed not for the whole company but for one system: accounting, warehouse or an order portal. The logic stays the same and the starting point changes. The question becomes: which processes stop without this system.</p>
+<ol>
+<li><strong>List the processes that run on the system.</strong> Each one needs an owner from the business, not just an administrator.</li>
+<li><strong>Take RTO and RPO from the BIA.</strong> The strictest process on the system sets the requirement for the system.</li>
+<li><strong>Find the dependencies.</strong> Servers, integrations, accounts, the supplier. Any of them can turn out to be a <a href="en-edinaya-tochka-otkaza.html">single point of failure</a>.</li>
+<li><strong>Describe the manual mode.</strong> What people do while the system is down and how they enter the accumulated data afterwards.</li>
+<li><strong>Separate the documents.</strong> Recovering the system itself goes into the <a href="en-plan-avariynogo-vosstanovleniya.html">disaster recovery plan</a>, and running the business without it goes into the BCP. The boundary is covered in <a href="en-bcm-bcp-drp-otlichie.html">BCP and DRP</a>.</li>
+</ol>
+<p>A plan like this is proven by an exercise: the system is switched off in a test and the business runs in manual mode.</p>
 <h2 id="oshibki">Common mistakes</h2>
 <ul>
   <li>The plan is written to tick a box and never tested, so it fails in a crisis.</li>

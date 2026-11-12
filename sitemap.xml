@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/materialy.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -205,7 +205,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/materialy-en.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -349,7 +349,7 @@
   </url>
   <url>
     <loc>https://bcm.risk-place.ru/onlajn-kurs.html</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -468,7 +468,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-<url><loc>https://bcm.risk-place.ru/en-onlajn-kurs.html</loc><lastmod>2026-11-06</lastmod></url>
+<url><loc>https://bcm.risk-place.ru/en-onlajn-kurs.html</loc><lastmod>2026-11-12</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-kultura-bezopasnosti.html</loc><lastmod>2026-10-26</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-dashboard.html</loc><lastmod>2026-10-26</lastmod></url>
 <url><loc>https://bcm.risk-place.ru/en-bcm-pod-klyuch.html</loc><lastmod>2026-10-26</lastmod></url>
@@ -622,4 +622,10 @@
   <url><loc>https://bcm.risk-place.ru/erp-crm-odna-sistema-na-den.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://bcm.risk-place.ru/dublirovanie-pri-shifrovalshchike.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://bcm.risk-place.ru/den-bez-uchetnoy-sistemy.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/en-den-bez-uchetnoy-sistemy.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/en-den-posle-udara-bpla.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/en-dublirovanie-pri-shifrovalshchike.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/en-edinaya-tochka-otkaza-ploschadka.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/en-erp-crm-odna-sistema-na-den.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://bcm.risk-place.ru/en-strahovanie-prostoya-posle-bpla.html</loc><lastmod>2026-11-12</lastmod></url>
 </urlset>

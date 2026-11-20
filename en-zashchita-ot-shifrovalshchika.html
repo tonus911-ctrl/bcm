@@ -147,10 +147,11 @@
 <aside class="ptoc">
   <div class="t">On this page</div>
   <nav>
-    <a href="#pochemu">Why ransomware is a question of “when”, not “if”</a>
+    <a href="#pochemu">Why ransomware is a matter of time</a>
     <a href="#do">Preparation before the attack: 6 lines of defence</a>
     <a href="#kopii">Backups that will survive an attack</a>
-    <a href="#plan">Recovery plan: a realistic RTO, counted in days</a>
+    <a href="#domen">Protecting the domain</a>
+    <a href="#plan">Recovery plan: RTO in days and money</a>
     <a href="#repeticiya">Rehearsal: the only honest test</a>
     <a href="#faq">Frequently asked questions</a>
   </nav>
@@ -158,8 +159,8 @@
 <!--/TPL:TOC-->
 <main class="pmain">
 <div class="article">
-<h2 id="pochemu">Why ransomware is a question of “when”, not “if”</h2>
-<p>Ransomware is the most expensive cyberattack scenario for a mid-sized business: all systems stop at once, not just one. The industry has already felt this. Construction, manufacturing and retail companies have become the number one target for extortionists, and the average recovery time after critical systems are encrypted is measured in days, not hours: 5-6 days, according to industry data.</p>
+<h2 id="pochemu">Why ransomware is a matter of time</h2>
+<p>Ransomware is the most expensive cyberattack scenario for a mid-size business: every system stops at once. The industry already feels it: construction, manufacturing and retail companies have become the number one target for extortionists, and the average recovery time after critical systems are encrypted is measured in days — 5-6 days according to industry data.</p>
 <p>Antivirus and a firewall reduce the likelihood but do not remove it: a third of successful attacks start with stolen credentials and come in through contractors, that is, past your perimeter. So the mature position sounds like this: “we assume an attack will happen, and we prepare recovery in advance”.</p>
 <h2 id="do">Preparation before the attack: 6 lines of defence</h2>
 <ol>
@@ -168,11 +169,14 @@
 <li><b>Network segmentation.</b> An attack must not get from accounting to production in one step.</li>
 <li><b>Access rights.</b> An ordinary employee’s account must not open the doors to all company data.</li>
 <li><b>An action plan on paper.</b> In the first hours nobody thinks clearly, so you need a ready procedure: what to isolate, whom to call, what to say.</li>
-<li><b>Workaround processes.</b> How do you take orders and ship goods without IT, at least in emergency mode? Manual procedures are prepared in advance and cost almost nothing: this is organisational work, not a hardware purchase.</li>
+<li><b>Workarounds.</b> How do you take orders and ship without IT, at least in emergency mode? Manual procedures are prepared in advance and cost almost nothing — this is organisational work, and it needs no new equipment.</li>
 </ol>
 <h2 id="kopii">Backups that will survive an attack</h2>
-<p>The main mistake is to check that copies exist instead of checking recovery from them. The working rule is 3-2-1: three copies, on two types of media, one of them outside the main infrastructure and not writable from the working network. And the key question to ask your IT team today: “how many hours does it really take us to restore the main system from the latest copy, and when did we last try it?”</p>
-<h2 id="plan">Recovery plan: a realistic RTO, counted in days</h2>
+<p>The main mistake is to check only that backups exist. What needs checking is the restore from them. The working rule is 3-2-1: three copies, on two types of media, one outside the main infrastructure and not writable from the production network. And the key question to ask your IT team today: "how many hours does it really take us to bring up the main system from the latest backup — and when did we last try?"</p>
+<h2 id="domen">Protecting the Active Directory domain</h2>
+<p>Ransomware almost always spreads through the domain. Once it has domain administrator rights, it encrypts every computer and server joined to the domain in one go and deletes the backups it can reach. That is why protecting the domain is a separate line of defence.</p><ul><li><b>Tiered administrator accounts.</b> Domain administrators sign in only to domain controllers. Administrators use separate accounts for servers and workstations.</li><li><b>Unique local administrator passwords.</b> Each computer has its own password, for example through Microsoft LAPS. One shared password opens every machine at once.</li><li><b>Multi-factor authentication.</b> For remote access and for every privileged account.</li><li><b>Legacy protocols switched off.</b> SMBv1 and NTLMv1 are disabled, and direct access to domain controllers from the user network is closed.</li><li><b>Domain controller backup outside the domain.</b> If a domain administrator can reach the backup, the ransomware will delete it along with the rest.</li><li><b>Active Directory recovery rehearsed.</b> Without the domain neither email nor the ERP comes back, so the domain recovery procedure is tested first.</li><li><b>Sign-in logs under control.</b> Sign-ins of privileged accounts are collected in a separate system and reviewed regularly.</li></ul>
+<p>To check how ready the company is for an attack as a whole, use the <a href="en-proverka-gotovnosti-shifrovalshchik.html">ransomware readiness check</a>.</p>
+<h2 id="plan">Recovery plan: RTO in days and money</h2>
 <p>Every critical system should have a recovery time objective (RTO) and a clear view of what one hour of its downtime costs. Then the recovery plan turns from wishes into economics: what we bring up first, which resources we keep in reserve, where downtime is tolerable and where every hour costs millions. How to calculate this is covered in the article <a href="en-stoimost-dnya-prostoya.html">on the cost of downtime</a>.</p>
 <h2 id="repeticiya">Rehearsal: the only honest test</h2>
 <p>A paper plan lies. The only way to learn the truth is a rehearsal: a run-through of the scenario “ransomware has encrypted everything”, played against a stopwatch. The team works through the first hours in their assigned roles, IT restores a test environment from a real backup, and management makes decisions on the prepared communications. The result is a measured actual recovery time and a list of gaps found without real damage. We run such rehearsals as a separate service, with a scenario, measurement and a report for management. The first hours of an attack are covered step by step in the article <a href="en-plan-deystviy-pri-kiberatake.html">on what to do in a cyberattack</a>.</p>

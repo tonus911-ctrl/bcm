@@ -1047,6 +1047,10 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
   .ph .cta-row .more,.ph .btn.gold{width:100%}
   .ph .cta-row .btn.gold~.more{width:auto}
 }
+/* плитки под поиском в герое (materialy): золотые, чтобы не сливаться с белым полем поиска, 23.11.2026 */
+.ph .search~.tiles .tile{background:#F6EDD3;border-color:#E6D29B}
+.ph .search~.tiles .tile b{color:var(--gold-dark)}
+.ph .search~.tiles .tile span{color:#5E5236}
 /* HERO-END */
 /* 23.11.2026: таблицы статей без обертки .table-wrap на телефоне вылезали за край (min-width:480px); укладываем в ширину экрана */
 @media(max-width:560px){.article table{min-width:0}.article .cmp{font-size:13.5px}.article .cmp th,.article .cmp td{padding:8px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}}

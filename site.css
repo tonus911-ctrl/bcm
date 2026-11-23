@@ -1000,3 +1000,53 @@ th{background:var(--panel);font-weight:700;color:var(--ink)}
 /*HERO-LIGHTHOUSE 29.10.2026: маяк целиком и по центру по вертикали*/
 .hero{background-size:cover,auto max(140%,59.4vw);background-position:center,right 0 top 16%}
 /*/HERO-LIGHTHOUSE*/
+/* HERO-START: единый герой внутренних страниц bcm (перенесен с risk-place.ru 23.11.2026, палитра bcm через переменные). Главная (section.hero) не затрагивается.
+   Компьютер: высота 400 px (с 21.11 вторая версия, было 320), крошки наверху, остальное по центру; плитки одним рядом под текстом;
+   кнопки: бордовая + кнопка с рамкой (вторая ссылка .more в cta-row и золотая кнопка оформляются рамкой).
+   Телефон и планшет: высота по содержимому, плитки одной прокручиваемой строкой. */
+.ph{box-sizing:border-box;padding:18px 0}
+.ph>.in{width:100%}
+.ph .crumbs{margin-bottom:12px}
+.ph .rule{margin-bottom:14px;width:48px}
+.ph .eyebrow{margin-bottom:8px}
+.ph h1{font-size:clamp(24px,2.4vw,30px);line-height:1.16;margin-bottom:10px;max-width:none}   /* 23.11: герой в два уровня, заголовок крупнее */
+.ph .lead{font-size:16.5px;line-height:1.6;max-width:880px}   /* 23.11: абзац в две-три строки, без тонкой полосы во всю ширину */
+.ph .tiles{display:flex;flex-wrap:nowrap;gap:10px;margin:12px 0 0;max-width:none}
+.ph .tile{flex:1 1 auto;min-width:0;max-width:340px;padding:7px 12px 6px;border-radius:6px}
+.ph .tile b{font-size:15px;margin-bottom:1px}
+.ph .tile span{font-size:12px;line-height:1.35;display:block}
+.ph .cta-row{margin-top:10px;gap:10px}
+.ph .cta-row+.cta-row{margin-top:10px}
+.ph .pb-price{font-size:18px}
+.ph .btn,.ph .cta-row .more{font-size:14.5px;padding:11px 22px;line-height:1.2}
+.ph .cta-row .more,.ph .btn.gold,.ph .btn.line{display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--navy);border:1px solid var(--navy);border-radius:999px;font-weight:700;white-space:nowrap}
+.ph .cta-row .more:hover,.ph .btn.gold:hover,.ph .btn.line:hover{background:var(--navy);color:#fff}
+.ph .btn.navy{border:1px solid var(--navy)}
+.ph .cta-row .btn.gold~.more{background:none;border:0;padding:11px 4px;color:var(--navy)}
+.ph .cta-row .btn.gold~.more:hover{background:none;color:var(--ink)}
+@media(min-width:861px){
+  /* 21.11.2026, вторая версия: 400 px; крошки наверху, остальное по центру оставшейся высоты с ровными промежутками */
+  .ph{min-height:400px;display:flex;align-items:stretch;padding:26px 0}
+  .ph>.in{display:flex;flex-direction:column}
+  .ph .in>.crumbs{margin-bottom:16px}
+  .ph .in>.crumbs+*{margin-top:auto}
+  .ph .in>:last-child{margin-bottom:auto}
+  .ph .rule{margin-bottom:12px}
+  .ph .eyebrow{margin-bottom:12px}
+  .ph h1{margin-bottom:14px}
+  .ph .tiles{margin-top:18px}
+  .ph .cta-row{margin-top:16px}
+  .ph .cta-row+.cta-row{margin-top:12px}
+  .ph .search{margin-top:20px}
+}
+@media(max-width:860px){
+  .ph .tiles{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;margin-right:-16px;padding-right:16px}
+  .ph .tile{flex:0 0 auto;width:min(46%,200px);max-width:none;scroll-snap-align:start}
+}
+@media(max-width:560px){
+  .ph .cta-row .more,.ph .btn.gold{width:100%}
+  .ph .cta-row .btn.gold~.more{width:auto}
+}
+/* HERO-END */
+/* 23.11.2026: таблицы статей без обертки .table-wrap на телефоне вылезали за край (min-width:480px); укладываем в ширину экрана */
+@media(max-width:560px){.article table{min-width:0}.article .cmp{font-size:13.5px}.article .cmp th,.article .cmp td{padding:8px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}}

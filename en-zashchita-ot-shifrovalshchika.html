@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ransomware protection: how to prepare your company</title>
-<meta name="description" content="How to protect a company from ransomware and prepare in advance: backups, segmentation, a recovery plan, a rehearsal. The outcome is decided before the attack.">
+<meta name="description" content="Ransomware protection: how to close the entry points, isolated backups, segmentation, a recovery plan and a rehearsal. The outcome is decided before the attack.">
 <meta name="keywords" content="ransomware protection, ransomware virus protection, recovery after ransomware, ransomware defence">
 <meta name="author" content="Evgeny Telenkov">
 <meta name="robots" content="index, follow">
@@ -24,13 +24,13 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://bcm.risk-place.ru/en-zashchita-ot-shifrovalshchika.html">
 <meta property="og:title" content="Ransomware protection: how to prepare your company">
-<meta property="og:description" content="How to protect a company from ransomware and prepare in advance: backups, segmentation, a recovery plan, a rehearsal. The outcome is decided before the attack.">
+<meta property="og:description" content="Ransomware protection: how to close the entry points, isolated backups, segmentation, a recovery plan and a rehearsal. The outcome is decided before the attack.">
 <meta property="og:image" content="https://bcm.risk-place.ru/zashchita-ot-shifrovalshchika.png">
 <meta property="og:site_name" content="risk-place.ru">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ransomware protection: how to prepare your company">
-<meta name="twitter:description" content="How to protect a company from ransomware and prepare in advance: backups, segmentation, a recovery plan, a rehearsal. The outcome is decided before the attack.">
+<meta name="twitter:description" content="Ransomware protection: how to close the entry points, isolated backups, segmentation, a recovery plan and a rehearsal. The outcome is decided before the attack.">
 <meta name="twitter:image" content="https://bcm.risk-place.ru/zashchita-ot-shifrovalshchika.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -44,7 +44,7 @@
       "@type": "Article",
       "@id": "https://bcm.risk-place.ru/en-zashchita-ot-shifrovalshchika.html#article",
       "headline": "Ransomware protection: how to prepare your company",
-      "description": "How to protect a company from ransomware and prepare in advance: backups, segmentation, a recovery plan, a rehearsal. The outcome is decided before the attack.",
+      "description": "Ransomware protection: how to close the entry points, isolated backups, segmentation, a recovery plan and a rehearsal. The outcome is decided before the attack.",
       "image": "https://bcm.risk-place.ru/zashchita-ot-shifrovalshchika.png",
       "datePublished": "2026-06-28",
       "dateModified": "2026-06-28",
@@ -147,6 +147,7 @@
   <div class="t">On this page</div>
   <nav>
     <a href="#pochemu">Why ransomware is a matter of time</a>
+    <a href="#vhody">How ransomware gets into a company and how to close the entry points</a>
     <a href="#do">Preparation before the attack: 6 lines of defence</a>
     <a href="#kopii">Backups that will survive an attack</a>
     <a href="#domen">Protecting the domain</a>
@@ -161,6 +162,16 @@
 <h2 id="pochemu">Why ransomware is a matter of time</h2>
 <p>Ransomware is the most expensive cyberattack scenario for a mid-size business: every system stops at once. The industry already feels it: construction, manufacturing and retail companies have become the number one target for extortionists, and the average recovery time after critical systems are encrypted is measured in days — 5-6 days according to industry data.</p>
 <p>Antivirus and a firewall reduce the likelihood but do not remove it: a third of successful attacks start with stolen credentials and come in through contractors, that is, past your perimeter. So the mature position sounds like this: “we assume an attack will happen, and we prepare recovery in advance”.</p>
+<h2 id="vhody">How ransomware gets into a company and how to close the entry points</h2>
+<p>Ransomware protection starts with five entry points that most attacks come through. Each one is closed by a known measure, and the IT team can check it in a day.</p>
+<ol>
+<li><b>Email.</b> The mail filter holds attachments with macros and password-protected archives, and a policy blocks macros in documents from the internet.</li>
+<li><b>Remote access.</b> RDP is closed to the outside, and VPN and webmail from the internet require multi-factor authentication.</li>
+<li><b>Internet-facing services.</b> Updates for VPN gateways, mail servers and websites go first, within a few days of release.</li>
+<li><b>Contractors.</b> Each has separate access with its own account, on a schedule, with a sign-in log.</li>
+<li><b>Workstations and servers.</b> Antivirus with behavioural analysis (EDR) detects mass file encryption and stops the process, and someone reads its alerts around the clock.</li>
+</ol>
+<p>These measures reduce the likelihood of an attack. The six lines of defence below prepare the company for the day an attack gets through.</p>
 <h2 id="do">Preparation before the attack: 6 lines of defence</h2>
 <ol>
 <li><b>Inventory what is critical.</b> Which systems and data stop the business? Without this list you will try to save everything at once, which means saving nothing.</li>
